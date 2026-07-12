@@ -4,7 +4,9 @@
 
 - GitHub connectivity checked with `gh`: connected account is `WaleWangPW`.
 - Active GitHub auth source is `GITHUB_TOKEN` with `public_repo` only; keyring also has a non-active `WaleWangPW` token with broader `repo/read:org/workflow` scopes. No token value was printed.
-- Current Aegis `repo` path is still not a Git repository and has no remote; no initialization, commit, or push was performed. Visible repo list currently includes `WaleWangPW/shared-vault-workflow`.
+- Public GitHub repository created and pushed: `https://github.com/WaleWangPW/project-aegis`.
+- Current remote: `origin https://github.com/WaleWangPW/project-aegis.git`; default branch `main`; current public snapshot commit `eaacc8b Initial Project Aegis public snapshot`.
+- Public snapshot was pushed after secret/path checks: `.env`, `data/cache/`, `.venv/`, `.playwright-cli/`, and known API-token strings were not tracked.
 - Added `scripts/build_aegis_strategy_specific_historical_cases.py`.
 - New report generated: `data/reports/aegis_strategy_specific_historical_cases_latest.json`, status `PASS`.
 - Current strategy-specific historical cases: 13 research candidates, 11 candidates with cases, 44 historical cases total, 2 data gaps.
