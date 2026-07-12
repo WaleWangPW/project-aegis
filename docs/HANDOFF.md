@@ -20,6 +20,15 @@ and there are no console warnings/errors. Safety copy remains visible:
 simulation research only, no broker API, no order placement, no trading
 webhook.
 
+**Candidate action buttons:** each stock-selection card now has three
+prominent local action buttons: `加入模拟研究`, `要更多资讯`, and `暂不关注`.
+Clicking one records a local UI intent in `localStorage` and updates the card
+state immediately, but it does not mutate Aegis evidence files. The real
+evidence record still requires the user to click the same action in the Feishu
+stock-assistant card so the stock callback service can write
+`aegis_stock_feedback_latest.json`. Browser QA verified candidate actions on
+desktop and mobile with no console errors and no horizontal overflow.
+
 **Dashboard usability update:** the live page at
 `http://localhost:8080/dashboard/index.html` now uses a plain-language daily
 workflow: "不用读完整报表：先看结论，再看 3 张卡", a one-minute brief, explicit
