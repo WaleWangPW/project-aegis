@@ -1,0 +1,18 @@
+{
+  "type": "aegis_stock_feishu_callback_server",
+  "generated_at": "2026-07-12T18:13:28.656107+08:00",
+  "status": "RUNNING",
+  "account": "stock",
+  "handler": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/scripts/handle_aegis_stock_card_action.py",
+  "log_path": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/runtime/aegis_stock_feishu_callback_server.log",
+  "details": {
+    "app_id": "cli_aac20731ab78dce1"
+  },
+  "safety": {
+    "simulation_only": true,
+    "no_broker_api": true,
+    "no_order_placement": true,
+    "no_trading_webhook": true,
+    "no_secret_values_recorded": true
+  }
+}

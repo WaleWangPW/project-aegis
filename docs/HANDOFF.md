@@ -17,13 +17,21 @@ dashboard/v2.js`, `curl -I` returning `200 OK`, and Browser DOM/console checks
 showing no console warnings/errors and no horizontal overflow on desktop or
 390px mobile width.
 
-**Feedback callback caveat:** the Dashboard currently shows the latest local
-Aegis feedback record honestly. As of this update the latest local record is
-still `HOOD · aegis_more_news · 2026-07-12T13:38:15+08:00`; the user's newer
-"added" click did not appear in
-`data/records/aegis_stock_feedback_events.jsonl`. Next work should verify the
-actual Feishu/OpenClaw callback process and ensure card interactions invoke
-`scripts/handle_aegis_stock_card_action.py` in this repo.
+**Stock assistant callback status:** the callback gap was traced to an app
+boundary mismatch: Aegis stock cards are sent from the OpenClaw `stock`
+Feishu app, while the existing callback server only listened to the AI-news
+app. A dedicated stock-app callback listener now exists at
+`scripts/run_aegis_stock_feishu_callback_server.py` and was installed locally
+as LaunchAgent `ai.openclaw.stock-aegis-callback`. It is running against the
+OpenClaw `stock` account, connected to Feishu WebSocket, and forwards only
+Project Aegis card actions into
+`scripts/handle_aegis_stock_card_action.py`. Health evidence is written to
+`data/reports/aegis_stock_feishu_callback_server_latest.json`; runtime logs
+are under `data/runtime/`. Latest real local feedback is still
+`HOOD · aegis_more_news · 2026-07-12T13:38:15+08:00` until the user clicks one
+of the newly resent stock-assistant cards and the listener records the event.
+This listener is simulation-feedback only: no broker API, no order placement,
+no holding mutation, and no trading webhook.
 
 **Product version:** `V2.12-J H-US Virtual PaperTrade Creation From Validated Evidence PASS`
 
