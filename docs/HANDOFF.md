@@ -8,6 +8,33 @@
 
 **Accepted engineering baseline:** `P25.6 PASS`
 
+**A-share refined strategy sandbox update:** Aegis now retests failed
+single-source Tushare signals as conservative combinations, without additional
+network calls. Command:
+`make evaluate-a-share-tushare-refined-strategy-sandbox`. Latest report:
+`data/reports/a_share_tushare_refined_strategy_sandbox_latest.json`, status
+`PASS`, `refined_strategy_count=5`, `refined_sandbox_pass_candidate_count=1`,
+`refined_sandbox_fail_count=4`, `network_used=false`,
+`ranking_impact_allowed=false`, and `user_facing_suggestion_allowed=false`.
+The first pass candidate is `主力资金 + 筹码集中`: `3` signal cases, win rate
+`0.6667`, average return `0.0430`, max drawdown `-0.1436`. This is only
+eligible for a separate ranking-gate review; it is not a recommendation.
+
+**Current stock-agent managed cycle:** `make
+stock-agent-a-share-strategy-cycle-managed` exited `0` with `command_count=10`,
+`failed_command_count=0`, `candidate_count=33`, `historical_case_count=106`,
+`a_share_case_count=62`, `a_share_dragon_tiger_research_sample_case_count=22`,
+`deep_sandbox_pass_candidate_count=0`,
+`refined_sandbox_pass_candidate_count=1`, `rankable_strategy_count=0`, and
+`ranking_impact_allowed=false`. Latest managed report SHA256:
+`ac13db02af1c7f874091b89a013c189f32fb6a5b4e0d720c3965bec36936c978`.
+
+**Dashboard refined strategy update:** Dashboard cache version is now
+`20260712t`. The `策略` page now explicitly shows: single-source strategies
+failed, refined strategy candidates `1`, recommendation ranking `0`, and the
+combination result board. Playwright CLI QA verified the strategy page text and
+390px mobile width with no horizontal overflow.
+
 **A-share dragon-tiger / hot-money sample update:** Aegis now collects
 research-only Tushare `top_list` / `top_inst` samples from dates already covered
 by local A-share historical daily cache and with a 20-trading-day forward
@@ -19,16 +46,8 @@ status `PASS`, `sample_count=12`, `event_count=24`, queried cache window
 retired/ST names and are event-aligned research samples only; they must never
 be shown as recommendations or real-trade candidates.
 
-**Current stock-agent managed cycle:** `make
-stock-agent-a-share-strategy-cycle-managed` exited `0` with `command_count=9`,
-`failed_command_count=0`, `candidate_count=33`, `historical_case_count=106`,
-`a_share_case_count=62`, `a_share_dragon_tiger_research_sample_case_count=22`,
-`deep_sandbox_pass_candidate_count=0`, `rankable_strategy_count=0`, and
-`ranking_impact_allowed=false`. Latest managed report SHA256:
-`1eb85bc754d9ca719a4a2b64c5730b32ec2186d3285b7d16d044227bd6133be8`.
-
-**Dashboard strategy evidence snapshot:** Dashboard cache version is now
-`20260712s`. The `策略` page shows a stock-agent evidence snapshot with
+**Previous dashboard strategy evidence snapshot:** Dashboard cache version was
+`20260712s`. The `策略` page showed a stock-agent evidence snapshot with
 dragon-tiger samples `12`, hot-money events `24`, event-aligned cases `22`,
 A-share cases `62`, and rankable strategies `0`. The `选股` page secondary
 detail modules now span the full content width when opened, avoiding the prior

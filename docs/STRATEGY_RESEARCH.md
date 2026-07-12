@@ -40,7 +40,10 @@ Implementation order:
    latest date, sample count, and gaps.
 3. Build strategy hypotheses from each module.
 4. Run historical sandbox with point-in-time dates.
-5. Only then allow the module to affect Dashboard ranking.
+5. If single-source strategies fail, run refined combinations such as
+   `moneyflow + holder concentration` or `moneyflow + factor risk veto`.
+6. Only a separate ranking gate may allow the module to affect Dashboard
+   ranking; refined sandbox pass is not a recommendation.
 
 Current priority for the next implementation batch:
 

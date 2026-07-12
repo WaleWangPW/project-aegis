@@ -3132,6 +3132,10 @@ details > summary {
   background: linear-gradient(145deg, rgba(255, 240, 232, .92), rgba(255, 255, 252, .86)) !important;
 }
 
+.snapshot-pass {
+  background: linear-gradient(145deg, rgba(226, 248, 235, .96), rgba(255, 255, 252, .88)) !important;
+}
+
 .snapshot-boundary {
   grid-column: 1 / -1;
   padding: 12px 14px;
@@ -3139,6 +3143,12 @@ details > summary {
   background: rgba(255, 255, 252, .68);
   color: var(--ink-soft) !important;
   font-weight: 850;
+}
+
+.refined-board {
+  background:
+    radial-gradient(circle at 94% 0%, rgba(22, 117, 79, .16), transparent 15rem),
+    linear-gradient(135deg, rgba(236, 248, 240, .95), rgba(255, 255, 252, .84));
 }
 
 .diagnostics-head {

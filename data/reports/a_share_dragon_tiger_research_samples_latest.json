@@ -1,8 +1,8 @@
 {
   "type": "a_share_dragon_tiger_research_samples",
   "status": "PASS",
-  "generated_at": "2026-07-12T22:45:45+08:00",
-  "run_id": "a_share_dragon_tiger_research_samples_20260712T224533",
+  "generated_at": "2026-07-12T23:07:54+08:00",
+  "run_id": "a_share_dragon_tiger_research_samples_20260712T230741",
   "command": "scripts/collect_a_share_dragon_tiger_research_samples.py",
   "summary": {
     "sample_count": 12,

@@ -108,6 +108,9 @@ build-a-share-tushare-source-feature-coverage:
 evaluate-a-share-tushare-source-deep-sandbox:
 	.venv/bin/python scripts/evaluate_a_share_tushare_source_deep_sandbox.py
 
+evaluate-a-share-tushare-refined-strategy-sandbox:
+	.venv/bin/python scripts/evaluate_a_share_tushare_refined_strategy_sandbox.py
+
 analyze-a-share-tushare-strategy-diagnostics:
 	.venv/bin/python scripts/analyze_a_share_tushare_strategy_diagnostics.py
 
@@ -132,6 +135,7 @@ stock-agent-a-share-strategy-cycle:
 	.venv/bin/python scripts/evaluate_a_share_tushare_source_hypotheses.py
 	.venv/bin/python scripts/build_a_share_tushare_source_feature_coverage.py
 	.venv/bin/python scripts/evaluate_a_share_tushare_source_deep_sandbox.py
+	.venv/bin/python scripts/evaluate_a_share_tushare_refined_strategy_sandbox.py
 	.venv/bin/python scripts/analyze_a_share_tushare_strategy_diagnostics.py
 	.venv/bin/python scripts/prepare_stock_agent_strategy_simulation_workspace.py
 

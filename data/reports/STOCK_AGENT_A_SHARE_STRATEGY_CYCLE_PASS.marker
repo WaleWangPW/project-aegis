@@ -1,11 +1,12 @@
-generated_at=2026-07-12T22:48:35+08:00
+generated_at=2026-07-12T23:10:41+08:00
 exit_code=0
 report_json=/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/stock_agent_a_share_strategy_cycle_latest.json
-report_json_sha256=1eb85bc754d9ca719a4a2b64c5730b32ec2186d3285b7d16d044227bd6133be8
-command_count=9
+report_json_sha256=ac13db02af1c7f874091b89a013c189f32fb6a5b4e0d720c3965bec36936c978
+command_count=10
 failed_command_count=0
 a_share_case_count=62
 deep_sandbox_pass_candidate_count=0
+refined_sandbox_pass_candidate_count=1
 ranking_impact_allowed=false
 user_facing_suggestion_allowed=false
 no_real_trade=true

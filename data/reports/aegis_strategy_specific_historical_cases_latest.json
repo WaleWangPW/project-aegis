@@ -1,8 +1,8 @@
 {
   "type": "aegis_strategy_specific_historical_cases",
   "status": "PASS",
-  "generated_at": "2026-07-12T22:45:47+08:00",
-  "run_id": "aegis_strategy_specific_historical_cases_20260712T144547Z",
+  "generated_at": "2026-07-12T23:07:56+08:00",
+  "run_id": "aegis_strategy_specific_historical_cases_20260712T150756Z",
   "summary": {
     "base_candidate_count": 13,
     "candidate_count": 33,
@@ -4270,7 +4270,7 @@
     "stock_selection_workbench": "ddea037d923a116e60cfeb545c38a833311fd954d635f165f8ac5381a14e4420",
     "strategy_sandbox_coverage": "ece45915bc7b20aa09fdda865ef9d4a94f2cb9f4107b72f6e9adab1011618028",
     "h_us_daily_bars_refresh": "c9ceb1ead15de55b365e2a340cc363deaef52b6bc61b7314b67d759a265e8703",
-    "dragon_tiger_research_samples": "71c950d3b26cfd5a8beac36211a842f2c13790a7ac9de8f364ceade014ec7b34",
+    "dragon_tiger_research_samples": "5c96dece94b32a79de3c40e8e9e5782ad71cae13a63747bcf55073d0cd06e5e6",
     "stock_basic": "0bbc2d38cc4cde25b19d947ab5bd85c1558835da35985f73e62ab16449e99ae8"
   },
   "checks": {
@@ -4364,5 +4364,5 @@
       "sha256": "c468fe43ec7097f129805fb71b6551c2db809213e2e13e9b2f1b2354f53ad65f"
     }
   },
-  "run_dir": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/aegis_strategy_specific_historical_cases/aegis_strategy_specific_historical_cases_20260712T144547Z"
+  "run_dir": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/aegis_strategy_specific_historical_cases/aegis_strategy_specific_historical_cases_20260712T150756Z"
 }

@@ -34,6 +34,7 @@ make evaluate-strategy-specific-cases
 make evaluate-a-share-tushare-source-hypotheses
 make build-a-share-tushare-source-feature-coverage
 make evaluate-a-share-tushare-source-deep-sandbox
+make evaluate-a-share-tushare-refined-strategy-sandbox
 make prepare-stock-agent-strategy-simulation
 ```
 
@@ -45,6 +46,7 @@ Expected outputs:
 - `data/reports/a_share_tushare_source_hypothesis_evaluation_latest.json`
 - `data/reports/a_share_tushare_source_feature_coverage_latest.json`
 - `data/reports/a_share_tushare_source_deep_sandbox_latest.json`
+- `data/reports/a_share_tushare_refined_strategy_sandbox_latest.json`
 - `data/reports/aegis_strategy_specific_historical_cases_latest.json`
 - `data/reports/aegis_strategy_specific_case_evaluation_latest.json`
 - `~/.openclaw/agents/stock-agent/workspace/project-aegis/AEGIS_STOCK_AGENT_STRATEGY_SIMULATION_TASK.md`
@@ -82,5 +84,8 @@ Stock agent reports must include:
 7. Source-specific feature coverage and gaps for moneyflow, dragon-tiger seats,
    holders, holder number, factors, and governance.
 8. Deep sandbox disposition: `DEEP_SANDBOX_PASS_CANDIDATE` or `DEEP_SANDBOX_FAIL`.
-9. Which symbols remain simulation candidates, watch-only, or downgraded.
-10. Explicit safety statement: no broker, no order, no webhook, no secret output.
+9. Refined strategy disposition: `REFINED_SANDBOX_PASS_CANDIDATE` or
+   `REFINED_SANDBOX_FAIL`. A pass here only means "review by ranking gate",
+   not a user-facing recommendation.
+10. Which symbols remain simulation candidates, watch-only, or downgraded.
+11. Explicit safety statement: no broker, no order, no webhook, no secret output.

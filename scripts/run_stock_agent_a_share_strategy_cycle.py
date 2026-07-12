@@ -76,6 +76,12 @@ COMMANDS = [
         "marker": REPORTS / "A_SHARE_TUSHARE_SOURCE_DEEP_SANDBOX_PASS.marker",
     },
     {
+        "name": "evaluate_a_share_tushare_refined_strategy_sandbox",
+        "argv": ["scripts/evaluate_a_share_tushare_refined_strategy_sandbox.py"],
+        "report": REPORTS / "a_share_tushare_refined_strategy_sandbox_latest.json",
+        "marker": REPORTS / "A_SHARE_TUSHARE_REFINED_STRATEGY_SANDBOX_PASS.marker",
+    },
+    {
         "name": "analyze_a_share_tushare_strategy_diagnostics",
         "argv": ["scripts/analyze_a_share_tushare_strategy_diagnostics.py"],
         "report": REPORTS / "a_share_tushare_strategy_diagnostics_latest.json",
@@ -173,6 +179,7 @@ def build_report(command_results: list[dict[str, Any]], *, prepare_manifest: dic
     source_eval = load_json(REPORTS / "a_share_tushare_source_hypothesis_evaluation_latest.json")
     feature = load_json(REPORTS / "a_share_tushare_source_feature_coverage_latest.json")
     deep = load_json(REPORTS / "a_share_tushare_source_deep_sandbox_latest.json")
+    refined = load_json(REPORTS / "a_share_tushare_refined_strategy_sandbox_latest.json")
     diagnostics = load_json(REPORTS / "a_share_tushare_strategy_diagnostics_latest.json")
     dragon = load_json(REPORTS / "a_share_dragon_tiger_research_samples_latest.json")
     blockers = [
@@ -213,6 +220,10 @@ def build_report(command_results: list[dict[str, Any]], *, prepare_manifest: dic
             "feature_gap_count": feature.get("summary", {}).get("feature_gap_count"),
             "deep_sandbox_pass_candidate_count": deep.get("summary", {}).get("deep_sandbox_pass_candidate_count"),
             "deep_sandbox_fail_count": deep.get("summary", {}).get("deep_sandbox_fail_count"),
+            "refined_sandbox_pass_candidate_count": refined.get("summary", {}).get(
+                "refined_sandbox_pass_candidate_count"
+            ),
+            "refined_strategy_count": refined.get("summary", {}).get("refined_strategy_count"),
             "rankable_strategy_count": diagnostics.get("summary", {}).get("rankable_strategy_count"),
             "strategy_priority_action_count": diagnostics.get("summary", {}).get("priority_action_count"),
             "ranking_impact_allowed": deep.get("summary", {}).get("ranking_impact_allowed", False),
@@ -250,6 +261,7 @@ def write_report(report: dict[str, Any]) -> None:
                 f"failed_command_count={report['summary']['failed_command_count']}",
                 f"a_share_case_count={report['summary']['a_share_case_count']}",
                 f"deep_sandbox_pass_candidate_count={report['summary']['deep_sandbox_pass_candidate_count']}",
+                f"refined_sandbox_pass_candidate_count={report['summary'].get('refined_sandbox_pass_candidate_count')}",
                 f"ranking_impact_allowed={str(report['summary']['ranking_impact_allowed']).lower()}",
                 "user_facing_suggestion_allowed=false",
                 "no_real_trade=true",
