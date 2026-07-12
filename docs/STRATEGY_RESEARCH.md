@@ -47,9 +47,10 @@ Current priority for the next implementation batch:
 1. `moneyflow` read-only probe: confirm available dates, fields, sample counts,
    and whether large/medium/small order fields are populated for today's A-share
    universe.
-2. `top_list` / `top_inst` read-only probe: confirm recent dragon-tiger list
-   coverage and seat-level fields without treating hot-money activity as a buy
-   signal.
+2. `top_list` / `top_inst` research sample builder: collect only historical
+   dragon-tiger / hot-money events whose dates are already in the local daily
+   cache and have enough forward window for a 20-trading-day sandbox. These
+   samples are event-aligned research cases, not user-facing suggestions.
 3. `top10_holders` / `top10_floatholders` / `stk_holdernumber` read-only probe:
    build a point-in-time disclosure-date guardrail before using ownership data.
 4. Optional permission check for `stk_survey` and holder-change style data; if

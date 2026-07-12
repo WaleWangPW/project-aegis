@@ -25,6 +25,7 @@ VALIDATION_INPUT = REPORTS / "aegis_strategy_validation_input_latest.json"
 STOCK_SELECTION = REPORTS / "stock_selection_workbench_latest.json"
 STRATEGY_COVERAGE = REPORTS / "aegis_strategy_sandbox_validation_latest.json"
 H_US_REFRESH = REPORTS / "aegis_h_us_candidate_daily_bars_refresh_latest.json"
+DRAGON_TIGER_SAMPLES = REPORTS / "a_share_dragon_tiger_research_samples_latest.json"
 
 OUT_JSON = REPORTS / "aegis_strategy_specific_historical_cases_latest.json"
 OUT_MD = REPORTS / "aegis_strategy_specific_historical_cases_latest.md"
@@ -43,6 +44,7 @@ RECORD_PATHS = {
 
 A_SHARE_RESEARCH_SAMPLE_STATUSES = {"high_risk_watch", "blocked"}
 MAX_A_SHARE_RESEARCH_SAMPLES = 12
+MAX_DRAGON_TIGER_RESEARCH_SAMPLES = 12
 
 
 def now_iso() -> str:
@@ -190,6 +192,67 @@ def a_share_research_samples(
     }
 
 
+def dragon_tiger_research_samples(
+    report: dict[str, Any],
+    existing_items: list[dict[str, Any]],
+    symbol_map: dict[str, str],
+) -> tuple[list[dict[str, Any]], dict[str, Any]]:
+    """Add event-dated dragon-tiger samples for source feature validation.
+
+    These samples are deliberately research-only. Unlike normal candidate
+    windows, their historical cases should start from `event_trade_dates` so
+    `top_list`/`top_inst` coverage can be tested at the actual event date.
+    """
+    existing = {
+        (str(item.get("market")), normalize_a_symbol(item.get("symbol")), str(item.get("sample_source") or ""))
+        for item in existing_items
+    }
+    samples: list[dict[str, Any]] = []
+    rows = report.get("samples", []) if isinstance(report, dict) and report.get("status") == "PASS" else []
+    for row in rows:
+        symbol = normalize_a_symbol(row.get("symbol"))
+        if not symbol or symbol not in symbol_map:
+            continue
+        key = ("A", symbol, "tushare_dragon_tiger_hot_money")
+        if key in existing:
+            continue
+        events = row.get("events") or []
+        event_dates = [event.get("trade_date") for event in events if event.get("trade_date")]
+        if not event_dates:
+            continue
+        samples.append(
+            {
+                "symbol": symbol,
+                "name": row.get("name"),
+                "market": "A",
+                "matched_strategy_ids": row.get("matched_strategy_ids") or ["a_share_short_momentum", "growth_breakout"],
+                "research_sample_only": True,
+                "sample_source": "tushare_dragon_tiger_hot_money",
+                "source_status": row.get("source_status") or "feature_gap_sample",
+                "source_status_label": row.get("source_status_label") or "龙虎榜/游资历史样本",
+                "source_score": row.get("source_score"),
+                "source_risk_flags": row.get("source_risk_flags") or ["龙虎榜/游资样本只用于沙盘验证，不用于推荐"],
+                "event_trade_dates": event_dates,
+                "event_count": len(event_dates),
+                "required_endpoints": ["top_list", "top_inst"],
+                "user_facing_suggestion_allowed": False,
+                "real_trade_allowed": False,
+            }
+        )
+        if len(samples) >= MAX_DRAGON_TIGER_RESEARCH_SAMPLES:
+            break
+    return samples, {
+        "enabled": True,
+        "source": str(DRAGON_TIGER_SAMPLES),
+        "source_status": report.get("status") if isinstance(report, dict) else None,
+        "added_candidate_count": len(samples),
+        "added_symbols": [item["symbol"] for item in samples],
+        "event_count": sum(len(item.get("event_trade_dates") or []) for item in samples),
+        "research_sample_only": True,
+        "user_facing_suggestion_allowed": False,
+    }
+
+
 def load_daily_rows() -> tuple[list[str], dict[str, dict[str, dict[str, Any]]], dict[str, str]]:
     dates: list[str] = []
     rows_by_date: dict[str, dict[str, dict[str, Any]]] = {}
@@ -226,6 +289,22 @@ def case_windows(dates: list[str], available_count: int, window: int = 20, desir
     return sorted(set(min(max_start, value) for value in starts))
 
 
+def event_case_windows(symbol_dates: list[str], item: dict[str, Any], window: int = 20) -> list[int] | None:
+    event_dates = [compact_date(value) for value in item.get("event_trade_dates") or [] if value]
+    if not event_dates:
+        return None
+    index_by_date = {date: index for index, date in enumerate(symbol_dates)}
+    starts: list[int] = []
+    for event_date in event_dates:
+        index = index_by_date.get(event_date)
+        if index is None:
+            continue
+        if index + window >= len(symbol_dates):
+            continue
+        starts.append(index)
+    return sorted(set(starts))
+
+
 def build_cases_for_candidate(
     item: dict[str, Any],
     ts_code: str,
@@ -244,7 +323,18 @@ def build_cases_for_candidate(
             "required_trade_dates": 22,
         }
 
-    starts = case_windows(symbol_dates, len(symbol_dates))
+    starts = event_case_windows(symbol_dates, item)
+    if starts is None:
+        starts = case_windows(symbol_dates, len(symbol_dates))
+    if not starts:
+        return cases, {
+            "symbol": item.get("symbol"),
+            "ts_code": ts_code,
+            "status": "missing_event_aligned_forward_window" if item.get("event_trade_dates") else "missing_case_windows",
+            "available_trade_dates": len(symbol_dates),
+            "required_trade_dates": 22,
+            "event_trade_dates": item.get("event_trade_dates") or [],
+        }
     for idx, start in enumerate(starts, start=1):
         entry_date = symbol_dates[start]
         exit_date = symbol_dates[start + 20]
@@ -255,7 +345,9 @@ def build_cases_for_candidate(
         exit_close = float(exit_row["close"])
         closes = [float(rows_by_date[date][ts_code]["close"]) for date in path_dates]
         raw_return = exit_close / entry_close - 1.0
-        case_id = f"aegis_case_{str(item.get('symbol')).lower()}_{idx}"
+        source_slug = str(item.get("sample_source") or "").lower().replace(" ", "_")
+        source_part = f"_{source_slug}" if source_slug else ""
+        case_id = f"aegis_case_{str(item.get('symbol')).lower()}{source_part}_{idx}"
         evidence_seed = f"{ts_code}:{entry_date}:{exit_date}:{source_hashes.get(entry_date)}:{source_hashes.get(exit_date)}"
         cases.append(
             {
@@ -268,6 +360,9 @@ def build_cases_for_candidate(
                 "research_sample_only": bool(item.get("research_sample_only")),
                 "sample_source": item.get("sample_source"),
                 "source_status": item.get("source_status"),
+                "event_aligned_case": bool(item.get("event_trade_dates")),
+                "event_trade_dates": item.get("event_trade_dates") or [],
+                "required_endpoints": item.get("required_endpoints") or [],
                 "entry_date": iso_date(entry_date),
                 "exit_date": iso_date(exit_date),
                 "entry_close": entry_close,
@@ -402,9 +497,11 @@ def render_markdown(report: dict[str, Any]) -> str:
         f"- Candidate Count: {s['candidate_count']}",
         f"- Base Candidate Count: {s.get('base_candidate_count')}",
         f"- A-share Research Sample Candidates: {s.get('a_share_research_sample_candidate_count')}",
+        f"- A-share Dragon Tiger Research Sample Candidates: {s.get('a_share_dragon_tiger_research_sample_candidate_count')}",
         f"- Candidates With Cases: {s['candidates_with_cases']}",
         f"- Historical Case Count: {s['historical_case_count']}",
         f"- A-share Research Sample Cases: {s.get('a_share_research_sample_case_count')}",
+        f"- A-share Dragon Tiger Research Sample Cases: {s.get('a_share_dragon_tiger_research_sample_case_count')}",
         f"- Data Gap Count: {s['data_gap_count']}",
         f"- User-Facing Suggestion Allowed: {s['user_facing_suggestion_allowed']}",
         "",
@@ -425,11 +522,17 @@ def render_markdown(report: dict[str, Any]) -> str:
 def build_report() -> dict[str, Any]:
     validation = load_json(VALIDATION_INPUT, {})
     stock_selection = load_json(STOCK_SELECTION, {})
+    dragon_tiger_report = load_json(DRAGON_TIGER_SAMPLES, {})
     coverage = load_json(STRATEGY_COVERAGE, {})
     symbol_map = load_symbol_map()
     base_candidates = validation.get("items", []) if validation.get("status") == "READY" else []
     samples, sample_summary = a_share_research_samples(stock_selection, base_candidates, symbol_map)
-    candidates = base_candidates + samples
+    dragon_samples, dragon_summary = dragon_tiger_research_samples(
+        dragon_tiger_report,
+        base_candidates + samples,
+        symbol_map,
+    )
+    candidates = base_candidates + samples + dragon_samples
     dates, rows_by_date, source_hashes = load_daily_rows()
     before = fingerprints(RECORD_PATHS)
 
@@ -492,6 +595,7 @@ def build_report() -> dict[str, Any]:
             "base_candidate_count": len(base_candidates),
             "candidate_count": len(candidates),
             "a_share_research_sample_candidate_count": len(samples),
+            "a_share_dragon_tiger_research_sample_candidate_count": len(dragon_samples),
             "candidates_with_cases": sum(1 for result in candidate_results if result.get("case_count", 0) > 0),
             "historical_case_count": len(all_cases),
             "data_gap_count": len(data_gaps),
@@ -499,12 +603,16 @@ def build_report() -> dict[str, Any]:
             "a_share_research_sample_case_count": sum(
                 1 for case in all_cases if case.get("market") == "A" and case.get("research_sample_only")
             ),
+            "a_share_dragon_tiger_research_sample_case_count": sum(
+                1 for case in all_cases if case.get("market") == "A" and case.get("sample_source") == "tushare_dragon_tiger_hot_money"
+            ),
             "h_us_case_count": sum(1 for case in all_cases if case.get("market") in {"US", "HK"}),
             "direct_candidate_backtest_count": len(all_cases),
             "user_facing_suggestion_allowed": False,
             "next_stage": "evaluate expanded A-share research samples before any source strategy can influence ranking",
         },
         "a_share_research_sample_expansion": sample_summary,
+        "a_share_dragon_tiger_research_sample_expansion": dragon_summary,
         "candidate_results": candidate_results,
         "historical_cases": all_cases,
         "data_gaps": data_gaps,
@@ -513,6 +621,7 @@ def build_report() -> dict[str, Any]:
             "stock_selection_workbench": str(STOCK_SELECTION),
             "strategy_sandbox_coverage": str(STRATEGY_COVERAGE),
             "h_us_daily_bars_refresh": str(H_US_REFRESH),
+            "dragon_tiger_research_samples": str(DRAGON_TIGER_SAMPLES),
             "daily_cache_dir": str(DAILY_DIR),
             "stock_basic": str(STOCK_BASIC),
         },
@@ -521,6 +630,7 @@ def build_report() -> dict[str, Any]:
             "stock_selection_workbench": sha256(STOCK_SELECTION),
             "strategy_sandbox_coverage": sha256(STRATEGY_COVERAGE),
             "h_us_daily_bars_refresh": sha256(H_US_REFRESH),
+            "dragon_tiger_research_samples": sha256(DRAGON_TIGER_SAMPLES),
             "stock_basic": sha256(STOCK_BASIC),
         },
         "checks": {
@@ -534,6 +644,13 @@ def build_report() -> dict[str, Any]:
                 and result.get("real_trade_allowed") is False
                 for result in candidate_results
                 if result.get("sample_source") == "stock_selection_workbench"
+            ),
+            "dragon_tiger_samples_labelled": all(
+                result.get("research_sample_only") is True
+                and result.get("user_facing_suggestion_allowed") is False
+                and result.get("real_trade_allowed") is False
+                for result in candidate_results
+                if result.get("sample_source") == "tushare_dragon_tiger_hot_money"
             ),
             "h_us_cases_or_gaps_explicit": (
                 any(case.get("market") in {"US", "HK"} for case in all_cases)
@@ -594,9 +711,11 @@ def main() -> int:
                 f"base_candidate_count={report['summary']['base_candidate_count']}",
                 f"candidate_count={report['summary']['candidate_count']}",
                 f"a_share_research_sample_candidate_count={report['summary']['a_share_research_sample_candidate_count']}",
+                f"a_share_dragon_tiger_research_sample_candidate_count={report['summary']['a_share_dragon_tiger_research_sample_candidate_count']}",
                 f"candidates_with_cases={report['summary']['candidates_with_cases']}",
                 f"historical_case_count={report['summary']['historical_case_count']}",
                 f"a_share_research_sample_case_count={report['summary']['a_share_research_sample_case_count']}",
+                f"a_share_dragon_tiger_research_sample_case_count={report['summary']['a_share_dragon_tiger_research_sample_case_count']}",
                 f"data_gap_count={report['summary']['data_gap_count']}",
                 "network_used=false",
                 "user_facing_suggestion_allowed=false",
@@ -618,9 +737,15 @@ def main() -> int:
                 "base_candidate_count": report["summary"]["base_candidate_count"],
                 "candidate_count": report["summary"]["candidate_count"],
                 "a_share_research_sample_candidate_count": report["summary"]["a_share_research_sample_candidate_count"],
+                "a_share_dragon_tiger_research_sample_candidate_count": report["summary"][
+                    "a_share_dragon_tiger_research_sample_candidate_count"
+                ],
                 "candidates_with_cases": report["summary"]["candidates_with_cases"],
                 "historical_case_count": report["summary"]["historical_case_count"],
                 "a_share_research_sample_case_count": report["summary"]["a_share_research_sample_case_count"],
+                "a_share_dragon_tiger_research_sample_case_count": report["summary"][
+                    "a_share_dragon_tiger_research_sample_case_count"
+                ],
                 "data_gap_count": report["summary"]["data_gap_count"],
                 "report_json": str(OUT_JSON),
             },

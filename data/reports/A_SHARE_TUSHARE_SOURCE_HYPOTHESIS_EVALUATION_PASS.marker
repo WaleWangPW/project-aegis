@@ -1,8 +1,8 @@
 status=PASS
-run_id=a_share_tushare_source_hypothesis_evaluation_20260712T221919
-generated_at=2026-07-12T22:19:19+08:00
+run_id=a_share_tushare_source_hypothesis_evaluation_20260712T224548
+generated_at=2026-07-12T22:45:48+08:00
 report_json=/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/a_share_tushare_source_hypothesis_evaluation_latest.json
-report_json_sha256=6bb7553ba4057877e5c748902f831fc7a7a074d6157b050756ca1145c28dd106
+report_json_sha256=4a8049f9d9a867d2c0825a410506209c813790d1390ad8e628631d56a752094b
 hypothesis_count=6
 proxy_pass_count=0
 needs_more_a_share_cases_count=0

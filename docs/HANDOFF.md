@@ -8,6 +8,36 @@
 
 **Accepted engineering baseline:** `P25.6 PASS`
 
+**A-share dragon-tiger / hot-money sample update:** Aegis now collects
+research-only Tushare `top_list` / `top_inst` samples from dates already covered
+by local A-share historical daily cache and with a 20-trading-day forward
+window. Command: `make collect-a-share-dragon-tiger-research-samples`. Latest
+report: `data/reports/a_share_dragon_tiger_research_samples_latest.json`,
+status `PASS`, `sample_count=12`, `event_count=24`, queried cache window
+`2024-04-26` to `2024-07-03`, `raw_payload_saved=false`, and
+`user_facing_suggestion_allowed=false`. These samples are filtered away from
+retired/ST names and are event-aligned research samples only; they must never
+be shown as recommendations or real-trade candidates.
+
+**Current stock-agent managed cycle:** `make
+stock-agent-a-share-strategy-cycle-managed` exited `0` with `command_count=9`,
+`failed_command_count=0`, `candidate_count=33`, `historical_case_count=106`,
+`a_share_case_count=62`, `a_share_dragon_tiger_research_sample_case_count=22`,
+`deep_sandbox_pass_candidate_count=0`, `rankable_strategy_count=0`, and
+`ranking_impact_allowed=false`. Latest managed report SHA256:
+`1eb85bc754d9ca719a4a2b64c5730b32ec2186d3285b7d16d044227bd6133be8`.
+
+**Dashboard strategy evidence snapshot:** Dashboard cache version is now
+`20260712s`. The `策略` page shows a stock-agent evidence snapshot with
+dragon-tiger samples `12`, hot-money events `24`, event-aligned cases `22`,
+A-share cases `62`, and rankable strategies `0`. The `选股` page secondary
+detail modules now span the full content width when opened, avoiding the prior
+large blank area / scattered button feel. Playwright CLI QA verified: homepage
+no horizontal overflow; `选股` has 4 secondary modules, first open width
+`1010/1042`, 60px candidate buttons; `策略` shows evidence snapshot, 6 roadmap
+cards, 4 diagnostic actions, and no horizontal overflow at desktop or 390px
+mobile.
+
 **A-share strategy diagnostics + UI clarity update:** Aegis now has a
 stock-agent friendly diagnostic layer for A-share Tushare source strategies.
 Command: `make analyze-a-share-tushare-strategy-diagnostics`. Latest report:

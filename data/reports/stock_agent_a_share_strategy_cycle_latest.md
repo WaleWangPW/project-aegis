@@ -1,9 +1,9 @@
 # Stock Agent A-share Strategy Cycle
 
 - Status: `PASS`
-- Generated At: `2026-07-12T22:21:01+08:00`
+- Generated At: `2026-07-12T22:48:35+08:00`
 - Overall Exit Code: `0`
-- A-share Cases: `40`
+- A-share Cases: `62`
 - Deep Sandbox Pass Candidates: `0`
 - Ranking Impact Allowed: `False`
 
@@ -11,11 +11,12 @@ Simulation research only. No broker API, no order placement, no trading webhook,
 
 ## Commands
 
-- `probe_a_share_tushare_strategy_sources` exit=`0` report=`/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/a_share_tushare_strategy_source_probe_latest.json` sha256=`b919a5e51672e470c017c237baf37dee023a2d7dc0e9bb07d615f22c58ef8d55`
-- `build_a_share_tushare_source_hypothesis_queue` exit=`0` report=`/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/a_share_tushare_source_hypothesis_queue_latest.json` sha256=`298465928a643ff43908ec3b6c92aa3bc62b1fa6ec8e8c8c4d9e81bbe657bdd8`
-- `build_aegis_strategy_specific_historical_cases` exit=`0` report=`/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/aegis_strategy_specific_historical_cases_latest.json` sha256=`3bcb6b1ba52ec88ca4c1795e1977f638d9e8ffa4a0ea49e702d5460bde00527d`
-- `evaluate_aegis_strategy_specific_cases` exit=`0` report=`/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/aegis_strategy_specific_case_evaluation_latest.json` sha256=`e061e1f307083368b27f317626cbeef50262cd1de73b1d8d92b39bdbf3f5c5ea`
-- `evaluate_a_share_tushare_source_hypotheses` exit=`0` report=`/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/a_share_tushare_source_hypothesis_evaluation_latest.json` sha256=`6bb7553ba4057877e5c748902f831fc7a7a074d6157b050756ca1145c28dd106`
-- `build_a_share_tushare_source_feature_coverage` exit=`0` report=`/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/a_share_tushare_source_feature_coverage_latest.json` sha256=`4a6d02d23fb138f8faded9ac102d32f7cea6ae66d0e5c1ae575b5d8822b4e349`
-- `evaluate_a_share_tushare_source_deep_sandbox` exit=`0` report=`/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/a_share_tushare_source_deep_sandbox_latest.json` sha256=`bdb7aa1d138b752f0877f13da2dfe2c92fc7f820abc7f202e827791bc1b0f6e5`
-- `analyze_a_share_tushare_strategy_diagnostics` exit=`0` report=`/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/a_share_tushare_strategy_diagnostics_latest.json` sha256=`a3a0eed5612e05faffbaf3f86ac41c705f92542f90ddf47a10409ac0f912235a`
+- `probe_a_share_tushare_strategy_sources` exit=`0` report=`/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/a_share_tushare_strategy_source_probe_latest.json` sha256=`29099e6b251414f60f4b895ef7a2c64d6ac9a7ae4b607aed44cf3c661c3b9807`
+- `build_a_share_tushare_source_hypothesis_queue` exit=`0` report=`/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/a_share_tushare_source_hypothesis_queue_latest.json` sha256=`e8dd20543816fa1ed7ab3f644dd3639f0d70b4fa5c44be231119160596ba8af5`
+- `collect_a_share_dragon_tiger_research_samples` exit=`0` report=`/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/a_share_dragon_tiger_research_samples_latest.json` sha256=`71c950d3b26cfd5a8beac36211a842f2c13790a7ac9de8f364ceade014ec7b34`
+- `build_aegis_strategy_specific_historical_cases` exit=`0` report=`/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/aegis_strategy_specific_historical_cases_latest.json` sha256=`3d4f40cebf2ce1134f3cafb2faee5d2358b0518b3facc32ba6f7b90e197c4eba`
+- `evaluate_aegis_strategy_specific_cases` exit=`0` report=`/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/aegis_strategy_specific_case_evaluation_latest.json` sha256=`5bf917b91f85dfde347e518fa856fedad57c596761250df99317e133da5678c1`
+- `evaluate_a_share_tushare_source_hypotheses` exit=`0` report=`/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/a_share_tushare_source_hypothesis_evaluation_latest.json` sha256=`4a8049f9d9a867d2c0825a410506209c813790d1390ad8e628631d56a752094b`
+- `build_a_share_tushare_source_feature_coverage` exit=`0` report=`/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/a_share_tushare_source_feature_coverage_latest.json` sha256=`bb7d3d5a113503dcaa8321a812d07258116783bd9aab557277ef4ecf75e6356b`
+- `evaluate_a_share_tushare_source_deep_sandbox` exit=`0` report=`/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/a_share_tushare_source_deep_sandbox_latest.json` sha256=`a84912b25691bc1840708352aa707c95ababcc58fee37a10dc36fa3ca1e73e3c`
+- `analyze_a_share_tushare_strategy_diagnostics` exit=`0` report=`/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/a_share_tushare_strategy_diagnostics_latest.json` sha256=`256f0e3c6ec354e0066d6ddb8ef9ac6dbe69500f6e567e6b3622fb6605f97f49`

@@ -1,7 +1,7 @@
 {
   "type": "aegis_strategy_specific_case_evaluation",
   "status": "PASS",
-  "generated_at": "2026-07-12T22:19:19+08:00",
+  "generated_at": "2026-07-12T22:45:48+08:00",
   "thresholds": {
     "min_case_count": 4,
     "min_win_rate": 0.5,
@@ -11,10 +11,10 @@
     "watch_worst_return": -0.12
   },
   "summary": {
-    "candidate_count": 21,
+    "candidate_count": 33,
     "simulation_research_candidate_count": 10,
     "watch_only_count": 3,
-    "downgraded_count": 8,
+    "downgraded_count": 20,
     "user_facing_suggestion_allowed": false,
     "next_stage": "surface dispositions in dashboard and stock assistant brief"
   },
@@ -550,13 +550,328 @@
       "simulation_only": true,
       "user_facing_suggestion_allowed": false,
       "real_trade_allowed": false
+    },
+    {
+      "symbol": "600101",
+      "name": "明星电力",
+      "market": "A",
+      "matched_strategy_ids": [
+        "a_share_short_momentum",
+        "growth_breakout"
+      ],
+      "disposition": "downgraded",
+      "reasons": [
+        "case_count_below_threshold",
+        "win_rate_below_threshold",
+        "average_return_below_threshold",
+        "hard_worst_return_breached"
+      ],
+      "summary": {
+        "case_count": 2,
+        "win_rate": 0.0,
+        "average_return": -0.3932932263814617,
+        "average_max_drawdown": -0.4088235294117648,
+        "best_return": -0.39264705882352946,
+        "worst_return": -0.3939393939393939
+      },
+      "simulation_only": true,
+      "user_facing_suggestion_allowed": false,
+      "real_trade_allowed": false
+    },
+    {
+      "symbol": "300956",
+      "name": "英力股份",
+      "market": "A",
+      "matched_strategy_ids": [
+        "a_share_short_momentum",
+        "growth_breakout"
+      ],
+      "disposition": "downgraded",
+      "reasons": [
+        "case_count_below_threshold",
+        "win_rate_below_threshold",
+        "average_return_below_threshold",
+        "hard_worst_return_breached"
+      ],
+      "summary": {
+        "case_count": 2,
+        "win_rate": 0.0,
+        "average_return": -0.29193318651605826,
+        "average_max_drawdown": -0.32408382264973895,
+        "best_return": -0.2861220121298609,
+        "worst_return": -0.29774436090225564
+      },
+      "simulation_only": true,
+      "user_facing_suggestion_allowed": false,
+      "real_trade_allowed": false
+    },
+    {
+      "symbol": "002869",
+      "name": "金溢科技",
+      "market": "A",
+      "matched_strategy_ids": [
+        "a_share_short_momentum",
+        "growth_breakout"
+      ],
+      "disposition": "downgraded",
+      "reasons": [
+        "case_count_below_threshold",
+        "win_rate_below_threshold",
+        "average_return_below_threshold"
+      ],
+      "summary": {
+        "case_count": 2,
+        "win_rate": 0.0,
+        "average_return": -0.03565656565656572,
+        "average_max_drawdown": -0.16181818181818186,
+        "best_return": -0.01575757575757586,
+        "worst_return": -0.05555555555555558
+      },
+      "simulation_only": true,
+      "user_facing_suggestion_allowed": false,
+      "real_trade_allowed": false
+    },
+    {
+      "symbol": "688693",
+      "name": "锴威特",
+      "market": "A",
+      "matched_strategy_ids": [
+        "a_share_short_momentum",
+        "growth_breakout"
+      ],
+      "disposition": "downgraded",
+      "reasons": [
+        "case_count_below_threshold",
+        "win_rate_below_threshold",
+        "average_return_below_threshold"
+      ],
+      "summary": {
+        "case_count": 1,
+        "win_rate": 0.0,
+        "average_return": -0.1704,
+        "average_max_drawdown": -0.21866666666666668,
+        "best_return": -0.1704,
+        "worst_return": -0.1704
+      },
+      "simulation_only": true,
+      "user_facing_suggestion_allowed": false,
+      "real_trade_allowed": false
+    },
+    {
+      "symbol": "002455",
+      "name": "百川股份",
+      "market": "A",
+      "matched_strategy_ids": [
+        "a_share_short_momentum",
+        "growth_breakout"
+      ],
+      "disposition": "downgraded",
+      "reasons": [
+        "case_count_below_threshold",
+        "win_rate_below_threshold",
+        "average_return_below_threshold",
+        "hard_worst_return_breached"
+      ],
+      "summary": {
+        "case_count": 2,
+        "win_rate": 0.0,
+        "average_return": -0.20387236962094274,
+        "average_max_drawdown": -0.23734177215189878,
+        "best_return": -0.1572926596758818,
+        "worst_return": -0.2504520795660037
+      },
+      "simulation_only": true,
+      "user_facing_suggestion_allowed": false,
+      "real_trade_allowed": false
+    },
+    {
+      "symbol": "603389",
+      "name": "亚振家居",
+      "market": "A",
+      "matched_strategy_ids": [
+        "a_share_short_momentum",
+        "growth_breakout"
+      ],
+      "disposition": "downgraded",
+      "reasons": [
+        "case_count_below_threshold",
+        "win_rate_below_threshold",
+        "average_return_below_threshold"
+      ],
+      "summary": {
+        "case_count": 2,
+        "win_rate": 0.0,
+        "average_return": -0.14240386955463613,
+        "average_max_drawdown": -0.21708486621218448,
+        "best_return": -0.11785714285714277,
+        "worst_return": -0.1669505962521295
+      },
+      "simulation_only": true,
+      "user_facing_suggestion_allowed": false,
+      "real_trade_allowed": false
+    },
+    {
+      "symbol": "920002",
+      "name": "万达轴承",
+      "market": "A",
+      "matched_strategy_ids": [
+        "a_share_short_momentum",
+        "growth_breakout"
+      ],
+      "disposition": "downgraded",
+      "reasons": [
+        "case_count_below_threshold",
+        "win_rate_below_threshold",
+        "average_return_below_threshold"
+      ],
+      "summary": {
+        "case_count": 2,
+        "win_rate": 0.0,
+        "average_return": -0.03749565450982878,
+        "average_max_drawdown": -0.1407555394115511,
+        "best_return": -0.002875924404272867,
+        "worst_return": -0.07211538461538469
+      },
+      "simulation_only": true,
+      "user_facing_suggestion_allowed": false,
+      "real_trade_allowed": false
+    },
+    {
+      "symbol": "603863",
+      "name": "松炀资源",
+      "market": "A",
+      "matched_strategy_ids": [
+        "a_share_short_momentum",
+        "growth_breakout"
+      ],
+      "disposition": "downgraded",
+      "reasons": [
+        "case_count_below_threshold"
+      ],
+      "summary": {
+        "case_count": 2,
+        "win_rate": 0.5,
+        "average_return": 0.05790883990790724,
+        "average_max_drawdown": -0.14364364364364368,
+        "best_return": 0.13000580383052807,
+        "worst_return": -0.014188124014713588
+      },
+      "simulation_only": true,
+      "user_facing_suggestion_allowed": false,
+      "real_trade_allowed": false
+    },
+    {
+      "symbol": "001376",
+      "name": "百通能源",
+      "market": "A",
+      "matched_strategy_ids": [
+        "a_share_short_momentum",
+        "growth_breakout"
+      ],
+      "disposition": "downgraded",
+      "reasons": [
+        "case_count_below_threshold",
+        "win_rate_below_threshold",
+        "average_return_below_threshold",
+        "hard_worst_return_breached"
+      ],
+      "summary": {
+        "case_count": 2,
+        "win_rate": 0.0,
+        "average_return": -0.17033640635416153,
+        "average_max_drawdown": -0.19711980485974295,
+        "best_return": -0.13716404077849853,
+        "worst_return": -0.20350877192982453
+      },
+      "simulation_only": true,
+      "user_facing_suggestion_allowed": false,
+      "real_trade_allowed": false
+    },
+    {
+      "symbol": "605258",
+      "name": "协和电子",
+      "market": "A",
+      "matched_strategy_ids": [
+        "a_share_short_momentum",
+        "growth_breakout"
+      ],
+      "disposition": "downgraded",
+      "reasons": [
+        "case_count_below_threshold",
+        "win_rate_below_threshold",
+        "average_return_below_threshold"
+      ],
+      "summary": {
+        "case_count": 2,
+        "win_rate": 0.0,
+        "average_return": -0.16447916326463963,
+        "average_max_drawdown": -0.21536589014830881,
+        "best_return": -0.14925373134328357,
+        "worst_return": -0.17970459518599569
+      },
+      "simulation_only": true,
+      "user_facing_suggestion_allowed": false,
+      "real_trade_allowed": false
+    },
+    {
+      "symbol": "301361",
+      "name": "众智科技",
+      "market": "A",
+      "matched_strategy_ids": [
+        "a_share_short_momentum",
+        "growth_breakout"
+      ],
+      "disposition": "downgraded",
+      "reasons": [
+        "case_count_below_threshold",
+        "win_rate_below_threshold",
+        "average_return_below_threshold",
+        "hard_worst_return_breached"
+      ],
+      "summary": {
+        "case_count": 2,
+        "win_rate": 0.0,
+        "average_return": -0.16568957059618816,
+        "average_max_drawdown": -0.2099464903997481,
+        "best_return": -0.12909632571996033,
+        "worst_return": -0.202282815472416
+      },
+      "simulation_only": true,
+      "user_facing_suggestion_allowed": false,
+      "real_trade_allowed": false
+    },
+    {
+      "symbol": "002425",
+      "name": "凯撒文化",
+      "market": "A",
+      "matched_strategy_ids": [
+        "a_share_short_momentum",
+        "growth_breakout"
+      ],
+      "disposition": "downgraded",
+      "reasons": [
+        "case_count_below_threshold",
+        "win_rate_below_threshold",
+        "average_return_below_threshold"
+      ],
+      "summary": {
+        "case_count": 1,
+        "win_rate": 0.0,
+        "average_return": -0.11371237458193995,
+        "average_max_drawdown": -0.17391304347826086,
+        "best_return": -0.11371237458193995,
+        "worst_return": -0.11371237458193995
+      },
+      "simulation_only": true,
+      "user_facing_suggestion_allowed": false,
+      "real_trade_allowed": false
     }
   ],
   "source_reports": {
     "strategy_specific_historical_cases": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/aegis_strategy_specific_historical_cases_latest.json"
   },
   "source_hashes": {
-    "strategy_specific_historical_cases": "3bcb6b1ba52ec88ca4c1795e1977f638d9e8ffa4a0ea49e702d5460bde00527d"
+    "strategy_specific_historical_cases": "3d4f40cebf2ce1134f3cafb2faee5d2358b0518b3facc32ba6f7b90e197c4eba"
   },
   "checks": {
     "source_pass": true,

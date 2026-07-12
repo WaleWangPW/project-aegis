@@ -40,6 +40,12 @@ COMMANDS = [
         "marker": REPORTS / "A_SHARE_TUSHARE_SOURCE_HYPOTHESIS_QUEUE_PASS.marker",
     },
     {
+        "name": "collect_a_share_dragon_tiger_research_samples",
+        "argv": ["scripts/collect_a_share_dragon_tiger_research_samples.py"],
+        "report": REPORTS / "a_share_dragon_tiger_research_samples_latest.json",
+        "marker": REPORTS / "A_SHARE_DRAGON_TIGER_RESEARCH_SAMPLES_PASS.marker",
+    },
+    {
         "name": "build_aegis_strategy_specific_historical_cases",
         "argv": ["scripts/build_aegis_strategy_specific_historical_cases.py"],
         "report": REPORTS / "aegis_strategy_specific_historical_cases_latest.json",
@@ -168,6 +174,7 @@ def build_report(command_results: list[dict[str, Any]], *, prepare_manifest: dic
     feature = load_json(REPORTS / "a_share_tushare_source_feature_coverage_latest.json")
     deep = load_json(REPORTS / "a_share_tushare_source_deep_sandbox_latest.json")
     diagnostics = load_json(REPORTS / "a_share_tushare_strategy_diagnostics_latest.json")
+    dragon = load_json(REPORTS / "a_share_dragon_tiger_research_samples_latest.json")
     blockers = [
         f"{item['name']} exit_code={item['exit_code']}"
         for item in command_results
@@ -187,6 +194,14 @@ def build_report(command_results: list[dict[str, Any]], *, prepare_manifest: dic
             "a_share_research_sample_candidate_count": cases.get("summary", {}).get(
                 "a_share_research_sample_candidate_count"
             ),
+            "a_share_dragon_tiger_research_sample_candidate_count": cases.get("summary", {}).get(
+                "a_share_dragon_tiger_research_sample_candidate_count"
+            ),
+            "a_share_dragon_tiger_research_sample_case_count": cases.get("summary", {}).get(
+                "a_share_dragon_tiger_research_sample_case_count"
+            ),
+            "dragon_tiger_sample_count": dragon.get("summary", {}).get("sample_count"),
+            "dragon_tiger_event_count": dragon.get("summary", {}).get("event_count"),
             "historical_case_count": cases.get("summary", {}).get("historical_case_count"),
             "a_share_case_count": cases.get("summary", {}).get("a_share_case_count"),
             "simulation_research_candidate_count": case_eval.get("summary", {}).get(

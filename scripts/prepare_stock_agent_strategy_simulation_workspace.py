@@ -21,6 +21,8 @@ FILES_TO_MIRROR = [
     REPORTS / "a_share_tushare_strategy_source_probe_latest.md",
     REPORTS / "a_share_tushare_source_hypothesis_queue_latest.json",
     REPORTS / "a_share_tushare_source_hypothesis_queue_latest.md",
+    REPORTS / "a_share_dragon_tiger_research_samples_latest.json",
+    REPORTS / "a_share_dragon_tiger_research_samples_latest.md",
     REPORTS / "a_share_tushare_source_hypothesis_evaluation_latest.json",
     REPORTS / "a_share_tushare_source_hypothesis_evaluation_latest.md",
     REPORTS / "a_share_tushare_source_feature_coverage_latest.json",
@@ -68,6 +70,7 @@ top10 holders/floatholders, holder number, daily_basic/stk_factor.
   - `make stock-agent-a-share-strategy-cycle-managed`
   - `make probe-a-share-tushare-strategy-sources`
   - `make build-a-share-tushare-source-hypotheses`
+  - `make collect-a-share-dragon-tiger-research-samples`
   - `make build-strategy-specific-historical-cases`
   - `make evaluate-strategy-specific-cases`
   - `make evaluate-a-share-tushare-source-hypotheses`
@@ -90,6 +93,7 @@ top10 holders/floatholders, holder number, daily_basic/stk_factor.
 
 - `a_share_tushare_strategy_source_probe_latest.json`
 - `a_share_tushare_source_hypothesis_queue_latest.json`
+- `a_share_dragon_tiger_research_samples_latest.json`
 - `a_share_tushare_source_hypothesis_evaluation_latest.json`
 - `a_share_tushare_source_feature_coverage_latest.json`
 - `a_share_tushare_source_deep_sandbox_latest.json`
@@ -107,12 +111,13 @@ Return:
 2. PASS/blocked modules.
 3. Candidate symbols affected.
 4. Historical case counts and data gaps.
-5. Per-hypothesis proxy dispositions: `proxy_pass`, `needs_more_a_share_cases`, or `proxy_fail`.
-6. Source-specific feature coverage and gaps for moneyflow/top_list/top_inst/holders/factors.
-7. Deep sandbox dispositions: `DEEP_SANDBOX_PASS_CANDIDATE` or `DEEP_SANDBOX_FAIL`.
-8. Diagnostics priority actions: feature gap collection, signal tightening, risk veto retest, or hypothesis rework.
-9. Whether any strategy can enter simulation research.
-10. Confirmation that no broker/order/webhook/secret path was touched.
+5. Dragon-tiger/hot-money sample counts and event-aligned case counts.
+6. Per-hypothesis proxy dispositions: `proxy_pass`, `needs_more_a_share_cases`, or `proxy_fail`.
+7. Source-specific feature coverage and gaps for moneyflow/top_list/top_inst/holders/factors.
+8. Deep sandbox dispositions: `DEEP_SANDBOX_PASS_CANDIDATE` or `DEEP_SANDBOX_FAIL`.
+9. Diagnostics priority actions: feature gap collection, signal tightening, risk veto retest, or hypothesis rework.
+10. Whether any strategy can enter simulation research.
+11. Confirmation that no broker/order/webhook/secret path was touched.
 """
 
 

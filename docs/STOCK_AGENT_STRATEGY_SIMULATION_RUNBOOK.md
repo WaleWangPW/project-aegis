@@ -28,6 +28,7 @@ Run from the Project Aegis repo:
 ```bash
 make probe-a-share-tushare-strategy-sources
 make build-a-share-tushare-source-hypotheses
+make collect-a-share-dragon-tiger-research-samples
 make build-strategy-specific-historical-cases
 make evaluate-strategy-specific-cases
 make evaluate-a-share-tushare-source-hypotheses
@@ -40,12 +41,25 @@ Expected outputs:
 
 - `data/reports/a_share_tushare_strategy_source_probe_latest.json`
 - `data/reports/a_share_tushare_source_hypothesis_queue_latest.json`
+- `data/reports/a_share_dragon_tiger_research_samples_latest.json`
 - `data/reports/a_share_tushare_source_hypothesis_evaluation_latest.json`
 - `data/reports/a_share_tushare_source_feature_coverage_latest.json`
 - `data/reports/a_share_tushare_source_deep_sandbox_latest.json`
 - `data/reports/aegis_strategy_specific_historical_cases_latest.json`
 - `data/reports/aegis_strategy_specific_case_evaluation_latest.json`
 - `~/.openclaw/agents/stock-agent/workspace/project-aegis/AEGIS_STOCK_AGENT_STRATEGY_SIMULATION_TASK.md`
+
+## Dragon-Tiger / Hot-Money Sample Rule
+
+`make collect-a-share-dragon-tiger-research-samples` may use Tushare
+`top_list` / `top_inst`, but only to build research samples from dates already
+covered by the local historical daily cache and with a 20-trading-day forward
+window available. These samples must stay `research_sample_only=true`,
+`user_facing_suggestion_allowed=false`, and `real_trade_allowed=false`.
+
+Historical cases created from these samples must use the actual
+`event_trade_dates` as entry dates. This prevents using recent hot-money events
+as if they were available in older historical windows.
 
 ## Escalate To Codex When
 
@@ -62,10 +76,11 @@ Stock agent reports must include:
 1. Commands and exit codes.
 2. PASS / EMPTY / PERMISSION_BLOCKED / ERROR modules.
 3. A-share source hypotheses created from PASS modules.
-4. Per-hypothesis proxy disposition and whether deeper source-specific sandbox is needed.
-5. Historical case count and data gaps.
-6. Source-specific feature coverage and gaps for moneyflow, dragon-tiger seats,
+4. Dragon-tiger / hot-money sample count, event count, and event-aligned case count.
+5. Per-hypothesis proxy disposition and whether deeper source-specific sandbox is needed.
+6. Historical case count and data gaps.
+7. Source-specific feature coverage and gaps for moneyflow, dragon-tiger seats,
    holders, holder number, factors, and governance.
-7. Deep sandbox disposition: `DEEP_SANDBOX_PASS_CANDIDATE` or `DEEP_SANDBOX_FAIL`.
-8. Which symbols remain simulation candidates, watch-only, or downgraded.
-9. Explicit safety statement: no broker, no order, no webhook, no secret output.
+8. Deep sandbox disposition: `DEEP_SANDBOX_PASS_CANDIDATE` or `DEEP_SANDBOX_FAIL`.
+9. Which symbols remain simulation candidates, watch-only, or downgraded.
+10. Explicit safety statement: no broker, no order, no webhook, no secret output.

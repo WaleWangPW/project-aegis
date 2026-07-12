@@ -1,11 +1,11 @@
 status=PASS
-run_id=a_share_tushare_source_feature_coverage_20260712T221920
-generated_at=2026-07-12T22:19:45+08:00
+run_id=a_share_tushare_source_feature_coverage_20260712T224548
+generated_at=2026-07-12T22:46:46+08:00
 report_json=/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/a_share_tushare_source_feature_coverage_latest.json
-report_json_sha256=4a6d02d23fb138f8faded9ac102d32f7cea6ae66d0e5c1ae575b5d8822b4e349
+report_json_sha256=bb7d3d5a113503dcaa8321a812d07258116783bd9aab557277ef4ecf75e6356b
 ready_for_deep_sandbox_count=5
 feature_gap_count=1
-observation_count=360
+observation_count=558
 network_used=true
 raw_payload_saved=false
 user_facing_suggestion_allowed=false
