@@ -18,6 +18,43 @@ Aegis should not only follow stocks manually supplied by the user. It should scr
 | `growth_breakout` | CAN SLIM-style growth breakout | Research high-growth breakouts only | growth, relative strength, volume/price breakout, market direction | Candidate strategy |
 | `ai_photonics_supply_chain` | Serenity / “白毛股神” style AI photonics supply-chain thesis | Thematic research, not automatic recommendation | AI infrastructure bottleneck, photonics/optical interconnect, upstream scarcity, revenue ramp evidence, valuation/risk veto | New research candidate |
 
+## Next A-Share Tushare Strategy Modules
+
+These modules are requested by the user for the next strategy expansion. They
+must improve screening and risk explanation only. They must not create real
+orders, broker actions, webhooks, or direct buy/sell commands.
+
+| Module | Tushare-style source | Strategy Use | Required Guardrail |
+| --- | --- | --- | --- |
+| 主力资金流向 | `moneyflow` | Detect large-order / medium-order / small-order flow structure; distinguish accumulation from retail chase. | Require multi-day continuity and price/volume confirmation; single-day inflow is not enough. |
+| 龙虎榜 / 游资席位 | `top_list`, `top_inst` | Detect abnormal short-cycle participation, institution seats, and hot-money relay risk. | Treat as volatility/risk signal first; do not promote limit-up names without sandbox validation. |
+| 机构持仓与筹码集中 | `top10_holders`, `top10_floatholders`, `stk_holdernumber` | Detect stable long-money participation, concentration changes, and crowded ownership. | Require reporting-date awareness and avoid using future holder disclosures. |
+| 机构调研热度 | `stk_survey` or equivalent purchased/local source | Use research attention as a lead for quality/growth follow-up. | Social/research heat is lead-only; must be confirmed by fundamentals and price behavior. |
+| 高管增减持 / 治理 | `stk_rewards` plus holder-trade style data where available | Add governance and insider-alignment risk/bonus factor. | Negative governance or large reduction can veto, but positive signal cannot bypass risk gate. |
+| A 股因子与日线基础池 | `stk_factor`, `daily`, `daily_basic` | Maintain baseline liquidity, valuation, turnover, volatility, and momentum screen. | Existing point-in-time and hash audit rules still apply. |
+
+Implementation order:
+
+1. Add read-only data availability probe for the above sources.
+2. Build a non-secret metadata report: source available, fields available,
+   latest date, sample count, and gaps.
+3. Build strategy hypotheses from each module.
+4. Run historical sandbox with point-in-time dates.
+5. Only then allow the module to affect Dashboard ranking.
+
+Current priority for the next implementation batch:
+
+1. `moneyflow` read-only probe: confirm available dates, fields, sample counts,
+   and whether large/medium/small order fields are populated for today's A-share
+   universe.
+2. `top_list` / `top_inst` read-only probe: confirm recent dragon-tiger list
+   coverage and seat-level fields without treating hot-money activity as a buy
+   signal.
+3. `top10_holders` / `top10_floatholders` / `stk_holdernumber` read-only probe:
+   build a point-in-time disclosure-date guardrail before using ownership data.
+4. Optional permission check for `stk_survey` and holder-change style data; if
+   not available, keep those modules visible as blocked research sources.
+
 ## Serenity / “白毛股神” Notes
 
 Observed from the user's AI-news assistant archive and public web search: the theme centers on AI infrastructure moving from electrical interconnects toward photonics/optical interconnects, then looking for narrow supply-chain constraints rather than simply buying obvious mega-cap AI names.

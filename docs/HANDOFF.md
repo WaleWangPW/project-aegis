@@ -8,14 +8,44 @@
 
 **Accepted engineering baseline:** `P25.6 PASS`
 
+**A-share strategy implementation update:** Aegis now has a real read-only
+Tushare strategy-source probe for the next A-share strategy layer. Command:
+`make probe-a-share-tushare-strategy-sources`. Latest report:
+`data/reports/a_share_tushare_strategy_source_probe_latest.json`, status
+`PASS`, latest trade date `20260710`, `10` endpoints probed, `9` usable, `6`
+priority endpoints ready for historical sandbox. Available modules include
+`moneyflow`, `top_list`, `top_inst`, `top10_holders`, `top10_floatholders`,
+`stk_holdernumber`, `stk_factor`, `daily_basic`, and `stk_rewards`.
+`stk_survey` is currently blocked/error and must not be used as evidence yet.
+The report stores metadata, row counts, columns, and hashes only; it does not
+store raw payloads or secrets.
+
+**OpenClaw stock-agent handoff:** daily A-share strategy maintenance should
+now be run by OpenClaw `stock-agent`, not Codex. Run `make
+stock-agent-a-share-strategy-cycle` from the repo to execute: Tushare source
+probe, strategy-specific historical case build, case evaluation, and stock-agent
+workspace preparation. The task packet is written to
+`~/.openclaw/agents/stock-agent/workspace/project-aegis/AEGIS_STOCK_AGENT_STRATEGY_SIMULATION_TASK.md`,
+with mirrored evidence reports and safety rules. Codex should only review
+blocked sources, changed strategy ranking, or evidence-gate/contract/security
+boundaries.
+
+**Dashboard strategy page update:** `http://localhost:8080/dashboard/index.html`
+now includes a `策略` page. It reads
+`a_share_tushare_strategy_source_probe_latest.json` and shows real Tushare
+probe status (`PASS`, usable endpoint count, module-level PASS/blocked status)
+next to the existing strategy slate and historical case status. Browser QA
+verified desktop and 390px mobile have no horizontal overflow and no console
+warnings/errors.
+
 **Dashboard navigation update:** the live page at
 `http://localhost:8080/dashboard/index.html` is no longer a single long report.
-It now uses a multi-page app shell with a left navigation rail and five
-focused views: `今日`, `选股`, `风险`, `持仓`, and `证据`. The default `今日`
+It now uses a multi-page app shell with a left navigation rail and six
+focused views: `今日`, `选股`, `策略`, `风险`, `持仓`, and `证据`. The default `今日`
 view presents the decision, four prominent action buttons, and only three
 candidate previews. The `选股` view now exposes Top candidate cards in the
 first viewport instead of burying them below explanations. Browser QA verified
-all five views switch correctly, desktop/mobile have no horizontal overflow,
+the main views switch correctly, desktop/mobile have no horizontal overflow,
 and there are no console warnings/errors. Safety copy remains visible:
 simulation research only, no broker API, no order placement, no trading
 webhook.

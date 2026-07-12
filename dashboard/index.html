@@ -7,7 +7,7 @@
   <meta name="aegis-dashboard-contract" content="2.0">
   <title>Project Aegis · 每日决策</title>
   <link rel="icon" href="data:,">
-  <link rel="stylesheet" href="v2.css?v=20260712l">
+  <link rel="stylesheet" href="v2.css?v=20260712m">
 </head>
 <body>
   <div class="app-frame">
@@ -22,6 +22,7 @@
       <nav class="page-nav">
         <button class="nav-item active" type="button" data-page="today"><span>今日</span><small>结论和下一步</small></button>
         <button class="nav-item" type="button" data-page="selection"><span>选股</span><small>Top 候选</small></button>
+        <button class="nav-item" type="button" data-page="strategy"><span>策略</span><small>资金和因子</small></button>
         <button class="nav-item" type="button" data-page="risk"><span>风险</span><small>阻塞和退出</small></button>
         <button class="nav-item" type="button" data-page="portfolio"><span>持仓</span><small>监控对象</small></button>
         <button class="nav-item" type="button" data-page="evidence"><span>证据</span><small>回测和系统</small></button>
@@ -45,6 +46,10 @@
         <section id="action" class="section command-section" aria-labelledby="action-title"><h2 id="action-title">今日选股</h2><div id="action-content"></div></section>
       </section>
 
+      <section id="page-strategy" class="page-view" data-page-view="strategy">
+        <section class="section page-section strategy-page" aria-labelledby="strategy-title"><header class="page-section-head"><div><h2 id="strategy-title">策略工作台</h2><p>当前策略、Tushare 增强策略、历史验证状态</p></div><button class="page-jump" type="button" data-page-jump="selection">回到选股</button></header><div id="strategy-content"></div></section>
+      </section>
+
       <section id="page-risk" class="page-view" data-page-view="risk">
         <section id="risk" class="section drawer-section page-section"><header class="page-section-head"><div><h2>风险阻塞</h2><p id="risk-summary">加载中</p></div><button class="page-jump" type="button" data-page-jump="portfolio">查看持仓</button></header><div id="risk-content" class="grid risk-grid details-content"></div></section>
       </section>
@@ -62,6 +67,6 @@
       </section>
     </main>
   </div>
-  <script src="v2.js?v=20260712l"></script>
+  <script src="v2.js?v=20260712m"></script>
 </body>
 </html>

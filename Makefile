@@ -90,6 +90,24 @@ daily-real-scene-pilot:
 daily-real-scene-pilot-dry-run:
 	.venv/bin/python scripts/run_aegis_daily_real_scene_pilot.py --send-dry-run
 
+probe-a-share-tushare-strategy-sources:
+	.venv/bin/python scripts/probe_a_share_tushare_strategy_sources.py
+
+prepare-stock-agent-strategy-simulation:
+	.venv/bin/python scripts/prepare_stock_agent_strategy_simulation_workspace.py
+
+build-strategy-specific-historical-cases:
+	.venv/bin/python scripts/build_aegis_strategy_specific_historical_cases.py
+
+evaluate-strategy-specific-cases:
+	.venv/bin/python scripts/evaluate_aegis_strategy_specific_cases.py
+
+stock-agent-a-share-strategy-cycle:
+	.venv/bin/python scripts/probe_a_share_tushare_strategy_sources.py
+	.venv/bin/python scripts/build_aegis_strategy_specific_historical_cases.py
+	.venv/bin/python scripts/evaluate_aegis_strategy_specific_cases.py
+	.venv/bin/python scripts/prepare_stock_agent_strategy_simulation_workspace.py
+
 p22-6-full-pipeline:
 	.venv/bin/python scripts/run_p22_6_full_pipeline_terminal.py
 
