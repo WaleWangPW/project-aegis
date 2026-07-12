@@ -8,6 +8,30 @@
 
 **Accepted engineering baseline:** `P25.6 PASS`
 
+**A-share strategy diagnostics + UI clarity update:** Aegis now has a
+stock-agent friendly diagnostic layer for A-share Tushare source strategies.
+Command: `make analyze-a-share-tushare-strategy-diagnostics`. Latest report:
+`data/reports/a_share_tushare_strategy_diagnostics_latest.json`, status
+`PASS`, `a_share_case_count=40`, `rankable_strategy_count=0`,
+`priority_action_count=5`, `feature_gap_count=1`, and
+`ranking_impact_allowed=false`. The diagnostics separate feature gaps from
+bad historical performance: dragon-tiger/hot-money requires `top_list/top_inst`
+history collection; institutional ownership and governance/reward signals need
+tighter definitions; capital flow needs a risk-veto retest. The managed
+stock-agent cycle now includes this step and exited `0` with `command_count=8`;
+latest managed report SHA256:
+`a67a2efadadd9cf1549eecbe1e3031ec90bb0d4d0d096814a4b1d355ad4d0ef0`.
+
+**Dashboard UI clarity update:** the live Dashboard cache version is now
+`20260712r`. The `选股` page secondary modules now render as explicit cards
+with `展开/收起` controls instead of loose pills in a large empty area. The
+`策略` page now includes an A-share strategy roadmap for moneyflow, dragon
+tiger/hot-money, institutional holders, holder count, factor/liquidity, and
+survey research, followed by diagnostics and deep sandbox evidence. Browser
+control QA verified `选股` and `策略`: no horizontal overflow, visible 60px
+candidate action buttons, 4 secondary entry cards, 6 roadmap cards, diagnostics
+visible, and safety copy still states no real trading / no broker / no order.
+
 **Dashboard usability update:** the selection page was tightened into a clearer
 workstation flow: Top 3 research cards first, stronger action bars, explicit
 local/Feishu feedback status, and a compact entry grid for more candidates,

@@ -69,6 +69,12 @@ COMMANDS = [
         "report": REPORTS / "a_share_tushare_source_deep_sandbox_latest.json",
         "marker": REPORTS / "A_SHARE_TUSHARE_SOURCE_DEEP_SANDBOX_PASS.marker",
     },
+    {
+        "name": "analyze_a_share_tushare_strategy_diagnostics",
+        "argv": ["scripts/analyze_a_share_tushare_strategy_diagnostics.py"],
+        "report": REPORTS / "a_share_tushare_strategy_diagnostics_latest.json",
+        "marker": REPORTS / "A_SHARE_TUSHARE_STRATEGY_DIAGNOSTICS_PASS.marker",
+    },
 ]
 
 
@@ -161,6 +167,7 @@ def build_report(command_results: list[dict[str, Any]], *, prepare_manifest: dic
     source_eval = load_json(REPORTS / "a_share_tushare_source_hypothesis_evaluation_latest.json")
     feature = load_json(REPORTS / "a_share_tushare_source_feature_coverage_latest.json")
     deep = load_json(REPORTS / "a_share_tushare_source_deep_sandbox_latest.json")
+    diagnostics = load_json(REPORTS / "a_share_tushare_strategy_diagnostics_latest.json")
     blockers = [
         f"{item['name']} exit_code={item['exit_code']}"
         for item in command_results
@@ -191,6 +198,8 @@ def build_report(command_results: list[dict[str, Any]], *, prepare_manifest: dic
             "feature_gap_count": feature.get("summary", {}).get("feature_gap_count"),
             "deep_sandbox_pass_candidate_count": deep.get("summary", {}).get("deep_sandbox_pass_candidate_count"),
             "deep_sandbox_fail_count": deep.get("summary", {}).get("deep_sandbox_fail_count"),
+            "rankable_strategy_count": diagnostics.get("summary", {}).get("rankable_strategy_count"),
+            "strategy_priority_action_count": diagnostics.get("summary", {}).get("priority_action_count"),
             "ranking_impact_allowed": deep.get("summary", {}).get("ranking_impact_allowed", False),
             "user_facing_suggestion_allowed": False,
         },

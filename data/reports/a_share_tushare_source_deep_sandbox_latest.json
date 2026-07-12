@@ -1,8 +1,8 @@
 {
   "type": "a_share_tushare_source_deep_sandbox",
   "status": "PASS",
-  "generated_at": "2026-07-12T21:52:30+08:00",
-  "run_id": "a_share_tushare_source_deep_sandbox_20260712T215114",
+  "generated_at": "2026-07-12T22:21:01+08:00",
+  "run_id": "a_share_tushare_source_deep_sandbox_20260712T221945",
   "command": "scripts/evaluate_a_share_tushare_source_deep_sandbox.py",
   "thresholds": {
     "min_feature_coverage": 0.5,
@@ -3541,9 +3541,9 @@
     "source_feature_coverage": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/a_share_tushare_source_feature_coverage_latest.json"
   },
   "source_hashes": {
-    "source_hypothesis_queue": "460b82b27f9459cc7e01dce6bf52f638e30c0763720fdf42ff509adec1a18194",
-    "strategy_specific_historical_cases": "3bea698cfe824e6b4468a0bb0fa0dda1d009be55926f20083bc2be375e060296",
-    "source_feature_coverage": "83fd643775cc1e528f2ad880b412dbdb9678d1a618709c4177b9421bd4266186"
+    "source_hypothesis_queue": "298465928a643ff43908ec3b6c92aa3bc62b1fa6ec8e8c8c4d9e81bbe657bdd8",
+    "strategy_specific_historical_cases": "3bcb6b1ba52ec88ca4c1795e1977f638d9e8ffa4a0ea49e702d5460bde00527d",
+    "source_feature_coverage": "4a6d02d23fb138f8faded9ac102d32f7cea6ae66d0e5c1ae575b5d8822b4e349"
   },
   "checks": {
     "feature_coverage_pass": true,

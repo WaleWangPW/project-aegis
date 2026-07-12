@@ -1,7 +1,7 @@
 # Aegis Strategy-Specific Case Evaluation
 
 - Status: PASS
-- Generated At: 2026-07-12T21:50:49+08:00
+- Generated At: 2026-07-12T22:19:19+08:00
 - Candidate Count: 21
 - Simulation Research Candidates: 10
 - Watch Only: 3
