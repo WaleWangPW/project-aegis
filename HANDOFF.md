@@ -1,5 +1,21 @@
 # Project Aegis HANDOFF
 
+## 2026-07-12 Update: UI Design Starter Ready
+
+- UI design can now start from the current Aegis product state.
+- Added `docs/UI_DESIGN_STARTER.md` as the main UI design kickoff handoff.
+- Added `docs/UI_MOCKUP_BRIEF.md` for Canva/Figma mockup boards.
+- Expanded `dashboard/v2_ui_spec.md` into a design-ready Dashboard surface spec.
+- Design baseline uses current real data: 30 total candidates, 13 research candidates, 9 news-enriched candidates, 52 historical cases, 0 data gaps, 8 simulation research candidates, 2 watch-only candidates, and 3 downgraded candidates.
+- Recommended visual direction: Soft Structuralism + Asymmetrical Bento, warm light command-room UI, double-bezel cards, evidence-first hierarchy.
+- Validation run:
+  - UI design docs exist: `docs/UI_DESIGN_STARTER.md`, `docs/UI_MOCKUP_BRIEF.md`, `dashboard/v2_ui_spec.md`.
+  - `node --check dashboard/v2.js` exit code `0`.
+  - `curl -I http://localhost:8080/dashboard/index.html` returned `200 OK`.
+  - Design brief numbers verified against current JSON reports with `jq`.
+- Safety boundary unchanged: design must remain simulation-only; no broker API, no webhook, no order placement, no buy/sell/order UI.
+- Next stage: create actual visual mockups for Desktop Daily Command, Mobile Daily Brief, Candidate Card System, Historical Evidence Board, and Stock Assistant Push Card.
+
 ## 2026-07-12 Update: Strategy-Specific Historical Cases V1
 
 - GitHub connectivity checked with `gh`: connected account is `WaleWangPW`.
