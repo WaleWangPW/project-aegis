@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Project Aegis 当前模拟建议简报</title>
+<style>
+body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; max-width: 920px; margin: 40px auto; padding: 0 20px; line-height: 1.65; color: #111827; background: #f8fafc; }
+main { background: white; border: 1px solid #e5e7eb; border-radius: 18px; padding: 32px; box-shadow: 0 12px 40px rgba(15,23,42,.08); }
+h1 { font-size: 30px; margin-top: 0; }
+h2 { margin-top: 34px; padding-top: 18px; border-top: 1px solid #e5e7eb; }
+h3 { color: #0f766e; margin-top: 26px; }
+.bullet::before { content: "• "; color: #0f766e; font-weight: 700; }
+code { background: #f1f5f9; padding: 2px 6px; border-radius: 6px; }
+</style>
+</head>
+<body><main>
+<h1>Project Aegis 当前模拟建议简报</h1>
+
+<p class="bullet">状态：`PASS`</p>
+<p class="bullet">阶段：`V2.14-E Current Usable Simulation Suggestion Brief`</p>
+<p class="bullet">候选数量：`1`</p>
+<p class="bullet">候选标的：`[&#x27;00700.HK&#x27;]`</p>
+<p class="bullet">阻断数量：`5`</p>
+<p class="bullet">阻断标的：`[&#x27;00005.HK&#x27;, &#x27;00941.HK&#x27;, &#x27;600036.SH&#x27;, &#x27;600519.SH&#x27;, &#x27;601398.SH&#x27;]`</p>
+<p class="bullet">真实交易允许：`False`</p>
+
+<h2>现在能做什么</h2>
+
+<p class="bullet">Aegis 已能通过批准 API 路线读取外部数据；本简报复用已验收的 V2.14-D evidence，不重新联网。</p>
+<p class="bullet">V2.14-C 已对 refreshed A/H 候选做历史沙盘；只有 H 股低波股息策略通过，A 股防御策略未通过，缺覆盖标的继续阻断。</p>
+<p class="bullet">当前建议来自已研究的低波/股息/防御类策略假设，并经过历史沙盘和 Suggestion Gate。</p>
+<p class="bullet">当前可给出 1 条 simulation-only 观察候选：00700.HK。你必须在外部软件自行核对并手动决策，再把截图、价格、日期或文字判断回传给 Aegis 做复盘。</p>
+
+<h2>你可以怎么用</h2>
+
+<p class="bullet">把 00700.HK 加入模拟观察清单。</p>
+<p class="bullet">在外部行情或券商软件手动核对实时价格、公告、新闻事件、持仓冲突和个人风险预算。</p>
+<p class="bullet">如果你手动做了模拟或真实外部动作，可把截图、价格、日期和文字判断回传给 Aegis 做复盘证据。</p>
+
+<h2>不能做什么</h2>
+
+<p class="bullet">Aegis 不真实下单。</p>
+<p class="bullet">Aegis 不连接 Broker API。</p>
+<p class="bullet">Aegis 不使用 trading webhook。</p>
+<p class="bullet">Aegis 不给实时价格。</p>
+<p class="bullet">Aegis 不给仓位数量。</p>
+<p class="bullet">Aegis 不把小样本 sandbox PASS 解释成正式策略稳定通过。</p>
+
+<h2>模拟候选</h2>
+
+<h3>00700.HK</h3>
+
+<p class="bullet">市场：`H`</p>
+<p class="bullet">状态：`simulation_candidate`</p>
+<p class="bullet">动作：可加入模拟观察清单；如果你感兴趣，只能在外部软件手动核对实时价格、公告、新闻、持仓冲突和个人风险预算，再决定是否记录一笔纸面模拟。</p>
+<p class="bullet">覆盖状态：`historical_case_available`</p>
+<p class="bullet">沙盘状态：`PASS`</p>
+<p class="bullet">样本数：`1`</p>
+<p class="bullet">win_rate：`1.0`</p>
+<p class="bullet">average_return：`0.11297071129707119`</p>
+<p class="bullet">max_drawdown：`-0.01115760111576014`</p>
+<p class="bullet">说明：00700.HK 是本轮 refreshed candidate 中唯一通过历史沙盘和 Suggestion Gate 的模拟候选。它不是实盘买卖建议，也不包含实时价格、仓位或订单。</p>
+<p class="bullet">证据数：`2`</p>
+
+
+<h2>阻断标的</h2>
+
+<h3>600519.SH</h3>
+
+<p class="bullet">市场：`A`</p>
+<p class="bullet">阻断原因：`[&#x27;历史沙盘未通过&#x27;]`</p>
+<p class="bullet">覆盖状态：`historical_case_available`</p>
+<p class="bullet">沙盘状态：`FAIL`</p>
+<p class="bullet">说明：600519.SH 当前被阻断，原因是：历史沙盘未通过。</p>
+
+<h3>600036.SH</h3>
+
+<p class="bullet">市场：`A`</p>
+<p class="bullet">阻断原因：`[&#x27;历史沙盘未通过&#x27;]`</p>
+<p class="bullet">覆盖状态：`historical_case_available`</p>
+<p class="bullet">沙盘状态：`FAIL`</p>
+<p class="bullet">说明：600036.SH 当前被阻断，原因是：历史沙盘未通过。</p>
+
+<h3>601398.SH</h3>
+
+<p class="bullet">市场：`A`</p>
+<p class="bullet">阻断原因：`[&#x27;历史沙盘未通过&#x27;, &#x27;缺少完整证据引用&#x27;]`</p>
+<p class="bullet">覆盖状态：`missing_historical_case`</p>
+<p class="bullet">沙盘状态：`FAIL`</p>
+<p class="bullet">说明：601398.SH 当前被阻断，原因是：历史沙盘未通过、缺少完整证据引用。</p>
+
+<h3>00005.HK</h3>
+
+<p class="bullet">市场：`H`</p>
+<p class="bullet">阻断原因：`[&#x27;缺少完整证据引用&#x27;]`</p>
+<p class="bullet">覆盖状态：`missing_historical_case`</p>
+<p class="bullet">沙盘状态：`PASS`</p>
+<p class="bullet">说明：00005.HK 当前被阻断，原因是：缺少完整证据引用。</p>
+
+<h3>00941.HK</h3>
+
+<p class="bullet">市场：`H`</p>
+<p class="bullet">阻断原因：`[&#x27;缺少完整证据引用&#x27;]`</p>
+<p class="bullet">覆盖状态：`missing_historical_case`</p>
+<p class="bullet">沙盘状态：`PASS`</p>
+<p class="bullet">说明：00941.HK 当前被阻断，原因是：缺少完整证据引用。</p>
+
+<h2>边界</h2>
+
+<p class="bullet">仅模拟。</p>
+<p class="bullet">不是实盘建议。</p>
+<p class="bullet">不含实时价格。</p>
+<p class="bullet">不含仓位数量。</p>
+<p class="bullet">不接券商。</p>
+<p class="bullet">不下单。</p>
+</main></body>
+</html>

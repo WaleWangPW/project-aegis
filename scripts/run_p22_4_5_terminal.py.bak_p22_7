@@ -1,0 +1,764 @@
+from __future__ import annotations
+
+import hashlib
+import json
+import re
+import subprocess
+import sys
+from datetime import datetime
+from pathlib import Path
+from typing import Any
+
+ROOT = Path(__file__).resolve().parents[1]
+REPORTS = ROOT / "data" / "reports"
+SCRIPTS = ROOT / "scripts"
+DASHBOARD = ROOT / "dashboard" / "index.html"
+SNAPSHOTS = REPORTS / "a_share_backtest_history_snapshots"
+
+P22_4_PASS = REPORTS / "P22_4_BACKTEST_HISTORY_PASS.marker"
+P22_4_FAIL = REPORTS / "P22_4_BACKTEST_HISTORY_FAIL.marker"
+P22_4_FAIL_REASON = REPORTS / "P22_4_BACKTEST_HISTORY_FAIL_REASON.md"
+P22_4_EVIDENCE_JSON = REPORTS / "p22_4_backtest_history_evidence.json"
+P22_4_EVIDENCE_MD = REPORTS / "p22_4_backtest_history_evidence.md"
+
+P22_5_PASS = REPORTS / "P22_5_BACKTEST_HISTORY_DASHBOARD_PASS.marker"
+P22_5_FAIL = REPORTS / "P22_5_BACKTEST_HISTORY_DASHBOARD_FAIL.marker"
+P22_5_FAIL_REASON = REPORTS / "P22_5_BACKTEST_HISTORY_DASHBOARD_FAIL_REASON.md"
+P22_5_EVIDENCE_JSON = REPORTS / "p22_5_backtest_history_dashboard_evidence.json"
+P22_5_EVIDENCE_MD = REPORTS / "p22_5_backtest_history_dashboard_evidence.md"
+
+BT_JSON = REPORTS / "a_share_backtest_dry_run_latest.json"
+BT_MD = REPORTS / "a_share_backtest_dry_run_latest.md"
+BT_INPUT_JSON = REPORTS / "a_share_backtest_dry_run_input_latest.json"
+BT_VALIDATION_JSON = REPORTS / "p22_2_backtest_dry_run_validation_latest.json"
+
+HISTORY_JSON = REPORTS / "a_share_backtest_history_latest.json"
+HISTORY_MD = REPORTS / "a_share_backtest_history_latest.md"
+HISTORY_VALIDATION_JSON = REPORTS / "p22_4_backtest_history_validation_latest.json"
+
+SECRET_RE = re.compile(
+    r"(?i)(Bearer\s+[A-Za-z0-9._-]{12,}|Authorization\s*[:=]\s*[^\s]+|"
+    r"https?://[^\s\"']*(open\.feishu\.cn|hooks)[^\s\"']*|"
+    r"(token|api[_-]?key|cookie)\s*[:=]\s*[A-Za-z0-9._-]{12,})"
+)
+
+SHA12_RE = re.compile(r"^[0-9a-f]{12}$")
+
+
+def now() -> str:
+    return datetime.now().isoformat(timespec="seconds")
+
+
+def sha12(path: Path) -> str | None:
+    if not path.exists():
+        return None
+    return hashlib.sha256(path.read_bytes()).hexdigest()[:12]
+
+
+def load_json(path: Path) -> Any:
+    return json.loads(path.read_text(encoding="utf-8"))
+
+
+def write_json(path: Path, data: Any) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(json.dumps(data, ensure_ascii=False, indent=2), encoding="utf-8")
+
+
+def sanitize(text: str) -> str:
+    return SECRET_RE.sub("***REDACTED***", text or "")[-2500:]
+
+
+def run_cmd(cmd: str, timeout: int = 1200) -> dict[str, Any]:
+    proc = subprocess.run(
+        cmd,
+        cwd=ROOT,
+        shell=True,
+        text=True,
+        capture_output=True,
+        timeout=timeout,
+    )
+    return {
+        "command": cmd,
+        "exit_code": proc.returncode,
+        "stdout_tail": sanitize(proc.stdout),
+        "stderr_tail": sanitize(proc.stderr),
+        "result": "PASS" if proc.returncode == 0 else "FAIL",
+    }
+
+
+def repo_ok() -> tuple[bool, list[str]]:
+    required = [
+        ROOT / "Makefile",
+        DASHBOARD,
+        ROOT / ".venv/bin/python",
+        REPORTS,
+    ]
+    missing = [str(p.relative_to(ROOT)) for p in required if not p.exists()]
+    return not missing, missing
+
+
+def ensure_makefile_targets() -> None:
+    makefile = ROOT / "Makefile"
+    text = makefile.read_text(encoding="utf-8") if makefile.exists() else ""
+
+    targets = {
+        "update-a-share-backtest-history": "\nupdate-a-share-backtest-history:\n\t.venv/bin/python scripts/update_a_share_backtest_history.py\n",
+        "validate-a-share-backtest-history": "\nvalidate-a-share-backtest-history:\n\t.venv/bin/python scripts/validate_a_share_backtest_history.py\n",
+        "p22-4-filemode": "\np22-4-filemode:\n\t.venv/bin/python scripts/run_p22_4_filemode.py\n",
+        "p22-5-filemode": "\np22-5-filemode:\n\t.venv/bin/python scripts/run_p22_5_filemode.py\n",
+    }
+
+    for target, block in targets.items():
+        if not re.search(rf"^{re.escape(target)}\s*:", text, flags=re.MULTILINE):
+            text = text.rstrip() + "\n" + block
+
+    makefile.write_text(text, encoding="utf-8")
+
+
+def write_wrappers() -> None:
+    SCRIPTS.mkdir(parents=True, exist_ok=True)
+
+    wrapper_map = {
+        "update_a_share_backtest_history.py": "--update-history",
+        "validate_a_share_backtest_history.py": "--validate-history",
+        "run_p22_4_filemode.py": "--p22-4",
+        "run_p22_5_filemode.py": "--p22-5",
+    }
+
+    for name, arg in wrapper_map.items():
+        (SCRIPTS / name).write_text(
+            "from __future__ import annotations\n"
+            "import subprocess\n"
+            "from pathlib import Path\n"
+            "root = Path(__file__).resolve().parents[1]\n"
+            f"cmd = [str(root / '.venv/bin/python'), str(root / 'scripts/run_p22_4_5_terminal.py'), '{arg}']\n"
+            "raise SystemExit(subprocess.run(cmd, cwd=root).returncode)\n",
+            encoding="utf-8",
+        )
+
+
+def extract_metrics(bt: dict[str, Any]) -> dict[str, Any]:
+    m = bt.get("portfolio_metrics") or {}
+    b = bt.get("benchmark_metrics") or {}
+    selected = bt.get("selected_symbols") or []
+    return {
+        "total_return": m.get("total_return"),
+        "annualized_return": m.get("annualized_return"),
+        "max_drawdown": m.get("max_drawdown"),
+        "volatility": m.get("volatility"),
+        "sharpe": m.get("sharpe"),
+        "win_rate": m.get("win_rate"),
+        "benchmark_total_return": b.get("total_return") if isinstance(b, dict) else None,
+        "excess_return": bt.get("excess_return"),
+        "top5": selected[:5],
+    }
+
+
+def update_history() -> int:
+    REPORTS.mkdir(parents=True, exist_ok=True)
+    SNAPSHOTS.mkdir(parents=True, exist_ok=True)
+
+    if not BT_JSON.exists():
+        return 1
+    if not BT_VALIDATION_JSON.exists():
+        return 1
+
+    bt = load_json(BT_JSON)
+    validation = load_json(BT_VALIDATION_JSON)
+    metrics = extract_metrics(bt)
+
+    run_id_base = str(bt.get("run_id") or "bt_run")
+    run_id = f"{run_id_base}_hist_{datetime.now().strftime('%Y%m%d_%H%M%S')}"
+
+    latest_result = "PASS" if (
+        validation.get("overall_verdict") == "PASS"
+        and bt.get("dry_run") is True
+        and bt.get("sent") is False
+        and bt.get("trading_called") is False
+        and bt.get("static_snapshot_backtest") is True
+        and bt.get("lookahead_bias_warning") is True
+        and int(bt.get("valid_price_series_count") or 0) >= 5
+    ) else "FAIL"
+
+    entry = {
+        "run_id": run_id,
+        "generated_at": now(),
+        "strategy_id": bt.get("strategy_id"),
+        "strategy_version": bt.get("strategy_version"),
+        "backtest_type": "static_snapshot_backtest",
+        "dry_run": bt.get("dry_run"),
+        "sent": bt.get("sent"),
+        "trading_called": bt.get("trading_called"),
+        "static_snapshot_backtest": bt.get("static_snapshot_backtest"),
+        "lookahead_bias_warning": bt.get("lookahead_bias_warning"),
+        "selected_symbols_count": bt.get("selected_symbols_count"),
+        "valid_price_series_count": bt.get("valid_price_series_count"),
+        "top5": metrics["top5"],
+        "start_date": bt.get("start_date") or (bt.get("period") or {}).get("start_date"),
+        "end_date": bt.get("end_date") or (bt.get("period") or {}).get("end_date"),
+        "benchmark": bt.get("benchmark"),
+        "portfolio_metrics": {
+            "total_return": metrics["total_return"],
+            "annualized_return": metrics["annualized_return"],
+            "max_drawdown": metrics["max_drawdown"],
+            "volatility": metrics["volatility"],
+            "sharpe": metrics["sharpe"],
+            "win_rate": metrics["win_rate"],
+        },
+        "benchmark_total_return": metrics["benchmark_total_return"],
+        "excess_return": metrics["excess_return"],
+        "warnings": bt.get("warnings") or [],
+        "source_backtest_json_sha256_12": sha12(BT_JSON),
+        "validation_overall_verdict": validation.get("overall_verdict"),
+        "result": latest_result,
+    }
+
+    existing_runs: list[dict[str, Any]] = []
+    if HISTORY_JSON.exists():
+        try:
+            old = load_json(HISTORY_JSON)
+            existing_runs = old.get("runs") or []
+        except Exception:
+            existing_runs = []
+
+    runs = [entry] + [r for r in existing_runs if r.get("run_id") != run_id]
+    runs.sort(key=lambda x: str(x.get("generated_at", "")), reverse=True)
+    runs = runs[:20]
+
+    history = {
+        "project": "Project Aegis",
+        "type": "a_share_backtest_history",
+        "generated_at": now(),
+        "retention_limit": 20,
+        "runs_count": len(runs),
+        "latest_run_id": runs[0].get("run_id") if runs else None,
+        "latest_result": runs[0].get("result") if runs else None,
+        "runs": runs,
+    }
+
+    write_json(HISTORY_JSON, history)
+    write_json(SNAPSHOTS / f"{run_id}.json", entry)
+
+    md = [
+        "# A股 Watchlist 回测历史",
+        "",
+        f"- runs_count: {len(runs)}",
+        "- retention_limit: 20",
+        f"- latest_run_id: {history['latest_run_id']}",
+        f"- latest_result: {history['latest_result']}",
+        "",
+        "说明：回测历史基于当前 Watchlist 静态快照 dry-run，不是 point-in-time 历史选股回测，存在 lookahead bias。",
+        "",
+        "| generated_at | run_id | result | total_return | max_drawdown | win_rate |",
+        "|---|---|---|---:|---:|---:|",
+    ]
+
+    for r in runs:
+        pm = r.get("portfolio_metrics") or {}
+        md.append(
+            f"| {r.get('generated_at')} | {r.get('run_id')} | {r.get('result')} | "
+            f"{pm.get('total_return')} | {pm.get('max_drawdown')} | {pm.get('win_rate')} |"
+        )
+
+    HISTORY_MD.write_text("\n".join(md) + "\n", encoding="utf-8")
+    return 0 if latest_result == "PASS" else 1
+
+
+def validate_history() -> tuple[int, dict[str, Any]]:
+    failures: list[str] = []
+    checks: dict[str, Any] = {}
+
+    def check(name: str, passed: bool, **details: Any) -> None:
+        checks[name] = {"passed": bool(passed), **details}
+        if not passed:
+            failures.append(name)
+
+    check("history_json_exists", HISTORY_JSON.exists())
+    check("history_md_exists", HISTORY_MD.exists())
+    check("snapshots_dir_exists", SNAPSHOTS.exists())
+
+    history = None
+    if HISTORY_JSON.exists():
+        try:
+            history = load_json(HISTORY_JSON)
+            check("history_json_parseable", True)
+        except Exception as e:
+            check("history_json_parseable", False, error=str(e)[:120])
+    else:
+        check("history_json_parseable", False)
+
+    runs = history.get("runs") if isinstance(history, dict) else []
+    runs = runs if isinstance(runs, list) else []
+
+    check("runs_count_between_1_and_20", 1 <= len(runs) <= 20, count=len(runs))
+    run_ids = [r.get("run_id") for r in runs]
+    check("run_id_unique", len(run_ids) == len(set(run_ids)))
+
+    latest = runs[0] if runs else {}
+    pm = latest.get("portfolio_metrics") if isinstance(latest, dict) else {}
+
+    check("latest_result_pass", latest.get("result") == "PASS")
+    check("latest_safety_flags_valid", latest.get("dry_run") is True and latest.get("sent") is False and latest.get("trading_called") is False)
+    check("latest_static_snapshot_true", latest.get("static_snapshot_backtest") is True)
+    check("latest_lookahead_bias_warning_true", latest.get("lookahead_bias_warning") is True)
+    check("latest_selected_symbols_count_gte_5", int(latest.get("selected_symbols_count") or 0) >= 5)
+    check("latest_valid_price_series_count_gte_5", int(latest.get("valid_price_series_count") or 0) >= 5)
+    check("latest_portfolio_metrics_present", isinstance(pm, dict) and all(k in pm for k in ["total_return", "max_drawdown", "volatility", "win_rate"]))
+
+    latest_snapshot = SNAPSHOTS / f"{latest.get('run_id')}.json" if latest.get("run_id") else None
+    check("latest_snapshot_exists", bool(latest_snapshot and latest_snapshot.exists()), path=str(latest_snapshot) if latest_snapshot else None)
+
+    sha_values = []
+    def collect(obj: Any) -> None:
+        if isinstance(obj, dict):
+            for k, v in obj.items():
+                if "sha256_12" in str(k) and v is not None:
+                    sha_values.append(str(v))
+                collect(v)
+        elif isinstance(obj, list):
+            for x in obj:
+                collect(x)
+
+    collect(history)
+    check("sha256_values_valid", all(SHA12_RE.match(x) for x in sha_values), values=sha_values)
+
+    text_scan = ""
+    for p in [HISTORY_JSON, HISTORY_MD]:
+        if p.exists():
+            text_scan += p.read_text(encoding="utf-8", errors="ignore")
+    check("no_secret_value_detected", not bool(SECRET_RE.search(text_scan)))
+    check("no_real_trade_call_detected", not bool(re.search(r"broker\.(buy|sell)|place_order|real_trade", text_scan, re.I)))
+
+    verdict = {
+        "project": "Project Aegis",
+        "type": "backtest_history_validation",
+        "validated_at": now(),
+        "checks": checks,
+        "failures": failures,
+        "overall_verdict": "PASS" if not failures else "FAIL",
+    }
+    write_json(HISTORY_VALIDATION_JSON, verdict)
+
+    print("BACKTEST_HISTORY_VERDICT_JSON")
+    print(json.dumps(verdict, ensure_ascii=False, indent=2))
+    return (0 if not failures else 1), verdict
+
+
+def write_p22_4_evidence(success: bool, commands: list[dict[str, Any]], reason: str = "") -> None:
+    validation = load_json(HISTORY_VALIDATION_JSON) if HISTORY_VALIDATION_JSON.exists() else {}
+    history = load_json(HISTORY_JSON) if HISTORY_JSON.exists() else {}
+    evidence = {
+        "project": "Project Aegis",
+        "type": "p22_4_backtest_history_filemode",
+        "generated_at": now(),
+        "success": success,
+        "reason": reason,
+        "commands": commands,
+        "history_json": str(HISTORY_JSON.relative_to(ROOT)) if HISTORY_JSON.exists() else None,
+        "history_md": str(HISTORY_MD.relative_to(ROOT)) if HISTORY_MD.exists() else None,
+        "validation_json": str(HISTORY_VALIDATION_JSON.relative_to(ROOT)) if HISTORY_VALIDATION_JSON.exists() else None,
+        "history_summary": {
+            "runs_count": history.get("runs_count"),
+            "latest_run_id": history.get("latest_run_id"),
+            "latest_result": history.get("latest_result"),
+        },
+        "validation_overall_verdict": validation.get("overall_verdict"),
+        "safety": {
+            "sent": False,
+            "webhook_called": False,
+            "trading_called": False,
+            "cron_modified": False,
+        },
+    }
+    write_json(P22_4_EVIDENCE_JSON, evidence)
+
+    md = [
+        "# P22.4 Backtest History Evidence",
+        "",
+        f"- success: {success}",
+        f"- reason: {reason or 'N/A'}",
+        "",
+        "## Commands",
+        "| command | exit_code |",
+        "|---|---:|",
+    ]
+    for c in commands:
+        md.append(f"| {c['command']} | {c['exit_code']} |")
+    md += [
+        "",
+        "## History",
+        f"- history_json: {evidence['history_json']}",
+        f"- history_md: {evidence['history_md']}",
+        f"- runs_count: {evidence['history_summary']['runs_count']}",
+        f"- latest_run_id: {evidence['history_summary']['latest_run_id']}",
+        f"- latest_result: {evidence['history_summary']['latest_result']}",
+    ]
+    P22_4_EVIDENCE_MD.write_text("\n".join(md) + "\n", encoding="utf-8")
+
+
+def p22_4() -> int:
+    for p in [P22_4_PASS, P22_4_FAIL]:
+        if p.exists():
+            p.unlink()
+
+    commands: list[dict[str, Any]] = []
+
+    ok, missing = repo_ok()
+    if not ok:
+        reason = "repo sanity failed: " + ", ".join(missing)
+        P22_4_FAIL.write_text("FAIL\n", encoding="utf-8")
+        P22_4_FAIL_REASON.write_text(reason + "\n", encoding="utf-8")
+        write_p22_4_evidence(False, commands, reason)
+        return 1
+
+    required = [
+        REPORTS / "P22_2_BACKTEST_DRY_RUN_PASS.marker",
+        BT_JSON,
+        BT_MD,
+        BT_INPUT_JSON,
+        BT_VALIDATION_JSON,
+    ]
+
+    if any(not p.exists() for p in required):
+        if (SCRIPTS / "run_p22_2_filemode.py").exists():
+            commands.append(run_cmd(".venv/bin/python scripts/run_p22_2_filemode.py"))
+        else:
+            reason = "P22.2 files missing and run_p22_2_filemode.py missing"
+            P22_4_FAIL.write_text("FAIL\n", encoding="utf-8")
+            P22_4_FAIL_REASON.write_text(reason + "\n", encoding="utf-8")
+            write_p22_4_evidence(False, commands, reason)
+            return 1
+
+    commands.append(run_cmd("make validate-a-share-backtest-dry-run"))
+    if commands[-1]["exit_code"] != 0:
+        reason = "validate-a-share-backtest-dry-run failed"
+        P22_4_FAIL.write_text("FAIL\n", encoding="utf-8")
+        P22_4_FAIL_REASON.write_text(reason + "\n", encoding="utf-8")
+        write_p22_4_evidence(False, commands, reason)
+        return 1
+
+    if update_history() != 0:
+        reason = "update_a_share_backtest_history failed"
+        P22_4_FAIL.write_text("FAIL\n", encoding="utf-8")
+        P22_4_FAIL_REASON.write_text(reason + "\n", encoding="utf-8")
+        write_p22_4_evidence(False, commands, reason)
+        return 1
+
+    code, _ = validate_history()
+    commands.append({"command": "validate_a_share_backtest_history.py", "exit_code": code, "result": "PASS" if code == 0 else "FAIL"})
+    if code != 0:
+        reason = "validate_a_share_backtest_history failed"
+        P22_4_FAIL.write_text("FAIL\n", encoding="utf-8")
+        P22_4_FAIL_REASON.write_text(reason + "\n", encoding="utf-8")
+        write_p22_4_evidence(False, commands, reason)
+        return 1
+
+    for cmd in ["make validate-aegis-health-status", "make verify-aegis-evidence-gate"]:
+        r = run_cmd(cmd)
+        commands.append(r)
+        if r["exit_code"] != 0:
+            reason = f"{cmd} failed"
+            P22_4_FAIL.write_text("FAIL\n", encoding="utf-8")
+            P22_4_FAIL_REASON.write_text(reason + "\n", encoding="utf-8")
+            write_p22_4_evidence(False, commands, reason)
+            return 1
+
+    P22_4_PASS.write_text("PASS\n", encoding="utf-8")
+    if P22_4_FAIL.exists():
+        P22_4_FAIL.unlink()
+    if P22_4_FAIL_REASON.exists():
+        P22_4_FAIL_REASON.unlink()
+
+    write_p22_4_evidence(True, commands)
+    return 0
+
+
+def patch_dashboard_history_module() -> dict[str, bool]:
+    html = DASHBOARD.read_text(encoding="utf-8", errors="ignore")
+    start = "<!-- P22.5_BACKTEST_HISTORY_MODULE_START -->"
+    end = "<!-- P22.5_BACKTEST_HISTORY_MODULE_END -->"
+
+    module = r'''
+<!-- P22.5_BACKTEST_HISTORY_MODULE_START -->
+<section id="a-share-backtest-history" class="card">
+  <h2>A股 Watchlist 回测历史</h2>
+  <p class="muted">回测历史基于当前 Watchlist 静态快照 dry-run，不是 point-in-time 历史选股回测，存在 lookahead bias。</p>
+  <button type="button" onclick="loadAShareBacktestHistory()">刷新回测历史</button>
+  <div id="a-share-backtest-history-content">回测历史加载中...</div>
+</section>
+
+<script>
+async function loadAShareBacktestHistory() {
+  const el = document.getElementById('a-share-backtest-history-content');
+  if (!el) return;
+  try {
+    const resp = await fetch('../data/reports/a_share_backtest_history_latest.json', {cache: 'no-store'});
+    if (!resp.ok) {
+      el.innerHTML = '<p class="warning">回测历史未生成</p>';
+      return;
+    }
+
+    let data;
+    try {
+      data = await resp.json();
+    } catch (err) {
+      el.innerHTML = '<p class="warning">回测历史 JSON 解析失败</p>';
+      return;
+    }
+
+    const runs = data.runs || [];
+    if (!runs.length) {
+      el.innerHTML = '<p class="warning">回测历史未生成</p>';
+      return;
+    }
+
+    const rows = runs.map(r => {
+      const m = r.portfolio_metrics || {};
+      return `
+        <tr>
+          <td>${r.generated_at || 'N/A'}</td>
+          <td>${r.result || 'N/A'}</td>
+          <td>${r.strategy_id || 'N/A'}</td>
+          <td>${r.selected_symbols_count ?? 'N/A'}</td>
+          <td>${r.valid_price_series_count ?? 'N/A'}</td>
+          <td>${m.total_return ?? 'N/A'}</td>
+          <td>${m.annualized_return ?? 'N/A'}</td>
+          <td>${m.max_drawdown ?? 'N/A'}</td>
+          <td>${m.volatility ?? 'N/A'}</td>
+          <td>${m.sharpe ?? 'N/A'}</td>
+          <td>${m.win_rate ?? 'N/A'}</td>
+          <td>${r.benchmark_total_return ?? 'N/A'}</td>
+          <td>${r.excess_return ?? 'N/A'}</td>
+          <td>${r.dry_run}</td>
+          <td>${r.sent}</td>
+          <td>${r.trading_called}</td>
+          <td>${r.static_snapshot_backtest}</td>
+          <td>${r.lookahead_bias_warning}</td>
+        </tr>`;
+    }).join('');
+
+    el.innerHTML = `
+      <p><b>runs_count:</b> ${data.runs_count ?? runs.length}</p>
+      <p><b>latest_run_id:</b> ${data.latest_run_id || 'N/A'}</p>
+      <p><b>latest_result:</b> ${data.latest_result || 'N/A'}</p>
+      <p><b>说明:</b> 回测历史基于当前 Watchlist 静态快照 dry-run，不是 point-in-time 历史选股回测，存在 lookahead bias。</p>
+      <table>
+        <thead>
+          <tr>
+            <th>generated_at</th><th>result</th><th>strategy_id</th>
+            <th>selected</th><th>valid_price</th>
+            <th>total_return</th><th>annualized_return</th><th>max_drawdown</th>
+            <th>volatility</th><th>sharpe</th><th>win_rate</th>
+            <th>benchmark_total_return</th><th>excess_return</th>
+            <th>dry_run</th><th>sent</th><th>trading_called</th>
+            <th>static_snapshot_backtest</th><th>lookahead_bias_warning</th>
+          </tr>
+        </thead>
+        <tbody>${rows}</tbody>
+      </table>
+    `;
+  } catch (err) {
+    el.innerHTML = '<p class="warning">回测历史未生成</p>';
+  }
+}
+document.addEventListener('DOMContentLoaded', loadAShareBacktestHistory);
+</script>
+<!-- P22.5_BACKTEST_HISTORY_MODULE_END -->
+'''
+
+    pattern = re.compile(re.escape(start) + r".*?" + re.escape(end), re.S)
+    if pattern.search(html):
+        html = pattern.sub(module.strip(), html)
+    else:
+        if "</body>" in html:
+            html = html.replace("</body>", module + "\n</body>")
+        else:
+            html += "\n" + module + "\n"
+
+    DASHBOARD.write_text(html, encoding="utf-8")
+    return page_history_checks()
+
+
+def page_history_checks() -> dict[str, bool]:
+    text = DASHBOARD.read_text(encoding="utf-8", errors="ignore") if DASHBOARD.exists() else ""
+    return {
+        "history_section_present": "A股 Watchlist 回测历史" in text,
+        "history_json_fetch_present": "a_share_backtest_history_latest.json" in text,
+        "metrics_present": all(x in text for x in ["total_return", "max_drawdown", "volatility", "win_rate", "benchmark_total_return", "excess_return"]),
+        "safety_flags_present": all(x in text for x in ["dry_run", "sent", "trading_called"]),
+        "static_snapshot_label_present": "static_snapshot_backtest" in text,
+        "lookahead_bias_warning_present": "lookahead_bias_warning" in text and "lookahead bias" in text,
+        "degrade_text_present": "回测历史未生成" in text and "回测历史 JSON 解析失败" in text,
+        "no_secret_value_detected": not bool(SECRET_RE.search(text)),
+        "no_real_send_call_detected": ".post(" not in text and "requests.post" not in text,
+        "no_trading_call_detected": "broker.buy" not in text and "broker.sell" not in text,
+    }
+
+
+def write_p22_5_evidence(success: bool, commands: list[dict[str, Any]], checks: dict[str, bool], reason: str = "") -> None:
+    evidence = {
+        "project": "Project Aegis",
+        "type": "p22_5_backtest_history_dashboard",
+        "generated_at": now(),
+        "success": success,
+        "reason": reason,
+        "commands": commands,
+        "page_checks": checks,
+        "safety": {
+            "sent": False,
+            "webhook_called": False,
+            "trading_called": False,
+            "cron_modified": False,
+        },
+    }
+    write_json(P22_5_EVIDENCE_JSON, evidence)
+
+    md = [
+        "# P22.5 Backtest History Dashboard Evidence",
+        "",
+        f"- success: {success}",
+        f"- reason: {reason or 'N/A'}",
+        "",
+        "## Page Checks",
+        "| check | result |",
+        "|---|---|",
+    ]
+    for k, v in checks.items():
+        md.append(f"| {k} | {'PASS' if v else 'FAIL'} |")
+    md += [
+        "",
+        "## Commands",
+        "| command | exit_code |",
+        "|---|---:|",
+    ]
+    for c in commands:
+        md.append(f"| {c['command']} | {c['exit_code']} |")
+    P22_5_EVIDENCE_MD.write_text("\n".join(md) + "\n", encoding="utf-8")
+
+
+def p22_5() -> int:
+    for p in [P22_5_PASS, P22_5_FAIL]:
+        if p.exists():
+            p.unlink()
+
+    commands: list[dict[str, Any]] = []
+
+    if not P22_4_PASS.exists():
+        code = p22_4()
+        commands.append({"command": "p22_4()", "exit_code": code, "result": "PASS" if code == 0 else "FAIL"})
+        if code != 0:
+            reason = "P22.4 pass marker missing and self-heal failed"
+            P22_5_FAIL.write_text("FAIL\n", encoding="utf-8")
+            P22_5_FAIL_REASON.write_text(reason + "\n", encoding="utf-8")
+            write_p22_5_evidence(False, commands, {}, reason)
+            return 1
+
+    if not HISTORY_JSON.exists():
+        reason = "history json missing"
+        P22_5_FAIL.write_text("FAIL\n", encoding="utf-8")
+        P22_5_FAIL_REASON.write_text(reason + "\n", encoding="utf-8")
+        write_p22_5_evidence(False, commands, {}, reason)
+        return 1
+
+    checks = patch_dashboard_history_module()
+    if not all(checks.values()):
+        reason = "dashboard history checks failed: " + ", ".join(k for k, v in checks.items() if not v)
+        P22_5_FAIL.write_text("FAIL\n", encoding="utf-8")
+        P22_5_FAIL_REASON.write_text(reason + "\n", encoding="utf-8")
+        write_p22_5_evidence(False, commands, checks, reason)
+        return 1
+
+    chain = [
+        "make refresh-feishu-dry-run",
+        "make refresh-aegis-daily-digest",
+        "make validate-aegis-daily-digest",
+        "make audit-aegis-pipeline-evidence",
+        "make redteam-aegis-pipeline-validator",
+        "make verify-aegis-evidence-gate-base",
+        "make update-aegis-pipeline-history",
+        "make validate-aegis-pipeline-history",
+        "make build-aegis-health-status",
+        "make validate-aegis-health-status",
+        "make validate-a-share-backtest-dry-run",
+        "make validate-a-share-backtest-history",
+        "make verify-aegis-evidence-gate",
+    ]
+
+    for cmd in chain:
+        r = run_cmd(cmd)
+        commands.append(r)
+        if r["exit_code"] != 0:
+            reason = f"evidence chain failed: {cmd}"
+            P22_5_FAIL.write_text("FAIL\n", encoding="utf-8")
+            P22_5_FAIL_REASON.write_text(reason + "\n", encoding="utf-8")
+            write_p22_5_evidence(False, commands, checks, reason)
+            return 1
+
+    P22_5_PASS.write_text("PASS\n", encoding="utf-8")
+    if P22_5_FAIL.exists():
+        P22_5_FAIL.unlink()
+    if P22_5_FAIL_REASON.exists():
+        P22_5_FAIL_REASON.unlink()
+    write_p22_5_evidence(True, commands, checks)
+    return 0
+
+
+def install() -> None:
+    ensure_makefile_targets()
+    write_wrappers()
+
+
+def summary() -> None:
+    history = load_json(HISTORY_JSON) if HISTORY_JSON.exists() else {}
+    validation = load_json(HISTORY_VALIDATION_JSON) if HISTORY_VALIDATION_JSON.exists() else {}
+    latest = (history.get("runs") or [{}])[0] if isinstance(history, dict) else {}
+    pm = latest.get("portfolio_metrics") or {}
+
+    print("# Project Aegis P22.4+P22.5 Batch Summary")
+    print("")
+    print("## Markers")
+    print(f"- P22_4_PASS: {P22_4_PASS.exists()}")
+    print(f"- P22_4_FAIL: {P22_4_FAIL.exists()}")
+    print(f"- P22_5_PASS: {P22_5_PASS.exists()}")
+    print(f"- P22_5_FAIL: {P22_5_FAIL.exists()}")
+    print("")
+    print("## History")
+    print(f"- runs_count: {history.get('runs_count')}")
+    print(f"- latest_run_id: {history.get('latest_run_id')}")
+    print(f"- latest_result: {history.get('latest_result')}")
+    print(f"- validation_overall_verdict: {validation.get('overall_verdict')}")
+    print("")
+    print("## Latest Metrics")
+    for k in ["selected_symbols_count", "valid_price_series_count", "benchmark_total_return", "excess_return"]:
+        print(f"- {k}: {latest.get(k)}")
+    for k in ["total_return", "annualized_return", "max_drawdown", "volatility", "sharpe", "win_rate"]:
+        print(f"- {k}: {pm.get(k)}")
+    print("")
+    print("## Files")
+    print(f"- History JSON: {HISTORY_JSON}")
+    print(f"- History MD: {HISTORY_MD}")
+    print(f"- P22.4 Evidence: {P22_4_EVIDENCE_MD}")
+    print(f"- P22.5 Evidence: {P22_5_EVIDENCE_MD}")
+
+
+def main() -> int:
+    install()
+
+    if "--update-history" in sys.argv:
+        return update_history()
+    if "--validate-history" in sys.argv:
+        code, _ = validate_history()
+        return code
+    if "--p22-4" in sys.argv:
+        return p22_4()
+    if "--p22-5" in sys.argv:
+        return p22_5()
+
+    code4 = p22_4()
+    code5 = p22_5() if code4 == 0 else 1
+    summary()
+    return 0 if code4 == 0 and code5 == 0 else 1
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

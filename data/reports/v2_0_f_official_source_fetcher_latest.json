@@ -1,0 +1,46 @@
+{
+  "overall_status": "PASS",
+  "generated_at": "2026-07-11T17:21:03.407108+08:00",
+  "run_id": "v2_0_f_20260711_acceptance_live_sec",
+  "command": "validate_v2_0_f_official_source_fetcher.py --run-id v2_0_f_20260711_acceptance_live_sec --live-sec --user-agent ProjectAegis/0.1 weihongwang@example.com",
+  "acceptance_target": "V2.0-F Official Source Fetcher",
+  "isolated": true,
+  "network_used": true,
+  "production_records_written": false,
+  "dashboard_contract_changed": false,
+  "run_dir": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v2_0_f_acceptance/v2_0_f_20260711_acceptance_live_sec",
+  "item_json": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v2_0_f_acceptance/v2_0_f_20260711_acceptance_live_sec/official_source_item.json",
+  "checks": {
+    "official_source_fetched": true,
+    "summary_created": true,
+    "hash_created": true,
+    "raw_bytes_not_stored": true,
+    "denied_source_blocked": true,
+    "no_cookie_or_secret_headers": true,
+    "no_broker_or_real_trade": true
+  },
+  "summary": {
+    "source_id": "src_sec_company_filings",
+    "symbol": "AAPL",
+    "market": "US",
+    "evidence_level": "verified_primary",
+    "retention_policy": "summary_only",
+    "summary": "JSON document with keys: addresses, category, cik, description, ein, entityType, exchanges, filings, fiscalYearEnd, flags, formerNames, insiderTransactionForIssuerExists."
+  },
+  "safety": {
+    "policy_gate_required": true,
+    "no_cookie_access": true,
+    "no_secret_storage": true,
+    "no_paywall_bypass": true,
+    "no_raw_article_storage": true,
+    "no_real_trade": true,
+    "no_broker_api": true,
+    "no_webhook": true,
+    "no_strategy_mutation": true,
+    "dashboard_contract_unchanged": true,
+    "no_production_records_mutation": true
+  },
+  "hashes": {
+    "item_json": "d5388bfdda5b2ebdcd7b7def830eb46c73dd1edd07bcdad75628677d827d7f5f"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "report_type": "a_share_watchlist_failures",
+  "generated_at": "2026-07-10T04:08:07.772836+08:00",
+  "source": "generate_a_share_watchlist",
+  "failures": [],
+  "summary": {
+    "total_attempts": 1,
+    "success_count": 1,
+    "failure_count": 0
+  }
+}

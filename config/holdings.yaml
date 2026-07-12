@@ -1,0 +1,14 @@
+# Real holdings, per Master Spec §8.2. Facts only — no credentials, no
+# broker tokens. This is the single place a real holding needs to be typed
+# in; the system must not ask the user again once it is here.
+holdings:
+  - holding_id: hold_US_CRCL_20260701
+    symbol: CRCL
+    name: Circle Internet Group
+    market: US
+    shares: 254
+    avg_cost: 109.157
+    currency: USD
+    entry_date: "2026-07-01"
+    status: open
+    notes: "Initial real holding from Project Aegis handoff."

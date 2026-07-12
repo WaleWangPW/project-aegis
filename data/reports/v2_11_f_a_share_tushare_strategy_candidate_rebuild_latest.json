@@ -1,0 +1,207 @@
+{
+  "overall_status": "PASS",
+  "acceptance_target": "V2.11-F A-Share Tushare Strategy Candidate Rebuild",
+  "run_id": "v2_11_f_20260711_acceptance",
+  "generated_at": "2026-07-11T23:33:44+08:00",
+  "command": "validate_v2_11_f_a_share_tushare_strategy_candidate_rebuild.py --run-id v2_11_f_20260711_acceptance",
+  "network_used": false,
+  "production_records_written": false,
+  "dashboard_contract_changed": false,
+  "summary": {
+    "source_failed_strategy_count": 2,
+    "rebuild_proposal_count": 2,
+    "user_facing_suggestion_count": 0,
+    "auto_applied_count": 0,
+    "blocked_until_sandbox_pass_count": 2,
+    "next_stage": "V2.11-G A-Share Rebuilt Candidate Sandbox Dry Run",
+    "removed_focus_symbols_from_v2_11_e": [
+      "600036.SH",
+      "600519.SH"
+    ],
+    "proposal_strategy_ids": [
+      "strategy_a_low_vol_dividend_defensive",
+      "strategy_a_value_quality_multifactor"
+    ]
+  },
+  "rebuild_proposals": [
+    {
+      "proposal_id": "rebuild_strategy_a_low_vol_dividend_defensive",
+      "source_strategy_id": "strategy_a_low_vol_dividend_defensive",
+      "market": "A",
+      "source_status": "FAIL",
+      "source_failed_reasons": [
+        "win_rate_below_threshold",
+        "average_return_below_threshold",
+        "max_drawdown_breached"
+      ],
+      "source_symbols": [
+        "000001.SZ",
+        "600000.SH",
+        "600519.SH",
+        "601318.SH"
+      ],
+      "rebuild_actions": [
+        "add_market_regime_filter",
+        "tighten_drawdown_and_volatility_filter",
+        "require_event_risk_precheck",
+        "add_positive_momentum_confirmation",
+        "require_factor_score_margin",
+        "raise_liquidity_and_quality_floor",
+        "expand_historical_sample_before_retest"
+      ],
+      "retest_requirements": {
+        "minimum_total_sample_count": 24,
+        "minimum_window_count": 6,
+        "must_include_recent_market_regimes": true,
+        "must_include_bull_bear_sideways_windows": true,
+        "must_pass_suggestion_gate_before_user_facing_brief": true,
+        "current_metrics": {
+          "win_rate": 0.25,
+          "average_return": -0.04391166937325774,
+          "max_drawdown": -0.10383536014967254
+        }
+      },
+      "decision": "research_rebuild_only",
+      "candidate_status": "blocked_until_rebuilt_sandbox_pass",
+      "requires_sandbox": true,
+      "requires_suggestion_gate": true,
+      "auto_applied": false,
+      "user_facing_suggestion_allowed": false,
+      "blocked_until_sandbox_pass": true,
+      "simulation_only": true,
+      "manual_external_execution_only": true,
+      "no_live_price": true,
+      "no_position_size": true,
+      "evidence_refs": [
+        "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/v2_11_c_tushare_a_share_historical_sandbox_live_data_refresh_latest.json",
+        "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/v2_11_d_tushare_backed_a_share_suggestion_gate_refresh_latest.json",
+        "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/v2_11_e_current_action_packet_after_tushare_gate_latest.json",
+        "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/V2_11_E_CURRENT_ACTION_PACKET_AFTER_TUSHARE_GATE_PASS.marker"
+      ]
+    },
+    {
+      "proposal_id": "rebuild_strategy_a_value_quality_multifactor",
+      "source_strategy_id": "strategy_a_value_quality_multifactor",
+      "market": "A",
+      "source_status": "FAIL",
+      "source_failed_reasons": [
+        "average_return_below_threshold",
+        "max_drawdown_breached"
+      ],
+      "source_symbols": [
+        "000858.SZ",
+        "002475.SZ",
+        "600036.SH",
+        "601899.SH"
+      ],
+      "rebuild_actions": [
+        "add_market_regime_filter",
+        "tighten_drawdown_and_volatility_filter",
+        "require_event_risk_precheck",
+        "add_positive_momentum_confirmation",
+        "require_factor_score_margin"
+      ],
+      "retest_requirements": {
+        "minimum_total_sample_count": 24,
+        "minimum_window_count": 6,
+        "must_include_recent_market_regimes": true,
+        "must_include_bull_bear_sideways_windows": true,
+        "must_pass_suggestion_gate_before_user_facing_brief": true,
+        "current_metrics": {
+          "win_rate": 0.75,
+          "average_return": -0.004099832492812086,
+          "max_drawdown": -0.10450450450450444
+        }
+      },
+      "decision": "research_rebuild_only",
+      "candidate_status": "blocked_until_rebuilt_sandbox_pass",
+      "requires_sandbox": true,
+      "requires_suggestion_gate": true,
+      "auto_applied": false,
+      "user_facing_suggestion_allowed": false,
+      "blocked_until_sandbox_pass": true,
+      "simulation_only": true,
+      "manual_external_execution_only": true,
+      "no_live_price": true,
+      "no_position_size": true,
+      "evidence_refs": [
+        "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/v2_11_c_tushare_a_share_historical_sandbox_live_data_refresh_latest.json",
+        "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/v2_11_d_tushare_backed_a_share_suggestion_gate_refresh_latest.json",
+        "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/v2_11_e_current_action_packet_after_tushare_gate_latest.json",
+        "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/V2_11_E_CURRENT_ACTION_PACKET_AFTER_TUSHARE_GATE_PASS.marker"
+      ]
+    }
+  ],
+  "checks": {
+    "source_v2_11_c_pass": true,
+    "source_v2_11_d_pass": true,
+    "source_v2_11_e_pass": true,
+    "source_v2_11_c_is_tushare_a_share": true,
+    "source_v2_11_d_has_zero_allowed": true,
+    "source_v2_11_e_removed_a_share_focus": true,
+    "blocked_strategy_evidence_present": true,
+    "proposal_count_matches_blocked_strategies": true,
+    "all_blocked_strategies_have_proposals": true,
+    "every_proposal_requires_sandbox": true,
+    "every_proposal_requires_suggestion_gate": true,
+    "no_proposal_user_facing_allowed": true,
+    "no_proposal_auto_applied": true,
+    "every_proposal_blocked_until_sandbox_pass": true,
+    "every_proposal_has_rebuild_actions": true,
+    "every_proposal_has_retest_requirements": true,
+    "evidence_refs_present": true,
+    "simulation_only": true,
+    "manual_external_execution_only": true,
+    "no_real_trade": true,
+    "no_broker_api": true,
+    "no_trading_webhook": true,
+    "no_order_placement": true,
+    "no_live_price": true,
+    "no_position_size": true,
+    "no_secret_storage": true,
+    "no_strategy_auto_mutation": true,
+    "no_production_records_mutation": true,
+    "dashboard_contract_unchanged": true,
+    "acceptance_target_correct": true,
+    "report_status_pass": true,
+    "source_v2_11_e_marker_exists": true,
+    "proposals_json_written": true,
+    "rebuild_report_json_written": true,
+    "rebuild_report_md_written": true,
+    "hashes_recorded": true
+  },
+  "safety": {
+    "simulation_only": true,
+    "research_rebuild_only": true,
+    "not_user_facing_trade_advice": true,
+    "manual_external_execution_only": true,
+    "a_share_remains_blocked_until_rebuilt_sandbox_pass": true,
+    "no_real_trade": true,
+    "no_broker_api": true,
+    "no_trading_webhook": true,
+    "no_order_placement": true,
+    "no_live_price": true,
+    "no_position_size": true,
+    "no_secret_storage": true,
+    "no_strategy_mutation": true,
+    "no_production_records_mutation": true,
+    "dashboard_contract_unchanged": true
+  },
+  "run_dir": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v2_11_f_acceptance/v2_11_f_20260711_acceptance",
+  "proposals_json": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v2_11_f_acceptance/v2_11_f_20260711_acceptance/a_share_tushare_rebuild_proposals.json",
+  "rebuild_report_json": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v2_11_f_acceptance/v2_11_f_20260711_acceptance/a_share_tushare_strategy_candidate_rebuild_report.json",
+  "rebuild_report_md": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v2_11_f_acceptance/v2_11_f_20260711_acceptance/a_share_tushare_strategy_candidate_rebuild_report.md",
+  "source_v2_11_c_report_json": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/v2_11_c_tushare_a_share_historical_sandbox_live_data_refresh_latest.json",
+  "source_v2_11_d_report_json": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/v2_11_d_tushare_backed_a_share_suggestion_gate_refresh_latest.json",
+  "source_v2_11_e_report_json": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/v2_11_e_current_action_packet_after_tushare_gate_latest.json",
+  "source_v2_11_e_pass_marker": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/V2_11_E_CURRENT_ACTION_PACKET_AFTER_TUSHARE_GATE_PASS.marker",
+  "hashes": {
+    "source_v2_11_c_report_json": "a48afb03d1993c7a5b696ad11510e35c82ebd6f747f272f5dc3690d6c27fa6f7",
+    "source_v2_11_d_report_json": "42c35b4531810ea01f949af51a821bc3fcc020a22ed969618db4559e5305bbd3",
+    "source_v2_11_e_report_json": "189bdfca090d438796ac78881e9bd8709946f6103b87f34c82b1ceb1def1afa6",
+    "source_v2_11_e_pass_marker": "caa47ee99f98f24a0d6056faed9e171c85eaaa4acd8a590fe27394306952c628",
+    "proposals_json": "ca723ddab2a5d96fc12530f5e7eb35a2eacd951c5da5321e716dd2d8099e70f8",
+    "rebuild_report_json": "91d671d4c627881f3d2af852b6c7031775dd87500c97179dcc5094777a83e06a",
+    "rebuild_report_md": "ae1b408fcc8caff0c4fff9fb3756880128a0041e8e9ba8c8089df3b106f04303"
+  }
+}

@@ -1,0 +1,119 @@
+{
+  "type": "aegis_stock_assistant_feishu_send",
+  "generated_at": "2026-07-12T13:41:01.948946+08:00",
+  "sender": "openclaw_stock_account",
+  "channel": "feishu",
+  "account": "stock",
+  "target_present": true,
+  "cards_path": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/aegis_stock_assistant_feishu_cards_latest.json",
+  "cards_sha256": "da6406d37f59875c8b90523f103cb1b21489bcf9d29800671a703271664d40b4",
+  "presentations_path": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/aegis_stock_assistant_feishu_presentations_latest.json",
+  "presentations_sha256": "94d18cb5c4792bbf7de82dad85f98c12ec533c1f91d7dbd59ad573cea398d740",
+  "card_count": 6,
+  "presentation_count": 6,
+  "send_status": "SENT",
+  "sent_count": 6,
+  "failed_count": 0,
+  "transport": "feishu_official_api_stock_app",
+  "results": [
+    {
+      "index": 1,
+      "sent": true,
+      "account": "stock",
+      "http_status": 200,
+      "feishu_code": 0,
+      "message_id": "om_x100b6a06c06e20a8b2815939f5f14d5",
+      "reason": null
+    },
+    {
+      "index": 2,
+      "sent": true,
+      "account": "stock",
+      "http_status": 200,
+      "feishu_code": 0,
+      "message_id": "om_x100b6a06c06364b0b296d34fa40b206",
+      "reason": null
+    },
+    {
+      "index": 3,
+      "sent": true,
+      "account": "stock",
+      "http_status": 200,
+      "feishu_code": 0,
+      "message_id": "om_x100b6a06c07448a0b36722b96ea4ffd",
+      "reason": null
+    },
+    {
+      "index": 4,
+      "sent": true,
+      "account": "stock",
+      "http_status": 200,
+      "feishu_code": 0,
+      "message_id": "om_x100b6a06c0095900b3e4e89ad65c872",
+      "reason": null
+    },
+    {
+      "index": 5,
+      "sent": true,
+      "account": "stock",
+      "http_status": 200,
+      "feishu_code": 0,
+      "message_id": "om_x100b6a06c00298a4b3f9435151642d0",
+      "reason": null
+    },
+    {
+      "index": 6,
+      "sent": true,
+      "account": "stock",
+      "http_status": 200,
+      "feishu_code": 0,
+      "message_id": "om_x100b6a06c0140ca4b0383e4500839f8",
+      "reason": null
+    }
+  ],
+  "openclaw_attempt": [
+    {
+      "index": 1,
+      "sent": false,
+      "account": "stock",
+      "reason": "openclaw_feishu_token_redirect_loop"
+    },
+    {
+      "index": 2,
+      "sent": false,
+      "account": "stock",
+      "reason": "openclaw_feishu_token_redirect_loop"
+    },
+    {
+      "index": 3,
+      "sent": false,
+      "account": "stock",
+      "reason": "openclaw_feishu_token_redirect_loop"
+    },
+    {
+      "index": 4,
+      "sent": false,
+      "account": "stock",
+      "reason": "openclaw_feishu_token_redirect_loop"
+    },
+    {
+      "index": 5,
+      "sent": false,
+      "account": "stock",
+      "reason": "openclaw_feishu_token_redirect_loop"
+    },
+    {
+      "index": 6,
+      "sent": false,
+      "account": "stock",
+      "reason": "openclaw_feishu_token_redirect_loop"
+    }
+  ],
+  "safety": {
+    "simulation_only": true,
+    "no_broker_api": true,
+    "no_order_placement": true,
+    "no_trading_webhook": true,
+    "no_secret_values_recorded": true
+  }
+}

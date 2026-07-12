@@ -1,0 +1,699 @@
+{
+  "generated_at": "2026-07-09T13:54:57.285175+08:00",
+  "coverage": {
+    "A": "confirmed_tushare",
+    "H": "confirmed_live",
+    "US": "confirmed_live"
+  },
+  "provider_coverage": {
+    "status": "ok",
+    "run_id": "provider_diag_20260704_154328",
+    "created_at": "2026-07-04T23:43:32.323182+08:00",
+    "a_core_confirmed": true,
+    "a_core_checks": [
+      {
+        "data_type": "daily_bars",
+        "status": "pass"
+      },
+      {
+        "data_type": "index_bars",
+        "status": "pass"
+      },
+      {
+        "data_type": "stock_basic",
+        "status": "pass"
+      },
+      {
+        "data_type": "trading_calendar",
+        "status": "pass"
+      }
+    ],
+    "a_enhanced_confirmed": false,
+    "a_enhanced_checks": [
+      {
+        "data_type": "sector_classification",
+        "status": "unknown"
+      },
+      {
+        "data_type": "fundamentals",
+        "status": "unknown"
+      }
+    ]
+  },
+  "provider_router_live": {
+    "status": "ok",
+    "run_id": "provider_router_live_20260704_173128",
+    "created_at": "2026-07-05T01:31:35.612444+08:00",
+    "summary": {
+      "pass_count": 4,
+      "fail_count": 0,
+      "unknown_count": 0,
+      "skipped_count": 0,
+      "not_configured_count": 2,
+      "dependency_missing_count": 0,
+      "network_unavailable_count": 0,
+      "unsupported_count": 0
+    }
+  },
+  "market_snapshot_smoke": {
+    "status": "ok",
+    "run_id": "market_snapshot_smoke_20260705_054604",
+    "created_at": "2026-07-05T13:46:04.407841+08:00",
+    "date": "2026-07-04",
+    "markets": {
+      "H": {
+        "overall_status": "pass",
+        "route_snapshot_consistency": "route_pass_snapshot_pass",
+        "index_bars_status": "pass",
+        "daily_bars_status": "pass"
+      },
+      "US": {
+        "overall_status": "pass",
+        "route_snapshot_consistency": "route_pass_snapshot_pass",
+        "index_bars_status": "pass",
+        "daily_bars_status": "pass"
+      }
+    },
+    "summary": {
+      "pass": 2
+    }
+  },
+  "holdings": {
+    "status": "ok",
+    "count": 2,
+    "holdings": [
+      {
+        "symbol": "CRCL",
+        "name": "Circle Internet Group",
+        "market": "US",
+        "shares": 254.0,
+        "avg_cost": 109.157,
+        "currency": "USD",
+        "entry_date": "2026-07-01",
+        "status": "open"
+      },
+      {
+        "symbol": "000002.SZ",
+        "name": "万科A",
+        "market": "A",
+        "shares": 1000.0,
+        "avg_cost": 8.5,
+        "currency": "CNY",
+        "entry_date": "2026-07-09",
+        "status": "open"
+      }
+    ]
+  },
+  "recommendations": {
+    "status": "ok",
+    "count": 2,
+    "total_records": 7,
+    "status_counts": {
+      "Exit": 2
+    },
+    "latest": {
+      "recommendation_id": "rec_20260709_pre_market_A_000002.SZ",
+      "date": "2026-07-09",
+      "symbol": "000002.SZ",
+      "market": "A",
+      "status": "Exit",
+      "action_label": "exit_position",
+      "confidence": 0.25,
+      "created_at": "2026-07-09T13:54:14.969543+08:00"
+    }
+  },
+  "paper_trading": {
+    "status": "no_data",
+    "count": 0,
+    "open_count": 0,
+    "closed_count": 0
+  },
+  "review": {
+    "status": "no_data",
+    "count": 0,
+    "success_rate": null,
+    "win_loss": null
+  },
+  "data_gaps": {
+    "status": "ok",
+    "count": 70,
+    "current_count": 42,
+    "historical_count": 28,
+    "by_severity": {
+      "warning": 70
+    },
+    "recent": [
+      {
+        "gap_id": "gap_20260706_A_stock_basic",
+        "date": "2026-07-06",
+        "market": "A",
+        "symbol": null,
+        "provider": "universe_builder",
+        "data_type": "stock_basic",
+        "severity": "warning",
+        "message": "No stock list returned for market A.",
+        "consumer_impact": [],
+        "created_at": "2026-07-06T12:10:59.788019+08:00"
+      },
+      {
+        "gap_id": "gap_20260706_H_stock_basic",
+        "date": "2026-07-06",
+        "market": "H",
+        "symbol": null,
+        "provider": "universe_builder",
+        "data_type": "stock_basic",
+        "severity": "warning",
+        "message": "No stock list returned for market H.",
+        "consumer_impact": [],
+        "created_at": "2026-07-06T12:10:59.792082+08:00"
+      },
+      {
+        "gap_id": "gap_20260706_US_stock_basic",
+        "date": "2026-07-06",
+        "market": "US",
+        "symbol": null,
+        "provider": "universe_builder",
+        "data_type": "stock_basic",
+        "severity": "warning",
+        "message": "No stock list returned for market US.",
+        "consumer_impact": [],
+        "created_at": "2026-07-06T12:10:59.794793+08:00"
+      },
+      {
+        "gap_id": "gap_20260706_US_CRCL_daily_bars",
+        "date": "20260706",
+        "market": "US",
+        "symbol": "CRCL",
+        "provider": "yahoo_finance",
+        "data_type": "daily_bars",
+        "severity": "warning",
+        "message": "No daily bars returned for CRCL (US) via provider_route='yahoo_finance' between 20260308 and 20260706.",
+        "consumer_impact": [
+          "daily_bars unavailable for CRCL (US) — any consumer receives empty data, not real bars"
+        ],
+        "created_at": "2026-07-06T12:10:59.808689+08:00"
+      },
+      {
+        "gap_id": "gap_20260706_US_SPX_index_bars",
+        "date": "20260706",
+        "market": "US",
+        "symbol": "SPX",
+        "provider": "yahoo_finance",
+        "data_type": "index_bars",
+        "severity": "warning",
+        "message": "No index bars returned for SPX (US) via provider_route='yahoo_finance' between 20260308 and 20260706.",
+        "consumer_impact": [
+          "index_bars unavailable for SPX (US) — market regime/relative-strength consumers receive empty data, not real bars"
+        ],
+        "created_at": "2026-07-06T12:10:59.822268+08:00"
+      },
+      {
+        "gap_id": "gap_20260706_H_HSI.HI_index_bars",
+        "date": "20260706",
+        "market": "H",
+        "symbol": "HSI.HI",
+        "provider": "yahoo_finance",
+        "data_type": "index_bars",
+        "severity": "warning",
+        "message": "No index bars returned for HSI.HI (H) via provider_route='yahoo_finance' between 20260308 and 20260706.",
+        "consumer_impact": [
+          "index_bars unavailable for HSI.HI (H) — market regime/relative-strength consumers receive empty data, not real bars"
+        ],
+        "created_at": "2026-07-06T12:16:41.589763+08:00"
+      },
+      {
+        "gap_id": "gap_20260706_US_SPX_index_bars",
+        "date": "20260706",
+        "market": "US",
+        "symbol": "SPX",
+        "provider": "yahoo_finance",
+        "data_type": "index_bars",
+        "severity": "warning",
+        "message": "No index bars returned for SPX (US) via provider_route='yahoo_finance' between 20260308 and 20260706.",
+        "consumer_impact": [
+          "index_bars unavailable for SPX (US) — market regime/relative-strength consumers receive empty data, not real bars"
+        ],
+        "created_at": "2026-07-06T12:16:42.494460+08:00"
+      },
+      {
+        "gap_id": "gap_20260706_US_CRCL_daily_bars",
+        "date": "20260706",
+        "market": "US",
+        "symbol": "CRCL",
+        "provider": "yahoo_finance",
+        "data_type": "daily_bars",
+        "severity": "warning",
+        "message": "No daily bars returned for CRCL (US) via provider_route='yahoo_finance' between 20260308 and 20260706.",
+        "consumer_impact": [
+          "daily_bars unavailable for CRCL (US) — any consumer receives empty data, not real bars"
+        ],
+        "created_at": "2026-07-06T12:16:45.109188+08:00"
+      },
+      {
+        "gap_id": "gap_20260706_US_SPX_index_bars",
+        "date": "20260706",
+        "market": "US",
+        "symbol": "SPX",
+        "provider": "yahoo_finance",
+        "data_type": "index_bars",
+        "severity": "warning",
+        "message": "No index bars returned for SPX (US) via provider_route='yahoo_finance' between 20260308 and 20260706.",
+        "consumer_impact": [
+          "index_bars unavailable for SPX (US) — market regime/relative-strength consumers receive empty data, not real bars"
+        ],
+        "created_at": "2026-07-06T12:16:46.009143+08:00"
+      },
+      {
+        "gap_id": "gap_20260706_H_HSI.HI_index_bars",
+        "date": "20260706",
+        "market": "H",
+        "symbol": "HSI.HI",
+        "provider": "yahoo_finance",
+        "data_type": "index_bars",
+        "severity": "warning",
+        "message": "No index bars returned for HSI.HI (H) via provider_route='yahoo_finance' between 20260507 and 20260706.",
+        "consumer_impact": [
+          "index_bars unavailable for HSI.HI (H) — market regime/relative-strength consumers receive empty data, not real bars"
+        ],
+        "created_at": "2026-07-06T13:22:44.231208+08:00"
+      },
+      {
+        "gap_id": "gap_20260706_US_SPX_index_bars",
+        "date": "20260706",
+        "market": "US",
+        "symbol": "SPX",
+        "provider": "yahoo_finance",
+        "data_type": "index_bars",
+        "severity": "warning",
+        "message": "No index bars returned for SPX (US) via provider_route='yahoo_finance' between 20260507 and 20260706.",
+        "consumer_impact": [
+          "index_bars unavailable for SPX (US) — market regime/relative-strength consumers receive empty data, not real bars"
+        ],
+        "created_at": "2026-07-06T13:22:44.244973+08:00"
+      },
+      {
+        "gap_id": "gap_20260706_H_00700.HK_daily_bars",
+        "date": "20260706",
+        "market": "H",
+        "symbol": "00700.HK",
+        "provider": "yahoo_finance",
+        "data_type": "daily_bars",
+        "severity": "warning",
+        "message": "No daily bars returned for 00700.HK (H) via provider_route='yahoo_finance' between 20260507 and 20260706.",
+        "consumer_impact": [
+          "daily_bars unavailable for 00700.HK (H) — any consumer receives empty data, not real bars"
+        ],
+        "created_at": "2026-07-06T13:22:44.257887+08:00"
+      },
+      {
+        "gap_id": "gap_20260706_US_CRCL_daily_bars",
+        "date": "20260706",
+        "market": "US",
+        "symbol": "CRCL",
+        "provider": "yahoo_finance",
+        "data_type": "daily_bars",
+        "severity": "warning",
+        "message": "No daily bars returned for CRCL (US) via provider_route='yahoo_finance' between 20260507 and 20260706.",
+        "consumer_impact": [
+          "daily_bars unavailable for CRCL (US) — any consumer receives empty data, not real bars"
+        ],
+        "created_at": "2026-07-06T13:22:44.270860+08:00"
+      },
+      {
+        "gap_id": "gap_20260706_H_HSI.HI_index_bars",
+        "date": "20260706",
+        "market": "H",
+        "symbol": "HSI.HI",
+        "provider": "yahoo_finance",
+        "data_type": "index_bars",
+        "severity": "warning",
+        "message": "No index bars returned for HSI.HI (H) via provider_route='yahoo_finance' between 20260308 and 20260706.",
+        "consumer_impact": [
+          "index_bars unavailable for HSI.HI (H) — market regime/relative-strength consumers receive empty data, not real bars"
+        ],
+        "created_at": "2026-07-06T13:22:49.497930+08:00"
+      },
+      {
+        "gap_id": "gap_20260706_US_SPX_index_bars",
+        "date": "20260706",
+        "market": "US",
+        "symbol": "SPX",
+        "provider": "yahoo_finance",
+        "data_type": "index_bars",
+        "severity": "warning",
+        "message": "No index bars returned for SPX (US) via provider_route='yahoo_finance' between 20260308 and 20260706.",
+        "consumer_impact": [
+          "index_bars unavailable for SPX (US) — market regime/relative-strength consumers receive empty data, not real bars"
+        ],
+        "created_at": "2026-07-06T13:22:49.510249+08:00"
+      },
+      {
+        "gap_id": "gap_20260706_A_stock_basic",
+        "date": "2026-07-06",
+        "market": "A",
+        "symbol": null,
+        "provider": "universe_builder",
+        "data_type": "stock_basic",
+        "severity": "warning",
+        "message": "No stock list returned for market A.",
+        "consumer_impact": [],
+        "created_at": "2026-07-06T13:22:49.513809+08:00"
+      },
+      {
+        "gap_id": "gap_20260706_H_stock_basic",
+        "date": "2026-07-06",
+        "market": "H",
+        "symbol": null,
+        "provider": "universe_builder",
+        "data_type": "stock_basic",
+        "severity": "warning",
+        "message": "No stock list returned for market H.",
+        "consumer_impact": [],
+        "created_at": "2026-07-06T13:22:49.515539+08:00"
+      },
+      {
+        "gap_id": "gap_20260706_US_stock_basic",
+        "date": "2026-07-06",
+        "market": "US",
+        "symbol": null,
+        "provider": "universe_builder",
+        "data_type": "stock_basic",
+        "severity": "warning",
+        "message": "No stock list returned for market US.",
+        "consumer_impact": [],
+        "created_at": "2026-07-06T13:22:49.517141+08:00"
+      },
+      {
+        "gap_id": "gap_20260706_US_CRCL_daily_bars",
+        "date": "20260706",
+        "market": "US",
+        "symbol": "CRCL",
+        "provider": "yahoo_finance",
+        "data_type": "daily_bars",
+        "severity": "warning",
+        "message": "No daily bars returned for CRCL (US) via provider_route='yahoo_finance' between 20260308 and 20260706.",
+        "consumer_impact": [
+          "daily_bars unavailable for CRCL (US) — any consumer receives empty data, not real bars"
+        ],
+        "created_at": "2026-07-06T13:22:49.529138+08:00"
+      },
+      {
+        "gap_id": "gap_20260706_US_SPX_index_bars",
+        "date": "20260706",
+        "market": "US",
+        "symbol": "SPX",
+        "provider": "yahoo_finance",
+        "data_type": "index_bars",
+        "severity": "warning",
+        "message": "No index bars returned for SPX (US) via provider_route='yahoo_finance' between 20260308 and 20260706.",
+        "consumer_impact": [
+          "index_bars unavailable for SPX (US) — market regime/relative-strength consumers receive empty data, not real bars"
+        ],
+        "created_at": "2026-07-06T13:22:49.541235+08:00"
+      }
+    ],
+    "historical_recent": [
+      {
+        "gap_id": "gap_20260704_H_HSI.HI_index_bars",
+        "date": "20260704",
+        "market": "H",
+        "symbol": "HSI.HI",
+        "provider": "yahoo_finance",
+        "data_type": "index_bars",
+        "severity": "warning",
+        "message": "ProviderError via provider_route='yahoo_finance': yfinance package is not installed",
+        "consumer_impact": [
+          "index_bars unavailable for HSI.HI (H) — market regime/relative-strength consumers receive empty data, not real bars"
+        ],
+        "created_at": "2026-07-05T11:42:15.746995+08:00"
+      },
+      {
+        "gap_id": "gap_20260704_US_SPX_index_bars",
+        "date": "20260704",
+        "market": "US",
+        "symbol": "SPX",
+        "provider": "yahoo_finance",
+        "data_type": "index_bars",
+        "severity": "warning",
+        "message": "ProviderError via provider_route='yahoo_finance': yfinance package is not installed",
+        "consumer_impact": [
+          "index_bars unavailable for SPX (US) — market regime/relative-strength consumers receive empty data, not real bars"
+        ],
+        "created_at": "2026-07-05T11:42:15.749724+08:00"
+      },
+      {
+        "gap_id": "gap_20260704_H_00700.HK_daily_bars",
+        "date": "20260704",
+        "market": "H",
+        "symbol": "00700.HK",
+        "provider": "yahoo_finance",
+        "data_type": "daily_bars",
+        "severity": "warning",
+        "message": "ProviderError via provider_route='yahoo_finance': yfinance package is not installed",
+        "consumer_impact": [
+          "daily_bars unavailable for 00700.HK (H) — any consumer receives empty data, not real bars"
+        ],
+        "created_at": "2026-07-05T11:42:15.750994+08:00"
+      },
+      {
+        "gap_id": "gap_20260704_US_CRCL_daily_bars",
+        "date": "20260704",
+        "market": "US",
+        "symbol": "CRCL",
+        "provider": "yahoo_finance",
+        "data_type": "daily_bars",
+        "severity": "warning",
+        "message": "ProviderError via provider_route='yahoo_finance': yfinance package is not installed",
+        "consumer_impact": [
+          "daily_bars unavailable for CRCL (US) — any consumer receives empty data, not real bars"
+        ],
+        "created_at": "2026-07-05T11:42:15.752078+08:00"
+      },
+      {
+        "gap_id": "gap_20260704_H_HSI.HI_index_bars",
+        "date": "20260704",
+        "market": "H",
+        "symbol": "HSI.HI",
+        "provider": "yahoo_finance",
+        "data_type": "index_bars",
+        "severity": "warning",
+        "message": "ProviderError via provider_route='yahoo_finance': yfinance package is not installed",
+        "consumer_impact": [
+          "index_bars unavailable for HSI.HI (H) — market regime/relative-strength consumers receive empty data, not real bars"
+        ],
+        "created_at": "2026-07-05T12:59:49.138090+08:00"
+      },
+      {
+        "gap_id": "gap_20260704_US_SPX_index_bars",
+        "date": "20260704",
+        "market": "US",
+        "symbol": "SPX",
+        "provider": "yahoo_finance",
+        "data_type": "index_bars",
+        "severity": "warning",
+        "message": "ProviderError via provider_route='yahoo_finance': yfinance package is not installed",
+        "consumer_impact": [
+          "index_bars unavailable for SPX (US) — market regime/relative-strength consumers receive empty data, not real bars"
+        ],
+        "created_at": "2026-07-05T12:59:49.139558+08:00"
+      },
+      {
+        "gap_id": "gap_20260704_H_00700.HK_daily_bars",
+        "date": "20260704",
+        "market": "H",
+        "symbol": "00700.HK",
+        "provider": "yahoo_finance",
+        "data_type": "daily_bars",
+        "severity": "warning",
+        "message": "ProviderError via provider_route='yahoo_finance': yfinance package is not installed",
+        "consumer_impact": [
+          "daily_bars unavailable for 00700.HK (H) — any consumer receives empty data, not real bars"
+        ],
+        "created_at": "2026-07-05T12:59:49.140457+08:00"
+      },
+      {
+        "gap_id": "gap_20260704_US_CRCL_daily_bars",
+        "date": "20260704",
+        "market": "US",
+        "symbol": "CRCL",
+        "provider": "yahoo_finance",
+        "data_type": "daily_bars",
+        "severity": "warning",
+        "message": "ProviderError via provider_route='yahoo_finance': yfinance package is not installed",
+        "consumer_impact": [
+          "daily_bars unavailable for CRCL (US) — any consumer receives empty data, not real bars"
+        ],
+        "created_at": "2026-07-05T12:59:49.141288+08:00"
+      },
+      {
+        "gap_id": "gap_20260704_H_HSI.HI_index_bars",
+        "date": "20260704",
+        "market": "H",
+        "symbol": "HSI.HI",
+        "provider": "yahoo_finance",
+        "data_type": "index_bars",
+        "severity": "warning",
+        "message": "ProviderError via provider_route='yahoo_finance': yfinance package is not installed",
+        "consumer_impact": [
+          "index_bars unavailable for HSI.HI (H) — market regime/relative-strength consumers receive empty data, not real bars"
+        ],
+        "created_at": "2026-07-05T13:00:02.282344+08:00"
+      },
+      {
+        "gap_id": "gap_20260704_US_SPX_index_bars",
+        "date": "20260704",
+        "market": "US",
+        "symbol": "SPX",
+        "provider": "yahoo_finance",
+        "data_type": "index_bars",
+        "severity": "warning",
+        "message": "ProviderError via provider_route='yahoo_finance': yfinance package is not installed",
+        "consumer_impact": [
+          "index_bars unavailable for SPX (US) — market regime/relative-strength consumers receive empty data, not real bars"
+        ],
+        "created_at": "2026-07-05T13:00:02.284328+08:00"
+      },
+      {
+        "gap_id": "gap_20260704_H_00700.HK_daily_bars",
+        "date": "20260704",
+        "market": "H",
+        "symbol": "00700.HK",
+        "provider": "yahoo_finance",
+        "data_type": "daily_bars",
+        "severity": "warning",
+        "message": "ProviderError via provider_route='yahoo_finance': yfinance package is not installed",
+        "consumer_impact": [
+          "daily_bars unavailable for 00700.HK (H) — any consumer receives empty data, not real bars"
+        ],
+        "created_at": "2026-07-05T13:00:02.285922+08:00"
+      },
+      {
+        "gap_id": "gap_20260704_US_CRCL_daily_bars",
+        "date": "20260704",
+        "market": "US",
+        "symbol": "CRCL",
+        "provider": "yahoo_finance",
+        "data_type": "daily_bars",
+        "severity": "warning",
+        "message": "ProviderError via provider_route='yahoo_finance': yfinance package is not installed",
+        "consumer_impact": [
+          "daily_bars unavailable for CRCL (US) — any consumer receives empty data, not real bars"
+        ],
+        "created_at": "2026-07-05T13:00:02.287158+08:00"
+      },
+      {
+        "gap_id": "gap_20260704_H_HSI.HI_index_bars",
+        "date": "20260704",
+        "market": "H",
+        "symbol": "HSI.HI",
+        "provider": "yahoo_finance",
+        "data_type": "index_bars",
+        "severity": "warning",
+        "message": "ProviderError via provider_route='yahoo_finance': yfinance package is not installed",
+        "consumer_impact": [
+          "index_bars unavailable for HSI.HI (H) — market regime/relative-strength consumers receive empty data, not real bars"
+        ],
+        "created_at": "2026-07-05T13:11:21.444157+08:00"
+      },
+      {
+        "gap_id": "gap_20260704_US_SPX_index_bars",
+        "date": "20260704",
+        "market": "US",
+        "symbol": "SPX",
+        "provider": "yahoo_finance",
+        "data_type": "index_bars",
+        "severity": "warning",
+        "message": "ProviderError via provider_route='yahoo_finance': yfinance package is not installed",
+        "consumer_impact": [
+          "index_bars unavailable for SPX (US) — market regime/relative-strength consumers receive empty data, not real bars"
+        ],
+        "created_at": "2026-07-05T13:11:21.445530+08:00"
+      },
+      {
+        "gap_id": "gap_20260704_H_00700.HK_daily_bars",
+        "date": "20260704",
+        "market": "H",
+        "symbol": "00700.HK",
+        "provider": "yahoo_finance",
+        "data_type": "daily_bars",
+        "severity": "warning",
+        "message": "ProviderError via provider_route='yahoo_finance': yfinance package is not installed",
+        "consumer_impact": [
+          "daily_bars unavailable for 00700.HK (H) — any consumer receives empty data, not real bars"
+        ],
+        "created_at": "2026-07-05T13:11:21.446576+08:00"
+      },
+      {
+        "gap_id": "gap_20260704_US_CRCL_daily_bars",
+        "date": "20260704",
+        "market": "US",
+        "symbol": "CRCL",
+        "provider": "yahoo_finance",
+        "data_type": "daily_bars",
+        "severity": "warning",
+        "message": "ProviderError via provider_route='yahoo_finance': yfinance package is not installed",
+        "consumer_impact": [
+          "daily_bars unavailable for CRCL (US) — any consumer receives empty data, not real bars"
+        ],
+        "created_at": "2026-07-05T13:11:21.447411+08:00"
+      },
+      {
+        "gap_id": "gap_20260704_H_HSI.HI_index_bars",
+        "date": "20260704",
+        "market": "H",
+        "symbol": "HSI.HI",
+        "provider": "yahoo_finance",
+        "data_type": "index_bars",
+        "severity": "warning",
+        "message": "ProviderError via provider_route='yahoo_finance': yfinance package is not installed",
+        "consumer_impact": [
+          "index_bars unavailable for HSI.HI (H) — market regime/relative-strength consumers receive empty data, not real bars"
+        ],
+        "created_at": "2026-07-05T13:19:55.787824+08:00"
+      },
+      {
+        "gap_id": "gap_20260704_US_SPX_index_bars",
+        "date": "20260704",
+        "market": "US",
+        "symbol": "SPX",
+        "provider": "yahoo_finance",
+        "data_type": "index_bars",
+        "severity": "warning",
+        "message": "ProviderError via provider_route='yahoo_finance': yfinance package is not installed",
+        "consumer_impact": [
+          "index_bars unavailable for SPX (US) — market regime/relative-strength consumers receive empty data, not real bars"
+        ],
+        "created_at": "2026-07-05T13:19:55.789580+08:00"
+      },
+      {
+        "gap_id": "gap_20260704_H_00700.HK_daily_bars",
+        "date": "20260704",
+        "market": "H",
+        "symbol": "00700.HK",
+        "provider": "yahoo_finance",
+        "data_type": "daily_bars",
+        "severity": "warning",
+        "message": "ProviderError via provider_route='yahoo_finance': yfinance package is not installed",
+        "consumer_impact": [
+          "daily_bars unavailable for 00700.HK (H) — any consumer receives empty data, not real bars"
+        ],
+        "created_at": "2026-07-05T13:19:55.791491+08:00"
+      },
+      {
+        "gap_id": "gap_20260704_US_CRCL_daily_bars",
+        "date": "20260704",
+        "market": "US",
+        "symbol": "CRCL",
+        "provider": "yahoo_finance",
+        "data_type": "daily_bars",
+        "severity": "warning",
+        "message": "ProviderError via provider_route='yahoo_finance': yfinance package is not installed",
+        "consumer_impact": [
+          "daily_bars unavailable for CRCL (US) — any consumer receives empty data, not real bars"
+        ],
+        "created_at": "2026-07-05T13:19:55.793116+08:00"
+      }
+    ]
+  },
+  "next_operational_action": "Review 42 current data gap(s) in data/records/data_gaps.jsonl."
+}

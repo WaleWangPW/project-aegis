@@ -1,0 +1,86 @@
+{
+  "project": "Project Aegis",
+  "type": "strategy_definition_validation",
+  "validated_at": "2026-07-12T08:00:22.078984+08:00",
+  "strict_mode": true,
+  "checks": {
+    "strategy_json_exists": {
+      "passed": true
+    },
+    "strategy_md_exists": {
+      "passed": true
+    },
+    "input_schema_exists": {
+      "passed": true
+    },
+    "output_schema_exists": {
+      "passed": true
+    },
+    "strategy_json_parseable": {
+      "passed": true
+    },
+    "input_schema_parseable": {
+      "passed": true
+    },
+    "output_schema_parseable": {
+      "passed": true
+    },
+    "strategy_id_valid": {
+      "passed": true,
+      "value": "a_share_watchlist_v1"
+    },
+    "top_n_20": {
+      "passed": true,
+      "value": 20
+    },
+    "canonical_top5_matches_p19_10": {
+      "passed": true,
+      "value": [
+        "600519.SH",
+        "600036.SH",
+        "000858.SZ",
+        "000001.SZ",
+        "601398.SH"
+      ]
+    },
+    "safety_boundaries_present": {
+      "passed": true,
+      "value": [
+        "no_real_trade",
+        "no_order_api",
+        "no_webhook_send",
+        "no_secret_output"
+      ]
+    },
+    "backtest_not_included_true": {
+      "passed": true,
+      "value": true
+    },
+    "allow_short_false": {
+      "passed": true,
+      "value": false
+    },
+    "allow_real_trade_false": {
+      "passed": true,
+      "value": false
+    },
+    "output_dry_run_true": {
+      "passed": true,
+      "value": true
+    },
+    "output_sent_false": {
+      "passed": true,
+      "value": false
+    },
+    "output_trading_called_false": {
+      "passed": true,
+      "value": false
+    },
+    "no_secret_value_detected": {
+      "passed": true,
+      "value": []
+    }
+  },
+  "failures": [],
+  "overall_verdict": "PASS"
+}

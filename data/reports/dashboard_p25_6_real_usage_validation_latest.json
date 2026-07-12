@@ -1,0 +1,74 @@
+{
+  "project": "Project Aegis",
+  "type": "p25_6_real_usage_validation",
+  "generated_at": "2026-07-11T06:54:08.366980+00:00",
+  "overall_verdict": "PASS",
+  "checks": [
+    {
+      "name": "contract_meta_2",
+      "passed": true
+    },
+    {
+      "name": "index_equals_v2",
+      "passed": true
+    },
+    {
+      "name": "node_check",
+      "passed": true
+    },
+    {
+      "name": "mobile_390_and_no_overflow",
+      "passed": true
+    },
+    {
+      "name": "details_collapsed",
+      "passed": true
+    },
+    {
+      "name": "required_chinese_copy",
+      "passed": true
+    },
+    {
+      "name": "evidence_failure_blocks_action",
+      "passed": true
+    },
+    {
+      "name": "no_execution_or_sending",
+      "passed": true
+    },
+    {
+      "name": "no_simulated_content",
+      "passed": true
+    },
+    {
+      "name": "no_secret_value",
+      "passed": true
+    },
+    {
+      "name": "no_composite_score",
+      "passed": true
+    },
+    {
+      "name": "history_isolation",
+      "passed": true
+    },
+    {
+      "name": "read_only_reports",
+      "passed": true
+    },
+    {
+      "name": "derive_logic_unchanged",
+      "passed": true
+    },
+    {
+      "name": "project_scope_aegis",
+      "passed": true
+    },
+    {
+      "name": "usage_report_complete",
+      "passed": true
+    }
+  ],
+  "derive_daily_decision_sha256": "6d1af48d929d11091aa74c1e7caa79b4144749a56c0df3cd81173e8bc553287e",
+  "usage_report": "data/reports/p25_6_real_usage_acceptance_latest.json"
+}

@@ -1,0 +1,51 @@
+{
+  "overall_status": "PASS",
+  "generated_at": "2026-07-11T16:50:23.364990+08:00",
+  "run_id": "v2_0_b_20260711_acceptance",
+  "command": "validate_v2_0_b_portfolio_aware_brief.py --run-id v2_0_b_20260711_acceptance",
+  "acceptance_target": "V2.0-B Portfolio-Aware Daily Brief",
+  "isolated": true,
+  "production_records_written": false,
+  "dashboard_contract_changed": false,
+  "run_dir": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v2_0_b_acceptance/v2_0_b_20260711_acceptance",
+  "portfolio_json": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v2_0_b_acceptance/v2_0_b_20260711_acceptance/portfolio_snapshot.json",
+  "brief_json": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v2_0_b_acceptance/v2_0_b_20260711_acceptance/portfolio_aware_brief.json",
+  "brief_md": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v2_0_b_acceptance/v2_0_b_20260711_acceptance/portfolio_aware_brief.md",
+  "checks": {
+    "recommendations_evaluated": true,
+    "action_explained": true,
+    "hold_explained": true,
+    "wait_explained": true,
+    "cash_exposure_risk_budget_used": true,
+    "dashboard_contract_unchanged": true,
+    "no_broker_or_real_trade": true
+  },
+  "summary": {
+    "recommendation_count": 3,
+    "action_counts": {
+      "wait_due_to_portfolio_risk": 1,
+      "hold": 1,
+      "wait": 1
+    },
+    "portfolio_snapshot_id": "psnap_20260711_v2_0_a"
+  },
+  "safety": {
+    "read_only": true,
+    "simulation_only": true,
+    "no_real_trade": true,
+    "no_broker_api": true,
+    "no_webhook": true,
+    "no_strategy_mutation": true,
+    "dashboard_contract_unchanged": true,
+    "manual_external_execution_only": true,
+    "user_submitted_execution_facts_only": true,
+    "no_account_sync": true,
+    "no_auto_rebalance": true,
+    "no_production_records_mutation": true
+  },
+  "hashes": {
+    "portfolio_json": "11252f2890a7d0f301af3405fa9e4bdc160e70167a0177cc99f0a9f41c05a32d",
+    "brief_json": "3ec089530c198e2f33bf7c746a38fda167ea3a9808fdcf9d2836d346442b53ba",
+    "brief_md": "215e258252931e012b487c5e3655660f06e0ad433c89ef2b76312926769e7b15"
+  }
+}

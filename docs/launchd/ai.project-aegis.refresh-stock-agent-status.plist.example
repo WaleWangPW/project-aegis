@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN"
+  "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!--
+  ai.project-aegis.refresh-stock-agent-status.plist.example
+
+  P1C.3 — OPTIONAL macOS LaunchAgent template.
+
+  This is a TEMPLATE ONLY. It is not installed or loaded by anything in
+  this repo, and Claude/Cowork must never install or load it
+  automatically — the task that introduced this file explicitly scopes
+  it to "create template only, do not install without user approval".
+
+  What it would do, if a user chooses to install it themselves:
+  run `scripts/refresh_stock_agent_aegis_status.py` on a conservative
+  interval (every 15 minutes here — StartInterval is in seconds, so
+  1800 would be 30 minutes instead) so the Feishu/OpenClaw stock-agent's
+  file-based Project Aegis status mirror stays fresh without the user
+  having to run the refresh script by hand.
+
+  How a user would install this themselves (NOT done automatically):
+    1. Copy this file to:
+         ~/Library/LaunchAgents/ai.project-aegis.refresh-stock-agent-status.plist
+       (drop the ".example" suffix).
+    2. Edit the two placeholder paths below:
+         - REPLACE_WITH_PYTHON3_PATH   (e.g. output of `which python3`)
+         - REPLACE_WITH_REPO_ROOT_PATH (the Project Aegis repo's absolute path)
+    3. Load it:
+         launchctl load ~/Library/LaunchAgents/ai.project-aegis.refresh-stock-agent-status.plist
+    4. Check it's running:
+         launchctl list | grep ai.project-aegis.refresh-stock-agent-status
+    5. Logs go to the two paths configured below
+       (StandardOutPath / StandardErrorPath) — inspect those if the
+       stock-agent's mirrored status ever looks stale.
+    6. To stop it:
+         launchctl unload ~/Library/LaunchAgents/ai.project-aegis.refresh-stock-agent-status.plist
+
+  This LaunchAgent, like the refresh script it runs, never reads a
+  token/.env, never touches paper_trades.jsonl, never calls a broker,
+  and never modifies dashboard/index.html — it only reruns
+  `scripts/refresh_stock_agent_aegis_status.py` on a timer.
+-->
+<plist version="1.0">
+<dict>
+    <key>Label</key>
+    <string>ai.project-aegis.refresh-stock-agent-status</string>
+
+    <key>ProgramArguments</key>
+    <array>
+        <string>REPLACE_WITH_PYTHON3_PATH</string>
+        <string>REPLACE_WITH_REPO_ROOT_PATH/scripts/refresh_stock_agent_aegis_status.py</string>
+    </array>
+
+    <key>WorkingDirectory</key>
+    <string>REPLACE_WITH_REPO_ROOT_PATH</string>
+
+    <!-- Conservative interval: 900s = 15 minutes. Use 1800 for 30 minutes. -->
+    <key>StartInterval</key>
+    <integer>900</integer>
+
+    <key>RunAtLoad</key>
+    <false/>
+
+    <key>StandardOutPath</key>
+    <string>REPLACE_WITH_REPO_ROOT_PATH/data/desktop/refresh_stock_agent_status.launchd.out.log</string>
+
+    <key>StandardErrorPath</key>
+    <string>REPLACE_WITH_REPO_ROOT_PATH/data/desktop/refresh_stock_agent_status.launchd.err.log</string>
+</dict>
+</plist>

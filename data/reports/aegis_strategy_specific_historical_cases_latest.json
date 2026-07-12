@@ -1,0 +1,1515 @@
+{
+  "type": "aegis_strategy_specific_historical_cases",
+  "status": "PASS",
+  "generated_at": "2026-07-12T14:30:19+08:00",
+  "run_id": "aegis_strategy_specific_historical_cases_20260712T063019Z",
+  "summary": {
+    "candidate_count": 13,
+    "candidates_with_cases": 11,
+    "historical_case_count": 44,
+    "data_gap_count": 2,
+    "a_share_case_count": 8,
+    "h_us_case_count": 36,
+    "direct_candidate_backtest_count": 44,
+    "user_facing_suggestion_allowed": false,
+    "next_stage": "evaluate assembled candidate cases and refresh US/HK historical bars"
+  },
+  "candidate_results": [
+    {
+      "symbol": "603893",
+      "name": "瑞芯微",
+      "market": "A",
+      "matched_strategy_ids": [
+        "qvm",
+        "low_vol_momentum",
+        "a_share_short_momentum",
+        "growth_breakout"
+      ],
+      "status": "case_assembled",
+      "case_count": 4,
+      "summary": {
+        "case_count": 4,
+        "win_rate": 0.25,
+        "average_return": -0.03987299427283694,
+        "average_max_drawdown": -0.13162914843771775,
+        "best_return": 0.05810972483336174,
+        "worst_return": -0.17124704491725773
+      },
+      "user_facing_suggestion_allowed": false,
+      "real_trade_allowed": false,
+      "ts_code": "603893.SH",
+      "available_trade_dates": 220
+    },
+    {
+      "symbol": "300059",
+      "name": "东方财富",
+      "market": "A",
+      "matched_strategy_ids": [
+        "qvm",
+        "low_vol_momentum",
+        "a_share_short_momentum"
+      ],
+      "status": "case_assembled",
+      "case_count": 4,
+      "summary": {
+        "case_count": 4,
+        "win_rate": 0.25,
+        "average_return": -0.03885265782271061,
+        "average_max_drawdown": -0.08405515278934739,
+        "best_return": 0.08576998050682261,
+        "worst_return": -0.10544452101998614
+      },
+      "user_facing_suggestion_allowed": false,
+      "real_trade_allowed": false,
+      "ts_code": "300059.SZ",
+      "available_trade_dates": 220
+    },
+    {
+      "symbol": "VRTX",
+      "name": "Vertex Pharmaceuticals Incorporated",
+      "market": "US",
+      "matched_strategy_ids": [
+        "low_vol_momentum",
+        "growth_breakout"
+      ],
+      "status": "case_assembled",
+      "case_count": 4,
+      "summary": {
+        "case_count": 4,
+        "win_rate": 0.75,
+        "average_return": 0.02828282052451242,
+        "average_max_drawdown": -0.0690076745404849,
+        "best_return": 0.11402084216613906,
+        "worst_return": -0.0566422901181276
+      },
+      "user_facing_suggestion_allowed": false,
+      "real_trade_allowed": false,
+      "provider_symbol": "VRTX.US",
+      "available_trade_dates": 632,
+      "cache_path": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/cache/aegis_h_us_candidate_daily_bars/US/daily_bars/vrtx_us.csv",
+      "cache_sha256": "c6a7542a8fba744de76c635330ec75fd048fcfbf6ba8eb6d8e624be2b1d805cc"
+    },
+    {
+      "symbol": "AMAT",
+      "name": "Applied Materials, Inc.",
+      "market": "US",
+      "matched_strategy_ids": [
+        "low_vol_momentum",
+        "growth_breakout"
+      ],
+      "status": "case_assembled",
+      "case_count": 4,
+      "summary": {
+        "case_count": 4,
+        "win_rate": 0.75,
+        "average_return": 0.06461384459845404,
+        "average_max_drawdown": -0.11850712600494046,
+        "best_return": 0.21224922612725639,
+        "worst_return": -0.0748087431693989
+      },
+      "user_facing_suggestion_allowed": false,
+      "real_trade_allowed": false,
+      "provider_symbol": "AMAT.US",
+      "available_trade_dates": 632,
+      "cache_path": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/cache/aegis_h_us_candidate_daily_bars/US/daily_bars/amat_us.csv",
+      "cache_sha256": "4df373e3eceae05e358b3f93c5cc200a36f001fdc6b294e3fe7f71844f6a7a6a"
+    },
+    {
+      "symbol": "00005",
+      "name": "汇丰控股",
+      "market": "HK",
+      "matched_strategy_ids": [
+        "low_vol_momentum"
+      ],
+      "status": "missing_h_us_daily_bars_for_current_candidate",
+      "case_count": 0,
+      "summary": {
+        "case_count": 0,
+        "win_rate": null,
+        "average_return": null,
+        "average_max_drawdown": null,
+        "best_return": null,
+        "worst_return": null
+      },
+      "user_facing_suggestion_allowed": false,
+      "real_trade_allowed": false,
+      "provider_symbol": "0005.HK",
+      "available_trade_dates": 0,
+      "required_trade_dates": 22,
+      "cache_path": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/cache/aegis_h_us_candidate_daily_bars/HK/daily_bars/0005_hk.csv"
+    },
+    {
+      "symbol": "OKTA",
+      "name": "Okta, Inc.",
+      "market": "US",
+      "matched_strategy_ids": [
+        "low_vol_momentum",
+        "growth_breakout"
+      ],
+      "status": "case_assembled",
+      "case_count": 4,
+      "summary": {
+        "case_count": 4,
+        "win_rate": 0.5,
+        "average_return": 0.037684686707321335,
+        "average_max_drawdown": -0.06120496648646037,
+        "best_return": 0.20631743821789073,
+        "worst_return": -0.04999999999999993
+      },
+      "user_facing_suggestion_allowed": false,
+      "real_trade_allowed": false,
+      "provider_symbol": "OKTA.US",
+      "available_trade_dates": 632,
+      "cache_path": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/cache/aegis_h_us_candidate_daily_bars/US/daily_bars/okta_us.csv",
+      "cache_sha256": "2a45eaa7fe45c493ea13b14a85a2d1a749d5c339f845dab559af878393aabb25"
+    },
+    {
+      "symbol": "MRNA",
+      "name": "Moderna, Inc.",
+      "market": "US",
+      "matched_strategy_ids": [
+        "low_vol_momentum",
+        "growth_breakout"
+      ],
+      "status": "case_assembled",
+      "case_count": 4,
+      "summary": {
+        "case_count": 4,
+        "win_rate": 0.25,
+        "average_return": -0.01669040209446676,
+        "average_max_drawdown": -0.20073134007698099,
+        "best_return": 0.4844531419873883,
+        "worst_return": -0.3016853932584269
+      },
+      "user_facing_suggestion_allowed": false,
+      "real_trade_allowed": false,
+      "provider_symbol": "MRNA.US",
+      "available_trade_dates": 632,
+      "cache_path": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/cache/aegis_h_us_candidate_daily_bars/US/daily_bars/mrna_us.csv",
+      "cache_sha256": "4821ad8657a43ad97b346e80d3ba73f706363bdd004895cfd0cccf0b62b828da"
+    },
+    {
+      "symbol": "HOOD",
+      "name": "Robinhood Markets, Inc.",
+      "market": "US",
+      "matched_strategy_ids": [
+        "low_vol_momentum"
+      ],
+      "status": "case_assembled",
+      "case_count": 4,
+      "summary": {
+        "case_count": 4,
+        "win_rate": 0.75,
+        "average_return": 0.11405548407776533,
+        "average_max_drawdown": -0.14225570018148043,
+        "best_return": 0.2965493283927745,
+        "worst_return": -0.13177041228779296
+      },
+      "user_facing_suggestion_allowed": false,
+      "real_trade_allowed": false,
+      "provider_symbol": "HOOD.US",
+      "available_trade_dates": 632,
+      "cache_path": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/cache/aegis_h_us_candidate_daily_bars/US/daily_bars/hood_us.csv",
+      "cache_sha256": "aed042603d29611fe98622fdf7a45fb3e7ef598e306ce9b56ead9ad2afb566a5"
+    },
+    {
+      "symbol": "PANW",
+      "name": "Palo Alto Networks, Inc.",
+      "market": "US",
+      "matched_strategy_ids": [
+        "low_vol_momentum",
+        "growth_breakout"
+      ],
+      "status": "missing_h_us_daily_bars_for_current_candidate",
+      "case_count": 0,
+      "summary": {
+        "case_count": 0,
+        "win_rate": null,
+        "average_return": null,
+        "average_max_drawdown": null,
+        "best_return": null,
+        "worst_return": null
+      },
+      "user_facing_suggestion_allowed": false,
+      "real_trade_allowed": false,
+      "provider_symbol": "PANW.US",
+      "available_trade_dates": 0,
+      "required_trade_dates": 22,
+      "cache_path": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/cache/aegis_h_us_candidate_daily_bars/US/daily_bars/panw_us.csv"
+    },
+    {
+      "symbol": "KLAC",
+      "name": "KLA Corporation",
+      "market": "US",
+      "matched_strategy_ids": [
+        "low_vol_momentum",
+        "growth_breakout"
+      ],
+      "status": "case_assembled",
+      "case_count": 4,
+      "summary": {
+        "case_count": 4,
+        "win_rate": 0.75,
+        "average_return": 0.048292855578327826,
+        "average_max_drawdown": -0.13256676447958732,
+        "best_return": 0.13026036071044889,
+        "worst_return": -0.08121422725815541
+      },
+      "user_facing_suggestion_allowed": false,
+      "real_trade_allowed": false,
+      "provider_symbol": "KLAC.US",
+      "available_trade_dates": 632,
+      "cache_path": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/cache/aegis_h_us_candidate_daily_bars/US/daily_bars/klac_us.csv",
+      "cache_sha256": "fc3438fde9ce0d95be88f561b4c96f60fbab3fb89d91f462dff52fbf755830b9"
+    },
+    {
+      "symbol": "RBLX",
+      "name": "Roblox Corporation",
+      "market": "US",
+      "matched_strategy_ids": [
+        "low_vol_momentum",
+        "ai_photonics_supply_chain"
+      ],
+      "status": "case_assembled",
+      "case_count": 4,
+      "summary": {
+        "case_count": 4,
+        "win_rate": 0.75,
+        "average_return": 0.16784456723186222,
+        "average_max_drawdown": -0.07835888497646842,
+        "best_return": 0.3337349397590361,
+        "worst_return": -0.09723191439869738
+      },
+      "user_facing_suggestion_allowed": false,
+      "real_trade_allowed": false,
+      "provider_symbol": "RBLX.US",
+      "available_trade_dates": 632,
+      "cache_path": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/cache/aegis_h_us_candidate_daily_bars/US/daily_bars/rblx_us.csv",
+      "cache_sha256": "3623333db068af4312fb371544791620349bca6c6ffd42592304765a2f9dd513"
+    },
+    {
+      "symbol": "BAC",
+      "name": "Bank of America Corporation",
+      "market": "US",
+      "matched_strategy_ids": [
+        "low_vol_momentum"
+      ],
+      "status": "case_assembled",
+      "case_count": 4,
+      "summary": {
+        "case_count": 4,
+        "win_rate": 1.0,
+        "average_return": 0.06805653879807522,
+        "average_max_drawdown": -0.04032685080252932,
+        "best_return": 0.09716312056737597,
+        "worst_return": 0.003244787610619415
+      },
+      "user_facing_suggestion_allowed": false,
+      "real_trade_allowed": false,
+      "provider_symbol": "BAC.US",
+      "available_trade_dates": 632,
+      "cache_path": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/cache/aegis_h_us_candidate_daily_bars/US/daily_bars/bac_us.csv",
+      "cache_sha256": "97df5f617205a949a957b2cd868c4029f56c1e17280ed397e1d1880e64208092"
+    },
+    {
+      "symbol": "NET",
+      "name": "Cloudflare, Inc.",
+      "market": "US",
+      "matched_strategy_ids": [
+        "low_vol_momentum",
+        "growth_breakout"
+      ],
+      "status": "case_assembled",
+      "case_count": 4,
+      "summary": {
+        "case_count": 4,
+        "win_rate": 0.75,
+        "average_return": 0.1081006258770558,
+        "average_max_drawdown": -0.06225456048380526,
+        "best_return": 0.22183270360085583,
+        "worst_return": -0.003780680529300473
+      },
+      "user_facing_suggestion_allowed": false,
+      "real_trade_allowed": false,
+      "provider_symbol": "NET.US",
+      "available_trade_dates": 632,
+      "cache_path": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/cache/aegis_h_us_candidate_daily_bars/US/daily_bars/net_us.csv",
+      "cache_sha256": "7847f6755d0ba74f54f68a168a51c57f2f7524d1250ff1e08cac2d61129af93b"
+    }
+  ],
+  "historical_cases": [
+    {
+      "case_id": "aegis_case_603893_1",
+      "symbol": "603893",
+      "ts_code": "603893.SH",
+      "name": "瑞芯微",
+      "market": "A",
+      "matched_strategy_ids": [
+        "qvm",
+        "low_vol_momentum",
+        "a_share_short_momentum",
+        "growth_breakout"
+      ],
+      "entry_date": "2023-09-01",
+      "exit_date": "2023-10-09",
+      "entry_close": 64.83,
+      "exit_close": 62.57,
+      "raw_return": -0.03486040413388858,
+      "max_drawdown": -0.10175282234105754,
+      "holding_trade_days": 20,
+      "point_in_time_case": true,
+      "data_cutoff_date": "2023-09-01",
+      "future_data_used_for_selection": false,
+      "case_result": "loss",
+      "evidence_ref": "aegis_strategy_specific_case:6beb977bde5a98cd17082daa94b5db177c2f92894fd2de1d1db5f9d291015565"
+    },
+    {
+      "case_id": "aegis_case_603893_2",
+      "symbol": "603893",
+      "ts_code": "603893.SH",
+      "name": "瑞芯微",
+      "market": "A",
+      "matched_strategy_ids": [
+        "qvm",
+        "low_vol_momentum",
+        "a_share_short_momentum",
+        "growth_breakout"
+      ],
+      "entry_date": "2023-12-12",
+      "exit_date": "2024-01-10",
+      "entry_close": 67.68,
+      "exit_close": 56.09,
+      "raw_return": -0.17124704491725773,
+      "max_drawdown": -0.1770094562647755,
+      "holding_trade_days": 20,
+      "point_in_time_case": true,
+      "data_cutoff_date": "2023-12-12",
+      "future_data_used_for_selection": false,
+      "case_result": "loss",
+      "evidence_ref": "aegis_strategy_specific_case:a968877b0f6f6d0126eb94482aea650a5f217ce83cc2ab543f77cf0bf43dbfce"
+    },
+    {
+      "case_id": "aegis_case_603893_3",
+      "symbol": "603893",
+      "ts_code": "603893.SH",
+      "name": "瑞芯微",
+      "market": "A",
+      "matched_strategy_ids": [
+        "qvm",
+        "low_vol_momentum",
+        "a_share_short_momentum",
+        "growth_breakout"
+      ],
+      "entry_date": "2024-03-22",
+      "exit_date": "2024-04-23",
+      "entry_close": 53.94,
+      "exit_close": 53.32,
+      "raw_return": -0.011494252873563204,
+      "max_drawdown": -0.1245828698553949,
+      "holding_trade_days": 20,
+      "point_in_time_case": true,
+      "data_cutoff_date": "2024-03-22",
+      "future_data_used_for_selection": false,
+      "case_result": "loss",
+      "evidence_ref": "aegis_strategy_specific_case:28aee076cd98948c320e1dbc961a66a564437359ff040f96ac42e6ad226b80c1"
+    },
+    {
+      "case_id": "aegis_case_603893_4",
+      "symbol": "603893",
+      "ts_code": "603893.SH",
+      "name": "瑞芯微",
+      "market": "A",
+      "matched_strategy_ids": [
+        "qvm",
+        "low_vol_momentum",
+        "a_share_short_momentum",
+        "growth_breakout"
+      ],
+      "entry_date": "2024-07-03",
+      "exit_date": "2024-07-31",
+      "entry_close": 58.51,
+      "exit_close": 61.91,
+      "raw_return": 0.05810972483336174,
+      "max_drawdown": -0.12317144528964308,
+      "holding_trade_days": 20,
+      "point_in_time_case": true,
+      "data_cutoff_date": "2024-07-03",
+      "future_data_used_for_selection": false,
+      "case_result": "win",
+      "evidence_ref": "aegis_strategy_specific_case:5ba5fa413e39f59a80e90c8802bc8cb50b88d7cdcac1de6b9e9edd34c488b80b"
+    },
+    {
+      "case_id": "aegis_case_300059_1",
+      "symbol": "300059",
+      "ts_code": "300059.SZ",
+      "name": "东方财富",
+      "market": "A",
+      "matched_strategy_ids": [
+        "qvm",
+        "low_vol_momentum",
+        "a_share_short_momentum"
+      ],
+      "entry_date": "2023-09-01",
+      "exit_date": "2023-10-09",
+      "entry_close": 15.98,
+      "exit_close": 15.12,
+      "raw_return": -0.053817271589486904,
+      "max_drawdown": -0.07142857142857151,
+      "holding_trade_days": 20,
+      "point_in_time_case": true,
+      "data_cutoff_date": "2023-09-01",
+      "future_data_used_for_selection": false,
+      "case_result": "loss",
+      "evidence_ref": "aegis_strategy_specific_case:1172f0f67782d694050cbde0e00240fb517bcb6b07c1aa2e420f228b6c8c5661"
+    },
+    {
+      "case_id": "aegis_case_300059_2",
+      "symbol": "300059",
+      "ts_code": "300059.SZ",
+      "name": "东方财富",
+      "market": "A",
+      "matched_strategy_ids": [
+        "qvm",
+        "low_vol_momentum",
+        "a_share_short_momentum"
+      ],
+      "entry_date": "2023-12-12",
+      "exit_date": "2024-01-10",
+      "entry_close": 14.51,
+      "exit_close": 12.98,
+      "raw_return": -0.10544452101998614,
+      "max_drawdown": -0.10544452101998614,
+      "holding_trade_days": 20,
+      "point_in_time_case": true,
+      "data_cutoff_date": "2023-12-12",
+      "future_data_used_for_selection": false,
+      "case_result": "loss",
+      "evidence_ref": "aegis_strategy_specific_case:56594b702fbec2e13bff58adace5417cd781094253ad503cc4094dc8ef3d7458"
+    },
+    {
+      "case_id": "aegis_case_300059_3",
+      "symbol": "300059",
+      "ts_code": "300059.SZ",
+      "name": "东方财富",
+      "market": "A",
+      "matched_strategy_ids": [
+        "qvm",
+        "low_vol_momentum",
+        "a_share_short_momentum"
+      ],
+      "entry_date": "2024-03-22",
+      "exit_date": "2024-04-23",
+      "entry_close": 13.55,
+      "exit_close": 12.44,
+      "raw_return": -0.081918819188192,
+      "max_drawdown": -0.10701107011070121,
+      "holding_trade_days": 20,
+      "point_in_time_case": true,
+      "data_cutoff_date": "2024-03-22",
+      "future_data_used_for_selection": false,
+      "case_result": "loss",
+      "evidence_ref": "aegis_strategy_specific_case:da2421c429e17a2894082e9c7d7282be7e33e76f14b50fc381a39baf2aefda50"
+    },
+    {
+      "case_id": "aegis_case_300059_4",
+      "symbol": "300059",
+      "ts_code": "300059.SZ",
+      "name": "东方财富",
+      "market": "A",
+      "matched_strategy_ids": [
+        "qvm",
+        "low_vol_momentum",
+        "a_share_short_momentum"
+      ],
+      "entry_date": "2024-07-03",
+      "exit_date": "2024-07-31",
+      "entry_close": 10.26,
+      "exit_close": 11.14,
+      "raw_return": 0.08576998050682261,
+      "max_drawdown": -0.05233644859813069,
+      "holding_trade_days": 20,
+      "point_in_time_case": true,
+      "data_cutoff_date": "2024-07-03",
+      "future_data_used_for_selection": false,
+      "case_result": "win",
+      "evidence_ref": "aegis_strategy_specific_case:2e57f95f5674d4e2986ae4254a90c54f01739bc4bfb0bc5556ab8855d2c8b11c"
+    },
+    {
+      "case_id": "aegis_case_vrtx_1",
+      "symbol": "VRTX",
+      "provider_symbol": "VRTX.US",
+      "name": "Vertex Pharmaceuticals Incorporated",
+      "market": "US",
+      "matched_strategy_ids": [
+        "low_vol_momentum",
+        "growth_breakout"
+      ],
+      "entry_date": "2024-01-02",
+      "exit_date": "2024-01-31",
+      "entry_close": 410.91,
+      "exit_close": 433.38,
+      "raw_return": 0.05468350733737304,
+      "max_drawdown": -0.028515576299460887,
+      "holding_trade_days": 20,
+      "point_in_time_case": true,
+      "data_cutoff_date": "2024-01-02",
+      "future_data_used_for_selection": false,
+      "case_result": "win",
+      "evidence_ref": "aegis_strategy_specific_case:40ce8dca2864e478c34facb7884e2e0d91c6829ac97ff386e3b463be6976fa27"
+    },
+    {
+      "case_id": "aegis_case_vrtx_2",
+      "symbol": "VRTX",
+      "provider_symbol": "VRTX.US",
+      "name": "Vertex Pharmaceuticals Incorporated",
+      "market": "US",
+      "matched_strategy_ids": [
+        "low_vol_momentum",
+        "growth_breakout"
+      ],
+      "entry_date": "2024-10-22",
+      "exit_date": "2024-11-19",
+      "entry_close": 474.91,
+      "exit_close": 448.01001,
+      "raw_return": -0.0566422901181276,
+      "max_drawdown": -0.13300689191869974,
+      "holding_trade_days": 20,
+      "point_in_time_case": true,
+      "data_cutoff_date": "2024-10-22",
+      "future_data_used_for_selection": false,
+      "case_result": "loss",
+      "evidence_ref": "aegis_strategy_specific_case:0f836ad9151af053f0cd07e55ef265be6fab87c90c2ce6e0bc20dc3a3bb0e3d0"
+    },
+    {
+      "case_id": "aegis_case_vrtx_3",
+      "symbol": "VRTX",
+      "provider_symbol": "VRTX.US",
+      "name": "Vertex Pharmaceuticals Incorporated",
+      "market": "US",
+      "matched_strategy_ids": [
+        "low_vol_momentum",
+        "growth_breakout"
+      ],
+      "entry_date": "2025-08-15",
+      "exit_date": "2025-09-15",
+      "entry_close": 392.79001,
+      "exit_close": 393.20999,
+      "raw_return": 0.0010692227126651854,
+      "max_drawdown": -0.031047406483790563,
+      "holding_trade_days": 20,
+      "point_in_time_case": true,
+      "data_cutoff_date": "2025-08-15",
+      "future_data_used_for_selection": false,
+      "case_result": "win",
+      "evidence_ref": "aegis_strategy_specific_case:02573feeedee463748a4b4967d7921b9e0cff96061462d334231125f1462cf1b"
+    },
+    {
+      "case_id": "aegis_case_vrtx_4",
+      "symbol": "VRTX",
+      "provider_symbol": "VRTX.US",
+      "name": "Vertex Pharmaceuticals Incorporated",
+      "market": "US",
+      "matched_strategy_ids": [
+        "low_vol_momentum",
+        "growth_breakout"
+      ],
+      "entry_date": "2026-06-10",
+      "exit_date": "2026-07-10",
+      "entry_close": 435.70999,
+      "exit_close": 485.39001,
+      "raw_return": 0.11402084216613906,
+      "max_drawdown": -0.0834608234599884,
+      "holding_trade_days": 20,
+      "point_in_time_case": true,
+      "data_cutoff_date": "2026-06-10",
+      "future_data_used_for_selection": false,
+      "case_result": "win",
+      "evidence_ref": "aegis_strategy_specific_case:d2c5ea96eba056d5060c0b53d34a3965aa523ebaaca21288887354d3e800b2de"
+    },
+    {
+      "case_id": "aegis_case_amat_1",
+      "symbol": "AMAT",
+      "provider_symbol": "AMAT.US",
+      "name": "Applied Materials, Inc.",
+      "market": "US",
+      "matched_strategy_ids": [
+        "low_vol_momentum",
+        "growth_breakout"
+      ],
+      "entry_date": "2024-01-02",
+      "exit_date": "2024-01-31",
+      "entry_close": 154.37,
+      "exit_close": 164.3,
+      "raw_return": 0.06432597007190521,
+      "max_drawdown": -0.05650625933157216,
+      "holding_trade_days": 20,
+      "point_in_time_case": true,
+      "data_cutoff_date": "2024-01-02",
+      "future_data_used_for_selection": false,
+      "case_result": "win",
+      "evidence_ref": "aegis_strategy_specific_case:906110098815962126910328e0ec975bc71f6a5ed63eae3622b314d4de49805a"
+    },
+    {
+      "case_id": "aegis_case_amat_2",
+      "symbol": "AMAT",
+      "provider_symbol": "AMAT.US",
+      "name": "Applied Materials, Inc.",
+      "market": "US",
+      "matched_strategy_ids": [
+        "low_vol_momentum",
+        "growth_breakout"
+      ],
+      "entry_date": "2024-10-22",
+      "exit_date": "2024-11-19",
+      "entry_close": 183.0,
+      "exit_close": 169.31,
+      "raw_return": -0.0748087431693989,
+      "max_drawdown": -0.12988817826550947,
+      "holding_trade_days": 20,
+      "point_in_time_case": true,
+      "data_cutoff_date": "2024-10-22",
+      "future_data_used_for_selection": false,
+      "case_result": "loss",
+      "evidence_ref": "aegis_strategy_specific_case:431874db17920d130dc8ddb7dcf48170439cce14a41ec5df67ea8c63a76a9ab4"
+    },
+    {
+      "case_id": "aegis_case_amat_3",
+      "symbol": "AMAT",
+      "provider_symbol": "AMAT.US",
+      "name": "Applied Materials, Inc.",
+      "market": "US",
+      "matched_strategy_ids": [
+        "low_vol_momentum",
+        "growth_breakout"
+      ],
+      "entry_date": "2025-08-15",
+      "exit_date": "2025-09-15",
+      "entry_close": 161.75999,
+      "exit_close": 170.92999,
+      "raw_return": 0.056688925364053455,
+      "max_drawdown": -0.05457735826223764,
+      "holding_trade_days": 20,
+      "point_in_time_case": true,
+      "data_cutoff_date": "2025-08-15",
+      "future_data_used_for_selection": false,
+      "case_result": "win",
+      "evidence_ref": "aegis_strategy_specific_case:e4179194aa3bec827d656ca0f2960f0bddac5314eeb8ddd56fb65a8edd8b63eb"
+    },
+    {
+      "case_id": "aegis_case_amat_4",
+      "symbol": "AMAT",
+      "provider_symbol": "AMAT.US",
+      "name": "Applied Materials, Inc.",
+      "market": "US",
+      "matched_strategy_ids": [
+        "low_vol_momentum",
+        "growth_breakout"
+      ],
+      "entry_date": "2026-06-10",
+      "exit_date": "2026-07-10",
+      "entry_close": 497.01001,
+      "exit_close": 602.5,
+      "raw_return": 0.21224922612725639,
+      "max_drawdown": -0.23305670816044255,
+      "holding_trade_days": 20,
+      "point_in_time_case": true,
+      "data_cutoff_date": "2026-06-10",
+      "future_data_used_for_selection": false,
+      "case_result": "win",
+      "evidence_ref": "aegis_strategy_specific_case:cf10319b47af18b687b3f36fa24890facfc93d44e34949a5a2922fdebe2c3bdc"
+    },
+    {
+      "case_id": "aegis_case_okta_1",
+      "symbol": "OKTA",
+      "provider_symbol": "OKTA.US",
+      "name": "Okta, Inc.",
+      "market": "US",
+      "matched_strategy_ids": [
+        "low_vol_momentum",
+        "growth_breakout"
+      ],
+      "entry_date": "2024-01-02",
+      "exit_date": "2024-01-31",
+      "entry_close": 87.0,
+      "exit_close": 82.65,
+      "raw_return": -0.04999999999999993,
+      "max_drawdown": -0.06643678160919542,
+      "holding_trade_days": 20,
+      "point_in_time_case": true,
+      "data_cutoff_date": "2024-01-02",
+      "future_data_used_for_selection": false,
+      "case_result": "loss",
+      "evidence_ref": "aegis_strategy_specific_case:f17e5a52b9949e9c14e7722fc263d0341266ce8189a66d7c8cc2ce9b66e98327"
+    },
+    {
+      "case_id": "aegis_case_okta_2",
+      "symbol": "OKTA",
+      "provider_symbol": "OKTA.US",
+      "name": "Okta, Inc.",
+      "market": "US",
+      "matched_strategy_ids": [
+        "low_vol_momentum",
+        "growth_breakout"
+      ],
+      "entry_date": "2024-10-22",
+      "exit_date": "2024-11-19",
+      "entry_close": 74.029999,
+      "exit_close": 74.51,
+      "raw_return": 0.006483871491069548,
+      "max_drawdown": -0.07100063734862982,
+      "holding_trade_days": 20,
+      "point_in_time_case": true,
+      "data_cutoff_date": "2024-10-22",
+      "future_data_used_for_selection": false,
+      "case_result": "win",
+      "evidence_ref": "aegis_strategy_specific_case:43fbad19b2dcf76ed16930b09d2a717fc9a37db2562ff9d71d0cb7080aac325e"
+    },
+    {
+      "case_id": "aegis_case_okta_3",
+      "symbol": "OKTA",
+      "provider_symbol": "OKTA.US",
+      "name": "Okta, Inc.",
+      "market": "US",
+      "matched_strategy_ids": [
+        "low_vol_momentum",
+        "growth_breakout"
+      ],
+      "entry_date": "2025-08-15",
+      "exit_date": "2025-09-15",
+      "entry_close": 92.019997,
+      "exit_close": 90.91,
+      "raw_return": -0.012062562879674998,
+      "max_drawdown": -0.038785295684603094,
+      "holding_trade_days": 20,
+      "point_in_time_case": true,
+      "data_cutoff_date": "2025-08-15",
+      "future_data_used_for_selection": false,
+      "case_result": "loss",
+      "evidence_ref": "aegis_strategy_specific_case:f9a3c6bb60b9108ae388e6571c5565bb643278ea327d286a29598203f1784653"
+    },
+    {
+      "case_id": "aegis_case_okta_4",
+      "symbol": "OKTA",
+      "provider_symbol": "OKTA.US",
+      "name": "Okta, Inc.",
+      "market": "US",
+      "matched_strategy_ids": [
+        "low_vol_momentum",
+        "growth_breakout"
+      ],
+      "entry_date": "2026-06-10",
+      "exit_date": "2026-07-10",
+      "entry_close": 114.92,
+      "exit_close": 138.63,
+      "raw_return": 0.20631743821789073,
+      "max_drawdown": -0.06859715130341315,
+      "holding_trade_days": 20,
+      "point_in_time_case": true,
+      "data_cutoff_date": "2026-06-10",
+      "future_data_used_for_selection": false,
+      "case_result": "win",
+      "evidence_ref": "aegis_strategy_specific_case:f416d53ed990c10cd6bda5a02598423c684d5c50028305e671d1e66e71cdacf3"
+    },
+    {
+      "case_id": "aegis_case_mrna_1",
+      "symbol": "MRNA",
+      "provider_symbol": "MRNA.US",
+      "name": "Moderna, Inc.",
+      "market": "US",
+      "matched_strategy_ids": [
+        "low_vol_momentum",
+        "growth_breakout"
+      ],
+      "entry_date": "2024-01-02",
+      "exit_date": "2024-01-31",
+      "entry_close": 112.5,
+      "exit_close": 101.050003,
+      "raw_return": -0.10177775111111109,
+      "max_drawdown": -0.14180526680526684,
+      "holding_trade_days": 20,
+      "point_in_time_case": true,
+      "data_cutoff_date": "2024-01-02",
+      "future_data_used_for_selection": false,
+      "case_result": "loss",
+      "evidence_ref": "aegis_strategy_specific_case:9c5d2fb0821a6ab5cb95e2c2d61982e106d3e035720508c0fa6c07501160561f"
+    },
+    {
+      "case_id": "aegis_case_mrna_2",
+      "symbol": "MRNA",
+      "provider_symbol": "MRNA.US",
+      "name": "Moderna, Inc.",
+      "market": "US",
+      "matched_strategy_ids": [
+        "low_vol_momentum",
+        "growth_breakout"
+      ],
+      "entry_date": "2024-10-22",
+      "exit_date": "2024-11-19",
+      "entry_close": 53.4,
+      "exit_close": 37.29,
+      "raw_return": -0.3016853932584269,
+      "max_drawdown": -0.3326693227091633,
+      "holding_trade_days": 20,
+      "point_in_time_case": true,
+      "data_cutoff_date": "2024-10-22",
+      "future_data_used_for_selection": false,
+      "case_result": "loss",
+      "evidence_ref": "aegis_strategy_specific_case:5cc9b62c9e77135c22b907491c6b19e67bcb0ccd55b486cf34da4a360a640567"
+    },
+    {
+      "case_id": "aegis_case_mrna_3",
+      "symbol": "MRNA",
+      "provider_symbol": "MRNA.US",
+      "name": "Moderna, Inc.",
+      "market": "US",
+      "matched_strategy_ids": [
+        "low_vol_momentum",
+        "growth_breakout"
+      ],
+      "entry_date": "2025-08-15",
+      "exit_date": "2025-09-15",
+      "entry_close": 28.02,
+      "exit_close": 23.88,
+      "raw_return": -0.14775160599571735,
+      "max_drawdown": -0.1630473478106087,
+      "holding_trade_days": 20,
+      "point_in_time_case": true,
+      "data_cutoff_date": "2025-08-15",
+      "future_data_used_for_selection": false,
+      "case_result": "loss",
+      "evidence_ref": "aegis_strategy_specific_case:8563309854e134cb1c1dc03ff87c7e57c0d1b68f5156112ccc67f4de4dd5228d"
+    },
+    {
+      "case_id": "aegis_case_mrna_4",
+      "symbol": "MRNA",
+      "provider_symbol": "MRNA.US",
+      "name": "Moderna, Inc.",
+      "market": "US",
+      "matched_strategy_ids": [
+        "low_vol_momentum",
+        "growth_breakout"
+      ],
+      "entry_date": "2026-06-10",
+      "exit_date": "2026-07-10",
+      "entry_close": 45.99,
+      "exit_close": 68.27,
+      "raw_return": 0.4844531419873883,
+      "max_drawdown": -0.16540342298288513,
+      "holding_trade_days": 20,
+      "point_in_time_case": true,
+      "data_cutoff_date": "2026-06-10",
+      "future_data_used_for_selection": false,
+      "case_result": "win",
+      "evidence_ref": "aegis_strategy_specific_case:62a4fae26405de2bf9a16e3eeeeabb7c0e064c5e6ca9a6119323cf3c08fd4422"
+    },
+    {
+      "case_id": "aegis_case_hood_1",
+      "symbol": "HOOD",
+      "provider_symbol": "HOOD.US",
+      "name": "Robinhood Markets, Inc.",
+      "market": "US",
+      "matched_strategy_ids": [
+        "low_vol_momentum"
+      ],
+      "entry_date": "2024-01-02",
+      "exit_date": "2024-01-31",
+      "entry_close": 12.37,
+      "exit_close": 10.74,
+      "raw_return": -0.13177041228779296,
+      "max_drawdown": -0.14251207729468596,
+      "holding_trade_days": 20,
+      "point_in_time_case": true,
+      "data_cutoff_date": "2024-01-02",
+      "future_data_used_for_selection": false,
+      "case_result": "loss",
+      "evidence_ref": "aegis_strategy_specific_case:17a41eb28104a8546e22d671a5b4ccae4f521514f319d5988c79bbdf7f1af2f4"
+    },
+    {
+      "case_id": "aegis_case_hood_2",
+      "symbol": "HOOD",
+      "provider_symbol": "HOOD.US",
+      "name": "Robinhood Markets, Inc.",
+      "market": "US",
+      "matched_strategy_ids": [
+        "low_vol_momentum"
+      ],
+      "entry_date": "2024-10-22",
+      "exit_date": "2024-11-19",
+      "entry_close": 27.41,
+      "exit_close": 35.24,
+      "raw_return": 0.2856621670923021,
+      "max_drawdown": -0.1673165544133287,
+      "holding_trade_days": 20,
+      "point_in_time_case": true,
+      "data_cutoff_date": "2024-10-22",
+      "future_data_used_for_selection": false,
+      "case_result": "win",
+      "evidence_ref": "aegis_strategy_specific_case:005658fd41fd1623d7dbdc59d9618ce551431c24dc56aeb588ccc35b6fa14b15"
+    },
+    {
+      "case_id": "aegis_case_hood_3",
+      "symbol": "HOOD",
+      "provider_symbol": "HOOD.US",
+      "name": "Robinhood Markets, Inc.",
+      "market": "US",
+      "matched_strategy_ids": [
+        "low_vol_momentum"
+      ],
+      "entry_date": "2025-08-15",
+      "exit_date": "2025-09-15",
+      "entry_close": 114.17,
+      "exit_close": 114.83,
+      "raw_return": 0.00578085311377774,
+      "max_drawdown": -0.12345676726108779,
+      "holding_trade_days": 20,
+      "point_in_time_case": true,
+      "data_cutoff_date": "2025-08-15",
+      "future_data_used_for_selection": false,
+      "case_result": "win",
+      "evidence_ref": "aegis_strategy_specific_case:352a8878a16576386b2813043f0b5b9b776721e48aa231187a30e388dd737f3d"
+    },
+    {
+      "case_id": "aegis_case_hood_4",
+      "symbol": "HOOD",
+      "provider_symbol": "HOOD.US",
+      "name": "Robinhood Markets, Inc.",
+      "market": "US",
+      "matched_strategy_ids": [
+        "low_vol_momentum"
+      ],
+      "entry_date": "2026-06-10",
+      "exit_date": "2026-07-10",
+      "entry_close": 86.36,
+      "exit_close": 111.97,
+      "raw_return": 0.2965493283927745,
+      "max_drawdown": -0.13573740175681925,
+      "holding_trade_days": 20,
+      "point_in_time_case": true,
+      "data_cutoff_date": "2026-06-10",
+      "future_data_used_for_selection": false,
+      "case_result": "win",
+      "evidence_ref": "aegis_strategy_specific_case:da69f510b98b092a4dca8032b9a50ed94d461eb571abefd3a0fe51b88c2e43e3"
+    },
+    {
+      "case_id": "aegis_case_klac_1",
+      "symbol": "KLAC",
+      "provider_symbol": "KLAC.US",
+      "name": "KLA Corporation",
+      "market": "US",
+      "matched_strategy_ids": [
+        "low_vol_momentum",
+        "growth_breakout"
+      ],
+      "entry_date": "2024-01-02",
+      "exit_date": "2024-01-31",
+      "entry_close": 56.039001,
+      "exit_close": 59.404,
+      "raw_return": 0.06004744802642015,
+      "max_drawdown": -0.07425704000374,
+      "holding_trade_days": 20,
+      "point_in_time_case": true,
+      "data_cutoff_date": "2024-01-02",
+      "future_data_used_for_selection": false,
+      "case_result": "win",
+      "evidence_ref": "aegis_strategy_specific_case:4562113f664804ab039c65a7a069fd4af9424063c670ea81c252e2563cb52742"
+    },
+    {
+      "case_id": "aegis_case_klac_2",
+      "symbol": "KLAC",
+      "provider_symbol": "KLAC.US",
+      "name": "KLA Corporation",
+      "market": "US",
+      "matched_strategy_ids": [
+        "low_vol_momentum",
+        "growth_breakout"
+      ],
+      "entry_date": "2024-10-22",
+      "exit_date": "2024-11-19",
+      "entry_close": 67.0080032,
+      "exit_close": 61.566,
+      "raw_return": -0.08121422725815541,
+      "max_drawdown": -0.1174468207345275,
+      "holding_trade_days": 20,
+      "point_in_time_case": true,
+      "data_cutoff_date": "2024-10-22",
+      "future_data_used_for_selection": false,
+      "case_result": "loss",
+      "evidence_ref": "aegis_strategy_specific_case:ac02aea688fd7b557ce86f28322dd4e3810cdf8eefca601e199734b04fdb2da0"
+    },
+    {
+      "case_id": "aegis_case_klac_3",
+      "symbol": "KLAC",
+      "provider_symbol": "KLAC.US",
+      "name": "KLA Corporation",
+      "market": "US",
+      "matched_strategy_ids": [
+        "low_vol_momentum",
+        "growth_breakout"
+      ],
+      "entry_date": "2025-08-15",
+      "exit_date": "2025-09-15",
+      "entry_close": 87.494,
+      "exit_close": 98.891,
+      "raw_return": 0.13026036071044889,
+      "max_drawdown": -0.056040268456375886,
+      "holding_trade_days": 20,
+      "point_in_time_case": true,
+      "data_cutoff_date": "2025-08-15",
+      "future_data_used_for_selection": false,
+      "case_result": "win",
+      "evidence_ref": "aegis_strategy_specific_case:806ec3a546ce12a0ac0a87a9d5ff08500fbacaeaa912caf6462c4ec7ec400b76"
+    },
+    {
+      "case_id": "aegis_case_klac_4",
+      "symbol": "KLAC",
+      "provider_symbol": "KLAC.US",
+      "name": "KLA Corporation",
+      "market": "US",
+      "matched_strategy_ids": [
+        "low_vol_momentum",
+        "growth_breakout"
+      ],
+      "entry_date": "2026-06-10",
+      "exit_date": "2026-07-10",
+      "entry_close": 213.564,
+      "exit_close": 231.52,
+      "raw_return": 0.08407784083459768,
+      "max_drawdown": -0.2825229287237059,
+      "holding_trade_days": 20,
+      "point_in_time_case": true,
+      "data_cutoff_date": "2026-06-10",
+      "future_data_used_for_selection": false,
+      "case_result": "win",
+      "evidence_ref": "aegis_strategy_specific_case:15325e04add53a202bdace4656b954cf27eeec88d196098807b41da88291f8c2"
+    },
+    {
+      "case_id": "aegis_case_rblx_1",
+      "symbol": "RBLX",
+      "provider_symbol": "RBLX.US",
+      "name": "Roblox Corporation",
+      "market": "US",
+      "matched_strategy_ids": [
+        "low_vol_momentum",
+        "ai_photonics_supply_chain"
+      ],
+      "entry_date": "2024-01-02",
+      "exit_date": "2024-01-31",
+      "entry_close": 42.99,
+      "exit_close": 38.81,
+      "raw_return": -0.09723191439869738,
+      "max_drawdown": -0.10025587345894393,
+      "holding_trade_days": 20,
+      "point_in_time_case": true,
+      "data_cutoff_date": "2024-01-02",
+      "future_data_used_for_selection": false,
+      "case_result": "loss",
+      "evidence_ref": "aegis_strategy_specific_case:aef172989cb95cce94beb503739401c1a5e81550897c9cbad4dd81afa18dc581"
+    },
+    {
+      "case_id": "aegis_case_rblx_2",
+      "symbol": "RBLX",
+      "provider_symbol": "RBLX.US",
+      "name": "Roblox Corporation",
+      "market": "US",
+      "matched_strategy_ids": [
+        "low_vol_momentum",
+        "ai_photonics_supply_chain"
+      ],
+      "entry_date": "2024-10-22",
+      "exit_date": "2024-11-19",
+      "entry_close": 41.29,
+      "exit_close": 52.24,
+      "raw_return": 0.2651973843545654,
+      "max_drawdown": -0.07019794721407635,
+      "holding_trade_days": 20,
+      "point_in_time_case": true,
+      "data_cutoff_date": "2024-10-22",
+      "future_data_used_for_selection": false,
+      "case_result": "win",
+      "evidence_ref": "aegis_strategy_specific_case:3a8f4b590e364eb4bcd078dbb740690a7a368d1d6864517458d2a81d9cdbb285"
+    },
+    {
+      "case_id": "aegis_case_rblx_3",
+      "symbol": "RBLX",
+      "provider_symbol": "RBLX.US",
+      "name": "Roblox Corporation",
+      "market": "US",
+      "matched_strategy_ids": [
+        "low_vol_momentum",
+        "ai_photonics_supply_chain"
+      ],
+      "entry_date": "2025-08-15",
+      "exit_date": "2025-09-15",
+      "entry_close": 117.34,
+      "exit_close": 137.25,
+      "raw_return": 0.16967785921254475,
+      "max_drawdown": -0.04323399945796502,
+      "holding_trade_days": 20,
+      "point_in_time_case": true,
+      "data_cutoff_date": "2025-08-15",
+      "future_data_used_for_selection": false,
+      "case_result": "win",
+      "evidence_ref": "aegis_strategy_specific_case:e248f0d9a58f122a51183e3348b647eede26c0f53e1e0360f54345a4dd43d6ab"
+    },
+    {
+      "case_id": "aegis_case_rblx_4",
+      "symbol": "RBLX",
+      "provider_symbol": "RBLX.US",
+      "name": "Roblox Corporation",
+      "market": "US",
+      "matched_strategy_ids": [
+        "low_vol_momentum",
+        "ai_photonics_supply_chain"
+      ],
+      "entry_date": "2026-06-10",
+      "exit_date": "2026-07-10",
+      "entry_close": 41.5,
+      "exit_close": 55.35,
+      "raw_return": 0.3337349397590361,
+      "max_drawdown": -0.09974771977488839,
+      "holding_trade_days": 20,
+      "point_in_time_case": true,
+      "data_cutoff_date": "2026-06-10",
+      "future_data_used_for_selection": false,
+      "case_result": "win",
+      "evidence_ref": "aegis_strategy_specific_case:91341ae81e69f2b8cd9034afc8fba0ac393a9bd8a2994ee1aa1f476f9edbf22c"
+    },
+    {
+      "case_id": "aegis_case_bac_1",
+      "symbol": "BAC",
+      "provider_symbol": "BAC.US",
+      "name": "Bank of America Corporation",
+      "market": "US",
+      "matched_strategy_ids": [
+        "low_vol_momentum"
+      ],
+      "entry_date": "2024-01-02",
+      "exit_date": "2024-01-31",
+      "entry_close": 33.9,
+      "exit_close": 34.0099983,
+      "raw_return": 0.003244787610619415,
+      "max_drawdown": -0.07841998257333715,
+      "holding_trade_days": 20,
+      "point_in_time_case": true,
+      "data_cutoff_date": "2024-01-02",
+      "future_data_used_for_selection": false,
+      "case_result": "win",
+      "evidence_ref": "aegis_strategy_specific_case:2a6d62b5516d36e1d9b3abdb10f559d8491ef384f5ca1c0ad5013fba4dcbbdda"
+    },
+    {
+      "case_id": "aegis_case_bac_2",
+      "symbol": "BAC",
+      "provider_symbol": "BAC.US",
+      "name": "Bank of America Corporation",
+      "market": "US",
+      "matched_strategy_ids": [
+        "low_vol_momentum"
+      ],
+      "entry_date": "2024-10-22",
+      "exit_date": "2024-11-19",
+      "entry_close": 42.3,
+      "exit_close": 46.41,
+      "raw_return": 0.09716312056737597,
+      "max_drawdown": -0.030949589683470058,
+      "holding_trade_days": 20,
+      "point_in_time_case": true,
+      "data_cutoff_date": "2024-10-22",
+      "future_data_used_for_selection": false,
+      "case_result": "win",
+      "evidence_ref": "aegis_strategy_specific_case:319e2cc353d65a69187d6135a6b89da97cbd5568408179fcf4b9fab87d0374a9"
+    },
+    {
+      "case_id": "aegis_case_bac_3",
+      "symbol": "BAC",
+      "provider_symbol": "BAC.US",
+      "name": "Bank of America Corporation",
+      "market": "US",
+      "matched_strategy_ids": [
+        "low_vol_momentum"
+      ],
+      "entry_date": "2025-08-15",
+      "exit_date": "2025-09-15",
+      "entry_close": 46.94,
+      "exit_close": 50.59,
+      "raw_return": 0.07775884107371134,
+      "max_drawdown": -0.025226645644461976,
+      "holding_trade_days": 20,
+      "point_in_time_case": true,
+      "data_cutoff_date": "2025-08-15",
+      "future_data_used_for_selection": false,
+      "case_result": "win",
+      "evidence_ref": "aegis_strategy_specific_case:d3ae9361805a7cdc9c085b11c7ebd647645ff27047af4b22da3d70a7be65fef0"
+    },
+    {
+      "case_id": "aegis_case_bac_4",
+      "symbol": "BAC",
+      "provider_symbol": "BAC.US",
+      "name": "Bank of America Corporation",
+      "market": "US",
+      "matched_strategy_ids": [
+        "low_vol_momentum"
+      ],
+      "entry_date": "2026-06-10",
+      "exit_date": "2026-07-10",
+      "entry_close": 54.54,
+      "exit_close": 59.67,
+      "raw_return": 0.09405940594059414,
+      "max_drawdown": -0.026711185308848084,
+      "holding_trade_days": 20,
+      "point_in_time_case": true,
+      "data_cutoff_date": "2026-06-10",
+      "future_data_used_for_selection": false,
+      "case_result": "win",
+      "evidence_ref": "aegis_strategy_specific_case:e3ed198f021a913d9db51ad6a4ce567cae195307eeaa245b3c07b7ae4aa61ee8"
+    },
+    {
+      "case_id": "aegis_case_net_1",
+      "symbol": "NET",
+      "provider_symbol": "NET.US",
+      "name": "Cloudflare, Inc.",
+      "market": "US",
+      "matched_strategy_ids": [
+        "low_vol_momentum",
+        "growth_breakout"
+      ],
+      "entry_date": "2024-01-02",
+      "exit_date": "2024-01-31",
+      "entry_close": 79.35,
+      "exit_close": 79.050003,
+      "raw_return": -0.003780680529300473,
+      "max_drawdown": -0.06648555739253659,
+      "holding_trade_days": 20,
+      "point_in_time_case": true,
+      "data_cutoff_date": "2024-01-02",
+      "future_data_used_for_selection": false,
+      "case_result": "loss",
+      "evidence_ref": "aegis_strategy_specific_case:ced28286604721afe02a68191f93f4857aadaa4a1836e254abf595acd0e96e4a"
+    },
+    {
+      "case_id": "aegis_case_net_2",
+      "symbol": "NET",
+      "provider_symbol": "NET.US",
+      "name": "Cloudflare, Inc.",
+      "market": "US",
+      "matched_strategy_ids": [
+        "low_vol_momentum",
+        "growth_breakout"
+      ],
+      "entry_date": "2024-10-22",
+      "exit_date": "2024-11-19",
+      "entry_close": 88.46,
+      "exit_close": 96.37,
+      "raw_return": 0.08941894641645964,
+      "max_drawdown": -0.06157223499895459,
+      "holding_trade_days": 20,
+      "point_in_time_case": true,
+      "data_cutoff_date": "2024-10-22",
+      "future_data_used_for_selection": false,
+      "case_result": "win",
+      "evidence_ref": "aegis_strategy_specific_case:c6635f6fe0957007d35449a895b72b6ed5848d432ea52392f703fd64a84edefe"
+    },
+    {
+      "case_id": "aegis_case_net_3",
+      "symbol": "NET",
+      "provider_symbol": "NET.US",
+      "name": "Cloudflare, Inc.",
+      "market": "US",
+      "matched_strategy_ids": [
+        "low_vol_momentum",
+        "growth_breakout"
+      ],
+      "entry_date": "2025-08-15",
+      "exit_date": "2025-09-15",
+      "entry_close": 200.91,
+      "exit_close": 226.0099945,
+      "raw_return": 0.12493153402020818,
+      "max_drawdown": -0.047437861343084475,
+      "holding_trade_days": 20,
+      "point_in_time_case": true,
+      "data_cutoff_date": "2025-08-15",
+      "future_data_used_for_selection": false,
+      "case_result": "win",
+      "evidence_ref": "aegis_strategy_specific_case:90094e2497a60dc0a060f8d28ec542ffec08def5c858da1e08b6bafb459ac8a5"
+    },
+    {
+      "case_id": "aegis_case_net_4",
+      "symbol": "NET",
+      "provider_symbol": "NET.US",
+      "name": "Cloudflare, Inc.",
+      "market": "US",
+      "matched_strategy_ids": [
+        "low_vol_momentum",
+        "growth_breakout"
+      ],
+      "entry_date": "2026-06-10",
+      "exit_date": "2026-07-10",
+      "entry_close": 219.67,
+      "exit_close": 268.39999,
+      "raw_return": 0.22183270360085583,
+      "max_drawdown": -0.07352258820064539,
+      "holding_trade_days": 20,
+      "point_in_time_case": true,
+      "data_cutoff_date": "2026-06-10",
+      "future_data_used_for_selection": false,
+      "case_result": "win",
+      "evidence_ref": "aegis_strategy_specific_case:9aedaed8ca6d0bebca1a928e766a40e10ddd26e3d4d35ac63491e6fd5d1f86f7"
+    }
+  ],
+  "data_gaps": [
+    {
+      "symbol": "00005",
+      "name": "汇丰控股",
+      "market": "HK",
+      "matched_strategy_ids": [
+        "low_vol_momentum"
+      ],
+      "status": "missing_h_us_daily_bars_for_current_candidate",
+      "case_count": 0,
+      "summary": {
+        "case_count": 0,
+        "win_rate": null,
+        "average_return": null,
+        "average_max_drawdown": null,
+        "best_return": null,
+        "worst_return": null
+      },
+      "user_facing_suggestion_allowed": false,
+      "real_trade_allowed": false,
+      "provider_symbol": "0005.HK",
+      "available_trade_dates": 0,
+      "required_trade_dates": 22,
+      "cache_path": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/cache/aegis_h_us_candidate_daily_bars/HK/daily_bars/0005_hk.csv",
+      "gap_reason": "current US/HK candidate historical daily bars not refreshed yet",
+      "required_next_step": "refresh EODHD/Twelve daily bars and rerun case assembly"
+    },
+    {
+      "symbol": "PANW",
+      "name": "Palo Alto Networks, Inc.",
+      "market": "US",
+      "matched_strategy_ids": [
+        "low_vol_momentum",
+        "growth_breakout"
+      ],
+      "status": "missing_h_us_daily_bars_for_current_candidate",
+      "case_count": 0,
+      "summary": {
+        "case_count": 0,
+        "win_rate": null,
+        "average_return": null,
+        "average_max_drawdown": null,
+        "best_return": null,
+        "worst_return": null
+      },
+      "user_facing_suggestion_allowed": false,
+      "real_trade_allowed": false,
+      "provider_symbol": "PANW.US",
+      "available_trade_dates": 0,
+      "required_trade_dates": 22,
+      "cache_path": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/cache/aegis_h_us_candidate_daily_bars/US/daily_bars/panw_us.csv",
+      "gap_reason": "current US/HK candidate historical daily bars not refreshed yet",
+      "required_next_step": "refresh EODHD/Twelve daily bars and rerun case assembly"
+    }
+  ],
+  "source_reports": {
+    "strategy_validation_input": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/aegis_strategy_validation_input_latest.json",
+    "strategy_sandbox_coverage": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/aegis_strategy_sandbox_validation_latest.json",
+    "h_us_daily_bars_refresh": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/aegis_h_us_candidate_daily_bars_refresh_latest.json",
+    "daily_cache_dir": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/cache/p23_2_historical_market/daily_by_trade_date",
+    "stock_basic": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/cache/p23_2_historical_market/stock_basic_all.json"
+  },
+  "source_hashes": {
+    "strategy_validation_input": "5ffc14d085cf98a12e80a4ffa7463bc0aaf6ec15cde04d916268e61359e847c4",
+    "strategy_sandbox_coverage": "ece45915bc7b20aa09fdda865ef9d4a94f2cb9f4107b72f6e9adab1011618028",
+    "h_us_daily_bars_refresh": "58a4400eabcd528d25405ab30e1d36bcbf8d37c76a432f991ae4ce6dad5c41c3",
+    "stock_basic": "0bbc2d38cc4cde25b19d947ab5bd85c1558835da35985f73e62ab16449e99ae8"
+  },
+  "checks": {
+    "strategy_validation_input_ready": true,
+    "strategy_sandbox_coverage_pass": true,
+    "a_share_daily_cache_available": true,
+    "a_share_cases_assembled": true,
+    "h_us_cases_or_gaps_explicit": true,
+    "direct_candidate_cases_not_user_suggestions": true,
+    "production_records_unchanged": true,
+    "network_not_used": true,
+    "no_broker_api": true,
+    "no_webhook": true,
+    "no_order_placement": true,
+    "no_position_size": true
+  },
+  "safety": {
+    "simulation_only": true,
+    "research_only": true,
+    "no_broker_api": true,
+    "no_order_placement": true,
+    "no_trading_webhook": true,
+    "no_position_size": true,
+    "no_live_order_signal": true,
+    "real_trade_allowed": false
+  },
+  "production_record_files_before": {
+    "recommendations_jsonl": {
+      "exists": true,
+      "size": 12284,
+      "sha256": "05b2e56c9b547cbe3ce4cb71b7cb776185e23ef2cc3bc9a46a918bce0cfb65dc"
+    },
+    "paper_trades_jsonl": {
+      "exists": false,
+      "size": null,
+      "sha256": null
+    },
+    "reviews_jsonl": {
+      "exists": false,
+      "size": null,
+      "sha256": null
+    },
+    "memory_jsonl": {
+      "exists": false,
+      "size": null,
+      "sha256": null
+    },
+    "investment_memory_jsonl": {
+      "exists": false,
+      "size": null,
+      "sha256": null
+    },
+    "feedback_events_jsonl": {
+      "exists": true,
+      "size": 1977,
+      "sha256": "c468fe43ec7097f129805fb71b6551c2db809213e2e13e9b2f1b2354f53ad65f"
+    }
+  },
+  "production_record_files_after": {
+    "recommendations_jsonl": {
+      "exists": true,
+      "size": 12284,
+      "sha256": "05b2e56c9b547cbe3ce4cb71b7cb776185e23ef2cc3bc9a46a918bce0cfb65dc"
+    },
+    "paper_trades_jsonl": {
+      "exists": false,
+      "size": null,
+      "sha256": null
+    },
+    "reviews_jsonl": {
+      "exists": false,
+      "size": null,
+      "sha256": null
+    },
+    "memory_jsonl": {
+      "exists": false,
+      "size": null,
+      "sha256": null
+    },
+    "investment_memory_jsonl": {
+      "exists": false,
+      "size": null,
+      "sha256": null
+    },
+    "feedback_events_jsonl": {
+      "exists": true,
+      "size": 1977,
+      "sha256": "c468fe43ec7097f129805fb71b6551c2db809213e2e13e9b2f1b2354f53ad65f"
+    }
+  },
+  "run_dir": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/aegis_strategy_specific_historical_cases/aegis_strategy_specific_historical_cases_20260712T063019Z"
+}

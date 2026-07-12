@@ -1,0 +1,57 @@
+{
+  "overall_status": "PASS",
+  "acceptance_target": "V2.10-D API-Backed Candidate Usable Brief After Real Metadata",
+  "brief_type": "api_backed_candidate_brief_gate",
+  "run_id": "v2_10_d_20260711_acceptance",
+  "generated_at": "2026-07-11T22:48:22+08:00",
+  "brief_status": "blocked_missing_real_api_artifacts",
+  "blocked_by": [
+    "v2_10_c_not_completed_with_real_api_artifacts"
+  ],
+  "source_dry_run_status": "blocked_missing_metadata",
+  "missing_artifacts": [
+    "api_fetch_item_json",
+    "api_candidate_source_registry_json",
+    "api_candidate_bindings_json"
+  ],
+  "summary": {
+    "candidate_count": 0,
+    "blocked_count": 0,
+    "candidate_markets": [],
+    "source_mode": "no_real_api_artifacts"
+  },
+  "checks": {
+    "blocked_status_recorded": true,
+    "missing_real_api_artifacts_visible": true,
+    "no_api_backed_claim_when_missing_artifacts": true,
+    "network_not_used_by_brief": true,
+    "production_records_not_written": true,
+    "dashboard_contract_unchanged": true
+  },
+  "safety": {
+    "simulation_only": true,
+    "manual_external_execution_only": true,
+    "no_real_trade": true,
+    "no_broker_api": true,
+    "no_trading_webhook": true,
+    "no_order_placement": true,
+    "no_live_price": true,
+    "no_position_size": true,
+    "no_production_records_mutation": true,
+    "dashboard_contract_unchanged": true
+  },
+  "network_used": false,
+  "production_records_written": false,
+  "dashboard_contract_changed": false,
+  "command": "validate_v2_10_d_api_backed_candidate_usable_brief.py --run-id v2_10_d_20260711_acceptance",
+  "source_live_dry_run_report_json": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/v2_10_c_real_api_candidate_refresh_live_dry_run_latest.json",
+  "source_suggestion_drafts_json": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v2_8_e_acceptance/v2_8_e_20260711_acceptance/refresh_queue_suggestion_drafts.json",
+  "hashes": {
+    "source_live_dry_run_report_json": "1d98a002b85ff3bdb00840f0f9cb9b0da584303b9547c1e343b6699c413f0108",
+    "source_suggestion_drafts_json": "7e2d17ea55b81812896b49d7c660759c524bcb1a804af55dede618a29f9fc481",
+    "brief_json": "02e9f1ce9b1d97999f4fc1f0f531a5a61c09f0088fca1d85c5c04e150aa5f8fb",
+    "brief_md": "282e542c5e95bba2fe85918e06814f2e800d52c5d4cc09af2386fed1d8187e87"
+  },
+  "brief_json": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v2_10_d_acceptance/v2_10_d_20260711_acceptance/api_backed_candidate_usable_brief.json",
+  "brief_md": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v2_10_d_acceptance/v2_10_d_20260711_acceptance/api_backed_candidate_usable_brief.md"
+}

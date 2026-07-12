@@ -1,0 +1,136 @@
+{
+  "overall_status": "PASS",
+  "generated_at": "2026-07-11T17:41:20.361283+08:00",
+  "run_id": "v2_1_c_20260711_acceptance",
+  "command": "validate_v2_1_c_suggestion_gate.py --run-id v2_1_c_20260711_acceptance",
+  "acceptance_target": "V2.1-C Suggestion Gate",
+  "isolated": true,
+  "network_used": false,
+  "production_records_written": false,
+  "dashboard_contract_changed": false,
+  "summary": {
+    "opportunity_count": 3,
+    "draft_count": 3,
+    "allowed_count": 1,
+    "blocked_count": 2,
+    "allowed_suggestions": [
+      "sug_opp_a_defensive_001"
+    ],
+    "blocked_suggestions": [
+      "sug_opp_us_raw_momentum_001",
+      "sug_opp_a_risk_veto_001"
+    ]
+  },
+  "suggestions": [
+    {
+      "suggestion_id": "sug_opp_a_defensive_001",
+      "opportunity_id": "opp_a_defensive_001",
+      "strategy_id": "low_volatility_dividend_a",
+      "symbol": "600000.SH",
+      "market": "A",
+      "action": "paper_entry_candidate",
+      "simulation_only": true,
+      "user_must_execute_externally": true,
+      "reasons": [
+        "Strategy sandbox PASS",
+        "Defensive low-volatility dividend profile"
+      ],
+      "risk_warnings": [
+        "Use paper trading only until live recommendation gates pass",
+        "Simulation-only draft; user decides and executes manually outside Aegis."
+      ],
+      "evidence_refs": [
+        "data/reports/v2_1_a_historical_strategy_sandbox_latest.json",
+        "data/reports/V2_1_A_HISTORICAL_STRATEGY_SANDBOX_PASS.marker"
+      ],
+      "blocked_by": [],
+      "created_at": "2026-07-11T17:41:20.361256+08:00"
+    },
+    {
+      "suggestion_id": "sug_opp_us_raw_momentum_001",
+      "opportunity_id": "opp_us_raw_momentum_001",
+      "strategy_id": "raw_momentum_us",
+      "symbol": "NVDA",
+      "market": "US",
+      "action": "blocked",
+      "simulation_only": true,
+      "user_must_execute_externally": true,
+      "reasons": [
+        "Raw momentum candidate requested for gate test"
+      ],
+      "risk_warnings": [
+        "Sandbox failed on drawdown and average return",
+        "Simulation-only draft; user decides and executes manually outside Aegis."
+      ],
+      "evidence_refs": [
+        "data/reports/v2_1_a_historical_strategy_sandbox_latest.json",
+        "data/reports/V2_1_A_HISTORICAL_STRATEGY_SANDBOX_PASS.marker"
+      ],
+      "blocked_by": [
+        "strategy_sandbox_not_passed"
+      ],
+      "created_at": "2026-07-11T17:41:20.361256+08:00"
+    },
+    {
+      "suggestion_id": "sug_opp_a_risk_veto_001",
+      "opportunity_id": "opp_a_risk_veto_001",
+      "strategy_id": "low_volatility_dividend_a",
+      "symbol": "600519.SH",
+      "market": "A",
+      "action": "blocked",
+      "simulation_only": true,
+      "user_must_execute_externally": true,
+      "reasons": [
+        "Strategy sandbox PASS but risk veto is active"
+      ],
+      "risk_warnings": [
+        "Risk veto blocks suggestion",
+        "Simulation-only draft; user decides and executes manually outside Aegis."
+      ],
+      "evidence_refs": [
+        "data/reports/v2_1_a_historical_strategy_sandbox_latest.json",
+        "data/reports/V2_1_A_HISTORICAL_STRATEGY_SANDBOX_PASS.marker"
+      ],
+      "blocked_by": [
+        "risk_veto_triggered"
+      ],
+      "created_at": "2026-07-11T17:41:20.361256+08:00"
+    }
+  ],
+  "safety": {
+    "simulation_only": true,
+    "manual_external_execution_only": true,
+    "no_real_trade": true,
+    "no_broker_api": true,
+    "no_webhook": true,
+    "no_secret_storage": true,
+    "strategy_sandbox_required": true,
+    "risk_veto_blocks_suggestion": true,
+    "evidence_refs_required": true,
+    "dashboard_contract_unchanged": true,
+    "no_production_records_mutation": true
+  },
+  "run_dir": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v2_1_c_acceptance/v2_1_c_20260711_acceptance",
+  "embedded_sandbox_json": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v2_1_c_acceptance/v2_1_c_20260711_acceptance/embedded_sandbox_report.json",
+  "opportunities_json": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v2_1_c_acceptance/v2_1_c_20260711_acceptance/suggestion_opportunities.json",
+  "suggestions_json": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v2_1_c_acceptance/v2_1_c_20260711_acceptance/suggestion_drafts.json",
+  "checks": {
+    "suggestion_gate_passed": true,
+    "at_least_one_allowed_draft": true,
+    "at_least_one_blocked_draft": true,
+    "sandbox_failed_strategy_blocked": true,
+    "risk_veto_blocked": true,
+    "evidence_refs_present": true,
+    "manual_execution_only": true,
+    "simulation_only": true,
+    "no_real_trade_or_broker": true,
+    "no_webhook_or_secrets": true,
+    "no_production_records_mutation": true,
+    "dashboard_contract_unchanged": true
+  },
+  "hashes": {
+    "embedded_sandbox_json": "e61d9bafa36469e6d9482d0754028e9b967043e8e5c80316f72bc41911a2cf2b",
+    "opportunities_json": "63e37b4c02849db6317c350f2aaf7102f9e28738b49cbde9f20630978ebda7af",
+    "suggestions_json": "e2961b724265ffc91e6f1377a7125320a9fc073a629133abc196fb209ccd6e52"
+  }
+}

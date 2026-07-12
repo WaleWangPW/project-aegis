@@ -1,0 +1,204 @@
+{
+  "overall_status": "PASS",
+  "acceptance_target": "V2.6-C Feedback To Review/Memory Bridge",
+  "run_id": "v2_6_c_20260711_acceptance",
+  "generated_at": "2026-07-11T19:26:28.669836+08:00",
+  "command": "validate_v2_6_c_feedback_review_memory_bridge.py --run-id v2_6_c_20260711_acceptance",
+  "network_used": false,
+  "production_records_written": false,
+  "reviews_written": false,
+  "memory_records_written": false,
+  "paper_trades_written": false,
+  "recommendations_written": false,
+  "dashboard_contract_changed": false,
+  "summary": {
+    "accepted_feedback_count": 2,
+    "review_link_count": 2,
+    "memory_candidate_count": 2,
+    "symbols": [
+      "600036.SH",
+      "00700.HK"
+    ]
+  },
+  "review_evidence_links": [
+    {
+      "link_id": "feedback_review_link_fb_v2_6_b_001",
+      "feedback_id": "fb_v2_6_b_001",
+      "suggestion_id": "sug_research_hyp_a_low_vol_dividend_defensive",
+      "symbol": "600036.SH",
+      "market": "A",
+      "feedback_type": "manual_watch",
+      "review_input_status": "candidate_evidence",
+      "review_use": "manual_user_feedback_context",
+      "evidence_refs": [
+        "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/v2_6_b_manual_feedback_intake_latest.json",
+        "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/v2_6_a_usable_suggestion_brief_latest.json",
+        "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/v2_4_c_historical_sandbox_research_hypotheses_latest.json",
+        "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/V2_4_C_HISTORICAL_SANDBOX_RESEARCH_HYPOTHESES_PASS.marker",
+        "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v2_4_c_acceptance/v2_4_c_20260711_acceptance/hypothesis_sandbox_report.json",
+        "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/v2_4_c_historical_sandbox_research_hypotheses_latest.json",
+        "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/V2_4_C_HISTORICAL_SANDBOX_RESEARCH_HYPOTHESES_PASS.marker",
+        "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v2_4_c_acceptance/v2_4_c_20260711_acceptance/hypothesis_sandbox_report.json",
+        "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v2_5_c_acceptance/v2_5_c_20260711_acceptance_rerun/api_candidate_source_registry.json",
+        "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/v2_5_c_user_api_candidate_refresh_latest.json",
+        "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/V2_5_C_USER_API_CANDIDATE_REFRESH_PASS.marker"
+      ],
+      "screenshot_evidence": [
+        {
+          "path": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v2_6_b_acceptance/v2_6_b_20260711_acceptance_rerun/fixture_manual_feedback_screenshot.txt",
+          "exists": true,
+          "sha256": "73bbd4d253e312307eb53565f8da0216714932de0fe749c84babef10abfa918c",
+          "raw_image_stored_in_record": false,
+          "ocr_performed": false
+        }
+      ],
+      "created_at": "2026-07-11T19:26:28.669707+08:00",
+      "user_submitted_evidence_only": true,
+      "no_review_record_mutation": true,
+      "no_paper_trade_mutation": true,
+      "no_recommendation_mutation": true
+    },
+    {
+      "link_id": "feedback_review_link_fb_v2_6_b_002",
+      "feedback_id": "fb_v2_6_b_002",
+      "suggestion_id": "sug_research_hyp_h_low_vol_dividend",
+      "symbol": "00700.HK",
+      "market": "H",
+      "feedback_type": "external_manual_execution",
+      "review_input_status": "candidate_evidence",
+      "review_use": "manual_user_feedback_context",
+      "evidence_refs": [
+        "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/v2_6_b_manual_feedback_intake_latest.json",
+        "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/v2_6_a_usable_suggestion_brief_latest.json",
+        "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/v2_4_c_historical_sandbox_research_hypotheses_latest.json",
+        "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/V2_4_C_HISTORICAL_SANDBOX_RESEARCH_HYPOTHESES_PASS.marker",
+        "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v2_4_c_acceptance/v2_4_c_20260711_acceptance/hypothesis_sandbox_report.json",
+        "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/v2_4_c_historical_sandbox_research_hypotheses_latest.json",
+        "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/V2_4_C_HISTORICAL_SANDBOX_RESEARCH_HYPOTHESES_PASS.marker",
+        "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v2_4_c_acceptance/v2_4_c_20260711_acceptance/hypothesis_sandbox_report.json",
+        "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v2_5_c_acceptance/v2_5_c_20260711_acceptance_rerun/api_candidate_source_registry.json",
+        "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/v2_5_c_user_api_candidate_refresh_latest.json",
+        "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/V2_5_C_USER_API_CANDIDATE_REFRESH_PASS.marker"
+      ],
+      "screenshot_evidence": [],
+      "created_at": "2026-07-11T19:26:28.669707+08:00",
+      "user_submitted_evidence_only": true,
+      "no_review_record_mutation": true,
+      "no_paper_trade_mutation": true,
+      "no_recommendation_mutation": true
+    }
+  ],
+  "memory_candidates": [
+    {
+      "memory_candidate_id": "feedback_memory_candidate_fb_v2_6_b_001",
+      "source_type": "manual_feedback",
+      "feedback_id": "fb_v2_6_b_001",
+      "suggestion_id": "sug_research_hyp_a_low_vol_dividend_defensive",
+      "symbol": "600036.SH",
+      "market": "A",
+      "lesson_type": "user_feedback_context",
+      "lesson": "600036.SH（A）：用户回传 `manual_watch` 反馈，可作为后续复盘上下文，但不能自动改变策略或交易状态。",
+      "tags": [
+        "manual_feedback",
+        "manual_watch",
+        "A"
+      ],
+      "confidence": 0.5,
+      "evidence_refs": [
+        "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/v2_6_b_manual_feedback_intake_latest.json",
+        "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/v2_6_a_usable_suggestion_brief_latest.json",
+        "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/v2_4_c_historical_sandbox_research_hypotheses_latest.json",
+        "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/V2_4_C_HISTORICAL_SANDBOX_RESEARCH_HYPOTHESES_PASS.marker",
+        "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v2_4_c_acceptance/v2_4_c_20260711_acceptance/hypothesis_sandbox_report.json",
+        "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/v2_4_c_historical_sandbox_research_hypotheses_latest.json",
+        "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/V2_4_C_HISTORICAL_SANDBOX_RESEARCH_HYPOTHESES_PASS.marker",
+        "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v2_4_c_acceptance/v2_4_c_20260711_acceptance/hypothesis_sandbox_report.json",
+        "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v2_5_c_acceptance/v2_5_c_20260711_acceptance_rerun/api_candidate_source_registry.json",
+        "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/v2_5_c_user_api_candidate_refresh_latest.json",
+        "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/V2_5_C_USER_API_CANDIDATE_REFRESH_PASS.marker"
+      ],
+      "created_at": "2026-07-11T19:26:28.669826+08:00",
+      "requires_review_before_memory_write": true,
+      "no_memory_jsonl_mutation": true,
+      "no_strategy_mutation": true
+    },
+    {
+      "memory_candidate_id": "feedback_memory_candidate_fb_v2_6_b_002",
+      "source_type": "manual_feedback",
+      "feedback_id": "fb_v2_6_b_002",
+      "suggestion_id": "sug_research_hyp_h_low_vol_dividend",
+      "symbol": "00700.HK",
+      "market": "H",
+      "lesson_type": "user_feedback_context",
+      "lesson": "00700.HK（H）：用户回传 `external_manual_execution` 反馈，可作为后续复盘上下文，但不能自动改变策略或交易状态。",
+      "tags": [
+        "manual_feedback",
+        "external_manual_execution",
+        "H"
+      ],
+      "confidence": 0.5,
+      "evidence_refs": [
+        "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/v2_6_b_manual_feedback_intake_latest.json",
+        "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/v2_6_a_usable_suggestion_brief_latest.json",
+        "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/v2_4_c_historical_sandbox_research_hypotheses_latest.json",
+        "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/V2_4_C_HISTORICAL_SANDBOX_RESEARCH_HYPOTHESES_PASS.marker",
+        "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v2_4_c_acceptance/v2_4_c_20260711_acceptance/hypothesis_sandbox_report.json",
+        "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/v2_4_c_historical_sandbox_research_hypotheses_latest.json",
+        "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/V2_4_C_HISTORICAL_SANDBOX_RESEARCH_HYPOTHESES_PASS.marker",
+        "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v2_4_c_acceptance/v2_4_c_20260711_acceptance/hypothesis_sandbox_report.json",
+        "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v2_5_c_acceptance/v2_5_c_20260711_acceptance_rerun/api_candidate_source_registry.json",
+        "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/v2_5_c_user_api_candidate_refresh_latest.json",
+        "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/V2_5_C_USER_API_CANDIDATE_REFRESH_PASS.marker"
+      ],
+      "created_at": "2026-07-11T19:26:28.669826+08:00",
+      "requires_review_before_memory_write": true,
+      "no_memory_jsonl_mutation": true,
+      "no_strategy_mutation": true
+    }
+  ],
+  "checks": {
+    "has_accepted_feedback": true,
+    "review_links_for_each_accepted_feedback": true,
+    "memory_candidates_for_each_accepted_feedback": true,
+    "all_review_links_are_evidence_only": true,
+    "memory_candidates_require_review": true,
+    "no_review_record_mutation": true,
+    "no_memory_jsonl_mutation": true,
+    "no_paper_trade_mutation": true,
+    "no_recommendation_mutation": true,
+    "no_strategy_mutation": true,
+    "acceptance_target_correct": true,
+    "report_status_pass": true,
+    "production_records_not_written": true,
+    "reviews_not_written": true,
+    "memory_records_not_written": true,
+    "paper_trades_not_written": true,
+    "recommendations_not_written": true,
+    "dashboard_contract_unchanged": true,
+    "network_not_used": true
+  },
+  "safety": {
+    "user_submitted_evidence_only": true,
+    "simulation_only": true,
+    "manual_external_execution_only": true,
+    "no_real_trade_execution": true,
+    "no_broker_api": true,
+    "no_webhook": true,
+    "no_order_placement": true,
+    "no_review_record_mutation": true,
+    "no_memory_jsonl_mutation": true,
+    "no_paper_trade_mutation": true,
+    "no_recommendation_mutation": true,
+    "no_strategy_mutation": true,
+    "dashboard_contract_unchanged": true
+  },
+  "run_dir": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v2_6_c_acceptance/v2_6_c_20260711_acceptance",
+  "source_feedback_report_json": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/v2_6_b_manual_feedback_intake_latest.json",
+  "review_evidence_links_json": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v2_6_c_acceptance/v2_6_c_20260711_acceptance/feedback_review_evidence_links.json",
+  "memory_candidates_json": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v2_6_c_acceptance/v2_6_c_20260711_acceptance/feedback_memory_candidates.json",
+  "hashes": {
+    "source_feedback_report_json": "3f203cf301397e302561740fa5cc98ee8c1d64bd9949c49215699070bf2f68c9",
+    "review_evidence_links_json": "d0c8be434d574597bf6a65f0f20abb311e8a3f2d082f12a1a80672e2cbc67aa9",
+    "memory_candidates_json": "f1342a975d188fde16c6a30d7b05603d92d1b894b683a7339ae0a4dd6418612b"
+  }
+}

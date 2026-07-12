@@ -1,0 +1,74 @@
+{
+  "overall_status": "PASS",
+  "generated_at": "2026-07-11T17:48:30.522353+08:00",
+  "run_id": "v2_2_a_20260711_acceptance",
+  "command": "validate_v2_2_a_external_api_research_ingestion.py --run-id v2_2_a_20260711_acceptance",
+  "acceptance_target": "V2.2-A External API Connector and Strategy Research Ingestion",
+  "isolated": true,
+  "network_used": false,
+  "production_records_written": false,
+  "dashboard_contract_changed": false,
+  "run_dir": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v2_2_a_acceptance/v2_2_a_20260711_acceptance",
+  "api_registry_json": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v2_2_a_acceptance/v2_2_a_20260711_acceptance/external_api_connector_registry.json",
+  "strategy_research_corpus_json": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v2_2_a_acceptance/v2_2_a_20260711_acceptance/strategy_research_corpus.json",
+  "checks": {
+    "official_api_allowed": true,
+    "user_api_env_only_allowed": true,
+    "broker_api_denied": true,
+    "trading_webhook_denied": true,
+    "env_var_names_only": true,
+    "no_secret_values_stored": true,
+    "research_covers_a_h_us": true,
+    "research_covers_core_factors": true,
+    "research_raw_text_not_stored": true,
+    "research_hashes_present": true,
+    "no_real_trade_or_broker": true,
+    "no_webhook": true,
+    "no_strategy_auto_mutation": true
+  },
+  "summary": {
+    "connector_count": 4,
+    "connector_allow_count": 2,
+    "connector_deny_count": 2,
+    "research_record_count": 6,
+    "market_coverage": {
+      "A": 2,
+      "H": 1,
+      "GLOBAL": 3,
+      "US": 3
+    },
+    "strategy_family_coverage": {
+      "value": 6,
+      "low_volatility": 4,
+      "dividend": 3,
+      "quality": 6,
+      "momentum": 4,
+      "size": 4,
+      "multi_factor": 2
+    },
+    "next_target": "V2.2-B API-backed Research Fetch Dry Run"
+  },
+  "safety": {
+    "metadata_only_connector_specs": true,
+    "no_secret_values_stored": true,
+    "env_var_names_only": true,
+    "no_cookie_access": true,
+    "no_broker_api": true,
+    "no_trading_webhook": true,
+    "no_real_trade": true,
+    "no_strategy_auto_mutation": true,
+    "dashboard_contract_unchanged": true,
+    "summary_only": true,
+    "raw_text_not_stored": true,
+    "no_secret_storage": true,
+    "no_paywall_bypass": true,
+    "no_webhook": true,
+    "production_records_written": false,
+    "approved_api_metadata_only": true,
+    "user_api_key_value_not_stored": true
+  },
+  "hashes": {
+    "api_registry_json": "ef582c1cf3df092608eca88bce3b8f0161065f5862ec682e8f25cbf9615fd3b9",
+    "strategy_research_corpus_json": "4a3a7af6abf4c5c7351e1516daf9aded1bb949153a1507988dbfc054640182fe"
+  }
+}

@@ -1,0 +1,72 @@
+{
+  "strategy_id": "a_share_historical_liquidity_trend_v1",
+  "strategy_name": "A股历史流动性趋势策略 v1",
+  "version": "1.0.0",
+  "market": "A_SHARE",
+  "mode": "point_in_time_historical_research",
+  "description": "用于历史 point-in-time dry-run 的独立研究策略，不等同于当前 a_share_watchlist_v1。",
+  "universe_source": {
+    "provider": "Tushare",
+    "dataset": "stock_basic",
+    "historical_eligibility_rule": [
+      "list_date <= data_cutoff_date",
+      "delist_date is empty or delist_date > data_cutoff_date",
+      "exclude invalid or unavailable symbols"
+    ]
+  },
+  "price_source": {
+    "provider": "Tushare",
+    "dataset": "daily",
+    "lookback_open_days": 60,
+    "data_must_not_exceed": "data_cutoff_date"
+  },
+  "ranking_inputs": {
+    "avg_amount_60d": {
+      "direction": "desc",
+      "weight": 0.35
+    },
+    "trend_20d": {
+      "direction": "desc",
+      "weight": 0.35
+    },
+    "volatility_60d": {
+      "direction": "asc",
+      "weight": 0.15
+    },
+    "max_drawdown_60d": {
+      "direction": "asc",
+      "weight": 0.15
+    }
+  },
+  "filters": {
+    "min_valid_price_rows": 40,
+    "min_close": 0.01,
+    "min_avg_amount": 1.0,
+    "exclude_st": true,
+    "exclude_bj_exchange": true
+  },
+  "selection": {
+    "top_n": 20,
+    "tie_breaker": "ts_code_asc"
+  },
+  "point_in_time_controls": {
+    "current_watchlist_used": false,
+    "future_prices_for_selection_allowed": false,
+    "future_status_allowed": false,
+    "future_liquidity_allowed": false
+  },
+  "known_limitations": [
+    "Tushare stock_basic is used to reconstruct historical eligibility from list_date and delist_date.",
+    "Historical name and status changes may be incomplete.",
+    "Results are research dry-run outputs and are not equivalent to the current Watchlist strategy."
+  ],
+  "safety_boundaries": [
+    "no_real_trade",
+    "no_order_api",
+    "no_webhook_send",
+    "no_secret_output"
+  ],
+  "dry_run": true,
+  "sent": false,
+  "trading_called": false
+}

@@ -1,0 +1,99 @@
+{
+  "project": "Project Aegis",
+  "type": "p25_6_real_usage_acceptance",
+  "generated_at": "2026-07-11T06:54:08.311470+00:00",
+  "tested_url": "http://localhost:8080/dashboard/index.html",
+  "browser_render_available": true,
+  "tested_viewports": [
+    "390x844",
+    "430x932",
+    "1024x768",
+    "1440x900"
+  ],
+  "http": {
+    "project": "Project Aegis",
+    "type": "p25_6_real_usage_http_smoke",
+    "generated_at": "2026-07-11T06:54:08.270999+00:00",
+    "tested_url": "http://localhost:8080/dashboard/index.html",
+    "overall_verdict": "PASS",
+    "checks": {
+      "index_http_200": true,
+      "css_http_200": true,
+      "js_http_200": true,
+      "contract_meta": true,
+      "correct_assets": true,
+      "no_bad_report_path": true,
+      "all_real_report_fetches_http_200": true,
+      "report_statuses": {}
+    }
+  },
+  "render": {
+    "browser_render_available": true,
+    "tested_viewports": [
+      "390x844",
+      "430x932",
+      "1024x768",
+      "1440x900"
+    ],
+    "screenshots": [
+      "data/reports/p25_6_screenshots/dashboard_390x844.png",
+      "data/reports/p25_6_screenshots/dashboard_430x932.png",
+      "data/reports/p25_6_screenshots/dashboard_1024x768.png",
+      "data/reports/p25_6_screenshots/dashboard_1440x900.png"
+    ],
+    "screenshots_complete": true,
+    "horizontal_overflow": "not observed in captured viewport evidence",
+    "console_error_count": null,
+    "console_observation": "Playwright CLI screenshot capability does not expose console logs in this repository without adding dependencies.",
+    "resource_404_count": 0,
+    "details_default_collapsed": true
+  },
+  "data_semantics": {
+    "today_decision_sources": [
+      "aegis_evidence_gate_latest.json",
+      "aegis_health_status_latest.json",
+      "aegis_daily_dry_run_hardened_latest.json",
+      "a_share_watchlist_latest.json",
+      "crcl_risk_monitor_latest.json",
+      "000002.sz_risk_monitor_latest.json"
+    ],
+    "risk_sources": [
+      "crcl_risk_monitor_latest.json",
+      "000002.sz_risk_monitor_latest.json"
+    ],
+    "holdings_sources": [
+      "crcl_risk_monitor_latest.json",
+      "000002.sz_risk_monitor_latest.json",
+      "aegis_health_status_latest.json"
+    ],
+    "candidate_source": "a_share_watchlist_latest.json",
+    "market_source": "aegis_health_status_latest.json",
+    "updated_at_source": "2026-07-11T14:54:06.391205+08:00",
+    "backtest_source": "a_share_point_in_time_rolling_backtest_latest.json",
+    "no_action_in_source": true,
+    "source_action_symbols": [],
+    "gate_verdict": "PASS",
+    "dry_run": true,
+    "sent": false,
+    "webhook_called": false,
+    "trading_called": false,
+    "history_is_not_live_return_notice_required": true,
+    "rolling_strategy_id": "a_share_historical_liquidity_trend_v1"
+  },
+  "security": {
+    "dry_run": true,
+    "sent": false,
+    "webhook_called": false,
+    "trading_called": false
+  },
+  "actual_usage_issues": [
+    {
+      "finding": "Risk / Exit 标签曾显示为数据不足",
+      "evidence": "P25.6 首次 390px 真实截图",
+      "fix": "仅补齐 stateLabel 的 Risk / Exit 中文显示映射；deriveDailyDecision 未修改",
+      "resolved": true
+    }
+  ],
+  "needs_page_change": false,
+  "overall_verdict": "PASS"
+}

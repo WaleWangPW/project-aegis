@@ -1,0 +1,336 @@
+{
+  "overall_status": "PASS",
+  "acceptance_target": "V2.14-B Candidate Pool Live Refresh From Approved Routes",
+  "run_id": "v2_14_b_20260712_acceptance",
+  "generated_at": "2026-07-12T04:02:51+08:00",
+  "command": "validate_v2_14_b_candidate_pool_live_refresh.py --run-id v2_14_b_20260712_acceptance",
+  "network_used": false,
+  "production_records_written": false,
+  "production_cache_mutated": false,
+  "production_provider_config_mutated": false,
+  "dashboard_contract_changed": false,
+  "summary": {
+    "refreshed_candidate_count": 6,
+    "refreshed_markets": [
+      "A",
+      "H"
+    ],
+    "blocked_symbols_not_reused": [
+      "CRCL",
+      "MSFT",
+      "NVDA"
+    ],
+    "replacement_required_markets": [
+      "US"
+    ],
+    "replacement_request_count": 1,
+    "user_facing_suggestion_allowed": false,
+    "next_stage": "V2.14-C Refreshed Candidate Historical Sandbox"
+  },
+  "route_statuses": [
+    {
+      "market": "A",
+      "route_id": "tushare_a_share_candidate_refresh",
+      "provider": "tushare",
+      "source_refresh_status": "ready_for_live_refresh",
+      "output_status": "refreshed_pending_historical_sandbox",
+      "refreshed_candidate_count": 3,
+      "requires_historical_sandbox": true,
+      "requires_suggestion_gate": true
+    },
+    {
+      "market": "H",
+      "route_id": "h_share_h_us_provider_candidate_refresh",
+      "provider": "h_us_provider",
+      "source_refresh_status": "ready_for_h_us_refresh",
+      "output_status": "refreshed_pending_historical_sandbox",
+      "refreshed_candidate_count": 3,
+      "requires_historical_sandbox": true,
+      "requires_suggestion_gate": true
+    },
+    {
+      "market": "US",
+      "route_id": "us_candidate_replacement_required",
+      "provider": "finnhub_or_h_us_provider",
+      "source_refresh_status": "blocked_until_replacement_candidates_found",
+      "output_status": "blocked_until_replacement_candidates_found",
+      "refreshed_candidate_count": 0,
+      "requires_historical_sandbox": true,
+      "requires_suggestion_gate": true
+    }
+  ],
+  "refreshed_candidates": [
+    {
+      "candidate_id": "v2_14_b_a_600519_sh",
+      "symbol": "600519.SH",
+      "market": "A",
+      "strategy_id": "strategy_a_low_vol_dividend_defensive",
+      "source_route_id": "tushare_a_share_candidate_refresh",
+      "provider": "tushare",
+      "refresh_status": "refreshed_pending_historical_sandbox",
+      "requires_historical_sandbox": true,
+      "requires_suggestion_gate": true,
+      "user_facing_suggestion_allowed": false,
+      "evidence_refs": [
+        "v2_14_a_refresh_plan:v2_14_a_20260712_acceptance:1a0dc9d636f4857ce00cd7fdcc18b6869cf800a5923a65a7af1c8f6b981f6549"
+      ],
+      "notes": [
+        "Candidate summary only; not a recommendation.",
+        "Manual external execution boundary remains active."
+      ]
+    },
+    {
+      "candidate_id": "v2_14_b_a_600036_sh",
+      "symbol": "600036.SH",
+      "market": "A",
+      "strategy_id": "strategy_a_low_vol_dividend_defensive",
+      "source_route_id": "tushare_a_share_candidate_refresh",
+      "provider": "tushare",
+      "refresh_status": "refreshed_pending_historical_sandbox",
+      "requires_historical_sandbox": true,
+      "requires_suggestion_gate": true,
+      "user_facing_suggestion_allowed": false,
+      "evidence_refs": [
+        "v2_14_a_refresh_plan:v2_14_a_20260712_acceptance:1a0dc9d636f4857ce00cd7fdcc18b6869cf800a5923a65a7af1c8f6b981f6549"
+      ],
+      "notes": [
+        "Candidate summary only; not a recommendation.",
+        "Manual external execution boundary remains active."
+      ]
+    },
+    {
+      "candidate_id": "v2_14_b_a_601398_sh",
+      "symbol": "601398.SH",
+      "market": "A",
+      "strategy_id": "strategy_a_low_vol_dividend_defensive",
+      "source_route_id": "tushare_a_share_candidate_refresh",
+      "provider": "tushare",
+      "refresh_status": "refreshed_pending_historical_sandbox",
+      "requires_historical_sandbox": true,
+      "requires_suggestion_gate": true,
+      "user_facing_suggestion_allowed": false,
+      "evidence_refs": [
+        "v2_14_a_refresh_plan:v2_14_a_20260712_acceptance:1a0dc9d636f4857ce00cd7fdcc18b6869cf800a5923a65a7af1c8f6b981f6549"
+      ],
+      "notes": [
+        "Candidate summary only; not a recommendation.",
+        "Manual external execution boundary remains active."
+      ]
+    },
+    {
+      "candidate_id": "v2_14_b_h_00700_hk",
+      "symbol": "00700.HK",
+      "market": "H",
+      "strategy_id": "strategy_h_low_vol_dividend",
+      "source_route_id": "h_share_h_us_provider_candidate_refresh",
+      "provider": "h_us_provider",
+      "refresh_status": "refreshed_pending_historical_sandbox",
+      "requires_historical_sandbox": true,
+      "requires_suggestion_gate": true,
+      "user_facing_suggestion_allowed": false,
+      "evidence_refs": [
+        "v2_14_a_refresh_plan:v2_14_a_20260712_acceptance:1a0dc9d636f4857ce00cd7fdcc18b6869cf800a5923a65a7af1c8f6b981f6549"
+      ],
+      "notes": [
+        "Candidate summary only; not a recommendation.",
+        "Manual external execution boundary remains active."
+      ]
+    },
+    {
+      "candidate_id": "v2_14_b_h_00005_hk",
+      "symbol": "00005.HK",
+      "market": "H",
+      "strategy_id": "strategy_h_low_vol_dividend",
+      "source_route_id": "h_share_h_us_provider_candidate_refresh",
+      "provider": "h_us_provider",
+      "refresh_status": "refreshed_pending_historical_sandbox",
+      "requires_historical_sandbox": true,
+      "requires_suggestion_gate": true,
+      "user_facing_suggestion_allowed": false,
+      "evidence_refs": [
+        "v2_14_a_refresh_plan:v2_14_a_20260712_acceptance:1a0dc9d636f4857ce00cd7fdcc18b6869cf800a5923a65a7af1c8f6b981f6549"
+      ],
+      "notes": [
+        "Candidate summary only; not a recommendation.",
+        "Manual external execution boundary remains active."
+      ]
+    },
+    {
+      "candidate_id": "v2_14_b_h_00941_hk",
+      "symbol": "00941.HK",
+      "market": "H",
+      "strategy_id": "strategy_h_low_vol_dividend",
+      "source_route_id": "h_share_h_us_provider_candidate_refresh",
+      "provider": "h_us_provider",
+      "refresh_status": "refreshed_pending_historical_sandbox",
+      "requires_historical_sandbox": true,
+      "requires_suggestion_gate": true,
+      "user_facing_suggestion_allowed": false,
+      "evidence_refs": [
+        "v2_14_a_refresh_plan:v2_14_a_20260712_acceptance:1a0dc9d636f4857ce00cd7fdcc18b6869cf800a5923a65a7af1c8f6b981f6549"
+      ],
+      "notes": [
+        "Candidate summary only; not a recommendation.",
+        "Manual external execution boundary remains active."
+      ]
+    }
+  ],
+  "replacement_requests": [
+    {
+      "market": "US",
+      "request_id": "replace_blocked_us_multi_symbol_candidates",
+      "blocked_symbols": [
+        "CRCL",
+        "MSFT",
+        "NVDA"
+      ],
+      "needed_count": 3,
+      "reason": "current_us_candidates_failed_v2_13_v_sandbox",
+      "allowed_sources": [
+        "approved_public_strategy_sources",
+        "finnhub_quote",
+        "eodhd_historical_bars"
+      ],
+      "forbidden_sources": [
+        "broker_api",
+        "trading_webhook",
+        "unlicensed_paywall_scrape"
+      ],
+      "requires_historical_sandbox": true,
+      "requires_suggestion_gate": true,
+      "refresh_status": "open_pending_replacement_candidates",
+      "user_facing_suggestion_allowed": false
+    }
+  ],
+  "revived_blocked_symbols": [],
+  "source_evidence": {
+    "source_target": "V2.14-A Post-Blocked Candidate Pool Refresh Plan",
+    "source_run_id": "v2_14_a_20260712_acceptance",
+    "source_summary_sha256": "1a0dc9d636f4857ce00cd7fdcc18b6869cf800a5923a65a7af1c8f6b981f6549",
+    "source_route_plan_sha256": "ed7368c4ddfbf6cad60a282880c4c886936b09c1e748786ca83c1ac1f6c26425"
+  },
+  "checks": {
+    "source_plan_pass": true,
+    "source_plan_target_correct": true,
+    "blocked_symbols_present": true,
+    "a_route_present": true,
+    "h_route_present": true,
+    "us_replacement_route_present": true,
+    "a_candidates_refreshed": true,
+    "h_candidates_refreshed": true,
+    "us_candidates_not_refreshed_from_blocked_pool": true,
+    "blocked_symbols_not_revived": true,
+    "replacement_request_kept_open": true,
+    "all_refreshed_candidates_require_sandbox": true,
+    "all_refreshed_candidates_require_suggestion_gate": true,
+    "not_user_facing_suggestion": true,
+    "network_not_used_this_stage": true,
+    "production_records_not_written": true,
+    "production_cache_not_mutated": true,
+    "production_provider_config_not_mutated": true,
+    "no_secret_values_stored": true,
+    "request_urls_not_stored": true,
+    "raw_payloads_not_stored": true,
+    "no_real_trade": true,
+    "no_broker_api": true,
+    "no_webhook": true,
+    "no_order_placement": true,
+    "no_position_size": true,
+    "no_live_order_signal": true,
+    "dashboard_contract_unchanged": true,
+    "acceptance_target_correct": true,
+    "refresh_status_pass": true,
+    "source_v2_14_a_report_exists": true,
+    "source_v2_14_a_marker_exists": true,
+    "refresh_json_written": true,
+    "refresh_md_written": true,
+    "production_record_files_unchanged": true,
+    "source_hashes_recorded": true
+  },
+  "safety": {
+    "candidate_pool_refresh_only": true,
+    "not_user_facing_suggestion": true,
+    "historical_sandbox_required": true,
+    "suggestion_gate_required": true,
+    "blocked_candidates_not_reused": true,
+    "network_not_used_this_stage": true,
+    "production_records_not_written": true,
+    "production_cache_not_mutated": true,
+    "production_provider_config_not_mutated": true,
+    "no_secret_values_stored": true,
+    "request_urls_not_stored": true,
+    "raw_payloads_not_stored": true,
+    "no_real_trade": true,
+    "no_broker_api": true,
+    "no_webhook": true,
+    "no_order_placement": true,
+    "no_position_size": true,
+    "no_live_order_signal": true,
+    "dashboard_contract_unchanged": true
+  },
+  "run_dir": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v2_14_b_acceptance/v2_14_b_20260712_acceptance",
+  "refresh_json": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v2_14_b_acceptance/v2_14_b_20260712_acceptance/candidate_pool_live_refresh.json",
+  "refresh_md": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v2_14_b_acceptance/v2_14_b_20260712_acceptance/candidate_pool_live_refresh.md",
+  "source_v2_14_a_report_json": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/v2_14_a_post_blocked_candidate_refresh_plan_latest.json",
+  "source_v2_14_a_pass_marker": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/V2_14_A_POST_BLOCKED_CANDIDATE_REFRESH_PLAN_PASS.marker",
+  "production_record_files_before": {
+    "recommendations_jsonl": {
+      "exists": true,
+      "size": 12284,
+      "sha256": "05b2e56c9b547cbe3ce4cb71b7cb776185e23ef2cc3bc9a46a918bce0cfb65dc"
+    },
+    "paper_trades_jsonl": {
+      "exists": false,
+      "size": null,
+      "sha256": null
+    },
+    "reviews_jsonl": {
+      "exists": false,
+      "size": null,
+      "sha256": null
+    },
+    "memory_jsonl": {
+      "exists": false,
+      "size": null,
+      "sha256": null
+    },
+    "investment_memory_jsonl": {
+      "exists": false,
+      "size": null,
+      "sha256": null
+    }
+  },
+  "production_record_files_after": {
+    "recommendations_jsonl": {
+      "exists": true,
+      "size": 12284,
+      "sha256": "05b2e56c9b547cbe3ce4cb71b7cb776185e23ef2cc3bc9a46a918bce0cfb65dc"
+    },
+    "paper_trades_jsonl": {
+      "exists": false,
+      "size": null,
+      "sha256": null
+    },
+    "reviews_jsonl": {
+      "exists": false,
+      "size": null,
+      "sha256": null
+    },
+    "memory_jsonl": {
+      "exists": false,
+      "size": null,
+      "sha256": null
+    },
+    "investment_memory_jsonl": {
+      "exists": false,
+      "size": null,
+      "sha256": null
+    }
+  },
+  "hashes": {
+    "source_v2_14_a_report_json": "d162ab758d0231c33a5d7fb061cc627e633e3c5e4c91ab8a7210cb03109d57ee",
+    "source_v2_14_a_pass_marker": "0a2d2d45ba929973078356d46c611b47d485cae956b97d427710c4027466e04a",
+    "refresh_json": "4f11e00c8f28bb77a8ff525be5bd66e1b79c945b6aa64cb4b671e1318e48234b",
+    "refresh_md": "f1b5b8fe4026b872a5745140a34805d721a50438ecdcbe62318d6be9affc89a8"
+  }
+}

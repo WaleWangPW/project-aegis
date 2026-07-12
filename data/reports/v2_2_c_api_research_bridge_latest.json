@@ -1,0 +1,77 @@
+{
+  "overall_status": "PASS",
+  "generated_at": "2026-07-11T17:57:42.252277+08:00",
+  "run_id": "v2_2_c_20260711_acceptance_rerun",
+  "command": "validate_v2_2_c_api_research_bridge.py --run-id v2_2_c_20260711_acceptance_rerun",
+  "acceptance_target": "V2.2-C API Research To Sandbox Candidate Bridge",
+  "isolated": true,
+  "network_used": false,
+  "production_records_written": false,
+  "dashboard_contract_changed": false,
+  "summary": {
+    "proposal_count": 1,
+    "target_strategy_ids": [
+      "value_quality_defensive_a"
+    ],
+    "source_connector_ids": [
+      "api_user_research_approved_env"
+    ],
+    "next_target": "V2.3-A Real User API Configuration Handoff"
+  },
+  "proposals": [
+    {
+      "proposal_id": "proposal_api_user_research_approved_env_value_quality_defensive_a",
+      "target_strategy_id": "value_quality_defensive_a",
+      "source_connector_id": "api_user_research_approved_env",
+      "source_fetch_ref": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v2_2_c_acceptance/v2_2_c_20260711_acceptance_rerun/api_fetch_item.json",
+      "markets": [
+        "A"
+      ],
+      "proposed_research_refs": [
+        "d19225a3b2255cb9b20d5971b8c94013c417226baf154fb3d584f2868034968e"
+      ],
+      "proposed_risk_controls": [
+        "api_research_requires_sandbox_confirmation"
+      ],
+      "rationale": [
+        "API summary available for connector api_user_research_approved_env.",
+        "Proposal is review-only and must pass sandbox before strategy changes."
+      ],
+      "requires_sandbox": true,
+      "auto_applied": false,
+      "user_facing_suggestion_allowed": false,
+      "created_at": "2026-07-11T17:57:42.252259+08:00"
+    }
+  ],
+  "safety": {
+    "proposal_only": true,
+    "requires_sandbox": true,
+    "auto_applied": false,
+    "user_facing_suggestion_allowed": false,
+    "no_real_trade": true,
+    "no_broker_api": true,
+    "no_trading_webhook": true,
+    "no_secret_storage": true,
+    "dashboard_contract_unchanged": true,
+    "no_production_records_mutation": true
+  },
+  "run_dir": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v2_2_c_acceptance/v2_2_c_20260711_acceptance_rerun",
+  "api_fetch_item_json": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v2_2_c_acceptance/v2_2_c_20260711_acceptance_rerun/api_fetch_item.json",
+  "strategy_update_proposals_json": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v2_2_c_acceptance/v2_2_c_20260711_acceptance_rerun/strategy_update_proposals.json",
+  "checks": {
+    "bridge_report_passed": true,
+    "proposal_created": true,
+    "requires_sandbox": true,
+    "not_auto_applied": true,
+    "no_user_facing_suggestion": true,
+    "fetch_hash_referenced": true,
+    "no_production_records_mutation": true,
+    "no_real_trade_or_broker": true,
+    "no_secret_storage": true,
+    "dashboard_contract_unchanged": true
+  },
+  "hashes": {
+    "api_fetch_item_json": "fca4b51c493c11d7d5f3c643f0b861f78c135c475675de9e6741cdea6cee4df2",
+    "strategy_update_proposals_json": "a204de11364a491fdeff71cd40ee6d129fd541aa1c68e056a1058736157927c3"
+  }
+}

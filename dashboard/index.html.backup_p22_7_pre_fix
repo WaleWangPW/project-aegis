@@ -1,0 +1,1186 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<title>Project Aegis 风险监控</title>
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-title" content="Aegis 风险监控" />
+<meta name="theme-color" content="#0a0e1a" />
+<meta name="description" content="Project Aegis 股票风险监控系统 - CRCL 和 000002.SZ 实时风险监控" />
+<link rel="apple-touch-icon" href="data:,">
+<style>
+  :root{
+    /* surfaces */
+    --bg:#0a0e1a;
+    --bg-soft:#0f1526;
+    --card:#131a2e;
+    --card-border:#1f2a45;
+
+    /* text — 3 tiers only. faint is reserved for pure decoration/timestamps. */
+    --text:#eef1f8;
+    --text-dim:#a2acc4;
+    --text-faint:#5b6478;
+
+    /* role colors: bg-soft(12%) / solid / on-dark-text(readable on soft) */
+    --accent:#3ecfd6;        --accent-soft:rgba(62,207,214,.14);
+    --green:#34d399;         --green-soft:rgba(52,211,153,.14);
+    --amber:#f5ab3d;         --amber-soft:rgba(245,171,61,.14);
+    --blue:#5b8def;          --blue-soft:rgba(91,141,239,.14);
+    --red:#f2637a;           --red-soft:rgba(242,99,122,.14);
+
+    /* radius scale */
+    --radius-sm:8px;
+    --radius-md:12px;
+    --radius-lg:16px;
+
+    /* spacing scale (4px base) */
+    --sp-1:4px; --sp-2:8px; --sp-3:12px; --sp-4:16px; --sp-5:24px; --sp-6:32px;
+
+    /* type scale — 5 tiers */
+    --fs-2xs:11px;  /* footer / pure metadata only */
+    --fs-xs:12px;   /* labels, captions, secondary table cells */
+    --fs-sm:13px;   /* body / table primary text */
+    --fs-base:15px; /* emphasized data: ticker, key values */
+    --fs-lg:19px;   /* section brand title */
+    --fs-xl:26px;   /* hero stat number */
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--text);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;
+    line-height:1.5;
+    padding:0 0 60px;
+    -webkit-tap-highlight-color:transparent;
+  }
+  .wrap{max-width:1000px;margin:0 auto;padding:0 var(--sp-3);}
+  .top-band{background:linear-gradient(180deg,rgba(15,21,38,.95),var(--bg));border-bottom:1px solid var(--card-border);padding:var(--sp-4) 0 var(--sp-5);}
+  .header{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:var(--sp-5);}
+  .brand{display:flex;align-items:center;gap:var(--sp-3);}
+  .brand-mark{width:40px;height:40px;border-radius:var(--radius-md);background:linear-gradient(135deg,var(--accent),var(--blue));display:flex;align-items:center;justify-content:center;color:#fff;}
+  .brand-mark svg{width:20px;height:20px;}
+  .brand h1{margin:0;font-size:var(--fs-lg);font-weight:700;color:var(--text);}
+  .brand p{margin:4px 0 0;font-size:var(--fs-sm);color:var(--text-dim);}
+  .header-meta{text-align:right;font-size:var(--fs-2xs);color:var(--text-faint);}
+  .header-meta .date{font-size:var(--fs-sm);color:var(--text-dim);font-weight:600;margin-bottom:4px;}
+  .badge-stage{display:inline-block;background:var(--accent-soft);color:var(--accent);padding:2px 8px;border-radius:100px;font-size:10px;font-weight:600;}
+  .stat-row{display:flex;gap:var(--sp-4);align-items:center;margin-top:var(--sp-4);}
+  .stat-hero{flex:0 0 auto;}
+  .stat-hero .label{display:block;font-size:var(--fs-xs);color:var(--text-dim);margin-bottom:4px;}
+  .stat-hero .value{display:block;font-size:var(--fs-xl);font-weight:700;color:var(--text);line-height:1.1;}
+  .stat-hero .sub{display:block;font-size:var(--fs-2xs);color:var(--text-faint);margin-top:4px;}
+  .snapshot{flex:1;display:flex;gap:var(--sp-2);flex-wrap:wrap;}
+  .snapshot-item{background:var(--bg-soft);border-radius:var(--radius-sm);padding:8px 12px;font-size:var(--fs-2xs);color:var(--text-dim);border:1px solid var(--card-border);}
+  .card{background:var(--card);border-radius:var(--radius-md);border:1px solid var(--card-border);padding:var(--sp-4);margin-bottom:var(--sp-4);}
+  .card-title{display:flex;justify-content:space-between;align-items:center;margin-bottom:var(--sp-3);}
+  .card-title h2{margin:0;font-size:var(--fs-base);font-weight:600;color:var(--text);display:flex;align-items:center;gap:var(--sp-2);}
+  .card-title .num{display:inline-flex;align-items:center;justify-content:center;width:20px;height:20px;border-radius:50%;background:var(--accent-soft);color:var(--accent);font-size:11px;font-weight:700;}
+  .card-title .hint{font-size:var(--fs-2xs);color:var(--text-faint);}
+  table{width:100%;border-collapse:collapse;font-size:var(--fs-sm);}
+  th{text-align:left;padding:var(--sp-2) var(--sp-2);color:var(--text-dim);font-weight:600;font-size:var(--fs-xs);border-bottom:1px solid var(--card-border);}
+  td{padding:var(--sp-2) var(--sp-2);border-bottom:1px solid rgba(255,255,255,.04);}
+  tr:last-child td{border-bottom:none;}
+  .ticker-cell{display:flex;flex-direction:column;gap:2px;}
+  .ticker-cell .t{font-weight:700;color:var(--text);font-size:var(--fs-base);}
+  .ticker-cell .m{font-size:var(--fs-2xs);color:var(--text-faint);}
+  .pill{display:inline-flex;align-items:center;gap:6px;padding:4px 10px;border-radius:100px;font-size:var(--fs-2xs);font-weight:600;white-space:nowrap;}
+  .pill-hold{background:var(--green-soft);color:var(--green);}
+  .pill-add{background:var(--blue-soft);color:var(--blue);}
+  .pill-trim{background:var(--amber-soft);color:var(--amber);}
+  .pill-exit{background:var(--red-soft);color:var(--red);}
+  .pill-neutral{background:rgba(255,255,255,.08);color:var(--text-dim);}
+  .pill-pending{background:var(--accent-soft);color:var(--accent);}
+  .pill-pending .dot{width:6px;height:6px;border-radius:50%;background:var(--accent);opacity:.7;}
+
+  .cell-note{color:var(--text-dim);font-size:var(--fs-xs);line-height:1.5;}
+  .cell-note .risk{color:var(--text-faint);display:block;margin-top:4px;}
+  .cell-dim{color:var(--text-faint);font-size:var(--fs-xs);}
+
+  /* recommendation tabs */
+  .tabs{display:flex;gap:var(--sp-2);margin-bottom:var(--sp-3);}
+  .tab-btn{
+    flex:1;padding:var(--sp-2) var(--sp-1);border-radius:var(--radius-sm);border:1px solid var(--card-border);
+    background:var(--bg-soft);color:var(--text-dim);font-size:var(--fs-xs);font-weight:600;
+    cursor:pointer;text-align:center;transition:background .15s, color .15s, border-color .15s;
+  }
+  .tab-btn.active{background:var(--accent-soft);color:var(--accent);border-color:rgba(62,207,214,.35);}
+  .tab-count{display:block;font-size:var(--fs-base);margin-top:2px;font-weight:700;color:var(--text-faint);}
+  .tab-btn.active .tab-count{color:var(--accent);}
+  .tab-panel{display:none;opacity:0;}
+  .tab-panel.active{display:block;animation:fadeIn .18s ease-out forwards;}
+  @keyframes fadeIn{from{opacity:0;transform:translateY(2px);}to{opacity:1;transform:translateY(0);}}
+
+  /* paper trading + review */
+  .kv-row{display:flex;justify-content:space-between;font-size:var(--fs-xs);padding:var(--sp-2) 0;border-bottom:1px solid rgba(255,255,255,.04);}
+  .kv-row:last-child{border-bottom:none;}
+  .kv-row .k{color:var(--text-dim);}
+  .kv-row .v{color:var(--text);font-weight:600;font-size:var(--fs-sm);}
+
+  /* Mobile app notice */
+  .mobile-notice{background:var(--bg-soft);border-radius:var(--fs-sm);padding:var(--sp-3);margin-bottom:var(--sp-3);border:1px solid var(--card-border);}
+  .mobile-notice h3{margin:0 0 var(--sp-2);font-size:var(--fs-base);font-weight:600;color:var(--text);}
+  .mobile-notice p{margin:0 0 var(--sp-2);font-size:var(--fs-sm);color:var(--text-dim);line-height:1.4;}
+  .mobile-notice p:last-child{margin-bottom:0;}
+  .mobile-notice .icon{display:inline-block;margin-right:6px;}
+
+  /* Multi Stock Risk Monitor Module */
+  .stock-monitor-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:var(--sp-3);margin-bottom:var(--sp-3);}
+  .stock-monitor-card{background:var(--bg-soft);border:1px solid var(--card-border);border-radius:var(--radius-sm);padding:var(--sp-3);}
+  .stock-monitor-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:var(--sp-2);padding-bottom:var(--sp-2);border-bottom:1px solid rgba(255,255,255,.08);}
+  .stock-monitor-title{display:flex;flex-direction:column;gap:2px;}
+  .stock-monitor-title .symbol{font-size:var(--fs-base);font-weight:700;color:var(--text);}
+  .stock-monitor-title .meta{font-size:var(--fs-2xs);color:var(--text-faint);}
+  .stock-monitor-status{display:inline-flex;align-items:center;gap:6px;padding:2px 8px;border-radius:100px;font-size:10px;font-weight:600;}
+  .stock-monitor-status.eligible{background:var(--green-soft);color:var(--green);}
+  .stock-monitor-status.not-eligible{background:var(--red-soft);color:var(--red);}
+  .stock-metrics{display:grid;grid-template-columns:1fr 1fr;gap:var(--sp-2);margin-bottom:var(--sp-2);}
+  .stock-metric{background:rgba(0,0,0,.2);padding:var(--sp-1) var(--sp-2);border-radius:var(--radius-sm);}
+  .stock-metric .label{font-size:var(--fs-2xs);color:var(--text-faint);margin-bottom:2px;}
+  .stock-metric .value{font-size:var(--fs-sm);font-weight:600;color:var(--text);}
+  .stock-metric .value.warning{color:var(--amber);}
+  .stock-metric .value.danger{color:var(--red);}
+  .stock-experts{display:flex;gap:var(--sp-1);margin-bottom:var(--sp-2);}
+  .stock-expert{flex:1;background:rgba(0,0,0,.2);padding:4px 8px;border-radius:var(--radius-sm);text-align:center;font-size:var(--fs-2xs);}
+  .stock-expert .name{color:var(--text-faint);margin-bottom:2px;}
+  .stock-expert .stance{font-weight:600;}
+  .stock-expert .stance.veto{color:var(--red);}
+  .stock-expert .stance.oppose{color:var(--amber);}
+  .stock-expert .stance.neutral{color:var(--text-dim);}
+  .stock-expert .stance.support{color:var(--green);}
+  .blocking-conditions{font-size:var(--fs-2xs);color:var(--text-faint);line-height:1.3;}
+  .blocking-conditions .title{color:var(--text-dim);font-weight:600;margin-bottom:4px;display:block;}
+  .blocking-conditions ul{margin:0;padding:0 0 0 12px;list-style-type:square;}
+  .blocking-conditions li{margin-bottom:2px;}
+
+  /* Health Light Module */
+  .health-light-card{background:var(--card);border-radius:var(--radius-md);border:1px solid var(--card-border);padding:var(--sp-4);margin-bottom:var(--sp-4);}
+  .health-light-title{display:flex;justify-content:space-between;align-items:center;margin-bottom:var(--sp-3);}
+  .health-light-title h2{margin:0;font-size:var(--fs-base);font-weight:600;color:var(--text);display:flex;align-items:center;gap:var(--sp-2);}
+  .health-light-title .num{display:inline-flex;align-items:center;justify-content:center;width:20px;height:20px;border-radius:50%;background:var(--accent-soft);color:var(--accent);font-size:11px;font-weight:700;}
+  .health-light-title .hint{font-size:var(--fs-2xs);color:var(--text-faint);}
+  .health-status{display:flex;gap:var(--sp-2);flex-wrap:wrap;margin-bottom:var(--sp-3);}
+  .health-status-item{background:var(--bg-soft);border-radius:var(--radius-sm);padding:6px 10px;font-size:var(--fs-2xs);color:var(--text-dim);border:1px solid var(--card-border);}
+  .health-status-item .v{color:var(--green);font-weight:600;}
+  .health-status-item .v.warning{color:var(--amber);}
+  .health-status-item .v.danger{color:var(--red);}
+  .health-status-item .v.normal{color:var(--green);}
+  .health-status-item .v.caution{color:var(--amber);}
+  .health-status-item .v.abnormal{color:var(--red);}
+  .health-top5{margin-top:var(--sp-2);font-size:var(--fs-2xs);color:var(--text-dim);}
+  .health-top5 .symbols{color:var(--text);font-weight:600;font-size:var(--fs-xs);word-break:break-all;}
+  .health-error{padding:var(--sp-3);background:var(--red-soft);border-radius:var(--radius-sm);color:var(--red);font-size:var(--fs-xs);}
+  .health-degrade{padding:var(--sp-2);background:var(--amber-soft);border-radius:var(--radius-sm);color:var(--amber);font-size:var(--fs-xs);margin-top:var(--sp-2);}
+
+  footer{
+    margin-top:var(--sp-6);padding-top:var(--sp-4);border-top:1px solid var(--card-border);
+    font-size:var(--fs-2xs);color:var(--text-faint);
+  }
+  footer code{background:rgba(255,255,255,.06);padding:1px 5px;border-radius:var(--radius-sm);font-size:10px;}
+
+  /* Feishu Dry-run Module */
+  .feishu-dry-run{background:var(--card);border-radius:var(--radius-md);border:1px solid var(--card-border);padding:var(--sp-4);margin-bottom:var(--sp-4);}
+  .feishu-dry-run .card-title{display:flex;justify-content:space-between;align-items:center;margin-bottom:var(--sp-3);}
+  .feishu-dry-run .card-title h2{margin:0;font-size:var(--fs-base);font-weight:600;color:var(--text);display:flex;align-items:center;gap:var(--sp-2);}
+  .feishu-dry-run .card-title .num{display:inline-flex;align-items:center;justify-content:center;width:20px;height:20px;border-radius:50%;background:var(--accent-soft);color:var(--accent);font-size:11px;font-weight:700;}
+  .feishu-dry-run .card-title .hint{font-size:var(--fs-2xs);color:var(--text-faint);}
+  .feishu-status{display:flex;gap:var(--sp-2);flex-wrap:wrap;margin-bottom:var(--sp-3);}
+  .feishu-status-item{background:var(--bg-soft);border-radius:var(--radius-sm);padding:6px 10px;font-size:var(--fs-2xs);color:var(--text-dim);border:1px solid var(--card-border);}
+  .feishu-status-item .v{color:var(--green);font-weight:600;}
+  .feishu-status-item .v.no{color:var(--text-faint);}
+  .feishu-stock-row{display:flex;justify-content:space-between;padding:4px 0;font-size:var(--fs-xs);border-bottom:1px solid rgba(255,255,255,.04);}
+  .feishu-stock-row:last-child{border-bottom:none;}
+  .feishu-stock-row .sym{color:var(--text);font-weight:600;}
+  .feishu-stock-row .stat{color:var(--text-dim);}
+  .feishu-links{margin-top:var(--sp-2);font-size:var(--fs-2xs);color:var(--text-faint);}
+  .feishu-links a{color:var(--accent);text-decoration:none;}
+  .feishu-safety{margin-top:var(--sp-3);padding:var(--sp-2);background:var(--bg-soft);border-radius:var(--radius-sm);font-size:var(--fs-2xs);color:var(--text-faint);}
+  .feishu-error{padding:var(--sp-3);background:var(--red-soft);border-radius:var(--radius-sm);color:var(--red);font-size:var(--fs-xs);}
+  .feishu-refresh-btn{background:var(--accent-soft);color:var(--accent);border:1px solid rgba(62,207,214,.35);border-radius:var(--radius-sm);padding:6px 12px;font-size:var(--fs-2xs);cursor:pointer;margin-bottom:var(--sp-2);}
+  .feishu-refresh-btn:hover{background:rgba(62,207,214,.2);}
+</style>
+</head>
+<body>
+<div class="top-band">
+  <div class="wrap">
+    <div class="header">
+      <div class="brand">
+        <div class="brand-mark">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 3l7 3v5c0 4.5-3 8-7 10-4-2-7-5.5-7-10V6l7-3z"/>
+            <path d="M9.5 12l1.8 1.8L14.8 10"/>
+          </svg>
+        </div>
+        <div>
+          <h1>Project Aegis 风险监控</h1>
+          <p>多股票实时风险监控系统</p>
+        </div>
+      </div>
+      <div class="header-meta">
+        <div class="date" id="today-date">—</div>
+        <div>最后更新: <span id="last-updated">-</span></div>
+        <span class="badge-stage" id="stage-badge">v1 · 多股票监控</span>
+      </div>
+    </div>
+
+    <div class="stat-row">
+      <div class="stat-hero">
+        <span class="label">监控股票</span>
+        <span class="value" id="stock-count">—</span>
+        <span class="sub" id="stock-count-sub">跨市场风险跟踪</span>
+      </div>
+      <div class="snapshot" id="snapshot"></div>
+    </div>
+  </div>
+</div>
+
+<div class="wrap">
+
+  <!-- Mobile App Notice -->
+  <div class="mobile-notice">
+    <h3>📱 手机使用说明</h3>
+    <p><span class="icon">🔒</span> 局域网安全访问，数据每天 8 点自动刷新</p>
+    <p><span class="icon">📊</span> 当前监控: <span id="monitored-stocks-display">—</span></p>
+    <p><span class="icon">➕</span> iPhone: Safari → 分享 → 添加到主屏幕，获得 App 体验</p>
+  </div>
+
+  <!-- Project Aegis Health Light Module -->
+  <div class="health-light-card" id="health-light-card">
+    <div class="card-title">
+      <h2><span class="num">1</span>Project Aegis 健康灯</h2>
+      <span class="hint">系统状态概览</span>
+    </div>
+    <div id="health-light-content">
+      <p style="color:var(--text-faint);font-size:var(--fs-xs);">加载中…</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">
+      <h2><span class="num">2</span>今日重点</h2>
+      <span class="hint">风险提醒</span>
+    </div>
+    <div class="focus-list" id="focus-list"></div>
+  </div>
+
+  <!-- Multi Stock Risk Monitor Module -->
+  <div class="card" id="multi-stock-risk-monitor-card">
+    <div class="card-title">
+      <h2><span class="num">3</span>多股票风险监控</h2>
+      <span class="hint">实时 Exit → Watch 转换状态</span>
+    </div>
+    <div id="multi-stock-risk-monitor-content"></div>
+  </div>
+
+  <div class="grid" style="margin-top:var(--sp-4);">
+    <!-- left: holdings -->
+    <div class="card">
+      <div class="card-title">
+        <h2><span class="num">4</span>当前持仓</h2>
+        <span class="hint" id="holdings-count"></span>
+      </div>
+      <table>
+        <thead>
+          <tr><th>标的</th><th>建议动作</th><th>理由 / 风险</th><th>失效条件</th></tr>
+        </thead>
+        <tbody id="holdings-body"></tbody>
+      </table>
+    </div>
+
+    <!-- right: recommendations + paper trading -->
+    <div>
+      <div class="card">
+        <div class="card-title">
+          <h2><span class="num">5</span>今日推荐</h2>
+        </div>
+        <div id="rec-banner"></div>
+        <div class="tabs" id="rec-tabs"></div>
+        <div id="rec-panels"></div>
+      </div>
+
+      <div class="card">
+        <div class="card-title">
+          <h2><span class="num">6</span>虚拟盘与复盘</h2>
+        </div>
+        <div id="paper-body"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Feishu Dry-run Module -->
+  <div class="feishu-dry-run" id="feishu-dry-run-card">
+    <div class="card-title">
+      <h2><span class="num">7</span>飞书日报 Dry-run</h2>
+      <span class="hint">未发送 · dry-run only</span>
+    </div>
+    <button class="feishu-refresh-btn" onclick="loadFeishuDryRun()">🔄 刷新 Dry-run 数据</button>
+    <div id="feishu-dry-run-content">
+      <p style="color:var(--text-faint);font-size:var(--fs-xs);">加载中…</p>
+    </div>
+  </div>
+
+  <!-- Pipeline History Module -->
+  <div class="card" id="pipeline-history-card">
+    <div class="card-title">
+      <h2><span class="num">8</span>Pipeline 最近 7 次运行</h2>
+      <span class="hint">历史稳定性追踪</span>
+    </div>
+    <div id="pipeline-history-content">
+      <p style="color:var(--text-faint);font-size:var(--fs-sm);">加载中...</p>
+    </div>
+    <button onclick="loadPipelineHistory()" style="background:var(--accent-soft);color:var(--accent);border:1px solid rgba(62,207,214,.35);border-radius:var(--radius-sm);padding:6px 12px;font-size:var(--fs-2xs);cursor:pointer;margin-top:var(--sp-2);">🔄 刷新历史</button>
+  </div>
+
+  <footer>
+    Project Aegis 股票风险监控系统 · 本地局域网安全访问 · 数据仅供学习参考，不构成投资建议
+  </footer>
+</div>
+
+<script>
+/* ============================================================
+   Project Aegis Health Light 模块
+   ============================================================ */
+async function loadHealthLight() {
+  const container = document.getElementById('health-light-content');
+  if (!container) return;
+
+  try {
+    // Primary source: health status JSON
+    const healthResp = await fetch('../data/reports/aegis_health_status_latest.json');
+    if (healthResp.ok) {
+      const healthData = await healthResp.json();
+      
+      let html = '';
+      
+      // Health status based on health status JSON
+      let healthStatus = healthData.health_label || "未知";
+      let healthColor = "caution"; // default
+      
+      if (healthData.health_status === "NORMAL") {
+        healthColor = "normal";
+      } else if (healthData.health_status === "WARNING") {
+        healthColor = "caution";
+      } else if (healthData.health_status === "CRITICAL") {
+        healthColor = "abnormal";
+      }
+
+      // Display current health status
+      html += '<div class="health-status">';
+      html += '<div class="health-status-item">当前状态: <span class="v ' + healthColor + '">' + healthStatus + '</span></div>';
+
+      // Other health data from the health status JSON
+      html += '<div class="health-status-item">Health Status: <span class="v ' + (healthData.health_status === "NORMAL" ? "normal" : healthData.health_status === "WARNING" ? "caution" : "danger") + '">' + healthData.health_status + '</span></div>';
+      html += '<div class="health-status-item">Gate: <span class="v ' + (healthData.gate_overall_verdict === "PASS" ? "normal" : "danger") + '">' + healthData.gate_overall_verdict + '</span></div>';
+      html += '<div class="health-status-item">History latest: <span class="v ' + (healthData.history_latest_result === "PASS" ? "normal" : "warning") + '">' + healthData.history_latest_result + '</span></div>';
+      html += '<div class="health-status-item">Feishu dry-run: <span class="v ' + (healthData.feishu_dry_run ? "normal" : "danger") + '">' + healthData.feishu_dry_run + '</span></div>';
+      html += '<div class="health-status-item">sent: <span class="v ' + (healthData.sent === false ? "normal" : "danger") + '">' + healthData.sent + '</span></div>';
+      html += '<div class="health-status-item">webhook_called: <span class="v ' + (healthData.webhook_called === false ? "normal" : "danger") + '">' + healthData.webhook_called + '</span></div>';
+      html += '<div class="health-status-item">trading_called: <span class="v ' + (healthData.trading_called === false ? "normal" : "danger") + '">' + healthData.trading_called + '</span></div>';
+
+      html += '</div>';
+
+      // A股 Top5 display
+      if (healthData.a_share_top5_symbols && Array.isArray(healthData.a_share_top5_symbols)) {
+        const top5Symbols = healthData.a_share_top5_symbols;
+        html += '<div class="health-top5">A股 Top5: <span class="symbols">' + top5Symbols.join(', ') + '</span></div>';
+      } else {
+        html += '<div class="health-top5">A股 Top5: <span class="symbols">数据不可用</span></div>';
+      }
+
+      // Update time
+      if (healthData.generated_at) {
+        html += '<div style="margin-top:4px;font-size:10px;color:var(--text-faint);">最新更新: ' + healthData.generated_at + '</div>';
+      }
+
+      // Additional status information
+      html += '<div style="margin-top:4px;font-size:10px;color:var(--text-faint);">来源: aegis_health_status_latest.json</div>';
+      
+      container.innerHTML = html;
+      return; // Exit early, we used the primary source
+    } else {
+      console.log('Health status JSON not available, falling back to multi-source calculation');
+    }
+  } catch (error) {
+    console.error('Error loading health status JSON:', error);
+  }
+
+  // Fallback: Original multi-source calculation
+  try {
+    // Multiple data sources for fallback
+    let gateData = null;
+    let historyData = null;
+    let feishuData = null;
+    let watchlistData = null;
+    
+    try {
+      const gateResp = await fetch('../data/reports/aegis_evidence_gate_latest.json');
+      if (gateResp.ok) gateData = await gateResp.json();
+    } catch (e) {
+      console.error('Error loading gate data:', e);
+    }
+    
+    try {
+      const historyResp = await fetch('../data/reports/aegis_pipeline_history_latest.json');
+      if (historyResp.ok) historyData = await historyResp.json();
+    } catch (e) {
+      console.error('Error loading history data:', e);
+    }
+    
+    try {
+      const feishuResp = await fetch('../data/reports/feishu_daily_digest_dry_run.json');
+      if (feishuResp.ok) feishuData = await feishuResp.json();
+    } catch (e) {
+      console.error('Error loading feishu data:', e);
+    }
+    
+    try {
+      const watchlistResp = await fetch('../data/reports/a_share_watchlist_latest.json');
+      if (watchlistResp.ok) watchlistData = await watchlistResp.json();
+    } catch (e) {
+      console.error('Error loading watchlist data:', e);
+    }
+
+    let html = '';
+
+    // Health status based on collected data
+    let healthStatus = "注意"; // 默认为注意状态
+    let healthColor = "caution";
+
+    // Check for critical failures
+    if (gateData && gateData.overall_verdict === "FAIL") {
+      healthStatus = "异常";
+      healthColor = "abnormal";
+    } else if (feishuData && (
+      feishuData.sent === true ||
+      feishuData.webhook_called === true ||
+      feishuData.trading_called === true
+    )) {
+      healthStatus = "异常";
+      healthColor = "abnormal";
+    } else if (historyData && historyData.runs && historyData.runs[0] && 
+               historyData.runs[0].result !== "PASS") {
+      healthStatus = "注意";
+      healthColor = "caution";
+    } else if (!watchlistData || !watchlistData.top5 || watchlistData.top5.length < 5) {
+      healthStatus = "注意";
+      healthColor = "caution";
+    } else if (gateData && gateData.overall_verdict === "PASS" &&
+               historyData && historyData.runs && historyData.runs[0] && 
+               historyData.runs[0].result === "PASS") {
+      healthStatus = "正常";
+      healthColor = "normal";
+    }
+
+    // Display current health status
+    html += '<div class="health-status">';
+    html += '<div class="health-status-item">当前状态: <span class="v ' + healthColor + '">' + healthStatus + '</span></div>';
+
+    // Gate status
+    if (gateData) {
+      html += '<div class="health-status-item">Gate: <span class="v ' + (gateData.overall_verdict === "PASS" ? "normal" : "danger") + '">' + gateData.overall_verdict + '</span></div>';
+    } else {
+      html += '<div class="health-status-item">Gate: <span class="v warning">状态不可用</span></div>';
+    }
+
+    // History latest status
+    if (historyData && historyData.runs && historyData.runs[0]) {
+      const latestResult = historyData.runs[0].result;
+      html += '<div class="health-status-item">History latest: <span class="v ' + (latestResult === "PASS" ? "normal" : "warning") + '">' + latestResult + '</span></div>';
+    } else {
+      html += '<div class="health-status-item">History latest: <span class="v warning">状态不可用</span></div>';
+    }
+
+    // Feishu safety flags
+    if (feishuData) {
+      html += '<div class="health-status-item">Feishu dry-run: <span class="v ' + (feishuData.dry_run ? "normal" : "danger") + '">' + feishuData.dry_run + '</span></div>';
+      html += '<div class="health-status-item">sent: <span class="v ' + (feishuData.sent === false ? "normal" : "danger") + '">' + feishuData.sent + '</span></div>';
+      html += '<div class="health-status-item">webhook_called: <span class="v ' + (feishuData.webhook_called === false ? "normal" : "danger") + '">' + feishuData.webhook_called + '</span></div>';
+      html += '<div class="health-status-item">trading_called: <span class="v ' + (feishuData.trading_called === false ? "normal" : "danger") + '">' + feishuData.trading_called + '</span></div>';
+    } else {
+      html += '<div class="health-status-item">Feishu dry-run: <span class="v warning">状态不可用</span></div>';
+    }
+
+    html += '</div>';
+
+    // A股 Top5 display
+    if (watchlistData && watchlistData.top5 && Array.isArray(watchlistData.top5)) {
+      const top5Symbols = watchlistData.top5.slice(0, 5).map(s => s.symbol || s.Symbol || s.ticker || s.code || 'N/A');
+      html += '<div class="health-top5">A股 Top5: <span class="symbols">' + top5Symbols.join(', ') + '</span></div>';
+    } else if (watchlistData && watchlistData.stocks && Array.isArray(watchlistData.stocks)) {
+      const top5Symbols = watchlistData.stocks.slice(0, 5).map(s => s.symbol || s.Symbol || s.ticker || s.code || 'N/A');
+      html += '<div class="health-top5">A股 Top5: <span class="symbols">' + top5Symbols.join(', ') + '</span></div>';
+    } else {
+      html += '<div class="health-top5">A股 Top5: <span class="symbols">数据不可用</span></div>';
+    }
+
+    // Update time (prefer history latest generated_at)
+    let updateTime = "—";
+    if (historyData && historyData.runs && historyData.runs[0] && historyData.runs[0].generated_at) {
+      updateTime = historyData.runs[0].generated_at;
+    } else if (gateData && gateData.gate_finished_at) {
+      updateTime = gateData.gate_finished_at;
+    } else if (feishuData && feishuData.generated_at) {
+      updateTime = feishuData.generated_at;
+    }
+    
+    if (updateTime !== "—") {
+      html += '<div style="margin-top:4px;font-size:10px;color:var(--text-faint);">最新更新: ' + updateTime + '</div>';
+    }
+
+    // Mark that fallback was used
+    html += '<div style="margin-top:4px;font-size:10px;color:var(--amber);">使用 fallback 多源健康计算</div>';
+    
+    container.innerHTML = html;
+
+  } catch (error) {
+    container.innerHTML = '<div class="health-error">⚠️ 健康灯数据加载失败（降级显示）</div>';
+    console.error('Health light load error:', error);
+  }
+}
+
+/* ============================================================
+   动态加载股票风险监控数据
+   ============================================================ */
+
+let STOCK_RISK_MONITORS = []; // 将在加载配置后填充数据
+
+// 原有系统数据
+const DATA = {
+  date: "2026-07-09",
+  stage_note: "v1 · 多股票监控",
+  market_snapshot: {
+    A:  "行情引擎正常",
+    H:  "行情引擎待配置",
+    US: "行情引擎正常"
+  },
+  today_focus: [
+    { text: "CRCL 风险监控: Exit 状态，最大回撤 -31.58%，波动率 6.19%", type: "风险提醒" },
+    { text: "000002.SZ 风险监控: Exit 状态，流动性问题待观察", type: "风险提醒" },
+    { text: "数据每天 8 点自动刷新，建议定期查看风险状态变化", type: "使用说明" }
+  ],
+  holdings: [
+    {
+      ticker: "CRCL", market: "US", shares: 254, cost_price: 109.157,
+      action: "wait", action_label: "持有（待引擎输出）",
+      reason: "风险监控中，建议关注 Exit 状态变化",
+      risk: "高回撤风险 (-31.58%)",
+      invalidation_condition: "回撤改善到 -15% 以内"
+    },
+    {
+      ticker: "000002.SZ", market: "A", shares: 1000, cost_price: 8.50,
+      action: "wait", action_label: "持有（待引擎输出）",
+      reason: "风险监控中，流动性需改善",
+      risk: "流动性风险",
+      invalidation_condition: "流动性指标改善"
+    }
+  ],
+  recommendations: { action: [], ready: [], watch: [] },
+  paper_trading: { new_today: [], open_positions_perf: [] },
+  review_note: "尚无复盘记录"
+};
+
+const ACTION_PILL = {
+  "持有": "pill-hold", "加仓观察": "pill-add", "减仓": "pill-trim",
+  "卖出": "pill-exit", "不操作": "pill-neutral", "wait": "pill-pending"
+};
+
+const ICONS = {
+  clock: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>',
+  inbox: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h4l2 3h4l2-3h4"/><path d="M4 12l1.6-6.4A2 2 0 0 1 7.5 4h9a2 2 0 0 1 1.9 1.6L20 12v6a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-6z"/></svg>'
+};
+
+function el(tag, cls, html){
+  const e = document.createElement(tag);
+  if(cls) e.className = cls;
+  if(html !== undefined) e.innerHTML = html;
+  return e;
+}
+function fmtUSD(n){ return "$" + n.toLocaleString("en-US", {minimumFractionDigits:2, maximumFractionDigits:2}); }
+
+// 加载配置并获取股票数据
+async function loadStockConfigAndData() {
+  try {
+    // 获取股票符号配置
+    const symbolsResponse = await fetch('../data/reports/risk_monitor_symbols.json');
+    const symbolsConfig = await symbolsResponse.json();
+
+    // 更新移动应用通知中的股票列表
+    document.getElementById('monitored-stocks-display').textContent = symbolsConfig.map(s => `${s.symbol} (${s.symbol.includes('SZ') ? 'A股' : '美股'})`).join(' · ');
+
+    // 并行加载所有股票风险监控数据
+    const promises = symbolsConfig.map(async (symbolInfo) => {
+      try {
+        const response = await fetch(`../data/reports/${symbolInfo.report_file}`);
+        const data = await response.json();
+        return data;
+      } catch (error) {
+        console.error(`Error loading data for ${symbolInfo.symbol}:`, error);
+        return null;
+      }
+    });
+
+    const stockReports = await Promise.all(promises);
+    STOCK_RISK_MONITORS = stockReports.filter(report => report !== null);
+    
+    // 渲染多股票风险监控模块
+    renderMultiStockRiskMonitor();
+    
+    // 更新统计信息
+    renderHeroStat();
+    
+  } catch (error) {
+    console.error('Error loading stock configuration:', error);
+    // 如果配置加载失败，使用默认数据作为备用
+    console.warn('Using fallback data due to configuration loading error.');
+  }
+}
+
+function renderHeader(){
+  const now = new Date();
+  const dateStr = now.toLocaleDateString('zh-CN', {year:'numeric', month:'2-digit', day:'2-digit'});
+  const timeStr = now.toLocaleTimeString('zh-CN', {hour:'2-digit', minute:'2-digit'});
+  document.getElementById('today-date').textContent = dateStr + " · " + timeStr;
+  document.getElementById('stage-badge').textContent = DATA.stage_note;
+  
+  // 设置最后更新时间（取最新的报告时间）
+  const lastUpdate = STOCK_RISK_MONITORS.length > 0 ? STOCK_RISK_MONITORS.reduce((latest, stock) => {
+    const stockTime = new Date(stock.report_metadata.generated_at);
+    return stockTime > latest ? stockTime : latest;
+  }, new Date(0)) : new Date();
+  document.getElementById('last-updated').textContent = lastUpdate.toLocaleString('zh-CN', {month:'2-digit', day:'2-digit', hour:'2-digit', minute:'2-digit'});
+}
+
+function renderHeroStat(){
+  document.getElementById('stock-count').textContent = STOCK_RISK_MONITORS.length + " 只";
+  document.getElementById('stock-count-sub').textContent = "跨市场风险跟踪 · 每天 8 点刷新";
+}
+
+function renderFocusList(){
+  const list = document.getElementById('focus-list');
+  list.innerHTML = '';
+  DATA.today_focus.slice(0,5).forEach(item=>{
+    const row = el('div','focus-row');
+    row.innerHTML = '<span class="type">' + item.type + '</span> ' + item.text;
+    list.appendChild(row);
+  });
+}
+
+function renderHoldings(){
+  const body = document.getElementById('holdings-body');
+  body.innerHTML = '';
+  document.getElementById('holdings-count').textContent = DATA.holdings.length + " 只";
+  if(!DATA.holdings.length){
+    body.innerHTML = '<tr><td colspan="4"><div class="empty-basic">当前无持仓</div></td></tr>';
+    return;
+  }
+  DATA.holdings.forEach(h=>{
+    const tr = document.createElement('tr');
+
+    const tdTicker = el('td');
+    const tc = el('div','ticker-cell');
+    tc.appendChild(el('span','t', h.ticker));
+    tc.appendChild(el('span','m', h.market + " · " + h.shares + " 股 @ ¥" + h.cost_price.toFixed(2) + (h.market === 'US' ? ' ($' + h.cost_price.toFixed(2) + ')' : '')));
+    tdTicker.appendChild(tc);
+
+    const tdAction = el('td');
+    const pillClass = ACTION_PILL[h.action] || ACTION_PILL[h.action_label] || 'pill-neutral';
+    const dotHtml = h.action === 'wait' ? '<span class="dot"></span>' : '';
+    tdAction.appendChild(el('span','pill ' + pillClass, dotHtml + h.action_label));
+
+    const tdReason = el('td','cell-note', h.reason + '<span class="risk">风险：' + h.risk + '</span>');
+    const tdInvalid = el('td','cell-dim', h.invalidation_condition);
+
+    tr.appendChild(tdTicker);
+    tr.appendChild(tdAction);
+    tr.appendChild(tdReason);
+    tr.appendChild(tdInvalid);
+    body.appendChild(tr);
+  });
+}
+
+function renderRecommendations(){
+  const tabsWrap = document.getElementById('rec-tabs');
+  const panelsWrap = document.getElementById('rec-panels');
+  const bannerWrap = document.getElementById('rec-banner');
+  const cats = [
+    {key:'action', label:'Action'}, {key:'ready', label:'Ready'}, {key:'watch', label:'Watch'}
+  ];
+  const totalRecs = cats.reduce((n,c)=> n + (DATA.recommendations[c.key]||[]).length, 0);
+
+  if(totalRecs === 0){
+    const pending = el('div','empty-pending');
+    pending.style.marginBottom = 'var(--sp-3)';
+    pending.innerHTML =
+      '<div class="ic">'+ICONS.clock+'</div>' +
+      '<div>' +
+        '<p class="head">当前无新推荐</p>' +
+        '<p class="body">关注风险监控状态变化，等待系统自动更新</p>' +
+      '</div>';
+    bannerWrap.appendChild(pending);
+  }
+
+  cats.forEach(c=>{
+    const recs = DATA.recommendations[c.key] || [];
+    const btn = el('button','tab-btn', c.label + '<span class="tab-count">' + recs.length + '</span>');
+    btn.dataset.key = c.key;
+    if(recs.length === 0) btn.disabled = true;
+    tabsWrap.appendChild(btn);
+
+    const panel = el('div','tab-panel');
+    if(recs.length === 0){
+      panel.innerHTML = '<div class="empty-basic">暂无 ' + c.label + ' 推荐</div>';
+    }else{
+      const table = el('table');
+      recs.forEach(r=>{
+        const tr = document.createElement('tr');
+        tr.innerHTML =
+          '<td><div class="ticker-cell"><span class="t">' + r.ticker + '</span><span class="m">' + r.market + '</span></div></td>' +
+          '<td>' + r.reason + '</td>';
+        table.appendChild(tr);
+      });
+      panel.appendChild(table);
+    }
+    panelsWrap.appendChild(panel);
+  });
+
+  if(totalRecs > 0){
+    tabsWrap.addEventListener('click',e=>{
+      const btn = e.target.closest('.tab-btn');
+      if(!btn || btn.disabled) return;
+      const key = btn.dataset.key;
+      document.querySelectorAll('.tab-btn').forEach(b=>b.classList.toggle('active', b.dataset.key===key));
+      document.querySelectorAll('.tab-panel').forEach(p=>p.classList.toggle('active', p.dataset.key===key));
+    });
+  }
+}
+
+function renderPaperTrading(){
+  const body = document.getElementById('paper-body');
+  body.innerHTML = '';
+  const paper = DATA.paper_trading;
+  if(!paper.new_today.length && !paper.open_positions_perf.length){
+    body.innerHTML = '<div class="empty-basic">暂无虚拟盘记录</div>';
+    return;
+  }
+
+  if(paper.new_today.length){
+    const title = el('div','section-title', '今日新增虚拟盘');
+    body.appendChild(title);
+    paper.new_today.forEach(p=>{
+      const row = el('div','kv-row');
+      row.innerHTML = '<span class="k">' + p.ticker + ' ' + p.market + '</span><span class="v">' + p.action + '</span>';
+      body.appendChild(row);
+    });
+  }
+
+  if(paper.open_positions_perf.length){
+    const title = el('div','section-title', '虚拟盘持仓表现');
+    body.appendChild(title);
+    paper.open_positions_perf.forEach(p=>{
+      const row = el('div','kv-row');
+      row.innerHTML = '<span class="k">' + p.ticker + '</span><span class="v">' + p.return_pct + '%</span>';
+      body.appendChild(row);
+    });
+  }
+}
+
+function renderMultiStockRiskMonitor(){
+  const container = document.getElementById('multi-stock-risk-monitor-content');
+  if(!container) return;
+  
+  let html = '';
+  html += '<div class="stock-monitor-grid">';
+  
+  STOCK_RISK_MONITORS.forEach(data => {
+    const status = data.exit_watch_eligibility.eligible;
+    const metrics = data.risk_metrics;
+    const experts = data.expert_stances;
+    const meta = data.report_metadata;
+    const current = data.current_status;
+    
+    html += '<div class="stock-monitor-card">';
+    
+    // Header with symbol and status
+    html += '<div class="stock-monitor-header">';
+    html += '<div class="stock-monitor-title">';
+    html += '<span class="symbol">' + meta.symbol + '</span>';
+    html += '<span class="meta">' + meta.stock_name + ' · ' + meta.market + '</span>';
+    html += '</div>';
+    html += '<span class="stock-monitor-status ' + (status ? 'eligible' : 'not-eligible') + '">' + (status ? '可转为 Watch' : '保持 Exit') + '</span>';
+    html += '</div>';
+    
+    // Current status and confidence
+    html += '<div style="margin-bottom:12px;font-size:11px;">';
+    html += '<span style="color:' + (current.recommendation === 'Exit' ? '#f2637a' : '#34d399') + ';font-weight:600;">' + current.recommendation + '</span>';
+    html += '<span style="margin-left:8px;color:#5b6478;">置信度: ' + (current.confidence * 100).toFixed(0) + '%</span>';
+    html += '</div>';
+    
+    // Risk metrics
+    html += '<div class="stock-metrics">';
+    html += '<div class="stock-metric">';
+    html += '<div class="label">最大回撤</div>';
+    html += '<div class="value ' + (metrics.max_drawdown_ok ? '' : 'danger') + '">' + metrics.max_drawdown_percent + '</div>';
+    html += '</div>';
+    html += '<div class="stock-metric">';
+    html += '<div class="label">波动率</div>';
+    html += '<div class="value ' + (metrics.volatility_ok ? '' : 'danger') + '">' + metrics.volatility_percent + '</div>';
+    html += '</div>';
+    html += '</div>';
+    
+    // Expert stances
+    if(Object.keys(experts).length > 0){
+      html += '<div class="stock-experts">';
+      for(const [expertName, expertInfo] of Object.entries(experts)){
+        html += '<div class="stock-expert">';
+        html += '<div class="name">' + expertName + '</div>';
+        html += '<div class="stance ' + expertInfo.stance + '">' + expertInfo.stance.toUpperCase() + '</div>';
+        html += '</div>';
+      }
+      html += '</div>';
+    }
+    
+    // Blocking conditions
+    if(!status && data.exit_watch_eligibility.blocking_conditions.length > 0){
+      html += '<div class="blocking-conditions">';
+      html += '<span class="title">阻塞条件:</span>';
+      const maxConditions = 3; // Show only top 3 to save space
+      const conditions = data.exit_watch_eligibility.blocking_conditions.slice(0, maxConditions);
+      html += '<ul>';
+      conditions.forEach(cond => {
+        html += '<li>' + cond + '</li>';
+      });
+      if(data.exit_watch_eligibility.blocking_conditions.length > maxConditions){
+        html += '<li>+ ' + (data.exit_watch_eligibility.blocking_conditions.length - maxConditions) + ' more</li>';
+      }
+      html += '</ul>';
+      html += '</div>';
+    }
+    
+    // Next check
+    html += '<div style="margin-top:8px;font-size:10px;color:#5b6478;">';
+    html += '下次检查: ' + data.next_check;
+    html += '</div>';
+    
+    html += '</div>';
+  });
+  
+  html += '</div>';
+  container.innerHTML = html;
+}
+
+function init(){
+  // 初始化页面其他部分
+  renderHeader();
+  renderFocusList();
+  renderHoldings();
+  renderRecommendations();
+  renderPaperTrading();
+  
+  // 异步加载股票风险监控数据
+  loadStockConfigAndData();
+}
+init();
+
+/* ============================================================
+   飞书 Dry-run 模块
+   ============================================================ */
+async function loadFeishuDryRun(){
+  const container = document.getElementById('feishu-dry-run-content');
+  if(!container) return;
+
+  try {
+    const resp = await fetch('../data/reports/feishu_daily_digest_dry_run.json');
+    if(!resp.ok){
+      container.innerHTML = '<div class="feishu-error">⚠️ 未生成飞书 dry-run 摘要（降级显示）</div>';
+      return;
+    }
+    const data = await resp.json();
+
+    let html = '';
+
+    // Status flags
+    html += '<div class="feishu-status">';
+    html += '<div class="feishu-status-item">dry_run: <span class="v">' + data.dry_run + '</span></div>';
+    html += '<div class="feishu-status-item">sent: <span class="v ' + (data.sent ? '' : 'no') + '">' + data.sent + '</span></div>';
+    html += '<div class="feishu-status-item">webhook_called: <span class="v ' + (data.webhook_called ? '' : 'no') + '">' + data.webhook_called + '</span></div>';
+    html += '<div class="feishu-status-item">trading_called: <span class="v ' + (data.trading_called ? '' : 'no') + '">' + data.trading_called + '</span></div>';
+    html += '</div>';
+
+    // A-share Top 5
+    if(data.a_share_top5 && data.a_share_top5.length > 0){
+      html += '<div style="font-size:var(--fs-xs);color:var(--text-dim);margin-bottom:4px;">A 股 Top 5 Watch</div>';
+      data.a_share_top5.forEach(function(s){
+        html += '<div class="feishu-stock-row"><span class="sym">' + (s.symbol||'N/A') + ' ' + (s.name||'') + '</span><span class="stat">' + (s.status||'N/A') + ' · ' + (s.score!=null ? s.score.toFixed(2) : 'N/A') + '</span></div>';
+      });
+    }
+
+    // HK sample
+    if(data.hk_sample){
+      var hk = data.hk_sample;
+      html += '<div class="feishu-stock-row"><span class="sym">' + (hk.symbol||'00700.HK') + ' ' + (hk.name||'腾讯控股') + '</span><span class="stat">' + (hk.status||'N/A') + ' · ' + (hk.score!=null ? hk.score.toFixed(2) : 'N/A') + '</span></div>';
+    }
+
+    // Risk monitors
+    if(data.risk_monitors){
+      for(const [key, val] of Object.entries(data.risk_monitors)){
+        html += '<div class="feishu-stock-row"><span class="sym">' + key + ' ' + (val.name||'') + '</span><span class="stat">' + (val.status||'N/A') + ' · ' + (val.score!=null ? val.score.toFixed(2) : 'N/A') + '</span></div>';
+      }
+    }
+
+    // Review/Exit risks
+    if(data.review_exit_risks && data.review_exit_risks.length > 0){
+      html += '<div style="font-size:var(--fs-xs);color:var(--amber);margin-top:8px;margin-bottom:4px;">⚠️ Review/Exit 风险</div>';
+      data.review_exit_risks.forEach(function(r){
+        html += '<div class="feishu-stock-row"><span class="stat">' + r + '</span></div>';
+      });
+    }
+
+    // Mobile links
+    if(data.mobile_links){
+      html += '<div class="feishu-links">';
+      html += '📱 <a href="' + data.mobile_links.mdns + '">本地/mDNS</a>';
+      html += ' · <a href="' + data.mobile_links.tailscale + '">Tailscale</a>';
+      html += '</div>';
+    }
+
+    // Safety
+    html += '<div class="feishu-safety">';
+    html += '是否真实发送：否 · 是否调用 webhook/API：否 · 是否下单：否';
+    html += '</div>';
+
+    // Generated at
+    if(data.generated_at){
+      html += '<div style="margin-top:4px;font-size:10px;color:var(--text-faint);">生成时间: ' + data.generated_at + '</div>';
+    }
+
+    container.innerHTML = html;
+
+  } catch(error){
+    container.innerHTML = '<div class="feishu-error">⚠️ 飞书 dry-run JSON 解析失败（降级显示）</div>';
+    console.error('Feishu dry-run load error:', error);
+  }
+}
+
+/* ============================================================
+   Pipeline History 模块
+   ============================================================ */
+async function loadPipelineHistory(){
+  const container = document.getElementById('pipeline-history-content');
+  if(!container) return;
+
+  try {
+    const resp = await fetch('../data/reports/aegis_pipeline_history_latest.json');
+    if(!resp.ok){
+      container.innerHTML = '<div style="padding:var(--sp-2);background:var(--red-soft);border-radius:var(--radius-sm);color:var(--red);font-size:var(--fs-xs);">⚠️ 未生成 pipeline 历史快照</div>';
+      return;
+    }
+    const data = await resp.json();
+
+    if(!data.runs || data.runs.length === 0){
+      container.innerHTML = '<div style="padding:var(--sp-2);background:var(--bg-soft);border-radius:var(--radius-sm);font-size:var(--fs-xs);color:var(--text-faint);">暂无历史记录</div>';
+      return;
+    }
+
+    let html = '';
+    html += '<table>';
+    html += '<thead><tr><th>#</th><th>Run ID</th><th>时间</th><th>Gate</th><th>Redteam</th><th>Feishu</th><th>Result</th></tr></thead>';
+    html += '<tbody>';
+    
+    data.runs.forEach((run, idx) => {
+      const gateIcon = run.gate_overall_verdict === 'PASS' ? '✅' : '❌';
+      const redteamIcon = run.redteam_all_rejected ? '✅' : '❌';
+      const feishuIcon = (run.feishu_dry_run === true && run.feishu_sent === false && run.feishu_webhook_called === false && run.feishu_trading_called === false) ? '✅' : '❌';
+      const resultClass = run.result === 'PASS' ? 'color:var(--green)' : 'color:var(--red)';
+      
+      html += '<tr>';
+      html += '<td style="font-size:var(--fs-2xs);color:var(--text-faint);">' + (idx + 1) + '</td>';
+      html += '<td style="font-size:var(--fs-xs);font-weight:600;">' + run.run_id + '</td>';
+      html += '<td style="font-size:var(--fs-2xs);color:var(--text-faint);">' + run.generated_at.substring(0, 19) + '</td>';
+      html += '<td style="font-size:var(--fs-xs);">' + gateIcon + ' ' + (run.gate_overall_verdict || 'N/A') + '</td>';
+      html += '<td style="font-size:var(--fs-xs);">' + redteamIcon + ' ' + (run.redteam_passed || 0) + '/' + (run.redteam_total || 0) + '</td>';
+      html += '<td style="font-size:var(--fs-xs);">' + feishuIcon + '</td>';
+      html += '<td style="font-size:var(--fs-xs);font-weight:600;' + resultClass + ';">' + run.result + '</td>';
+      html += '</tr>';
+    });
+    
+    html += '</tbody></table>';
+    html += '<div style="margin-top:var(--sp-2);font-size:var(--fs-2xs);color:var(--text-faint);">保留数量: ' + data.retention_limit + ' · 更新: ' + data.updated_at.substring(0, 19) + '</div>';
+    
+    container.innerHTML = html;
+
+  } catch(error){
+    container.innerHTML = '<div style="padding:var(--sp-2);background:var(--red-soft);border-radius:var(--radius-sm);color:var(--red);font-size:var(--fs-xs);">⚠️ pipeline 历史 JSON 解析失败</div>';
+    console.error('Pipeline history load error:', error);
+  }
+}
+
+// Load all modules on page init
+window.addEventListener('DOMContentLoaded', function(){
+  loadHealthLight();
+  loadFeishuDryRun();
+  loadPipelineHistory();
+});
+
+</script>
+
+
+<!-- P22.3_BACKTEST_DRY_RUN_MODULE_START -->
+<section id="a-share-backtest-dry-run" class="card">
+  <h2>A股 Watchlist 单次回测 Dry-run</h2>
+  <p class="muted">
+    这是当前 Watchlist 静态快照回测，不是 point-in-time 历史选股回测，存在 lookahead bias。
+  </p>
+  <button type="button" onclick="loadAShareBacktestDryRun()">刷新回测</button>
+  <div id="a-share-backtest-dry-run-content">回测报告加载中...</div>
+</section>
+
+<script>
+async function loadAShareBacktestDryRun() {
+  const el = document.getElementById('a-share-backtest-dry-run-content');
+  if (!el) return;
+  try {
+    const resp = await fetch('../data/reports/a_share_backtest_dry_run_latest.json', {cache: 'no-store'});
+    if (!resp.ok) {
+      el.innerHTML = '<p class="warning">回测报告未生成</p>';
+      return;
+    }
+    let data;
+    try {
+      data = await resp.json();
+    } catch (err) {
+      el.innerHTML = '<p class="warning">回测 JSON 解析失败</p>';
+      return;
+    }
+
+    const m = data.portfolio_metrics || {};
+    const b = data.benchmark_metrics || {};
+    const top5 = (data.selected_symbols || []).slice(0, 5).join(', ');
+    const warnings = (data.warnings || []).map(x => `<li>${x}</li>`).join('');
+
+    el.innerHTML = `
+      <div class="grid">
+        <div><b>strategy_id</b><br>${data.strategy_id || 'N/A'}</div>
+        <div><b>strategy_version</b><br>${data.strategy_version || 'N/A'}</div>
+        <div><b>static_snapshot_backtest</b><br>${data.static_snapshot_backtest}</div>
+        <div><b>lookahead_bias_warning</b><br>${data.lookahead_bias_warning}</div>
+        <div><b>dry_run</b><br>${data.dry_run}</div>
+        <div><b>sent</b><br>${data.sent}</div>
+        <div><b>trading_called</b><br>${data.trading_called}</div>
+        <div><b>selected_symbols_count</b><br>${data.selected_symbols_count}</div>
+        <div><b>valid_price_series_count</b><br>${data.valid_price_series_count}</div>
+        <div><b>start_date</b><br>${data.start_date || (data.period && data.period.start_date) || 'N/A'}</div>
+        <div><b>end_date</b><br>${data.end_date || (data.period && data.period.end_date) || 'N/A'}</div>
+        <div><b>benchmark</b><br>${data.benchmark || 'N/A'}</div>
+        <div><b>total_return</b><br>${m.total_return ?? 'N/A'}</div>
+        <div><b>annualized_return</b><br>${m.annualized_return ?? 'N/A'}</div>
+        <div><b>max_drawdown</b><br>${m.max_drawdown ?? 'N/A'}</div>
+        <div><b>volatility</b><br>${m.volatility ?? 'N/A'}</div>
+        <div><b>sharpe</b><br>${m.sharpe ?? 'N/A'}</div>
+        <div><b>win_rate</b><br>${m.win_rate ?? 'N/A'}</div>
+        <div><b>benchmark_total_return</b><br>${b.total_return ?? 'N/A'}</div>
+        <div><b>excess_return</b><br>${data.excess_return ?? 'N/A'}</div>
+      </div>
+      <p><b>A股 Top5:</b> ${top5}</p>
+      <p><b>说明:</b> 这是当前 Watchlist 静态快照回测，不是 point-in-time 历史选股回测，存在 lookahead bias。</p>
+      <h4>warnings</h4>
+      <ul>${warnings || '<li>None</li>'}</ul>
+    `;
+  } catch (err) {
+    el.innerHTML = '<p class="warning">回测报告未生成</p>';
+  }
+}
+document.addEventListener('DOMContentLoaded', loadAShareBacktestDryRun);
+</script>
+<!-- P22.3_BACKTEST_DRY_RUN_MODULE_END -->
+
+
+<!-- P22.5_BACKTEST_HISTORY_MODULE_START -->
+<section id="a-share-backtest-history" class="card">
+  <h2>A股 Watchlist 回测历史</h2>
+  <p class="muted">回测历史基于当前 Watchlist 静态快照 dry-run，不是 point-in-time 历史选股回测，存在 lookahead bias。</p>
+  <button type="button" onclick="loadAShareBacktestHistory()">刷新回测历史</button>
+  <div id="a-share-backtest-history-content">回测历史加载中...</div>
+</section>
+
+<script>
+async function loadAShareBacktestHistory() {
+  const el = document.getElementById('a-share-backtest-history-content');
+  if (!el) return;
+  try {
+    const resp = await fetch('../data/reports/a_share_backtest_history_latest.json', {cache: 'no-store'});
+    if (!resp.ok) {
+      el.innerHTML = '<p class="warning">回测历史未生成</p>';
+      return;
+    }
+
+    let data;
+    try {
+      data = await resp.json();
+    } catch (err) {
+      el.innerHTML = '<p class="warning">回测历史 JSON 解析失败</p>';
+      return;
+    }
+
+    const runs = data.runs || [];
+    if (!runs.length) {
+      el.innerHTML = '<p class="warning">回测历史未生成</p>';
+      return;
+    }
+
+    const rows = runs.map(r => {
+      const m = r.portfolio_metrics || {};
+      return `
+        <tr>
+          <td>${r.generated_at || 'N/A'}</td>
+          <td>${r.result || 'N/A'}</td>
+          <td>${r.strategy_id || 'N/A'}</td>
+          <td>${r.selected_symbols_count ?? 'N/A'}</td>
+          <td>${r.valid_price_series_count ?? 'N/A'}</td>
+          <td>${m.total_return ?? 'N/A'}</td>
+          <td>${m.annualized_return ?? 'N/A'}</td>
+          <td>${m.max_drawdown ?? 'N/A'}</td>
+          <td>${m.volatility ?? 'N/A'}</td>
+          <td>${m.sharpe ?? 'N/A'}</td>
+          <td>${m.win_rate ?? 'N/A'}</td>
+          <td>${r.benchmark_total_return ?? 'N/A'}</td>
+          <td>${r.excess_return ?? 'N/A'}</td>
+          <td>${r.dry_run}</td>
+          <td>${r.sent}</td>
+          <td>${r.trading_called}</td>
+          <td>${r.static_snapshot_backtest}</td>
+          <td>${r.lookahead_bias_warning}</td>
+        </tr>`;
+    }).join('');
+
+    el.innerHTML = `
+      <p><b>runs_count:</b> ${data.runs_count ?? runs.length}</p>
+      <p><b>latest_run_id:</b> ${data.latest_run_id || 'N/A'}</p>
+      <p><b>latest_result:</b> ${data.latest_result || 'N/A'}</p>
+      <p><b>说明:</b> 回测历史基于当前 Watchlist 静态快照 dry-run，不是 point-in-time 历史选股回测，存在 lookahead bias。</p>
+      <table>
+        <thead>
+          <tr>
+            <th>generated_at</th><th>result</th><th>strategy_id</th>
+            <th>selected</th><th>valid_price</th>
+            <th>total_return</th><th>annualized_return</th><th>max_drawdown</th>
+            <th>volatility</th><th>sharpe</th><th>win_rate</th>
+            <th>benchmark_total_return</th><th>excess_return</th>
+            <th>dry_run</th><th>sent</th><th>trading_called</th>
+            <th>static_snapshot_backtest</th><th>lookahead_bias_warning</th>
+          </tr>
+        </thead>
+        <tbody>${rows}</tbody>
+      </table>
+    `;
+  } catch (err) {
+    el.innerHTML = '<p class="warning">回测历史未生成</p>';
+  }
+}
+document.addEventListener('DOMContentLoaded', loadAShareBacktestHistory);
+</script>
+<!-- P22.5_BACKTEST_HISTORY_MODULE_END -->
+
+</body>
+</html>

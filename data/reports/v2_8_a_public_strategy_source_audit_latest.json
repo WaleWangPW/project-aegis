@@ -1,0 +1,321 @@
+{
+  "overall_status": "PASS",
+  "acceptance_target": "V2.8-A Public Strategy Source Audit",
+  "generated_at": "2026-07-11T19:49:47.526599+08:00",
+  "run_id": "v2_8_a_20260711_acceptance",
+  "command": "validate_v2_8_a_public_strategy_source_audit.py --run-id v2_8_a_20260711_acceptance",
+  "network_used": false,
+  "audited_count": 12,
+  "reachable_count": 12,
+  "status_counts": {
+    "reachable": 12
+  },
+  "market_coverage": {
+    "A": 4,
+    "GLOBAL": 6,
+    "H": 2,
+    "US": 6
+  },
+  "strategy_family_coverage": {
+    "dividend": 6,
+    "low_volatility": 8,
+    "momentum": 7,
+    "multi_factor": 7,
+    "quality": 9,
+    "risk_overlay": 3,
+    "size": 6,
+    "value": 10
+  },
+  "audited_sources": [
+    {
+      "research_id": "catalog_spdji_a_share_factor",
+      "publisher": "S&P Dow Jones Indices",
+      "url": "https://www.spglobal.com/spdji/en/documents/research/research-examining-factor-strategies-in-china-a-share-market.pdf",
+      "status": "reachable",
+      "status_code": 200,
+      "content_type": "application/pdf",
+      "content_sample_hash": "762060758e87df63683cf9347210279d3502c39071984f028f19a970949c0daf",
+      "sample_bytes_stored": false,
+      "raw_text_stored": false,
+      "markets": [
+        "A"
+      ],
+      "strategy_families": [
+        "size",
+        "value",
+        "low_volatility",
+        "momentum",
+        "quality",
+        "dividend",
+        "multi_factor"
+      ]
+    },
+    {
+      "research_id": "catalog_msci_china_a_factor_2025",
+      "publisher": "MSCI",
+      "url": "https://www.msci.com/research-and-insights/paper/are-you-really-capturing-the-right-factors-unlocking-deeper-insights-in-china-a-share-factor-investing",
+      "status": "reachable",
+      "status_code": 200,
+      "content_type": "application/pdf",
+      "content_sample_hash": "1dea75838fcee2b1f4292d299429a8cfa85854987e211f5fa17779246df1afe9",
+      "sample_bytes_stored": false,
+      "raw_text_stored": false,
+      "markets": [
+        "A"
+      ],
+      "strategy_families": [
+        "dividend",
+        "low_volatility",
+        "quality",
+        "value",
+        "multi_factor"
+      ]
+    },
+    {
+      "research_id": "catalog_spdji_a_low_vol_high_dividend",
+      "publisher": "S&P Dow Jones Indices",
+      "url": "https://www.spglobal.com/spdji/en/documents/research/research-blending-low-volatility-with-dividend-yield-in-the-china-a-share-market.pdf",
+      "status": "reachable",
+      "status_code": 200,
+      "content_type": "application/pdf",
+      "content_sample_hash": "1f7492104466093d32415143ea606206f3aab6afa550dc11e8b25f50169b07d6",
+      "sample_bytes_stored": false,
+      "raw_text_stored": false,
+      "markets": [
+        "A"
+      ],
+      "strategy_families": [
+        "low_volatility",
+        "dividend",
+        "risk_overlay"
+      ]
+    },
+    {
+      "research_id": "catalog_panagora_china_a_factor",
+      "publisher": "PanAgora / CAIA",
+      "url": "https://caia.org/sites/default/files/factor_investing_in_the_china_a-share_market.pdf",
+      "status": "reachable",
+      "status_code": 200,
+      "content_type": "application/pdf",
+      "content_sample_hash": "efe5e7a3c712975f6e133178d43374df114c0c12fd20c237746e1ab789311cc5",
+      "sample_bytes_stored": false,
+      "raw_text_stored": false,
+      "markets": [
+        "A"
+      ],
+      "strategy_families": [
+        "value",
+        "quality",
+        "momentum",
+        "multi_factor"
+      ]
+    },
+    {
+      "research_id": "catalog_spdji_hk_smart_beta",
+      "publisher": "S&P Dow Jones Indices",
+      "url": "https://www.spglobal.com/spdji/en/documents/research/research-how-smart-beta-strategies-work-in-the-hong-kong-market.pdf",
+      "status": "reachable",
+      "status_code": 200,
+      "content_type": "application/pdf",
+      "content_sample_hash": "8d6eb5297c6c2d2197e33e92214c7b94fd1eecc9b49ea4ce53e94d398ea01349",
+      "sample_bytes_stored": false,
+      "raw_text_stored": false,
+      "markets": [
+        "H"
+      ],
+      "strategy_families": [
+        "size",
+        "value",
+        "low_volatility",
+        "momentum",
+        "quality",
+        "dividend",
+        "multi_factor"
+      ]
+    },
+    {
+      "research_id": "catalog_hsi_smart_beta_index_series",
+      "publisher": "Hang Seng Indexes",
+      "url": "https://www.hsi.com.hk/static/uploads/contents/en/dl_centre/brochures/HSIL_Smart_Beta_Brochure.pdf",
+      "status": "reachable",
+      "status_code": 200,
+      "content_type": "application/pdf",
+      "content_sample_hash": "3eda08cc0028ef73bf4aef21fd1028ad6f03b7819c6458c782196de4a65235da",
+      "sample_bytes_stored": false,
+      "raw_text_stored": false,
+      "markets": [
+        "H"
+      ],
+      "strategy_families": [
+        "value",
+        "momentum",
+        "quality",
+        "dividend",
+        "low_volatility",
+        "size",
+        "multi_factor"
+      ]
+    },
+    {
+      "research_id": "catalog_fama_french_five_factor",
+      "publisher": "Fama and French",
+      "url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2287202",
+      "status": "reachable",
+      "status_code": 200,
+      "content_type": "application/pdf",
+      "content_sample_hash": "009953cedfbb8a20ebdea1a0b8a2fca243adc9c6e13a556068462adaebaef7ae",
+      "sample_bytes_stored": false,
+      "raw_text_stored": false,
+      "markets": [
+        "US",
+        "GLOBAL"
+      ],
+      "strategy_families": [
+        "size",
+        "value",
+        "quality"
+      ]
+    },
+    {
+      "research_id": "catalog_ken_french_factor_library",
+      "publisher": "Kenneth R. French Data Library",
+      "url": "https://mba.tuck.dartmouth.edu/pages/faculty/Ken.french/Data_Library/f-f_5_factors_2x3.html",
+      "status": "reachable",
+      "status_code": 200,
+      "content_type": "application/json",
+      "content_sample_hash": "1cf16ab2e247b8636afc68aba6f953f6a6cd5d92e1383a8f77b3f22164bab328",
+      "sample_bytes_stored": false,
+      "raw_text_stored": false,
+      "markets": [
+        "US",
+        "GLOBAL"
+      ],
+      "strategy_families": [
+        "size",
+        "value",
+        "quality"
+      ]
+    },
+    {
+      "research_id": "catalog_msci_factor_indexes",
+      "publisher": "MSCI",
+      "url": "https://www.msci.com/indexes/category/factor-indexes",
+      "status": "reachable",
+      "status_code": 200,
+      "content_type": "application/pdf",
+      "content_sample_hash": "9813a38bc41b5fda9b0de864843f06cdd45002fd0d19a0377b5f256d8e9adb57",
+      "sample_bytes_stored": false,
+      "raw_text_stored": false,
+      "markets": [
+        "US",
+        "GLOBAL"
+      ],
+      "strategy_families": [
+        "value",
+        "quality",
+        "momentum",
+        "low_volatility",
+        "size",
+        "dividend",
+        "multi_factor"
+      ]
+    },
+    {
+      "research_id": "catalog_research_affiliates_vqm",
+      "publisher": "Research Affiliates",
+      "url": "https://www.researchaffiliates.com/content/dam/ra/publications/pdf/1110-why-value-quality-and-momentum-belong-together.pdf",
+      "status": "reachable",
+      "status_code": 200,
+      "content_type": "application/pdf",
+      "content_sample_hash": "a0c5669953df4c990b9b3dd903a07260a855c728cfb7199a2e7899ca3b37e3fa",
+      "sample_bytes_stored": false,
+      "raw_text_stored": false,
+      "markets": [
+        "US",
+        "GLOBAL"
+      ],
+      "strategy_families": [
+        "value",
+        "quality",
+        "momentum",
+        "multi_factor"
+      ]
+    },
+    {
+      "research_id": "catalog_msci_low_volatility_construction",
+      "publisher": "MSCI",
+      "url": "https://www.msci.com/documents/10199/95bba81c-4ab0-4698-8ea1-ab4f515afc38",
+      "status": "reachable",
+      "status_code": 200,
+      "content_type": "application/pdf",
+      "content_sample_hash": "85262985adbaec07feaeb051713c16a449c0f3817ecdba8686b59eb572a155c5",
+      "sample_bytes_stored": false,
+      "raw_text_stored": false,
+      "markets": [
+        "US",
+        "GLOBAL"
+      ],
+      "strategy_families": [
+        "low_volatility",
+        "risk_overlay"
+      ]
+    },
+    {
+      "research_id": "catalog_aqr_low_vol_cycles",
+      "publisher": "AQR / Financial Analysts Journal",
+      "url": "https://www.aqr.com/-/media/AQR/Documents/Insights/Journal-Article/Low-Volatility-Cycles-The-Influence-of-Valuation-and-Momentum-on-Low-Volatility-Portfolios.pdf",
+      "status": "reachable",
+      "status_code": 200,
+      "content_type": "application/pdf",
+      "content_sample_hash": "9cbe56b2a89c1bcc555dd7c80bb154dd39a18024d7af19b391c66847b8428c71",
+      "sample_bytes_stored": false,
+      "raw_text_stored": false,
+      "markets": [
+        "US",
+        "GLOBAL"
+      ],
+      "strategy_families": [
+        "low_volatility",
+        "value",
+        "momentum",
+        "risk_overlay"
+      ]
+    }
+  ],
+  "checks": {
+    "audited_at_least_one_source": true,
+    "all_audited_sources_reachable": true,
+    "covers_a_h_us": true,
+    "content_hashes_recorded": true,
+    "raw_text_not_stored": true,
+    "sample_bytes_not_stored": true,
+    "secret_like_urls_blocked": true,
+    "requires_sandbox_before_suggestion": true,
+    "no_real_trade": true,
+    "no_broker_api": true,
+    "no_trading_webhook": true,
+    "no_strategy_auto_mutation": true,
+    "no_production_records_mutation": true
+  },
+  "safety": {
+    "metadata_hash_only": true,
+    "raw_text_not_stored": true,
+    "sample_bytes_not_stored": true,
+    "no_secret_values_stored": true,
+    "no_cookies": true,
+    "no_api_keys": true,
+    "requires_sandbox_before_suggestion": true,
+    "no_real_trade": true,
+    "no_broker_api": true,
+    "no_trading_webhook": true,
+    "no_strategy_auto_mutation": true,
+    "no_production_records_mutation": true
+  },
+  "run_dir": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v2_8_a_acceptance/v2_8_a_20260711_acceptance",
+  "production_records_written": false,
+  "dashboard_contract_changed": false,
+  "public_strategy_source_audit_json": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v2_8_a_acceptance/v2_8_a_20260711_acceptance/public_strategy_source_audit.json",
+  "hashes": {
+    "public_strategy_source_audit_json": "ac16c583552bcd26f175a2905b4c55d8a0324764edb2184c0ccb3079b277634b"
+  }
+}

@@ -1,0 +1,88 @@
+{
+  "project": "Project Aegis",
+  "type": "p22_2_price_data_probe",
+  "generated_at": "2026-07-10T06:29:26.847766+00:00",
+  "safety": {
+    "token_value_output": false,
+    "webhook_called": false,
+    "trading_called": false,
+    "cron_modified": false
+  },
+  "cache_dirs": {
+    "data/raw/prices": {
+      "exists": false,
+      "file_count": 0,
+      "sample_files": []
+    },
+    "data/cache/prices": {
+      "exists": false,
+      "file_count": 0,
+      "sample_files": []
+    },
+    "data/prices": {
+      "exists": false,
+      "file_count": 0,
+      "sample_files": []
+    }
+  },
+  "tushare": {
+    "import_ok": true,
+    "env_token_present": false,
+    "stored_token_present": true,
+    "pro_api_created": true
+  },
+  "cases": [
+    {
+      "case": "dash_2026",
+      "ts_code": "600519.SH",
+      "start_date": "2026-04-10",
+      "end_date": "2026-07-10",
+      "rows": 0,
+      "first_trade_date": null,
+      "last_trade_date": null,
+      "error": null
+    },
+    {
+      "case": "compact_2026",
+      "ts_code": "600519.SH",
+      "start_date": "20260410",
+      "end_date": "20260710",
+      "rows": 61,
+      "first_trade_date": "20260410",
+      "last_trade_date": "20260709",
+      "error": null
+    },
+    {
+      "case": "compact_2024",
+      "ts_code": "600519.SH",
+      "start_date": "20240101",
+      "end_date": "20240301",
+      "rows": 38,
+      "first_trade_date": "20240102",
+      "last_trade_date": "20240301",
+      "error": null
+    },
+    {
+      "case": "benchmark_2024",
+      "ts_code": "000300.SH",
+      "start_date": "20240101",
+      "end_date": "20240301",
+      "rows": 0,
+      "first_trade_date": null,
+      "last_trade_date": null,
+      "error": null
+    }
+  ],
+  "backtest_input": {
+    "start_date": "2026-04-10",
+    "end_date": "2026-07-10",
+    "selected_symbols_head": [
+      "600519.SH",
+      "600036.SH",
+      "000858.SZ",
+      "000001.SZ",
+      "601398.SH"
+    ],
+    "selected_count": 20
+  }
+}

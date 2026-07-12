@@ -1,0 +1,97 @@
+{
+  "overall_status": "PASS",
+  "acceptance_target": "V2.9-K Real User Returned Evidence Dry Run",
+  "run_id": "v2_9_k_20260711_acceptance",
+  "generated_at": "2026-07-11T22:14:20.918921+08:00",
+  "command": "validate_v2_9_k_real_user_returned_evidence_dry_run.py --run-id v2_9_k_20260711_acceptance",
+  "real_user_returned_evidence_status": "blocked_missing_user_returned_evidence",
+  "network_used": false,
+  "production_records_written": false,
+  "dashboard_contract_changed": false,
+  "run_dir": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v2_9_k_acceptance/v2_9_k_20260711_acceptance",
+  "local_returned_evidence_json": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/config/user_returned_evidence.local.json",
+  "user_template": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/config/user_returned_evidence.user-template.json",
+  "summary": {
+    "accepted_count": 0,
+    "blocked_count": 0,
+    "refreshed_review_count": 0,
+    "refreshed_memory_count": 0,
+    "blocker": "config/user_returned_evidence.local.json is missing"
+  },
+  "checks": {
+    "local_file_absent": true,
+    "blocked_status_recorded": true,
+    "template_available": true,
+    "no_fake_real_user_evidence": true,
+    "production_record_files_unchanged": true,
+    "production_records_not_written": true,
+    "network_not_used": true,
+    "dashboard_contract_unchanged": true
+  },
+  "safety": {
+    "simulation_only": true,
+    "missing_local_file_blocked": true,
+    "no_fake_real_user_evidence": true,
+    "production_records_not_written": true,
+    "no_real_trade_execution": true,
+    "no_broker_api": true,
+    "no_webhook": true,
+    "no_order_placement": true,
+    "no_strategy_mutation": true,
+    "dashboard_contract_unchanged": true
+  },
+  "production_record_files_before": {
+    "reviews_jsonl": {
+      "exists": false,
+      "size": null,
+      "sha256": null
+    },
+    "memory_jsonl": {
+      "exists": false,
+      "size": null,
+      "sha256": null
+    },
+    "investment_memory_jsonl": {
+      "exists": false,
+      "size": null,
+      "sha256": null
+    },
+    "paper_trades_jsonl": {
+      "exists": false,
+      "size": null,
+      "sha256": null
+    },
+    "recommendations_jsonl": {
+      "exists": true,
+      "size": 12284,
+      "sha256": "05b2e56c9b547cbe3ce4cb71b7cb776185e23ef2cc3bc9a46a918bce0cfb65dc"
+    }
+  },
+  "production_record_files_after": {
+    "reviews_jsonl": {
+      "exists": false,
+      "size": null,
+      "sha256": null
+    },
+    "memory_jsonl": {
+      "exists": false,
+      "size": null,
+      "sha256": null
+    },
+    "investment_memory_jsonl": {
+      "exists": false,
+      "size": null,
+      "sha256": null
+    },
+    "paper_trades_jsonl": {
+      "exists": false,
+      "size": null,
+      "sha256": null
+    },
+    "recommendations_jsonl": {
+      "exists": true,
+      "size": 12284,
+      "sha256": "05b2e56c9b547cbe3ce4cb71b7cb776185e23ef2cc3bc9a46a918bce0cfb65dc"
+    }
+  }
+}

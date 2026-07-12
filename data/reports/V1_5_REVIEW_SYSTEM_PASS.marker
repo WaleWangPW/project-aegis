@@ -1,0 +1,11 @@
+generated_at=2026-07-11T16:20:56.941332+08:00
+command=validate_v1_5_review_system.py --run-id v1_5_20260711_final_check
+exit_code=0
+target=V1.5 Review System
+report_json=/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/v1_5_review_system_acceptance_latest.json
+report_json_sha256=56776f9ef87e37c3edbbc08939a92bfa9621857223cf99df301e7424ac2e6627
+report_md=/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/v1_5_review_system_acceptance_latest.md
+report_md_sha256=a1ba8892d4d27f5b575e1236794a1f02d291a7123a27afbee0bd456a31b92d23
+run_dir=/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v1_5_acceptance/v1_5_20260711_final_check
+production_records_written=false
+failed=0

@@ -1,0 +1,12 @@
+generated_at=2026-07-11T16:10:30.971373+08:00
+command=validate_v1_0_single_cycle.py --run-id v1_0_20260711_acceptance
+exit_code=0
+target=V1.0 Review/Memory single-cycle acceptance
+report_json=/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/v1_0_single_cycle_acceptance_latest.json
+report_json_sha256=2a3139e2b77ccd5f925437b9f9d8bae0565b9b1517c53634edb2f102eb85893c
+report_md=/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/v1_0_single_cycle_acceptance_latest.md
+report_md_sha256=4b0c24a7b1092313445f4a4ad43f4b663ff8e1e05a515287780113d4914d3c6a
+run_dir=/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v1_0_acceptance/v1_0_20260711_acceptance
+records_dir=/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v1_0_acceptance/v1_0_20260711_acceptance/data/records
+production_records_written=false
+failed=0

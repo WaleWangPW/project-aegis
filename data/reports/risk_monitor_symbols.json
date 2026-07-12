@@ -1,0 +1,10 @@
+[
+  {
+    "symbol": "CRCL",
+    "report_file": "crcl_risk_monitor_latest.json"
+  },
+  {
+    "symbol": "000002.SZ",
+    "report_file": "000002.sz_risk_monitor_latest.json"
+  }
+]

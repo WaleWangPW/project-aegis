@@ -1,0 +1,12 @@
+generated_at=2026-07-11T16:50:23.364990+08:00
+command=validate_v2_0_b_portfolio_aware_brief.py --run-id v2_0_b_20260711_acceptance
+exit_code=0
+target=V2.0-B Portfolio-Aware Daily Brief
+report_json=/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/v2_0_b_portfolio_aware_brief_latest.json
+report_json_sha256=9df32c7c2fb09ab29c81bd948e2bbd92505bc3c6a2864306f1e62fb58829e1bc
+report_md=/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/v2_0_b_portfolio_aware_brief_latest.md
+report_md_sha256=9e42ee4276a9903b1cd0224a3da35b474ab89236144428590ac1608d390f9c3c
+run_dir=/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v2_0_b_acceptance/v2_0_b_20260711_acceptance
+dashboard_contract_changed=false
+production_records_written=false
+failed=0

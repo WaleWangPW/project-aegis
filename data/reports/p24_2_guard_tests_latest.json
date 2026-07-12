@@ -1,0 +1,11 @@
+{
+  "project": "Project Aegis",
+  "type": "p24_2_guard_tests",
+  "checks": {
+    "active_lock_rejected": true,
+    "stale_lock_recovered": true,
+    "timeout_rejected": true,
+    "lock_removed_after_timeout": true
+  },
+  "overall_verdict": "PASS"
+}

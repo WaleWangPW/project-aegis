@@ -1,0 +1,94 @@
+{
+  "report_metadata": {
+    "report_type": "000002.sz_risk_monitor",
+    "generated_at": "2026-07-09T13:55:03.227333",
+    "symbol": "000002.SZ",
+    "stock_name": "万科A",
+    "market": "A",
+    "report_version": "1.0"
+  },
+  "current_status": {
+    "recommendation": "Exit",
+    "confidence": 0.25,
+    "last_updated": "2026-07-09T00:00:00+08:00"
+  },
+  "exit_watch_eligibility": {
+    "eligible": false,
+    "blocking_conditions": [
+      "liquidity_not_ok = true"
+    ],
+    "optional_conditions_not_met": []
+  },
+  "risk_metrics": {
+    "max_drawdown": -0.06645569620253163,
+    "max_drawdown_percent": "-6.65%",
+    "volatility": 0.01874005368127791,
+    "volatility_percent": "1.87%",
+    "liquidity_flags": [
+      "liquidity_not_ok",
+      "liquidity_risk",
+      "market_liquidity=weak",
+      "market_risk=high",
+      "market_trend=downtrend",
+      "poor_entry_location_downtrend",
+      "trend_down",
+      "volume_contraction"
+    ],
+    "threshold_checks": {
+      "max_drawdown_ok": true,
+      "volatility_ok": true,
+      "liquidity_ok": false
+    }
+  },
+  "expert_stances": {},
+  "must_conditions_status": {
+    "max_drawdown_le_neg15_percent": {
+      "condition": "max_drawdown ≤ -15%",
+      "current_value": "-6.65%",
+      "passed": true
+    },
+    "volatility_le_4_percent": {
+      "condition": "volatility ≤ 4%",
+      "current_value": "1.87%",
+      "passed": true
+    },
+    "liquidity_not_ok_false": {
+      "condition": "liquidity_not_ok = false",
+      "current_value": "True",
+      "passed": false
+    },
+    "risk_agent_stance_neutral_or_better": {
+      "condition": "RiskAgent stance ≥ neutral",
+      "current_value": "neutral",
+      "passed": true
+    },
+    "high_volatility_flag_not_triggered": {
+      "condition": "high_volatility flag not triggered",
+      "current_value": "not triggered",
+      "passed": true
+    },
+    "severe_drawdown_flag_not_triggered": {
+      "condition": "severe_drawdown flag not triggered",
+      "current_value": "not triggered",
+      "passed": true
+    }
+  },
+  "optional_conditions_status": {
+    "trend_agent_stance_neutral_or_better": {
+      "condition": "TrendAgent stance ≥ neutral",
+      "current_value": "neutral",
+      "passed": true
+    },
+    "timing_agent_stance_neutral_or_better": {
+      "condition": "TimingAgent stance ≥ neutral",
+      "current_value": "neutral",
+      "passed": true
+    }
+  },
+  "next_check": "2026-07-09",
+  "data_sources": {
+    "risk_signal": "signal:sig_20260709_US_000002.SZ_risk_volatility_drawdown",
+    "risk_opinion": "opn_20260709_US_000002.SZ_risk",
+    "recommendation": "rec_20260709_pre_market_US_000002.SZ"
+  }
+}

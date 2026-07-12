@@ -1,0 +1,60 @@
+{
+  "project": "Project Aegis",
+  "type": "p24_3_double_hardened_simulation",
+  "generated_at": "2026-07-10T13:58:04.701269+00:00",
+  "rounds": [
+    {
+      "round": 1,
+      "exit_code": 0,
+      "overall_verdict": "PASS",
+      "stages": [
+        {
+          "name": "morning_health",
+          "result": "PASS",
+          "exit_code": 0
+        },
+        {
+          "name": "rolling_pipeline",
+          "result": "PASS",
+          "exit_code": 0
+        },
+        {
+          "name": "final_evidence_gate",
+          "result": "PASS",
+          "exit_code": 0
+        }
+      ],
+      "report_sha256": "2f24f86d8d67ef4af9fd0242654ae6556ef542e17fc764a96751fc74cacb884d",
+      "lock_removed": true
+    },
+    {
+      "round": 2,
+      "exit_code": 0,
+      "overall_verdict": "PASS",
+      "stages": [
+        {
+          "name": "morning_health",
+          "result": "PASS",
+          "exit_code": 0
+        },
+        {
+          "name": "rolling_pipeline",
+          "result": "PASS",
+          "exit_code": 0
+        },
+        {
+          "name": "final_evidence_gate",
+          "result": "PASS",
+          "exit_code": 0
+        }
+      ],
+      "report_sha256": "fb6ecb7eaf7db2dd0b43d938856d56dca5aca5207d23fc6bc816a401439ce2a4",
+      "lock_removed": true
+    }
+  ],
+  "enabled": false,
+  "dry_run": true,
+  "cron_modified": false,
+  "launchd_modified": false,
+  "overall_verdict": "PASS"
+}

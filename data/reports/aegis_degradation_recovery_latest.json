@@ -1,0 +1,77 @@
+{
+  "project": "Project Aegis",
+  "type": "degradation_recovery_tests",
+  "started_at": "2026-07-10T01:27:06.446230+08:00",
+  "finished_at": "2026-07-10T01:27:08.580580+08:00",
+  "total_tests": 5,
+  "passed": 5,
+  "failed": 0,
+  "all_passed": true,
+  "tests": [
+    {
+      "scenario": "missing_feishu_json",
+      "backup_created": true,
+      "mutation_applied": "feishu_daily_digest_dry_run.json removed",
+      "expected": "exit_code=0 (pipeline regenerates feishu JSON)",
+      "actual_exit_code_before_restore": 0,
+      "rejected_or_recovered": true,
+      "restored": false,
+      "final_gate_exit_code": 0,
+      "result": "PASS",
+      "test_name": "test_1_missing_feishu_json",
+      "duration_seconds": 0.47
+    },
+    {
+      "scenario": "invalid_feishu_json",
+      "backup_created": true,
+      "mutation_applied": "feishu_daily_digest_dry_run.json content replaced with '{ invalid json'",
+      "expected": "exit_code=0 (pipeline regenerates valid JSON)",
+      "actual_exit_code_before_restore": 0,
+      "rejected_or_recovered": true,
+      "restored": false,
+      "final_gate_exit_code": 0,
+      "result": "PASS",
+      "test_name": "test_2_invalid_feishu_json",
+      "duration_seconds": 0.46
+    },
+    {
+      "scenario": "missing_non_core_report",
+      "backup_created": true,
+      "mutation_applied": "crcl_risk_monitor_latest.md removed",
+      "expected": "core pipeline PASS (non-core report missing is acceptable)",
+      "actual_exit_code_before_restore": 0,
+      "rejected_or_recovered": true,
+      "restored": true,
+      "final_gate_exit_code": 0,
+      "result": "PASS",
+      "test_name": "test_3_missing_non_core_report",
+      "duration_seconds": 0.52
+    },
+    {
+      "scenario": "injected_invalid_hash_gate_fail_then_restore",
+      "backup_created": true,
+      "mutation_applied": "injected invalid sha256_12 value [REDACTED] into aegis_pipeline_redteam_latest.md",
+      "expected": "exit_code != 0 (gate rejects invalid hash)",
+      "actual_exit_code_before_restore": 1,
+      "rejected_or_recovered": true,
+      "restored": true,
+      "final_gate_exit_code": 0,
+      "result": "PASS",
+      "test_name": "test_4_injected_invalid_hash",
+      "duration_seconds": 0.38
+    },
+    {
+      "scenario": "dashboard_degrade_removed_gate_fail_then_restore",
+      "backup_created": true,
+      "mutation_applied": "replaced '未生成飞书' with empty string in dashboard/index.html",
+      "expected": "exit_code != 0 (gate detects missing degrade notice)",
+      "actual_exit_code_before_restore": 1,
+      "rejected_or_recovered": true,
+      "restored": true,
+      "final_gate_exit_code": 0,
+      "result": "PASS",
+      "test_name": "test_5_dashboard_degrade_removed",
+      "duration_seconds": 0.3
+    }
+  ]
+}

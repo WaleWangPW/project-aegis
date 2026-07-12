@@ -1,0 +1,48 @@
+{
+  "overall_status": "PASS",
+  "generated_at": "2026-07-11T16:43:31.691506+08:00",
+  "run_id": "v2_0_a_20260711_acceptance",
+  "command": "validate_v2_0_a_portfolio_foundation.py --run-id v2_0_a_20260711_acceptance",
+  "acceptance_target": "V2.0-A Portfolio Foundation",
+  "isolated": true,
+  "production_records_written": false,
+  "run_dir": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v2_0_a_acceptance/v2_0_a_20260711_acceptance",
+  "fixture_holdings": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v2_0_a_acceptance/v2_0_a_20260711_acceptance/config/holdings.yaml",
+  "snapshot_json": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v2_0_a_acceptance/v2_0_a_20260711_acceptance/portfolio_snapshot.json",
+  "snapshot_md": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v2_0_a_acceptance/v2_0_a_20260711_acceptance/portfolio_snapshot.md",
+  "checks": {
+    "holdings_record": true,
+    "cash_record": true,
+    "position_sizing": true,
+    "exposure_summary": true,
+    "risk_budget_summary": true,
+    "risk_blockers": true,
+    "manual_execution_boundary": true,
+    "no_broker_or_real_trade": true
+  },
+  "summary": {
+    "holding_count": 2,
+    "cash": 1200.0,
+    "total_market_value": 3800.0,
+    "exposure_pct": 0.76,
+    "risk_level": "medium",
+    "blocker_count": 1
+  },
+  "safety": {
+    "read_only": true,
+    "simulation_only": true,
+    "no_real_trade": true,
+    "no_broker_api": true,
+    "no_webhook": true,
+    "no_secrets": true,
+    "manual_external_execution_only": true,
+    "user_submitted_execution_facts_only": true,
+    "no_account_sync": true,
+    "no_auto_rebalance": true,
+    "no_production_records_mutation": true
+  },
+  "hashes": {
+    "snapshot_json": "35ee755665d5ed92e1a0c42a1b26877291d2493175c2fb1ca28432a2218c6c0a",
+    "snapshot_md": "da97b0f220c613cc2fee35f855c72ce27fe82be18857484a5b1ec1094180a895"
+  }
+}

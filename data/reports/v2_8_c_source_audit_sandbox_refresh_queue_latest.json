@@ -1,0 +1,270 @@
+{
+  "schema_version": "source_audit_sandbox_refresh_queue.v1",
+  "overall_status": "PASS",
+  "acceptance_target": "V2.8-C Source Audit To Sandbox Refresh Queue",
+  "generated_at": "2026-07-11T20:04:21.118095+08:00",
+  "run_id": "v2_8_c_20260711_acceptance",
+  "command": "validate_v2_8_c_source_audit_sandbox_refresh_queue.py --run-id v2_8_c_20260711_acceptance",
+  "source_audit_run_id": "v2_8_b_20260711_acceptance",
+  "source_audit_target": "V2.8-B Live Public Strategy Source Audit",
+  "network_used": false,
+  "audited_source_count": 12,
+  "reachable_source_count": 8,
+  "blocked_source_count": 4,
+  "refresh_proposal_count": 3,
+  "market_coverage": {
+    "A": 2,
+    "H": 1,
+    "US": 5
+  },
+  "strategy_family_coverage": {
+    "dividend": 3,
+    "low_volatility": 5,
+    "momentum": 5,
+    "multi_factor": 5,
+    "quality": 6,
+    "risk_overlay": 2,
+    "size": 3,
+    "value": 7
+  },
+  "refresh_proposals": [
+    {
+      "proposal_id": "refresh_a_strategy_hypotheses_from_live_source_audit",
+      "market": "A",
+      "refresh_status": "proposed_for_sandbox",
+      "source_audit_run_id": "v2_8_b_20260711_acceptance",
+      "source_research_ids": [
+        "catalog_msci_china_a_factor_2025",
+        "catalog_panagora_china_a_factor"
+      ],
+      "source_hashes": {
+        "catalog_msci_china_a_factor_2025": "f159114acc75dd8f2a4181eb4f3513a5decad12b1edd7be63e44abdc638e6355",
+        "catalog_panagora_china_a_factor": "8699d74a90527b426e371aef64a9c14506f135a069d9623369dbe25dd4d49a0f"
+      },
+      "strategy_families": [
+        "dividend",
+        "low_volatility",
+        "momentum",
+        "multi_factor",
+        "quality",
+        "value"
+      ],
+      "refresh_intent": "Use reachable live public-source metadata/hash evidence to refresh sandbox hypotheses for this market. This is not a user-facing recommendation.",
+      "next_gate": "historical_sandbox",
+      "requires_sandbox": true,
+      "auto_applied": false,
+      "user_facing_suggestion_allowed": false,
+      "production_records_mutation_allowed": false,
+      "proposal_hash": "206b40e69a633cc99c5b1f7b51d454dca32908711b048b05042ff561a67906ba"
+    },
+    {
+      "proposal_id": "refresh_h_strategy_hypotheses_from_live_source_audit",
+      "market": "H",
+      "refresh_status": "proposed_for_sandbox",
+      "source_audit_run_id": "v2_8_b_20260711_acceptance",
+      "source_research_ids": [
+        "catalog_hsi_smart_beta_index_series"
+      ],
+      "source_hashes": {
+        "catalog_hsi_smart_beta_index_series": "c1ecc06a6f04d219b85469110f0288a2acffabc1f68a14c1ef776f50379cd1ce"
+      },
+      "strategy_families": [
+        "dividend",
+        "low_volatility",
+        "momentum",
+        "multi_factor",
+        "quality",
+        "size",
+        "value"
+      ],
+      "refresh_intent": "Use reachable live public-source metadata/hash evidence to refresh sandbox hypotheses for this market. This is not a user-facing recommendation.",
+      "next_gate": "historical_sandbox",
+      "requires_sandbox": true,
+      "auto_applied": false,
+      "user_facing_suggestion_allowed": false,
+      "production_records_mutation_allowed": false,
+      "proposal_hash": "a95a38f51c316c3a9b3d27ad3eac96d8ca4facebdc4d1af309b2530740c3781e"
+    },
+    {
+      "proposal_id": "refresh_us_strategy_hypotheses_from_live_source_audit",
+      "market": "US",
+      "refresh_status": "proposed_for_sandbox",
+      "source_audit_run_id": "v2_8_b_20260711_acceptance",
+      "source_research_ids": [
+        "catalog_aqr_low_vol_cycles",
+        "catalog_ken_french_factor_library",
+        "catalog_msci_factor_indexes",
+        "catalog_msci_low_volatility_construction",
+        "catalog_research_affiliates_vqm"
+      ],
+      "source_hashes": {
+        "catalog_ken_french_factor_library": "68c0f3bd9cffdc40fccb8fee6179aec7b2028e6cfef13d50e3b6de6190927d15",
+        "catalog_msci_factor_indexes": "0e19a41c3bb012ad83a17054ffe312ea57b4c050bad5a671e91305f7712bb206",
+        "catalog_research_affiliates_vqm": "3e79666bedf1db32cb711eb35a7eb0f74a5dcf1f499bcf89f2b7512a630c94fe",
+        "catalog_msci_low_volatility_construction": "fda3449e850ad9618a0f619e0a74862080f97d3567dfaa4057b229edc07eaaa6",
+        "catalog_aqr_low_vol_cycles": "85673086f003227d10a91469c4a74d2f004f3512d746889f6f9a413bdd9c2388"
+      },
+      "strategy_families": [
+        "dividend",
+        "low_volatility",
+        "momentum",
+        "multi_factor",
+        "quality",
+        "risk_overlay",
+        "size",
+        "value"
+      ],
+      "refresh_intent": "Use reachable live public-source metadata/hash evidence to refresh sandbox hypotheses for this market. This is not a user-facing recommendation.",
+      "next_gate": "historical_sandbox",
+      "requires_sandbox": true,
+      "auto_applied": false,
+      "user_facing_suggestion_allowed": false,
+      "production_records_mutation_allowed": false,
+      "proposal_hash": "51954f90ebca986114e0747d4f0e870dc91d140183aae8cca8f791670083e23f"
+    }
+  ],
+  "blocked_sources": [
+    {
+      "research_id": "catalog_spdji_a_share_factor",
+      "publisher": "S&P Dow Jones Indices",
+      "status": "fetch_error",
+      "status_code": 403,
+      "error_type": "HTTPError",
+      "error_message": "HTTP Error 403: Forbidden",
+      "markets": [
+        "A"
+      ],
+      "strategy_families": [
+        "size",
+        "value",
+        "low_volatility",
+        "momentum",
+        "quality",
+        "dividend",
+        "multi_factor"
+      ],
+      "blocked_reason": "not_reachable_in_live_public_source_audit",
+      "eligible_for_refresh": false
+    },
+    {
+      "research_id": "catalog_spdji_a_low_vol_high_dividend",
+      "publisher": "S&P Dow Jones Indices",
+      "status": "fetch_error",
+      "status_code": 403,
+      "error_type": "HTTPError",
+      "error_message": "HTTP Error 403: Forbidden",
+      "markets": [
+        "A"
+      ],
+      "strategy_families": [
+        "low_volatility",
+        "dividend",
+        "risk_overlay"
+      ],
+      "blocked_reason": "not_reachable_in_live_public_source_audit",
+      "eligible_for_refresh": false
+    },
+    {
+      "research_id": "catalog_spdji_hk_smart_beta",
+      "publisher": "S&P Dow Jones Indices",
+      "status": "fetch_error",
+      "status_code": 403,
+      "error_type": "HTTPError",
+      "error_message": "HTTP Error 403: Forbidden",
+      "markets": [
+        "H"
+      ],
+      "strategy_families": [
+        "size",
+        "value",
+        "low_volatility",
+        "momentum",
+        "quality",
+        "dividend",
+        "multi_factor"
+      ],
+      "blocked_reason": "not_reachable_in_live_public_source_audit",
+      "eligible_for_refresh": false
+    },
+    {
+      "research_id": "catalog_fama_french_five_factor",
+      "publisher": "Fama and French",
+      "status": "fetch_error",
+      "status_code": 403,
+      "error_type": "HTTPError",
+      "error_message": "HTTP Error 403: Forbidden",
+      "markets": [
+        "US",
+        "GLOBAL"
+      ],
+      "strategy_families": [
+        "size",
+        "value",
+        "quality"
+      ],
+      "blocked_reason": "not_reachable_in_live_public_source_audit",
+      "eligible_for_refresh": false
+    }
+  ],
+  "checks": {
+    "source_audit_passed": true,
+    "uses_live_public_source_audit": true,
+    "network_not_used": true,
+    "reachable_sources_have_hashes": true,
+    "all_reachable_sources_queued": true,
+    "blocked_sources_preserved": true,
+    "blocked_sources_not_queued": true,
+    "covers_a_h_us_with_reachable_sources": true,
+    "requires_sandbox": true,
+    "not_auto_applied": true,
+    "no_user_facing_suggestion": true,
+    "proposal_hashes_written": true,
+    "raw_text_not_stored": true,
+    "sample_bytes_not_stored": true,
+    "no_real_trade": true,
+    "no_broker_api": true,
+    "no_trading_webhook": true,
+    "no_strategy_auto_mutation": true,
+    "no_production_records_mutation": true
+  },
+  "safety": {
+    "metadata_hash_only": true,
+    "raw_text_not_stored": true,
+    "sample_bytes_not_stored": true,
+    "requires_sandbox": true,
+    "auto_applied": false,
+    "user_facing_suggestion_allowed": false,
+    "no_real_trade": true,
+    "no_broker_api": true,
+    "no_trading_webhook": true,
+    "no_strategy_auto_mutation": true,
+    "no_production_records_mutation": true
+  },
+  "run_dir": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v2_8_c_acceptance/v2_8_c_20260711_acceptance",
+  "source_audit_report": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/v2_8_b_live_public_strategy_source_audit_latest.json",
+  "source_audit_sandbox_refresh_queue": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v2_8_c_acceptance/v2_8_c_20260711_acceptance/source_audit_sandbox_refresh_queue.json",
+  "production_records_written": false,
+  "dashboard_contract_changed": false,
+  "summary": {
+    "audited_source_count": 12,
+    "reachable_source_count": 8,
+    "blocked_source_count": 4,
+    "refresh_proposal_count": 3,
+    "proposal_ids": [
+      "refresh_a_strategy_hypotheses_from_live_source_audit",
+      "refresh_h_strategy_hypotheses_from_live_source_audit",
+      "refresh_us_strategy_hypotheses_from_live_source_audit"
+    ],
+    "blocked_source_ids": [
+      "catalog_spdji_a_share_factor",
+      "catalog_spdji_a_low_vol_high_dividend",
+      "catalog_spdji_hk_smart_beta",
+      "catalog_fama_french_five_factor"
+    ],
+    "next_target": "V2.8-D Refresh Queue Historical Sandbox Rerun"
+  },
+  "hashes": {
+    "source_audit_report": "266f558bbb68d3d90b62e64d9a02e3633c091940cc5a9592ec48d561d08bca9d",
+    "source_audit_sandbox_refresh_queue": "cba8de3afd7aa5dc4a5b4a464c0d143d9d44e96918fb790e9fe932824cb43f4d"
+  }
+}

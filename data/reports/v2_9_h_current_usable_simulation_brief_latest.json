@@ -1,0 +1,387 @@
+{
+  "overall_status": "PASS",
+  "acceptance_target": "V2.9-H Current Usable Simulation Brief Refresh",
+  "brief_type": "current_usable_simulation_brief",
+  "run_id": "v2_9_h_20260711_acceptance",
+  "generated_at": "2026-07-11T21:48:55.496393+08:00",
+  "command": "validate_v2_9_h_current_usable_simulation_brief.py --run-id v2_9_h_20260711_acceptance",
+  "network_used": false,
+  "production_records_written": false,
+  "dashboard_contract_changed": false,
+  "summary": {
+    "candidate_count": 9,
+    "blocked_count": 3,
+    "candidate_markets": [
+      "A",
+      "H",
+      "US"
+    ],
+    "blocked_markets": [
+      "A",
+      "H",
+      "US"
+    ],
+    "top_candidate_symbols": [
+      "600519.SH",
+      "600036.SH",
+      "00700.HK",
+      "CRCL",
+      "MSFT",
+      "00005.HK"
+    ],
+    "sandbox_pass_count": 3,
+    "sandbox_fail_count": 3,
+    "real_user_api_status": "blocked_missing_metadata",
+    "formal_review_count": 1,
+    "formal_memory_count": 1,
+    "review_pending_count": 1
+  },
+  "current_answer": {
+    "can_read_online_now": "系统已有 bounded API/live-public-source 读取入口和公开来源 hash 审计能力；真实用户 API 仍等待非敏感 metadata 与本机 env var。",
+    "history_sandbox_status": "已完成 A/H/US refresh hypotheses 的历史沙盘重跑；当前可见 pass/fail 证据，但通过项仍只允许进入 simulation-only suggestion path。",
+    "strategy_research_status": "A股、港股、美股策略研究已进入 source catalog、sandbox queue、Suggestion Gate、concrete candidate binding 和当前 decision packet。",
+    "usable_suggestions_status": "当前可输出 simulation-only 候选简报；用户若采用，必须在外部软件手动核对和执行，再把截图或文字回传给 Aegis。"
+  },
+  "user_boundary": {
+    "allowed": [
+      "阅读当前 simulation candidates，作为观察和纸面验证清单。",
+      "在外部行情/券商软件手动核对实时价格、事件、持仓冲突和个人风险预算。",
+      "把截图、成交记录或文字决策回传给 Aegis 作为证据。"
+    ],
+    "forbidden": [
+      "Aegis 不真实下单。",
+      "Aegis 不连接 Broker API。",
+      "Aegis 不使用 trading webhook。",
+      "Aegis 不给实时价格或仓位数量。",
+      "Aegis 不把 fixture candidates 冒充为 live API candidates。"
+    ],
+    "current_blocker": "真实用户 API 仍缺 config/external_api_connectors.local.json 的非敏感 metadata 和本机 env var，因此 live API-backed candidates 尚不可声明。"
+  },
+  "top_candidates": [
+    {
+      "symbol": "600519.SH",
+      "name": "贵州茅台",
+      "market": "A",
+      "strategy_id": "strategy_a_low_vol_dividend_defensive",
+      "candidate_score": 0.95,
+      "status": "simulation_candidate",
+      "source_mode": "approved_fixture_not_live_market_data",
+      "why": [
+        "A-share names with lower realized volatility and stronger dividend profile may reduce drawdown while preserving acceptable forward return.",
+        "sandbox_status=PASS",
+        "win_rate=0.7500",
+        "average_return=0.0167",
+        "max_drawdown=-0.0520"
+      ],
+      "risk_warnings": [
+        "Research-hypothesis draft only; not a production recommendation.",
+        "No live price, order size, or broker execution is produced.",
+        "liquidity_filter",
+        "max_drawdown_floor",
+        "dividend_trap_check",
+        "Simulation-only draft; user decides and executes manually outside Aegis."
+      ],
+      "user_action": "加入模拟观察清单；先人工核对实时行情、公司事件、持仓冲突和个人风险预算，如要交易只能在 Aegis 外部软件手动执行，并把截图或文字结果回传。",
+      "evidence_ref_count": 9
+    },
+    {
+      "symbol": "600036.SH",
+      "name": "招商银行",
+      "market": "A",
+      "strategy_id": "strategy_a_low_vol_dividend_defensive",
+      "candidate_score": 0.85,
+      "status": "simulation_candidate",
+      "source_mode": "approved_fixture_not_live_market_data",
+      "why": [
+        "A-share names with lower realized volatility and stronger dividend profile may reduce drawdown while preserving acceptable forward return.",
+        "sandbox_status=PASS",
+        "win_rate=0.7500",
+        "average_return=0.0167",
+        "max_drawdown=-0.0520"
+      ],
+      "risk_warnings": [
+        "Research-hypothesis draft only; not a production recommendation.",
+        "No live price, order size, or broker execution is produced.",
+        "liquidity_filter",
+        "max_drawdown_floor",
+        "dividend_trap_check",
+        "Simulation-only draft; user decides and executes manually outside Aegis."
+      ],
+      "user_action": "加入模拟观察清单；先人工核对实时行情、公司事件、持仓冲突和个人风险预算，如要交易只能在 Aegis 外部软件手动执行，并把截图或文字结果回传。",
+      "evidence_ref_count": 9
+    },
+    {
+      "symbol": "00700.HK",
+      "name": "Tencent Holdings",
+      "market": "H",
+      "strategy_id": "strategy_h_low_vol_dividend",
+      "candidate_score": 0.82,
+      "status": "simulation_candidate",
+      "source_mode": "approved_fixture_not_live_market_data",
+      "why": [
+        "Hong Kong lower-volatility dividend candidates may be useful defensive ideas if liquidity and event risks are controlled.",
+        "sandbox_status=PASS",
+        "win_rate=0.7500",
+        "average_return=0.0110",
+        "max_drawdown=-0.0550"
+      ],
+      "risk_warnings": [
+        "Research-hypothesis draft only; not a production recommendation.",
+        "No live price, order size, or broker execution is produced.",
+        "liquidity_filter",
+        "event_risk_block",
+        "max_drawdown_floor",
+        "Simulation-only draft; user decides and executes manually outside Aegis."
+      ],
+      "user_action": "加入模拟观察清单；先人工核对实时行情、公司事件、持仓冲突和个人风险预算，如要交易只能在 Aegis 外部软件手动执行，并把截图或文字结果回传。",
+      "evidence_ref_count": 9
+    },
+    {
+      "symbol": "CRCL",
+      "name": "Circle Internet Group",
+      "market": "US",
+      "strategy_id": "strategy_us_value_quality_momentum",
+      "candidate_score": 0.78,
+      "status": "simulation_candidate",
+      "source_mode": "approved_fixture_not_live_market_data",
+      "why": [
+        "U.S. candidates with complementary value, quality, and momentum evidence may be more robust than a single-factor ranking.",
+        "sandbox_status=PASS",
+        "win_rate=0.7500",
+        "average_return=0.0146",
+        "max_drawdown=-0.0680"
+      ],
+      "risk_warnings": [
+        "Research-hypothesis draft only; not a production recommendation.",
+        "No live price, order size, or broker execution is produced.",
+        "sector_concentration_check",
+        "drawdown_floor",
+        "quality_overlay",
+        "Simulation-only draft; user decides and executes manually outside Aegis."
+      ],
+      "user_action": "加入模拟观察清单；先人工核对实时行情、公司事件、持仓冲突和个人风险预算，如要交易只能在 Aegis 外部软件手动执行，并把截图或文字结果回传。",
+      "evidence_ref_count": 9
+    },
+    {
+      "symbol": "MSFT",
+      "name": "Microsoft",
+      "market": "US",
+      "strategy_id": "strategy_us_value_quality_momentum",
+      "candidate_score": 0.76,
+      "status": "simulation_candidate",
+      "source_mode": "approved_fixture_not_live_market_data",
+      "why": [
+        "U.S. candidates with complementary value, quality, and momentum evidence may be more robust than a single-factor ranking.",
+        "sandbox_status=PASS",
+        "win_rate=0.7500",
+        "average_return=0.0146",
+        "max_drawdown=-0.0680"
+      ],
+      "risk_warnings": [
+        "Research-hypothesis draft only; not a production recommendation.",
+        "No live price, order size, or broker execution is produced.",
+        "sector_concentration_check",
+        "drawdown_floor",
+        "quality_overlay",
+        "Simulation-only draft; user decides and executes manually outside Aegis."
+      ],
+      "user_action": "加入模拟观察清单；先人工核对实时行情、公司事件、持仓冲突和个人风险预算，如要交易只能在 Aegis 外部软件手动执行，并把截图或文字结果回传。",
+      "evidence_ref_count": 9
+    },
+    {
+      "symbol": "00005.HK",
+      "name": "HSBC Holdings",
+      "market": "H",
+      "strategy_id": "strategy_h_low_vol_dividend",
+      "candidate_score": 0.74,
+      "status": "simulation_candidate",
+      "source_mode": "approved_fixture_not_live_market_data",
+      "why": [
+        "Hong Kong lower-volatility dividend candidates may be useful defensive ideas if liquidity and event risks are controlled.",
+        "sandbox_status=PASS",
+        "win_rate=0.7500",
+        "average_return=0.0110",
+        "max_drawdown=-0.0550"
+      ],
+      "risk_warnings": [
+        "Research-hypothesis draft only; not a production recommendation.",
+        "No live price, order size, or broker execution is produced.",
+        "liquidity_filter",
+        "event_risk_block",
+        "max_drawdown_floor",
+        "Simulation-only draft; user decides and executes manually outside Aegis."
+      ],
+      "user_action": "加入模拟观察清单；先人工核对实时行情、公司事件、持仓冲突和个人风险预算，如要交易只能在 Aegis 外部软件手动执行，并把截图或文字结果回传。",
+      "evidence_ref_count": 9
+    }
+  ],
+  "blocked_paths": [
+    {
+      "symbol": "A_VALUE_QUALITY_PAPER_BASKET",
+      "market": "A",
+      "strategy_id": "strategy_a_value_quality_multifactor",
+      "blocked_by": [
+        "strategy_sandbox_not_passed"
+      ],
+      "why": [
+        "A-share candidates that combine reasonable valuation with profitability and cash-flow quality may outperform single-factor value screens.",
+        "sandbox_status=FAIL",
+        "win_rate=0.5000",
+        "average_return=-0.0090",
+        "max_drawdown=-0.0950"
+      ]
+    },
+    {
+      "symbol": "H_SMART_BETA_PAPER_BASKET",
+      "market": "H",
+      "strategy_id": "strategy_h_smart_beta_multifactor",
+      "blocked_by": [
+        "strategy_sandbox_not_passed"
+      ],
+      "why": [
+        "Hong Kong smart-beta factors may require regime-aware blending rather than one dominant factor.",
+        "sandbox_status=FAIL",
+        "win_rate=0.2500",
+        "average_return=-0.0113",
+        "max_drawdown=-0.1120"
+      ]
+    },
+    {
+      "symbol": "US_LOW_VOL_RISK_OVERLAY_PAPER_BASKET",
+      "market": "US",
+      "strategy_id": "strategy_us_low_vol_risk_overlay",
+      "blocked_by": [
+        "strategy_sandbox_not_passed"
+      ],
+      "why": [
+        "Low-volatility U.S. candidates may need valuation and momentum context to avoid cycle-specific underperformance.",
+        "sandbox_status=FAIL",
+        "win_rate=0.2500",
+        "average_return=-0.0111",
+        "max_drawdown=-0.1050"
+      ]
+    }
+  ],
+  "review_memory_queue": [
+    {
+      "paper_trade_id": "ptr_virtual_pending_entry_packet_paper_intake_packet_fb_watch_001",
+      "review_id": "rev_virtual_ptr_virtual_pending_entry_packet_paper_intake_packet_fb_watch_001_entry",
+      "memory_id": "mem_virtual_ptr_virtual_pending_entry_packet_paper_intake_packet_fb_watch_001_entry_context",
+      "review_date": "2026-07-11",
+      "horizon": "5d",
+      "outcome": "pending",
+      "decision_quality": "unclear",
+      "actual_return": null,
+      "lesson": "600519.SH（A）已进入 simulation-only virtual PaperTrade 复盘队列；当前尚无 forward return，因此复盘结果保持 pending/unclear。",
+      "memory_lesson": "600519.SH（A）：已从用户验证入场证据创建 simulation-only virtual PaperTrade ledger，入场价 1688.88，入场日 2026-07-11。该记录只能作为后续复盘候选，不能自动改变策略或触发真实交易。 当前记忆仅记录模拟入场上下文，后续收益/回撤需要等待正式复盘证据补齐。",
+      "no_return_fabrication": true,
+      "simulation_only": true
+    }
+  ],
+  "checks": {
+    "has_current_decision_packet": true,
+    "has_simulation_candidates": true,
+    "has_a_h_us_candidates": true,
+    "has_blocked_paths": true,
+    "blocked_paths_visible": true,
+    "history_sandbox_visible": true,
+    "api_blocker_visible": true,
+    "review_memory_chain_visible": true,
+    "reviews_pending_without_return_fabrication": true,
+    "manual_external_execution_only": true,
+    "no_live_price": true,
+    "no_position_size": true,
+    "no_real_trade": true,
+    "no_broker_api": true,
+    "no_trading_webhook": true,
+    "no_order_placement": true,
+    "production_records_not_written": true,
+    "dashboard_contract_unchanged": true,
+    "acceptance_target_correct": true,
+    "brief_status_pass": true,
+    "brief_json_written": true,
+    "brief_md_written": true,
+    "production_record_files_unchanged": true,
+    "network_not_used": true
+  },
+  "safety": {
+    "simulation_only": true,
+    "manual_external_execution_only": true,
+    "real_user_api_blocked_missing_metadata": true,
+    "review_pending_without_return_fabrication": true,
+    "no_live_price": true,
+    "no_position_size": true,
+    "no_real_trade": true,
+    "no_broker_api": true,
+    "no_trading_webhook": true,
+    "no_order_placement": true,
+    "no_production_records_mutation": true,
+    "no_strategy_mutation": true,
+    "dashboard_contract_unchanged": true
+  },
+  "run_dir": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v2_9_h_acceptance/v2_9_h_20260711_acceptance",
+  "brief_json": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v2_9_h_acceptance/v2_9_h_20260711_acceptance/current_usable_simulation_brief.json",
+  "brief_md": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v2_9_h_acceptance/v2_9_h_20260711_acceptance/current_usable_simulation_brief.md",
+  "source_decision_packet_json": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/v2_9_a_current_user_decision_packet_latest.json",
+  "source_review_memory_json": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/v2_9_g_formal_review_memory_records_latest.json",
+  "production_record_files_before": {
+    "reviews_jsonl": {
+      "exists": false,
+      "size": null,
+      "sha256": null
+    },
+    "memory_jsonl": {
+      "exists": false,
+      "size": null,
+      "sha256": null
+    },
+    "investment_memory_jsonl": {
+      "exists": false,
+      "size": null,
+      "sha256": null
+    },
+    "paper_trades_jsonl": {
+      "exists": false,
+      "size": null,
+      "sha256": null
+    },
+    "recommendations_jsonl": {
+      "exists": true,
+      "size": 12284,
+      "sha256": "05b2e56c9b547cbe3ce4cb71b7cb776185e23ef2cc3bc9a46a918bce0cfb65dc"
+    }
+  },
+  "production_record_files_after": {
+    "reviews_jsonl": {
+      "exists": false,
+      "size": null,
+      "sha256": null
+    },
+    "memory_jsonl": {
+      "exists": false,
+      "size": null,
+      "sha256": null
+    },
+    "investment_memory_jsonl": {
+      "exists": false,
+      "size": null,
+      "sha256": null
+    },
+    "paper_trades_jsonl": {
+      "exists": false,
+      "size": null,
+      "sha256": null
+    },
+    "recommendations_jsonl": {
+      "exists": true,
+      "size": 12284,
+      "sha256": "05b2e56c9b547cbe3ce4cb71b7cb776185e23ef2cc3bc9a46a918bce0cfb65dc"
+    }
+  },
+  "hashes": {
+    "brief_json": "7606d9756d1e9dd4774a77c864e35be8795882bd4b86578415550dac702bcf12",
+    "brief_md": "b41097724e05ed9295aebeda8bd10a61c20953d0da98cb6f3781b0e0e37065a3",
+    "source_decision_packet_json": "4b192a55f2b6ba7c9cce54a848d42dcefbaf838772ae3968ef66388a71ccf793",
+    "source_review_memory_json": "e146030647a2c3e49ba5568791ccd1e78564f4c11a90b752467ed308d4a56f7d"
+  }
+}

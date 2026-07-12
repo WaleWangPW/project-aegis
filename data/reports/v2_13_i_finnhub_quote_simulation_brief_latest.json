@@ -1,0 +1,231 @@
+{
+  "overall_status": "PASS",
+  "acceptance_target": "V2.13-I Finnhub Quote Current Simulation Brief",
+  "source_acceptance_target": "V2.13-H Finnhub Quote Sandbox Evidence To Suggestion Gate Draft",
+  "brief_type": "finnhub_quote_current_simulation_brief",
+  "run_id": "v2_13_i_20260712_acceptance",
+  "generated_at": "2026-07-12T02:20:44+08:00",
+  "command": "validate_v2_13_i_finnhub_quote_simulation_brief.py --run-id v2_13_i_20260712_acceptance",
+  "network_used": false,
+  "production_records_written": false,
+  "production_cache_mutated": false,
+  "production_provider_config_mutated": false,
+  "dashboard_contract_changed": false,
+  "summary": {
+    "candidate_count": 1,
+    "blocked_count": 0,
+    "candidate_symbols": [
+      "AAPL.US"
+    ],
+    "candidate_markets": [
+      "US"
+    ],
+    "source_allowed_count": 1,
+    "source_blocked_count": 0,
+    "social_sentiment_status": "blocked_plan_or_rate_limit",
+    "quote_context_research_only": true,
+    "real_trade_allowed": false,
+    "next_stage": "V2.13-J Finnhub Quote User Feedback Intake"
+  },
+  "current_answer": {
+    "can_read_online_now": "Finnhub quote 已通过 secret-safe live probe 和 cache-readiness；本简报复用已验收的 V2.13-H gate evidence，不重新联网。",
+    "history_sandbox_status": "AAPL.US quote-context candidate 已在 8 个 historical cases 上通过 sandbox，并经过 Suggestion Gate。",
+    "strategy_research_status": "该候选只证明 Finnhub quote-context 证据链可以进入模拟观察；social sentiment 仍 blocked，不能作为 Reddit/Twitter 情绪信号。",
+    "usable_suggestions_status": "当前可给出 1 条 AAPL.US simulation-only 观察候选；用户必须在外部软件自行核对并手动决策，再把截图或文字反馈回传给 Aegis。"
+  },
+  "user_boundary": {
+    "allowed": [
+      "把 AAPL.US 加入模拟观察清单。",
+      "在外部行情或券商软件手动核对实时价格、公告、新闻事件、持仓冲突和个人风险预算。",
+      "如果你手动做了模拟或真实外部动作，可把截图、价格、日期和文字判断回传给 Aegis 做复盘证据。"
+    ],
+    "forbidden": [
+      "Aegis 不真实下单。",
+      "Aegis 不连接 Broker API。",
+      "Aegis 不使用 trading webhook。",
+      "Aegis 不给实时价格。",
+      "Aegis 不给仓位数量。",
+      "Aegis 不使用 Finnhub social sentiment 作为信号。",
+      "Aegis 不把小样本 sandbox PASS 解释成正式策略稳定通过。"
+    ]
+  },
+  "items": [
+    {
+      "item_id": "brief_sug_finnhub_quote_us_strategy_aapl_us_finnhub_quote_context_probe",
+      "suggestion_id": "sug_finnhub_quote_us_strategy_aapl_us_finnhub_quote_context_probe",
+      "strategy_id": "strategy_aapl_us_finnhub_quote_context_probe",
+      "symbol": "AAPL.US",
+      "market": "US",
+      "brief_status": "simulation_candidate",
+      "user_action": "可加入模拟观察清单；如果你感兴趣，只能在外部软件手动核对实时价格、公告、新闻、持仓冲突和个人风险预算，再决定是否记录一笔纸面模拟。",
+      "plain_summary": "AAPL.US 是 Finnhub quote-context 证据链经过历史沙盘和 Suggestion Gate 后形成的模拟观察候选。它不是实盘买卖建议，也不包含实时价格或仓位。",
+      "sandbox_metrics": {
+        "sample_count": "8",
+        "win_rate": "0.6250",
+        "average_return": "0.0091",
+        "max_drawdown": "-0.0484",
+        "historical_symbols": "AAPL.US",
+        "social_sentiment_status": "blocked_plan_or_rate_limit"
+      },
+      "why": [
+        "finnhub_quote_sandbox_status=PASS",
+        "sample_count=8",
+        "win_rate=0.6250",
+        "average_return=0.0091",
+        "max_drawdown=-0.0484",
+        "historical_symbols=AAPL.US",
+        "source_stage=V2.13-G",
+        "social_sentiment_status=blocked_plan_or_rate_limit"
+      ],
+      "risk_warnings": [
+        "Finnhub quote context is research evidence only; one quote snapshot is not standalone strategy proof.",
+        "Finnhub social sentiment remains blocked by plan or rate limit and is not used in this suggestion draft.",
+        "Simulation-only draft; user decides and executes manually outside Aegis.",
+        "Manual external execution only; Aegis does not connect to broker APIs or place orders.",
+        "No live price, position size, trading webhook, broker execution, or order is produced.",
+        "manual_execution_only",
+        "historical_cases_required",
+        "suggestion_gate_required",
+        "single_quote_snapshot_not_strategy_evidence",
+        "Simulation-only draft; user decides and executes manually outside Aegis."
+      ],
+      "evidence_refs": [
+        "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/v2_13_g_finnhub_quote_sandbox_evaluation_latest.json",
+        "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/V2_13_G_FINNHUB_QUOTE_SANDBOX_EVALUATION_PASS.marker",
+        "v2_13_f_quote_context_case:bind_finnhub_quote_context_us_aapl_finnhub_quote_sandbox_candidate:finnhub_quote_context_us_aapl_finnhub_quote:us_aapl_eodhd_daily_bars:8aadce47722d091f3c7e849a5da07c15ebe5c89d5ae925ea37a574f4f977466c",
+        "v2_13_f_quote_context_case:bind_finnhub_quote_context_us_aapl_finnhub_quote_sandbox_candidate:finnhub_quote_context_us_aapl_finnhub_quote:us_aapl_twelve_data_daily_bars:08769d39f7cfa35c101005c13968267a324701fe629ba9f5dc11e35b504510e5"
+      ],
+      "blocked_by": [],
+      "simulation_only": true,
+      "user_must_execute_externally": true,
+      "quote_context_research_only": true,
+      "social_sentiment_not_enabled": true,
+      "no_live_price": true,
+      "no_position_size": true,
+      "no_real_trade": true,
+      "no_broker_api": true,
+      "no_webhook": true,
+      "no_order_placement": true,
+      "no_live_order_signal": true
+    }
+  ],
+  "checks": {
+    "source_is_v2_13_h": true,
+    "source_report_pass": true,
+    "source_allows_user_facing_simulation_brief": true,
+    "source_social_sentiment_still_blocked": true,
+    "source_has_allowed_draft": true,
+    "candidate_count_matches_allowed_count": true,
+    "blocked_count_matches_source": true,
+    "has_user_readable_items": true,
+    "has_aapl_candidate": true,
+    "every_item_has_evidence": true,
+    "every_item_simulation_only": true,
+    "manual_external_execution_only": true,
+    "quote_context_research_only_visible": true,
+    "social_sentiment_blocked_visible": true,
+    "no_live_price": true,
+    "no_position_size": true,
+    "no_real_trade": true,
+    "no_broker_api": true,
+    "no_trading_webhook": true,
+    "no_order_placement": true,
+    "no_live_order_signal": true,
+    "production_records_not_written": true,
+    "production_cache_not_mutated": true,
+    "production_provider_config_not_mutated": true,
+    "dashboard_contract_unchanged": true,
+    "network_not_used": true,
+    "acceptance_target_correct": true,
+    "brief_status_pass": true,
+    "source_marker_exists": true,
+    "brief_json_written": true,
+    "brief_md_written": true,
+    "production_record_files_unchanged": true,
+    "source_hashes_recorded": true
+  },
+  "safety": {
+    "simulation_only": true,
+    "manual_external_execution_only": true,
+    "not_real_trade_advice": true,
+    "quote_context_research_only": true,
+    "social_sentiment_not_enabled": true,
+    "no_live_price": true,
+    "no_position_size": true,
+    "no_real_trade": true,
+    "no_broker_api": true,
+    "no_trading_webhook": true,
+    "no_order_placement": true,
+    "no_live_order_signal": true,
+    "no_production_records_mutation": true,
+    "no_production_cache_mutation": true,
+    "no_production_provider_config_mutation": true,
+    "no_strategy_mutation": true,
+    "dashboard_contract_unchanged": true
+  },
+  "run_dir": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v2_13_i_acceptance/v2_13_i_20260712_acceptance",
+  "brief_json": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v2_13_i_acceptance/v2_13_i_20260712_acceptance/finnhub_quote_current_simulation_brief.json",
+  "brief_md": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v2_13_i_acceptance/v2_13_i_20260712_acceptance/finnhub_quote_current_simulation_brief.md",
+  "source_v2_13_h_report_json": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/v2_13_h_finnhub_quote_suggestion_gate_latest.json",
+  "source_v2_13_h_pass_marker": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/V2_13_H_FINNHUB_QUOTE_SUGGESTION_GATE_PASS.marker",
+  "production_record_files_before": {
+    "recommendations_jsonl": {
+      "exists": true,
+      "size": 12284,
+      "sha256": "05b2e56c9b547cbe3ce4cb71b7cb776185e23ef2cc3bc9a46a918bce0cfb65dc"
+    },
+    "paper_trades_jsonl": {
+      "exists": false,
+      "size": null,
+      "sha256": null
+    },
+    "reviews_jsonl": {
+      "exists": false,
+      "size": null,
+      "sha256": null
+    },
+    "memory_jsonl": {
+      "exists": false,
+      "size": null,
+      "sha256": null
+    },
+    "investment_memory_jsonl": {
+      "exists": false,
+      "size": null,
+      "sha256": null
+    }
+  },
+  "production_record_files_after": {
+    "recommendations_jsonl": {
+      "exists": true,
+      "size": 12284,
+      "sha256": "05b2e56c9b547cbe3ce4cb71b7cb776185e23ef2cc3bc9a46a918bce0cfb65dc"
+    },
+    "paper_trades_jsonl": {
+      "exists": false,
+      "size": null,
+      "sha256": null
+    },
+    "reviews_jsonl": {
+      "exists": false,
+      "size": null,
+      "sha256": null
+    },
+    "memory_jsonl": {
+      "exists": false,
+      "size": null,
+      "sha256": null
+    },
+    "investment_memory_jsonl": {
+      "exists": false,
+      "size": null,
+      "sha256": null
+    }
+  },
+  "hashes": {
+    "source_v2_13_h_report_json": "e3572a388cff8605b6839a755ad806de3c1927e186425da208179d99e39d8eb2",
+    "source_v2_13_h_pass_marker": "49ce0a1f66ec2f0b50032df00d4bc7a4e036d08e08b2463e4d5915655182ef8c",
+    "brief_json": "b11cd71635e7845a616f57fb02534bbb542cc0e1eeb1597a00ec1b50c8b6dc85",
+    "brief_md": "94257540367e1737e4be82e668c94bb4ff8fa13e652095f2e6968c60a22e9ab5"
+  }
+}

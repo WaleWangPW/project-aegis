@@ -1,0 +1,16 @@
+# Per P1A — Trading Calendar Foundation (aegis/calendar/).
+#
+# `allow_fallback` controls whether TradingCalendarService may fall back
+# to a conservative Mon-Fri assumption when no cached/provider trading
+# calendar is available. This fallback has NO holiday awareness and is
+# never exchange-confirmed — it is always marked data_quality.status
+# "partial" with an explicit warning when used (never presented as real
+# calendar data). Kept disabled by default per P1A's own requirement that
+# fallback only fires "when explicitly configured."
+#
+# Nothing in the live decision pipeline (PaperTradeService,
+# TimeTravelEngine) reads this file yet — TradingCalendarService is a
+# standalone foundation service in P1A, not wired into those consumers'
+# forward-return horizon math. See docs/HANDOFF.md's known-gaps section.
+calendar:
+  allow_fallback: false

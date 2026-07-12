@@ -1,0 +1,98 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "A-share Backtest Input Schema v1",
+  "type": "object",
+  "required": [
+    "strategy_id",
+    "strategy_version",
+    "market",
+    "universe_file",
+    "price_data_source",
+    "start_date",
+    "end_date",
+    "rebalance_frequency",
+    "holding_period_days",
+    "top_n",
+    "benchmark",
+    "transaction_cost_bps",
+    "slippage_bps",
+    "max_positions",
+    "allow_short",
+    "allow_real_trade"
+  ],
+  "properties": {
+    "strategy_id": {
+      "type": "string",
+      "const": "a_share_watchlist_v1"
+    },
+    "strategy_version": {
+      "type": "string",
+      "pattern": "^\\d+\\.\\d+\\.\\d+$"
+    },
+    "market": {
+      "type": "string",
+      "enum": [
+        "A_SHARE"
+      ]
+    },
+    "universe_file": {
+      "type": "string"
+    },
+    "price_data_source": {
+      "type": "string"
+    },
+    "start_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "end_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "rebalance_frequency": {
+      "type": "string",
+      "enum": [
+        "daily",
+        "weekly",
+        "monthly",
+        "quarterly"
+      ]
+    },
+    "holding_period_days": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "top_n": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "benchmark": {
+      "type": "string",
+      "examples": [
+        "000300.SH",
+        "000905.SH"
+      ]
+    },
+    "transaction_cost_bps": {
+      "type": "number",
+      "minimum": 0
+    },
+    "slippage_bps": {
+      "type": "number",
+      "minimum": 0
+    },
+    "max_positions": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "allow_short": {
+      "type": "boolean",
+      "const": false
+    },
+    "allow_real_trade": {
+      "type": "boolean",
+      "const": false
+    }
+  },
+  "additionalProperties": false
+}

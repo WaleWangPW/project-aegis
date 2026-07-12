@@ -1,0 +1,102 @@
+{
+  "project": "Project Aegis",
+  "task": "P21.6d-gate-fail-repair",
+  "generated_at": "2026-07-10T11:08:05.123456+08:00",
+  "evidence_type": "gate_fail_repair",
+  "initial_failures": [
+    "Hash mismatch for data/reports/feishu_daily_digest_dry_run.json: JSON claims 46723354543d, actual 3bb14fec7407",
+    "Hash mismatch for data/reports/feishu_daily_digest_dry_run.md: JSON claims 61f44ad3d101, actual d366660cca07",
+    "latest run gate_overall_verdict=FAIL"
+  ],
+  "command_results": {
+    "refresh_feishu_dry_run": {
+      "exit_code": 0,
+      "success": true
+    },
+    "refresh_aegis_daily_digest": {
+      "exit_code": 0,
+      "success": true
+    },
+    "validate_aegis_daily_digest": {
+      "exit_code": 0,
+      "success": true
+    },
+    "audit_aegis_pipeline_evidence": {
+      "exit_code": 0,
+      "success": true
+    },
+    "redteam_aegis_pipeline_validator": {
+      "exit_code": 0,
+      "success": true
+    },
+    "verify_aegis_evidence_gate_base": {
+      "exit_code": 0,
+      "success": true
+    },
+    "update_aegis_pipeline_history": {
+      "exit_code": 0,
+      "success": true
+    },
+    "validate_aegis_pipeline_history": {
+      "exit_code": 0,
+      "success": true
+    },
+    "verify_aegis_evidence_gate": {
+      "exit_code": 0,
+      "success": true
+    }
+  },
+  "top5_comparison": {
+    "p19_10_baseline": [
+      "600519.SH",
+      "600036.SH",
+      "000858.SZ",
+      "000001.SZ",
+      "601398.SH"
+    ],
+    "watchlist": [
+      "600519.SH",
+      "600036.SH",
+      "000858.SZ",
+      "000001.SZ",
+      "601398.SH"
+    ],
+    "feishu": [
+      "600519.SH",
+      "600036.SH",
+      "000858.SZ",
+      "000001.SZ",
+      "601398.SH"
+    ],
+    "history_latest": [
+      "600519.SH",
+      "600036.SH",
+      "000858.SZ",
+      "000001.SZ",
+      "601398.SH"
+    ]
+  },
+  "sha256_12_values": {
+    "a_share_watchlist_latest.json": "14b0c694b6fc",
+    "a_share_watchlist_latest.md": "86f463d0b9c9",
+    "a_share_watchlist_failures.json": "9b61b90d613d",
+    "feishu_daily_digest_dry_run.json": "7c0cfa755161",
+    "aegis_pipeline_history_latest.json": "959884879882",
+    "aegis_evidence_gate_latest.json": "1ce2a15bc585"
+  },
+  "final_gate_verdict": "PASS",
+  "final_history_verdict": "PASS",
+  "safety_confirmations": {
+    "no_real_send": true,
+    "no_webhook_call": true,
+    "no_secret_output": true,
+    "no_trading_call": true,
+    "cron_not_modified": true,
+    "no_manual_hash_forgery": true
+  },
+  "repair_summary": {
+    "issue": "Hash mismatches in feishu daily digest files caused gate failures",
+    "solution": "Regenerated all dependent artifacts to establish consistent hash chain",
+    "result": "All gates now passing"
+  }
+}

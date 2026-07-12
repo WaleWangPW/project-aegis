@@ -1,0 +1,64 @@
+{
+  "project": "Project Aegis",
+  "type": "signal_snapshot_validation",
+  "validated_at": "2026-07-10T20:00:50",
+  "checks": {
+    "latest_json_exists": {
+      "passed": true
+    },
+    "latest_md_exists": {
+      "passed": true
+    },
+    "snapshots_dir_exists": {
+      "passed": true
+    },
+    "json_parseable": {
+      "passed": true
+    },
+    "snapshot_count_gte_1": {
+      "passed": true,
+      "count": 3
+    },
+    "snapshot_files_exist": {
+      "passed": true
+    },
+    "selected_symbols_count_gte_5": {
+      "passed": true
+    },
+    "current_watchlist_used_false": {
+      "passed": true
+    },
+    "point_in_time_true": {
+      "passed": true
+    },
+    "safety_flags_valid": {
+      "passed": true
+    },
+    "date_semantics_valid": {
+      "passed": true
+    },
+    "ranking_inputs_present": {
+      "passed": true
+    },
+    "risk_filters_present": {
+      "passed": true
+    },
+    "liquidity_filters_present": {
+      "passed": true
+    },
+    "source_data_hashes_present": {
+      "passed": true
+    },
+    "no_secret_value_detected": {
+      "passed": true
+    },
+    "no_real_trade_call_detected": {
+      "passed": true
+    },
+    "no_webhook_api_call_detected": {
+      "passed": true
+    }
+  },
+  "failures": [],
+  "overall_verdict": "PASS"
+}

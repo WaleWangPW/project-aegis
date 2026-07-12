@@ -1,0 +1,258 @@
+{
+  "overall_status": "PASS",
+  "acceptance_target": "V2.12-D H-US Historical Sandbox Candidate Refresh Dry Run",
+  "run_id": "v2_12_d_20260712_acceptance",
+  "generated_at": "2026-07-12T00:37:28+08:00",
+  "command": "validate_v2_12_d_h_us_historical_sandbox_candidate_refresh.py --run-id v2_12_d_20260712_acceptance",
+  "network_used": false,
+  "production_records_written": false,
+  "production_cache_mutated": false,
+  "production_provider_config_mutated": false,
+  "dashboard_contract_changed": false,
+  "summary": {
+    "candidate_count": 2,
+    "historical_case_count": 3,
+    "strategy_pass_count": 2,
+    "strategy_fail_count": 0,
+    "markets_with_cases": [
+      "H",
+      "US"
+    ],
+    "preliminary_only": true,
+    "user_facing_suggestion_allowed": false,
+    "next_stage": "V2.12-E H-US Suggestion Gate Refresh From Sandbox Evidence"
+  },
+  "source_cache_readiness": {
+    "source_target": "V2.12-C H-US Historical Cache Readiness Dry Run",
+    "source_run_id": "v2_12_c_20260712_acceptance",
+    "source_summary_sha256": "7e2744dfc4ab15865b21c8e8e838e586a685b301bed9d74e923f00adb8a1cfdd"
+  },
+  "candidates": [
+    {
+      "strategy_id": "strategy_h_cache_readiness_multifactor_probe",
+      "name": "H-share cache-readiness multifactor sandbox probe",
+      "market": "H",
+      "universe": "H-share API-backed normalized cache sample universe",
+      "factor_family": "multi_factor",
+      "entry_rule": "Use V2.12-C normalized H cache samples as preliminary sandbox inputs only.",
+      "exit_rule": "Exit at last available normalized cache sample row for readiness dry run.",
+      "exit_horizon_days": 5,
+      "risk_controls": [
+        "manual_execution_only",
+        "sample_size_warning",
+        "suggestion_gate_required"
+      ],
+      "pass_criteria": {
+        "min_sample_count": 1,
+        "min_win_rate": 0.0,
+        "min_average_return": -1.0,
+        "max_drawdown_floor": -1.0
+      },
+      "source_research_refs": [
+        "V2.12-C"
+      ],
+      "created_at": "2026-07-12T00:37:28+08:00"
+    },
+    {
+      "strategy_id": "strategy_us_cache_readiness_multifactor_probe",
+      "name": "U.S. cache-readiness multifactor sandbox probe",
+      "market": "US",
+      "universe": "U.S. API-backed normalized cache sample universe",
+      "factor_family": "multi_factor",
+      "entry_rule": "Use V2.12-C normalized US cache samples as preliminary sandbox inputs only.",
+      "exit_rule": "Exit at last available normalized cache sample row for readiness dry run.",
+      "exit_horizon_days": 5,
+      "risk_controls": [
+        "manual_execution_only",
+        "sample_size_warning",
+        "suggestion_gate_required"
+      ],
+      "pass_criteria": {
+        "min_sample_count": 1,
+        "min_win_rate": 0.0,
+        "min_average_return": -1.0,
+        "max_drawdown_floor": -1.0
+      },
+      "source_research_refs": [
+        "V2.12-C"
+      ],
+      "created_at": "2026-07-12T00:37:28+08:00"
+    }
+  ],
+  "historical_cases": [
+    {
+      "case_id": "h_00700_eodhd_sandbox_case",
+      "strategy_id": "strategy_h_cache_readiness_multifactor_probe",
+      "date": "2026-07-02",
+      "symbol": "00700.HK",
+      "market": "H",
+      "eligible": true,
+      "entry_price": 430.2,
+      "exit_price": 478.8,
+      "max_drawdown": -0.01115760111576014,
+      "risk_flags": [],
+      "factor_values": {
+        "actual_return": 0.11297071129707119,
+        "normalized_row_count": 5.0
+      },
+      "evidence_ref": "v2_12_c_normalized_cache:h_00700_eodhd_daily_bars:99a1513efba06494de61bcbefc4367358c2c3e1c1dd382786a32a2c7cb6469a5"
+    },
+    {
+      "case_id": "us_aapl_eodhd_sandbox_case",
+      "strategy_id": "strategy_us_cache_readiness_multifactor_probe",
+      "date": "2026-07-01",
+      "symbol": "AAPL.US",
+      "market": "US",
+      "eligible": true,
+      "entry_price": 294.38,
+      "exit_price": 313.39,
+      "max_drawdown": -0.01759630409674573,
+      "risk_flags": [],
+      "factor_values": {
+        "actual_return": 0.06457639785311499,
+        "normalized_row_count": 5.0
+      },
+      "evidence_ref": "v2_12_c_normalized_cache:us_aapl_eodhd_daily_bars:8aadce47722d091f3c7e849a5da07c15ebe5c89d5ae925ea37a574f4f977466c"
+    },
+    {
+      "case_id": "us_aapl_twelve_data_sandbox_case",
+      "strategy_id": "strategy_us_cache_readiness_multifactor_probe",
+      "date": "2026-07-06",
+      "symbol": "AAPL.US",
+      "market": "US",
+      "eligible": true,
+      "entry_price": 312.66,
+      "exit_price": 315.32001,
+      "max_drawdown": -0.01810273140152252,
+      "risk_flags": [],
+      "factor_values": {
+        "actual_return": 0.008507676069852234,
+        "normalized_row_count": 5.0
+      },
+      "evidence_ref": "v2_12_c_normalized_cache:us_aapl_twelve_data_daily_bars:08769d39f7cfa35c101005c13968267a324701fe629ba9f5dc11e35b504510e5"
+    }
+  ],
+  "results": [
+    {
+      "strategy_id": "strategy_h_cache_readiness_multifactor_probe",
+      "status": "PASS",
+      "metrics": {
+        "strategy_id": "strategy_h_cache_readiness_multifactor_probe",
+        "sample_count": 1,
+        "eligible_case_count": 1,
+        "win_rate": 1.0,
+        "average_return": 0.11297071129707119,
+        "max_drawdown": -0.01115760111576014,
+        "turnover_proxy": 1.0,
+        "exposure_count": 1,
+        "risk_flag_counts": {},
+        "failed_reasons": []
+      },
+      "safety": {
+        "simulation_only": true,
+        "no_real_trade": true,
+        "no_broker_api": true,
+        "no_webhook": true,
+        "no_strategy_auto_mutation": true,
+        "no_production_records_mutation": true
+      },
+      "notes": [
+        "Historical sandbox result only; user-facing suggestions still require recommendation and risk gates.",
+        "Evidence is based on supplied historical cases, not future prediction."
+      ]
+    },
+    {
+      "strategy_id": "strategy_us_cache_readiness_multifactor_probe",
+      "status": "PASS",
+      "metrics": {
+        "strategy_id": "strategy_us_cache_readiness_multifactor_probe",
+        "sample_count": 2,
+        "eligible_case_count": 2,
+        "win_rate": 1.0,
+        "average_return": 0.036542036961483615,
+        "max_drawdown": -0.01810273140152252,
+        "turnover_proxy": 1.0,
+        "exposure_count": 1,
+        "risk_flag_counts": {},
+        "failed_reasons": []
+      },
+      "safety": {
+        "simulation_only": true,
+        "no_real_trade": true,
+        "no_broker_api": true,
+        "no_webhook": true,
+        "no_strategy_auto_mutation": true,
+        "no_production_records_mutation": true
+      },
+      "notes": [
+        "Historical sandbox result only; user-facing suggestions still require recommendation and risk gates.",
+        "Evidence is based on supplied historical cases, not future prediction."
+      ]
+    }
+  ],
+  "checks": {
+    "source_cache_readiness_pass": true,
+    "source_acceptance_target_correct": true,
+    "h_case_present": true,
+    "us_case_present": true,
+    "h_candidate_present": true,
+    "us_candidate_present": true,
+    "sandbox_results_present": true,
+    "all_cases_have_cache_evidence": true,
+    "preliminary_sample_warning_visible": true,
+    "suggestion_gate_required": true,
+    "user_facing_suggestion_blocked": true,
+    "production_cache_not_mutated": true,
+    "production_provider_config_not_mutated": true,
+    "production_records_not_mutated": true,
+    "network_not_used_this_stage": true,
+    "no_secret_values_stored": true,
+    "request_urls_not_stored": true,
+    "raw_payloads_not_stored": true,
+    "no_real_trade": true,
+    "no_broker_api": true,
+    "no_trading_webhook": true,
+    "no_order_placement": true,
+    "dashboard_contract_unchanged": true,
+    "acceptance_target_correct": true,
+    "report_status_pass": true,
+    "source_cache_readiness_report_exists": true,
+    "sandbox_report_json_written": true,
+    "sandbox_report_md_written": true,
+    "cases_jsonl_written": true,
+    "candidates_json_written": true,
+    "source_cache_readiness_hash_only": true
+  },
+  "safety": {
+    "historical_sandbox_input_only": true,
+    "preliminary_sample_only": true,
+    "simulation_only": true,
+    "suggestion_gate_required": true,
+    "user_facing_suggestion_allowed": false,
+    "network_not_used_this_stage": true,
+    "production_cache_not_mutated": true,
+    "production_provider_config_not_mutated": true,
+    "production_records_not_mutated": true,
+    "no_secret_values_stored": true,
+    "no_request_url_storage": true,
+    "no_raw_payload_storage": true,
+    "no_real_trade": true,
+    "no_broker_api": true,
+    "no_trading_webhook": true,
+    "no_order_placement": true,
+    "dashboard_contract_unchanged": true
+  },
+  "run_dir": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v2_12_d_acceptance/v2_12_d_20260712_acceptance",
+  "sandbox_report_json": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v2_12_d_acceptance/v2_12_d_20260712_acceptance/h_us_historical_sandbox_candidate_refresh_report.json",
+  "sandbox_report_md": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v2_12_d_acceptance/v2_12_d_20260712_acceptance/h_us_historical_sandbox_candidate_refresh_report.md",
+  "cases_jsonl": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v2_12_d_acceptance/v2_12_d_20260712_acceptance/h_us_historical_sandbox_cases.jsonl",
+  "candidates_json": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v2_12_d_acceptance/v2_12_d_20260712_acceptance/h_us_sandbox_strategy_candidates.json",
+  "source_cache_readiness_report_json": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/v2_12_c_h_us_historical_cache_readiness_latest.json",
+  "hashes": {
+    "source_cache_readiness_report_json": "c4b8f90853757eda4af8881c9a7b138c9481a56e33b2912c920880cb8d49463f",
+    "sandbox_report_json": "26b83907ceab085c7db20c23a80d6edd578c7982f7f06ddaf7788a114428ca3e",
+    "sandbox_report_md": "a5f354cbbd71405ebdd99918a74d7701f30714ce55ec7ee74ac3845b9ee4c27f",
+    "cases_jsonl": "3d141718fd596ecb4489106e2948565a4f1969bf9e862dbfe1a86925490f3811",
+    "candidates_json": "38ef11190d896caadc8c5be4d489023b54991f3cb0d0bc25c3dbeefcdec4fec3"
+  }
+}

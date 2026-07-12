@@ -1,0 +1,151 @@
+{
+  "overall_status": "PASS",
+  "acceptance_target": "V2.13-D Finnhub Quote Research Context Bridge",
+  "run_id": "v2_13_d_20260712_acceptance",
+  "generated_at": "2026-07-12T01:51:51+08:00",
+  "command": "validate_v2_13_d_finnhub_quote_research_context.py --run-id v2_13_d_20260712_acceptance",
+  "network_used": false,
+  "production_records_written": false,
+  "production_cache_mutated": false,
+  "production_provider_config_mutated": false,
+  "dashboard_contract_changed": false,
+  "summary": {
+    "context_item_count": 1,
+    "source_case_ids": [
+      "us_aapl_finnhub_quote"
+    ],
+    "symbols": [
+      "AAPL.US"
+    ],
+    "markets": [
+      "US"
+    ],
+    "social_sentiment_status": "blocked_plan_or_rate_limit",
+    "next_stage": "V2.13-E Finnhub Quote Context To Sandbox Candidate Binding"
+  },
+  "context_items": [
+    {
+      "context_id": "finnhub_quote_context_us_aapl_finnhub_quote",
+      "provider": "finnhub",
+      "market": "US",
+      "canonical_symbol": "AAPL.US",
+      "provider_symbol": "AAPL",
+      "source_case_id": "us_aapl_finnhub_quote",
+      "source_route_id": "us_quote_finnhub_verified_free",
+      "source_quote_json": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v2_13_c_acceptance/v2_13_c_20260712_acceptance/normalized_quote_cache/US/quote/us_aapl_finnhub_quote.json",
+      "source_quote_json_sha256": "7e22125bfdee76b04dfe2da0b8c1e6e4140a161435fdd653da995c6a28c7b33b",
+      "source_artifact_ref_sha256": "3352839ec687afe6d405e44befc209ff0a75fc481274272bcf4dea96380066d0",
+      "evidence_role": "research_context_only",
+      "evidence_type": "price_data",
+      "evidence_status": "verified",
+      "price_snapshot_summary": {
+        "current_price_present": true,
+        "previous_close_present": true,
+        "percent_change": -0.2846,
+        "provider_timestamp_present": true
+      },
+      "allowed_uses": [
+        "research_context_inputs",
+        "quote_freshness_context",
+        "candidate_context_review"
+      ],
+      "forbidden_uses": [
+        "sentiment_inputs",
+        "suggestion_inputs_without_gate",
+        "real_trade",
+        "broker_api",
+        "trading_webhook",
+        "order_placement",
+        "position_size_generation"
+      ],
+      "requires_sandbox_before_suggestion": true,
+      "requires_suggestion_gate_before_user_facing": true,
+      "user_facing_suggestion_allowed": false,
+      "auto_applied": false,
+      "no_position_size": true,
+      "no_live_order_signal": true
+    }
+  ],
+  "artifact_checks": [
+    {
+      "case_id": "us_aapl_finnhub_quote",
+      "quote_json_exists": true,
+      "quote_json_hash_matches": true,
+      "expected_sha256": "7e22125bfdee76b04dfe2da0b8c1e6e4140a161435fdd653da995c6a28c7b33b",
+      "actual_sha256": "7e22125bfdee76b04dfe2da0b8c1e6e4140a161435fdd653da995c6a28c7b33b"
+    }
+  ],
+  "source_evidence": {
+    "source_target": "V2.13-C Finnhub Quote Cache Readiness Dry Run",
+    "source_run_id": "v2_13_c_20260712_acceptance",
+    "source_summary_sha256": "56a1cb1a5d81c47ad872a10925abb1e7087856cf52e918f3c9c1d653f9ec321b"
+  },
+  "checks": {
+    "source_report_pass": true,
+    "source_acceptance_target_correct": true,
+    "source_quote_cache_ready": true,
+    "source_social_sentiment_still_blocked": true,
+    "source_network_was_prior_stage_only": true,
+    "at_least_one_context_item": true,
+    "all_source_quote_artifacts_verified": true,
+    "research_context_only": true,
+    "requires_sandbox_before_suggestion": true,
+    "requires_suggestion_gate_before_user_facing": true,
+    "user_facing_suggestion_not_allowed": true,
+    "auto_apply_disabled": true,
+    "social_sentiment_not_enabled": true,
+    "suggestion_path_not_enabled": true,
+    "production_records_not_written": true,
+    "production_cache_not_mutated": true,
+    "production_provider_config_not_mutated": true,
+    "no_secret_values_stored": true,
+    "request_urls_not_stored": true,
+    "raw_payloads_not_stored": true,
+    "no_real_trade": true,
+    "no_broker_api": true,
+    "no_trading_webhook": true,
+    "no_order_placement": true,
+    "no_position_size": true,
+    "no_live_order_signal": true,
+    "dashboard_contract_unchanged": true,
+    "acceptance_target_correct": true,
+    "report_status_pass": true,
+    "source_report_exists": true,
+    "context_json_written": true,
+    "context_md_written": true,
+    "source_report_hash_only": true
+  },
+  "safety": {
+    "research_context_only": true,
+    "network_not_used": true,
+    "source_artifact_hash_verified": true,
+    "social_sentiment_not_enabled": true,
+    "suggestion_path_not_enabled": true,
+    "requires_sandbox_before_suggestion": true,
+    "requires_suggestion_gate_before_user_facing": true,
+    "user_facing_suggestion_allowed": false,
+    "auto_applied": false,
+    "no_secret_values_stored": true,
+    "no_request_url_storage": true,
+    "no_raw_payload_storage": true,
+    "production_records_not_written": true,
+    "production_cache_not_mutated": true,
+    "production_provider_config_not_mutated": true,
+    "no_real_trade": true,
+    "no_broker_api": true,
+    "no_trading_webhook": true,
+    "no_order_placement": true,
+    "no_position_size": true,
+    "no_live_order_signal": true,
+    "dashboard_contract_unchanged": true
+  },
+  "run_dir": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v2_13_d_acceptance/v2_13_d_20260712_acceptance",
+  "context_json": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v2_13_d_acceptance/v2_13_d_20260712_acceptance/finnhub_quote_research_context.json",
+  "context_md": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v2_13_d_acceptance/v2_13_d_20260712_acceptance/finnhub_quote_research_context.md",
+  "source_report_json": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/v2_13_c_finnhub_quote_cache_readiness_latest.json",
+  "hashes": {
+    "source_report_json": "29d8924b9ed53a7410da5d51e6319c47c98bfb68a2f27656ed5efe4d9fa02fff",
+    "context_json": "34559b0817e32398c8c9a0be11440d091b9260ed4fbd7240392dd961e8ea9fb1",
+    "context_md": "b62112f55f808f6ae5ecd94051c3f51b1eea6254793f83c9ccaff99bc9bb8f4b"
+  }
+}

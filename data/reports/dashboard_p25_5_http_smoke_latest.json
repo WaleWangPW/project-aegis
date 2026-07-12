@@ -1,0 +1,15 @@
+{
+  "project": "Project Aegis",
+  "type": "p25_5_http_smoke",
+  "generated_at": "2026-07-11T06:54:08.219525+00:00",
+  "overall_verdict": "PASS",
+  "checks": {
+    "base_http_exit": true,
+    "contract_meta": true,
+    "chinese_headings": true,
+    "collapsed_sections": true,
+    "no_error_path": true
+  },
+  "base_stdout": "[dashboard_http] PASS → /Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/dashboard_v2_production_http_smoke_latest.json\n",
+  "base_stderr": ""
+}

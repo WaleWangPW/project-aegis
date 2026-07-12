@@ -1,0 +1,14 @@
+# Per Master Spec §20.1 — market definitions. No secrets here.
+markets:
+  A:
+    enabled: true
+    currency: CNY
+    timezone: Asia/Shanghai
+  H:
+    enabled: true
+    currency: HKD
+    timezone: Asia/Hong_Kong
+  US:
+    enabled: true
+    currency: USD
+    timezone: America/New_York

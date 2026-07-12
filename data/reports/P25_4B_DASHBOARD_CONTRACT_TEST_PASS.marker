@@ -1,0 +1,11 @@
+generated_at=2026-07-11T06:54:03.158538+00:00
+command=scripts/test_dashboard_contract_v2.py
+report=/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/dashboard_contract_v2_tests_latest.json
+exit_code=0
+contract=2.0
+index_sha256=e777047e93fc13705df2e6c0dd58728c12ed97ee3f338b512d26ae84b1897a41
+contract_validator_sha256=c8870ddfd491ea8b37b00c3f821d8906aaa96da2ab3d3cebd0df0bc2a2918611
+contract_test_report_sha256=2e5e6f7f4eb882269213e6e3de553416f92f99fce75b9e181acdd82321b9f6e2
+evidence_gate_report_sha256=b56be4a10aa1af196f45e523c01637f49b7138b17fe1fc93626215632f46805e
+test_count=19
+failed=0

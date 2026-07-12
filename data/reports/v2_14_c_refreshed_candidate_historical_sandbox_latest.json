@@ -1,0 +1,475 @@
+{
+  "overall_status": "PASS",
+  "acceptance_target": "V2.14-C Refreshed Candidate Historical Sandbox",
+  "run_id": "v2_14_c_20260712_acceptance",
+  "generated_at": "2026-07-12T04:08:18+08:00",
+  "command": "validate_v2_14_c_refreshed_candidate_historical_sandbox.py --run-id v2_14_c_20260712_acceptance",
+  "network_used": false,
+  "production_records_written": false,
+  "production_cache_mutated": false,
+  "production_provider_config_mutated": false,
+  "dashboard_contract_changed": false,
+  "summary": {
+    "refreshed_candidate_count": 6,
+    "covered_candidate_count": 3,
+    "missing_coverage_count": 3,
+    "historical_case_count": 3,
+    "strategy_candidate_count": 2,
+    "strategy_pass_count": 1,
+    "strategy_fail_count": 1,
+    "sandbox_passed_strategies": [
+      "strategy_h_low_vol_dividend"
+    ],
+    "sandbox_failed_strategies": [
+      "strategy_a_low_vol_dividend_defensive"
+    ],
+    "user_facing_suggestion_allowed": false,
+    "next_stage": "V2.14-D Refreshed Candidate Suggestion Gate"
+  },
+  "covered_candidates": [
+    {
+      "candidate_id": "v2_14_b_a_600519_sh",
+      "symbol": "600519.SH",
+      "market": "A",
+      "strategy_id": "strategy_a_low_vol_dividend_defensive",
+      "source_route_id": "tushare_a_share_candidate_refresh",
+      "provider": "tushare",
+      "refresh_status": "refreshed_pending_historical_sandbox",
+      "requires_historical_sandbox": true,
+      "requires_suggestion_gate": true,
+      "user_facing_suggestion_allowed": false,
+      "evidence_refs": [
+        "v2_14_a_refresh_plan:v2_14_a_20260712_acceptance:1a0dc9d636f4857ce00cd7fdcc18b6869cf800a5923a65a7af1c8f6b981f6549"
+      ],
+      "notes": [
+        "Candidate summary only; not a recommendation.",
+        "Manual external execution boundary remains active."
+      ],
+      "coverage_status": "historical_case_available"
+    },
+    {
+      "candidate_id": "v2_14_b_a_600036_sh",
+      "symbol": "600036.SH",
+      "market": "A",
+      "strategy_id": "strategy_a_low_vol_dividend_defensive",
+      "source_route_id": "tushare_a_share_candidate_refresh",
+      "provider": "tushare",
+      "refresh_status": "refreshed_pending_historical_sandbox",
+      "requires_historical_sandbox": true,
+      "requires_suggestion_gate": true,
+      "user_facing_suggestion_allowed": false,
+      "evidence_refs": [
+        "v2_14_a_refresh_plan:v2_14_a_20260712_acceptance:1a0dc9d636f4857ce00cd7fdcc18b6869cf800a5923a65a7af1c8f6b981f6549"
+      ],
+      "notes": [
+        "Candidate summary only; not a recommendation.",
+        "Manual external execution boundary remains active."
+      ],
+      "coverage_status": "historical_case_available"
+    },
+    {
+      "candidate_id": "v2_14_b_h_00700_hk",
+      "symbol": "00700.HK",
+      "market": "H",
+      "strategy_id": "strategy_h_low_vol_dividend",
+      "source_route_id": "h_share_h_us_provider_candidate_refresh",
+      "provider": "h_us_provider",
+      "refresh_status": "refreshed_pending_historical_sandbox",
+      "requires_historical_sandbox": true,
+      "requires_suggestion_gate": true,
+      "user_facing_suggestion_allowed": false,
+      "evidence_refs": [
+        "v2_14_a_refresh_plan:v2_14_a_20260712_acceptance:1a0dc9d636f4857ce00cd7fdcc18b6869cf800a5923a65a7af1c8f6b981f6549"
+      ],
+      "notes": [
+        "Candidate summary only; not a recommendation.",
+        "Manual external execution boundary remains active."
+      ],
+      "coverage_status": "historical_case_available"
+    }
+  ],
+  "missing_coverage_candidates": [
+    {
+      "candidate_id": "v2_14_b_a_601398_sh",
+      "symbol": "601398.SH",
+      "market": "A",
+      "strategy_id": "strategy_a_low_vol_dividend_defensive",
+      "source_route_id": "tushare_a_share_candidate_refresh",
+      "provider": "tushare",
+      "refresh_status": "refreshed_pending_historical_sandbox",
+      "requires_historical_sandbox": true,
+      "requires_suggestion_gate": true,
+      "user_facing_suggestion_allowed": false,
+      "evidence_refs": [
+        "v2_14_a_refresh_plan:v2_14_a_20260712_acceptance:1a0dc9d636f4857ce00cd7fdcc18b6869cf800a5923a65a7af1c8f6b981f6549"
+      ],
+      "notes": [
+        "Candidate summary only; not a recommendation.",
+        "Manual external execution boundary remains active."
+      ],
+      "coverage_status": "missing_historical_case",
+      "missing_reason": "no_source_case_for_symbol"
+    },
+    {
+      "candidate_id": "v2_14_b_h_00005_hk",
+      "symbol": "00005.HK",
+      "market": "H",
+      "strategy_id": "strategy_h_low_vol_dividend",
+      "source_route_id": "h_share_h_us_provider_candidate_refresh",
+      "provider": "h_us_provider",
+      "refresh_status": "refreshed_pending_historical_sandbox",
+      "requires_historical_sandbox": true,
+      "requires_suggestion_gate": true,
+      "user_facing_suggestion_allowed": false,
+      "evidence_refs": [
+        "v2_14_a_refresh_plan:v2_14_a_20260712_acceptance:1a0dc9d636f4857ce00cd7fdcc18b6869cf800a5923a65a7af1c8f6b981f6549"
+      ],
+      "notes": [
+        "Candidate summary only; not a recommendation.",
+        "Manual external execution boundary remains active."
+      ],
+      "coverage_status": "missing_historical_case",
+      "missing_reason": "no_source_case_for_symbol"
+    },
+    {
+      "candidate_id": "v2_14_b_h_00941_hk",
+      "symbol": "00941.HK",
+      "market": "H",
+      "strategy_id": "strategy_h_low_vol_dividend",
+      "source_route_id": "h_share_h_us_provider_candidate_refresh",
+      "provider": "h_us_provider",
+      "refresh_status": "refreshed_pending_historical_sandbox",
+      "requires_historical_sandbox": true,
+      "requires_suggestion_gate": true,
+      "user_facing_suggestion_allowed": false,
+      "evidence_refs": [
+        "v2_14_a_refresh_plan:v2_14_a_20260712_acceptance:1a0dc9d636f4857ce00cd7fdcc18b6869cf800a5923a65a7af1c8f6b981f6549"
+      ],
+      "notes": [
+        "Candidate summary only; not a recommendation.",
+        "Manual external execution boundary remains active."
+      ],
+      "coverage_status": "missing_historical_case",
+      "missing_reason": "no_source_case_for_symbol"
+    }
+  ],
+  "strategy_candidates": [
+    {
+      "strategy_id": "strategy_a_low_vol_dividend_defensive",
+      "name": "V2.14-C A-share refreshed candidate sandbox",
+      "market": "A",
+      "universe": "A-share refreshed candidate pool from V2.14-B",
+      "factor_family": "risk_overlay",
+      "entry_rule": "Use refreshed A-share candidate only if historical evidence is available.",
+      "exit_rule": "Historical sandbox exit based on source evidence horizon.",
+      "exit_horizon_days": 20,
+      "risk_controls": [
+        "manual_execution_only",
+        "historical_evidence_required",
+        "suggestion_gate_required"
+      ],
+      "pass_criteria": {
+        "min_sample_count": 2,
+        "min_win_rate": 0.5,
+        "min_average_return": 0.0,
+        "max_drawdown_floor": -0.1
+      },
+      "source_research_refs": [
+        "V2.14-B",
+        "V2.11-C"
+      ],
+      "created_at": "2026-07-12T04:08:18+08:00"
+    },
+    {
+      "strategy_id": "strategy_h_low_vol_dividend",
+      "name": "V2.14-C H-share refreshed candidate sandbox",
+      "market": "H",
+      "universe": "H-share refreshed candidate pool from V2.14-B",
+      "factor_family": "dividend",
+      "entry_rule": "Use refreshed H-share candidate only if H/US provider historical cache exists.",
+      "exit_rule": "Historical sandbox exit at last available normalized cache row.",
+      "exit_horizon_days": 5,
+      "risk_controls": [
+        "manual_execution_only",
+        "small_sample_warning",
+        "suggestion_gate_required"
+      ],
+      "pass_criteria": {
+        "min_sample_count": 1,
+        "min_win_rate": 0.0,
+        "min_average_return": -1.0,
+        "max_drawdown_floor": -1.0
+      },
+      "source_research_refs": [
+        "V2.14-B",
+        "V2.12-C"
+      ],
+      "created_at": "2026-07-12T04:08:18+08:00"
+    }
+  ],
+  "historical_cases": [
+    {
+      "case_id": "strategy_a_low_vol_dividend_defensive_tushare_live_case_004",
+      "strategy_id": "strategy_a_low_vol_dividend_defensive",
+      "date": "20231204",
+      "symbol": "600519.SH",
+      "market": "A",
+      "eligible": true,
+      "entry_price": 1750.71,
+      "exit_price": 1685.01,
+      "max_drawdown": -0.06609318505063666,
+      "risk_flags": [],
+      "factor_values": {
+        "actual_return": -0.03752763164658912,
+        "exit_horizon_days": 20.0,
+        "entry_close": 1750.71,
+        "exit_close": 1685.01,
+        "window_low": 1635.0
+      },
+      "evidence_ref": "tushare_cache:600519.SH:20231204:20240102"
+    },
+    {
+      "case_id": "strategy_a_value_quality_multifactor_tushare_live_case_001",
+      "strategy_id": "strategy_a_value_quality_multifactor",
+      "date": "20230901",
+      "symbol": "600036.SH",
+      "market": "A",
+      "eligible": true,
+      "entry_price": 32.27,
+      "exit_price": 32.58,
+      "max_drawdown": -0.012085528354508934,
+      "risk_flags": [],
+      "factor_values": {
+        "actual_return": 0.009606445615122253,
+        "exit_horizon_days": 20.0,
+        "entry_close": 32.27,
+        "exit_close": 32.58,
+        "window_low": 31.88
+      },
+      "evidence_ref": "tushare_cache:600036.SH:20230901:20231009"
+    },
+    {
+      "case_id": "v2_14_c_h_00700_hk_case",
+      "strategy_id": "strategy_h_low_vol_dividend",
+      "date": "2026-07-02",
+      "symbol": "00700.HK",
+      "market": "H",
+      "eligible": true,
+      "entry_price": 430.2,
+      "exit_price": 478.8,
+      "max_drawdown": -0.01115760111576014,
+      "risk_flags": [],
+      "factor_values": {
+        "actual_return": 0.11297071129707119,
+        "normalized_row_count": 5.0
+      },
+      "evidence_ref": "v2_12_c_normalized_cache:h_00700_eodhd_daily_bars:99a1513efba06494de61bcbefc4367358c2c3e1c1dd382786a32a2c7cb6469a5"
+    }
+  ],
+  "results": [
+    {
+      "strategy_id": "strategy_a_low_vol_dividend_defensive",
+      "status": "FAIL",
+      "metrics": {
+        "strategy_id": "strategy_a_low_vol_dividend_defensive",
+        "sample_count": 1,
+        "eligible_case_count": 1,
+        "win_rate": 0.0,
+        "average_return": -0.03752763164658912,
+        "max_drawdown": -0.06609318505063666,
+        "turnover_proxy": 1.0,
+        "exposure_count": 1,
+        "risk_flag_counts": {},
+        "failed_reasons": [
+          "sample_count_below_minimum",
+          "win_rate_below_threshold",
+          "average_return_below_threshold"
+        ]
+      },
+      "safety": {
+        "simulation_only": true,
+        "no_real_trade": true,
+        "no_broker_api": true,
+        "no_webhook": true,
+        "no_strategy_auto_mutation": true,
+        "no_production_records_mutation": true
+      },
+      "notes": [
+        "Historical sandbox result only; user-facing suggestions still require recommendation and risk gates.",
+        "Evidence is based on supplied historical cases, not future prediction."
+      ]
+    },
+    {
+      "strategy_id": "strategy_h_low_vol_dividend",
+      "status": "PASS",
+      "metrics": {
+        "strategy_id": "strategy_h_low_vol_dividend",
+        "sample_count": 1,
+        "eligible_case_count": 1,
+        "win_rate": 1.0,
+        "average_return": 0.11297071129707119,
+        "max_drawdown": -0.01115760111576014,
+        "turnover_proxy": 1.0,
+        "exposure_count": 1,
+        "risk_flag_counts": {},
+        "failed_reasons": []
+      },
+      "safety": {
+        "simulation_only": true,
+        "no_real_trade": true,
+        "no_broker_api": true,
+        "no_webhook": true,
+        "no_strategy_auto_mutation": true,
+        "no_production_records_mutation": true
+      },
+      "notes": [
+        "Historical sandbox result only; user-facing suggestions still require recommendation and risk gates.",
+        "Evidence is based on supplied historical cases, not future prediction."
+      ]
+    }
+  ],
+  "source_evidence": {
+    "refresh_target": "V2.14-B Candidate Pool Live Refresh From Approved Routes",
+    "refresh_run_id": "v2_14_b_20260712_acceptance",
+    "refresh_summary_sha256": "4810f53d0b1663ac0aa9db98c2f7bd866aea70cf03645dcad032ea60dbcd5c3e",
+    "a_source_target": "V2.11-C Tushare A-Share Historical Sandbox Live Data Refresh",
+    "h_source_target": "V2.12-C H-US Historical Cache Readiness Dry Run"
+  },
+  "checks": {
+    "source_refresh_pass": true,
+    "source_refresh_target_correct": true,
+    "a_source_target_correct": true,
+    "h_source_target_correct": true,
+    "refreshed_candidates_present": true,
+    "covered_candidates_present": true,
+    "missing_coverage_visible": true,
+    "historical_cases_present": true,
+    "sandbox_results_present": true,
+    "blocked_symbols_not_reused": true,
+    "all_cases_have_evidence_ref": true,
+    "suggestion_gate_required": true,
+    "user_facing_suggestion_blocked": true,
+    "network_not_used_this_stage": true,
+    "production_records_not_written": true,
+    "production_cache_not_mutated": true,
+    "production_provider_config_not_mutated": true,
+    "no_secret_values_stored": true,
+    "request_urls_not_stored": true,
+    "raw_payloads_not_stored": true,
+    "no_real_trade": true,
+    "no_broker_api": true,
+    "no_webhook": true,
+    "no_order_placement": true,
+    "no_position_size": true,
+    "no_live_order_signal": true,
+    "dashboard_contract_unchanged": true,
+    "acceptance_target_correct": true,
+    "sandbox_status_pass": true,
+    "source_v2_14_b_report_exists": true,
+    "source_v2_14_b_marker_exists": true,
+    "source_v2_11_c_report_exists": true,
+    "source_v2_11_c_marker_exists": true,
+    "source_v2_12_c_report_exists": true,
+    "source_v2_12_c_marker_exists": true,
+    "sandbox_json_written": true,
+    "sandbox_md_written": true,
+    "cases_jsonl_written": true,
+    "production_record_files_unchanged": true,
+    "source_hashes_recorded": true
+  },
+  "safety": {
+    "historical_sandbox_only": true,
+    "not_user_facing_suggestion": true,
+    "suggestion_gate_required": true,
+    "coverage_gap_visible": true,
+    "network_not_used_this_stage": true,
+    "production_records_not_written": true,
+    "production_cache_not_mutated": true,
+    "production_provider_config_not_mutated": true,
+    "no_secret_values_stored": true,
+    "request_urls_not_stored": true,
+    "raw_payloads_not_stored": true,
+    "no_real_trade": true,
+    "no_broker_api": true,
+    "no_webhook": true,
+    "no_order_placement": true,
+    "no_position_size": true,
+    "no_live_order_signal": true,
+    "dashboard_contract_unchanged": true
+  },
+  "run_dir": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v2_14_c_acceptance/v2_14_c_20260712_acceptance",
+  "sandbox_json": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v2_14_c_acceptance/v2_14_c_20260712_acceptance/refreshed_candidate_historical_sandbox.json",
+  "sandbox_md": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v2_14_c_acceptance/v2_14_c_20260712_acceptance/refreshed_candidate_historical_sandbox.md",
+  "cases_jsonl": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v2_14_c_acceptance/v2_14_c_20260712_acceptance/refreshed_candidate_historical_cases.jsonl",
+  "source_v2_14_b_report_json": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/v2_14_b_candidate_pool_live_refresh_latest.json",
+  "source_v2_14_b_pass_marker": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/V2_14_B_CANDIDATE_POOL_LIVE_REFRESH_PASS.marker",
+  "source_v2_11_c_report_json": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/v2_11_c_tushare_a_share_historical_sandbox_live_data_refresh_latest.json",
+  "source_v2_11_c_pass_marker": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/V2_11_C_TUSHARE_A_SHARE_HISTORICAL_SANDBOX_LIVE_DATA_REFRESH_PASS.marker",
+  "source_v2_12_c_report_json": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/v2_12_c_h_us_historical_cache_readiness_latest.json",
+  "source_v2_12_c_pass_marker": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/V2_12_C_H_US_HISTORICAL_CACHE_READINESS_PASS.marker",
+  "production_record_files_before": {
+    "recommendations_jsonl": {
+      "exists": true,
+      "size": 12284,
+      "sha256": "05b2e56c9b547cbe3ce4cb71b7cb776185e23ef2cc3bc9a46a918bce0cfb65dc"
+    },
+    "paper_trades_jsonl": {
+      "exists": false,
+      "size": null,
+      "sha256": null
+    },
+    "reviews_jsonl": {
+      "exists": false,
+      "size": null,
+      "sha256": null
+    },
+    "memory_jsonl": {
+      "exists": false,
+      "size": null,
+      "sha256": null
+    },
+    "investment_memory_jsonl": {
+      "exists": false,
+      "size": null,
+      "sha256": null
+    }
+  },
+  "production_record_files_after": {
+    "recommendations_jsonl": {
+      "exists": true,
+      "size": 12284,
+      "sha256": "05b2e56c9b547cbe3ce4cb71b7cb776185e23ef2cc3bc9a46a918bce0cfb65dc"
+    },
+    "paper_trades_jsonl": {
+      "exists": false,
+      "size": null,
+      "sha256": null
+    },
+    "reviews_jsonl": {
+      "exists": false,
+      "size": null,
+      "sha256": null
+    },
+    "memory_jsonl": {
+      "exists": false,
+      "size": null,
+      "sha256": null
+    },
+    "investment_memory_jsonl": {
+      "exists": false,
+      "size": null,
+      "sha256": null
+    }
+  },
+  "hashes": {
+    "source_v2_14_b_report_json": "98bd392ce642b1fa4807fbd0edcf2472770c004970e34ee0c1bc29cea0202fb2",
+    "source_v2_14_b_pass_marker": "c6c5ef7ae909bd06588c2843f40fd7690c8efbbf9e979980be69490ca531b8c3",
+    "source_v2_11_c_report_json": "a48afb03d1993c7a5b696ad11510e35c82ebd6f747f272f5dc3690d6c27fa6f7",
+    "source_v2_11_c_pass_marker": "f3928ae77fda518c4e07cfdb9a832133b51ae8c3739dc7207a3cd68b7b1aebe1",
+    "source_v2_12_c_report_json": "c4b8f90853757eda4af8881c9a7b138c9481a56e33b2912c920880cb8d49463f",
+    "source_v2_12_c_pass_marker": "49f38096413be59b86e472685de7f6623ef3fdc19154e5eeb87676e271ee2da1",
+    "sandbox_json": "e35842633e527fff2c75a0f3991593fc679c603a00800c94156cf2981cd871ff",
+    "sandbox_md": "a7412a4a2e242e53f2f19669693510f350518033c4dd6ed92b05cbd792ff55f0",
+    "cases_jsonl": "17b0cd931e8e4cb3ebf1bd9a694052d20e08ffcd168318f69f7cb1b2f11d0e56"
+  }
+}

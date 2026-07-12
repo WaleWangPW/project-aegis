@@ -1,0 +1,29 @@
+{
+  "project": "Project Aegis",
+  "type": "p23_2_historical_market_cache_manifest",
+  "generated_at": "2026-07-10T13:13:42.242001+00:00",
+  "start_date": "20230901",
+  "end_date": "20240731",
+  "trade_calendar": {
+    "path": "data/cache/p23_2_historical_market/trade_calendar.json",
+    "sha256": "f34de1ab81b9b11999c0dd0f98a6d851df2aa3e15e63e5ea2bf5fd500d5f13cd",
+    "open_day_count": 220
+  },
+  "stock_basic": {
+    "path": "data/cache/p23_2_historical_market/stock_basic_all.json",
+    "sha256": "0bbc2d38cc4cde25b19d947ab5bd85c1558835da35985f73e62ab16449e99ae8",
+    "row_count": 5865
+  },
+  "daily_cache": {
+    "directory": "data/cache/p23_2_historical_market/daily_by_trade_date",
+    "expected_count": 220,
+    "actual_count": 220,
+    "fetched_this_run": 37,
+    "reused_this_run": 183,
+    "failed_dates": []
+  },
+  "dry_run": true,
+  "sent": false,
+  "trading_called": false,
+  "overall_verdict": "PASS"
+}

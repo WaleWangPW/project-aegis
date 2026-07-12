@@ -1,0 +1,122 @@
+{
+  "overall_status": "PASS",
+  "generated_at": "2026-07-11T17:33:45.312543+08:00",
+  "run_id": "v2_1_a_20260711_acceptance",
+  "command": "validate_v2_1_a_historical_strategy_sandbox.py --run-id v2_1_a_20260711_acceptance",
+  "acceptance_target": "V2.1-A Historical Strategy Sandbox",
+  "isolated": true,
+  "network_used": false,
+  "production_records_written": false,
+  "dashboard_contract_changed": false,
+  "historical_cache_file_count": 222,
+  "summary": {
+    "candidate_count": 2,
+    "historical_case_count": 8,
+    "pass_count": 1,
+    "fail_count": 1,
+    "passing_strategies": [
+      "low_volatility_dividend_a"
+    ],
+    "failing_strategies": [
+      "raw_momentum_us"
+    ]
+  },
+  "results": [
+    {
+      "strategy_id": "low_volatility_dividend_a",
+      "status": "PASS",
+      "metrics": {
+        "strategy_id": "low_volatility_dividend_a",
+        "sample_count": 4,
+        "eligible_case_count": 4,
+        "win_rate": 0.75,
+        "average_return": 0.021250000000000047,
+        "max_drawdown": -0.047,
+        "turnover_proxy": 1.0,
+        "exposure_count": 4,
+        "risk_flag_counts": {
+          "valuation_pressure": 1
+        },
+        "failed_reasons": []
+      },
+      "safety": {
+        "simulation_only": true,
+        "no_real_trade": true,
+        "no_broker_api": true,
+        "no_webhook": true,
+        "no_strategy_auto_mutation": true,
+        "no_production_records_mutation": true
+      },
+      "notes": [
+        "Historical sandbox result only; user-facing suggestions still require recommendation and risk gates.",
+        "Evidence is based on supplied historical cases, not future prediction."
+      ]
+    },
+    {
+      "strategy_id": "raw_momentum_us",
+      "status": "FAIL",
+      "metrics": {
+        "strategy_id": "raw_momentum_us",
+        "sample_count": 4,
+        "eligible_case_count": 4,
+        "win_rate": 0.25,
+        "average_return": -0.026858199420118925,
+        "max_drawdown": -0.13,
+        "turnover_proxy": 1.0,
+        "exposure_count": 4,
+        "risk_flag_counts": {
+          "drawdown_breach": 3,
+          "crowding_risk": 1
+        },
+        "failed_reasons": [
+          "win_rate_below_threshold",
+          "average_return_below_threshold",
+          "max_drawdown_breached"
+        ]
+      },
+      "safety": {
+        "simulation_only": true,
+        "no_real_trade": true,
+        "no_broker_api": true,
+        "no_webhook": true,
+        "no_strategy_auto_mutation": true,
+        "no_production_records_mutation": true
+      },
+      "notes": [
+        "Historical sandbox result only; user-facing suggestions still require recommendation and risk gates.",
+        "Evidence is based on supplied historical cases, not future prediction."
+      ]
+    }
+  ],
+  "safety": {
+    "simulation_only": true,
+    "no_real_trade": true,
+    "no_broker_api": true,
+    "no_webhook": true,
+    "no_secret_storage": true,
+    "no_strategy_auto_mutation": true,
+    "no_production_records_mutation": true,
+    "dashboard_contract_unchanged": true,
+    "suggestion_gate_still_required": true
+  },
+  "run_dir": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v2_1_a_acceptance/v2_1_a_20260711_acceptance",
+  "candidates_json": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v2_1_a_acceptance/v2_1_a_20260711_acceptance/strategy_candidates.json",
+  "historical_cases_jsonl": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v2_1_a_acceptance/v2_1_a_20260711_acceptance/historical_strategy_cases.jsonl",
+  "checks": {
+    "sandbox_report_passed": true,
+    "at_least_one_strategy_passed": true,
+    "at_least_one_strategy_failed": true,
+    "metrics_present": true,
+    "risk_reasons_present_for_failed_strategy": true,
+    "historical_cache_detected": true,
+    "simulation_only": true,
+    "no_real_trade_or_broker": true,
+    "no_strategy_auto_mutation": true,
+    "no_production_records_mutation": true,
+    "dashboard_contract_unchanged": true
+  },
+  "hashes": {
+    "candidates_json": "bfce1ae6bd2d1c314492ace6eb66995f6cda7841ea19c5fde4c07ad574884be1",
+    "historical_cases_jsonl": "b2cc113d257e4ace89a00807b14fa95d318567bb2ec79af8547c2449ba7cb1bc"
+  }
+}

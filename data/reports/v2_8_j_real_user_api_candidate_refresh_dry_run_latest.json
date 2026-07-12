@@ -1,0 +1,73 @@
+{
+  "overall_status": "PASS",
+  "acceptance_target": "V2.8-J Real User API Candidate Refresh Dry Run After Local Metadata",
+  "generated_at": "2026-07-11T20:51:17.560048+08:00",
+  "run_id": "v2_8_j_20260711_acceptance",
+  "command": "validate_v2_8_j_real_user_api_candidate_refresh_dry_run.py --run-id v2_8_j_20260711_acceptance",
+  "network_used": false,
+  "production_records_written": false,
+  "dashboard_contract_changed": false,
+  "fixture_report_json": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v2_8_j_acceptance/v2_8_j_20260711_acceptance/fixture_candidate_refresh_dry_run_report.json",
+  "real_user_report_json": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v2_8_j_acceptance/v2_8_j_20260711_acceptance/real_user_candidate_refresh_dry_run_report.json",
+  "fixture_dry_run_status": "completed",
+  "real_user_dry_run_status": "blocked_missing_metadata",
+  "real_user_can_run_live_dry_run": false,
+  "real_user_blocked_by": [
+    "missing_connector_metadata"
+  ],
+  "real_user_missing_env_vars": [],
+  "checks": {
+    "fixture_dry_run_completed": true,
+    "fixture_a_h_us_bound": true,
+    "real_user_status_recorded": true,
+    "real_user_not_claimed_completed_when_blocked": true,
+    "secret_value_not_serialized": true,
+    "query_values_not_stored": true,
+    "raw_bytes_not_stored": true,
+    "request_headers_not_stored": true,
+    "env_var_names_only": true,
+    "no_real_trade_or_broker": true,
+    "dashboard_contract_unchanged": true,
+    "production_records_not_written": true
+  },
+  "summary": {
+    "fixture_bound_markets": [
+      "A",
+      "H",
+      "US"
+    ],
+    "fixture_bound_count": 3,
+    "fixture_blocked_count": 3,
+    "real_user_status": "blocked_missing_metadata",
+    "next_target": "V2.8-K API-Backed Candidate Usable Brief After Real Metadata"
+  },
+  "safety": {
+    "activation_gate_before_fetch": true,
+    "summary_hash_only": true,
+    "raw_payload_parsed_in_memory_only": true,
+    "raw_bytes_not_stored": true,
+    "request_headers_not_stored": true,
+    "env_values_not_stored": true,
+    "env_var_names_only": true,
+    "query_values_not_stored": true,
+    "requires_historical_sandbox": true,
+    "requires_suggestion_gate": true,
+    "simulation_only": true,
+    "manual_external_execution_only": true,
+    "no_real_trade": true,
+    "no_broker_api": true,
+    "no_trading_webhook": true,
+    "no_order_placement": true,
+    "dashboard_contract_unchanged": true,
+    "no_production_records_mutation": true,
+    "blocked_real_user_run_does_not_fetch": true
+  },
+  "hashes": {
+    "fixture_report_json": "8e86d910ce271ee91bf3f5c29c5e407c334ba84d54c0c844e3f0c9366e289033",
+    "real_user_report_json": "01caa8aca1563e7a3abdeb23252cfdc47c4a265f1f1c2d1d45ca76a25bab70e6",
+    "fixture_api_fetch_item_json": "04890768f503d438069f795841db019e88d480895d574fdc4823def9f44cba8d",
+    "fixture_candidate_registry_json": "11993ca32e6759d9729ac53bdc073f78cd73fbbae39b068268bceb39439a4784",
+    "fixture_candidate_bindings_json": "c4a16623f9cb7aa29c5cfc7979a61c014a7b81d743e2877e03704171860ef841",
+    "source_suggestion_drafts_json": "7e2d17ea55b81812896b49d7c660759c524bcb1a804af55dede618a29f9fc481"
+  }
+}

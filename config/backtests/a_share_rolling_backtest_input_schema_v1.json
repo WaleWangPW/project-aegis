@@ -1,0 +1,20 @@
+{
+  "plan_id": "计划ID",
+  "strategy_id": "策略ID",
+  "market": "市场标识",
+  "start_date": "开始日期",
+  "end_date": "结束日期",
+  "rebalance_frequency": "调仓频率",
+  "holding_period_days": "持有期天数",
+  "top_n": "选择的股票数量",
+  "benchmark": "基准",
+  "transaction_cost_bps": "交易成本（BP）",
+  "slippage_bps": "滑点（BP）",
+  "max_positions": "最大仓位数",
+  "allow_short": "是否允许做空",
+  "allow_real_trade": "是否允许实盘交易",
+  "point_in_time_required": "是否需要时点数据",
+  "signal_snapshot_dir": "信号快照目录",
+  "price_data_source": "价格数据源",
+  "benchmark_data_source": "基准数据源"
+}

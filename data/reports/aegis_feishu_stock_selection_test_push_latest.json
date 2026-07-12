@@ -1,0 +1,20 @@
+{
+  "type": "aegis_feishu_stock_selection_test_push",
+  "status": "SENT",
+  "sent_at": "2026-07-12T10:47:18.344013+08:00",
+  "channel": "existing_local_ai_news_feishu_push_script",
+  "command_exit_code": 0,
+  "message_temp_file_deleted_by_sender": true,
+  "source_files": {
+    "stock_selection_workbench_latest.json": "8680bbde58e96dbbd6e2ec871fb055caa7444d82ad86dcde07def6d56b72e09b",
+    "stock_selection_news_digest_latest.md": "789ddbf97d3800da672caa42e1d0699f3825e50eaf8f3573752d6f0397ef7f70"
+  },
+  "safety": {
+    "simulation_only": true,
+    "no_broker_api": true,
+    "no_order_placement": true,
+    "no_trading_webhook": true,
+    "feishu_message_only": true,
+    "no_secret_values_recorded": true
+  }
+}

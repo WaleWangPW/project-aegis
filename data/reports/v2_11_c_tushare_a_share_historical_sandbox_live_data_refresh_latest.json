@@ -1,0 +1,417 @@
+{
+  "overall_status": "PASS",
+  "acceptance_target": "V2.11-C Tushare A-Share Historical Sandbox Live Data Refresh",
+  "run_id": "v2_11_c_20260711_acceptance",
+  "generated_at": "2026-07-11T23:12:45+08:00",
+  "command": "validate_v2_11_c_tushare_a_share_historical_sandbox_live_data_refresh.py --run-id v2_11_c_20260711_acceptance",
+  "network_used_this_stage": false,
+  "tushare_probe_network_available": true,
+  "production_records_written": false,
+  "dashboard_contract_changed": false,
+  "live_data_source": {
+    "provider": "tushare",
+    "market": "A",
+    "source_mode": "verified_tushare_cache_plus_v2_11_b_probe",
+    "token_present_bool_only": true,
+    "passed_capabilities": [
+      "A_daily_bars",
+      "A_index_bars",
+      "A_stock_basic",
+      "A_trading_calendar"
+    ],
+    "pass_count": 4,
+    "unknown_count": 2
+  },
+  "historical_cache": {
+    "manifest_type": "p23_2_historical_market_cache_manifest",
+    "manifest_generated_at": "2026-07-10T13:13:42.242001+00:00",
+    "start_date": "20230901",
+    "end_date": "20240731",
+    "daily_directory": "data/cache/p23_2_historical_market/daily_by_trade_date",
+    "expected_daily_count": 220,
+    "actual_daily_count": 220,
+    "failed_dates": []
+  },
+  "summary": {
+    "hypothesis_count": 2,
+    "candidate_count": 2,
+    "historical_case_count": 8,
+    "strategy_pass_count": 0,
+    "strategy_fail_count": 2,
+    "passing_strategies": [],
+    "failing_strategies": [
+      "strategy_a_low_vol_dividend_defensive",
+      "strategy_a_value_quality_multifactor"
+    ],
+    "historical_case_symbols": [
+      "000001.SZ",
+      "000858.SZ",
+      "002475.SZ",
+      "600000.SH",
+      "600036.SH",
+      "600519.SH",
+      "601318.SH",
+      "601899.SH"
+    ],
+    "strategy_outcomes_are_simulation_evidence": true
+  },
+  "candidates": [
+    {
+      "strategy_id": "strategy_a_low_vol_dividend_defensive",
+      "name": "A-share low-volatility dividend defensive sandbox candidate",
+      "market": "A",
+      "universe": "A-share liquid large/mid cap universe with dividend history and volatility data.",
+      "factor_family": "risk_overlay",
+      "entry_rule": "rank by dividend yield sustainability; filter low realized volatility; reject risk-vetoed names",
+      "exit_rule": "20 trading-day sandbox review; exit on drawdown breach or risk veto",
+      "exit_horizon_days": 20,
+      "risk_controls": [
+        "liquidity_filter",
+        "max_drawdown_floor",
+        "dividend_trap_check",
+        "risk_veto"
+      ],
+      "pass_criteria": {
+        "min_sample_count": 4,
+        "min_win_rate": 0.5,
+        "min_average_return": 0.008,
+        "max_drawdown_floor": -0.08
+      },
+      "source_research_refs": [
+        "catalog_msci_china_a_factor_2025",
+        "catalog_spdji_a_low_vol_high_dividend",
+        "catalog_spdji_a_share_factor"
+      ],
+      "created_at": "2026-07-11T23:12:44+08:00"
+    },
+    {
+      "strategy_id": "strategy_a_value_quality_multifactor",
+      "name": "A-share value quality multi-factor sandbox candidate",
+      "market": "A",
+      "universe": "A-share liquid names with valuation, profitability, leverage, and cash-flow fields.",
+      "factor_family": "multi_factor",
+      "entry_rule": "require valuation reasonableness; require profitability/quality confirmation; avoid unresolved data gaps",
+      "exit_rule": "20 trading-day sandbox review; downgrade if quality evidence deteriorates",
+      "exit_horizon_days": 20,
+      "risk_controls": [
+        "liquidity_filter",
+        "financial_quality_check",
+        "policy_event_note",
+        "risk_veto"
+      ],
+      "pass_criteria": {
+        "min_sample_count": 4,
+        "min_win_rate": 0.5,
+        "min_average_return": 0.008,
+        "max_drawdown_floor": -0.08
+      },
+      "source_research_refs": [
+        "catalog_msci_china_a_factor_2025",
+        "catalog_panagora_china_a_factor",
+        "catalog_spdji_a_share_factor"
+      ],
+      "created_at": "2026-07-11T23:12:44+08:00"
+    }
+  ],
+  "historical_cases": [
+    {
+      "case_id": "strategy_a_low_vol_dividend_defensive_tushare_live_case_001",
+      "strategy_id": "strategy_a_low_vol_dividend_defensive",
+      "date": "20230901",
+      "symbol": "600000.SH",
+      "market": "A",
+      "eligible": true,
+      "entry_price": 7.01,
+      "exit_price": 7.03,
+      "max_drawdown": -0.0028530670470755526,
+      "risk_flags": [],
+      "factor_values": {
+        "actual_return": 0.0028530670470756723,
+        "exit_horizon_days": 20.0,
+        "entry_close": 7.01,
+        "exit_close": 7.03,
+        "window_low": 6.99
+      },
+      "evidence_ref": "tushare_cache:600000.SH:20230901:20231009"
+    },
+    {
+      "case_id": "strategy_a_low_vol_dividend_defensive_tushare_live_case_002",
+      "strategy_id": "strategy_a_low_vol_dividend_defensive",
+      "date": "20231009",
+      "symbol": "601318.SH",
+      "market": "A",
+      "eligible": true,
+      "entry_price": 48.07,
+      "exit_price": 46.06,
+      "max_drawdown": -0.07322654462242573,
+      "risk_flags": [],
+      "factor_values": {
+        "actual_return": -0.0418140212190555,
+        "exit_horizon_days": 20.0,
+        "entry_close": 48.07,
+        "exit_close": 46.06,
+        "window_low": 44.55
+      },
+      "evidence_ref": "tushare_cache:601318.SH:20231009:20231106"
+    },
+    {
+      "case_id": "strategy_a_low_vol_dividend_defensive_tushare_live_case_003",
+      "strategy_id": "strategy_a_low_vol_dividend_defensive",
+      "date": "20231106",
+      "symbol": "000001.SZ",
+      "market": "A",
+      "eligible": true,
+      "entry_price": 10.69,
+      "exit_price": 9.63,
+      "max_drawdown": -0.10383536014967254,
+      "risk_flags": [
+        "historical_drawdown_breach"
+      ],
+      "factor_values": {
+        "actual_return": -0.099158091674462,
+        "exit_horizon_days": 20.0,
+        "entry_close": 10.69,
+        "exit_close": 9.63,
+        "window_low": 9.58
+      },
+      "evidence_ref": "tushare_cache:000001.SZ:20231106:20231204"
+    },
+    {
+      "case_id": "strategy_a_low_vol_dividend_defensive_tushare_live_case_004",
+      "strategy_id": "strategy_a_low_vol_dividend_defensive",
+      "date": "20231204",
+      "symbol": "600519.SH",
+      "market": "A",
+      "eligible": true,
+      "entry_price": 1750.71,
+      "exit_price": 1685.01,
+      "max_drawdown": -0.06609318505063666,
+      "risk_flags": [],
+      "factor_values": {
+        "actual_return": -0.03752763164658912,
+        "exit_horizon_days": 20.0,
+        "entry_close": 1750.71,
+        "exit_close": 1685.01,
+        "window_low": 1635.0
+      },
+      "evidence_ref": "tushare_cache:600519.SH:20231204:20240102"
+    },
+    {
+      "case_id": "strategy_a_value_quality_multifactor_tushare_live_case_001",
+      "strategy_id": "strategy_a_value_quality_multifactor",
+      "date": "20230901",
+      "symbol": "600036.SH",
+      "market": "A",
+      "eligible": true,
+      "entry_price": 32.27,
+      "exit_price": 32.58,
+      "max_drawdown": -0.012085528354508934,
+      "risk_flags": [],
+      "factor_values": {
+        "actual_return": 0.009606445615122253,
+        "exit_horizon_days": 20.0,
+        "entry_close": 32.27,
+        "exit_close": 32.58,
+        "window_low": 31.88
+      },
+      "evidence_ref": "tushare_cache:600036.SH:20230901:20231009"
+    },
+    {
+      "case_id": "strategy_a_value_quality_multifactor_tushare_live_case_002",
+      "strategy_id": "strategy_a_value_quality_multifactor",
+      "date": "20231009",
+      "symbol": "000858.SZ",
+      "market": "A",
+      "eligible": true,
+      "entry_price": 154.27,
+      "exit_price": 159.84,
+      "max_drawdown": -0.0814805211641928,
+      "risk_flags": [
+        "historical_drawdown_watch"
+      ],
+      "factor_values": {
+        "actual_return": 0.036105529266869725,
+        "exit_horizon_days": 20.0,
+        "entry_close": 154.27,
+        "exit_close": 159.84,
+        "window_low": 141.7
+      },
+      "evidence_ref": "tushare_cache:000858.SZ:20231009:20231106"
+    },
+    {
+      "case_id": "strategy_a_value_quality_multifactor_tushare_live_case_003",
+      "strategy_id": "strategy_a_value_quality_multifactor",
+      "date": "20231106",
+      "symbol": "002475.SZ",
+      "market": "A",
+      "eligible": true,
+      "entry_price": 33.3,
+      "exit_price": 30.99,
+      "max_drawdown": -0.10450450450450444,
+      "risk_flags": [
+        "historical_drawdown_breach"
+      ],
+      "factor_values": {
+        "actual_return": -0.06936936936936934,
+        "exit_horizon_days": 20.0,
+        "entry_close": 33.3,
+        "exit_close": 30.99,
+        "window_low": 29.82
+      },
+      "evidence_ref": "tushare_cache:002475.SZ:20231106:20231204"
+    },
+    {
+      "case_id": "strategy_a_value_quality_multifactor_tushare_live_case_004",
+      "strategy_id": "strategy_a_value_quality_multifactor",
+      "date": "20231204",
+      "symbol": "601899.SH",
+      "market": "A",
+      "eligible": true,
+      "entry_price": 12.4,
+      "exit_price": 12.49,
+      "max_drawdown": -0.08225806451612905,
+      "risk_flags": [
+        "historical_drawdown_watch"
+      ],
+      "factor_values": {
+        "actual_return": 0.0072580645161290204,
+        "exit_horizon_days": 20.0,
+        "entry_close": 12.4,
+        "exit_close": 12.49,
+        "window_low": 11.38
+      },
+      "evidence_ref": "tushare_cache:601899.SH:20231204:20240102"
+    }
+  ],
+  "results": [
+    {
+      "strategy_id": "strategy_a_low_vol_dividend_defensive",
+      "status": "FAIL",
+      "metrics": {
+        "strategy_id": "strategy_a_low_vol_dividend_defensive",
+        "sample_count": 4,
+        "eligible_case_count": 4,
+        "win_rate": 0.25,
+        "average_return": -0.04391166937325774,
+        "max_drawdown": -0.10383536014967254,
+        "turnover_proxy": 1.0,
+        "exposure_count": 4,
+        "risk_flag_counts": {
+          "historical_drawdown_breach": 1
+        },
+        "failed_reasons": [
+          "win_rate_below_threshold",
+          "average_return_below_threshold",
+          "max_drawdown_breached"
+        ]
+      },
+      "safety": {
+        "simulation_only": true,
+        "no_real_trade": true,
+        "no_broker_api": true,
+        "no_webhook": true,
+        "no_strategy_auto_mutation": true,
+        "no_production_records_mutation": true
+      },
+      "notes": [
+        "Historical sandbox result only; user-facing suggestions still require recommendation and risk gates.",
+        "Evidence is based on supplied historical cases, not future prediction."
+      ]
+    },
+    {
+      "strategy_id": "strategy_a_value_quality_multifactor",
+      "status": "FAIL",
+      "metrics": {
+        "strategy_id": "strategy_a_value_quality_multifactor",
+        "sample_count": 4,
+        "eligible_case_count": 4,
+        "win_rate": 0.75,
+        "average_return": -0.004099832492812086,
+        "max_drawdown": -0.10450450450450444,
+        "turnover_proxy": 1.0,
+        "exposure_count": 4,
+        "risk_flag_counts": {
+          "historical_drawdown_watch": 2,
+          "historical_drawdown_breach": 1
+        },
+        "failed_reasons": [
+          "average_return_below_threshold",
+          "max_drawdown_breached"
+        ]
+      },
+      "safety": {
+        "simulation_only": true,
+        "no_real_trade": true,
+        "no_broker_api": true,
+        "no_webhook": true,
+        "no_strategy_auto_mutation": true,
+        "no_production_records_mutation": true
+      },
+      "notes": [
+        "Historical sandbox result only; user-facing suggestions still require recommendation and risk gates.",
+        "Evidence is based on supplied historical cases, not future prediction."
+      ]
+    }
+  ],
+  "checks": {
+    "tushare_a_core_ready": true,
+    "tushare_token_value_not_stored": true,
+    "cache_manifest_pass": true,
+    "cache_manifest_dry_run": true,
+    "cache_manifest_no_trading": true,
+    "daily_cache_complete": true,
+    "a_hypotheses_present": true,
+    "a_strategy_candidates_present": true,
+    "tushare_historical_cases_present": true,
+    "all_cases_are_a_share": true,
+    "all_cases_have_tushare_cache_evidence": true,
+    "pass_fail_metrics_present": true,
+    "simulation_only": true,
+    "no_real_trade": true,
+    "no_broker_api": true,
+    "no_trading_webhook": true,
+    "no_order_placement": true,
+    "no_strategy_auto_mutation": true,
+    "no_production_records_mutation": true,
+    "dashboard_contract_unchanged": true,
+    "acceptance_target_correct": true,
+    "report_status_pass": true,
+    "cases_jsonl_written": true,
+    "candidates_json_written": true,
+    "refresh_report_json_written": true,
+    "refresh_report_md_written": true,
+    "source_tushare_probe_report_exists": true,
+    "source_cache_manifest_exists": true,
+    "hashes_recorded": true
+  },
+  "safety": {
+    "simulation_only": true,
+    "historical_sandbox_only": true,
+    "not_user_facing_trade_advice": true,
+    "no_real_trade": true,
+    "no_broker_api": true,
+    "no_webhook": true,
+    "no_order_placement": true,
+    "no_secret_storage": true,
+    "no_strategy_auto_mutation": true,
+    "no_production_records_mutation": true,
+    "dashboard_contract_unchanged": true,
+    "suggestion_gate_still_required": true
+  },
+  "run_dir": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v2_11_c_acceptance/v2_11_c_20260711_acceptance",
+  "cases_jsonl": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v2_11_c_acceptance/v2_11_c_20260711_acceptance/tushare_a_share_historical_sandbox_cases.jsonl",
+  "candidates_json": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v2_11_c_acceptance/v2_11_c_20260711_acceptance/tushare_a_share_strategy_candidates.json",
+  "refresh_report_json": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v2_11_c_acceptance/v2_11_c_20260711_acceptance/tushare_a_share_historical_sandbox_refresh_report.json",
+  "refresh_report_md": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v2_11_c_acceptance/v2_11_c_20260711_acceptance/tushare_a_share_historical_sandbox_refresh_report.md",
+  "source_tushare_probe_report_json": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/provider_diagnostics/provider_coverage_report_v2_11_b_tushare_a_probe.json",
+  "source_historical_cache_manifest_json": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/p23_2_historical_market_cache_manifest.json",
+  "source_historical_cache_dir": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/cache/p23_2_historical_market",
+  "hashes": {
+    "source_tushare_probe_report_json": "2bf2d97baa73f31eccccead8a25779218fe092215f7111f703dd9e4519c14c52",
+    "source_historical_cache_manifest_json": "4de403a5164cc67d7b6a35d1745487b9e8d0193402cde68fe173ff889f30e49a",
+    "cases_jsonl": "2a3422efa7881ffb2d8907365f107cd0b96e1b7b82562c30a12b7e7848082410",
+    "candidates_json": "ca9cb14a3eb469f03d92cfe1413d011f1d8d5091b395bfce79238b1f723b3ab7",
+    "refresh_report_json": "613c2a6e4497aada6b63a26c9f362c573446ad7c9c6de5058520c3506bc4820b",
+    "refresh_report_md": "1964fe409f6245ca9973203a9cbbc43e9d2644ac9415a8588e44ae6083cb7018"
+  }
+}

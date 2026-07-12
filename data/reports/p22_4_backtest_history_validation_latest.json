@@ -1,0 +1,84 @@
+{
+  "project": "Project Aegis",
+  "type": "backtest_history_validation",
+  "validated_at": "2026-07-12T08:00:32",
+  "checks": {
+    "history_json_exists": {
+      "passed": true
+    },
+    "history_md_exists": {
+      "passed": true
+    },
+    "snapshots_dir_exists": {
+      "passed": true
+    },
+    "history_json_parseable": {
+      "passed": true
+    },
+    "runs_count_between_1_and_20": {
+      "passed": true,
+      "count": 20
+    },
+    "run_id_unique": {
+      "passed": true
+    },
+    "latest_result_pass": {
+      "passed": true
+    },
+    "latest_safety_flags_valid": {
+      "passed": true
+    },
+    "latest_static_snapshot_true": {
+      "passed": true
+    },
+    "latest_lookahead_bias_warning_true": {
+      "passed": true
+    },
+    "latest_selected_symbols_count_gte_5": {
+      "passed": true
+    },
+    "latest_valid_price_series_count_gte_5": {
+      "passed": true
+    },
+    "latest_portfolio_metrics_present": {
+      "passed": true
+    },
+    "latest_snapshot_exists": {
+      "passed": true,
+      "path": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/a_share_backtest_history_snapshots/bt_run_20260710_143250_hist_20260712_080022.json"
+    },
+    "sha256_values_valid": {
+      "passed": true,
+      "values": [
+        "15d75ff6c9e3",
+        "15d75ff6c9e3",
+        "15d75ff6c9e3",
+        "15d75ff6c9e3",
+        "15d75ff6c9e3",
+        "15d75ff6c9e3",
+        "15d75ff6c9e3",
+        "15d75ff6c9e3",
+        "15d75ff6c9e3",
+        "15d75ff6c9e3",
+        "15d75ff6c9e3",
+        "15d75ff6c9e3",
+        "15d75ff6c9e3",
+        "15d75ff6c9e3",
+        "15d75ff6c9e3",
+        "15d75ff6c9e3",
+        "15d75ff6c9e3",
+        "15d75ff6c9e3",
+        "15d75ff6c9e3",
+        "15d75ff6c9e3"
+      ]
+    },
+    "no_secret_value_detected": {
+      "passed": true
+    },
+    "no_real_trade_call_detected": {
+      "passed": true
+    }
+  },
+  "failures": [],
+  "overall_verdict": "PASS"
+}

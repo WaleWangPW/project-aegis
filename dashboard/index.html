@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <meta name="aegis-dashboard-contract" content="2.0">
+  <title>Project Aegis · 每日决策</title>
+  <link rel="stylesheet" href="v2.css?v=20260712g">
+</head>
+<body>
+  <main class="shell">
+    <header class="statusbar" aria-label="数据与系统状态"><strong>Project Aegis</strong><span id="today-date">—</span><span>系统：<b id="system-status">数据不足</b></span><span id="data-time">数据更新时间：数据未提供</span><span>自动检查：<b id="daily-status">数据不足</b></span><button id="refresh" type="button">刷新数据</button></header>
+    <section id="decision" class="section hero" aria-labelledby="decision-title"><h1 id="decision-title">今日结论</h1><div id="decision-content"></div></section>
+    <section id="action" class="section command-section" aria-labelledby="action-title"><h2 id="action-title">今日选股</h2><div id="action-content"></div></section>
+    <details id="risk" class="section drawer-section"><summary><span>风险阻塞</span><small id="risk-summary">加载中</small></summary><div id="risk-content" class="grid risk-grid details-content"></div></details>
+    <details id="holdings" class="section drawer-section"><summary><span>当前持仓</span><small id="holdings-summary">加载中</small></summary><div id="holdings-content" class="grid holdings-grid details-content"></div></details>
+    <details id="watchlist" class="section drawer-section"><summary><span>观察名单</span><small id="watchlist-summary-mini">加载中</small></summary><div id="watchlist-content" class="details-content"></div></details>
+    <details id="market" class="section drawer-section compact"><summary><span>市场状态</span><small id="market-summary-mini">加载中</small></summary><div id="market-content" class="details-content"></div></details>
+    <details id="next-check" class="section drawer-section compact"><summary><span>下次检查</span><small id="next-summary-mini">每日 08:00</small></summary><div id="next-content" class="details-content"></div><div id="daily-content" class="mini-check"></div></details>
+    <details id="research" class="section"><summary>历史回测</summary><div id="backtest-content" class="details-content"></div></details>
+    <details id="system-details" class="section"><summary>系统与证据详情</summary><div id="evidence-content" class="details-content"></div></details>
+  </main>
+  <script src="v2.js?v=20260712g"></script>
+</body>
+</html>

@@ -1,0 +1,101 @@
+{
+  "project": "Project Aegis",
+  "type": "feishu_daily_digest",
+  "dry_run": true,
+  "sent": false,
+  "webhook_called": false,
+  "trading_called": false,
+  "generated_at": "2026-07-10T03:34:15.456256+08:00",
+  "a_share_top5": [
+    {
+      "symbol": "000002.SZ",
+      "name": "万科A",
+      "status": "Watch",
+      "score": 0.85,
+      "volatility": null,
+      "max_drawdown": null,
+      "liquidity_ok": null,
+      "trend_20d": "neutral"
+    },
+    {
+      "symbol": "000858.SZ",
+      "name": "五粮液",
+      "status": "Watch",
+      "score": 0.82,
+      "volatility": null,
+      "max_drawdown": null,
+      "liquidity_ok": null,
+      "trend_20d": "neutral"
+    },
+    {
+      "symbol": "600036.SH",
+      "name": "招商银行",
+      "status": "Watch",
+      "score": 0.79,
+      "volatility": null,
+      "max_drawdown": null,
+      "liquidity_ok": null,
+      "trend_20d": "neutral"
+    },
+    {
+      "symbol": "000001.SZ",
+      "name": "平安银行",
+      "status": "Watch",
+      "score": 0.76,
+      "volatility": null,
+      "max_drawdown": null,
+      "liquidity_ok": null,
+      "trend_20d": "neutral"
+    },
+    {
+      "symbol": "600000.SH",
+      "name": "浦发银行",
+      "status": "Watch",
+      "score": 0.73,
+      "volatility": null,
+      "max_drawdown": null,
+      "liquidity_ok": null,
+      "trend_20d": "neutral"
+    }
+  ],
+  "hk_sample": {
+    "missing": true,
+    "stocks": []
+  },
+  "risk_monitors": {
+    "CRCL": {
+      "symbol": "CRCL",
+      "name": "Circle Internet Group",
+      "market": "US",
+      "status": "Exit",
+      "confidence": 0.25,
+      "score": 0.25,
+      "volatility": "6.19%",
+      "max_drawdown": "-31.58%",
+      "liquidity_ok": false,
+      "trend_20d": "down"
+    },
+    "000002.SZ": {
+      "symbol": "000002.SZ",
+      "name": "万科A",
+      "market": "A",
+      "status": "Exit",
+      "confidence": 0.25,
+      "score": 0.25,
+      "volatility": "1.87%",
+      "max_drawdown": "-6.65%",
+      "liquidity_ok": false,
+      "trend_20d": "down"
+    }
+  },
+  "review_exit_risks": [
+    "CRCL (Circle Internet Group): liquidity_not_ok",
+    "CRCL: severe_drawdown (-31.58%)",
+    "000002.SZ (万科A): liquidity_not_ok"
+  ],
+  "mobile_links": {
+    "mdns": "http://weihongdeMac-mini.local:8080/dashboard/index.html",
+    "tailscale": "http://weihongmac-mini.tail9c9631.ts.net:8080/dashboard/index.html"
+  },
+  "message_text": "📊 Project Aegis 每日风险摘要 (Dry-run)\n生成时间: 2026-07-10T03:34:15.456256+08:00\n\nA股 Watch Top5: 5 只\n  • 000002.SZ 万科A - Watch\n  • 000858.SZ 五粮液 - Watch\n  • 600036.SH 招商银行 - Watch\n  • 000001.SZ 平安银行 - Watch\n  • 600000.SH 浦发银行 - Watch\n港股样本: 报告缺失\n\n风险监控:\n  • CRCL (Circle Internet Group): Exit | vol=6.19% | dd=-31.58% | liq_ok=False\n  • 000002.SZ (万科A): Exit | vol=1.87% | dd=-6.65% | liq_ok=False\n\n⚠️ 安全确认: dry-run=是, webhook=未调用, 下单=未调用"
+}

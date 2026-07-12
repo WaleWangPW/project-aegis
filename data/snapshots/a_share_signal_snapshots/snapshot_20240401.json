@@ -1,0 +1,4697 @@
+{
+  "snapshot_id": "snapshot_20240401",
+  "strategy_id": "a_share_historical_liquidity_trend_v1",
+  "strategy_version": "1.0.0",
+  "original_display_strategy_id": "a_share_watchlist_v1",
+  "strategy_equivalence_claimed": false,
+  "signal_date": "2024-04-01",
+  "data_cutoff_date": "2024-04-01",
+  "rebalance_date": "2024-04-02",
+  "entry_date": "2024-04-02",
+  "exit_date": "2024-05-07",
+  "holding_period_open_days": 20,
+  "selected_symbols": [
+    "601899.SH",
+    "603993.SH",
+    "600362.SH",
+    "600547.SH",
+    "000630.SZ",
+    "600489.SH",
+    "300274.SZ",
+    "000878.SZ",
+    "300750.SZ",
+    "601600.SH",
+    "000975.SZ",
+    "002714.SZ",
+    "600988.SH",
+    "600023.SH",
+    "000596.SZ",
+    "000807.SZ",
+    "601168.SH",
+    "002444.SZ",
+    "000858.SZ",
+    "600026.SH"
+  ],
+  "selected_symbols_count": 20,
+  "selected_records": [
+    {
+      "ts_code": "601899.SH",
+      "name": "紫金矿业",
+      "valid_price_rows": 60,
+      "avg_amount_60d": 2007273.0577166667,
+      "trend_20d": 0.2180505415162457,
+      "volatility_60d": 0.017872917739902273,
+      "max_drawdown_60d": -0.07901037509976061,
+      "last_close": 16.87,
+      "composite_rank_score": 0.9614391905843485
+    },
+    {
+      "ts_code": "603993.SH",
+      "name": "洛阳钼业",
+      "valid_price_rows": 60,
+      "avg_amount_60d": 967595.9676,
+      "trend_20d": 0.30126182965299697,
+      "volatility_60d": 0.023921290778413946,
+      "max_drawdown_60d": -0.06168224299065417,
+      "last_close": 8.25,
+      "composite_rank_score": 0.9588684699566383
+    },
+    {
+      "ts_code": "600362.SH",
+      "name": "江西铜业",
+      "valid_price_rows": 60,
+      "avg_amount_60d": 510444.06214999995,
+      "trend_20d": 0.1984732824427482,
+      "volatility_60d": 0.01950176242278175,
+      "max_drawdown_60d": -0.08097826086956517,
+      "last_close": 23.55,
+      "composite_rank_score": 0.9305285979764608
+    },
+    {
+      "ts_code": "600547.SH",
+      "name": "山东黄金",
+      "valid_price_rows": 60,
+      "avg_amount_60d": 516294.78086666664,
+      "trend_20d": 0.217588769611891,
+      "volatility_60d": 0.020344137800535546,
+      "max_drawdown_60d": -0.1291866028708134,
+      "last_close": 29.49,
+      "composite_rank_score": 0.9286702457154656
+    },
+    {
+      "ts_code": "000630.SZ",
+      "name": "铜陵有色",
+      "valid_price_rows": 60,
+      "avg_amount_60d": 905934.3449499999,
+      "trend_20d": 0.21779141104294486,
+      "volatility_60d": 0.026227032916986782,
+      "max_drawdown_60d": -0.12048192771084332,
+      "last_close": 3.97,
+      "composite_rank_score": 0.9260685525500721
+    },
+    {
+      "ts_code": "600489.SH",
+      "name": "中金黄金",
+      "valid_price_rows": 60,
+      "avg_amount_60d": 514280.79041666666,
+      "trend_20d": 0.1868910540301152,
+      "volatility_60d": 0.01946476956105757,
+      "max_drawdown_60d": -0.14313919052319857,
+      "last_close": 13.4,
+      "composite_rank_score": 0.9149803840594674
+    },
+    {
+      "ts_code": "300274.SZ",
+      "name": "阳光电源",
+      "valid_price_rows": 60,
+      "avg_amount_60d": 1946107.8407666667,
+      "trend_20d": 0.20393066136689875,
+      "volatility_60d": 0.029072337061754112,
+      "max_drawdown_60d": -0.1426227715191951,
+      "last_close": 109.04,
+      "composite_rank_score": 0.9110571959529217
+    },
+    {
+      "ts_code": "000878.SZ",
+      "name": "云南铜业",
+      "valid_price_rows": 60,
+      "avg_amount_60d": 546044.3085166666,
+      "trend_20d": 0.18604651162790709,
+      "volatility_60d": 0.02311678530241049,
+      "max_drawdown_60d": -0.12873980054397094,
+      "last_close": 13.26,
+      "composite_rank_score": 0.9099421845963245
+    },
+    {
+      "ts_code": "300750.SZ",
+      "name": "宁德时代",
+      "valid_price_rows": 60,
+      "avg_amount_60d": 4803236.499516667,
+      "trend_20d": 0.20157910719708472,
+      "volatility_60d": 0.02996103198756923,
+      "max_drawdown_60d": -0.13787823104250885,
+      "last_close": 197.84,
+      "composite_rank_score": 0.9093227338426595
+    },
+    {
+      "ts_code": "601600.SH",
+      "name": "中国铝业",
+      "valid_price_rows": 60,
+      "avg_amount_60d": 820498.0760166666,
+      "trend_20d": 0.1552,
+      "volatility_60d": 0.02134914269322226,
+      "max_drawdown_60d": -0.11327433628318595,
+      "last_close": 7.22,
+      "composite_rank_score": 0.9073198430724756
+    },
+    {
+      "ts_code": "000975.SZ",
+      "name": "山金国际",
+      "valid_price_rows": 60,
+      "avg_amount_60d": 403266.3379666667,
+      "trend_20d": 0.18222222222222229,
+      "volatility_60d": 0.021467217702143528,
+      "max_drawdown_60d": -0.13218770654329148,
+      "last_close": 18.62,
+      "composite_rank_score": 0.9012801982242411
+    },
+    {
+      "ts_code": "002714.SZ",
+      "name": "牧原股份",
+      "valid_price_rows": 60,
+      "avg_amount_60d": 900314.1768166666,
+      "trend_20d": 0.1446153846153846,
+      "volatility_60d": 0.017984097535195965,
+      "max_drawdown_60d": -0.15132530120481935,
+      "last_close": 44.64,
+      "composite_rank_score": 0.9004645880652488
+    },
+    {
+      "ts_code": "600988.SH",
+      "name": "赤峰黄金",
+      "valid_price_rows": 60,
+      "avg_amount_60d": 479477.42525000003,
+      "trend_20d": 0.23959827833572467,
+      "volatility_60d": 0.026710132917514895,
+      "max_drawdown_60d": -0.2021709633649933,
+      "last_close": 17.28,
+      "composite_rank_score": 0.8999896758207722
+    },
+    {
+      "ts_code": "600023.SH",
+      "name": "浙能电力",
+      "valid_price_rows": 60,
+      "avg_amount_60d": 355251.05925,
+      "trend_20d": 0.17500000000000004,
+      "volatility_60d": 0.02124476905605721,
+      "max_drawdown_60d": -0.08521739130434791,
+      "last_close": 6.58,
+      "composite_rank_score": 0.8989985546149082
+    },
+    {
+      "ts_code": "000596.SZ",
+      "name": "古井贡酒",
+      "valid_price_rows": 60,
+      "avg_amount_60d": 396110.33083333337,
+      "trend_20d": 0.16399826914755522,
+      "volatility_60d": 0.020344245492310287,
+      "max_drawdown_60d": -0.14467353951890038,
+      "last_close": 269.0,
+      "composite_rank_score": 0.889572578979971
+    },
+    {
+      "ts_code": "000807.SZ",
+      "name": "云铝股份",
+      "valid_price_rows": 60,
+      "avg_amount_60d": 492630.52156666666,
+      "trend_20d": 0.1835708298407377,
+      "volatility_60d": 0.024357844154247955,
+      "max_drawdown_60d": -0.19043760129659637,
+      "last_close": 14.12,
+      "composite_rank_score": 0.8889015073301673
+    },
+    {
+      "ts_code": "601168.SH",
+      "name": "西部矿业",
+      "valid_price_rows": 60,
+      "avg_amount_60d": 708405.86945,
+      "trend_20d": 0.1655467318265118,
+      "volatility_60d": 0.028291710441340313,
+      "max_drawdown_60d": -0.11694352159468446,
+      "last_close": 19.08,
+      "composite_rank_score": 0.8878381168697089
+    },
+    {
+      "ts_code": "002444.SZ",
+      "name": "巨星科技",
+      "valid_price_rows": 60,
+      "avg_amount_60d": 289737.14115,
+      "trend_20d": 0.2598387861545757,
+      "volatility_60d": 0.027984470726956076,
+      "max_drawdown_60d": -0.18037135278514593,
+      "last_close": 26.57,
+      "composite_rank_score": 0.8800433615527564
+    },
+    {
+      "ts_code": "000858.SZ",
+      "name": "五粮液",
+      "valid_price_rows": 60,
+      "avg_amount_60d": 2703583.3431666666,
+      "trend_20d": 0.1108129105162794,
+      "volatility_60d": 0.01795330044485048,
+      "max_drawdown_60d": -0.117525479295845,
+      "last_close": 157.28,
+      "composite_rank_score": 0.8798575263266569
+    },
+    {
+      "ts_code": "600026.SH",
+      "name": "中远海能",
+      "valid_price_rows": 60,
+      "avg_amount_60d": 363038.44335,
+      "trend_20d": 0.18568391211906454,
+      "volatility_60d": 0.028307379344554667,
+      "max_drawdown_60d": -0.13697657913413763,
+      "last_close": 16.73,
+      "composite_rank_score": 0.8738488540161056
+    }
+  ],
+  "top_n": 20,
+  "candidate_count": 4844,
+  "ranking_inputs": {
+    "avg_amount_60d": {
+      "direction": "desc",
+      "weight": 0.35
+    },
+    "trend_20d": {
+      "direction": "desc",
+      "weight": 0.35
+    },
+    "volatility_60d": {
+      "direction": "asc",
+      "weight": 0.15
+    },
+    "max_drawdown_60d": {
+      "direction": "asc",
+      "weight": 0.15
+    }
+  },
+  "risk_filters": {
+    "min_valid_price_rows": 40,
+    "exclude_st": true,
+    "exclude_bj_exchange": true
+  },
+  "liquidity_filters": {
+    "min_avg_amount": 1.0
+  },
+  "exclusions_count": 1021,
+  "exclusions": [
+    {
+      "ts_code": "000003.SZ",
+      "reason": "delisted_as_of_cutoff"
+    },
+    {
+      "ts_code": "000005.SZ",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "000010.SZ",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "000013.SZ",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "000015.SZ",
+      "reason": "delisted_as_of_cutoff"
+    },
+    {
+      "ts_code": "000016.SZ",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "000018.SZ",
+      "reason": "delisted_as_of_cutoff"
+    },
+    {
+      "ts_code": "000023.SZ",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "000024.SZ",
+      "reason": "delisted_as_of_cutoff"
+    },
+    {
+      "ts_code": "000033.SZ",
+      "reason": "delisted_as_of_cutoff"
+    },
+    {
+      "ts_code": "000038.SZ",
+      "reason": "delisted_as_of_cutoff"
+    },
+    {
+      "ts_code": "000040.SZ",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "000046.SZ",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "000047.SZ",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "000056.SZ",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "000078.SZ",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "000150.SZ",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "000405.SZ",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "000406.SZ",
+      "reason": "delisted_as_of_cutoff"
+    },
+    {
+      "ts_code": "000412.SZ",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "000413.SZ",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "000416.SZ",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "000418.SZ",
+      "reason": "delisted_as_of_cutoff"
+    },
+    {
+      "ts_code": "000488.SZ",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "000502.SZ",
+      "reason": "delisted_as_of_cutoff"
+    },
+    {
+      "ts_code": "000508.SZ",
+      "reason": "delisted_as_of_cutoff"
+    },
+    {
+      "ts_code": "000511.SZ",
+      "reason": "delisted_as_of_cutoff"
+    },
+    {
+      "ts_code": "000515.SZ",
+      "reason": "delisted_as_of_cutoff"
+    },
+    {
+      "ts_code": "000522.SZ",
+      "reason": "delisted_as_of_cutoff"
+    },
+    {
+      "ts_code": "000527.SZ",
+      "reason": "delisted_as_of_cutoff"
+    },
+    {
+      "ts_code": "000535.SZ",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "000540.SZ",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "000542.SZ",
+      "reason": "delisted_as_of_cutoff"
+    },
+    {
+      "ts_code": "000549.SZ",
+      "reason": "delisted_as_of_cutoff"
+    },
+    {
+      "ts_code": "000556.SZ",
+      "reason": "delisted_as_of_cutoff"
+    },
+    {
+      "ts_code": "000562.SZ",
+      "reason": "delisted_as_of_cutoff"
+    },
+    {
+      "ts_code": "000569.SZ",
+      "reason": "delisted_as_of_cutoff"
+    },
+    {
+      "ts_code": "000578.SZ",
+      "reason": "delisted_as_of_cutoff"
+    },
+    {
+      "ts_code": "000583.SZ",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "000585.SZ",
+      "reason": "delisted_as_of_cutoff"
+    },
+    {
+      "ts_code": "000587.SZ",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "000588.SZ",
+      "reason": "delisted_as_of_cutoff"
+    },
+    {
+      "ts_code": "000594.SZ",
+      "reason": "delisted_as_of_cutoff"
+    },
+    {
+      "ts_code": "000602.SZ",
+      "reason": "delisted_as_of_cutoff"
+    },
+    {
+      "ts_code": "000606.SZ",
+      "reason": "delisted_as_of_cutoff"
+    },
+    {
+      "ts_code": "000609.SZ",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "000610.SZ",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "000611.SZ",
+      "reason": "delisted_as_of_cutoff"
+    },
+    {
+      "ts_code": "000613.SZ",
+      "reason": "delisted_as_of_cutoff"
+    },
+    {
+      "ts_code": "000615.SZ",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "000616.SZ",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "000618.SZ",
+      "reason": "delisted_as_of_cutoff"
+    },
+    {
+      "ts_code": "000621.SZ",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "000627.SZ",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "000632.SZ",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "000638.SZ",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "000639.SZ",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "000653.SZ",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "000658.SZ",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "000660.SZ",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "000662.SZ",
+      "reason": "delisted_as_of_cutoff"
+    },
+    {
+      "ts_code": "000666.SZ",
+      "reason": "delisted_as_of_cutoff"
+    },
+    {
+      "ts_code": "000667.SZ",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "000669.SZ",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "000671.SZ",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "000673.SZ",
+      "reason": "delisted_as_of_cutoff"
+    },
+    {
+      "ts_code": "000675.SZ",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "000677.SZ",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "000687.SZ",
+      "reason": "delisted_as_of_cutoff"
+    },
+    {
+      "ts_code": "000689.SZ",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "000693.SZ",
+      "reason": "delisted_as_of_cutoff"
+    },
+    {
+      "ts_code": "000698.SZ",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "000699.SZ",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "000711.SZ",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "000730.SZ",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "000732.SZ",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "000748.SZ",
+      "reason": "delisted_as_of_cutoff"
+    },
+    {
+      "ts_code": "000752.SZ",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "000760.SZ",
+      "reason": "delisted_as_of_cutoff"
+    },
+    {
+      "ts_code": "000763.SZ",
+      "reason": "delisted_as_of_cutoff"
+    },
+    {
+      "ts_code": "000765.SZ",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "000769.SZ",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "000780.SZ",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "000787.SZ",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "000793.SZ",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "000805.SZ",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "000806.SZ",
+      "reason": "delisted_as_of_cutoff"
+    },
+    {
+      "ts_code": "000817.SZ",
+      "reason": "delisted_as_of_cutoff"
+    },
+    {
+      "ts_code": "000820.SZ",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "000821.SZ",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "000826.SZ",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "000827.SZ",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "000832.SZ",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "000835.SZ",
+      "reason": "delisted_as_of_cutoff"
+    },
+    {
+      "ts_code": "000836.SZ",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "000838.SZ",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "000851.SZ",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "000866.SZ",
+      "reason": "delisted_as_of_cutoff"
+    },
+    {
+      "ts_code": "000903.SZ",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "000909.SZ",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "000911.SZ",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "000916.SZ",
+      "reason": "delisted_as_of_cutoff"
+    },
+    {
+      "ts_code": "000918.SZ",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "000939.SZ",
+      "reason": "delisted_as_of_cutoff"
+    },
+    {
+      "ts_code": "000956.SZ",
+      "reason": "delisted_as_of_cutoff"
+    },
+    {
+      "ts_code": "000961.SZ",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "000971.SZ",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "000976.SZ",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "000979.SZ",
+      "reason": "delisted_as_of_cutoff"
+    },
+    {
+      "ts_code": "001220.SZ",
+      "reason": "not_listed_as_of_cutoff"
+    },
+    {
+      "ts_code": "001221.SZ",
+      "reason": "not_listed_as_of_cutoff"
+    },
+    {
+      "ts_code": "001233.SZ",
+      "reason": "not_listed_as_of_cutoff"
+    },
+    {
+      "ts_code": "001237.SZ",
+      "reason": "not_listed_as_of_cutoff"
+    },
+    {
+      "ts_code": "001248.SZ",
+      "reason": "not_listed_as_of_cutoff"
+    },
+    {
+      "ts_code": "001257.SZ",
+      "reason": "not_listed_as_of_cutoff"
+    },
+    {
+      "ts_code": "001277.SZ",
+      "reason": "not_listed_as_of_cutoff"
+    },
+    {
+      "ts_code": "001279.SZ",
+      "reason": "not_listed_as_of_cutoff"
+    },
+    {
+      "ts_code": "001280.SZ",
+      "reason": "not_listed_as_of_cutoff"
+    },
+    {
+      "ts_code": "001285.SZ",
+      "reason": "not_listed_as_of_cutoff"
+    },
+    {
+      "ts_code": "001312.SZ",
+      "reason": "not_listed_as_of_cutoff"
+    },
+    {
+      "ts_code": "001325.SZ",
+      "reason": "not_listed_as_of_cutoff"
+    },
+    {
+      "ts_code": "001335.SZ",
+      "reason": "not_listed_as_of_cutoff"
+    },
+    {
+      "ts_code": "001356.SZ",
+      "reason": "not_listed_as_of_cutoff"
+    },
+    {
+      "ts_code": "001359.SZ",
+      "reason": "valid_price_rows_lt_40"
+    },
+    {
+      "ts_code": "001365.SZ",
+      "reason": "not_listed_as_of_cutoff"
+    },
+    {
+      "ts_code": "001369.SZ",
+      "reason": "not_listed_as_of_cutoff"
+    },
+    {
+      "ts_code": "001382.SZ",
+      "reason": "not_listed_as_of_cutoff"
+    },
+    {
+      "ts_code": "001386.SZ",
+      "reason": "not_listed_as_of_cutoff"
+    },
+    {
+      "ts_code": "001388.SZ",
+      "reason": "not_listed_as_of_cutoff"
+    },
+    {
+      "ts_code": "001389.SZ",
+      "reason": "not_listed_as_of_cutoff"
+    },
+    {
+      "ts_code": "001390.SZ",
+      "reason": "not_listed_as_of_cutoff"
+    },
+    {
+      "ts_code": "001391.SZ",
+      "reason": "not_listed_as_of_cutoff"
+    },
+    {
+      "ts_code": "001393.SZ",
+      "reason": "not_listed_as_of_cutoff"
+    },
+    {
+      "ts_code": "001395.SZ",
+      "reason": "not_listed_as_of_cutoff"
+    },
+    {
+      "ts_code": "001396.SZ",
+      "reason": "not_listed_as_of_cutoff"
+    },
+    {
+      "ts_code": "001399.SZ",
+      "reason": "not_listed_as_of_cutoff"
+    },
+    {
+      "ts_code": "001400.SZ",
+      "reason": "not_listed_as_of_cutoff"
+    },
+    {
+      "ts_code": "002002.SZ",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "002005.SZ",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "002013.SZ",
+      "reason": "delisted_as_of_cutoff"
+    },
+    {
+      "ts_code": "002018.SZ",
+      "reason": "delisted_as_of_cutoff"
+    },
+    {
+      "ts_code": "002024.SZ",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "002055.SZ",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "002070.SZ",
+      "reason": "delisted_as_of_cutoff"
+    },
+    {
+      "ts_code": "002071.SZ",
+      "reason": "delisted_as_of_cutoff"
+    },
+    {
+      "ts_code": "002082.SZ",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "002089.SZ",
+      "reason": "valid_price_rows_lt_40"
+    },
+    {
+      "ts_code": "002102.SZ",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "002109.SZ",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "002113.SZ",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "002118.SZ",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "002122.SZ",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "002143.SZ",
+      "reason": "delisted_as_of_cutoff"
+    },
+    {
+      "ts_code": "002147.SZ",
+      "reason": "delisted_as_of_cutoff"
+    },
+    {
+      "ts_code": "002168.SZ",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "002175.SZ",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "002193.SZ",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "002198.SZ",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "002199.SZ",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "002207.SZ",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "002211.SZ",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "002214.SZ",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "002217.SZ",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "002220.SZ",
+      "reason": "delisted_as_of_cutoff"
+    },
+    {
+      "ts_code": "002227.SZ",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "002231.SZ",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "002260.SZ",
+      "reason": "delisted_as_of_cutoff"
+    },
+    {
+      "ts_code": "002280.SZ",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "002288.SZ",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "002305.SZ",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "002306.SZ",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "002308.SZ",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "002323.SZ",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "002325.SZ",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "002341.SZ",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "002359.SZ",
+      "reason": "delisted_as_of_cutoff"
+    },
+    {
+      "ts_code": "002360.SZ",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "002411.SZ",
+      "reason": "delisted_as_of_cutoff"
+    },
+    {
+      "ts_code": "002417.SZ",
+      "reason": "delisted_as_of_cutoff"
+    },
+    {
+      "ts_code": "002424.SZ",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "002431.SZ",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "002435.SZ",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "002447.SZ",
+      "reason": "delisted_as_of_cutoff"
+    },
+    {
+      "ts_code": "002450.SZ",
+      "reason": "delisted_as_of_cutoff"
+    },
+    {
+      "ts_code": "002464.SZ",
+      "reason": "delisted_as_of_cutoff"
+    },
+    {
+      "ts_code": "002473.SZ",
+      "reason": "delisted_as_of_cutoff"
+    },
+    {
+      "ts_code": "002477.SZ",
+      "reason": "delisted_as_of_cutoff"
+    },
+    {
+      "ts_code": "002485.SZ",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "002499.SZ",
+      "reason": "delisted_as_of_cutoff"
+    },
+    {
+      "ts_code": "002501.SZ",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "002502.SZ",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "002503.SZ",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "002504.SZ",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "002509.SZ",
+      "reason": "delisted_as_of_cutoff"
+    },
+    {
+      "ts_code": "002512.SZ",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "002514.SZ",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "002528.SZ",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "002538.SZ",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "002542.SZ",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "002547.SZ",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "002569.SZ",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "002581.SZ",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "002586.SZ",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "002592.SZ",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "002598.SZ",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "002604.SZ",
+      "reason": "delisted_as_of_cutoff"
+    },
+    {
+      "ts_code": "002610.SZ",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "002618.SZ",
+      "reason": "delisted_as_of_cutoff"
+    },
+    {
+      "ts_code": "002619.SZ",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "002620.SZ",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "002621.SZ",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "002630.SZ",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "002634.SZ",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "002650.SZ",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "002656.SZ",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "002665.SZ",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "002667.SZ",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "002680.SZ",
+      "reason": "delisted_as_of_cutoff"
+    },
+    {
+      "ts_code": "002684.SZ",
+      "reason": "delisted_as_of_cutoff"
+    },
+    {
+      "ts_code": "002689.SZ",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "002691.SZ",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "002694.SZ",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "002699.SZ",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "002711.SZ",
+      "reason": "delisted_as_of_cutoff"
+    },
+    {
+      "ts_code": "002713.SZ",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "002717.SZ",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "002719.SZ",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "002726.SZ",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "002731.SZ",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "002740.SZ",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "002751.SZ",
+      "reason": "delisted_as_of_cutoff"
+    },
+    {
+      "ts_code": "002770.SZ",
+      "reason": "delisted_as_of_cutoff"
+    },
+    {
+      "ts_code": "002776.SZ",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "002781.SZ",
+      "reason": "delisted_as_of_cutoff"
+    },
+    {
+      "ts_code": "002789.SZ",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "002816.SZ",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "002822.SZ",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "002856.SZ",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "002872.SZ",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "002883.SZ",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "002932.SZ",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "002977.SZ",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "300010.SZ",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "300020.SZ",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "300023.SZ",
+      "reason": "delisted_as_of_cutoff"
+    },
+    {
+      "ts_code": "300027.SZ",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "300028.SZ",
+      "reason": "delisted_as_of_cutoff"
+    },
+    {
+      "ts_code": "300038.SZ",
+      "reason": "delisted_as_of_cutoff"
+    },
+    {
+      "ts_code": "300044.SZ",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "300064.SZ",
+      "reason": "delisted_as_of_cutoff"
+    },
+    {
+      "ts_code": "300068.SZ",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "300076.SZ",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "300081.SZ",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "300087.SZ",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "300089.SZ",
+      "reason": "delisted_as_of_cutoff"
+    },
+    {
+      "ts_code": "300090.SZ",
+      "reason": "delisted_as_of_cutoff"
+    },
+    {
+      "ts_code": "300091.SZ",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "300096.SZ",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "300104.SZ",
+      "reason": "delisted_as_of_cutoff"
+    },
+    {
+      "ts_code": "300108.SZ",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "300116.SZ",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "300117.SZ",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "300123.SZ",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "300125.SZ",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "300147.SZ",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "300152.SZ",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "300156.SZ",
+      "reason": "delisted_as_of_cutoff"
+    },
+    {
+      "ts_code": "300167.SZ",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "300173.SZ",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "300178.SZ",
+      "reason": "delisted_as_of_cutoff"
+    },
+    {
+      "ts_code": "300186.SZ",
+      "reason": "delisted_as_of_cutoff"
+    },
+    {
+      "ts_code": "300198.SZ",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "300202.SZ",
+      "reason": "delisted_as_of_cutoff"
+    },
+    {
+      "ts_code": "300205.SZ",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "300211.SZ",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "300212.SZ",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "300216.SZ",
+      "reason": "delisted_as_of_cutoff"
+    },
+    {
+      "ts_code": "300237.SZ",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "300245.SZ",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "300262.SZ",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "300273.SZ",
+      "reason": "delisted_as_of_cutoff"
+    },
+    {
+      "ts_code": "300290.SZ",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "300295.SZ",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "300297.SZ",
+      "reason": "delisted_as_of_cutoff"
+    },
+    {
+      "ts_code": "300301.SZ",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "300309.SZ",
+      "reason": "delisted_as_of_cutoff"
+    },
+    {
+      "ts_code": "300311.SZ",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "300312.SZ",
+      "reason": "delisted_as_of_cutoff"
+    },
+    {
+      "ts_code": "300325.SZ",
+      "reason": "delisted_as_of_cutoff"
+    },
+    {
+      "ts_code": "300326.SZ",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "300330.SZ",
+      "reason": "delisted_as_of_cutoff"
+    },
+    {
+      "ts_code": "300336.SZ",
+      "reason": "delisted_as_of_cutoff"
+    },
+    {
+      "ts_code": "300338.SZ",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "300344.SZ",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "300352.SZ",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "300356.SZ",
+      "reason": "delisted_as_of_cutoff"
+    },
+    {
+      "ts_code": "300362.SZ",
+      "reason": "delisted_as_of_cutoff"
+    },
+    {
+      "ts_code": "300366.SZ",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "300367.SZ",
+      "reason": "delisted_as_of_cutoff"
+    },
+    {
+      "ts_code": "300372.SZ",
+      "reason": "delisted_as_of_cutoff"
+    },
+    {
+      "ts_code": "300385.SZ",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "300391.SZ",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "300392.SZ",
+      "reason": "delisted_as_of_cutoff"
+    },
+    {
+      "ts_code": "300396.SZ",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "300419.SZ",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "300430.SZ",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "300431.SZ",
+      "reason": "delisted_as_of_cutoff"
+    },
+    {
+      "ts_code": "300460.SZ",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "300462.SZ",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "300472.SZ",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "300477.SZ",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "300495.SZ",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "300526.SZ",
+      "reason": "delisted_as_of_cutoff"
+    },
+    {
+      "ts_code": "300527.SZ",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "300555.SZ",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "300594.SZ",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "300716.SZ",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "300784.SZ",
+      "reason": "not_listed_as_of_cutoff"
+    },
+    {
+      "ts_code": "300831.SZ",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "301030.SZ",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "301139.SZ",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "301173.SZ",
+      "reason": "not_listed_as_of_cutoff"
+    },
+    {
+      "ts_code": "301275.SZ",
+      "reason": "not_listed_as_of_cutoff"
+    },
+    {
+      "ts_code": "301392.SZ",
+      "reason": "not_listed_as_of_cutoff"
+    },
+    {
+      "ts_code": "301449.SZ",
+      "reason": "not_listed_as_of_cutoff"
+    },
+    {
+      "ts_code": "301458.SZ",
+      "reason": "not_listed_as_of_cutoff"
+    },
+    {
+      "ts_code": "301479.SZ",
+      "reason": "not_listed_as_of_cutoff"
+    },
+    {
+      "ts_code": "301491.SZ",
+      "reason": "not_listed_as_of_cutoff"
+    },
+    {
+      "ts_code": "301501.SZ",
+      "reason": "not_listed_as_of_cutoff"
+    },
+    {
+      "ts_code": "301502.SZ",
+      "reason": "valid_price_rows_lt_40"
+    },
+    {
+      "ts_code": "301513.SZ",
+      "reason": "not_listed_as_of_cutoff"
+    },
+    {
+      "ts_code": "301522.SZ",
+      "reason": "not_listed_as_of_cutoff"
+    },
+    {
+      "ts_code": "301531.SZ",
+      "reason": "not_listed_as_of_cutoff"
+    },
+    {
+      "ts_code": "301535.SZ",
+      "reason": "not_listed_as_of_cutoff"
+    },
+    {
+      "ts_code": "301536.SZ",
+      "reason": "valid_price_rows_lt_40"
+    },
+    {
+      "ts_code": "301538.SZ",
+      "reason": "valid_price_rows_lt_40"
+    },
+    {
+      "ts_code": "301539.SZ",
+      "reason": "not_listed_as_of_cutoff"
+    },
+    {
+      "ts_code": "301551.SZ",
+      "reason": "not_listed_as_of_cutoff"
+    },
+    {
+      "ts_code": "301552.SZ",
+      "reason": "not_listed_as_of_cutoff"
+    },
+    {
+      "ts_code": "301556.SZ",
+      "reason": "not_listed_as_of_cutoff"
+    },
+    {
+      "ts_code": "301557.SZ",
+      "reason": "not_listed_as_of_cutoff"
+    },
+    {
+      "ts_code": "301560.SZ",
+      "reason": "not_listed_as_of_cutoff"
+    },
+    {
+      "ts_code": "301563.SZ",
+      "reason": "not_listed_as_of_cutoff"
+    },
+    {
+      "ts_code": "301565.SZ",
+      "reason": "not_listed_as_of_cutoff"
+    },
+    {
+      "ts_code": "301571.SZ",
+      "reason": "not_listed_as_of_cutoff"
+    },
+    {
+      "ts_code": "301575.SZ",
+      "reason": "not_listed_as_of_cutoff"
+    },
+    {
+      "ts_code": "301580.SZ",
+      "reason": "not_listed_as_of_cutoff"
+    },
+    {
+      "ts_code": "301581.SZ",
+      "reason": "not_listed_as_of_cutoff"
+    },
+    {
+      "ts_code": "301583.SZ",
+      "reason": "not_listed_as_of_cutoff"
+    },
+    {
+      "ts_code": "301584.SZ",
+      "reason": "not_listed_as_of_cutoff"
+    },
+    {
+      "ts_code": "301585.SZ",
+      "reason": "not_listed_as_of_cutoff"
+    },
+    {
+      "ts_code": "301586.SZ",
+      "reason": "not_listed_as_of_cutoff"
+    },
+    {
+      "ts_code": "301587.SZ",
+      "reason": "not_listed_as_of_cutoff"
+    },
+    {
+      "ts_code": "301588.SZ",
+      "reason": "valid_price_rows_lt_40"
+    },
+    {
+      "ts_code": "301589.SZ",
+      "reason": "valid_price_rows_lt_40"
+    },
+    {
+      "ts_code": "301590.SZ",
+      "reason": "not_listed_as_of_cutoff"
+    },
+    {
+      "ts_code": "301591.SZ",
+      "reason": "valid_price_rows_lt_40"
+    },
+    {
+      "ts_code": "301592.SZ",
+      "reason": "not_listed_as_of_cutoff"
+    },
+    {
+      "ts_code": "301595.SZ",
+      "reason": "not_listed_as_of_cutoff"
+    },
+    {
+      "ts_code": "301596.SZ",
+      "reason": "not_listed_as_of_cutoff"
+    },
+    {
+      "ts_code": "301598.SZ",
+      "reason": "not_listed_as_of_cutoff"
+    },
+    {
+      "ts_code": "301599.SZ",
+      "reason": "not_listed_as_of_cutoff"
+    },
+    {
+      "ts_code": "301600.SZ",
+      "reason": "not_listed_as_of_cutoff"
+    },
+    {
+      "ts_code": "301601.SZ",
+      "reason": "not_listed_as_of_cutoff"
+    },
+    {
+      "ts_code": "301602.SZ",
+      "reason": "not_listed_as_of_cutoff"
+    },
+    {
+      "ts_code": "301603.SZ",
+      "reason": "not_listed_as_of_cutoff"
+    },
+    {
+      "ts_code": "301606.SZ",
+      "reason": "not_listed_as_of_cutoff"
+    },
+    {
+      "ts_code": "301607.SZ",
+      "reason": "not_listed_as_of_cutoff"
+    },
+    {
+      "ts_code": "301608.SZ",
+      "reason": "not_listed_as_of_cutoff"
+    },
+    {
+      "ts_code": "301609.SZ",
+      "reason": "not_listed_as_of_cutoff"
+    },
+    {
+      "ts_code": "301611.SZ",
+      "reason": "not_listed_as_of_cutoff"
+    },
+    {
+      "ts_code": "301613.SZ",
+      "reason": "not_listed_as_of_cutoff"
+    },
+    {
+      "ts_code": "301616.SZ",
+      "reason": "not_listed_as_of_cutoff"
+    },
+    {
+      "ts_code": "301617.SZ",
+      "reason": "not_listed_as_of_cutoff"
+    },
+    {
+      "ts_code": "301618.SZ",
+      "reason": "not_listed_as_of_cutoff"
+    },
+    {
+      "ts_code": "301622.SZ",
+      "reason": "not_listed_as_of_cutoff"
+    },
+    {
+      "ts_code": "301626.SZ",
+      "reason": "not_listed_as_of_cutoff"
+    },
+    {
+      "ts_code": "301628.SZ",
+      "reason": "not_listed_as_of_cutoff"
+    },
+    {
+      "ts_code": "301629.SZ",
+      "reason": "not_listed_as_of_cutoff"
+    },
+    {
+      "ts_code": "301630.SZ",
+      "reason": "not_listed_as_of_cutoff"
+    },
+    {
+      "ts_code": "301631.SZ",
+      "reason": "not_listed_as_of_cutoff"
+    },
+    {
+      "ts_code": "301632.SZ",
+      "reason": "not_listed_as_of_cutoff"
+    },
+    {
+      "ts_code": "301633.SZ",
+      "reason": "not_listed_as_of_cutoff"
+    },
+    {
+      "ts_code": "301636.SZ",
+      "reason": "not_listed_as_of_cutoff"
+    },
+    {
+      "ts_code": "301638.SZ",
+      "reason": "not_listed_as_of_cutoff"
+    },
+    {
+      "ts_code": "301656.SZ",
+      "reason": "not_listed_as_of_cutoff"
+    },
+    {
+      "ts_code": "301658.SZ",
+      "reason": "not_listed_as_of_cutoff"
+    },
+    {
+      "ts_code": "301662.SZ",
+      "reason": "not_listed_as_of_cutoff"
+    },
+    {
+      "ts_code": "301665.SZ",
+      "reason": "not_listed_as_of_cutoff"
+    },
+    {
+      "ts_code": "301666.SZ",
+      "reason": "not_listed_as_of_cutoff"
+    },
+    {
+      "ts_code": "301667.SZ",
+      "reason": "not_listed_as_of_cutoff"
+    },
+    {
+      "ts_code": "301668.SZ",
+      "reason": "not_listed_as_of_cutoff"
+    },
+    {
+      "ts_code": "301669.SZ",
+      "reason": "not_listed_as_of_cutoff"
+    },
+    {
+      "ts_code": "301678.SZ",
+      "reason": "not_listed_as_of_cutoff"
+    },
+    {
+      "ts_code": "301680.SZ",
+      "reason": "not_listed_as_of_cutoff"
+    },
+    {
+      "ts_code": "301682.SZ",
+      "reason": "not_listed_as_of_cutoff"
+    },
+    {
+      "ts_code": "301683.SZ",
+      "reason": "not_listed_as_of_cutoff"
+    },
+    {
+      "ts_code": "301687.SZ",
+      "reason": "not_listed_as_of_cutoff"
+    },
+    {
+      "ts_code": "301696.SZ",
+      "reason": "not_listed_as_of_cutoff"
+    },
+    {
+      "ts_code": "600001.SH",
+      "reason": "delisted_as_of_cutoff"
+    },
+    {
+      "ts_code": "600002.SH",
+      "reason": "delisted_as_of_cutoff"
+    },
+    {
+      "ts_code": "600003.SH",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "600005.SH",
+      "reason": "delisted_as_of_cutoff"
+    },
+    {
+      "ts_code": "600053.SH",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "600065.SH",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "600068.SH",
+      "reason": "delisted_as_of_cutoff"
+    },
+    {
+      "ts_code": "600069.SH",
+      "reason": "delisted_as_of_cutoff"
+    },
+    {
+      "ts_code": "600070.SH",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "600074.SH",
+      "reason": "delisted_as_of_cutoff"
+    },
+    {
+      "ts_code": "600077.SH",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "600079.SH",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "600080.SH",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "600082.SH",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "600083.SH",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "600084.SH",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "600086.SH",
+      "reason": "delisted_as_of_cutoff"
+    },
+    {
+      "ts_code": "600087.SH",
+      "reason": "delisted_as_of_cutoff"
+    },
+    {
+      "ts_code": "600090.SH",
+      "reason": "delisted_as_of_cutoff"
+    },
+    {
+      "ts_code": "600091.SH",
+      "reason": "delisted_as_of_cutoff"
+    },
+    {
+      "ts_code": "600092.SH",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "600093.SH",
+      "reason": "delisted_as_of_cutoff"
+    },
+    {
+      "ts_code": "600102.SH",
+      "reason": "delisted_as_of_cutoff"
+    },
+    {
+      "ts_code": "600107.SH",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "600112.SH",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "600119.SH",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "600122.SH",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "600136.SH",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "600139.SH",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "600145.SH",
+      "reason": "delisted_as_of_cutoff"
+    },
+    {
+      "ts_code": "600146.SH",
+      "reason": "delisted_as_of_cutoff"
+    },
+    {
+      "ts_code": "600165.SH",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "600169.SH",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "600175.SH",
+      "reason": "delisted_as_of_cutoff"
+    },
+    {
+      "ts_code": "600180.SH",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "600181.SH",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "600187.SH",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "600205.SH",
+      "reason": "delisted_as_of_cutoff"
+    },
+    {
+      "ts_code": "600209.SH",
+      "reason": "delisted_as_of_cutoff"
+    },
+    {
+      "ts_code": "600213.SH",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "600220.SH",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "600238.SH",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "600239.SH",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "600240.SH",
+      "reason": "delisted_as_of_cutoff"
+    },
+    {
+      "ts_code": "600242.SH",
+      "reason": "delisted_as_of_cutoff"
+    },
+    {
+      "ts_code": "600243.SH",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "600247.SH",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "600253.SH",
+      "reason": "delisted_as_of_cutoff"
+    },
+    {
+      "ts_code": "600260.SH",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "600263.SH",
+      "reason": "delisted_as_of_cutoff"
+    },
+    {
+      "ts_code": "600265.SH",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "600270.SH",
+      "reason": "delisted_as_of_cutoff"
+    },
+    {
+      "ts_code": "600275.SH",
+      "reason": "delisted_as_of_cutoff"
+    },
+    {
+      "ts_code": "600277.SH",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "600286.SH",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "600289.SH",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "600290.SH",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "600291.SH",
+      "reason": "delisted_as_of_cutoff"
+    },
+    {
+      "ts_code": "600296.SH",
+      "reason": "delisted_as_of_cutoff"
+    },
+    {
+      "ts_code": "600302.SH",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "600311.SH",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "600317.SH",
+      "reason": "delisted_as_of_cutoff"
+    },
+    {
+      "ts_code": "600337.SH",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "600340.SH",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "600355.SH",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "600357.SH",
+      "reason": "delisted_as_of_cutoff"
+    },
+    {
+      "ts_code": "600365.SH",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "600370.SH",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "600381.SH",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "600385.SH",
+      "reason": "delisted_as_of_cutoff"
+    },
+    {
+      "ts_code": "600393.SH",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "600401.SH",
+      "reason": "delisted_as_of_cutoff"
+    },
+    {
+      "ts_code": "600423.SH",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "600432.SH",
+      "reason": "delisted_as_of_cutoff"
+    },
+    {
+      "ts_code": "600466.SH",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "600472.SH",
+      "reason": "delisted_as_of_cutoff"
+    },
+    {
+      "ts_code": "600476.SH",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "600485.SH",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "600491.SH",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "600525.SH",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "600532.SH",
+      "reason": "delisted_as_of_cutoff"
+    },
+    {
+      "ts_code": "600537.SH",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "600543.SH",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "600553.SH",
+      "reason": "delisted_as_of_cutoff"
+    },
+    {
+      "ts_code": "600555.SH",
+      "reason": "delisted_as_of_cutoff"
+    },
+    {
+      "ts_code": "600565.SH",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "600568.SH",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "600581.SH",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "600591.SH",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "600607.SH",
+      "reason": "delisted_as_of_cutoff"
+    },
+    {
+      "ts_code": "600614.SH",
+      "reason": "delisted_as_of_cutoff"
+    },
+    {
+      "ts_code": "600624.SH",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "600625.SH",
+      "reason": "delisted_as_of_cutoff"
+    },
+    {
+      "ts_code": "600627.SH",
+      "reason": "delisted_as_of_cutoff"
+    },
+    {
+      "ts_code": "600631.SH",
+      "reason": "delisted_as_of_cutoff"
+    },
+    {
+      "ts_code": "600632.SH",
+      "reason": "delisted_as_of_cutoff"
+    },
+    {
+      "ts_code": "600634.SH",
+      "reason": "delisted_as_of_cutoff"
+    },
+    {
+      "ts_code": "600646.SH",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "600652.SH",
+      "reason": "delisted_as_of_cutoff"
+    },
+    {
+      "ts_code": "600656.SH",
+      "reason": "delisted_as_of_cutoff"
+    },
+    {
+      "ts_code": "600659.SH",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "600669.SH",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "600670.SH",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "600672.SH",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "600677.SH",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "600678.SH",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "600680.SH",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "600687.SH",
+      "reason": "delisted_as_of_cutoff"
+    },
+    {
+      "ts_code": "600695.SH",
+      "reason": "delisted_as_of_cutoff"
+    },
+    {
+      "ts_code": "600700.SH",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "600701.SH",
+      "reason": "delisted_as_of_cutoff"
+    },
+    {
+      "ts_code": "600709.SH",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "600723.SH",
+      "reason": "delisted_as_of_cutoff"
+    },
+    {
+      "ts_code": "600730.SH",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "600734.SH",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "600735.SH",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "600745.SH",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "600747.SH",
+      "reason": "delisted_as_of_cutoff"
+    },
+    {
+      "ts_code": "600752.SH",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "600753.SH",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "600759.SH",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "600762.SH",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "600767.SH",
+      "reason": "delisted_as_of_cutoff"
+    },
+    {
+      "ts_code": "600772.SH",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "600781.SH",
+      "reason": "delisted_as_of_cutoff"
+    },
+    {
+      "ts_code": "600786.SH",
+      "reason": "delisted_as_of_cutoff"
+    },
+    {
+      "ts_code": "600788.SH",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "600799.SH",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "600806.SH",
+      "reason": "delisted_as_of_cutoff"
+    },
+    {
+      "ts_code": "600811.SH",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "600813.SH",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "600818.SH",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "600823.SH",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "600832.SH",
+      "reason": "delisted_as_of_cutoff"
+    },
+    {
+      "ts_code": "600836.SH",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "600840.SH",
+      "reason": "delisted_as_of_cutoff"
+    },
+    {
+      "ts_code": "600842.SH",
+      "reason": "delisted_as_of_cutoff"
+    },
+    {
+      "ts_code": "600852.SH",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "600856.SH",
+      "reason": "delisted_as_of_cutoff"
+    },
+    {
+      "ts_code": "600870.SH",
+      "reason": "delisted_as_of_cutoff"
+    },
+    {
+      "ts_code": "600878.SH",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "600889.SH",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "600890.SH",
+      "reason": "delisted_as_of_cutoff"
+    },
+    {
+      "ts_code": "600891.SH",
+      "reason": "delisted_as_of_cutoff"
+    },
+    {
+      "ts_code": "600896.SH",
+      "reason": "delisted_as_of_cutoff"
+    },
+    {
+      "ts_code": "600898.SH",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "600899.SH",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "600930.SH",
+      "reason": "not_listed_as_of_cutoff"
+    },
+    {
+      "ts_code": "600965.SH",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "600978.SH",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "600991.SH",
+      "reason": "delisted_as_of_cutoff"
+    },
+    {
+      "ts_code": "601010.SH",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "601026.SH",
+      "reason": "not_listed_as_of_cutoff"
+    },
+    {
+      "ts_code": "601112.SH",
+      "reason": "not_listed_as_of_cutoff"
+    },
+    {
+      "ts_code": "601258.SH",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "601268.SH",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "601299.SH",
+      "reason": "delisted_as_of_cutoff"
+    },
+    {
+      "ts_code": "601558.SH",
+      "reason": "delisted_as_of_cutoff"
+    },
+    {
+      "ts_code": "601718.SH",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "603008.SH",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "603014.SH",
+      "reason": "not_listed_as_of_cutoff"
+    },
+    {
+      "ts_code": "603021.SH",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "603049.SH",
+      "reason": "not_listed_as_of_cutoff"
+    },
+    {
+      "ts_code": "603072.SH",
+      "reason": "not_listed_as_of_cutoff"
+    },
+    {
+      "ts_code": "603082.SH",
+      "reason": "valid_price_rows_lt_40"
+    },
+    {
+      "ts_code": "603091.SH",
+      "reason": "not_listed_as_of_cutoff"
+    },
+    {
+      "ts_code": "603092.SH",
+      "reason": "not_listed_as_of_cutoff"
+    },
+    {
+      "ts_code": "603120.SH",
+      "reason": "not_listed_as_of_cutoff"
+    },
+    {
+      "ts_code": "603124.SH",
+      "reason": "not_listed_as_of_cutoff"
+    },
+    {
+      "ts_code": "603157.SH",
+      "reason": "delisted_as_of_cutoff"
+    },
+    {
+      "ts_code": "603175.SH",
+      "reason": "not_listed_as_of_cutoff"
+    },
+    {
+      "ts_code": "603189.SH",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "603194.SH",
+      "reason": "not_listed_as_of_cutoff"
+    },
+    {
+      "ts_code": "603202.SH",
+      "reason": "not_listed_as_of_cutoff"
+    },
+    {
+      "ts_code": "603205.SH",
+      "reason": "not_listed_as_of_cutoff"
+    },
+    {
+      "ts_code": "603207.SH",
+      "reason": "not_listed_as_of_cutoff"
+    },
+    {
+      "ts_code": "603210.SH",
+      "reason": "not_listed_as_of_cutoff"
+    },
+    {
+      "ts_code": "603248.SH",
+      "reason": "not_listed_as_of_cutoff"
+    },
+    {
+      "ts_code": "603257.SH",
+      "reason": "not_listed_as_of_cutoff"
+    },
+    {
+      "ts_code": "603262.SH",
+      "reason": "not_listed_as_of_cutoff"
+    },
+    {
+      "ts_code": "603271.SH",
+      "reason": "not_listed_as_of_cutoff"
+    },
+    {
+      "ts_code": "603272.SH",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "603284.SH",
+      "reason": "not_listed_as_of_cutoff"
+    },
+    {
+      "ts_code": "603285.SH",
+      "reason": "not_listed_as_of_cutoff"
+    },
+    {
+      "ts_code": "603293.SH",
+      "reason": "not_listed_as_of_cutoff"
+    },
+    {
+      "ts_code": "603310.SH",
+      "reason": "not_listed_as_of_cutoff"
+    },
+    {
+      "ts_code": "603334.SH",
+      "reason": "not_listed_as_of_cutoff"
+    },
+    {
+      "ts_code": "603341.SH",
+      "reason": "valid_price_rows_lt_40"
+    },
+    {
+      "ts_code": "603344.SH",
+      "reason": "valid_price_rows_lt_40"
+    },
+    {
+      "ts_code": "603350.SH",
+      "reason": "not_listed_as_of_cutoff"
+    },
+    {
+      "ts_code": "603352.SH",
+      "reason": "not_listed_as_of_cutoff"
+    },
+    {
+      "ts_code": "603359.SH",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "603370.SH",
+      "reason": "not_listed_as_of_cutoff"
+    },
+    {
+      "ts_code": "603376.SH",
+      "reason": "not_listed_as_of_cutoff"
+    },
+    {
+      "ts_code": "603377.SH",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "603378.SH",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "603381.SH",
+      "reason": "not_listed_as_of_cutoff"
+    },
+    {
+      "ts_code": "603382.SH",
+      "reason": "not_listed_as_of_cutoff"
+    },
+    {
+      "ts_code": "603388.SH",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "603391.SH",
+      "reason": "not_listed_as_of_cutoff"
+    },
+    {
+      "ts_code": "603395.SH",
+      "reason": "not_listed_as_of_cutoff"
+    },
+    {
+      "ts_code": "603398.SH",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "603400.SH",
+      "reason": "not_listed_as_of_cutoff"
+    },
+    {
+      "ts_code": "603402.SH",
+      "reason": "not_listed_as_of_cutoff"
+    },
+    {
+      "ts_code": "603406.SH",
+      "reason": "not_listed_as_of_cutoff"
+    },
+    {
+      "ts_code": "603407.SH",
+      "reason": "not_listed_as_of_cutoff"
+    },
+    {
+      "ts_code": "603409.SH",
+      "reason": "not_listed_as_of_cutoff"
+    },
+    {
+      "ts_code": "603418.SH",
+      "reason": "not_listed_as_of_cutoff"
+    },
+    {
+      "ts_code": "603429.SH",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "603435.SH",
+      "reason": "not_listed_as_of_cutoff"
+    },
+    {
+      "ts_code": "603459.SH",
+      "reason": "not_listed_as_of_cutoff"
+    },
+    {
+      "ts_code": "603517.SH",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "603555.SH",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "603557.SH",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "603595.SH",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "603603.SH",
+      "reason": "valid_price_rows_lt_40"
+    },
+    {
+      "ts_code": "603718.SH",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "603729.SH",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "603789.SH",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "603822.SH",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "603825.SH",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "603828.SH",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "603838.SH",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "603843.SH",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "603869.SH",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "603922.SH",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "603959.SH",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "603963.SH",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "603996.SH",
+      "reason": "delisted_as_of_cutoff"
+    },
+    {
+      "ts_code": "605199.SH",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "605336.SH",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "688022.SH",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "688033.SH",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "688053.SH",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "688066.SH",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "688076.SH",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "688086.SH",
+      "reason": "delisted_as_of_cutoff"
+    },
+    {
+      "ts_code": "688121.SH",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "688184.SH",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "688189.SH",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "688201.SH",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "688270.SH",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "688411.SH",
+      "reason": "not_listed_as_of_cutoff"
+    },
+    {
+      "ts_code": "688449.SH",
+      "reason": "not_listed_as_of_cutoff"
+    },
+    {
+      "ts_code": "688496.SH",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "688530.SH",
+      "reason": "not_listed_as_of_cutoff"
+    },
+    {
+      "ts_code": "688545.SH",
+      "reason": "not_listed_as_of_cutoff"
+    },
+    {
+      "ts_code": "688555.SH",
+      "reason": "delisted_as_of_cutoff"
+    },
+    {
+      "ts_code": "688583.SH",
+      "reason": "not_listed_as_of_cutoff"
+    },
+    {
+      "ts_code": "688584.SH",
+      "reason": "valid_price_rows_lt_40"
+    },
+    {
+      "ts_code": "688605.SH",
+      "reason": "not_listed_as_of_cutoff"
+    },
+    {
+      "ts_code": "688615.SH",
+      "reason": "not_listed_as_of_cutoff"
+    },
+    {
+      "ts_code": "688622.SH",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "688635.SH",
+      "reason": "not_listed_as_of_cutoff"
+    },
+    {
+      "ts_code": "688646.SH",
+      "reason": "st_name"
+    },
+    {
+      "ts_code": "688691.SH",
+      "reason": "not_listed_as_of_cutoff"
+    },
+    {
+      "ts_code": "688692.SH",
+      "reason": "not_listed_as_of_cutoff"
+    },
+    {
+      "ts_code": "688695.SH",
+      "reason": "valid_price_rows_lt_40"
+    },
+    {
+      "ts_code": "688708.SH",
+      "reason": "not_listed_as_of_cutoff"
+    },
+    {
+      "ts_code": "688709.SH",
+      "reason": "valid_price_rows_lt_40"
+    },
+    {
+      "ts_code": "688710.SH",
+      "reason": "not_listed_as_of_cutoff"
+    },
+    {
+      "ts_code": "688712.SH",
+      "reason": "not_listed_as_of_cutoff"
+    },
+    {
+      "ts_code": "688721.SH",
+      "reason": "not_listed_as_of_cutoff"
+    },
+    {
+      "ts_code": "688726.SH",
+      "reason": "not_listed_as_of_cutoff"
+    },
+    {
+      "ts_code": "688727.SH",
+      "reason": "not_listed_as_of_cutoff"
+    },
+    {
+      "ts_code": "688729.SH",
+      "reason": "not_listed_as_of_cutoff"
+    },
+    {
+      "ts_code": "688750.SH",
+      "reason": "not_listed_as_of_cutoff"
+    },
+    {
+      "ts_code": "688755.SH",
+      "reason": "not_listed_as_of_cutoff"
+    },
+    {
+      "ts_code": "688757.SH",
+      "reason": "not_listed_as_of_cutoff"
+    },
+    {
+      "ts_code": "688758.SH",
+      "reason": "not_listed_as_of_cutoff"
+    },
+    {
+      "ts_code": "688759.SH",
+      "reason": "not_listed_as_of_cutoff"
+    },
+    {
+      "ts_code": "688765.SH",
+      "reason": "not_listed_as_of_cutoff"
+    },
+    {
+      "ts_code": "688775.SH",
+      "reason": "not_listed_as_of_cutoff"
+    },
+    {
+      "ts_code": "688781.SH",
+      "reason": "not_listed_as_of_cutoff"
+    },
+    {
+      "ts_code": "688783.SH",
+      "reason": "not_listed_as_of_cutoff"
+    },
+    {
+      "ts_code": "688785.SH",
+      "reason": "not_listed_as_of_cutoff"
+    },
+    {
+      "ts_code": "688790.SH",
+      "reason": "not_listed_as_of_cutoff"
+    },
+    {
+      "ts_code": "688795.SH",
+      "reason": "not_listed_as_of_cutoff"
+    },
+    {
+      "ts_code": "688796.SH",
+      "reason": "not_listed_as_of_cutoff"
+    },
+    {
+      "ts_code": "688797.SH",
+      "reason": "not_listed_as_of_cutoff"
+    },
+    {
+      "ts_code": "688802.SH",
+      "reason": "not_listed_as_of_cutoff"
+    },
+    {
+      "ts_code": "688805.SH",
+      "reason": "not_listed_as_of_cutoff"
+    },
+    {
+      "ts_code": "688807.SH",
+      "reason": "not_listed_as_of_cutoff"
+    },
+    {
+      "ts_code": "688808.SH",
+      "reason": "not_listed_as_of_cutoff"
+    },
+    {
+      "ts_code": "688809.SH",
+      "reason": "not_listed_as_of_cutoff"
+    },
+    {
+      "ts_code": "688811.SH",
+      "reason": "not_listed_as_of_cutoff"
+    },
+    {
+      "ts_code": "688813.SH",
+      "reason": "not_listed_as_of_cutoff"
+    },
+    {
+      "ts_code": "688816.SH",
+      "reason": "not_listed_as_of_cutoff"
+    },
+    {
+      "ts_code": "688818.SH",
+      "reason": "not_listed_as_of_cutoff"
+    },
+    {
+      "ts_code": "688820.SH",
+      "reason": "not_listed_as_of_cutoff"
+    },
+    {
+      "ts_code": "832317.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "833874.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "833994.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920000.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920001.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920002.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920003.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920005.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920006.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920007.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920008.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920009.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920010.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920011.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920012.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920014.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920015.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920016.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920017.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920018.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920019.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920020.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920021.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920022.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920023.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920026.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920027.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920028.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920029.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920030.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920033.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920035.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920036.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920037.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920039.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920045.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920046.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920047.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920050.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920055.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920056.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920057.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920058.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920060.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920061.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920062.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920066.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920068.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920069.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920072.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920075.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920076.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920077.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920078.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920080.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920081.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920082.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920083.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920086.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920087.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920088.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920089.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920090.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920091.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920092.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920096.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920098.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920099.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920100.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920101.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920106.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920108.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920110.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920111.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920112.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920116.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920118.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920119.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920121.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920122.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920123.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920124.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920125.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920126.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920128.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920130.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920132.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920136.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920139.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920145.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920146.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920149.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920152.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920156.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920158.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920159.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920160.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920161.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920163.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920166.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920167.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920168.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920169.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920171.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920174.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920175.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920177.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920178.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920179.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920180.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920181.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920183.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920184.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920185.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920186.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920187.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920188.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920189.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920190.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920191.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920193.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920195.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920198.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920199.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920200.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920204.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920206.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920207.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920208.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920211.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920212.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920218.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920220.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920221.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920222.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920223.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920225.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920227.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920230.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920237.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920239.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920242.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920245.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920247.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920249.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920252.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920260.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920261.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920262.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920263.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920266.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920267.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920270.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920271.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920273.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920274.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920275.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920278.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920284.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920299.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920300.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920304.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920305.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920339.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920344.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920346.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920351.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920357.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920363.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920367.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920368.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920370.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920371.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920374.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920375.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920378.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920392.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920394.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920395.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920396.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920402.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920403.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920405.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920407.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920414.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920415.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920418.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920419.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920422.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920425.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920427.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920429.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920433.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920436.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920438.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920445.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920454.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920455.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920469.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920471.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920475.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920476.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920478.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920489.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920491.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920493.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920496.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920504.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920505.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920508.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920509.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920510.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920519.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920522.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920523.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920526.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920527.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920533.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920541.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920547.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920553.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920556.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920564.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920566.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920570.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920571.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920575.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920576.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920578.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920579.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920580.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920592.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920593.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920599.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920608.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920627.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920634.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920639.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920640.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920641.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920642.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920651.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920656.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920662.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920663.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920665.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920670.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920675.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920679.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920680.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920682.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920685.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920689.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920690.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920693.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920694.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920699.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920701.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920703.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920706.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920717.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920718.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920719.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920720.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920725.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920726.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920729.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920735.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920748.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920751.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920753.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920765.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920768.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920770.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920779.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920781.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920786.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920790.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920792.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920799.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920802.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920806.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920807.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920808.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920809.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920810.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920819.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920821.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920826.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920832.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920833.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920834.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920837.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920839.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920855.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920856.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920857.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920866.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920870.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920871.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920873.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920876.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920879.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920885.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920892.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920895.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920896.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920906.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920914.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920924.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920925.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920926.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920931.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920932.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920942.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920943.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920946.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920950.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920953.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920957.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920961.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920964.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920970.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920971.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920974.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920976.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920978.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920981.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920982.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920985.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "920992.BJ",
+      "reason": "unsupported_exchange"
+    },
+    {
+      "ts_code": "T600018.SH",
+      "reason": "delisted_as_of_cutoff"
+    }
+  ],
+  "source_data_hashes": {
+    "trade_calendar_sha256": "f34de1ab81b9b11999c0dd0f98a6d851df2aa3e15e63e5ea2bf5fd500d5f13cd",
+    "stock_basic_sha256": "0bbc2d38cc4cde25b19d947ab5bd85c1558835da35985f73e62ab16449e99ae8",
+    "strategy_sha256": "f285ecc87f89aa54cea06090b4dc659445be4bc139fa4719db76132047741959",
+    "plan_sha256": "1423af0466cdc1428f401b60220bf4822b24820e2e083d032cf3614d09d05689",
+    "daily_bundle_sha256": "73f7467c277afeb7eb154a540e983445aee561c25ec3dde998ae729a7719e042"
+  },
+  "source_daily_files": [
+    {
+      "trade_date": "20231229",
+      "path": "data/cache/p23_2_historical_market/daily_by_trade_date/20231229.json",
+      "sha256": "913e156184ddfc7fe040ddec142bed5f328c913f2cc5c901f9b24b3588dd93dd"
+    },
+    {
+      "trade_date": "20240102",
+      "path": "data/cache/p23_2_historical_market/daily_by_trade_date/20240102.json",
+      "sha256": "6e3ed6ce6727f94852b4e890f85fd3ddcfd4472e5f9e395f8b9d8bce24345183"
+    },
+    {
+      "trade_date": "20240103",
+      "path": "data/cache/p23_2_historical_market/daily_by_trade_date/20240103.json",
+      "sha256": "4c94c82404724b3967ee60af5f3bdcc6da065ce15bd7ecdffb1180d51413d727"
+    },
+    {
+      "trade_date": "20240104",
+      "path": "data/cache/p23_2_historical_market/daily_by_trade_date/20240104.json",
+      "sha256": "162389eafae28bebb3b0c9e28a3fb805eb5d1463096d7cb63c4d80bd2bd9f9ce"
+    },
+    {
+      "trade_date": "20240105",
+      "path": "data/cache/p23_2_historical_market/daily_by_trade_date/20240105.json",
+      "sha256": "058872a818f895a7159d8bd075dd7dab60d4fd5bf535814daf87512c9714abed"
+    },
+    {
+      "trade_date": "20240108",
+      "path": "data/cache/p23_2_historical_market/daily_by_trade_date/20240108.json",
+      "sha256": "d75028b3b56ab87ab103b7761c680071c64fc0a54e933d677cf4cd1708b7226e"
+    },
+    {
+      "trade_date": "20240109",
+      "path": "data/cache/p23_2_historical_market/daily_by_trade_date/20240109.json",
+      "sha256": "d9378f74d8dfa07bc4a5bcc62877ffa2361faba9d4235a31422aca3a360336ba"
+    },
+    {
+      "trade_date": "20240110",
+      "path": "data/cache/p23_2_historical_market/daily_by_trade_date/20240110.json",
+      "sha256": "058d8e6b5d10812a39f7aa4bf52d3edda0ef2ab244a917dcd975461fe734cb29"
+    },
+    {
+      "trade_date": "20240111",
+      "path": "data/cache/p23_2_historical_market/daily_by_trade_date/20240111.json",
+      "sha256": "3b7314823703af9217fb8c0e0a84610976393846c6c139e46b13c8f5809bb9a8"
+    },
+    {
+      "trade_date": "20240112",
+      "path": "data/cache/p23_2_historical_market/daily_by_trade_date/20240112.json",
+      "sha256": "b2193095efa8e3153c274a92e56406af1c4b020335f86e5ff7da15693ae682c1"
+    },
+    {
+      "trade_date": "20240115",
+      "path": "data/cache/p23_2_historical_market/daily_by_trade_date/20240115.json",
+      "sha256": "3ba89d16481a8d6952bb315e9947e7b4620c494ff3da6efba3ce7709d9414138"
+    },
+    {
+      "trade_date": "20240116",
+      "path": "data/cache/p23_2_historical_market/daily_by_trade_date/20240116.json",
+      "sha256": "0a062ff90de272bab40f62d8bff78b8a267b894b69145c9f1e823452dffded4d"
+    },
+    {
+      "trade_date": "20240117",
+      "path": "data/cache/p23_2_historical_market/daily_by_trade_date/20240117.json",
+      "sha256": "7b1e54b0abee5ae9a37f8c7e95a7134e4c741b9d2feda96eec02dc432027e661"
+    },
+    {
+      "trade_date": "20240118",
+      "path": "data/cache/p23_2_historical_market/daily_by_trade_date/20240118.json",
+      "sha256": "baadabe226d9d18c469cf6e0ab372b6386515027b82e9fe829b68aee67fc163d"
+    },
+    {
+      "trade_date": "20240119",
+      "path": "data/cache/p23_2_historical_market/daily_by_trade_date/20240119.json",
+      "sha256": "d2c92d141ade6fb6aebf5d1e0ca76b29fee4192ff3f7bedc750f1f95bd7e0941"
+    },
+    {
+      "trade_date": "20240122",
+      "path": "data/cache/p23_2_historical_market/daily_by_trade_date/20240122.json",
+      "sha256": "7153b82e78a8242b4820bf94eb63eccaa7961dd1fd584e3dd585092034e3efcf"
+    },
+    {
+      "trade_date": "20240123",
+      "path": "data/cache/p23_2_historical_market/daily_by_trade_date/20240123.json",
+      "sha256": "a8619b2e7e5f888cfd1b4c65cc671c0424df9a752df3c07fe640391072b6dda4"
+    },
+    {
+      "trade_date": "20240124",
+      "path": "data/cache/p23_2_historical_market/daily_by_trade_date/20240124.json",
+      "sha256": "5919cee4e3694293eda1713d097f8b7982a9586144e36420992a94cb1fa9f4ce"
+    },
+    {
+      "trade_date": "20240125",
+      "path": "data/cache/p23_2_historical_market/daily_by_trade_date/20240125.json",
+      "sha256": "f184b3278aed2e59c82d235e68e8f61acfa1a83928a44c6da6b00d05c93993eb"
+    },
+    {
+      "trade_date": "20240126",
+      "path": "data/cache/p23_2_historical_market/daily_by_trade_date/20240126.json",
+      "sha256": "a3c8021d93a9fc71f58a49bc4cd99321820156b1ef347dbf36cf13b66a272ab2"
+    },
+    {
+      "trade_date": "20240129",
+      "path": "data/cache/p23_2_historical_market/daily_by_trade_date/20240129.json",
+      "sha256": "404881e44d5890e379728967a6cdc7164a790bb679903c4815ba0c08abfd7ca0"
+    },
+    {
+      "trade_date": "20240130",
+      "path": "data/cache/p23_2_historical_market/daily_by_trade_date/20240130.json",
+      "sha256": "9e2aac8793f80558a7e8b268b0dc74248ef7ae4315f210893d9ce058a1cd4a9f"
+    },
+    {
+      "trade_date": "20240131",
+      "path": "data/cache/p23_2_historical_market/daily_by_trade_date/20240131.json",
+      "sha256": "de393e515b29508767ada507dde9512d1138b25e9568b6522b737d0e8186c65d"
+    },
+    {
+      "trade_date": "20240201",
+      "path": "data/cache/p23_2_historical_market/daily_by_trade_date/20240201.json",
+      "sha256": "ad662b7b1eb1667dc720d7d28bee28e3e8ef366f10846fb1c91439f03e435a12"
+    },
+    {
+      "trade_date": "20240202",
+      "path": "data/cache/p23_2_historical_market/daily_by_trade_date/20240202.json",
+      "sha256": "c8fb733c96748cc38844299e9a2567e2528ebe52bb835a10f95d8908bf06da58"
+    },
+    {
+      "trade_date": "20240205",
+      "path": "data/cache/p23_2_historical_market/daily_by_trade_date/20240205.json",
+      "sha256": "36a0def24ab7b28ae099ec57431b994bd3d3db9190234886421a2ce6cc9c49d8"
+    },
+    {
+      "trade_date": "20240206",
+      "path": "data/cache/p23_2_historical_market/daily_by_trade_date/20240206.json",
+      "sha256": "27d82982597fb61a26c481b4568471e2e9d6c8bc9402d7d6fc7fe9bcff68c987"
+    },
+    {
+      "trade_date": "20240207",
+      "path": "data/cache/p23_2_historical_market/daily_by_trade_date/20240207.json",
+      "sha256": "c2f7d2882c06af720b38983437547644e84dadb301963cc025f76f9687f951a2"
+    },
+    {
+      "trade_date": "20240208",
+      "path": "data/cache/p23_2_historical_market/daily_by_trade_date/20240208.json",
+      "sha256": "6f7d29d73c2c7dd68c154bd930baf7e4bbec55579413ccce6a638a9b5f8cd6e8"
+    },
+    {
+      "trade_date": "20240219",
+      "path": "data/cache/p23_2_historical_market/daily_by_trade_date/20240219.json",
+      "sha256": "ae03dced237f8e70bb28c9e451cb4377f125078812c6a05038202ccdb097adf5"
+    },
+    {
+      "trade_date": "20240220",
+      "path": "data/cache/p23_2_historical_market/daily_by_trade_date/20240220.json",
+      "sha256": "d962f88f51626ad4c32d78dd32b2de1921e1716d83485cdf468feb0d7ebf5100"
+    },
+    {
+      "trade_date": "20240221",
+      "path": "data/cache/p23_2_historical_market/daily_by_trade_date/20240221.json",
+      "sha256": "88761369a06652fed9b3e9b4211e657e99289c8cc0e0bd970827b3927083fbfd"
+    },
+    {
+      "trade_date": "20240222",
+      "path": "data/cache/p23_2_historical_market/daily_by_trade_date/20240222.json",
+      "sha256": "a995c579b42f50f4160546d63c117f962324025183bb6e1a2d9b6c0c62aecd7e"
+    },
+    {
+      "trade_date": "20240223",
+      "path": "data/cache/p23_2_historical_market/daily_by_trade_date/20240223.json",
+      "sha256": "3ebdeaa0f717f8975d982f99706fcce76e5d3df8687a98ba6cc322492ca6e227"
+    },
+    {
+      "trade_date": "20240226",
+      "path": "data/cache/p23_2_historical_market/daily_by_trade_date/20240226.json",
+      "sha256": "377edecf1690bc807b38a6d68628a1853a227c79ff7ae3a881b74ae8cb72f255"
+    },
+    {
+      "trade_date": "20240227",
+      "path": "data/cache/p23_2_historical_market/daily_by_trade_date/20240227.json",
+      "sha256": "f6ca989a9f965469fc8501697c759e7e274ba2a1623f1c047e4031044e53dff1"
+    },
+    {
+      "trade_date": "20240228",
+      "path": "data/cache/p23_2_historical_market/daily_by_trade_date/20240228.json",
+      "sha256": "af99b37fd06715b17932c68b0ff59c31d2022b69dd2c40413ac663e602f4fc16"
+    },
+    {
+      "trade_date": "20240229",
+      "path": "data/cache/p23_2_historical_market/daily_by_trade_date/20240229.json",
+      "sha256": "85fabf468615e468f631a52ff27ff9a0e431acce81d90d1e779080f45eb8d04a"
+    },
+    {
+      "trade_date": "20240301",
+      "path": "data/cache/p23_2_historical_market/daily_by_trade_date/20240301.json",
+      "sha256": "2814887928e94cd07948d9f2981def6bd95f5951a71ee04d0d56af4e3d10011a"
+    },
+    {
+      "trade_date": "20240304",
+      "path": "data/cache/p23_2_historical_market/daily_by_trade_date/20240304.json",
+      "sha256": "d8d96bd8ce43e40b9d691508698bd43bcb03bbd954e4ef665811543924d9ebe4"
+    },
+    {
+      "trade_date": "20240305",
+      "path": "data/cache/p23_2_historical_market/daily_by_trade_date/20240305.json",
+      "sha256": "d4cd13c84df8d372b10038842e24ce12828c76d539e8e4b63f9387b50dbb1e21"
+    },
+    {
+      "trade_date": "20240306",
+      "path": "data/cache/p23_2_historical_market/daily_by_trade_date/20240306.json",
+      "sha256": "31b345f065d23216f482f5e201e3abb014165f8706203bb4e5ea08b8f6070b9f"
+    },
+    {
+      "trade_date": "20240307",
+      "path": "data/cache/p23_2_historical_market/daily_by_trade_date/20240307.json",
+      "sha256": "bdd953139507c37cc6f7e1a23cdf185ac4fddc1b425a6c8da74add0fa02fb0dd"
+    },
+    {
+      "trade_date": "20240308",
+      "path": "data/cache/p23_2_historical_market/daily_by_trade_date/20240308.json",
+      "sha256": "c9b6864f9a2524318450e1946fa91fe030b07cc4f4f8c535f6061163faddd26c"
+    },
+    {
+      "trade_date": "20240311",
+      "path": "data/cache/p23_2_historical_market/daily_by_trade_date/20240311.json",
+      "sha256": "0c729d39acc2db7a004b4c345785c0fa9fb1de6fe5cb973329b2ab4236f9f961"
+    },
+    {
+      "trade_date": "20240312",
+      "path": "data/cache/p23_2_historical_market/daily_by_trade_date/20240312.json",
+      "sha256": "812575c951c5ab8d0ca20a607a21d73b0f5928e20a00221b3438756c179e9538"
+    },
+    {
+      "trade_date": "20240313",
+      "path": "data/cache/p23_2_historical_market/daily_by_trade_date/20240313.json",
+      "sha256": "8a5c1da351d4af6662f944a6cc1ebc644d7e255ebd1b96503e19fb362f1f83bc"
+    },
+    {
+      "trade_date": "20240314",
+      "path": "data/cache/p23_2_historical_market/daily_by_trade_date/20240314.json",
+      "sha256": "e47735b769f63a24589e1b8383074d56b97a13029147c5e68f413e07e31ee1a8"
+    },
+    {
+      "trade_date": "20240315",
+      "path": "data/cache/p23_2_historical_market/daily_by_trade_date/20240315.json",
+      "sha256": "e38cd73029659b8593871d19e4934538c4cef9c4587703b72266882b5318c73e"
+    },
+    {
+      "trade_date": "20240318",
+      "path": "data/cache/p23_2_historical_market/daily_by_trade_date/20240318.json",
+      "sha256": "283a6e9c17c62a391022545da8deae99afcfd66fb89a7372223e312234ae44c3"
+    },
+    {
+      "trade_date": "20240319",
+      "path": "data/cache/p23_2_historical_market/daily_by_trade_date/20240319.json",
+      "sha256": "70a7402a13a95d632f500ffcf5a0fe21c89af5d0423c93135561dd9f9b350be7"
+    },
+    {
+      "trade_date": "20240320",
+      "path": "data/cache/p23_2_historical_market/daily_by_trade_date/20240320.json",
+      "sha256": "045d649db5242bc27353fe556cf8337dffdbf64ccbb2a7e8dd955bd4a650974f"
+    },
+    {
+      "trade_date": "20240321",
+      "path": "data/cache/p23_2_historical_market/daily_by_trade_date/20240321.json",
+      "sha256": "c546a6b066646ca464e00f3aa8d82da6126f366bbfb7f5c180af9ff895b1640e"
+    },
+    {
+      "trade_date": "20240322",
+      "path": "data/cache/p23_2_historical_market/daily_by_trade_date/20240322.json",
+      "sha256": "ddec89a254f793b48142e48e0c6ed236739f69185e20f4d03ab256423a89ad9f"
+    },
+    {
+      "trade_date": "20240325",
+      "path": "data/cache/p23_2_historical_market/daily_by_trade_date/20240325.json",
+      "sha256": "ee1aa27926a21748c302a162498a8ae30b26a273961ba50dbb485f05bbcde593"
+    },
+    {
+      "trade_date": "20240326",
+      "path": "data/cache/p23_2_historical_market/daily_by_trade_date/20240326.json",
+      "sha256": "5589230f286348f888d558988261915f4b24386dfdfefa7e0d8d6f0b197d49c5"
+    },
+    {
+      "trade_date": "20240327",
+      "path": "data/cache/p23_2_historical_market/daily_by_trade_date/20240327.json",
+      "sha256": "5c6464c5de261d720f45ef376ef0a5a7d1e098e9b24c4f58eceddf39ffe3e44d"
+    },
+    {
+      "trade_date": "20240328",
+      "path": "data/cache/p23_2_historical_market/daily_by_trade_date/20240328.json",
+      "sha256": "03beb1e795817094937a002336ae9be60bfb43535f16ed006aebed7de184f491"
+    },
+    {
+      "trade_date": "20240329",
+      "path": "data/cache/p23_2_historical_market/daily_by_trade_date/20240329.json",
+      "sha256": "5fd46ff7d7e120a26cdbec711f1050b5f8297e1ad1cc90a895e0ada7f067c4de"
+    },
+    {
+      "trade_date": "20240401",
+      "path": "data/cache/p23_2_historical_market/daily_by_trade_date/20240401.json",
+      "sha256": "effbf34a5fbecc1bf0c477fb0f17ebc9f2aa307d9296978e9f15115392ab3e9f"
+    }
+  ],
+  "trade_calendar_source": "Tushare trade_cal cached cross-section",
+  "universe_source": "Tushare stock_basic L/D/P reconstructed by list_date/delist_date",
+  "date_alignment_method": "first_open_day_monthly_and_open_day_index",
+  "generated_at": "2026-07-10T13:13:46.126768+00:00",
+  "dry_run": true,
+  "sent": false,
+  "trading_called": false,
+  "current_watchlist_used": false,
+  "point_in_time": true,
+  "lookahead_bias_control_passed": true,
+  "survivorship_bias_warning": true,
+  "warnings": [
+    "Historical name/status changes may be incomplete.",
+    "This historical strategy is not equivalent to a_share_watchlist_v1."
+  ]
+}

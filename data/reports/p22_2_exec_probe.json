@@ -1,0 +1,15 @@
+{
+  "project": "Project Aegis",
+  "type": "p22_2_exec_probe",
+  "status": "PASS",
+  "created_at": "2026-07-10T05:44:55.697328+00:00",
+  "cwd": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo",
+  "python_exists": true,
+  "can_write_reports": true,
+  "safety": {
+    "sent": false,
+    "webhook_called": false,
+    "trading_called": false,
+    "cron_modified": false
+  }
+}

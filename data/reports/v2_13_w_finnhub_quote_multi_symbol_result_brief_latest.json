@@ -1,0 +1,314 @@
+{
+  "overall_status": "PASS",
+  "acceptance_target": "V2.13-W Finnhub Quote Multi-Symbol Sandbox Result Brief",
+  "source_acceptance_target": "V2.13-V Finnhub Quote Multi-Symbol Sandbox Evaluation",
+  "brief_type": "multi_symbol_blocked_result_brief",
+  "run_id": "v2_13_w_20260712_acceptance",
+  "generated_at": "2026-07-12T03:49:17+08:00",
+  "command": "validate_v2_13_w_finnhub_quote_multi_symbol_result_brief.py --run-id v2_13_w_20260712_acceptance",
+  "network_used": false,
+  "production_records_written": false,
+  "production_cache_mutated": false,
+  "production_provider_config_mutated": false,
+  "dashboard_contract_changed": false,
+  "summary": {
+    "blocked_item_count": 3,
+    "passed_item_count": 0,
+    "blocked_symbols": [
+      "CRCL.US",
+      "MSFT.US",
+      "NVDA.US"
+    ],
+    "failed_reason_codes": [
+      "average_return_below_threshold",
+      "max_drawdown_breached",
+      "win_rate_below_threshold"
+    ],
+    "strategy_pass_count": 0,
+    "strategy_fail_count": 3,
+    "suggestion_gate_ready": false,
+    "user_facing_suggestion_allowed": false,
+    "real_trade_allowed": false,
+    "next_stage": "Refresh candidate pool or continue V2.12-K Review/Memory Bridge"
+  },
+  "current_answer": {
+    "online_reading_status": "Finnhub quote 和 EODHD historical bars 已完成联网读取并形成证据链。",
+    "historical_sandbox_status": "本轮 3 个多股票候选已完成 81 个 historical cases 的 sandbox evaluation。",
+    "usable_suggestion_status": "本轮没有可用建议：3 个候选全部未通过沙盘，不能进入 Suggestion Gate。",
+    "strategy_research_status": "失败原因已结构化保存，可用于后续重新筛选或调整策略假设。"
+  },
+  "items": [
+    {
+      "item_id": "blocked_strategy_crcl_us_finnhub_multi_quote_context_probe",
+      "strategy_id": "strategy_crcl_us_finnhub_multi_quote_context_probe",
+      "symbol": "CRCL.US",
+      "market": "US",
+      "brief_status": "blocked_by_sandbox",
+      "user_action": "不要把这个候选作为当前模拟建议使用；等待重新筛选、重新设定策略或更多证据。",
+      "plain_summary": "CRCL.US 已完成联网 quote context、历史案例组装和 sandbox evaluation，但本轮沙盘没有通过。因此它不能进入 Suggestion Gate，也不能生成用户可执行建议。",
+      "metrics": {
+        "sample_count": 27,
+        "eligible_case_count": 27,
+        "win_rate": 0.37037037037037035,
+        "average_return": -0.015221498572253377,
+        "max_drawdown": -0.17693522906793036,
+        "failed_reasons": [
+          "win_rate_below_threshold",
+          "average_return_below_threshold",
+          "max_drawdown_breached"
+        ],
+        "failed_reason_labels": [
+          "历史胜率低于通过阈值",
+          "历史平均收益低于通过阈值",
+          "历史最大回撤超过允许底线"
+        ]
+      },
+      "evidence_summary": {
+        "source_stage": "V2.13-V Finnhub Quote Multi-Symbol Sandbox Evaluation",
+        "historical_cases_used": 27,
+        "result_status": "FAIL"
+      },
+      "next_allowed_actions": [
+        "保留为 blocked evidence，供以后复盘。",
+        "重新筛选候选池，而不是把失败候选包装成建议。",
+        "如要继续研究，先调整策略假设并重新跑 historical sandbox。"
+      ],
+      "forbidden_actions": [
+        "不得进入 Suggestion Gate。",
+        "不得生成买入/卖出/持有建议。",
+        "不得生成仓位数量。",
+        "不得连接券商、webhook 或下单。"
+      ],
+      "simulation_only": true,
+      "user_facing_suggestion_allowed": false,
+      "no_live_price": true,
+      "no_position_size": true,
+      "no_real_trade": true,
+      "no_broker_api": true,
+      "no_webhook": true,
+      "no_order_placement": true,
+      "no_live_order_signal": true
+    },
+    {
+      "item_id": "blocked_strategy_msft_us_finnhub_multi_quote_context_probe",
+      "strategy_id": "strategy_msft_us_finnhub_multi_quote_context_probe",
+      "symbol": "MSFT.US",
+      "market": "US",
+      "brief_status": "blocked_by_sandbox",
+      "user_action": "不要把这个候选作为当前模拟建议使用；等待重新筛选、重新设定策略或更多证据。",
+      "plain_summary": "MSFT.US 已完成联网 quote context、历史案例组装和 sandbox evaluation，但本轮沙盘没有通过。因此它不能进入 Suggestion Gate，也不能生成用户可执行建议。",
+      "metrics": {
+        "sample_count": 27,
+        "eligible_case_count": 27,
+        "win_rate": 0.4444444444444444,
+        "average_return": -0.006348927822844228,
+        "max_drawdown": -0.04702791109204496,
+        "failed_reasons": [
+          "win_rate_below_threshold",
+          "average_return_below_threshold"
+        ],
+        "failed_reason_labels": [
+          "历史胜率低于通过阈值",
+          "历史平均收益低于通过阈值"
+        ]
+      },
+      "evidence_summary": {
+        "source_stage": "V2.13-V Finnhub Quote Multi-Symbol Sandbox Evaluation",
+        "historical_cases_used": 27,
+        "result_status": "FAIL"
+      },
+      "next_allowed_actions": [
+        "保留为 blocked evidence，供以后复盘。",
+        "重新筛选候选池，而不是把失败候选包装成建议。",
+        "如要继续研究，先调整策略假设并重新跑 historical sandbox。"
+      ],
+      "forbidden_actions": [
+        "不得进入 Suggestion Gate。",
+        "不得生成买入/卖出/持有建议。",
+        "不得生成仓位数量。",
+        "不得连接券商、webhook 或下单。"
+      ],
+      "simulation_only": true,
+      "user_facing_suggestion_allowed": false,
+      "no_live_price": true,
+      "no_position_size": true,
+      "no_real_trade": true,
+      "no_broker_api": true,
+      "no_webhook": true,
+      "no_order_placement": true,
+      "no_live_order_signal": true
+    },
+    {
+      "item_id": "blocked_strategy_nvda_us_finnhub_multi_quote_context_probe",
+      "strategy_id": "strategy_nvda_us_finnhub_multi_quote_context_probe",
+      "symbol": "NVDA.US",
+      "market": "US",
+      "brief_status": "blocked_by_sandbox",
+      "user_action": "不要把这个候选作为当前模拟建议使用；等待重新筛选、重新设定策略或更多证据。",
+      "plain_summary": "NVDA.US 已完成联网 quote context、历史案例组装和 sandbox evaluation，但本轮沙盘没有通过。因此它不能进入 Suggestion Gate，也不能生成用户可执行建议。",
+      "metrics": {
+        "sample_count": 27,
+        "eligible_case_count": 27,
+        "win_rate": 0.4444444444444444,
+        "average_return": -0.001959098221603719,
+        "max_drawdown": -0.06553553461995787,
+        "failed_reasons": [
+          "win_rate_below_threshold",
+          "average_return_below_threshold"
+        ],
+        "failed_reason_labels": [
+          "历史胜率低于通过阈值",
+          "历史平均收益低于通过阈值"
+        ]
+      },
+      "evidence_summary": {
+        "source_stage": "V2.13-V Finnhub Quote Multi-Symbol Sandbox Evaluation",
+        "historical_cases_used": 27,
+        "result_status": "FAIL"
+      },
+      "next_allowed_actions": [
+        "保留为 blocked evidence，供以后复盘。",
+        "重新筛选候选池，而不是把失败候选包装成建议。",
+        "如要继续研究，先调整策略假设并重新跑 historical sandbox。"
+      ],
+      "forbidden_actions": [
+        "不得进入 Suggestion Gate。",
+        "不得生成买入/卖出/持有建议。",
+        "不得生成仓位数量。",
+        "不得连接券商、webhook 或下单。"
+      ],
+      "simulation_only": true,
+      "user_facing_suggestion_allowed": false,
+      "no_live_price": true,
+      "no_position_size": true,
+      "no_real_trade": true,
+      "no_broker_api": true,
+      "no_webhook": true,
+      "no_order_placement": true,
+      "no_live_order_signal": true
+    }
+  ],
+  "source_evidence": {
+    "source_target": "V2.13-V Finnhub Quote Multi-Symbol Sandbox Evaluation",
+    "source_run_id": "v2_13_v_20260712_acceptance",
+    "source_summary_sha256": "6a3b67ebd7fa2d062dd6b61be8f04ee05b88a17d1257a397ba59cc5da2501e4f"
+  },
+  "checks": {
+    "source_report_pass": true,
+    "source_acceptance_target_correct": true,
+    "source_sandbox_evaluation_run": true,
+    "source_has_no_passed_strategies": true,
+    "source_has_failed_strategies": true,
+    "source_suggestion_gate_not_ready": true,
+    "source_user_facing_suggestion_not_allowed": true,
+    "brief_items_match_failed_results": true,
+    "all_items_blocked": true,
+    "all_items_have_plain_summary": true,
+    "all_items_have_failed_reasons": true,
+    "all_items_forbid_suggestion_gate": true,
+    "no_passed_results_promoted": true,
+    "network_not_used": true,
+    "production_records_not_written": true,
+    "production_cache_not_mutated": true,
+    "production_provider_config_not_mutated": true,
+    "dashboard_contract_unchanged": true,
+    "no_live_price": true,
+    "no_position_size": true,
+    "no_real_trade": true,
+    "no_broker_api": true,
+    "no_webhook": true,
+    "no_order_placement": true,
+    "no_live_order_signal": true,
+    "acceptance_target_correct": true,
+    "brief_status_pass": true,
+    "source_v2_13_v_report_exists": true,
+    "source_v2_13_v_marker_exists": true,
+    "brief_json_written": true,
+    "brief_md_written": true,
+    "production_record_files_unchanged": true,
+    "source_hashes_recorded": true
+  },
+  "safety": {
+    "blocked_result_brief_only": true,
+    "not_a_suggestion": true,
+    "suggestion_gate_not_ready": true,
+    "simulation_only": true,
+    "manual_external_execution_only": true,
+    "no_live_price": true,
+    "no_position_size": true,
+    "no_real_trade": true,
+    "no_broker_api": true,
+    "no_webhook": true,
+    "no_order_placement": true,
+    "no_live_order_signal": true,
+    "no_production_records_mutation": true,
+    "no_production_cache_mutation": true,
+    "no_production_provider_config_mutation": true,
+    "dashboard_contract_unchanged": true
+  },
+  "run_dir": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v2_13_w_acceptance/v2_13_w_20260712_acceptance",
+  "brief_json": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v2_13_w_acceptance/v2_13_w_20260712_acceptance/finnhub_quote_multi_symbol_result_brief.json",
+  "brief_md": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v2_13_w_acceptance/v2_13_w_20260712_acceptance/finnhub_quote_multi_symbol_result_brief.md",
+  "source_v2_13_v_report_json": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/v2_13_v_finnhub_quote_multi_symbol_sandbox_evaluation_latest.json",
+  "source_v2_13_v_pass_marker": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/V2_13_V_FINNHUB_QUOTE_MULTI_SYMBOL_SANDBOX_EVALUATION_PASS.marker",
+  "production_record_files_before": {
+    "recommendations_jsonl": {
+      "exists": true,
+      "size": 12284,
+      "sha256": "05b2e56c9b547cbe3ce4cb71b7cb776185e23ef2cc3bc9a46a918bce0cfb65dc"
+    },
+    "paper_trades_jsonl": {
+      "exists": false,
+      "size": null,
+      "sha256": null
+    },
+    "reviews_jsonl": {
+      "exists": false,
+      "size": null,
+      "sha256": null
+    },
+    "memory_jsonl": {
+      "exists": false,
+      "size": null,
+      "sha256": null
+    },
+    "investment_memory_jsonl": {
+      "exists": false,
+      "size": null,
+      "sha256": null
+    }
+  },
+  "production_record_files_after": {
+    "recommendations_jsonl": {
+      "exists": true,
+      "size": 12284,
+      "sha256": "05b2e56c9b547cbe3ce4cb71b7cb776185e23ef2cc3bc9a46a918bce0cfb65dc"
+    },
+    "paper_trades_jsonl": {
+      "exists": false,
+      "size": null,
+      "sha256": null
+    },
+    "reviews_jsonl": {
+      "exists": false,
+      "size": null,
+      "sha256": null
+    },
+    "memory_jsonl": {
+      "exists": false,
+      "size": null,
+      "sha256": null
+    },
+    "investment_memory_jsonl": {
+      "exists": false,
+      "size": null,
+      "sha256": null
+    }
+  },
+  "hashes": {
+    "source_v2_13_v_report_json": "ef1aca5555f11bec8ea50cc2959e3290bfb70e2b07680cb553db2c0703418272",
+    "source_v2_13_v_pass_marker": "47fa7db915b95a6a8d7f98e809220e2f8c707c6e7019c444d2d9f0f5a292911a",
+    "brief_json": "0b5fcff9d93e341f08aa732f1f242700ce76cb51023862acd5935cc4c4f64c98",
+    "brief_md": "af6bc3bac57deb342aa810c5f2caf269d8c98f090adfdec9ccaa175920c834d3"
+  }
+}

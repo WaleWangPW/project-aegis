@@ -1,0 +1,438 @@
+{
+  "type": "aegis_h_us_candidate_daily_bars_refresh",
+  "status": "PASS",
+  "generated_at": "2026-07-12T14:30:11+08:00",
+  "summary": {
+    "candidate_count": 11,
+    "refreshed_count": 9,
+    "blocked_count": 2,
+    "network_used": true,
+    "fallback_provider_available": true,
+    "user_facing_suggestion_allowed": false,
+    "next_stage": "rerun strategy-specific historical case assembly"
+  },
+  "items": [
+    {
+      "symbol": "VRTX",
+      "name": "Vertex Pharmaceuticals Incorporated",
+      "market": "US",
+      "provider": "eodhd",
+      "provider_symbol": "VRTX.US",
+      "status": "refreshed",
+      "request_window": {
+        "from": "2024-01-01",
+        "to": "2026-07-12"
+      },
+      "request_url_stored": false,
+      "token_stored": false,
+      "real_trade_allowed": false,
+      "http_status": 0,
+      "provider_used": "twelve_data",
+      "provider_symbol_used": "VRTX",
+      "row_count": 632,
+      "first_date": "2024-01-02",
+      "last_date": "2026-07-10",
+      "csv_path": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/cache/aegis_h_us_candidate_daily_bars/US/daily_bars/vrtx_us.csv",
+      "csv_sha256": "c6a7542a8fba744de76c635330ec75fd048fcfbf6ba8eb6d8e624be2b1d805cc",
+      "fallback_status": {
+        "provider": "twelve_data",
+        "http_status": 200,
+        "symbol": "VRTX",
+        "row_count": 632,
+        "error_type": null,
+        "api_status": "ok"
+      }
+    },
+    {
+      "symbol": "AMAT",
+      "name": "Applied Materials, Inc.",
+      "market": "US",
+      "provider": "eodhd",
+      "provider_symbol": "AMAT.US",
+      "status": "refreshed",
+      "request_window": {
+        "from": "2024-01-01",
+        "to": "2026-07-12"
+      },
+      "request_url_stored": false,
+      "token_stored": false,
+      "real_trade_allowed": false,
+      "http_status": 0,
+      "provider_used": "twelve_data",
+      "provider_symbol_used": "AMAT",
+      "row_count": 632,
+      "first_date": "2024-01-02",
+      "last_date": "2026-07-10",
+      "csv_path": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/cache/aegis_h_us_candidate_daily_bars/US/daily_bars/amat_us.csv",
+      "csv_sha256": "4df373e3eceae05e358b3f93c5cc200a36f001fdc6b294e3fe7f71844f6a7a6a",
+      "fallback_status": {
+        "provider": "twelve_data",
+        "http_status": 200,
+        "symbol": "AMAT",
+        "row_count": 632,
+        "error_type": null,
+        "api_status": "ok"
+      }
+    },
+    {
+      "symbol": "00005",
+      "name": "汇丰控股",
+      "market": "HK",
+      "provider": "eodhd",
+      "provider_symbol": "0005.HK",
+      "status": "fetch_failed_or_empty",
+      "request_window": {
+        "from": "2024-01-01",
+        "to": "2026-07-12"
+      },
+      "request_url_stored": false,
+      "token_stored": false,
+      "real_trade_allowed": false,
+      "http_status": 0,
+      "row_count": 0,
+      "error_type": "HTTPError",
+      "fallback_status": {
+        "provider": "twelve_data",
+        "http_status": 0,
+        "symbol": null,
+        "row_count": 0,
+        "error_type": "HTTPError",
+        "api_status": null
+      }
+    },
+    {
+      "symbol": "OKTA",
+      "name": "Okta, Inc.",
+      "market": "US",
+      "provider": "eodhd",
+      "provider_symbol": "OKTA.US",
+      "status": "refreshed",
+      "request_window": {
+        "from": "2024-01-01",
+        "to": "2026-07-12"
+      },
+      "request_url_stored": false,
+      "token_stored": false,
+      "real_trade_allowed": false,
+      "http_status": 0,
+      "provider_used": "twelve_data",
+      "provider_symbol_used": "OKTA",
+      "row_count": 632,
+      "first_date": "2024-01-02",
+      "last_date": "2026-07-10",
+      "csv_path": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/cache/aegis_h_us_candidate_daily_bars/US/daily_bars/okta_us.csv",
+      "csv_sha256": "2a45eaa7fe45c493ea13b14a85a2d1a749d5c339f845dab559af878393aabb25",
+      "fallback_status": {
+        "provider": "twelve_data",
+        "http_status": 200,
+        "symbol": "OKTA",
+        "row_count": 632,
+        "error_type": null,
+        "api_status": "ok"
+      }
+    },
+    {
+      "symbol": "MRNA",
+      "name": "Moderna, Inc.",
+      "market": "US",
+      "provider": "eodhd",
+      "provider_symbol": "MRNA.US",
+      "status": "refreshed",
+      "request_window": {
+        "from": "2024-01-01",
+        "to": "2026-07-12"
+      },
+      "request_url_stored": false,
+      "token_stored": false,
+      "real_trade_allowed": false,
+      "http_status": 0,
+      "provider_used": "twelve_data",
+      "provider_symbol_used": "MRNA",
+      "row_count": 632,
+      "first_date": "2024-01-02",
+      "last_date": "2026-07-10",
+      "csv_path": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/cache/aegis_h_us_candidate_daily_bars/US/daily_bars/mrna_us.csv",
+      "csv_sha256": "4821ad8657a43ad97b346e80d3ba73f706363bdd004895cfd0cccf0b62b828da",
+      "fallback_status": {
+        "provider": "twelve_data",
+        "http_status": 200,
+        "symbol": "MRNA",
+        "row_count": 632,
+        "error_type": null,
+        "api_status": "ok"
+      }
+    },
+    {
+      "symbol": "HOOD",
+      "name": "Robinhood Markets, Inc.",
+      "market": "US",
+      "provider": "eodhd",
+      "provider_symbol": "HOOD.US",
+      "status": "refreshed",
+      "request_window": {
+        "from": "2024-01-01",
+        "to": "2026-07-12"
+      },
+      "request_url_stored": false,
+      "token_stored": false,
+      "real_trade_allowed": false,
+      "http_status": 0,
+      "provider_used": "twelve_data",
+      "provider_symbol_used": "HOOD",
+      "row_count": 632,
+      "first_date": "2024-01-02",
+      "last_date": "2026-07-10",
+      "csv_path": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/cache/aegis_h_us_candidate_daily_bars/US/daily_bars/hood_us.csv",
+      "csv_sha256": "aed042603d29611fe98622fdf7a45fb3e7ef598e306ce9b56ead9ad2afb566a5",
+      "fallback_status": {
+        "provider": "twelve_data",
+        "http_status": 200,
+        "symbol": "HOOD",
+        "row_count": 632,
+        "error_type": null,
+        "api_status": "ok"
+      }
+    },
+    {
+      "symbol": "PANW",
+      "name": "Palo Alto Networks, Inc.",
+      "market": "US",
+      "provider": "eodhd",
+      "provider_symbol": "PANW.US",
+      "status": "fetch_failed_or_empty",
+      "request_window": {
+        "from": "2024-01-01",
+        "to": "2026-07-12"
+      },
+      "request_url_stored": false,
+      "token_stored": false,
+      "real_trade_allowed": false,
+      "http_status": 0,
+      "row_count": 0,
+      "error_type": "HTTPError",
+      "fallback_status": {
+        "provider": "twelve_data",
+        "http_status": 0,
+        "symbol": null,
+        "row_count": 0,
+        "error_type": "HTTPError",
+        "api_status": null
+      }
+    },
+    {
+      "symbol": "KLAC",
+      "name": "KLA Corporation",
+      "market": "US",
+      "provider": "eodhd",
+      "provider_symbol": "KLAC.US",
+      "status": "refreshed",
+      "request_window": {
+        "from": "2024-01-01",
+        "to": "2026-07-12"
+      },
+      "request_url_stored": false,
+      "token_stored": false,
+      "real_trade_allowed": false,
+      "http_status": 0,
+      "provider_used": "twelve_data",
+      "provider_symbol_used": "KLAC",
+      "row_count": 632,
+      "first_date": "2024-01-02",
+      "last_date": "2026-07-10",
+      "csv_path": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/cache/aegis_h_us_candidate_daily_bars/US/daily_bars/klac_us.csv",
+      "csv_sha256": "fc3438fde9ce0d95be88f561b4c96f60fbab3fb89d91f462dff52fbf755830b9",
+      "fallback_status": {
+        "provider": "twelve_data",
+        "http_status": 200,
+        "symbol": "KLAC",
+        "row_count": 632,
+        "error_type": null,
+        "api_status": "ok"
+      }
+    },
+    {
+      "symbol": "RBLX",
+      "name": "Roblox Corporation",
+      "market": "US",
+      "provider": "eodhd",
+      "provider_symbol": "RBLX.US",
+      "status": "refreshed",
+      "request_window": {
+        "from": "2024-01-01",
+        "to": "2026-07-12"
+      },
+      "request_url_stored": false,
+      "token_stored": false,
+      "real_trade_allowed": false,
+      "http_status": 0,
+      "provider_used": "twelve_data",
+      "provider_symbol_used": "RBLX",
+      "row_count": 632,
+      "first_date": "2024-01-02",
+      "last_date": "2026-07-10",
+      "csv_path": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/cache/aegis_h_us_candidate_daily_bars/US/daily_bars/rblx_us.csv",
+      "csv_sha256": "3623333db068af4312fb371544791620349bca6c6ffd42592304765a2f9dd513",
+      "fallback_status": {
+        "provider": "twelve_data",
+        "http_status": 200,
+        "symbol": "RBLX",
+        "row_count": 632,
+        "error_type": null,
+        "api_status": "ok"
+      }
+    },
+    {
+      "symbol": "BAC",
+      "name": "Bank of America Corporation",
+      "market": "US",
+      "provider": "eodhd",
+      "provider_symbol": "BAC.US",
+      "status": "refreshed",
+      "request_window": {
+        "from": "2024-01-01",
+        "to": "2026-07-12"
+      },
+      "request_url_stored": false,
+      "token_stored": false,
+      "real_trade_allowed": false,
+      "http_status": 0,
+      "provider_used": "twelve_data",
+      "provider_symbol_used": "BAC",
+      "row_count": 632,
+      "first_date": "2024-01-02",
+      "last_date": "2026-07-10",
+      "csv_path": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/cache/aegis_h_us_candidate_daily_bars/US/daily_bars/bac_us.csv",
+      "csv_sha256": "97df5f617205a949a957b2cd868c4029f56c1e17280ed397e1d1880e64208092",
+      "fallback_status": {
+        "provider": "twelve_data",
+        "http_status": 200,
+        "symbol": "BAC",
+        "row_count": 632,
+        "error_type": null,
+        "api_status": "ok"
+      }
+    },
+    {
+      "symbol": "NET",
+      "name": "Cloudflare, Inc.",
+      "market": "US",
+      "provider": "eodhd",
+      "provider_symbol": "NET.US",
+      "status": "refreshed",
+      "request_window": {
+        "from": "2024-01-01",
+        "to": "2026-07-12"
+      },
+      "request_url_stored": false,
+      "token_stored": false,
+      "real_trade_allowed": false,
+      "http_status": 0,
+      "provider_used": "twelve_data",
+      "provider_symbol_used": "NET",
+      "row_count": 632,
+      "first_date": "2024-01-02",
+      "last_date": "2026-07-10",
+      "csv_path": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/cache/aegis_h_us_candidate_daily_bars/US/daily_bars/net_us.csv",
+      "csv_sha256": "7847f6755d0ba74f54f68a168a51c57f2f7524d1250ff1e08cac2d61129af93b",
+      "fallback_status": {
+        "provider": "twelve_data",
+        "http_status": 200,
+        "symbol": "NET",
+        "row_count": 632,
+        "error_type": null,
+        "api_status": "ok"
+      }
+    }
+  ],
+  "source_reports": {
+    "strategy_validation_input": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/aegis_strategy_validation_input_latest.json"
+  },
+  "source_hashes": {
+    "strategy_validation_input": "5ffc14d085cf98a12e80a4ffa7463bc0aaf6ec15cde04d916268e61359e847c4"
+  },
+  "checks": {
+    "strategy_validation_input_exists": true,
+    "token_not_stored": true,
+    "request_urls_not_stored": true,
+    "fallback_provider_supported": true,
+    "production_records_unchanged": true,
+    "no_broker_api": true,
+    "no_webhook": true,
+    "no_order_placement": true,
+    "no_position_size": true
+  },
+  "safety": {
+    "historical_data_refresh_only": true,
+    "simulation_only": true,
+    "no_broker_api": true,
+    "no_order_placement": true,
+    "no_trading_webhook": true,
+    "no_position_size": true,
+    "no_live_order_signal": true,
+    "real_trade_allowed": false
+  },
+  "production_record_files_before": {
+    "recommendations_jsonl": {
+      "exists": true,
+      "size": 12284,
+      "sha256": "05b2e56c9b547cbe3ce4cb71b7cb776185e23ef2cc3bc9a46a918bce0cfb65dc"
+    },
+    "paper_trades_jsonl": {
+      "exists": false,
+      "size": null,
+      "sha256": null
+    },
+    "reviews_jsonl": {
+      "exists": false,
+      "size": null,
+      "sha256": null
+    },
+    "memory_jsonl": {
+      "exists": false,
+      "size": null,
+      "sha256": null
+    },
+    "investment_memory_jsonl": {
+      "exists": false,
+      "size": null,
+      "sha256": null
+    },
+    "feedback_events_jsonl": {
+      "exists": true,
+      "size": 1977,
+      "sha256": "c468fe43ec7097f129805fb71b6551c2db809213e2e13e9b2f1b2354f53ad65f"
+    }
+  },
+  "production_record_files_after": {
+    "recommendations_jsonl": {
+      "exists": true,
+      "size": 12284,
+      "sha256": "05b2e56c9b547cbe3ce4cb71b7cb776185e23ef2cc3bc9a46a918bce0cfb65dc"
+    },
+    "paper_trades_jsonl": {
+      "exists": false,
+      "size": null,
+      "sha256": null
+    },
+    "reviews_jsonl": {
+      "exists": false,
+      "size": null,
+      "sha256": null
+    },
+    "memory_jsonl": {
+      "exists": false,
+      "size": null,
+      "sha256": null
+    },
+    "investment_memory_jsonl": {
+      "exists": false,
+      "size": null,
+      "sha256": null
+    },
+    "feedback_events_jsonl": {
+      "exists": true,
+      "size": 1977,
+      "sha256": "c468fe43ec7097f129805fb71b6551c2db809213e2e13e9b2f1b2354f53ad65f"
+    }
+  }
+}

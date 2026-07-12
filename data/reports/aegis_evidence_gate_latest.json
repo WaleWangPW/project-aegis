@@ -1,0 +1,380 @@
+{
+  "project": "Project Aegis",
+  "type": "evidence_gate",
+  "gate_started_at": "2026-07-12T08:00:33.881984+08:00",
+  "gate_finished_at": "2026-07-12T08:00:34.152527+08:00",
+  "strict_mode": true,
+  "checks": {
+    "A_file_existence": {
+      "passed": true,
+      "details": {
+        "crcl_risk_monitor_latest.json": true,
+        "000002.sz_risk_monitor_latest.json": true,
+        "feishu_daily_digest_dry_run.json": true,
+        "feishu_daily_digest_dry_run.md": true,
+        "aegis_daily_digest_pipeline_latest.json": true,
+        "dashboard/index.html": true
+      }
+    },
+    "B_real_fingerprints": {
+      "passed": true,
+      "details": {
+        "crcl_risk_monitor_latest.json": {
+          "exists": true,
+          "mtime": "2026-07-09T13:10:56.572908+08:00",
+          "size": 2784,
+          "sha256_12": "d36831305b4f"
+        },
+        "000002.sz_risk_monitor_latest.json": {
+          "exists": true,
+          "mtime": "2026-07-09T13:55:03.227714+08:00",
+          "size": 2657,
+          "sha256_12": "99b9cee1a743"
+        },
+        "feishu_daily_digest_dry_run.json": {
+          "exists": true,
+          "mtime": "2026-07-12T08:00:23.876859+08:00",
+          "size": 4991,
+          "sha256_12": "1df8ce62a693"
+        },
+        "feishu_daily_digest_dry_run.md": {
+          "exists": true,
+          "mtime": "2026-07-12T08:00:23.877476+08:00",
+          "size": 1285,
+          "sha256_12": "b571726085a7"
+        },
+        "aegis_daily_digest_pipeline_latest.json": {
+          "exists": true,
+          "mtime": "2026-07-12T08:00:23.977118+08:00",
+          "size": 8566,
+          "sha256_12": "0db8b32e9d09"
+        },
+        "dashboard/index.html": {
+          "exists": true,
+          "mtime": "2026-07-11T14:18:32.530670+08:00",
+          "size": 2333,
+          "sha256_12": "e777047e93fc"
+        }
+      }
+    },
+    "C_hash_validity": {
+      "passed": true,
+      "issues": []
+    },
+    "C2_claimed_vs_actual_hash": {
+      "passed": true,
+      "issues": []
+    },
+    "D_self_hash_strategy": {
+      "passed": true
+    },
+    "E_feishu_dry_run_safety": {
+      "passed": true,
+      "details": {
+        "dry_run": true,
+        "sent": false,
+        "webhook_called": false,
+        "trading_called": false
+      }
+    },
+    "F_dashboard_contract": {
+      "passed": true,
+      "details": {
+        "detected_contract_version": "2.0",
+        "detected_dashboard_type": "ceo_daily_brief_v2",
+        "mandatory_security_checks": [
+          {
+            "name": "dashboard_html_readable",
+            "passed": true,
+            "detail": ""
+          },
+          {
+            "name": "assets_exist",
+            "passed": true,
+            "detail": ""
+          },
+          {
+            "name": "reports_relative_fetch",
+            "passed": true,
+            "detail": ""
+          },
+          {
+            "name": "no_dashboard_reports_path",
+            "passed": true,
+            "detail": ""
+          },
+          {
+            "name": "fetch_failure_degrades",
+            "passed": true,
+            "detail": ""
+          },
+          {
+            "name": "gate_failure_blocks_action",
+            "passed": true,
+            "detail": ""
+          },
+          {
+            "name": "daily_failure_blocks_action",
+            "passed": true,
+            "detail": ""
+          },
+          {
+            "name": "risk_before_action",
+            "passed": true,
+            "detail": ""
+          },
+          {
+            "name": "no_trade_execution",
+            "passed": true,
+            "detail": ""
+          },
+          {
+            "name": "no_send_or_webhook",
+            "passed": true,
+            "detail": ""
+          },
+          {
+            "name": "no_secrets",
+            "passed": true,
+            "detail": ""
+          },
+          {
+            "name": "no_simulated_content",
+            "passed": true,
+            "detail": ""
+          },
+          {
+            "name": "no_composite_score",
+            "passed": true,
+            "detail": ""
+          },
+          {
+            "name": "no_trade_or_send_buttons",
+            "passed": true,
+            "detail": ""
+          },
+          {
+            "name": "read_only_report_links",
+            "passed": true,
+            "detail": ""
+          }
+        ],
+        "v2_contract_checks": [
+          {
+            "name": "contract_meta_exact",
+            "passed": true,
+            "detail": ""
+          },
+          {
+            "name": "v2_assets_referenced",
+            "passed": true,
+            "detail": ""
+          },
+          {
+            "name": "ceo_sections",
+            "passed": true,
+            "detail": ""
+          },
+          {
+            "name": "decision_function",
+            "passed": true,
+            "detail": ""
+          },
+          {
+            "name": "no_data_action_block",
+            "passed": true,
+            "detail": ""
+          },
+          {
+            "name": "no_action_empty_state",
+            "passed": true,
+            "detail": ""
+          },
+          {
+            "name": "history_isolation_notice",
+            "passed": true,
+            "detail": ""
+          },
+          {
+            "name": "real_rolling_mapping",
+            "passed": true,
+            "detail": ""
+          },
+          {
+            "name": "no_fixed_return",
+            "passed": true,
+            "detail": ""
+          }
+        ],
+        "legacy_checks": [],
+        "warnings": [
+          {
+            "name": "legacy_feishu_home_module",
+            "old_requirement": "首页展示飞书日报",
+            "reason": "仅适用于 legacy v1",
+            "v2_replacement": "飞书安全仍由证据层检查",
+            "safety_unchanged": "dry_run/sent/webhook/trading"
+          },
+          {
+            "name": "legacy_pipeline_dom",
+            "old_requirement": "首页保留旧 Pipeline 区块与降级文案",
+            "reason": "仅适用于 legacy v1",
+            "v2_replacement": "系统与数据详情及 fetch 失败降级",
+            "safety_unchanged": "数据路径、降级和哈希检查"
+          }
+        ],
+        "failures": [],
+        "dashboard_sha256": "e777047e93fc13705df2e6c0dd58728c12ed97ee3f338b512d26ae84b1897a41",
+        "js_sha256": "a7b84ea77b5b69e505fca57db016b8a11e90e0447eede81ffdc16d986b428a3a",
+        "css_sha256": "bcd6cb0a79f74afc59bd3574b96e8f610756bee68a3f214796eaec7ce365071d",
+        "overall_verdict": "PASS"
+      }
+    },
+    "G_makefile_targets": {
+      "exists": true,
+      "targets": [
+        "refresh-feishu-dry-run",
+        "refresh-aegis-daily-digest",
+        "validate-aegis-daily-digest",
+        "audit-aegis-pipeline-evidence",
+        "redteam-aegis-pipeline-validator",
+        "verify-aegis-evidence-gate-base",
+        "verify-aegis-evidence-gate",
+        "full-aegis-daily-digest-check",
+        "update-aegis-pipeline-history",
+        "validate-aegis-pipeline-history",
+        "redteam-aegis-pipeline-history",
+        "full-aegis-history-check",
+        "build-aegis-health-status",
+        "validate-aegis-health-status",
+        "validate-a-share-strategy-definition",
+        "run-a-share-backtest-dry-run",
+        "validate-a-share-backtest-dry-run",
+        "p22-2-filemode",
+        "update-a-share-backtest-history",
+        "validate-a-share-backtest-history",
+        "p22-4-filemode",
+        "p22-5-filemode",
+        "serve-dashboard",
+        "p22-6-full-pipeline",
+        "validate-p23-1-rolling-backtest-design",
+        "generate-a-share-signal-snapshots",
+        "validate-a-share-signal-snapshots",
+        "p23-2-filemode",
+        "run-a-share-point-in-time-rolling-backtest",
+        "audit-a-share-rolling-backtest-raw-prices",
+        "validate-a-share-point-in-time-rolling-backtest",
+        "update-a-share-rolling-backtest-history",
+        "validate-a-share-rolling-backtest-history",
+        "p23-6-full-rolling-pipeline",
+        "p24-2-hardened-dry-run",
+        "test-p24-2-dry-run-guards",
+        "p24-3-double-hardened-simulation"
+      ],
+      "duplicates": [],
+      "passed": true
+    },
+    "H_secret_scan": {
+      "passed": true,
+      "findings": []
+    },
+    "I_real_send_risk_scan": {
+      "passed": true,
+      "findings": []
+    },
+    "J_cross_validation": {
+      "passed": true,
+      "details": {
+        "crcl_risk_monitor_latest.json": {
+          "available": true,
+          "python": "d36831305b4f",
+          "shasum": "d36831305b4f",
+          "match": true
+        },
+        "000002.sz_risk_monitor_latest.json": {
+          "available": true,
+          "python": "99b9cee1a743",
+          "shasum": "99b9cee1a743",
+          "match": true
+        },
+        "feishu_daily_digest_dry_run.json": {
+          "available": true,
+          "python": "1df8ce62a693",
+          "shasum": "1df8ce62a693",
+          "match": true
+        },
+        "feishu_daily_digest_dry_run.md": {
+          "available": true,
+          "python": "b571726085a7",
+          "shasum": "b571726085a7",
+          "match": true
+        },
+        "aegis_daily_digest_pipeline_latest.json": {
+          "available": true,
+          "python": "0db8b32e9d09",
+          "shasum": "0db8b32e9d09",
+          "match": true
+        },
+        "dashboard/index.html": {
+          "available": true,
+          "python": "e777047e93fc",
+          "shasum": "e777047e93fc",
+          "match": true
+        }
+      }
+    },
+    "K_md_hash_format": {
+      "passed": true,
+      "issues": []
+    },
+    "L_doc_duplicate_sections": {
+      "passed": true,
+      "issues": []
+    },
+    "N_history_json_exists": {
+      "passed": true
+    },
+    "N_history_json_parseable": {
+      "passed": true
+    },
+    "N_history_runs_count_between_1_and_7": {
+      "passed": true,
+      "count": 7
+    },
+    "N_history_latest_gate_pass": {
+      "passed": true,
+      "value": "PASS"
+    },
+    "N_history_latest_feishu_safety_flags_valid": {
+      "passed": true,
+      "details": {
+        "dry_run": true,
+        "sent": false,
+        "webhook_called": false,
+        "trading_called": false
+      }
+    },
+    "N_history_hash_values_hex_12": {
+      "passed": true,
+      "issues": []
+    },
+    "N_history_no_known_fake_hash": {
+      "passed": true,
+      "fake_found": []
+    },
+    "N_history_latest_snapshot_exists": {
+      "passed": true,
+      "path": "run_20260712_080030_history_entry.json"
+    },
+    "N_dashboard_legacy_ui": {
+      "passed": true,
+      "warning": "legacy history UI checks are not applicable to CEO Brief v2"
+    },
+    "M_feishu_hk_symbol": {
+      "passed": true,
+      "issues": []
+    }
+  },
+  "failures": [],
+  "overall_verdict": "PASS"
+}

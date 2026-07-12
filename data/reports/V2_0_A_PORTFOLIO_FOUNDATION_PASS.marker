@@ -1,0 +1,11 @@
+generated_at=2026-07-11T16:43:31.691506+08:00
+command=validate_v2_0_a_portfolio_foundation.py --run-id v2_0_a_20260711_acceptance
+exit_code=0
+target=V2.0-A Portfolio Foundation
+report_json=/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/v2_0_a_portfolio_foundation_latest.json
+report_json_sha256=b359e9dc08ddac11cff7b08793e8776f1551fdd84cbb2538abd3e94d945f66c5
+report_md=/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/v2_0_a_portfolio_foundation_latest.md
+report_md_sha256=29c17e394a75e07310fca3982d596e5d318a76affe760cee801b46d510a64ed9
+run_dir=/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v2_0_a_acceptance/v2_0_a_20260711_acceptance
+production_records_written=false
+failed=0

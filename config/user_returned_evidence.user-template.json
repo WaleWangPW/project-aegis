@@ -1,0 +1,63 @@
+{
+  "schema_version": "user_returned_evidence.user_template.v2_9_j",
+  "local_file_path": "config/user_returned_evidence.local.json",
+  "instructions": [
+    "Copy this file to config/user_returned_evidence.local.json before filling real evidence.",
+    "Do not include API keys, cookies, bearer tokens, account passwords, broker credentials, webhook URLs, or recovery codes.",
+    "Use paper_trade_id from the latest current usable simulation brief review_memory_queue.",
+    "Screenshots should be local file paths only; raw image bytes are never stored in JSON records.",
+    "Actual return must be manually supplied by the user if evidence_type is outcome; Aegis must not fabricate it."
+  ],
+  "records": [
+    {
+      "returned_evidence_id": "returned_outcome_REPLACE_WITH_SHORT_ID",
+      "paper_trade_id": "REPLACE_WITH_PAPER_TRADE_ID_FROM_CURRENT_BRIEF",
+      "evidence_type": "outcome",
+      "submitted_at": "REPLACE_WITH_ISO8601_LOCAL_TIME",
+      "user_note": "REPLACE_WITH_YOUR_MANUAL_OUTCOME_NOTE_NO_SECRETS",
+      "evidence_refs": ["REPLACE_WITH_LOCAL_SCREENSHOT_OR_NOTE_PATH"],
+      "outcome": "success",
+      "decision_quality": "reasonable_decision",
+      "actual_return": 0.0,
+      "max_drawdown": 0.0,
+      "user_confirmed": true
+    },
+    {
+      "returned_evidence_id": "returned_screenshot_REPLACE_WITH_SHORT_ID",
+      "paper_trade_id": "REPLACE_WITH_PAPER_TRADE_ID_FROM_CURRENT_BRIEF",
+      "evidence_type": "screenshot",
+      "submitted_at": "REPLACE_WITH_ISO8601_LOCAL_TIME",
+      "user_note": "REPLACE_WITH_SCREENSHOT_CONTEXT_NO_SECRETS",
+      "evidence_refs": ["REPLACE_WITH_LOCAL_SCREENSHOT_PATH"],
+      "outcome": null,
+      "decision_quality": null,
+      "actual_return": null,
+      "max_drawdown": null,
+      "user_confirmed": true
+    },
+    {
+      "returned_evidence_id": "returned_note_REPLACE_WITH_SHORT_ID",
+      "paper_trade_id": "REPLACE_WITH_PAPER_TRADE_ID_FROM_CURRENT_BRIEF",
+      "evidence_type": "text_note",
+      "submitted_at": "REPLACE_WITH_ISO8601_LOCAL_TIME",
+      "user_note": "REPLACE_WITH_TEXT_NOTE_NO_SECRETS",
+      "evidence_refs": [],
+      "outcome": null,
+      "decision_quality": null,
+      "actual_return": null,
+      "max_drawdown": null,
+      "user_confirmed": true
+    }
+  ],
+  "safety": {
+    "simulation_only": true,
+    "user_returned_evidence_only": true,
+    "no_api_keys": true,
+    "no_cookies": true,
+    "no_bearer_tokens": true,
+    "no_broker_credentials": true,
+    "no_webhook_urls": true,
+    "no_real_trade_execution": true,
+    "no_order_placement": true
+  }
+}

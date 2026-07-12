@@ -1,0 +1,162 @@
+{
+  "project": "Project Aegis",
+  "type": "p23_2_trade_calendar_audit",
+  "generated_at": "2026-07-12T00:00:17.238827+00:00",
+  "source_snapshot_sha256": "e974abd6f79f843f096fa184691656865c3199c650f41b40bf57b0e52afb5329",
+  "source_calendar_sha256": "f34de1ab81b9b11999c0dd0f98a6d851df2aa3e15e63e5ea2bf5fd500d5f13cd",
+  "snapshot_count": 6,
+  "period_audits": [
+    {
+      "snapshot_id": "snapshot_20240102",
+      "dates": {
+        "signal_date": "20240102",
+        "data_cutoff_date": "20240102",
+        "rebalance_date": "20240103",
+        "entry_date": "20240103",
+        "exit_date": "20240131"
+      },
+      "checks": {
+        "signal_date_open": true,
+        "signal_date_not_weekend": true,
+        "data_cutoff_date_open": true,
+        "data_cutoff_date_not_weekend": true,
+        "rebalance_date_open": true,
+        "rebalance_date_not_weekend": true,
+        "entry_date_open": true,
+        "entry_date_not_weekend": true,
+        "exit_date_open": true,
+        "exit_date_not_weekend": true,
+        "date_order": true,
+        "holding_period_20_open_days": true
+      },
+      "passed": true
+    },
+    {
+      "snapshot_id": "snapshot_20240201",
+      "dates": {
+        "signal_date": "20240201",
+        "data_cutoff_date": "20240201",
+        "rebalance_date": "20240202",
+        "entry_date": "20240202",
+        "exit_date": "20240311"
+      },
+      "checks": {
+        "signal_date_open": true,
+        "signal_date_not_weekend": true,
+        "data_cutoff_date_open": true,
+        "data_cutoff_date_not_weekend": true,
+        "rebalance_date_open": true,
+        "rebalance_date_not_weekend": true,
+        "entry_date_open": true,
+        "entry_date_not_weekend": true,
+        "exit_date_open": true,
+        "exit_date_not_weekend": true,
+        "date_order": true,
+        "holding_period_20_open_days": true
+      },
+      "passed": true
+    },
+    {
+      "snapshot_id": "snapshot_20240301",
+      "dates": {
+        "signal_date": "20240301",
+        "data_cutoff_date": "20240301",
+        "rebalance_date": "20240304",
+        "entry_date": "20240304",
+        "exit_date": "20240401"
+      },
+      "checks": {
+        "signal_date_open": true,
+        "signal_date_not_weekend": true,
+        "data_cutoff_date_open": true,
+        "data_cutoff_date_not_weekend": true,
+        "rebalance_date_open": true,
+        "rebalance_date_not_weekend": true,
+        "entry_date_open": true,
+        "entry_date_not_weekend": true,
+        "exit_date_open": true,
+        "exit_date_not_weekend": true,
+        "date_order": true,
+        "holding_period_20_open_days": true
+      },
+      "passed": true
+    },
+    {
+      "snapshot_id": "snapshot_20240401",
+      "dates": {
+        "signal_date": "20240401",
+        "data_cutoff_date": "20240401",
+        "rebalance_date": "20240402",
+        "entry_date": "20240402",
+        "exit_date": "20240507"
+      },
+      "checks": {
+        "signal_date_open": true,
+        "signal_date_not_weekend": true,
+        "data_cutoff_date_open": true,
+        "data_cutoff_date_not_weekend": true,
+        "rebalance_date_open": true,
+        "rebalance_date_not_weekend": true,
+        "entry_date_open": true,
+        "entry_date_not_weekend": true,
+        "exit_date_open": true,
+        "exit_date_not_weekend": true,
+        "date_order": true,
+        "holding_period_20_open_days": true
+      },
+      "passed": true
+    },
+    {
+      "snapshot_id": "snapshot_20240506",
+      "dates": {
+        "signal_date": "20240506",
+        "data_cutoff_date": "20240506",
+        "rebalance_date": "20240507",
+        "entry_date": "20240507",
+        "exit_date": "20240604"
+      },
+      "checks": {
+        "signal_date_open": true,
+        "signal_date_not_weekend": true,
+        "data_cutoff_date_open": true,
+        "data_cutoff_date_not_weekend": true,
+        "rebalance_date_open": true,
+        "rebalance_date_not_weekend": true,
+        "entry_date_open": true,
+        "entry_date_not_weekend": true,
+        "exit_date_open": true,
+        "exit_date_not_weekend": true,
+        "date_order": true,
+        "holding_period_20_open_days": true
+      },
+      "passed": true
+    },
+    {
+      "snapshot_id": "snapshot_20240603",
+      "dates": {
+        "signal_date": "20240603",
+        "data_cutoff_date": "20240603",
+        "rebalance_date": "20240604",
+        "entry_date": "20240604",
+        "exit_date": "20240703"
+      },
+      "checks": {
+        "signal_date_open": true,
+        "signal_date_not_weekend": true,
+        "data_cutoff_date_open": true,
+        "data_cutoff_date_not_weekend": true,
+        "rebalance_date_open": true,
+        "rebalance_date_not_weekend": true,
+        "entry_date_open": true,
+        "entry_date_not_weekend": true,
+        "exit_date_open": true,
+        "exit_date_not_weekend": true,
+        "date_order": true,
+        "holding_period_20_open_days": true
+      },
+      "passed": true
+    }
+  ],
+  "failures": [],
+  "overall_verdict": "PASS"
+}

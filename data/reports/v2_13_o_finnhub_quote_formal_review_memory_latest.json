@@ -1,0 +1,276 @@
+{
+  "overall_status": "PASS",
+  "acceptance_target": "V2.13-O Finnhub Quote Formal Review/Memory Records From Virtual Trade Candidates",
+  "source_acceptance_target": "V2.13-N Finnhub Quote Virtual PaperTrade Review/Memory Bridge",
+  "run_id": "v2_13_o_20260712_acceptance",
+  "generated_at": "2026-07-12T02:57:00+08:00",
+  "command": "validate_v2_13_o_finnhub_quote_formal_review_memory.py --run-id v2_13_o_20260712_acceptance",
+  "network_used": false,
+  "production_records_written": false,
+  "reviews_jsonl_written": false,
+  "memory_jsonl_written": false,
+  "investment_memory_jsonl_written": false,
+  "paper_trades_written": false,
+  "recommendations_written": false,
+  "dashboard_contract_changed": false,
+  "summary": {
+    "review_evidence_link_count": 1,
+    "memory_candidate_count": 1,
+    "formal_review_count": 1,
+    "formal_memory_count": 1,
+    "symbols": [
+      "finnhub_quote_ptr_virtual_finnhub_quote_review_queue_finnhub_quote_feedback_followup_finnhub_quote_fb_watch_001"
+    ],
+    "social_sentiment_status": "blocked_plan_or_rate_limit",
+    "next_stage": "V2.13-P Finnhub Quote Current Usable Simulation Brief Refresh With Review/Memory Context"
+  },
+  "formal_reviews": [
+    {
+      "review_id": "rev_finnhub_quote_finnhub_quote_ptr_virtual_finnhub_quote_review_queue_finnhub_quote_feedback_followup_finnhub_quote_fb_watch_001_entry",
+      "recommendation_id": "finnhub_quote_manual_entry_finnhub_quote_review_queue_finnhub_quote_feedback_followup_finnhub_quote_fb_watch_001",
+      "paper_trade_id": "finnhub_quote_ptr_virtual_finnhub_quote_review_queue_finnhub_quote_feedback_followup_finnhub_quote_fb_watch_001",
+      "review_date": "2026-07-12",
+      "horizon": "5d",
+      "outcome": "pending",
+      "actual_return": null,
+      "max_drawdown": null,
+      "decision_quality": "unclear",
+      "success_reason": null,
+      "failure_reason": null,
+      "expert_contribution": {
+        "status": "DATA_GAP: open virtual trade has no user-returned outcome evidence yet.",
+        "source": "V2.13-N Finnhub quote review evidence link"
+      },
+      "lessons": [
+        "AAPL.US（US）已进入 Finnhub quote simulation-only virtual PaperTrade formal review artifact；该虚拟交易仍为 open，尚无用户回传的退出价、退出日或 forward return，因此结果保持 pending/unclear。"
+      ],
+      "created_at": "2026-07-12T02:57:00+08:00",
+      "simulation_only": true,
+      "quote_context_research_only": true,
+      "source_review_evidence_link_id": "finnhub_quote_review_link_finnhub_quote_ptr_virtual_finnhub_quote_review_queue_finnhub_quote_feedback_followup_finnhub_quote_fb_watch_001",
+      "source_trade_status": "open",
+      "entry_price": 188.88,
+      "entry_date": "2026-07-12",
+      "exit_price": null,
+      "exit_date": null,
+      "outcome_evidence_status": "pending_user_returned_evidence",
+      "social_sentiment_not_enabled": true,
+      "evidence_refs": [
+        "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/v2_13_m_finnhub_quote_virtual_paper_trade_creation_latest.json",
+        "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/v2_13_j_finnhub_quote_feedback_intake_latest.json",
+        "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/v2_13_i_finnhub_quote_simulation_brief_latest.json",
+        "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/v2_13_i_finnhub_quote_simulation_brief_latest.json",
+        "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/v2_13_g_finnhub_quote_sandbox_evaluation_latest.json",
+        "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/V2_13_G_FINNHUB_QUOTE_SANDBOX_EVALUATION_PASS.marker",
+        "v2_13_f_quote_context_case:bind_finnhub_quote_context_us_aapl_finnhub_quote_sandbox_candidate:finnhub_quote_context_us_aapl_finnhub_quote:us_aapl_eodhd_daily_bars:8aadce47722d091f3c7e849a5da07c15ebe5c89d5ae925ea37a574f4f977466c",
+        "v2_13_f_quote_context_case:bind_finnhub_quote_context_us_aapl_finnhub_quote_sandbox_candidate:finnhub_quote_context_us_aapl_finnhub_quote:us_aapl_twelve_data_daily_bars:08769d39f7cfa35c101005c13968267a324701fe629ba9f5dc11e35b504510e5"
+      ],
+      "source_user_evidence_items": [
+        {
+          "evidence_ref": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v2_13_l_acceptance/v2_13_l_20260712_acceptance_final_check/user_supplied_finnhub_quote_evidence/AAPL_US_entry_evidence.txt",
+          "exists": true,
+          "sha256": "a2417f4b15d6bf3ba12ee8bae9ef5c56f98c8944756ea47ee8880f424db0fafc",
+          "raw_image_stored_in_record": false,
+          "ocr_performed": false
+        }
+      ],
+      "no_return_fabrication": true,
+      "no_exit_fabrication": true,
+      "no_review_record_production_mutation": true,
+      "no_real_trade_execution": true,
+      "no_broker_api": true,
+      "no_webhook": true,
+      "no_order_placement": true,
+      "no_live_price": true,
+      "no_position_size": true,
+      "no_live_order_signal": true
+    }
+  ],
+  "formal_memories": [
+    {
+      "memory_id": "mem_finnhub_quote_finnhub_quote_ptr_virtual_finnhub_quote_review_queue_finnhub_quote_feedback_followup_finnhub_quote_fb_watch_001_entry_context",
+      "date": "2026-07-12",
+      "source_type": "finnhub_quote_simulation_review_candidate",
+      "linked_recommendation_id": "finnhub_quote_manual_entry_finnhub_quote_review_queue_finnhub_quote_feedback_followup_finnhub_quote_fb_watch_001",
+      "lesson_type": "finnhub_quote_virtual_trade_entry_context",
+      "lesson": "AAPL.US（US）：已从 Finnhub quote context、沙盘证据和用户验证入场证据创建 simulation-only virtual PaperTrade ledger，入场价 188.88，入场日 2026-07-12。该记录只能作为后续复盘候选，不能自动改变策略或触发真实交易。 当前 formal memory artifact 只记录 Finnhub quote simulation entry context；收益、回撤、退出原因必须等待用户回传证据，不能由系统推断。",
+      "tags": [
+        "finnhub_quote",
+        "virtual_paper_trade",
+        "simulation_only",
+        "US",
+        "review_pending",
+        "formal_artifact_only"
+      ],
+      "confidence": 0.5,
+      "created_at": "2026-07-12T02:57:00+08:00",
+      "simulation_only": true,
+      "quote_context_research_only": true,
+      "source_memory_candidate_id": "finnhub_quote_memory_candidate_finnhub_quote_ptr_virtual_finnhub_quote_review_queue_finnhub_quote_feedback_followup_finnhub_quote_fb_watch_001",
+      "paper_trade_id": "finnhub_quote_ptr_virtual_finnhub_quote_review_queue_finnhub_quote_feedback_followup_finnhub_quote_fb_watch_001",
+      "source_review_id": "rev_finnhub_quote_finnhub_quote_ptr_virtual_finnhub_quote_review_queue_finnhub_quote_feedback_followup_finnhub_quote_fb_watch_001_entry",
+      "outcome_evidence_status": "pending_user_returned_evidence",
+      "social_sentiment_not_enabled": true,
+      "evidence_refs": [
+        "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/v2_13_m_finnhub_quote_virtual_paper_trade_creation_latest.json",
+        "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/v2_13_j_finnhub_quote_feedback_intake_latest.json",
+        "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/v2_13_i_finnhub_quote_simulation_brief_latest.json",
+        "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/v2_13_i_finnhub_quote_simulation_brief_latest.json",
+        "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/v2_13_g_finnhub_quote_sandbox_evaluation_latest.json",
+        "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/V2_13_G_FINNHUB_QUOTE_SANDBOX_EVALUATION_PASS.marker",
+        "v2_13_f_quote_context_case:bind_finnhub_quote_context_us_aapl_finnhub_quote_sandbox_candidate:finnhub_quote_context_us_aapl_finnhub_quote:us_aapl_eodhd_daily_bars:8aadce47722d091f3c7e849a5da07c15ebe5c89d5ae925ea37a574f4f977466c",
+        "v2_13_f_quote_context_case:bind_finnhub_quote_context_us_aapl_finnhub_quote_sandbox_candidate:finnhub_quote_context_us_aapl_finnhub_quote:us_aapl_twelve_data_daily_bars:08769d39f7cfa35c101005c13968267a324701fe629ba9f5dc11e35b504510e5"
+      ],
+      "source_user_evidence_items": [
+        {
+          "evidence_ref": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v2_13_l_acceptance/v2_13_l_20260712_acceptance_final_check/user_supplied_finnhub_quote_evidence/AAPL_US_entry_evidence.txt",
+          "exists": true,
+          "sha256": "a2417f4b15d6bf3ba12ee8bae9ef5c56f98c8944756ea47ee8880f424db0fafc",
+          "raw_image_stored_in_record": false,
+          "ocr_performed": false
+        }
+      ],
+      "no_memory_jsonl_production_mutation": true,
+      "no_strategy_mutation": true,
+      "no_return_fabrication": true,
+      "no_exit_fabrication": true,
+      "no_real_trade_execution": true,
+      "no_broker_api": true,
+      "no_webhook": true,
+      "no_order_placement": true,
+      "no_live_price": true,
+      "no_position_size": true,
+      "no_live_order_signal": true
+    }
+  ],
+  "checks": {
+    "source_is_v2_13_n": true,
+    "source_report_pass": true,
+    "source_social_sentiment_not_enabled": true,
+    "source_candidate_evidence_only": true,
+    "has_review_evidence_links": true,
+    "has_memory_candidates": true,
+    "formal_reviews_for_each_link": true,
+    "formal_memories_for_each_candidate": true,
+    "all_reviews_pending_without_return_fabrication": true,
+    "all_reviews_have_user_evidence_refs": true,
+    "all_memories_have_user_evidence_refs": true,
+    "all_memories_simulation_only": true,
+    "all_reviews_simulation_only": true,
+    "all_items_social_sentiment_not_enabled": true,
+    "all_items_quote_context_research_only": true,
+    "no_review_record_production_mutation": true,
+    "no_memory_jsonl_production_mutation": true,
+    "no_strategy_mutation": true,
+    "no_real_trade_execution": true,
+    "no_broker_api": true,
+    "no_webhook": true,
+    "no_order_placement": true,
+    "no_live_price": true,
+    "no_position_size": true,
+    "no_live_order_signal": true,
+    "acceptance_target_correct": true,
+    "report_status_pass": true,
+    "source_marker_exists": true,
+    "formal_reviews_json_written": true,
+    "formal_memories_json_written": true,
+    "production_record_files_unchanged": true,
+    "production_records_not_written": true,
+    "reviews_jsonl_not_written": true,
+    "memory_jsonl_not_written": true,
+    "investment_memory_jsonl_not_written": true,
+    "paper_trades_not_written": true,
+    "recommendations_not_written": true,
+    "dashboard_contract_unchanged": true,
+    "network_not_used": true
+  },
+  "safety": {
+    "simulation_only": true,
+    "formal_artifacts_only": true,
+    "quote_context_research_only": true,
+    "social_sentiment_not_enabled": true,
+    "production_records_not_written": true,
+    "no_return_fabrication": true,
+    "no_exit_fabrication": true,
+    "no_review_record_production_mutation": true,
+    "no_memory_jsonl_production_mutation": true,
+    "no_real_trade_execution": true,
+    "no_broker_api": true,
+    "no_webhook": true,
+    "no_order_placement": true,
+    "no_live_price": true,
+    "no_position_size": true,
+    "no_live_order_signal": true,
+    "no_strategy_mutation": true,
+    "dashboard_contract_unchanged": true
+  },
+  "run_dir": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v2_13_o_acceptance/v2_13_o_20260712_acceptance",
+  "source_v2_13_n_report_json": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/v2_13_n_finnhub_quote_review_memory_bridge_latest.json",
+  "source_v2_13_n_pass_marker": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/V2_13_N_FINNHUB_QUOTE_REVIEW_MEMORY_BRIDGE_PASS.marker",
+  "formal_reviews_json": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v2_13_o_acceptance/v2_13_o_20260712_acceptance/finnhub_quote_formal_review_records.json",
+  "formal_reviews_jsonl": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v2_13_o_acceptance/v2_13_o_20260712_acceptance/finnhub_quote_formal_review_records.jsonl",
+  "formal_memories_json": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v2_13_o_acceptance/v2_13_o_20260712_acceptance/finnhub_quote_formal_investment_memory_records.json",
+  "formal_memories_jsonl": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v2_13_o_acceptance/v2_13_o_20260712_acceptance/finnhub_quote_formal_investment_memory_records.jsonl",
+  "production_record_files_before": {
+    "paper_trades_jsonl": {
+      "exists": false,
+      "size": null,
+      "sha256": null
+    },
+    "reviews_jsonl": {
+      "exists": false,
+      "size": null,
+      "sha256": null
+    },
+    "memory_jsonl": {
+      "exists": false,
+      "size": null,
+      "sha256": null
+    },
+    "investment_memory_jsonl": {
+      "exists": false,
+      "size": null,
+      "sha256": null
+    },
+    "recommendations_jsonl": {
+      "exists": true,
+      "size": 12284,
+      "sha256": "05b2e56c9b547cbe3ce4cb71b7cb776185e23ef2cc3bc9a46a918bce0cfb65dc"
+    }
+  },
+  "production_record_files_after": {
+    "paper_trades_jsonl": {
+      "exists": false,
+      "size": null,
+      "sha256": null
+    },
+    "reviews_jsonl": {
+      "exists": false,
+      "size": null,
+      "sha256": null
+    },
+    "memory_jsonl": {
+      "exists": false,
+      "size": null,
+      "sha256": null
+    },
+    "investment_memory_jsonl": {
+      "exists": false,
+      "size": null,
+      "sha256": null
+    },
+    "recommendations_jsonl": {
+      "exists": true,
+      "size": 12284,
+      "sha256": "05b2e56c9b547cbe3ce4cb71b7cb776185e23ef2cc3bc9a46a918bce0cfb65dc"
+    }
+  },
+  "hashes": {
+    "source_v2_13_n_report_json": "fafb2634f85c5d4269ee49b6918119d9f53721467d774d21b3b1f87b562c674a",
+    "source_v2_13_n_pass_marker": "35c2353af56f35151a997f8957b95312033350139ee763ef69ac40498fc41367",
+    "formal_reviews_json": "091d61a4d5e35a406ed04ce9953cae9a9e0557849846551c2fbb0a34b8d91458",
+    "formal_reviews_jsonl": "3059800caaa5b649a573ae4b4f7a4260057e97185caade4a4b073f1fd9aa710b",
+    "formal_memories_json": "77fad63106e77168fe9b088e7aa3f76c9580c9d9d735792ee50c13727705fd38",
+    "formal_memories_jsonl": "820cbf580e53e1608de78ba60c53cf80ca17109677618ff6ad5c83459ab9a794"
+  }
+}

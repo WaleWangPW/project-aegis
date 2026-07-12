@@ -1,0 +1,54 @@
+{
+  "restore_session": "P21.6d-top5-restore",
+  "timestamp": "2026-07-10T03:54:48.047607+08:00",
+  "restore_source": "P19.10_canonical_baseline_creation",
+  "backup_paths": [
+    "data/reports/backups/p21_6d_top5_restore/a_share_watchlist_latest.json.1783626814",
+    "data/reports/backups/p21_6d_top5_restore/a_share_watchlist_latest.json.1783626854",
+    "data/reports/backups/p21_6d_top5_restore/a_share_watchlist_latest.md.1783626854",
+    "data/reports/backups/p21_6d_top5_restore/a_share_watchlist_latest.md.1783626814"
+  ],
+  "files_after_restore": {
+    "watchlist_json_exists": true,
+    "watchlist_md_exists": true,
+    "failures_json_exists": false
+  },
+  "records_count": 24,
+  "watchlist_top5": [
+    "600519.SH",
+    "600036.SH",
+    "000858.SZ",
+    "000001.SZ",
+    "601398.SH"
+  ],
+  "feishu_top5": [
+    "000002.SZ",
+    "000858.SZ",
+    "600036.SH",
+    "000001.SZ",
+    "600000.SH"
+  ],
+  "history_latest_top5": [
+    "000002.SZ",
+    "000858.SZ",
+    "600036.SH",
+    "000001.SZ",
+    "600000.SH"
+  ],
+  "p19_10_baseline": [
+    "600519.SH",
+    "600036.SH",
+    "000858.SZ",
+    "000001.SZ",
+    "601398.SH"
+  ],
+  "checks": {
+    "watchlist_top5_matches_p19_10": true,
+    "unexpected_000002_not_in_top5": true,
+    "unexpected_600000_not_in_top5": true,
+    "records_count_gte_20": true,
+    "feishu_top5_matches_p19_10": false,
+    "history_top5_matches_p19_10": false,
+    "order_exact_match": false
+  }
+}

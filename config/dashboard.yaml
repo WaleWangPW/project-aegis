@@ -1,0 +1,6 @@
+# Per Master Spec §20.6 — Dashboard JSON output config.
+# dashboard/index.html itself is NOT modified in P0 — this only points to
+# where the backend (Phase 5) will write dashboard_data.json.
+dashboard:
+  output_path: data/dashboard/dashboard_data.json
+  include_data_gaps: true

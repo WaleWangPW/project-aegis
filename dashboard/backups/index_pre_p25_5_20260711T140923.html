@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <meta name="aegis-dashboard-contract" content="2.0">
+  <title>Project Aegis · CEO Daily Brief</title>
+  <link rel="stylesheet" href="v2.css">
+</head>
+<body>
+  <main class="shell">
+    <header class="statusbar" aria-label="系统状态栏">
+      <strong>Project Aegis</strong><span id="today-date">—</span><span>系统：<b id="system-status">数据不足</b></span><span id="data-time">数据更新时间：数据未提供</span><span>每日自动检查：<b id="daily-status">数据不足</b></span><button id="refresh" type="button">刷新</button>
+    </header>
+    <section id="decision" class="section hero" aria-labelledby="decision-title"><h1 id="decision-title">今日结论</h1><div id="decision-content"></div></section>
+    <section id="risk" class="section" aria-labelledby="risk-title"><h2 id="risk-title">风险与退出</h2><div id="risk-content" class="grid risk-grid"></div></section>
+    <section id="holdings" class="section" aria-labelledby="holdings-title"><h2 id="holdings-title">当前持仓</h2><div id="holdings-content" class="grid holdings-grid"></div></section>
+    <section id="next-check" class="section compact" aria-labelledby="next-title"><h2 id="next-title">下次检查时间</h2><div id="next-content"></div><div id="daily-content" class="mini-check"></div></section>
+    <section id="watchlist" class="section" aria-labelledby="watchlist-title"><h2 id="watchlist-title">候选观察</h2><div id="watchlist-content"></div></section>
+    <section id="market" class="section compact" aria-labelledby="market-title"><h2 id="market-title">市场环境</h2><div id="market-content"></div></section>
+    <details id="research" class="section"><summary>历史研究结果</summary><div id="backtest-content" class="details-content"></div></details>
+    <details id="system-details" class="section"><summary>系统与数据详情</summary><div id="evidence-content" class="details-content"></div></details>
+  </main>
+  <script src="v2.js"></script>
+</body>
+</html>

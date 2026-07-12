@@ -1,0 +1,177 @@
+{
+  "overall_status": "PASS",
+  "acceptance_target": "V2.13-B Finnhub Metadata Activation",
+  "packet_type": "finnhub_metadata_activation",
+  "run_id": "v2_13_b_20260712_acceptance",
+  "generated_at": "2026-07-12T01:41:33+08:00",
+  "command": "validate_v2_13_b_finnhub_metadata_activation.py --run-id v2_13_b_20260712_acceptance",
+  "network_used": false,
+  "production_records_written": false,
+  "production_provider_config_mutated": false,
+  "dashboard_contract_changed": false,
+  "summary": {
+    "quote_route": "finnhub_quote_ready",
+    "social_sentiment_route": "blocked_plan_or_rate_limit",
+    "route_count": 2,
+    "capability_count": 2,
+    "next_stage": "V2.13-C Finnhub Quote Cache Readiness Dry Run"
+  },
+  "capabilities": [
+    {
+      "provider": "finnhub",
+      "endpoint": "quote",
+      "market": "US",
+      "symbol": "AAPL",
+      "data_type": "quote",
+      "status": "ready_for_metadata",
+      "required_env_vars": [
+        "AEGIS_FINNHUB_API_KEY",
+        "AEGIS_FINNHUB_API_TOKEN"
+      ],
+      "env_var_used": "AEGIS_FINNHUB_API_KEY",
+      "probe_summary_sha256": "468469c5993b5c7054378bab22afc137735d9d91c8231f354928e519d62b313b",
+      "blocked_by": [],
+      "stores_request_url": false,
+      "stores_raw_payload": false,
+      "stores_token_value": false
+    },
+    {
+      "provider": "finnhub",
+      "endpoint": "social_sentiment",
+      "market": "US",
+      "symbol": "AAPL",
+      "data_type": "social_sentiment",
+      "status": "blocked_plan_or_rate_limit",
+      "required_env_vars": [
+        "AEGIS_FINNHUB_API_KEY",
+        "AEGIS_FINNHUB_API_TOKEN"
+      ],
+      "env_var_used": "AEGIS_FINNHUB_API_KEY",
+      "probe_summary_sha256": "623c27d4ee12c4ba6150b1487db44e523b8975d7ea0214c6ed7f90bf73cae7e0",
+      "blocked_by": [
+        "social_sentiment_not_available_on_current_plan_or_rate_limit"
+      ],
+      "stores_request_url": false,
+      "stores_raw_payload": false,
+      "stores_token_value": false
+    }
+  ],
+  "route_proposals": [
+    {
+      "route_id": "us_quote_finnhub_verified_free",
+      "market": "US",
+      "data_type": "quote",
+      "primary_provider": "finnhub",
+      "fallback_providers": [],
+      "status": "ready_for_metadata",
+      "required_env_vars": [
+        "AEGIS_FINNHUB_API_KEY"
+      ],
+      "symbol_rules": {
+        "canonical_examples": [
+          "AAPL.US",
+          "MSFT.US"
+        ],
+        "finnhub_examples": [
+          "AAPL",
+          "MSFT"
+        ],
+        "rule": "Use bare U.S. ticker symbols for Finnhub quote endpoint."
+      },
+      "allowed_uses": [
+        "provider_health_check",
+        "quote_freshness_probe",
+        "research_context_inputs"
+      ],
+      "forbidden_uses": [
+        "real_trade",
+        "broker_api",
+        "trading_webhook",
+        "order_placement"
+      ],
+      "suggestion_path_enabled": false
+    },
+    {
+      "route_id": "us_social_sentiment_finnhub_plan_blocked",
+      "market": "US",
+      "data_type": "social_sentiment",
+      "primary_provider": "finnhub",
+      "fallback_providers": [],
+      "status": "blocked_plan_or_rate_limit",
+      "required_env_vars": [
+        "AEGIS_FINNHUB_API_KEY"
+      ],
+      "blocked_by": [
+        "social_sentiment_not_available_on_current_plan_or_rate_limit"
+      ],
+      "allowed_uses": [],
+      "forbidden_uses": [
+        "sentiment_inputs",
+        "suggestion_inputs",
+        "production_routing",
+        "real_trade",
+        "order_placement"
+      ],
+      "bypass_allowed": false,
+      "suggestion_path_enabled": false
+    }
+  ],
+  "source_evidence": {
+    "source_target": "V2.13-A Finnhub Free Probe",
+    "source_run_id": "v2_13_a_20260712_finnhub_free_probe_rerun",
+    "source_summary_sha256": "2ed7ca7e9129f4669ca336edc3fd17c9453343bf888d8e843d987afe99c59922"
+  },
+  "checks": {
+    "source_probe_report_pass": true,
+    "source_acceptance_target_correct": true,
+    "source_secret_like_material_absent": true,
+    "quote_ready_for_metadata": true,
+    "social_sentiment_blocked_visible": true,
+    "quote_route_proposal_visible": true,
+    "social_sentiment_route_blocked": true,
+    "env_var_names_only": true,
+    "no_secret_values_stored": true,
+    "request_urls_not_stored": true,
+    "raw_payloads_not_stored": true,
+    "network_not_used": true,
+    "production_provider_config_not_mutated": true,
+    "suggestion_path_not_enabled": true,
+    "no_real_trade": true,
+    "no_broker_api": true,
+    "no_trading_webhook": true,
+    "no_order_placement": true,
+    "dashboard_contract_unchanged": true,
+    "acceptance_target_correct": true,
+    "packet_status_pass": true,
+    "source_probe_report_exists": true,
+    "packet_json_written": true,
+    "packet_md_written": true,
+    "source_probe_hash_only": true,
+    "packet_contains_no_source_raw_payload": true,
+    "packet_contains_no_request_url": true,
+    "packet_contains_no_token_value": true
+  },
+  "safety": {
+    "metadata_activation_only": true,
+    "no_secret_values_stored": true,
+    "no_request_url_storage": true,
+    "no_raw_payload_storage": true,
+    "network_not_used": true,
+    "production_provider_config_not_mutated": true,
+    "suggestion_path_not_enabled": true,
+    "social_sentiment_not_enabled": true,
+    "no_real_trade": true,
+    "no_broker_api": true,
+    "no_trading_webhook": true,
+    "no_order_placement": true,
+    "dashboard_contract_unchanged": true
+  },
+  "packet_json": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v2_13_b_acceptance/v2_13_b_20260712_acceptance/finnhub_metadata_activation.json",
+  "packet_md": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v2_13_b_acceptance/v2_13_b_20260712_acceptance/finnhub_metadata_activation.md",
+  "source_probe_report_json": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/v2_13_a_finnhub_free_probe_latest.json",
+  "hashes": {
+    "source_probe_report_json": "0906d6d500dff11d01695d4b8d34c9bcd33cdea079addb35e139644faf94e857",
+    "packet_json": "37080ea48661fb6476318bd1d8125fb0ae13dd5ac836da50852b6c6aaf03345d",
+    "packet_md": "a34a34a9b3e3c4f961676d15995d7b8c23d0c173f9094a244b33d98d848c0b34"
+  }
+}

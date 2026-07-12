@@ -1,0 +1,392 @@
+{
+  "overall_status": "PASS",
+  "acceptance_target": "V2.13-T Finnhub Quote Multi-Symbol Sandbox Candidate Binding",
+  "source_acceptance_target": "V2.13-S Finnhub Quote Multi-Symbol Research Context Bridge",
+  "run_id": "v2_13_t_20260712_acceptance",
+  "generated_at": "2026-07-12T03:29:33+08:00",
+  "command": "validate_v2_13_t_finnhub_quote_multi_symbol_sandbox_binding.py --run-id v2_13_t_20260712_acceptance",
+  "network_used": false,
+  "production_records_written": false,
+  "production_cache_mutated": false,
+  "production_provider_config_mutated": false,
+  "dashboard_contract_changed": false,
+  "summary": {
+    "binding_count": 3,
+    "markets": [
+      "US"
+    ],
+    "symbols": [
+      "CRCL.US",
+      "MSFT.US",
+      "NVDA.US"
+    ],
+    "binding_statuses": [
+      "bound_pending_historical_cases"
+    ],
+    "historical_cases_required": true,
+    "sandbox_evaluation_required": true,
+    "suggestion_gate_required": true,
+    "user_facing_suggestion_allowed": false,
+    "social_sentiment_status": "blocked_plan_or_rate_limit",
+    "next_stage": "V2.13-U Finnhub Quote Multi-Symbol Historical Case Assembly"
+  },
+  "bindings": [
+    {
+      "binding_id": "bind_finnhub_quote_context_us_crcl_finnhub_quote_multi_symbol_sandbox_candidate",
+      "binding_status": "bound_pending_historical_cases",
+      "market": "US",
+      "canonical_symbol": "CRCL.US",
+      "provider": "finnhub",
+      "context_id": "finnhub_quote_context_us_crcl_finnhub_quote",
+      "source_case_id": "us_crcl_finnhub_quote",
+      "source_quote_json_sha256": "36ccb10e3524d0971782304bf71021736ae22dba87699abfd63140babcfbe81a",
+      "source_artifact_ref_sha256": "20bab0819d43d773cd53d0477f60fe10d814f8ebf9f5c9acf16ed53610ce6dcf",
+      "strategy_candidate": {
+        "strategy_id": "strategy_crcl_us_finnhub_multi_quote_context_probe",
+        "name": "CRCL.US Finnhub multi-symbol quote context sandbox probe",
+        "market": "US",
+        "universe": "CRCL.US Finnhub verified quote context universe",
+        "factor_family": "multi_factor",
+        "entry_rule": "Use Finnhub quote context as research evidence only; historical cases are still required.",
+        "exit_rule": "No exit rule is active until historical sandbox cases are supplied.",
+        "exit_horizon_days": 5,
+        "risk_controls": [
+          "manual_execution_only",
+          "historical_cases_required",
+          "suggestion_gate_required",
+          "single_quote_snapshot_not_strategy_evidence",
+          "multi_symbol_context_not_cross_symbol_signal"
+        ],
+        "pass_criteria": {
+          "min_sample_count": 3,
+          "min_win_rate": 0.5,
+          "min_average_return": 0.0,
+          "max_drawdown_floor": -0.12
+        },
+        "source_research_refs": [
+          "finnhub_quote_context_us_crcl_finnhub_quote",
+          "36ccb10e3524d0971782304bf71021736ae22dba87699abfd63140babcfbe81a",
+          "20bab0819d43d773cd53d0477f60fe10d814f8ebf9f5c9acf16ed53610ce6dcf"
+        ],
+        "created_at": "2026-07-12T03:29:33+08:00"
+      },
+      "required_next_inputs": [
+        "historical_cases",
+        "sandbox_evaluation",
+        "suggestion_gate",
+        "risk_checks"
+      ],
+      "blocked_until": [
+        "historical_cases_available",
+        "sandbox_passed",
+        "suggestion_gate_passed"
+      ],
+      "evidence_refs": [
+        "finnhub_quote_context_us_crcl_finnhub_quote",
+        "36ccb10e3524d0971782304bf71021736ae22dba87699abfd63140babcfbe81a",
+        "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v2_13_r_acceptance/v2_13_r_20260712_acceptance/normalized_quote_cache/US/quote/us_crcl_finnhub_quote.json"
+      ],
+      "warnings": [
+        "Single quote snapshot is research context only.",
+        "This binding is not a recommendation, order, or position-size instruction.",
+        "Historical sandbox cases are required before any user-facing simulation suggestion."
+      ],
+      "simulation_only": true,
+      "manual_external_execution_only": true,
+      "user_facing_suggestion_allowed": false,
+      "auto_applied": false,
+      "no_real_trade": true,
+      "no_broker_api": true,
+      "no_webhook": true,
+      "no_order_placement": true,
+      "no_position_size": true,
+      "no_live_order_signal": true,
+      "created_at": "2026-07-12T03:29:33+08:00"
+    },
+    {
+      "binding_id": "bind_finnhub_quote_context_us_msft_finnhub_quote_multi_symbol_sandbox_candidate",
+      "binding_status": "bound_pending_historical_cases",
+      "market": "US",
+      "canonical_symbol": "MSFT.US",
+      "provider": "finnhub",
+      "context_id": "finnhub_quote_context_us_msft_finnhub_quote",
+      "source_case_id": "us_msft_finnhub_quote",
+      "source_quote_json_sha256": "d7cf4c9d95a2808dd1d6cf3922467659293aab751f84fa8cdbd4efaa94498181",
+      "source_artifact_ref_sha256": "b47ae4893c9685132f73ceca6db246dea282abafeded33b0b98fd96abb403fd3",
+      "strategy_candidate": {
+        "strategy_id": "strategy_msft_us_finnhub_multi_quote_context_probe",
+        "name": "MSFT.US Finnhub multi-symbol quote context sandbox probe",
+        "market": "US",
+        "universe": "MSFT.US Finnhub verified quote context universe",
+        "factor_family": "multi_factor",
+        "entry_rule": "Use Finnhub quote context as research evidence only; historical cases are still required.",
+        "exit_rule": "No exit rule is active until historical sandbox cases are supplied.",
+        "exit_horizon_days": 5,
+        "risk_controls": [
+          "manual_execution_only",
+          "historical_cases_required",
+          "suggestion_gate_required",
+          "single_quote_snapshot_not_strategy_evidence",
+          "multi_symbol_context_not_cross_symbol_signal"
+        ],
+        "pass_criteria": {
+          "min_sample_count": 3,
+          "min_win_rate": 0.5,
+          "min_average_return": 0.0,
+          "max_drawdown_floor": -0.12
+        },
+        "source_research_refs": [
+          "finnhub_quote_context_us_msft_finnhub_quote",
+          "d7cf4c9d95a2808dd1d6cf3922467659293aab751f84fa8cdbd4efaa94498181",
+          "b47ae4893c9685132f73ceca6db246dea282abafeded33b0b98fd96abb403fd3"
+        ],
+        "created_at": "2026-07-12T03:29:33+08:00"
+      },
+      "required_next_inputs": [
+        "historical_cases",
+        "sandbox_evaluation",
+        "suggestion_gate",
+        "risk_checks"
+      ],
+      "blocked_until": [
+        "historical_cases_available",
+        "sandbox_passed",
+        "suggestion_gate_passed"
+      ],
+      "evidence_refs": [
+        "finnhub_quote_context_us_msft_finnhub_quote",
+        "d7cf4c9d95a2808dd1d6cf3922467659293aab751f84fa8cdbd4efaa94498181",
+        "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v2_13_r_acceptance/v2_13_r_20260712_acceptance/normalized_quote_cache/US/quote/us_msft_finnhub_quote.json"
+      ],
+      "warnings": [
+        "Single quote snapshot is research context only.",
+        "This binding is not a recommendation, order, or position-size instruction.",
+        "Historical sandbox cases are required before any user-facing simulation suggestion."
+      ],
+      "simulation_only": true,
+      "manual_external_execution_only": true,
+      "user_facing_suggestion_allowed": false,
+      "auto_applied": false,
+      "no_real_trade": true,
+      "no_broker_api": true,
+      "no_webhook": true,
+      "no_order_placement": true,
+      "no_position_size": true,
+      "no_live_order_signal": true,
+      "created_at": "2026-07-12T03:29:33+08:00"
+    },
+    {
+      "binding_id": "bind_finnhub_quote_context_us_nvda_finnhub_quote_multi_symbol_sandbox_candidate",
+      "binding_status": "bound_pending_historical_cases",
+      "market": "US",
+      "canonical_symbol": "NVDA.US",
+      "provider": "finnhub",
+      "context_id": "finnhub_quote_context_us_nvda_finnhub_quote",
+      "source_case_id": "us_nvda_finnhub_quote",
+      "source_quote_json_sha256": "d25e4d90bec86bae1e741c2c3623a8971062d099198650f00e96de9a95f1fb71",
+      "source_artifact_ref_sha256": "0f97bdfde2474e8039eb8c4095d0086021d9ed4f0e5a793c7a5eb165f88ba006",
+      "strategy_candidate": {
+        "strategy_id": "strategy_nvda_us_finnhub_multi_quote_context_probe",
+        "name": "NVDA.US Finnhub multi-symbol quote context sandbox probe",
+        "market": "US",
+        "universe": "NVDA.US Finnhub verified quote context universe",
+        "factor_family": "multi_factor",
+        "entry_rule": "Use Finnhub quote context as research evidence only; historical cases are still required.",
+        "exit_rule": "No exit rule is active until historical sandbox cases are supplied.",
+        "exit_horizon_days": 5,
+        "risk_controls": [
+          "manual_execution_only",
+          "historical_cases_required",
+          "suggestion_gate_required",
+          "single_quote_snapshot_not_strategy_evidence",
+          "multi_symbol_context_not_cross_symbol_signal"
+        ],
+        "pass_criteria": {
+          "min_sample_count": 3,
+          "min_win_rate": 0.5,
+          "min_average_return": 0.0,
+          "max_drawdown_floor": -0.12
+        },
+        "source_research_refs": [
+          "finnhub_quote_context_us_nvda_finnhub_quote",
+          "d25e4d90bec86bae1e741c2c3623a8971062d099198650f00e96de9a95f1fb71",
+          "0f97bdfde2474e8039eb8c4095d0086021d9ed4f0e5a793c7a5eb165f88ba006"
+        ],
+        "created_at": "2026-07-12T03:29:33+08:00"
+      },
+      "required_next_inputs": [
+        "historical_cases",
+        "sandbox_evaluation",
+        "suggestion_gate",
+        "risk_checks"
+      ],
+      "blocked_until": [
+        "historical_cases_available",
+        "sandbox_passed",
+        "suggestion_gate_passed"
+      ],
+      "evidence_refs": [
+        "finnhub_quote_context_us_nvda_finnhub_quote",
+        "d25e4d90bec86bae1e741c2c3623a8971062d099198650f00e96de9a95f1fb71",
+        "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v2_13_r_acceptance/v2_13_r_20260712_acceptance/normalized_quote_cache/US/quote/us_nvda_finnhub_quote.json"
+      ],
+      "warnings": [
+        "Single quote snapshot is research context only.",
+        "This binding is not a recommendation, order, or position-size instruction.",
+        "Historical sandbox cases are required before any user-facing simulation suggestion."
+      ],
+      "simulation_only": true,
+      "manual_external_execution_only": true,
+      "user_facing_suggestion_allowed": false,
+      "auto_applied": false,
+      "no_real_trade": true,
+      "no_broker_api": true,
+      "no_webhook": true,
+      "no_order_placement": true,
+      "no_position_size": true,
+      "no_live_order_signal": true,
+      "created_at": "2026-07-12T03:29:33+08:00"
+    }
+  ],
+  "source_evidence": {
+    "source_target": "V2.13-S Finnhub Quote Multi-Symbol Research Context Bridge",
+    "source_run_id": "v2_13_s_20260712_acceptance",
+    "source_summary_sha256": "8500641af05d0a63dedf53da6764936029698cf71c58518efd0773015708c418"
+  },
+  "checks": {
+    "source_report_pass": true,
+    "source_acceptance_target_correct": true,
+    "source_context_item_count_at_least_three": true,
+    "binding_symbols_match_source_symbols": true,
+    "source_social_sentiment_still_blocked": true,
+    "all_contexts_research_only": true,
+    "all_contexts_verified": true,
+    "all_contexts_require_sandbox": true,
+    "all_contexts_forbid_direct_suggestions": true,
+    "at_least_three_bindings_created": true,
+    "all_bindings_pending_historical_cases": true,
+    "all_bindings_require_sandbox_and_gate": true,
+    "all_strategy_candidates_have_pass_criteria": true,
+    "no_historical_sandbox_result_claimed": true,
+    "suggestion_path_not_enabled": true,
+    "social_sentiment_not_enabled": true,
+    "user_facing_suggestion_not_allowed": true,
+    "auto_apply_disabled": true,
+    "simulation_only": true,
+    "manual_external_execution_only": true,
+    "network_not_used": true,
+    "production_records_not_written": true,
+    "production_cache_not_mutated": true,
+    "production_provider_config_not_mutated": true,
+    "no_secret_values_stored": true,
+    "request_urls_not_stored": true,
+    "raw_payloads_not_stored": true,
+    "no_real_trade": true,
+    "no_broker_api": true,
+    "no_webhook": true,
+    "no_order_placement": true,
+    "no_position_size": true,
+    "no_live_order_signal": true,
+    "dashboard_contract_unchanged": true,
+    "acceptance_target_correct": true,
+    "report_status_pass": true,
+    "source_v2_13_s_marker_exists": true,
+    "binding_json_written": true,
+    "binding_md_written": true,
+    "candidates_json_written": true,
+    "production_record_files_unchanged": true
+  },
+  "safety": {
+    "sandbox_candidate_binding_only": true,
+    "single_quote_not_strategy_evidence": true,
+    "historical_cases_required": true,
+    "sandbox_evaluation_required": true,
+    "suggestion_gate_required": true,
+    "user_facing_suggestion_allowed": false,
+    "network_not_used": true,
+    "simulation_only": true,
+    "manual_external_execution_only": true,
+    "social_sentiment_not_enabled": true,
+    "suggestion_path_not_enabled": true,
+    "production_records_not_written": true,
+    "production_cache_not_mutated": true,
+    "production_provider_config_not_mutated": true,
+    "no_secret_values_stored": true,
+    "no_request_url_storage": true,
+    "no_raw_payload_storage": true,
+    "no_real_trade": true,
+    "no_broker_api": true,
+    "no_webhook": true,
+    "no_order_placement": true,
+    "no_position_size": true,
+    "no_live_order_signal": true,
+    "dashboard_contract_unchanged": true
+  },
+  "run_dir": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v2_13_t_acceptance/v2_13_t_20260712_acceptance",
+  "binding_json": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v2_13_t_acceptance/v2_13_t_20260712_acceptance/finnhub_quote_multi_symbol_sandbox_bindings.json",
+  "binding_md": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v2_13_t_acceptance/v2_13_t_20260712_acceptance/finnhub_quote_multi_symbol_sandbox_bindings.md",
+  "candidates_json": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v2_13_t_acceptance/v2_13_t_20260712_acceptance/finnhub_quote_multi_symbol_sandbox_candidates.json",
+  "source_v2_13_s_report_json": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/v2_13_s_finnhub_quote_multi_symbol_research_context_latest.json",
+  "source_v2_13_s_pass_marker": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/V2_13_S_FINNHUB_QUOTE_MULTI_SYMBOL_RESEARCH_CONTEXT_PASS.marker",
+  "production_record_files_before": {
+    "recommendations_jsonl": {
+      "exists": true,
+      "size": 12284,
+      "sha256": "05b2e56c9b547cbe3ce4cb71b7cb776185e23ef2cc3bc9a46a918bce0cfb65dc"
+    },
+    "paper_trades_jsonl": {
+      "exists": false,
+      "size": null,
+      "sha256": null
+    },
+    "reviews_jsonl": {
+      "exists": false,
+      "size": null,
+      "sha256": null
+    },
+    "memory_jsonl": {
+      "exists": false,
+      "size": null,
+      "sha256": null
+    },
+    "investment_memory_jsonl": {
+      "exists": false,
+      "size": null,
+      "sha256": null
+    }
+  },
+  "production_record_files_after": {
+    "recommendations_jsonl": {
+      "exists": true,
+      "size": 12284,
+      "sha256": "05b2e56c9b547cbe3ce4cb71b7cb776185e23ef2cc3bc9a46a918bce0cfb65dc"
+    },
+    "paper_trades_jsonl": {
+      "exists": false,
+      "size": null,
+      "sha256": null
+    },
+    "reviews_jsonl": {
+      "exists": false,
+      "size": null,
+      "sha256": null
+    },
+    "memory_jsonl": {
+      "exists": false,
+      "size": null,
+      "sha256": null
+    },
+    "investment_memory_jsonl": {
+      "exists": false,
+      "size": null,
+      "sha256": null
+    }
+  },
+  "hashes": {
+    "source_v2_13_s_report_json": "f093ca58e15d0a2f5ea367cb3070bad30b0fb711338e9cf88f2e19f46fa942a2",
+    "source_v2_13_s_pass_marker": "cd1c115fab0fcb10213fef084976ffea2c0c63add7f28c67ff5ea9db4d3e9b05",
+    "binding_json": "61d77d0f405d5c51183db7bac71ac8f59dbdece0e84280fceaabce90f204be9e",
+    "binding_md": "fad9b4b4307e61549cd2d511ee9ca59c25c85d6eb844f37ccbf95cd6cc77e47f",
+    "candidates_json": "9a37c117347c9e5d911fab4f5e70426ba40a8c575663786304aec6ec59edff2b"
+  }
+}

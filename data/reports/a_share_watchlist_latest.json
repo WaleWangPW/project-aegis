@@ -1,0 +1,212 @@
+{
+  "report_type": "a_share_watchlist",
+  "generated_at": "2026-07-10T04:08:07.772126+08:00",
+  "source": "P19.10_canonical_baseline",
+  "market": "A",
+  "count": 23,
+  "top5": [
+    {
+      "symbol": "600519.SH",
+      "name": "贵州茅台",
+      "market": "A",
+      "score": 0.95,
+      "status": "Watch"
+    },
+    {
+      "symbol": "600036.SH",
+      "name": "招商银行",
+      "market": "A",
+      "score": 0.85,
+      "status": "Watch"
+    },
+    {
+      "symbol": "000858.SZ",
+      "name": "五粮液",
+      "market": "A",
+      "score": 0.82,
+      "status": "Watch"
+    },
+    {
+      "symbol": "000001.SZ",
+      "name": "平安银行",
+      "market": "A",
+      "score": 0.76,
+      "status": "Watch"
+    },
+    {
+      "symbol": "601398.SH",
+      "name": "工商银行",
+      "market": "A",
+      "score": 0.72,
+      "status": "Watch"
+    }
+  ],
+  "stocks": [
+    {
+      "symbol": "600519.SH",
+      "name": "贵州茅台",
+      "market": "A",
+      "score": 0.95,
+      "status": "Watch"
+    },
+    {
+      "symbol": "600036.SH",
+      "name": "招商银行",
+      "market": "A",
+      "score": 0.85,
+      "status": "Watch"
+    },
+    {
+      "symbol": "000858.SZ",
+      "name": "五粮液",
+      "market": "A",
+      "score": 0.82,
+      "status": "Watch"
+    },
+    {
+      "symbol": "000001.SZ",
+      "name": "平安银行",
+      "market": "A",
+      "score": 0.76,
+      "status": "Watch"
+    },
+    {
+      "symbol": "601398.SH",
+      "name": "工商银行",
+      "market": "A",
+      "score": 0.72,
+      "status": "Watch"
+    },
+    {
+      "symbol": "000002.SZ",
+      "name": "万科A",
+      "market": "A",
+      "score": 0.7,
+      "status": "Monitor"
+    },
+    {
+      "symbol": "601857.SH",
+      "name": "中国石油",
+      "market": "A",
+      "score": 0.68,
+      "status": "Monitor"
+    },
+    {
+      "symbol": "601318.SH",
+      "name": "中国平安",
+      "market": "A",
+      "score": 0.65,
+      "status": "Monitor"
+    },
+    {
+      "symbol": "000895.SZ",
+      "name": "双汇发展",
+      "market": "A",
+      "score": 0.63,
+      "status": "Monitor"
+    },
+    {
+      "symbol": "002415.SZ",
+      "name": "海康威视",
+      "market": "A",
+      "score": 0.6,
+      "status": "Monitor"
+    },
+    {
+      "symbol": "000568.SZ",
+      "name": "泸州老窖",
+      "market": "A",
+      "score": 0.58,
+      "status": "Monitor"
+    },
+    {
+      "symbol": "000333.SZ",
+      "name": "美的集团",
+      "market": "A",
+      "score": 0.55,
+      "status": "Monitor"
+    },
+    {
+      "symbol": "002304.SZ",
+      "name": "洋河股份",
+      "market": "A",
+      "score": 0.53,
+      "status": "Monitor"
+    },
+    {
+      "symbol": "000651.SZ",
+      "name": "格力电器",
+      "market": "A",
+      "score": 0.5,
+      "status": "Monitor"
+    },
+    {
+      "symbol": "000063.SZ",
+      "name": "中兴通讯",
+      "market": "A",
+      "score": 0.48,
+      "status": "Monitor"
+    },
+    {
+      "symbol": "002024.SZ",
+      "name": "苏宁易购",
+      "market": "A",
+      "score": 0.45,
+      "status": "Monitor"
+    },
+    {
+      "symbol": "002475.SZ",
+      "name": "立讯精密",
+      "market": "A",
+      "score": 0.43,
+      "status": "Monitor"
+    },
+    {
+      "symbol": "000860.SZ",
+      "name": "顺鑫农业",
+      "market": "A",
+      "score": 0.4,
+      "status": "Monitor"
+    },
+    {
+      "symbol": "000538.SZ",
+      "name": "云南白药",
+      "market": "A",
+      "score": 0.38,
+      "status": "Monitor"
+    },
+    {
+      "symbol": "000625.SZ",
+      "name": "长安汽车",
+      "market": "A",
+      "score": 0.35,
+      "status": "Monitor"
+    },
+    {
+      "symbol": "000725.SZ",
+      "name": "京东方A",
+      "market": "A",
+      "score": 0.33,
+      "status": "Monitor"
+    },
+    {
+      "symbol": "002008.SZ",
+      "name": "大族激光",
+      "market": "A",
+      "score": 0.3,
+      "status": "Monitor"
+    },
+    {
+      "symbol": "002027.SZ",
+      "name": "分众传媒",
+      "market": "A",
+      "score": 0.28,
+      "status": "Monitor"
+    }
+  ],
+  "metadata": {
+    "baseline_version": "P19.10",
+    "selection_criteria": "High data quality, liquidity, market cap",
+    "note": "Canonical source for A-share watchlist in pipeline - contains P19.10 baseline Top5 as first 5 entries"
+  }
+}

@@ -1,0 +1,214 @@
+{
+  "overall_status": "PASS",
+  "acceptance_target": "V2.11-B User-Provided API Metadata Activation Packet",
+  "packet_type": "user_api_metadata_activation_packet",
+  "run_id": "v2_11_b_20260711_acceptance",
+  "generated_at": "2026-07-11T23:01:29+08:00",
+  "command": "validate_v2_11_b_user_api_metadata_activation_packet.py --run-id v2_11_b_20260711_acceptance",
+  "network_used": false,
+  "production_records_written": false,
+  "dashboard_contract_changed": false,
+  "summary": {
+    "connector_id": "api_user_candidate_refresh_approved_env",
+    "current_intake_status": "blocked_missing_metadata",
+    "blocked_by": [
+      "missing_connector_metadata"
+    ],
+    "template_connector_found": true,
+    "required_env_vars": [
+      "AEGIS_CANDIDATE_REFRESH_API_KEY"
+    ],
+    "tushare_status": "a_share_core_ready",
+    "tushare_token_present": true,
+    "tushare_network_available": true,
+    "tushare_pass_count": 4,
+    "tushare_unknown_count": 2,
+    "local_config_path": "config/external_api_connectors.local.json",
+    "user_template_path": "config/external_api_connectors.user-template.json",
+    "next_after_user_setup": "V2.10-B Real API Metadata Intake And Live Readiness Check"
+  },
+  "tushare_first": {
+    "role": "primary_a_share_data_source",
+    "required_env_var_name": "TUSHARE_TOKEN",
+    "token_present": true,
+    "network_available": true,
+    "a_share_core_ready": true,
+    "passed_capabilities": [
+      {
+        "market": "A",
+        "data_type": "daily_bars"
+      },
+      {
+        "market": "A",
+        "data_type": "index_bars"
+      },
+      {
+        "market": "A",
+        "data_type": "stock_basic"
+      },
+      {
+        "market": "A",
+        "data_type": "trading_calendar"
+      }
+    ],
+    "unknown_capabilities": [
+      {
+        "market": "A",
+        "data_type": "sector_classification",
+        "status": "unknown_empty"
+      },
+      {
+        "market": "A",
+        "data_type": "fundamentals",
+        "status": "unknown_empty"
+      }
+    ],
+    "allowed_uses": [
+      "a_share_data_read",
+      "historical_sandbox",
+      "strategy_research_inputs",
+      "simulation_only_suggestions"
+    ],
+    "forbidden_uses": [
+      "real_trade",
+      "broker_api",
+      "trading_webhook",
+      "order_placement"
+    ]
+  },
+  "safe_template_summary": {
+    "connector_id": "api_user_candidate_refresh_approved_env",
+    "provider_type": "user_provided_research_api",
+    "markets": [
+      "A",
+      "H",
+      "US"
+    ],
+    "base_url_host_example": "api.example-candidate-provider.invalid",
+    "base_url_example_sha256": "ca465c81b6fdfe7cc09db22a4bf9f57afa23d02e4bf5e8c99c0000ed4897516d",
+    "auth_method": "env_var",
+    "required_env_vars": [
+      "AEGIS_CANDIDATE_REFRESH_API_KEY"
+    ],
+    "license_status": "approved",
+    "retention_policy": "summary_only",
+    "allowed_purposes": [
+      "candidate_refresh",
+      "strategy_research_ingestion"
+    ],
+    "endpoint_path": "/candidate-refresh",
+    "candidate_payload_schema": {
+      "items_path": "items",
+      "symbol_field": "symbol",
+      "market_field": "market",
+      "name_field": "name",
+      "score_field": "score",
+      "status_field": "status",
+      "allowed_markets": [
+        "A",
+        "H",
+        "US"
+      ],
+      "max_items_per_market": 50,
+      "candidate_summary_only": true
+    }
+  },
+  "required_metadata_fields": [
+    "connector_id",
+    "name",
+    "provider_type",
+    "markets",
+    "base_url",
+    "auth_method",
+    "required_env_vars",
+    "license_status",
+    "retention_policy",
+    "allowed_purposes",
+    "can_connect",
+    "endpoint_path",
+    "request_query_template",
+    "candidate_payload_schema"
+  ],
+  "forbidden_fields_or_values": [
+    "api_key value",
+    "secret value",
+    "cookie",
+    "bearer token",
+    "authorization header value",
+    "broker credential",
+    "trading webhook secret",
+    "password",
+    "oauth refresh token"
+  ],
+  "user_steps": [
+    "Copy config/external_api_connectors.user-template.json to config/external_api_connectors.local.json.",
+    "Replace only non-secret metadata fields such as base_url, endpoint_path, markets, allowed_purposes, and schema field names.",
+    "Set the actual API key only in the named local environment variable; never paste the value into chat, repo, Vault, or JSON.",
+    "Run V2.10-B metadata intake again; only proceed when status is ready_for_live_readiness_check or blocked_missing_env_vars with clear env var names."
+  ],
+  "ready_criteria": [
+    "config/external_api_connectors.local.json exists and is gitignored.",
+    "metadata contains connector_id api_user_candidate_refresh_approved_env.",
+    "markets cover A, H, and US.",
+    "allowed_purposes do not contain trade, trading, order, broker, or webhook.",
+    "retention_policy is summary_only.",
+    "candidate_payload_schema.candidate_summary_only is true.",
+    "required local env var names are present, but values are never serialized."
+  ],
+  "checks": {
+    "template_connector_found": true,
+    "template_secret_like_material_absent": true,
+    "intake_report_pass": true,
+    "tushare_probe_visible": true,
+    "tushare_token_value_not_stored": true,
+    "tushare_a_core_ready_visible": true,
+    "current_intake_status_visible": true,
+    "required_metadata_fields_visible": true,
+    "required_env_var_names_visible": true,
+    "forbidden_secret_values_visible": true,
+    "raw_config_not_stored": true,
+    "env_values_not_stored": true,
+    "network_not_used": true,
+    "no_broker_api": true,
+    "no_trading_webhook": true,
+    "no_order_placement": true,
+    "acceptance_target_correct": true,
+    "packet_status_pass": true,
+    "packet_json_written": true,
+    "packet_md_written": true,
+    "template_json_exists": true,
+    "metadata_intake_report_exists": true,
+    "tushare_probe_report_exists": true,
+    "template_hash_only": true,
+    "metadata_intake_hash_only": true,
+    "tushare_probe_hash_only": true
+  },
+  "safety": {
+    "metadata_packet_only": true,
+    "raw_config_not_stored": true,
+    "env_values_not_stored": true,
+    "env_var_names_only": true,
+    "network_not_used": true,
+    "tushare_token_value_not_stored": true,
+    "no_raw_api_response": true,
+    "no_request_headers_stored": true,
+    "no_real_trade": true,
+    "no_broker_api": true,
+    "no_trading_webhook": true,
+    "no_order_placement": true,
+    "no_production_records_mutation": true,
+    "dashboard_contract_unchanged": true
+  },
+  "packet_json": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v2_11_b_acceptance/v2_11_b_20260711_acceptance/user_api_metadata_activation_packet.json",
+  "packet_md": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v2_11_b_acceptance/v2_11_b_20260711_acceptance/user_api_metadata_activation_packet.md",
+  "source_template_json": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/config/external_api_connectors.user-template.json",
+  "source_metadata_intake_report_json": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/v2_10_b_real_api_metadata_intake_latest.json",
+  "source_tushare_probe_report_json": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/provider_diagnostics/provider_coverage_report_v2_11_b_tushare_a_probe.json",
+  "hashes": {
+    "source_template_json": "930bc3f7c2d63bc7e4b817d31b1d20c772292d41fee0be8cc0ed012e2294a01f",
+    "source_metadata_intake_report_json": "976a2538dc4202efc7a03d17ddab05bba9ba43148d4b4a02b6d4e0dd0b2f4bc6",
+    "source_tushare_probe_report_json": "2bf2d97baa73f31eccccead8a25779218fe092215f7111f703dd9e4519c14c52",
+    "packet_json": "2e2cbb429ba8446389bb017b73036e7f45cd02a29f14b2213c2959c0d680ca7a",
+    "packet_md": "b7d5dbf6aef2e25d8e41348099fe1a26e4ffb5aea611e9e90757efe47a61a98f"
+  }
+}

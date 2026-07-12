@@ -1,0 +1,49 @@
+{
+  "date": "2026-07-09",
+  "stage_note": "Phase 6 · Paper Trading + Review 后端已接入",
+  "market_snapshot": {
+    "A": "A 股：A pre_market: trend=downtrend, liquidity=weak, sentiment=risk_off, risk=high (latest_close=4755.5338, mean20=4880.8619).",
+    "H": "DATA_GAP: 未找到 H 股 MarketSnapshot",
+    "US": "DATA_GAP: 未找到 美股 MarketSnapshot"
+  },
+  "today_focus": [
+    {
+      "type": "持仓变化",
+      "text": "000002.SZ（A）触发 Exit：support=0, oppose=4, neutral=2, veto=1, risk_veto=True, timing_oppose=True, market_high_risk=True, confidence=0.25 -> Exit."
+    }
+  ],
+  "holdings": [
+    {
+      "ticker": "CRCL",
+      "market": "US",
+      "shares": 254.0,
+      "cost_price": 109.157,
+      "action": "wait",
+      "action_label": "持有观察",
+      "reason": "尚无该持仓的 RecommendationRecord，Decision Engine 尚未对其给出判断。",
+      "risk": "暂无明确风险记录",
+      "invalidation_condition": "暂无失效条件记录"
+    },
+    {
+      "ticker": "000002.SZ",
+      "market": "A",
+      "shares": 1000.0,
+      "cost_price": 8.5,
+      "action": "exit",
+      "action_label": "exit_position",
+      "reason": "support=0, oppose=4, neutral=2, veto=1, risk_veto=True, timing_oppose=True, market_high_risk=True, confidence=0.25 -> Exit.",
+      "risk": "liquidity_not_ok",
+      "invalidation_condition": "TrendAgent stance reverses from 'oppose' (source_opinion_id=opn_20260709_A_000002.SZ_trend)."
+    }
+  ],
+  "recommendations": {
+    "action": [],
+    "ready": [],
+    "watch": []
+  },
+  "paper_trading": {
+    "new_today": [],
+    "open_positions_perf": []
+  },
+  "review_note": "尚无复盘记录"
+}

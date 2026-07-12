@@ -1,0 +1,49 @@
+{
+  "project": "Project Aegis",
+  "type": "dashboard_v2_real_http_smoke",
+  "generated_at": "2026-07-11T01:15:25.475056+00:00",
+  "port": 63939,
+  "overall_verdict": "PASS",
+  "checks": [
+    {
+      "route": "/dashboard/v2.html",
+      "status": 200,
+      "passed": true
+    },
+    {
+      "route": "/dashboard/v2.css",
+      "status": 200,
+      "passed": true
+    },
+    {
+      "route": "/dashboard/v2.js",
+      "status": 200,
+      "passed": true
+    },
+    {
+      "route": "/data/reports/aegis_health_status_latest.json",
+      "status": 200,
+      "passed": true
+    },
+    {
+      "route": "/data/reports/aegis_evidence_gate_latest.json",
+      "status": 200,
+      "passed": true
+    },
+    {
+      "route": "/data/reports/a_share_watchlist_latest.json",
+      "status": 200,
+      "passed": true
+    },
+    {
+      "route": "/data/reports/a_share_point_in_time_rolling_backtest_latest.json",
+      "status": 200,
+      "passed": true
+    },
+    {
+      "route": "client_request_path",
+      "status": null,
+      "passed": true
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "strategy_id": "a_share_watchlist_v1",
+  "strategy_name": "A股 Watchlist 策略 v1",
+  "version": "1.0.0",
+  "market": "A_SHARE",
+  "mode": "read_only_watchlist",
+  "description": "A-share read-only watchlist derived from P19.10 baseline Top5 and extended to 20 monitored symbols.",
+  "universe_source": "data/reports/a_share_watchlist_latest.json (P19.10 baseline extended)",
+  "data_sources": [
+    "data/reports/a_share_watchlist_latest.json"
+  ],
+  "ranking_rule": {
+    "primary_key": "score",
+    "order": "desc",
+    "tie_breaker": "symbol_alpha"
+  },
+  "status_rule": {
+    "Watch": "score >= 0.7 and in canonical_top5",
+    "Monitor": "score >= 0.25 and rank <= 20"
+  },
+  "risk_filters": {
+    "liquidity_ok_required": false,
+    "max_drawdown_required_field": false,
+    "volatility_required_field": false
+  },
+  "liquidity_rule": "N/A in v1 (watchlist only, no positions)",
+  "top_n": 20,
+  "canonical_top5_expected": [
+    "600519.SH",
+    "600036.SH",
+    "000858.SZ",
+    "000001.SZ",
+    "601398.SH"
+  ],
+  "safety_boundaries": [
+    "no_real_trade",
+    "no_order_api",
+    "no_webhook_send",
+    "no_secret_output"
+  ],
+  "backtest_not_included": true,
+  "metadata": {
+    "baseline_version": "P19.10",
+    "created_at": "2026-07-10T13:27:26.780889+08:00",
+    "schema_version": "1.0.0"
+  }
+}

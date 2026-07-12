@@ -1,0 +1,310 @@
+{
+  "overall_status": "PASS",
+  "acceptance_target": "V2.13-G Finnhub Quote Context Sandbox Evaluation",
+  "run_id": "v2_13_g_20260712_restart_evidence_check",
+  "generated_at": "2026-07-12T02:08:48+08:00",
+  "command": "validate_v2_13_g_finnhub_quote_sandbox_evaluation.py --run-id v2_13_g_20260712_restart_evidence_check",
+  "network_used": false,
+  "production_records_written": false,
+  "production_cache_mutated": false,
+  "production_provider_config_mutated": false,
+  "dashboard_contract_changed": false,
+  "summary": {
+    "candidate_count": 1,
+    "historical_case_count": 8,
+    "strategy_pass_count": 1,
+    "strategy_fail_count": 0,
+    "passing_strategies": [
+      "strategy_aapl_us_finnhub_quote_context_probe"
+    ],
+    "failing_strategies": [],
+    "symbols": [
+      "AAPL.US"
+    ],
+    "markets": [
+      "US"
+    ],
+    "sandbox_evaluation_run": true,
+    "suggestion_gate_required": true,
+    "user_facing_suggestion_allowed": false,
+    "social_sentiment_status": "blocked_plan_or_rate_limit",
+    "next_stage": "V2.13-H Finnhub Quote Sandbox Evidence To Suggestion Gate Draft"
+  },
+  "candidates": [
+    {
+      "strategy_id": "strategy_aapl_us_finnhub_quote_context_probe",
+      "name": "AAPL.US Finnhub quote context sandbox probe",
+      "market": "US",
+      "universe": "AAPL.US Finnhub verified quote context universe",
+      "factor_family": "multi_factor",
+      "entry_rule": "Use Finnhub quote context as research evidence only; historical cases are still required.",
+      "exit_rule": "No exit rule is active until historical sandbox cases are supplied.",
+      "exit_horizon_days": 5,
+      "risk_controls": [
+        "manual_execution_only",
+        "historical_cases_required",
+        "suggestion_gate_required",
+        "single_quote_snapshot_not_strategy_evidence"
+      ],
+      "pass_criteria": {
+        "min_sample_count": 3,
+        "min_win_rate": 0.5,
+        "min_average_return": 0.0,
+        "max_drawdown_floor": -0.12
+      },
+      "source_research_refs": [
+        "finnhub_quote_context_us_aapl_finnhub_quote",
+        "7e22125bfdee76b04dfe2da0b8c1e6e4140a161435fdd653da995c6a28c7b33b"
+      ],
+      "created_at": "2026-07-12T01:56:37+08:00"
+    }
+  ],
+  "historical_cases": [
+    {
+      "case_id": "v2_13_f_us_aapl_eodhd_daily_bars_rolling_1",
+      "strategy_id": "strategy_aapl_us_finnhub_quote_context_probe",
+      "date": "2026-07-01",
+      "symbol": "AAPL.US",
+      "market": "US",
+      "eligible": true,
+      "entry_price": 294.38,
+      "exit_price": 308.63,
+      "max_drawdown": -0.01759630409674573,
+      "risk_flags": [],
+      "factor_values": {
+        "actual_return": 0.048406821115564914,
+        "rolling_window_days": 1.0,
+        "source_row_index": 0.0
+      },
+      "evidence_ref": "v2_13_f_quote_context_case:bind_finnhub_quote_context_us_aapl_finnhub_quote_sandbox_candidate:finnhub_quote_context_us_aapl_finnhub_quote:us_aapl_eodhd_daily_bars:8aadce47722d091f3c7e849a5da07c15ebe5c89d5ae925ea37a574f4f977466c"
+    },
+    {
+      "case_id": "v2_13_f_us_aapl_eodhd_daily_bars_rolling_2",
+      "strategy_id": "strategy_aapl_us_finnhub_quote_context_probe",
+      "date": "2026-07-02",
+      "symbol": "AAPL.US",
+      "market": "US",
+      "eligible": true,
+      "entry_price": 308.63,
+      "exit_price": 312.66,
+      "max_drawdown": -0.04843987946732331,
+      "risk_flags": [],
+      "factor_values": {
+        "actual_return": 0.01305770663901769,
+        "rolling_window_days": 1.0,
+        "source_row_index": 1.0
+      },
+      "evidence_ref": "v2_13_f_quote_context_case:bind_finnhub_quote_context_us_aapl_finnhub_quote_sandbox_candidate:finnhub_quote_context_us_aapl_finnhub_quote:us_aapl_eodhd_daily_bars:8aadce47722d091f3c7e849a5da07c15ebe5c89d5ae925ea37a574f4f977466c"
+    },
+    {
+      "case_id": "v2_13_f_us_aapl_eodhd_daily_bars_rolling_3",
+      "strategy_id": "strategy_aapl_us_finnhub_quote_context_probe",
+      "date": "2026-07-06",
+      "symbol": "AAPL.US",
+      "market": "US",
+      "eligible": true,
+      "entry_price": 312.66,
+      "exit_price": 310.66,
+      "max_drawdown": -0.01810273140152252,
+      "risk_flags": [],
+      "factor_values": {
+        "actual_return": -0.006396724876863045,
+        "rolling_window_days": 1.0,
+        "source_row_index": 2.0
+      },
+      "evidence_ref": "v2_13_f_quote_context_case:bind_finnhub_quote_context_us_aapl_finnhub_quote_sandbox_candidate:finnhub_quote_context_us_aapl_finnhub_quote:us_aapl_eodhd_daily_bars:8aadce47722d091f3c7e849a5da07c15ebe5c89d5ae925ea37a574f4f977466c"
+    },
+    {
+      "case_id": "v2_13_f_us_aapl_eodhd_daily_bars_rolling_4",
+      "strategy_id": "strategy_aapl_us_finnhub_quote_context_probe",
+      "date": "2026-07-07",
+      "symbol": "AAPL.US",
+      "market": "US",
+      "eligible": true,
+      "entry_price": 310.66,
+      "exit_price": 313.39,
+      "max_drawdown": -0.011620421039078122,
+      "risk_flags": [],
+      "factor_values": {
+        "actual_return": 0.008787742226227906,
+        "rolling_window_days": 1.0,
+        "source_row_index": 3.0
+      },
+      "evidence_ref": "v2_13_f_quote_context_case:bind_finnhub_quote_context_us_aapl_finnhub_quote_sandbox_candidate:finnhub_quote_context_us_aapl_finnhub_quote:us_aapl_eodhd_daily_bars:8aadce47722d091f3c7e849a5da07c15ebe5c89d5ae925ea37a574f4f977466c"
+    },
+    {
+      "case_id": "v2_13_f_us_aapl_twelve_data_daily_bars_rolling_1",
+      "strategy_id": "strategy_aapl_us_finnhub_quote_context_probe",
+      "date": "2026-07-06",
+      "symbol": "AAPL.US",
+      "market": "US",
+      "eligible": true,
+      "entry_price": 312.66,
+      "exit_price": 310.66,
+      "max_drawdown": -0.01810273140152252,
+      "risk_flags": [],
+      "factor_values": {
+        "actual_return": -0.006396724876863045,
+        "rolling_window_days": 1.0,
+        "source_row_index": 0.0
+      },
+      "evidence_ref": "v2_13_f_quote_context_case:bind_finnhub_quote_context_us_aapl_finnhub_quote_sandbox_candidate:finnhub_quote_context_us_aapl_finnhub_quote:us_aapl_twelve_data_daily_bars:08769d39f7cfa35c101005c13968267a324701fe629ba9f5dc11e35b504510e5"
+    },
+    {
+      "case_id": "v2_13_f_us_aapl_twelve_data_daily_bars_rolling_2",
+      "strategy_id": "strategy_aapl_us_finnhub_quote_context_probe",
+      "date": "2026-07-07",
+      "symbol": "AAPL.US",
+      "market": "US",
+      "eligible": true,
+      "entry_price": 310.66,
+      "exit_price": 313.39001,
+      "max_drawdown": -0.011620459666516592,
+      "risk_flags": [],
+      "factor_values": {
+        "actual_return": 0.008787774415759972,
+        "rolling_window_days": 1.0,
+        "source_row_index": 1.0
+      },
+      "evidence_ref": "v2_13_f_quote_context_case:bind_finnhub_quote_context_us_aapl_finnhub_quote_sandbox_candidate:finnhub_quote_context_us_aapl_finnhub_quote:us_aapl_twelve_data_daily_bars:08769d39f7cfa35c101005c13968267a324701fe629ba9f5dc11e35b504510e5"
+    },
+    {
+      "case_id": "v2_13_f_us_aapl_twelve_data_daily_bars_rolling_3",
+      "strategy_id": "strategy_aapl_us_finnhub_quote_context_probe",
+      "date": "2026-07-08",
+      "symbol": "AAPL.US",
+      "market": "US",
+      "eligible": true,
+      "entry_price": 313.39001,
+      "exit_price": 316.22,
+      "max_drawdown": -0.020230453421281824,
+      "risk_flags": [],
+      "factor_values": {
+        "actual_return": 0.009030249560284354,
+        "rolling_window_days": 1.0,
+        "source_row_index": 2.0
+      },
+      "evidence_ref": "v2_13_f_quote_context_case:bind_finnhub_quote_context_us_aapl_finnhub_quote_sandbox_candidate:finnhub_quote_context_us_aapl_finnhub_quote:us_aapl_twelve_data_daily_bars:08769d39f7cfa35c101005c13968267a324701fe629ba9f5dc11e35b504510e5"
+    },
+    {
+      "case_id": "v2_13_f_us_aapl_twelve_data_daily_bars_rolling_4",
+      "strategy_id": "strategy_aapl_us_finnhub_quote_context_probe",
+      "date": "2026-07-09",
+      "symbol": "AAPL.US",
+      "market": "US",
+      "eligible": true,
+      "entry_price": 316.22,
+      "exit_price": 315.32001,
+      "max_drawdown": -0.0254885838972867,
+      "risk_flags": [],
+      "factor_values": {
+        "actual_return": -0.002846088166466392,
+        "rolling_window_days": 1.0,
+        "source_row_index": 3.0
+      },
+      "evidence_ref": "v2_13_f_quote_context_case:bind_finnhub_quote_context_us_aapl_finnhub_quote_sandbox_candidate:finnhub_quote_context_us_aapl_finnhub_quote:us_aapl_twelve_data_daily_bars:08769d39f7cfa35c101005c13968267a324701fe629ba9f5dc11e35b504510e5"
+    }
+  ],
+  "results": [
+    {
+      "strategy_id": "strategy_aapl_us_finnhub_quote_context_probe",
+      "status": "PASS",
+      "metrics": {
+        "strategy_id": "strategy_aapl_us_finnhub_quote_context_probe",
+        "sample_count": 8,
+        "eligible_case_count": 8,
+        "win_rate": 0.625,
+        "average_return": 0.009053844504582794,
+        "max_drawdown": -0.04843987946732331,
+        "turnover_proxy": 1.3333333333333333,
+        "exposure_count": 1,
+        "risk_flag_counts": {},
+        "failed_reasons": []
+      },
+      "safety": {
+        "simulation_only": true,
+        "no_real_trade": true,
+        "no_broker_api": true,
+        "no_webhook": true,
+        "no_strategy_auto_mutation": true,
+        "no_production_records_mutation": true
+      },
+      "notes": [
+        "Historical sandbox result only; user-facing suggestions still require recommendation and risk gates.",
+        "Evidence is based on supplied historical cases, not future prediction."
+      ]
+    }
+  ],
+  "source_evidence": {
+    "source_target": "V2.13-F Finnhub Quote Context Historical Case Assembly",
+    "source_run_id": "v2_13_f_20260712_acceptance",
+    "source_summary_sha256": "d074a446292bfb8f2f1b56e053e3e70ddb73f5c1cae4b7dcecabc220f6c0e848"
+  },
+  "checks": {
+    "source_report_pass": true,
+    "source_acceptance_target_correct": true,
+    "source_historical_cases_present": true,
+    "source_sandbox_not_already_run": true,
+    "source_social_sentiment_still_blocked": true,
+    "candidate_present": true,
+    "historical_cases_present": true,
+    "sandbox_results_present": true,
+    "at_least_one_strategy_passed": true,
+    "all_results_have_metrics": true,
+    "all_cases_have_quote_context_evidence": true,
+    "suggestion_gate_required": true,
+    "user_facing_suggestion_not_allowed": true,
+    "network_not_used": true,
+    "production_records_not_written": true,
+    "production_cache_not_mutated": true,
+    "production_provider_config_not_mutated": true,
+    "no_secret_values_stored": true,
+    "request_urls_not_stored": true,
+    "raw_payloads_not_stored": true,
+    "no_real_trade": true,
+    "no_broker_api": true,
+    "no_trading_webhook": true,
+    "no_order_placement": true,
+    "no_position_size": true,
+    "no_live_order_signal": true,
+    "dashboard_contract_unchanged": true,
+    "acceptance_target_correct": true,
+    "report_status_pass": true,
+    "source_report_exists": true,
+    "sandbox_json_written": true,
+    "sandbox_md_written": true,
+    "results_json_written": true,
+    "source_report_hash_only": true
+  },
+  "safety": {
+    "sandbox_evaluation_only": true,
+    "suggestion_gate_required": true,
+    "user_facing_suggestion_allowed": false,
+    "network_not_used": true,
+    "social_sentiment_not_enabled": true,
+    "production_records_not_written": true,
+    "production_cache_not_mutated": true,
+    "production_provider_config_not_mutated": true,
+    "no_secret_values_stored": true,
+    "no_request_url_storage": true,
+    "no_raw_payload_storage": true,
+    "no_real_trade": true,
+    "no_broker_api": true,
+    "no_trading_webhook": true,
+    "no_order_placement": true,
+    "no_position_size": true,
+    "no_live_order_signal": true,
+    "dashboard_contract_unchanged": true
+  },
+  "run_dir": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v2_13_g_acceptance/v2_13_g_20260712_restart_evidence_check",
+  "sandbox_json": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v2_13_g_acceptance/v2_13_g_20260712_restart_evidence_check/finnhub_quote_sandbox_evaluation.json",
+  "sandbox_md": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v2_13_g_acceptance/v2_13_g_20260712_restart_evidence_check/finnhub_quote_sandbox_evaluation.md",
+  "results_json": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v2_13_g_acceptance/v2_13_g_20260712_restart_evidence_check/finnhub_quote_sandbox_results.json",
+  "source_report_json": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/v2_13_f_finnhub_quote_historical_case_assembly_latest.json",
+  "hashes": {
+    "source_report_json": "56c665267c9816d0d8305b3d080eff0ffd3e1445075ca840a9ea6f74fdd5af73",
+    "sandbox_json": "2742b9b45fb61abb5daf3bb9f30fe3eb95c2882f19a11c629a53373fe141fbdb",
+    "sandbox_md": "fa9bb3dab03b8a72c38f8df30dab78ccb87658387508ab7b387a79f7d6308702",
+    "results_json": "88a64a4c7d0473a7c22658079b74f53a1e978cee3dc75328c3123396b1aab673"
+  }
+}

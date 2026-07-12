@@ -1,0 +1,263 @@
+{
+  "overall_status": "PASS",
+  "acceptance_target": "V2.12-F H-US Current Usable Simulation Brief Refresh",
+  "source_acceptance_target": "V2.12-E H-US Suggestion Gate Refresh From Sandbox Evidence",
+  "brief_type": "h_us_current_usable_simulation_brief",
+  "run_id": "v2_12_f_20260712_acceptance",
+  "generated_at": "2026-07-12T00:54:54+08:00",
+  "command": "validate_v2_12_f_h_us_current_simulation_brief.py --run-id v2_12_f_20260712_acceptance",
+  "network_used": false,
+  "production_records_written": false,
+  "dashboard_contract_changed": false,
+  "summary": {
+    "candidate_count": 2,
+    "blocked_count": 0,
+    "candidate_markets": [
+      "H",
+      "US"
+    ],
+    "candidate_symbols": [
+      "H_API_SANDBOX_PAPER_BASKET",
+      "US_API_SANDBOX_PAPER_BASKET"
+    ],
+    "source_allowed_count": 2,
+    "source_blocked_count": 0,
+    "preliminary_only": true,
+    "real_trade_allowed": false,
+    "next_stage": "V2.12-G H-US User Feedback Intake For Simulation Brief"
+  },
+  "current_answer": {
+    "can_read_online_now": "EODHD/Twelve Data/Tushare 等用户 API 已有 secret-safe probe、metadata gate、bounded cache readiness 和沙盘证据链；本简报复用已验收证据，不重新联网。",
+    "history_sandbox_status": "H/US normalized cache samples 已进入历史沙盘；当前只证明小样本纸面验证通过，不能证明生产策略稳定有效。",
+    "strategy_research_status": "A/H/US 策略研究已具备 source catalog、sandbox、Suggestion Gate 和 H/US API-backed simulation draft 链路。",
+    "usable_suggestions_status": "当前可给出 H/US simulation-only 观察候选；用户必须在外部软件自行核对和手动执行，再把截图或文字反馈回传给 Aegis。"
+  },
+  "user_boundary": {
+    "allowed": [
+      "把候选加入模拟观察清单。",
+      "在外部行情/券商软件手动核对实时价格、新闻事件、持仓冲突和个人风险预算。",
+      "把截图、成交记录或文字判断回传给 Aegis，作为后续模拟复盘证据。"
+    ],
+    "forbidden": [
+      "Aegis 不真实下单。",
+      "Aegis 不连接 Broker API。",
+      "Aegis 不使用 trading webhook。",
+      "Aegis 不给实时价格。",
+      "Aegis 不给仓位数量。",
+      "Aegis 不把小样本 sandbox PASS 解释成正式策略通过。"
+    ]
+  },
+  "items": [
+    {
+      "item_id": "brief_sug_h_us_h_strategy_h_cache_readiness_multifactor_probe",
+      "suggestion_id": "sug_h_us_h_strategy_h_cache_readiness_multifactor_probe",
+      "strategy_id": "strategy_h_cache_readiness_multifactor_probe",
+      "symbol": "H_API_SANDBOX_PAPER_BASKET",
+      "market": "H",
+      "brief_status": "simulation_candidate",
+      "user_action": "加入模拟观察清单；如你感兴趣，只能在外部软件手动核对实时价格、事件和风险，再决定是否做纸面记录。",
+      "plain_summary": "H_API_SANDBOX_PAPER_BASKET 是基于 V2.12-D/V2.12-E 证据生成的 H/US 模拟候选篮子。它可用于观察和纸面验证，但不是实盘买卖建议。",
+      "sandbox_metrics": {
+        "sample_count": "1",
+        "win_rate": "1.0000",
+        "average_return": "0.1130",
+        "max_drawdown": "-0.0112",
+        "historical_symbols": "00700.HK"
+      },
+      "why": [
+        "h_us_sandbox_status=PASS",
+        "sample_count=1",
+        "win_rate=1.0000",
+        "average_return=0.1130",
+        "max_drawdown=-0.0112",
+        "historical_symbols=00700.HK",
+        "source_stage=V2.12-D"
+      ],
+      "risk_warnings": [
+        "Preliminary H/US API-backed sandbox sample only; sample size is too small for production strategy proof.",
+        "Simulation-only draft; user decides and executes manually outside Aegis.",
+        "Manual external execution only; Aegis does not connect to broker APIs or place orders.",
+        "No live price, position size, trading webhook, broker execution, or order is produced.",
+        "manual_execution_only",
+        "sample_size_warning",
+        "suggestion_gate_required",
+        "Simulation-only draft; user decides and executes manually outside Aegis."
+      ],
+      "evidence_refs": [
+        "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/v2_12_d_h_us_historical_sandbox_candidate_refresh_latest.json",
+        "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/V2_12_D_H_US_HISTORICAL_SANDBOX_CANDIDATE_REFRESH_PASS.marker",
+        "v2_12_c_normalized_cache:h_00700_eodhd_daily_bars:99a1513efba06494de61bcbefc4367358c2c3e1c1dd382786a32a2c7cb6469a5"
+      ],
+      "blocked_by": [],
+      "simulation_only": true,
+      "user_must_execute_externally": true,
+      "no_live_price": true,
+      "no_position_size": true,
+      "no_real_trade": true,
+      "no_broker_api": true,
+      "no_webhook": true,
+      "no_order_placement": true
+    },
+    {
+      "item_id": "brief_sug_h_us_us_strategy_us_cache_readiness_multifactor_probe",
+      "suggestion_id": "sug_h_us_us_strategy_us_cache_readiness_multifactor_probe",
+      "strategy_id": "strategy_us_cache_readiness_multifactor_probe",
+      "symbol": "US_API_SANDBOX_PAPER_BASKET",
+      "market": "US",
+      "brief_status": "simulation_candidate",
+      "user_action": "加入模拟观察清单；如你感兴趣，只能在外部软件手动核对实时价格、事件和风险，再决定是否做纸面记录。",
+      "plain_summary": "US_API_SANDBOX_PAPER_BASKET 是基于 V2.12-D/V2.12-E 证据生成的 H/US 模拟候选篮子。它可用于观察和纸面验证，但不是实盘买卖建议。",
+      "sandbox_metrics": {
+        "sample_count": "2",
+        "win_rate": "1.0000",
+        "average_return": "0.0365",
+        "max_drawdown": "-0.0181",
+        "historical_symbols": "AAPL.US"
+      },
+      "why": [
+        "h_us_sandbox_status=PASS",
+        "sample_count=2",
+        "win_rate=1.0000",
+        "average_return=0.0365",
+        "max_drawdown=-0.0181",
+        "historical_symbols=AAPL.US",
+        "source_stage=V2.12-D"
+      ],
+      "risk_warnings": [
+        "Preliminary H/US API-backed sandbox sample only; sample size is too small for production strategy proof.",
+        "Simulation-only draft; user decides and executes manually outside Aegis.",
+        "Manual external execution only; Aegis does not connect to broker APIs or place orders.",
+        "No live price, position size, trading webhook, broker execution, or order is produced.",
+        "manual_execution_only",
+        "sample_size_warning",
+        "suggestion_gate_required",
+        "Simulation-only draft; user decides and executes manually outside Aegis."
+      ],
+      "evidence_refs": [
+        "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/v2_12_d_h_us_historical_sandbox_candidate_refresh_latest.json",
+        "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/V2_12_D_H_US_HISTORICAL_SANDBOX_CANDIDATE_REFRESH_PASS.marker",
+        "v2_12_c_normalized_cache:us_aapl_eodhd_daily_bars:8aadce47722d091f3c7e849a5da07c15ebe5c89d5ae925ea37a574f4f977466c",
+        "v2_12_c_normalized_cache:us_aapl_twelve_data_daily_bars:08769d39f7cfa35c101005c13968267a324701fe629ba9f5dc11e35b504510e5"
+      ],
+      "blocked_by": [],
+      "simulation_only": true,
+      "user_must_execute_externally": true,
+      "no_live_price": true,
+      "no_position_size": true,
+      "no_real_trade": true,
+      "no_broker_api": true,
+      "no_webhook": true,
+      "no_order_placement": true
+    }
+  ],
+  "checks": {
+    "source_is_v2_12_e": true,
+    "source_report_pass": true,
+    "source_allows_user_facing_simulation_brief": true,
+    "has_h_us_simulation_candidates": true,
+    "candidate_count_matches_allowed_count": true,
+    "has_user_readable_items": true,
+    "every_item_has_evidence": true,
+    "every_item_simulation_only": true,
+    "manual_external_execution_only": true,
+    "sample_size_warning_visible": true,
+    "preliminary_only_warning_visible": true,
+    "no_live_price": true,
+    "no_position_size": true,
+    "no_real_trade": true,
+    "no_broker_api": true,
+    "no_trading_webhook": true,
+    "no_order_placement": true,
+    "production_records_not_written": true,
+    "dashboard_contract_unchanged": true,
+    "network_not_used": true,
+    "acceptance_target_correct": true,
+    "brief_status_pass": true,
+    "source_marker_exists": true,
+    "brief_json_written": true,
+    "brief_md_written": true,
+    "production_record_files_unchanged": true,
+    "source_hashes_recorded": true
+  },
+  "safety": {
+    "simulation_only": true,
+    "manual_external_execution_only": true,
+    "not_real_trade_advice": true,
+    "preliminary_sample_only": true,
+    "sample_size_warning_required": true,
+    "no_live_price": true,
+    "no_position_size": true,
+    "no_real_trade": true,
+    "no_broker_api": true,
+    "no_trading_webhook": true,
+    "no_order_placement": true,
+    "no_production_records_mutation": true,
+    "no_strategy_mutation": true,
+    "dashboard_contract_unchanged": true
+  },
+  "run_dir": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v2_12_f_acceptance/v2_12_f_20260712_acceptance",
+  "brief_json": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v2_12_f_acceptance/v2_12_f_20260712_acceptance/h_us_current_simulation_brief.json",
+  "brief_md": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v2_12_f_acceptance/v2_12_f_20260712_acceptance/h_us_current_simulation_brief.md",
+  "source_v2_12_e_report_json": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/v2_12_e_h_us_suggestion_gate_refresh_latest.json",
+  "source_v2_12_e_pass_marker": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/V2_12_E_H_US_SUGGESTION_GATE_REFRESH_PASS.marker",
+  "production_record_files_before": {
+    "recommendations_jsonl": {
+      "exists": true,
+      "size": 12284,
+      "sha256": "05b2e56c9b547cbe3ce4cb71b7cb776185e23ef2cc3bc9a46a918bce0cfb65dc"
+    },
+    "paper_trades_jsonl": {
+      "exists": false,
+      "size": null,
+      "sha256": null
+    },
+    "reviews_jsonl": {
+      "exists": false,
+      "size": null,
+      "sha256": null
+    },
+    "memory_jsonl": {
+      "exists": false,
+      "size": null,
+      "sha256": null
+    },
+    "investment_memory_jsonl": {
+      "exists": false,
+      "size": null,
+      "sha256": null
+    }
+  },
+  "production_record_files_after": {
+    "recommendations_jsonl": {
+      "exists": true,
+      "size": 12284,
+      "sha256": "05b2e56c9b547cbe3ce4cb71b7cb776185e23ef2cc3bc9a46a918bce0cfb65dc"
+    },
+    "paper_trades_jsonl": {
+      "exists": false,
+      "size": null,
+      "sha256": null
+    },
+    "reviews_jsonl": {
+      "exists": false,
+      "size": null,
+      "sha256": null
+    },
+    "memory_jsonl": {
+      "exists": false,
+      "size": null,
+      "sha256": null
+    },
+    "investment_memory_jsonl": {
+      "exists": false,
+      "size": null,
+      "sha256": null
+    }
+  },
+  "hashes": {
+    "source_v2_12_e_report_json": "8971aaee97c73a48e49aeb45c9de0a00f73b1ae6c4e9dde6daee52309f7229d5",
+    "source_v2_12_e_pass_marker": "2270b85f538ad4460ea24b35beb28a1215a7ce3e1645bf766011b9ac5a702263",
+    "brief_json": "f9e080951c3da86f98272a8bff4bb2166cc5ed729c3f81d9924220b3175214c5",
+    "brief_md": "0e89c825374c74753260ac527d4b81dd94a583fb55574273c0d79d226889313d"
+  }
+}

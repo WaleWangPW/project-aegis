@@ -1,0 +1,74 @@
+{
+  "project": "Project Aegis",
+  "type": "dashboard_v2_ceo_brief_validation",
+  "generated_at": "2026-07-11T04:57:27.804606+00:00",
+  "overall_verdict": "PASS",
+  "expected_index_sha256": "c046ba871b5fe809762baf281b60475920cb63dd20972bbad536fba7e50b27c4",
+  "actual_index_sha256": "c046ba871b5fe809762baf281b60475920cb63dd20972bbad536fba7e50b27c4",
+  "checks": [
+    {
+      "name": "first_screen_order",
+      "passed": true
+    },
+    {
+      "name": "watchlist_default_max_five",
+      "passed": true
+    },
+    {
+      "name": "remaining_watchlist_collapsed",
+      "passed": true
+    },
+    {
+      "name": "research_collapsed",
+      "passed": true
+    },
+    {
+      "name": "system_details_collapsed",
+      "passed": true
+    },
+    {
+      "name": "risk_before_watchlist",
+      "passed": true
+    },
+    {
+      "name": "mobile_single_column",
+      "passed": true
+    },
+    {
+      "name": "mobile_no_horizontal_scroll",
+      "passed": true
+    },
+    {
+      "name": "mobile_order_matches_document",
+      "passed": true
+    },
+    {
+      "name": "touch_targets_minimum",
+      "passed": true
+    },
+    {
+      "name": "font_minimum",
+      "passed": true
+    },
+    {
+      "name": "no_prohibited_content",
+      "passed": true
+    },
+    {
+      "name": "no_fixed_backtest_return",
+      "passed": true
+    },
+    {
+      "name": "no_trade_or_send_controls",
+      "passed": true
+    },
+    {
+      "name": "no_composite_score",
+      "passed": true
+    },
+    {
+      "name": "index_pre_replace_unchanged",
+      "passed": true
+    }
+  ]
+}

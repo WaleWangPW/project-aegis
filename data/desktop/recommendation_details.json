@@ -1,0 +1,2085 @@
+{
+  "generated_at": "2026-07-09T05:54:57.288995+00:00",
+  "source_files": {
+    "recommendations": "data/records/recommendations.jsonl",
+    "decisions": "data/records/decisions.jsonl",
+    "expert_opinions": "data/records/expert_opinions.jsonl",
+    "data_gaps": "data/records/data_gaps.jsonl",
+    "signals": "data/records/signals.jsonl"
+  },
+  "summary": {
+    "total_records": 7,
+    "unique_recommendation_ids": 2,
+    "latest_per_symbol_count": 2,
+    "historical_record_count": 5,
+    "latest_status_counts": {
+      "Action": 0,
+      "Ready": 0,
+      "Watch": 0,
+      "Exit": 2
+    },
+    "status_counts": {
+      "Action": 0,
+      "Ready": 0,
+      "Watch": 0,
+      "Exit": 2
+    }
+  },
+  "latest_recommendations": [
+    {
+      "recommendation_id": "rec_20260706_pre_market_US_CRCL",
+      "record_index": 5,
+      "is_latest_for_recommendation_id": true,
+      "is_latest_for_symbol": true,
+      "date": "2026-07-06",
+      "session": "pre_market",
+      "symbol": "CRCL",
+      "name": "Circle Internet Group",
+      "market": "US",
+      "status": "Exit",
+      "action_label": "exit_position",
+      "confidence": 0.25,
+      "decision_summary": "support=2, oppose=2, neutral=2, veto=1, risk_veto=True, timing_oppose=True, market_high_risk=False, confidence=0.25 -> Exit.",
+      "support_reasons": [
+        "MarketRegimeAgent support: Market regime favorable: trend=uptrend, liquidity=normal, risk=low. (source_opinion_id=opn_20260706_US_CRCL_market_regime)",
+        "CapitalFlowAgent support: Volume expansion with valid data — supportive price/volume confirmation. (source_opinion_id=opn_20260706_US_CRCL_capital_flow)"
+      ],
+      "oppose_reasons": [
+        "TrendAgent oppose: Trend direction=downtrend, relative strength weak=True. (source_opinion_id=opn_20260706_US_CRCL_trend)",
+        "TimingAgent oppose: Timing unfavorable: direction=downtrend, overextended=False. (source_opinion_id=opn_20260706_US_CRCL_timing)",
+        "RiskAgent veto: Unacceptable risk detected: high_volatility, severe_drawdown, liquidity_risk, liquidity_not_ok. (source_opinion_id=opn_20260706_US_CRCL_risk)",
+        "Missing data across experts: fundamental_signal, sector_signal (traced from opn_20260706_US_CRCL_fundamental, opn_20260706_US_CRCL_sector)."
+      ],
+      "risks": [
+        "high_volatility",
+        "liquidity_not_ok",
+        "liquidity_risk",
+        "poor_entry_location_downtrend",
+        "relative_weakness_vs_index",
+        "severe_drawdown",
+        "trend_down"
+      ],
+      "invalidation_conditions": [
+        "TrendAgent stance reverses from 'oppose' (source_opinion_id=opn_20260706_US_CRCL_trend).",
+        "Market regime for US deteriorates to downtrend/high risk (market_snapshot_id=mkt_20260706_US_pre_market)."
+      ],
+      "why_not_action": "risk_veto_triggered",
+      "decision_record": {
+        "decision_id": "dec_20260706_pre_market_US_CRCL",
+        "risk_veto_triggered": true,
+        "risk_veto_reason": null,
+        "support_count": 2,
+        "oppose_count": 2,
+        "neutral_count": 2,
+        "veto_count": 1
+      },
+      "expert_opinions": [
+        {
+          "expert_name": "MarketRegimeAgent",
+          "stance": "support",
+          "confidence": 0.7,
+          "summary": "Market regime favorable: trend=uptrend, liquidity=normal, risk=low.",
+          "evidence": [
+            "market_snapshot:mkt_20260706_US_pre_market",
+            "trend_state=uptrend",
+            "liquidity_state=normal",
+            "risk_level=low"
+          ],
+          "risks": [],
+          "missing_data": []
+        },
+        {
+          "expert_name": "TrendAgent",
+          "stance": "oppose",
+          "confidence": 0.6,
+          "summary": "Trend direction=downtrend, relative strength weak=True.",
+          "evidence": [
+            "signal:sig_20260706_US_CRCL_trend_ma_alignment",
+            "signal:sig_20260706_US_CRCL_relative_strength_vs_index"
+          ],
+          "risks": [
+            "trend_down",
+            "relative_weakness_vs_index"
+          ],
+          "missing_data": []
+        },
+        {
+          "expert_name": "FundamentalAgent",
+          "stance": "neutral",
+          "confidence": 0.4,
+          "summary": "No usable fundamental data for this candidate.",
+          "evidence": [],
+          "risks": [],
+          "missing_data": [
+            "fundamental_signal"
+          ]
+        },
+        {
+          "expert_name": "CapitalFlowAgent",
+          "stance": "support",
+          "confidence": 0.6,
+          "summary": "Volume expansion with valid data — supportive price/volume confirmation.",
+          "evidence": [
+            "signal:sig_20260706_US_CRCL_volume_expansion"
+          ],
+          "risks": [],
+          "missing_data": []
+        },
+        {
+          "expert_name": "SectorAgent",
+          "stance": "neutral",
+          "confidence": 0.4,
+          "summary": "No sector classification/rotation data available for this candidate.",
+          "evidence": [],
+          "risks": [],
+          "missing_data": [
+            "sector_signal"
+          ]
+        },
+        {
+          "expert_name": "TimingAgent",
+          "stance": "oppose",
+          "confidence": 0.5,
+          "summary": "Timing unfavorable: direction=downtrend, overextended=False.",
+          "evidence": [
+            "signal:sig_20260706_US_CRCL_trend_ma_alignment",
+            "signal:sig_20260706_US_CRCL_volume_expansion"
+          ],
+          "risks": [
+            "poor_entry_location_downtrend"
+          ],
+          "missing_data": []
+        },
+        {
+          "expert_name": "RiskAgent",
+          "stance": "veto",
+          "confidence": 0.75,
+          "summary": "Unacceptable risk detected: high_volatility, severe_drawdown, liquidity_risk, liquidity_not_ok.",
+          "evidence": [
+            "signal:sig_20260706_US_CRCL_risk_volatility_drawdown"
+          ],
+          "risks": [
+            "high_volatility",
+            "severe_drawdown",
+            "liquidity_risk",
+            "liquidity_not_ok"
+          ],
+          "missing_data": []
+        }
+      ],
+      "data_quality_notes": [
+        "No stock list returned for market US."
+      ],
+      "historical_or_superseded_data_quality_notes": [
+        {
+          "message": "No daily bars returned for CRCL (US) via provider_route='market_data_service' between 20260308 and 20260706.",
+          "status": "superseded",
+          "reason": "later bar-derived signal evidence exists for this recommendation"
+        },
+        {
+          "message": "No daily bars returned for CRCL (US) via provider_route='yahoo_finance' between 20260507 and 20260706.",
+          "status": "superseded",
+          "reason": "later bar-derived signal evidence exists for this recommendation"
+        },
+        {
+          "message": "No daily bars returned for CRCL (US) via provider_route='yahoo_finance' between 20260308 and 20260706.",
+          "status": "superseded",
+          "reason": "later bar-derived signal evidence exists for this recommendation"
+        }
+      ],
+      "data_availability": {
+        "bars_available": true,
+        "bars_used_count": null,
+        "signals_with_data": [
+          "signal:sig_20260706_US_CRCL_trend_ma_alignment",
+          "signal:sig_20260706_US_CRCL_relative_strength_vs_index",
+          "signal:sig_20260706_US_CRCL_volume_expansion",
+          "signal:sig_20260706_US_CRCL_risk_volatility_drawdown"
+        ],
+        "signals_with_numeric_values": [
+          "trend_ma_alignment",
+          "relative_strength_vs_index",
+          "volume_expansion",
+          "risk_volatility_drawdown"
+        ],
+        "signals_missing": [
+          "fundamental_signal",
+          "sector_signal"
+        ],
+        "note": "bars_used_count is null because raw bar count is not stored in current recommendation records"
+      },
+      "risk_veto_details": {
+        "risk_veto_triggered": true,
+        "risk_flags": [
+          "high_volatility",
+          "liquidity_not_ok",
+          "liquidity_risk",
+          "poor_entry_location_downtrend",
+          "relative_weakness_vs_index",
+          "severe_drawdown",
+          "trend_down"
+        ],
+        "source_signal_ids": [
+          "signal:sig_20260706_US_CRCL_risk_volatility_drawdown"
+        ],
+        "metrics": {
+          "volatility": 0.0618692952369419,
+          "max_drawdown": -0.3157720329521754,
+          "latest_volume": 17683500.0,
+          "avg_volume": 14283960.0,
+          "avg_dollar_volume": null,
+          "recent_return": -0.060892238928562874,
+          "symbol_return_5d": -0.060892238928562874,
+          "index_return_5d": 0.017091426015420616,
+          "relative_strength_5d": -0.07798366494398348
+        },
+        "source_signal_values": {
+          "risk_volatility_drawdown": {
+            "volatility": 0.0618692952369419,
+            "max_drawdown": -0.3157720329521754,
+            "flags": [
+              "high_volatility",
+              "severe_drawdown",
+              "liquidity_risk"
+            ]
+          },
+          "volume_expansion": {
+            "latest_vol": 17683500.0,
+            "avg_vol": 14283960.0,
+            "state": "expansion"
+          },
+          "trend_ma_alignment": {
+            "ma20": 76.59549980163574,
+            "ma60": 96.5538330078125,
+            "recent_return": -0.060892238928562874,
+            "direction": "downtrend"
+          },
+          "relative_strength_vs_index": {
+            "symbol_return": -0.060892238928562874,
+            "index_return": 0.017091426015420616,
+            "relative_strength": -0.07798366494398348,
+            "state": "underperforming"
+          }
+        },
+        "metrics_generated_at": "2026-07-09T05:54:57.288964+00:00",
+        "notes": [
+          "Metrics are copied from latest matching Signal.value records.",
+          "avg_dollar_volume is null because price*volume liquidity metric is not recorded yet."
+        ]
+      }
+    },
+    {
+      "recommendation_id": "rec_20260709_pre_market_A_000002.SZ",
+      "record_index": 6,
+      "is_latest_for_recommendation_id": true,
+      "is_latest_for_symbol": true,
+      "date": "2026-07-09",
+      "session": "pre_market",
+      "symbol": "000002.SZ",
+      "name": "万科A",
+      "market": "A",
+      "status": "Exit",
+      "action_label": "exit_position",
+      "confidence": 0.25,
+      "decision_summary": "support=0, oppose=4, neutral=2, veto=1, risk_veto=True, timing_oppose=True, market_high_risk=True, confidence=0.25 -> Exit.",
+      "support_reasons": [],
+      "oppose_reasons": [
+        "MarketRegimeAgent oppose: Market regime unfavorable: trend=downtrend, liquidity=weak, risk=high. (source_opinion_id=opn_20260709_A_000002.SZ_market_regime)",
+        "TrendAgent oppose: Trend direction=downtrend, relative strength weak=False. (source_opinion_id=opn_20260709_A_000002.SZ_trend)",
+        "CapitalFlowAgent oppose: Volume contraction relative to its own average — weak capital-flow pattern. (source_opinion_id=opn_20260709_A_000002.SZ_capital_flow)",
+        "TimingAgent oppose: Timing unfavorable: direction=downtrend, overextended=False. (source_opinion_id=opn_20260709_A_000002.SZ_timing)",
+        "RiskAgent veto: Unacceptable risk detected: liquidity_risk, liquidity_not_ok. (source_opinion_id=opn_20260709_A_000002.SZ_risk)",
+        "Missing data across experts: fundamental_signal, sector_signal (traced from opn_20260709_A_000002.SZ_fundamental, opn_20260709_A_000002.SZ_sector)."
+      ],
+      "risks": [
+        "liquidity_not_ok",
+        "liquidity_risk",
+        "market_liquidity=weak",
+        "market_risk=high",
+        "market_trend=downtrend",
+        "poor_entry_location_downtrend",
+        "trend_down",
+        "volume_contraction"
+      ],
+      "invalidation_conditions": [
+        "TrendAgent stance reverses from 'oppose' (source_opinion_id=opn_20260709_A_000002.SZ_trend).",
+        "Market regime for A deteriorates to downtrend/high risk (market_snapshot_id=mkt_20260709_A_pre_market)."
+      ],
+      "why_not_action": "risk_veto_triggered",
+      "decision_record": {
+        "decision_id": "dec_20260709_pre_market_A_000002.SZ",
+        "risk_veto_triggered": true,
+        "risk_veto_reason": null,
+        "support_count": 0,
+        "oppose_count": 4,
+        "neutral_count": 2,
+        "veto_count": 1
+      },
+      "expert_opinions": [
+        {
+          "expert_name": "MarketRegimeAgent",
+          "stance": "oppose",
+          "confidence": 0.65,
+          "summary": "Market regime unfavorable: trend=downtrend, liquidity=weak, risk=high.",
+          "evidence": [
+            "market_snapshot:mkt_20260709_A_pre_market",
+            "trend_state=downtrend",
+            "liquidity_state=weak",
+            "risk_level=high"
+          ],
+          "risks": [
+            "market_trend=downtrend",
+            "market_liquidity=weak",
+            "market_risk=high"
+          ],
+          "missing_data": []
+        },
+        {
+          "expert_name": "TrendAgent",
+          "stance": "oppose",
+          "confidence": 0.6,
+          "summary": "Trend direction=downtrend, relative strength weak=False.",
+          "evidence": [
+            "signal:sig_20260709_A_000002.SZ_trend_ma_alignment",
+            "signal:sig_20260709_A_000002.SZ_relative_strength_vs_index"
+          ],
+          "risks": [
+            "trend_down"
+          ],
+          "missing_data": []
+        },
+        {
+          "expert_name": "FundamentalAgent",
+          "stance": "neutral",
+          "confidence": 0.4,
+          "summary": "No usable fundamental data for this candidate.",
+          "evidence": [],
+          "risks": [],
+          "missing_data": [
+            "fundamental_signal"
+          ]
+        },
+        {
+          "expert_name": "CapitalFlowAgent",
+          "stance": "oppose",
+          "confidence": 0.5,
+          "summary": "Volume contraction relative to its own average — weak capital-flow pattern.",
+          "evidence": [
+            "signal:sig_20260709_A_000002.SZ_volume_expansion"
+          ],
+          "risks": [
+            "volume_contraction"
+          ],
+          "missing_data": []
+        },
+        {
+          "expert_name": "SectorAgent",
+          "stance": "neutral",
+          "confidence": 0.4,
+          "summary": "No sector classification/rotation data available for this candidate.",
+          "evidence": [],
+          "risks": [],
+          "missing_data": [
+            "sector_signal"
+          ]
+        },
+        {
+          "expert_name": "TimingAgent",
+          "stance": "oppose",
+          "confidence": 0.5,
+          "summary": "Timing unfavorable: direction=downtrend, overextended=False.",
+          "evidence": [
+            "signal:sig_20260709_A_000002.SZ_trend_ma_alignment",
+            "signal:sig_20260709_A_000002.SZ_volume_expansion"
+          ],
+          "risks": [
+            "poor_entry_location_downtrend"
+          ],
+          "missing_data": []
+        },
+        {
+          "expert_name": "RiskAgent",
+          "stance": "veto",
+          "confidence": 0.75,
+          "summary": "Unacceptable risk detected: liquidity_risk, liquidity_not_ok.",
+          "evidence": [
+            "signal:sig_20260709_A_000002.SZ_risk_volatility_drawdown"
+          ],
+          "risks": [
+            "liquidity_risk",
+            "liquidity_not_ok"
+          ],
+          "missing_data": []
+        }
+      ],
+      "data_quality_notes": [],
+      "historical_or_superseded_data_quality_notes": [],
+      "data_availability": {
+        "bars_available": true,
+        "bars_used_count": null,
+        "signals_with_data": [
+          "signal:sig_20260709_A_000002.SZ_trend_ma_alignment",
+          "signal:sig_20260709_A_000002.SZ_relative_strength_vs_index",
+          "signal:sig_20260709_A_000002.SZ_volume_expansion",
+          "signal:sig_20260709_A_000002.SZ_risk_volatility_drawdown"
+        ],
+        "signals_with_numeric_values": [
+          "trend_ma_alignment",
+          "relative_strength_vs_index",
+          "volume_expansion",
+          "risk_volatility_drawdown"
+        ],
+        "signals_missing": [
+          "fundamental_signal",
+          "sector_signal"
+        ],
+        "note": "bars_used_count is null because raw bar count is not stored in current recommendation records"
+      },
+      "risk_veto_details": {
+        "risk_veto_triggered": true,
+        "risk_flags": [
+          "liquidity_not_ok",
+          "liquidity_risk",
+          "market_liquidity=weak",
+          "market_risk=high",
+          "market_trend=downtrend",
+          "poor_entry_location_downtrend",
+          "trend_down",
+          "volume_contraction"
+        ],
+        "source_signal_ids": [
+          "signal:sig_20260709_A_000002.SZ_risk_volatility_drawdown"
+        ],
+        "metrics": {
+          "volatility": 0.01874005368127791,
+          "max_drawdown": -0.06645569620253163,
+          "latest_volume": 882884.37,
+          "avg_volume": 1376865.655,
+          "avg_dollar_volume": null,
+          "recent_return": -0.025974025974025997,
+          "symbol_return_5d": -0.025974025974025997,
+          "index_return_5d": -0.04102529366286864,
+          "relative_strength_5d": 0.015051267688842643
+        },
+        "source_signal_values": {
+          "risk_volatility_drawdown": {
+            "volatility": 0.01874005368127791,
+            "max_drawdown": -0.06645569620253163,
+            "flags": [
+              "liquidity_risk"
+            ]
+          },
+          "volume_expansion": {
+            "latest_vol": 882884.37,
+            "avg_vol": 1376865.655,
+            "state": "contraction"
+          },
+          "trend_ma_alignment": {
+            "ma20": 3.06,
+            "ma60": 3.4851666666666663,
+            "recent_return": -0.025974025974025997,
+            "direction": "downtrend"
+          },
+          "relative_strength_vs_index": {
+            "symbol_return": -0.025974025974025997,
+            "index_return": -0.04102529366286864,
+            "relative_strength": 0.015051267688842643,
+            "state": "outperforming"
+          }
+        },
+        "metrics_generated_at": "2026-07-09T05:54:57.288989+00:00",
+        "notes": [
+          "Metrics are copied from latest matching Signal.value records.",
+          "avg_dollar_volume is null because price*volume liquidity metric is not recorded yet."
+        ]
+      }
+    }
+  ],
+  "recommendations": [
+    {
+      "recommendation_id": "rec_20260706_pre_market_US_CRCL",
+      "record_index": 0,
+      "is_latest_for_recommendation_id": false,
+      "is_latest_for_symbol": false,
+      "date": "2026-07-06",
+      "session": "pre_market",
+      "symbol": "CRCL",
+      "name": "Circle Internet Group",
+      "market": "US",
+      "status": "Exit",
+      "action_label": "exit_position",
+      "confidence": 0.25,
+      "decision_summary": "support=0, oppose=0, neutral=6, veto=1, risk_veto=True, timing_oppose=False, market_high_risk=False, confidence=0.25 -> Exit.",
+      "support_reasons": [],
+      "oppose_reasons": [
+        "RiskAgent veto: Risk signal unavailable and critical candidate-level flags present: liquidity_not_ok. (source_opinion_id=opn_20260706_US_CRCL_risk)",
+        "Missing data across experts: fundamental_signal, liquidity_state, relative_strength_signal, risk_level, risk_signal, sector_signal, trend_signal, trend_state, volume_signal (traced from opn_20260706_US_CRCL_market_regime, opn_20260706_US_CRCL_trend, opn_20260706_US_CRCL_fundamental, opn_20260706_US_CRCL_capital_flow, opn_20260706_US_CRCL_sector, opn_20260706_US_CRCL_timing, opn_20260706_US_CRCL_risk)."
+      ],
+      "risks": [
+        "liquidity_not_ok"
+      ],
+      "invalidation_conditions": [],
+      "why_not_action": "risk_veto_triggered",
+      "decision_record": {
+        "decision_id": "dec_20260706_pre_market_US_CRCL",
+        "risk_veto_triggered": true,
+        "risk_veto_reason": null,
+        "support_count": 0,
+        "oppose_count": 0,
+        "neutral_count": 6,
+        "veto_count": 1
+      },
+      "expert_opinions": [
+        {
+          "expert_name": "MarketRegimeAgent",
+          "stance": "neutral",
+          "confidence": 0.4,
+          "summary": "MarketSnapshot has unknown state(s): trend_state, liquidity_state, risk_level.",
+          "evidence": [
+            "market_snapshot:mkt_20260706_US_pre_market"
+          ],
+          "risks": [],
+          "missing_data": [
+            "trend_state",
+            "liquidity_state",
+            "risk_level"
+          ]
+        },
+        {
+          "expert_name": "TrendAgent",
+          "stance": "neutral",
+          "confidence": 0.4,
+          "summary": "Trend signal unavailable or unknown; insufficient price history.",
+          "evidence": [],
+          "risks": [],
+          "missing_data": [
+            "trend_signal",
+            "relative_strength_signal"
+          ]
+        },
+        {
+          "expert_name": "FundamentalAgent",
+          "stance": "neutral",
+          "confidence": 0.4,
+          "summary": "No usable fundamental data for this candidate.",
+          "evidence": [],
+          "risks": [],
+          "missing_data": [
+            "fundamental_signal"
+          ]
+        },
+        {
+          "expert_name": "CapitalFlowAgent",
+          "stance": "neutral",
+          "confidence": 0.4,
+          "summary": "No usable volume/capital-flow data for this candidate.",
+          "evidence": [],
+          "risks": [],
+          "missing_data": [
+            "volume_signal"
+          ]
+        },
+        {
+          "expert_name": "SectorAgent",
+          "stance": "neutral",
+          "confidence": 0.4,
+          "summary": "No sector classification/rotation data available for this candidate.",
+          "evidence": [],
+          "risks": [],
+          "missing_data": [
+            "sector_signal"
+          ]
+        },
+        {
+          "expert_name": "TimingAgent",
+          "stance": "neutral",
+          "confidence": 0.4,
+          "summary": "Timing unclear: insufficient trend data.",
+          "evidence": [],
+          "risks": [],
+          "missing_data": [
+            "trend_signal",
+            "volume_signal"
+          ]
+        },
+        {
+          "expert_name": "RiskAgent",
+          "stance": "veto",
+          "confidence": 0.7,
+          "summary": "Risk signal unavailable and critical candidate-level flags present: liquidity_not_ok.",
+          "evidence": [],
+          "risks": [
+            "liquidity_not_ok"
+          ],
+          "missing_data": [
+            "risk_signal"
+          ]
+        }
+      ],
+      "data_quality_notes": [
+        "No stock list returned for market US."
+      ],
+      "historical_or_superseded_data_quality_notes": [
+        {
+          "message": "No daily bars returned for CRCL (US) via provider_route='market_data_service' between 20260308 and 20260706.",
+          "status": "superseded",
+          "reason": "later bar-derived signal evidence exists for this recommendation"
+        },
+        {
+          "message": "No daily bars returned for CRCL (US) via provider_route='yahoo_finance' between 20260507 and 20260706.",
+          "status": "superseded",
+          "reason": "later bar-derived signal evidence exists for this recommendation"
+        },
+        {
+          "message": "No daily bars returned for CRCL (US) via provider_route='yahoo_finance' between 20260308 and 20260706.",
+          "status": "superseded",
+          "reason": "later bar-derived signal evidence exists for this recommendation"
+        }
+      ],
+      "data_availability": {
+        "bars_available": true,
+        "bars_used_count": null,
+        "signals_with_data": [
+          "signal:sig_20260706_US_CRCL_trend_ma_alignment",
+          "signal:sig_20260706_US_CRCL_relative_strength_vs_index",
+          "signal:sig_20260706_US_CRCL_volume_expansion",
+          "signal:sig_20260706_US_CRCL_risk_volatility_drawdown"
+        ],
+        "signals_with_numeric_values": [
+          "trend_ma_alignment",
+          "relative_strength_vs_index",
+          "volume_expansion",
+          "risk_volatility_drawdown"
+        ],
+        "signals_missing": [
+          "fundamental_signal",
+          "liquidity_state",
+          "relative_strength_signal",
+          "risk_level",
+          "risk_signal",
+          "sector_signal",
+          "trend_signal",
+          "trend_state",
+          "volume_signal"
+        ],
+        "note": "bars_used_count is null because raw bar count is not stored in current recommendation records"
+      },
+      "risk_veto_details": {
+        "risk_veto_triggered": true,
+        "risk_flags": [
+          "liquidity_not_ok",
+          "high_volatility",
+          "severe_drawdown",
+          "liquidity_risk"
+        ],
+        "source_signal_ids": [
+          "signal:sig_20260706_US_CRCL_risk_volatility_drawdown"
+        ],
+        "metrics": {
+          "volatility": 0.0618692952369419,
+          "max_drawdown": -0.3157720329521754,
+          "latest_volume": 17683500.0,
+          "avg_volume": 14283960.0,
+          "avg_dollar_volume": null,
+          "recent_return": -0.060892238928562874,
+          "symbol_return_5d": -0.060892238928562874,
+          "index_return_5d": 0.017091426015420616,
+          "relative_strength_5d": -0.07798366494398348
+        },
+        "source_signal_values": {
+          "risk_volatility_drawdown": {
+            "volatility": 0.0618692952369419,
+            "max_drawdown": -0.3157720329521754,
+            "flags": [
+              "high_volatility",
+              "severe_drawdown",
+              "liquidity_risk"
+            ]
+          },
+          "volume_expansion": {
+            "latest_vol": 17683500.0,
+            "avg_vol": 14283960.0,
+            "state": "expansion"
+          },
+          "trend_ma_alignment": {
+            "ma20": 76.59549980163574,
+            "ma60": 96.5538330078125,
+            "recent_return": -0.060892238928562874,
+            "direction": "downtrend"
+          },
+          "relative_strength_vs_index": {
+            "symbol_return": -0.060892238928562874,
+            "index_return": 0.017091426015420616,
+            "relative_strength": -0.07798366494398348,
+            "state": "underperforming"
+          }
+        },
+        "metrics_generated_at": "2026-07-09T05:54:57.288617+00:00",
+        "notes": [
+          "Metrics are copied from latest matching Signal.value records.",
+          "avg_dollar_volume is null because price*volume liquidity metric is not recorded yet."
+        ]
+      }
+    },
+    {
+      "recommendation_id": "rec_20260706_pre_market_US_CRCL",
+      "record_index": 1,
+      "is_latest_for_recommendation_id": false,
+      "is_latest_for_symbol": false,
+      "date": "2026-07-06",
+      "session": "pre_market",
+      "symbol": "CRCL",
+      "name": "Circle Internet Group",
+      "market": "US",
+      "status": "Exit",
+      "action_label": "exit_position",
+      "confidence": 0.25,
+      "decision_summary": "support=0, oppose=0, neutral=6, veto=1, risk_veto=True, timing_oppose=False, market_high_risk=False, confidence=0.25 -> Exit.",
+      "support_reasons": [],
+      "oppose_reasons": [
+        "RiskAgent veto: Risk signal unavailable and critical candidate-level flags present: liquidity_not_ok. (source_opinion_id=opn_20260706_US_CRCL_risk)",
+        "Missing data across experts: fundamental_signal, liquidity_state, relative_strength_signal, risk_level, risk_signal, sector_signal, trend_signal, trend_state, volume_signal (traced from opn_20260706_US_CRCL_market_regime, opn_20260706_US_CRCL_trend, opn_20260706_US_CRCL_fundamental, opn_20260706_US_CRCL_capital_flow, opn_20260706_US_CRCL_sector, opn_20260706_US_CRCL_timing, opn_20260706_US_CRCL_risk)."
+      ],
+      "risks": [
+        "liquidity_not_ok"
+      ],
+      "invalidation_conditions": [],
+      "why_not_action": "risk_veto_triggered",
+      "decision_record": {
+        "decision_id": "dec_20260706_pre_market_US_CRCL",
+        "risk_veto_triggered": true,
+        "risk_veto_reason": null,
+        "support_count": 0,
+        "oppose_count": 0,
+        "neutral_count": 6,
+        "veto_count": 1
+      },
+      "expert_opinions": [
+        {
+          "expert_name": "MarketRegimeAgent",
+          "stance": "neutral",
+          "confidence": 0.4,
+          "summary": "MarketSnapshot has unknown state(s): trend_state, liquidity_state, risk_level.",
+          "evidence": [
+            "market_snapshot:mkt_20260706_US_pre_market"
+          ],
+          "risks": [],
+          "missing_data": [
+            "trend_state",
+            "liquidity_state",
+            "risk_level"
+          ]
+        },
+        {
+          "expert_name": "TrendAgent",
+          "stance": "neutral",
+          "confidence": 0.4,
+          "summary": "Trend signal unavailable or unknown; insufficient price history.",
+          "evidence": [],
+          "risks": [],
+          "missing_data": [
+            "trend_signal",
+            "relative_strength_signal"
+          ]
+        },
+        {
+          "expert_name": "FundamentalAgent",
+          "stance": "neutral",
+          "confidence": 0.4,
+          "summary": "No usable fundamental data for this candidate.",
+          "evidence": [],
+          "risks": [],
+          "missing_data": [
+            "fundamental_signal"
+          ]
+        },
+        {
+          "expert_name": "CapitalFlowAgent",
+          "stance": "neutral",
+          "confidence": 0.4,
+          "summary": "No usable volume/capital-flow data for this candidate.",
+          "evidence": [],
+          "risks": [],
+          "missing_data": [
+            "volume_signal"
+          ]
+        },
+        {
+          "expert_name": "SectorAgent",
+          "stance": "neutral",
+          "confidence": 0.4,
+          "summary": "No sector classification/rotation data available for this candidate.",
+          "evidence": [],
+          "risks": [],
+          "missing_data": [
+            "sector_signal"
+          ]
+        },
+        {
+          "expert_name": "TimingAgent",
+          "stance": "neutral",
+          "confidence": 0.4,
+          "summary": "Timing unclear: insufficient trend data.",
+          "evidence": [],
+          "risks": [],
+          "missing_data": [
+            "trend_signal",
+            "volume_signal"
+          ]
+        },
+        {
+          "expert_name": "RiskAgent",
+          "stance": "veto",
+          "confidence": 0.7,
+          "summary": "Risk signal unavailable and critical candidate-level flags present: liquidity_not_ok.",
+          "evidence": [],
+          "risks": [
+            "liquidity_not_ok"
+          ],
+          "missing_data": [
+            "risk_signal"
+          ]
+        }
+      ],
+      "data_quality_notes": [
+        "No stock list returned for market US."
+      ],
+      "historical_or_superseded_data_quality_notes": [
+        {
+          "message": "No daily bars returned for CRCL (US) via provider_route='market_data_service' between 20260308 and 20260706.",
+          "status": "superseded",
+          "reason": "later bar-derived signal evidence exists for this recommendation"
+        },
+        {
+          "message": "No daily bars returned for CRCL (US) via provider_route='yahoo_finance' between 20260507 and 20260706.",
+          "status": "superseded",
+          "reason": "later bar-derived signal evidence exists for this recommendation"
+        },
+        {
+          "message": "No daily bars returned for CRCL (US) via provider_route='yahoo_finance' between 20260308 and 20260706.",
+          "status": "superseded",
+          "reason": "later bar-derived signal evidence exists for this recommendation"
+        }
+      ],
+      "data_availability": {
+        "bars_available": true,
+        "bars_used_count": null,
+        "signals_with_data": [
+          "signal:sig_20260706_US_CRCL_trend_ma_alignment",
+          "signal:sig_20260706_US_CRCL_relative_strength_vs_index",
+          "signal:sig_20260706_US_CRCL_volume_expansion",
+          "signal:sig_20260706_US_CRCL_risk_volatility_drawdown"
+        ],
+        "signals_with_numeric_values": [
+          "trend_ma_alignment",
+          "relative_strength_vs_index",
+          "volume_expansion",
+          "risk_volatility_drawdown"
+        ],
+        "signals_missing": [
+          "fundamental_signal",
+          "liquidity_state",
+          "relative_strength_signal",
+          "risk_level",
+          "risk_signal",
+          "sector_signal",
+          "trend_signal",
+          "trend_state",
+          "volume_signal"
+        ],
+        "note": "bars_used_count is null because raw bar count is not stored in current recommendation records"
+      },
+      "risk_veto_details": {
+        "risk_veto_triggered": true,
+        "risk_flags": [
+          "liquidity_not_ok",
+          "high_volatility",
+          "severe_drawdown",
+          "liquidity_risk"
+        ],
+        "source_signal_ids": [
+          "signal:sig_20260706_US_CRCL_risk_volatility_drawdown"
+        ],
+        "metrics": {
+          "volatility": 0.0618692952369419,
+          "max_drawdown": -0.3157720329521754,
+          "latest_volume": 17683500.0,
+          "avg_volume": 14283960.0,
+          "avg_dollar_volume": null,
+          "recent_return": -0.060892238928562874,
+          "symbol_return_5d": -0.060892238928562874,
+          "index_return_5d": 0.017091426015420616,
+          "relative_strength_5d": -0.07798366494398348
+        },
+        "source_signal_values": {
+          "risk_volatility_drawdown": {
+            "volatility": 0.0618692952369419,
+            "max_drawdown": -0.3157720329521754,
+            "flags": [
+              "high_volatility",
+              "severe_drawdown",
+              "liquidity_risk"
+            ]
+          },
+          "volume_expansion": {
+            "latest_vol": 17683500.0,
+            "avg_vol": 14283960.0,
+            "state": "expansion"
+          },
+          "trend_ma_alignment": {
+            "ma20": 76.59549980163574,
+            "ma60": 96.5538330078125,
+            "recent_return": -0.060892238928562874,
+            "direction": "downtrend"
+          },
+          "relative_strength_vs_index": {
+            "symbol_return": -0.060892238928562874,
+            "index_return": 0.017091426015420616,
+            "relative_strength": -0.07798366494398348,
+            "state": "underperforming"
+          }
+        },
+        "metrics_generated_at": "2026-07-09T05:54:57.288700+00:00",
+        "notes": [
+          "Metrics are copied from latest matching Signal.value records.",
+          "avg_dollar_volume is null because price*volume liquidity metric is not recorded yet."
+        ]
+      }
+    },
+    {
+      "recommendation_id": "rec_20260706_pre_market_US_CRCL",
+      "record_index": 2,
+      "is_latest_for_recommendation_id": false,
+      "is_latest_for_symbol": false,
+      "date": "2026-07-06",
+      "session": "pre_market",
+      "symbol": "CRCL",
+      "name": "Circle Internet Group",
+      "market": "US",
+      "status": "Watch",
+      "action_label": "hold_and_monitor",
+      "confidence": 0.45,
+      "decision_summary": "support=0, oppose=0, neutral=7, veto=0, risk_veto=False, timing_oppose=False, market_high_risk=False, confidence=0.45 -> Watch.",
+      "support_reasons": [],
+      "oppose_reasons": [
+        "Missing data across experts: fundamental_signal, liquidity_state, relative_strength_signal, risk_level, risk_signal, sector_signal, trend_signal, trend_state, volume_signal (traced from opn_20260706_US_CRCL_market_regime, opn_20260706_US_CRCL_trend, opn_20260706_US_CRCL_fundamental, opn_20260706_US_CRCL_capital_flow, opn_20260706_US_CRCL_sector, opn_20260706_US_CRCL_timing, opn_20260706_US_CRCL_risk)."
+      ],
+      "risks": [],
+      "invalidation_conditions": [
+        "RiskAgent stance moves to veto (source_opinion_id=opn_20260706_US_CRCL_risk)."
+      ],
+      "why_not_action": "missing_critical_data",
+      "decision_record": {
+        "decision_id": "dec_20260706_pre_market_US_CRCL",
+        "risk_veto_triggered": false,
+        "risk_veto_reason": null,
+        "support_count": 0,
+        "oppose_count": 0,
+        "neutral_count": 7,
+        "veto_count": 0
+      },
+      "expert_opinions": [
+        {
+          "expert_name": "MarketRegimeAgent",
+          "stance": "neutral",
+          "confidence": 0.4,
+          "summary": "MarketSnapshot has unknown state(s): trend_state, liquidity_state, risk_level.",
+          "evidence": [
+            "market_snapshot:mkt_20260706_US_pre_market"
+          ],
+          "risks": [],
+          "missing_data": [
+            "trend_state",
+            "liquidity_state",
+            "risk_level"
+          ]
+        },
+        {
+          "expert_name": "TrendAgent",
+          "stance": "neutral",
+          "confidence": 0.4,
+          "summary": "Trend signal unavailable or unknown; insufficient price history.",
+          "evidence": [],
+          "risks": [],
+          "missing_data": [
+            "trend_signal",
+            "relative_strength_signal"
+          ]
+        },
+        {
+          "expert_name": "FundamentalAgent",
+          "stance": "neutral",
+          "confidence": 0.4,
+          "summary": "No usable fundamental data for this candidate.",
+          "evidence": [],
+          "risks": [],
+          "missing_data": [
+            "fundamental_signal"
+          ]
+        },
+        {
+          "expert_name": "CapitalFlowAgent",
+          "stance": "neutral",
+          "confidence": 0.4,
+          "summary": "No usable volume/capital-flow data for this candidate.",
+          "evidence": [],
+          "risks": [],
+          "missing_data": [
+            "volume_signal"
+          ]
+        },
+        {
+          "expert_name": "SectorAgent",
+          "stance": "neutral",
+          "confidence": 0.4,
+          "summary": "No sector classification/rotation data available for this candidate.",
+          "evidence": [],
+          "risks": [],
+          "missing_data": [
+            "sector_signal"
+          ]
+        },
+        {
+          "expert_name": "TimingAgent",
+          "stance": "neutral",
+          "confidence": 0.4,
+          "summary": "Timing unclear: insufficient trend data.",
+          "evidence": [],
+          "risks": [],
+          "missing_data": [
+            "trend_signal",
+            "volume_signal"
+          ]
+        },
+        {
+          "expert_name": "RiskAgent",
+          "stance": "neutral",
+          "confidence": 0.4,
+          "summary": "Risk unknown but no critical candidate-level flags detected.",
+          "evidence": [],
+          "risks": [],
+          "missing_data": [
+            "risk_signal"
+          ]
+        }
+      ],
+      "data_quality_notes": [
+        "No stock list returned for market US."
+      ],
+      "historical_or_superseded_data_quality_notes": [
+        {
+          "message": "No daily bars returned for CRCL (US) via provider_route='market_data_service' between 20260308 and 20260706.",
+          "status": "superseded",
+          "reason": "later bar-derived signal evidence exists for this recommendation"
+        },
+        {
+          "message": "No daily bars returned for CRCL (US) via provider_route='yahoo_finance' between 20260507 and 20260706.",
+          "status": "superseded",
+          "reason": "later bar-derived signal evidence exists for this recommendation"
+        },
+        {
+          "message": "No daily bars returned for CRCL (US) via provider_route='yahoo_finance' between 20260308 and 20260706.",
+          "status": "superseded",
+          "reason": "later bar-derived signal evidence exists for this recommendation"
+        }
+      ],
+      "data_availability": {
+        "bars_available": true,
+        "bars_used_count": null,
+        "signals_with_data": [
+          "signal:sig_20260706_US_CRCL_trend_ma_alignment",
+          "signal:sig_20260706_US_CRCL_relative_strength_vs_index",
+          "signal:sig_20260706_US_CRCL_volume_expansion",
+          "signal:sig_20260706_US_CRCL_risk_volatility_drawdown"
+        ],
+        "signals_with_numeric_values": [
+          "trend_ma_alignment",
+          "relative_strength_vs_index",
+          "volume_expansion",
+          "risk_volatility_drawdown"
+        ],
+        "signals_missing": [
+          "fundamental_signal",
+          "liquidity_state",
+          "relative_strength_signal",
+          "risk_level",
+          "risk_signal",
+          "sector_signal",
+          "trend_signal",
+          "trend_state",
+          "volume_signal"
+        ],
+        "note": "bars_used_count is null because raw bar count is not stored in current recommendation records"
+      },
+      "risk_veto_details": {
+        "risk_veto_triggered": false,
+        "risk_flags": [
+          "high_volatility",
+          "severe_drawdown",
+          "liquidity_risk"
+        ],
+        "source_signal_ids": [
+          "signal:sig_20260706_US_CRCL_risk_volatility_drawdown"
+        ],
+        "metrics": {
+          "volatility": 0.0618692952369419,
+          "max_drawdown": -0.3157720329521754,
+          "latest_volume": 17683500.0,
+          "avg_volume": 14283960.0,
+          "avg_dollar_volume": null,
+          "recent_return": -0.060892238928562874,
+          "symbol_return_5d": -0.060892238928562874,
+          "index_return_5d": 0.017091426015420616,
+          "relative_strength_5d": -0.07798366494398348
+        },
+        "source_signal_values": {
+          "risk_volatility_drawdown": {
+            "volatility": 0.0618692952369419,
+            "max_drawdown": -0.3157720329521754,
+            "flags": [
+              "high_volatility",
+              "severe_drawdown",
+              "liquidity_risk"
+            ]
+          },
+          "volume_expansion": {
+            "latest_vol": 17683500.0,
+            "avg_vol": 14283960.0,
+            "state": "expansion"
+          },
+          "trend_ma_alignment": {
+            "ma20": 76.59549980163574,
+            "ma60": 96.5538330078125,
+            "recent_return": -0.060892238928562874,
+            "direction": "downtrend"
+          },
+          "relative_strength_vs_index": {
+            "symbol_return": -0.060892238928562874,
+            "index_return": 0.017091426015420616,
+            "relative_strength": -0.07798366494398348,
+            "state": "underperforming"
+          }
+        },
+        "metrics_generated_at": "2026-07-09T05:54:57.288772+00:00",
+        "notes": [
+          "Metrics are copied from latest matching Signal.value records.",
+          "avg_dollar_volume is null because price*volume liquidity metric is not recorded yet."
+        ]
+      }
+    },
+    {
+      "recommendation_id": "rec_20260706_pre_market_US_CRCL",
+      "record_index": 3,
+      "is_latest_for_recommendation_id": false,
+      "is_latest_for_symbol": false,
+      "date": "2026-07-06",
+      "session": "pre_market",
+      "symbol": "CRCL",
+      "name": "Circle Internet Group",
+      "market": "US",
+      "status": "Exit",
+      "action_label": "exit_position",
+      "confidence": 0.25,
+      "decision_summary": "support=0, oppose=0, neutral=6, veto=1, risk_veto=True, timing_oppose=False, market_high_risk=False, confidence=0.25 -> Exit.",
+      "support_reasons": [],
+      "oppose_reasons": [
+        "RiskAgent veto: Risk signal unavailable and critical candidate-level flags present: liquidity_not_ok. (source_opinion_id=opn_20260706_US_CRCL_risk)",
+        "Missing data across experts: fundamental_signal, liquidity_state, relative_strength_signal, risk_level, risk_signal, sector_signal, trend_signal, trend_state, volume_signal (traced from opn_20260706_US_CRCL_market_regime, opn_20260706_US_CRCL_trend, opn_20260706_US_CRCL_fundamental, opn_20260706_US_CRCL_capital_flow, opn_20260706_US_CRCL_sector, opn_20260706_US_CRCL_timing, opn_20260706_US_CRCL_risk)."
+      ],
+      "risks": [
+        "liquidity_not_ok"
+      ],
+      "invalidation_conditions": [],
+      "why_not_action": "risk_veto_triggered",
+      "decision_record": {
+        "decision_id": "dec_20260706_pre_market_US_CRCL",
+        "risk_veto_triggered": true,
+        "risk_veto_reason": null,
+        "support_count": 0,
+        "oppose_count": 0,
+        "neutral_count": 6,
+        "veto_count": 1
+      },
+      "expert_opinions": [
+        {
+          "expert_name": "MarketRegimeAgent",
+          "stance": "neutral",
+          "confidence": 0.4,
+          "summary": "MarketSnapshot has unknown state(s): trend_state, liquidity_state, risk_level.",
+          "evidence": [
+            "market_snapshot:mkt_20260706_US_pre_market"
+          ],
+          "risks": [],
+          "missing_data": [
+            "trend_state",
+            "liquidity_state",
+            "risk_level"
+          ]
+        },
+        {
+          "expert_name": "TrendAgent",
+          "stance": "neutral",
+          "confidence": 0.4,
+          "summary": "Trend signal unavailable or unknown; insufficient price history.",
+          "evidence": [],
+          "risks": [],
+          "missing_data": [
+            "trend_signal",
+            "relative_strength_signal"
+          ]
+        },
+        {
+          "expert_name": "FundamentalAgent",
+          "stance": "neutral",
+          "confidence": 0.4,
+          "summary": "No usable fundamental data for this candidate.",
+          "evidence": [],
+          "risks": [],
+          "missing_data": [
+            "fundamental_signal"
+          ]
+        },
+        {
+          "expert_name": "CapitalFlowAgent",
+          "stance": "neutral",
+          "confidence": 0.4,
+          "summary": "No usable volume/capital-flow data for this candidate.",
+          "evidence": [],
+          "risks": [],
+          "missing_data": [
+            "volume_signal"
+          ]
+        },
+        {
+          "expert_name": "SectorAgent",
+          "stance": "neutral",
+          "confidence": 0.4,
+          "summary": "No sector classification/rotation data available for this candidate.",
+          "evidence": [],
+          "risks": [],
+          "missing_data": [
+            "sector_signal"
+          ]
+        },
+        {
+          "expert_name": "TimingAgent",
+          "stance": "neutral",
+          "confidence": 0.4,
+          "summary": "Timing unclear: insufficient trend data.",
+          "evidence": [],
+          "risks": [],
+          "missing_data": [
+            "trend_signal",
+            "volume_signal"
+          ]
+        },
+        {
+          "expert_name": "RiskAgent",
+          "stance": "veto",
+          "confidence": 0.7,
+          "summary": "Risk signal unavailable and critical candidate-level flags present: liquidity_not_ok.",
+          "evidence": [],
+          "risks": [
+            "liquidity_not_ok"
+          ],
+          "missing_data": [
+            "risk_signal"
+          ]
+        }
+      ],
+      "data_quality_notes": [
+        "No stock list returned for market US."
+      ],
+      "historical_or_superseded_data_quality_notes": [
+        {
+          "message": "No daily bars returned for CRCL (US) via provider_route='market_data_service' between 20260308 and 20260706.",
+          "status": "superseded",
+          "reason": "later bar-derived signal evidence exists for this recommendation"
+        },
+        {
+          "message": "No daily bars returned for CRCL (US) via provider_route='yahoo_finance' between 20260507 and 20260706.",
+          "status": "superseded",
+          "reason": "later bar-derived signal evidence exists for this recommendation"
+        },
+        {
+          "message": "No daily bars returned for CRCL (US) via provider_route='yahoo_finance' between 20260308 and 20260706.",
+          "status": "superseded",
+          "reason": "later bar-derived signal evidence exists for this recommendation"
+        }
+      ],
+      "data_availability": {
+        "bars_available": true,
+        "bars_used_count": null,
+        "signals_with_data": [
+          "signal:sig_20260706_US_CRCL_trend_ma_alignment",
+          "signal:sig_20260706_US_CRCL_relative_strength_vs_index",
+          "signal:sig_20260706_US_CRCL_volume_expansion",
+          "signal:sig_20260706_US_CRCL_risk_volatility_drawdown"
+        ],
+        "signals_with_numeric_values": [
+          "trend_ma_alignment",
+          "relative_strength_vs_index",
+          "volume_expansion",
+          "risk_volatility_drawdown"
+        ],
+        "signals_missing": [
+          "fundamental_signal",
+          "liquidity_state",
+          "relative_strength_signal",
+          "risk_level",
+          "risk_signal",
+          "sector_signal",
+          "trend_signal",
+          "trend_state",
+          "volume_signal"
+        ],
+        "note": "bars_used_count is null because raw bar count is not stored in current recommendation records"
+      },
+      "risk_veto_details": {
+        "risk_veto_triggered": true,
+        "risk_flags": [
+          "liquidity_not_ok",
+          "high_volatility",
+          "severe_drawdown",
+          "liquidity_risk"
+        ],
+        "source_signal_ids": [
+          "signal:sig_20260706_US_CRCL_risk_volatility_drawdown"
+        ],
+        "metrics": {
+          "volatility": 0.0618692952369419,
+          "max_drawdown": -0.3157720329521754,
+          "latest_volume": 17683500.0,
+          "avg_volume": 14283960.0,
+          "avg_dollar_volume": null,
+          "recent_return": -0.060892238928562874,
+          "symbol_return_5d": -0.060892238928562874,
+          "index_return_5d": 0.017091426015420616,
+          "relative_strength_5d": -0.07798366494398348
+        },
+        "source_signal_values": {
+          "risk_volatility_drawdown": {
+            "volatility": 0.0618692952369419,
+            "max_drawdown": -0.3157720329521754,
+            "flags": [
+              "high_volatility",
+              "severe_drawdown",
+              "liquidity_risk"
+            ]
+          },
+          "volume_expansion": {
+            "latest_vol": 17683500.0,
+            "avg_vol": 14283960.0,
+            "state": "expansion"
+          },
+          "trend_ma_alignment": {
+            "ma20": 76.59549980163574,
+            "ma60": 96.5538330078125,
+            "recent_return": -0.060892238928562874,
+            "direction": "downtrend"
+          },
+          "relative_strength_vs_index": {
+            "symbol_return": -0.060892238928562874,
+            "index_return": 0.017091426015420616,
+            "relative_strength": -0.07798366494398348,
+            "state": "underperforming"
+          }
+        },
+        "metrics_generated_at": "2026-07-09T05:54:57.288836+00:00",
+        "notes": [
+          "Metrics are copied from latest matching Signal.value records.",
+          "avg_dollar_volume is null because price*volume liquidity metric is not recorded yet."
+        ]
+      }
+    },
+    {
+      "recommendation_id": "rec_20260706_pre_market_US_CRCL",
+      "record_index": 4,
+      "is_latest_for_recommendation_id": false,
+      "is_latest_for_symbol": false,
+      "date": "2026-07-06",
+      "session": "pre_market",
+      "symbol": "CRCL",
+      "name": "Circle Internet Group",
+      "market": "US",
+      "status": "Watch",
+      "action_label": "hold_and_monitor",
+      "confidence": 0.45,
+      "decision_summary": "support=0, oppose=0, neutral=7, veto=0, risk_veto=False, timing_oppose=False, market_high_risk=False, confidence=0.45 -> Watch.",
+      "support_reasons": [],
+      "oppose_reasons": [
+        "Missing data across experts: fundamental_signal, liquidity_state, relative_strength_signal, risk_level, risk_signal, sector_signal, trend_signal, trend_state, volume_signal (traced from opn_20260706_US_CRCL_market_regime, opn_20260706_US_CRCL_trend, opn_20260706_US_CRCL_fundamental, opn_20260706_US_CRCL_capital_flow, opn_20260706_US_CRCL_sector, opn_20260706_US_CRCL_timing, opn_20260706_US_CRCL_risk)."
+      ],
+      "risks": [],
+      "invalidation_conditions": [
+        "RiskAgent stance moves to veto (source_opinion_id=opn_20260706_US_CRCL_risk)."
+      ],
+      "why_not_action": "missing_critical_data",
+      "decision_record": {
+        "decision_id": "dec_20260706_pre_market_US_CRCL",
+        "risk_veto_triggered": false,
+        "risk_veto_reason": null,
+        "support_count": 0,
+        "oppose_count": 0,
+        "neutral_count": 7,
+        "veto_count": 0
+      },
+      "expert_opinions": [
+        {
+          "expert_name": "MarketRegimeAgent",
+          "stance": "neutral",
+          "confidence": 0.4,
+          "summary": "MarketSnapshot has unknown state(s): trend_state, liquidity_state, risk_level.",
+          "evidence": [
+            "market_snapshot:mkt_20260706_US_pre_market"
+          ],
+          "risks": [],
+          "missing_data": [
+            "trend_state",
+            "liquidity_state",
+            "risk_level"
+          ]
+        },
+        {
+          "expert_name": "TrendAgent",
+          "stance": "neutral",
+          "confidence": 0.4,
+          "summary": "Trend signal unavailable or unknown; insufficient price history.",
+          "evidence": [],
+          "risks": [],
+          "missing_data": [
+            "trend_signal",
+            "relative_strength_signal"
+          ]
+        },
+        {
+          "expert_name": "FundamentalAgent",
+          "stance": "neutral",
+          "confidence": 0.4,
+          "summary": "No usable fundamental data for this candidate.",
+          "evidence": [],
+          "risks": [],
+          "missing_data": [
+            "fundamental_signal"
+          ]
+        },
+        {
+          "expert_name": "CapitalFlowAgent",
+          "stance": "neutral",
+          "confidence": 0.4,
+          "summary": "No usable volume/capital-flow data for this candidate.",
+          "evidence": [],
+          "risks": [],
+          "missing_data": [
+            "volume_signal"
+          ]
+        },
+        {
+          "expert_name": "SectorAgent",
+          "stance": "neutral",
+          "confidence": 0.4,
+          "summary": "No sector classification/rotation data available for this candidate.",
+          "evidence": [],
+          "risks": [],
+          "missing_data": [
+            "sector_signal"
+          ]
+        },
+        {
+          "expert_name": "TimingAgent",
+          "stance": "neutral",
+          "confidence": 0.4,
+          "summary": "Timing unclear: insufficient trend data.",
+          "evidence": [],
+          "risks": [],
+          "missing_data": [
+            "trend_signal",
+            "volume_signal"
+          ]
+        },
+        {
+          "expert_name": "RiskAgent",
+          "stance": "neutral",
+          "confidence": 0.4,
+          "summary": "Risk unknown but no critical candidate-level flags detected.",
+          "evidence": [],
+          "risks": [],
+          "missing_data": [
+            "risk_signal"
+          ]
+        }
+      ],
+      "data_quality_notes": [
+        "No stock list returned for market US."
+      ],
+      "historical_or_superseded_data_quality_notes": [
+        {
+          "message": "No daily bars returned for CRCL (US) via provider_route='market_data_service' between 20260308 and 20260706.",
+          "status": "superseded",
+          "reason": "later bar-derived signal evidence exists for this recommendation"
+        },
+        {
+          "message": "No daily bars returned for CRCL (US) via provider_route='yahoo_finance' between 20260507 and 20260706.",
+          "status": "superseded",
+          "reason": "later bar-derived signal evidence exists for this recommendation"
+        },
+        {
+          "message": "No daily bars returned for CRCL (US) via provider_route='yahoo_finance' between 20260308 and 20260706.",
+          "status": "superseded",
+          "reason": "later bar-derived signal evidence exists for this recommendation"
+        }
+      ],
+      "data_availability": {
+        "bars_available": true,
+        "bars_used_count": null,
+        "signals_with_data": [
+          "signal:sig_20260706_US_CRCL_trend_ma_alignment",
+          "signal:sig_20260706_US_CRCL_relative_strength_vs_index",
+          "signal:sig_20260706_US_CRCL_volume_expansion",
+          "signal:sig_20260706_US_CRCL_risk_volatility_drawdown"
+        ],
+        "signals_with_numeric_values": [
+          "trend_ma_alignment",
+          "relative_strength_vs_index",
+          "volume_expansion",
+          "risk_volatility_drawdown"
+        ],
+        "signals_missing": [
+          "fundamental_signal",
+          "liquidity_state",
+          "relative_strength_signal",
+          "risk_level",
+          "risk_signal",
+          "sector_signal",
+          "trend_signal",
+          "trend_state",
+          "volume_signal"
+        ],
+        "note": "bars_used_count is null because raw bar count is not stored in current recommendation records"
+      },
+      "risk_veto_details": {
+        "risk_veto_triggered": false,
+        "risk_flags": [
+          "high_volatility",
+          "severe_drawdown",
+          "liquidity_risk"
+        ],
+        "source_signal_ids": [
+          "signal:sig_20260706_US_CRCL_risk_volatility_drawdown"
+        ],
+        "metrics": {
+          "volatility": 0.0618692952369419,
+          "max_drawdown": -0.3157720329521754,
+          "latest_volume": 17683500.0,
+          "avg_volume": 14283960.0,
+          "avg_dollar_volume": null,
+          "recent_return": -0.060892238928562874,
+          "symbol_return_5d": -0.060892238928562874,
+          "index_return_5d": 0.017091426015420616,
+          "relative_strength_5d": -0.07798366494398348
+        },
+        "source_signal_values": {
+          "risk_volatility_drawdown": {
+            "volatility": 0.0618692952369419,
+            "max_drawdown": -0.3157720329521754,
+            "flags": [
+              "high_volatility",
+              "severe_drawdown",
+              "liquidity_risk"
+            ]
+          },
+          "volume_expansion": {
+            "latest_vol": 17683500.0,
+            "avg_vol": 14283960.0,
+            "state": "expansion"
+          },
+          "trend_ma_alignment": {
+            "ma20": 76.59549980163574,
+            "ma60": 96.5538330078125,
+            "recent_return": -0.060892238928562874,
+            "direction": "downtrend"
+          },
+          "relative_strength_vs_index": {
+            "symbol_return": -0.060892238928562874,
+            "index_return": 0.017091426015420616,
+            "relative_strength": -0.07798366494398348,
+            "state": "underperforming"
+          }
+        },
+        "metrics_generated_at": "2026-07-09T05:54:57.288902+00:00",
+        "notes": [
+          "Metrics are copied from latest matching Signal.value records.",
+          "avg_dollar_volume is null because price*volume liquidity metric is not recorded yet."
+        ]
+      }
+    },
+    {
+      "recommendation_id": "rec_20260706_pre_market_US_CRCL",
+      "record_index": 5,
+      "is_latest_for_recommendation_id": true,
+      "is_latest_for_symbol": true,
+      "date": "2026-07-06",
+      "session": "pre_market",
+      "symbol": "CRCL",
+      "name": "Circle Internet Group",
+      "market": "US",
+      "status": "Exit",
+      "action_label": "exit_position",
+      "confidence": 0.25,
+      "decision_summary": "support=2, oppose=2, neutral=2, veto=1, risk_veto=True, timing_oppose=True, market_high_risk=False, confidence=0.25 -> Exit.",
+      "support_reasons": [
+        "MarketRegimeAgent support: Market regime favorable: trend=uptrend, liquidity=normal, risk=low. (source_opinion_id=opn_20260706_US_CRCL_market_regime)",
+        "CapitalFlowAgent support: Volume expansion with valid data — supportive price/volume confirmation. (source_opinion_id=opn_20260706_US_CRCL_capital_flow)"
+      ],
+      "oppose_reasons": [
+        "TrendAgent oppose: Trend direction=downtrend, relative strength weak=True. (source_opinion_id=opn_20260706_US_CRCL_trend)",
+        "TimingAgent oppose: Timing unfavorable: direction=downtrend, overextended=False. (source_opinion_id=opn_20260706_US_CRCL_timing)",
+        "RiskAgent veto: Unacceptable risk detected: high_volatility, severe_drawdown, liquidity_risk, liquidity_not_ok. (source_opinion_id=opn_20260706_US_CRCL_risk)",
+        "Missing data across experts: fundamental_signal, sector_signal (traced from opn_20260706_US_CRCL_fundamental, opn_20260706_US_CRCL_sector)."
+      ],
+      "risks": [
+        "high_volatility",
+        "liquidity_not_ok",
+        "liquidity_risk",
+        "poor_entry_location_downtrend",
+        "relative_weakness_vs_index",
+        "severe_drawdown",
+        "trend_down"
+      ],
+      "invalidation_conditions": [
+        "TrendAgent stance reverses from 'oppose' (source_opinion_id=opn_20260706_US_CRCL_trend).",
+        "Market regime for US deteriorates to downtrend/high risk (market_snapshot_id=mkt_20260706_US_pre_market)."
+      ],
+      "why_not_action": "risk_veto_triggered",
+      "decision_record": {
+        "decision_id": "dec_20260706_pre_market_US_CRCL",
+        "risk_veto_triggered": true,
+        "risk_veto_reason": null,
+        "support_count": 2,
+        "oppose_count": 2,
+        "neutral_count": 2,
+        "veto_count": 1
+      },
+      "expert_opinions": [
+        {
+          "expert_name": "MarketRegimeAgent",
+          "stance": "support",
+          "confidence": 0.7,
+          "summary": "Market regime favorable: trend=uptrend, liquidity=normal, risk=low.",
+          "evidence": [
+            "market_snapshot:mkt_20260706_US_pre_market",
+            "trend_state=uptrend",
+            "liquidity_state=normal",
+            "risk_level=low"
+          ],
+          "risks": [],
+          "missing_data": []
+        },
+        {
+          "expert_name": "TrendAgent",
+          "stance": "oppose",
+          "confidence": 0.6,
+          "summary": "Trend direction=downtrend, relative strength weak=True.",
+          "evidence": [
+            "signal:sig_20260706_US_CRCL_trend_ma_alignment",
+            "signal:sig_20260706_US_CRCL_relative_strength_vs_index"
+          ],
+          "risks": [
+            "trend_down",
+            "relative_weakness_vs_index"
+          ],
+          "missing_data": []
+        },
+        {
+          "expert_name": "FundamentalAgent",
+          "stance": "neutral",
+          "confidence": 0.4,
+          "summary": "No usable fundamental data for this candidate.",
+          "evidence": [],
+          "risks": [],
+          "missing_data": [
+            "fundamental_signal"
+          ]
+        },
+        {
+          "expert_name": "CapitalFlowAgent",
+          "stance": "support",
+          "confidence": 0.6,
+          "summary": "Volume expansion with valid data — supportive price/volume confirmation.",
+          "evidence": [
+            "signal:sig_20260706_US_CRCL_volume_expansion"
+          ],
+          "risks": [],
+          "missing_data": []
+        },
+        {
+          "expert_name": "SectorAgent",
+          "stance": "neutral",
+          "confidence": 0.4,
+          "summary": "No sector classification/rotation data available for this candidate.",
+          "evidence": [],
+          "risks": [],
+          "missing_data": [
+            "sector_signal"
+          ]
+        },
+        {
+          "expert_name": "TimingAgent",
+          "stance": "oppose",
+          "confidence": 0.5,
+          "summary": "Timing unfavorable: direction=downtrend, overextended=False.",
+          "evidence": [
+            "signal:sig_20260706_US_CRCL_trend_ma_alignment",
+            "signal:sig_20260706_US_CRCL_volume_expansion"
+          ],
+          "risks": [
+            "poor_entry_location_downtrend"
+          ],
+          "missing_data": []
+        },
+        {
+          "expert_name": "RiskAgent",
+          "stance": "veto",
+          "confidence": 0.75,
+          "summary": "Unacceptable risk detected: high_volatility, severe_drawdown, liquidity_risk, liquidity_not_ok.",
+          "evidence": [
+            "signal:sig_20260706_US_CRCL_risk_volatility_drawdown"
+          ],
+          "risks": [
+            "high_volatility",
+            "severe_drawdown",
+            "liquidity_risk",
+            "liquidity_not_ok"
+          ],
+          "missing_data": []
+        }
+      ],
+      "data_quality_notes": [
+        "No stock list returned for market US."
+      ],
+      "historical_or_superseded_data_quality_notes": [
+        {
+          "message": "No daily bars returned for CRCL (US) via provider_route='market_data_service' between 20260308 and 20260706.",
+          "status": "superseded",
+          "reason": "later bar-derived signal evidence exists for this recommendation"
+        },
+        {
+          "message": "No daily bars returned for CRCL (US) via provider_route='yahoo_finance' between 20260507 and 20260706.",
+          "status": "superseded",
+          "reason": "later bar-derived signal evidence exists for this recommendation"
+        },
+        {
+          "message": "No daily bars returned for CRCL (US) via provider_route='yahoo_finance' between 20260308 and 20260706.",
+          "status": "superseded",
+          "reason": "later bar-derived signal evidence exists for this recommendation"
+        }
+      ],
+      "data_availability": {
+        "bars_available": true,
+        "bars_used_count": null,
+        "signals_with_data": [
+          "signal:sig_20260706_US_CRCL_trend_ma_alignment",
+          "signal:sig_20260706_US_CRCL_relative_strength_vs_index",
+          "signal:sig_20260706_US_CRCL_volume_expansion",
+          "signal:sig_20260706_US_CRCL_risk_volatility_drawdown"
+        ],
+        "signals_with_numeric_values": [
+          "trend_ma_alignment",
+          "relative_strength_vs_index",
+          "volume_expansion",
+          "risk_volatility_drawdown"
+        ],
+        "signals_missing": [
+          "fundamental_signal",
+          "sector_signal"
+        ],
+        "note": "bars_used_count is null because raw bar count is not stored in current recommendation records"
+      },
+      "risk_veto_details": {
+        "risk_veto_triggered": true,
+        "risk_flags": [
+          "high_volatility",
+          "liquidity_not_ok",
+          "liquidity_risk",
+          "poor_entry_location_downtrend",
+          "relative_weakness_vs_index",
+          "severe_drawdown",
+          "trend_down"
+        ],
+        "source_signal_ids": [
+          "signal:sig_20260706_US_CRCL_risk_volatility_drawdown"
+        ],
+        "metrics": {
+          "volatility": 0.0618692952369419,
+          "max_drawdown": -0.3157720329521754,
+          "latest_volume": 17683500.0,
+          "avg_volume": 14283960.0,
+          "avg_dollar_volume": null,
+          "recent_return": -0.060892238928562874,
+          "symbol_return_5d": -0.060892238928562874,
+          "index_return_5d": 0.017091426015420616,
+          "relative_strength_5d": -0.07798366494398348
+        },
+        "source_signal_values": {
+          "risk_volatility_drawdown": {
+            "volatility": 0.0618692952369419,
+            "max_drawdown": -0.3157720329521754,
+            "flags": [
+              "high_volatility",
+              "severe_drawdown",
+              "liquidity_risk"
+            ]
+          },
+          "volume_expansion": {
+            "latest_vol": 17683500.0,
+            "avg_vol": 14283960.0,
+            "state": "expansion"
+          },
+          "trend_ma_alignment": {
+            "ma20": 76.59549980163574,
+            "ma60": 96.5538330078125,
+            "recent_return": -0.060892238928562874,
+            "direction": "downtrend"
+          },
+          "relative_strength_vs_index": {
+            "symbol_return": -0.060892238928562874,
+            "index_return": 0.017091426015420616,
+            "relative_strength": -0.07798366494398348,
+            "state": "underperforming"
+          }
+        },
+        "metrics_generated_at": "2026-07-09T05:54:57.288964+00:00",
+        "notes": [
+          "Metrics are copied from latest matching Signal.value records.",
+          "avg_dollar_volume is null because price*volume liquidity metric is not recorded yet."
+        ]
+      }
+    },
+    {
+      "recommendation_id": "rec_20260709_pre_market_A_000002.SZ",
+      "record_index": 6,
+      "is_latest_for_recommendation_id": true,
+      "is_latest_for_symbol": true,
+      "date": "2026-07-09",
+      "session": "pre_market",
+      "symbol": "000002.SZ",
+      "name": "万科A",
+      "market": "A",
+      "status": "Exit",
+      "action_label": "exit_position",
+      "confidence": 0.25,
+      "decision_summary": "support=0, oppose=4, neutral=2, veto=1, risk_veto=True, timing_oppose=True, market_high_risk=True, confidence=0.25 -> Exit.",
+      "support_reasons": [],
+      "oppose_reasons": [
+        "MarketRegimeAgent oppose: Market regime unfavorable: trend=downtrend, liquidity=weak, risk=high. (source_opinion_id=opn_20260709_A_000002.SZ_market_regime)",
+        "TrendAgent oppose: Trend direction=downtrend, relative strength weak=False. (source_opinion_id=opn_20260709_A_000002.SZ_trend)",
+        "CapitalFlowAgent oppose: Volume contraction relative to its own average — weak capital-flow pattern. (source_opinion_id=opn_20260709_A_000002.SZ_capital_flow)",
+        "TimingAgent oppose: Timing unfavorable: direction=downtrend, overextended=False. (source_opinion_id=opn_20260709_A_000002.SZ_timing)",
+        "RiskAgent veto: Unacceptable risk detected: liquidity_risk, liquidity_not_ok. (source_opinion_id=opn_20260709_A_000002.SZ_risk)",
+        "Missing data across experts: fundamental_signal, sector_signal (traced from opn_20260709_A_000002.SZ_fundamental, opn_20260709_A_000002.SZ_sector)."
+      ],
+      "risks": [
+        "liquidity_not_ok",
+        "liquidity_risk",
+        "market_liquidity=weak",
+        "market_risk=high",
+        "market_trend=downtrend",
+        "poor_entry_location_downtrend",
+        "trend_down",
+        "volume_contraction"
+      ],
+      "invalidation_conditions": [
+        "TrendAgent stance reverses from 'oppose' (source_opinion_id=opn_20260709_A_000002.SZ_trend).",
+        "Market regime for A deteriorates to downtrend/high risk (market_snapshot_id=mkt_20260709_A_pre_market)."
+      ],
+      "why_not_action": "risk_veto_triggered",
+      "decision_record": {
+        "decision_id": "dec_20260709_pre_market_A_000002.SZ",
+        "risk_veto_triggered": true,
+        "risk_veto_reason": null,
+        "support_count": 0,
+        "oppose_count": 4,
+        "neutral_count": 2,
+        "veto_count": 1
+      },
+      "expert_opinions": [
+        {
+          "expert_name": "MarketRegimeAgent",
+          "stance": "oppose",
+          "confidence": 0.65,
+          "summary": "Market regime unfavorable: trend=downtrend, liquidity=weak, risk=high.",
+          "evidence": [
+            "market_snapshot:mkt_20260709_A_pre_market",
+            "trend_state=downtrend",
+            "liquidity_state=weak",
+            "risk_level=high"
+          ],
+          "risks": [
+            "market_trend=downtrend",
+            "market_liquidity=weak",
+            "market_risk=high"
+          ],
+          "missing_data": []
+        },
+        {
+          "expert_name": "TrendAgent",
+          "stance": "oppose",
+          "confidence": 0.6,
+          "summary": "Trend direction=downtrend, relative strength weak=False.",
+          "evidence": [
+            "signal:sig_20260709_A_000002.SZ_trend_ma_alignment",
+            "signal:sig_20260709_A_000002.SZ_relative_strength_vs_index"
+          ],
+          "risks": [
+            "trend_down"
+          ],
+          "missing_data": []
+        },
+        {
+          "expert_name": "FundamentalAgent",
+          "stance": "neutral",
+          "confidence": 0.4,
+          "summary": "No usable fundamental data for this candidate.",
+          "evidence": [],
+          "risks": [],
+          "missing_data": [
+            "fundamental_signal"
+          ]
+        },
+        {
+          "expert_name": "CapitalFlowAgent",
+          "stance": "oppose",
+          "confidence": 0.5,
+          "summary": "Volume contraction relative to its own average — weak capital-flow pattern.",
+          "evidence": [
+            "signal:sig_20260709_A_000002.SZ_volume_expansion"
+          ],
+          "risks": [
+            "volume_contraction"
+          ],
+          "missing_data": []
+        },
+        {
+          "expert_name": "SectorAgent",
+          "stance": "neutral",
+          "confidence": 0.4,
+          "summary": "No sector classification/rotation data available for this candidate.",
+          "evidence": [],
+          "risks": [],
+          "missing_data": [
+            "sector_signal"
+          ]
+        },
+        {
+          "expert_name": "TimingAgent",
+          "stance": "oppose",
+          "confidence": 0.5,
+          "summary": "Timing unfavorable: direction=downtrend, overextended=False.",
+          "evidence": [
+            "signal:sig_20260709_A_000002.SZ_trend_ma_alignment",
+            "signal:sig_20260709_A_000002.SZ_volume_expansion"
+          ],
+          "risks": [
+            "poor_entry_location_downtrend"
+          ],
+          "missing_data": []
+        },
+        {
+          "expert_name": "RiskAgent",
+          "stance": "veto",
+          "confidence": 0.75,
+          "summary": "Unacceptable risk detected: liquidity_risk, liquidity_not_ok.",
+          "evidence": [
+            "signal:sig_20260709_A_000002.SZ_risk_volatility_drawdown"
+          ],
+          "risks": [
+            "liquidity_risk",
+            "liquidity_not_ok"
+          ],
+          "missing_data": []
+        }
+      ],
+      "data_quality_notes": [],
+      "historical_or_superseded_data_quality_notes": [],
+      "data_availability": {
+        "bars_available": true,
+        "bars_used_count": null,
+        "signals_with_data": [
+          "signal:sig_20260709_A_000002.SZ_trend_ma_alignment",
+          "signal:sig_20260709_A_000002.SZ_relative_strength_vs_index",
+          "signal:sig_20260709_A_000002.SZ_volume_expansion",
+          "signal:sig_20260709_A_000002.SZ_risk_volatility_drawdown"
+        ],
+        "signals_with_numeric_values": [
+          "trend_ma_alignment",
+          "relative_strength_vs_index",
+          "volume_expansion",
+          "risk_volatility_drawdown"
+        ],
+        "signals_missing": [
+          "fundamental_signal",
+          "sector_signal"
+        ],
+        "note": "bars_used_count is null because raw bar count is not stored in current recommendation records"
+      },
+      "risk_veto_details": {
+        "risk_veto_triggered": true,
+        "risk_flags": [
+          "liquidity_not_ok",
+          "liquidity_risk",
+          "market_liquidity=weak",
+          "market_risk=high",
+          "market_trend=downtrend",
+          "poor_entry_location_downtrend",
+          "trend_down",
+          "volume_contraction"
+        ],
+        "source_signal_ids": [
+          "signal:sig_20260709_A_000002.SZ_risk_volatility_drawdown"
+        ],
+        "metrics": {
+          "volatility": 0.01874005368127791,
+          "max_drawdown": -0.06645569620253163,
+          "latest_volume": 882884.37,
+          "avg_volume": 1376865.655,
+          "avg_dollar_volume": null,
+          "recent_return": -0.025974025974025997,
+          "symbol_return_5d": -0.025974025974025997,
+          "index_return_5d": -0.04102529366286864,
+          "relative_strength_5d": 0.015051267688842643
+        },
+        "source_signal_values": {
+          "risk_volatility_drawdown": {
+            "volatility": 0.01874005368127791,
+            "max_drawdown": -0.06645569620253163,
+            "flags": [
+              "liquidity_risk"
+            ]
+          },
+          "volume_expansion": {
+            "latest_vol": 882884.37,
+            "avg_vol": 1376865.655,
+            "state": "contraction"
+          },
+          "trend_ma_alignment": {
+            "ma20": 3.06,
+            "ma60": 3.4851666666666663,
+            "recent_return": -0.025974025974025997,
+            "direction": "downtrend"
+          },
+          "relative_strength_vs_index": {
+            "symbol_return": -0.025974025974025997,
+            "index_return": -0.04102529366286864,
+            "relative_strength": 0.015051267688842643,
+            "state": "outperforming"
+          }
+        },
+        "metrics_generated_at": "2026-07-09T05:54:57.288989+00:00",
+        "notes": [
+          "Metrics are copied from latest matching Signal.value records.",
+          "avg_dollar_volume is null because price*volume liquidity metric is not recorded yet."
+        ]
+      }
+    }
+  ]
+}

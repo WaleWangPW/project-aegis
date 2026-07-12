@@ -1,0 +1,51 @@
+{
+  "project": "Project Aegis",
+  "type": "p22_2_backtest_dry_run_filemode",
+  "generated_at": "2026-07-10T14:32:50",
+  "overall_success": true,
+  "command_results": [
+    {
+      "command": "make validate-a-share-strategy-definition",
+      "exit_code": 0,
+      "stdout_tail": ".venv/bin/python scripts/validate_a_share_strategy_definition.py\nSTRATEGY_DEFINITION_VERDICT_JSON\n{\n  \"project\": \"Project Aegis\",\n  \"type\": \"strategy_definition_validation\",\n  \"validated_at\": \"2026-07-10T14:32:47.559215+08:00\",\n  \"strict_mode\": true,\n  \"checks\": {\n    \"strategy_json_exists\": {\n      \"passed\": true\n    },\n    \"strategy_md_exists\": {\n      \"passed\": true\n    },\n    \"input_schema_exists\": {\n      \"passed\": true\n    },\n    \"output_schema_exists\": {\n      \"passed\": true\n    },\n    \"strategy_json_parseable\": {\n      \"passed\": true\n    },\n    \"input_schema_parseable\": {\n      \"passed\": true\n    },\n    \"output_schema_parseable\": {\n      \"passed\": true\n    },\n    \"strategy_id_valid\": {\n      \"passed\": true,\n      \"value\": \"a_share_watchlist_v1\"\n    },\n    \"top_n_20\": {\n      \"passed\": true,\n      \"value\": 20\n    },\n    \"canonical_top5_matches_p19_10\": {\n      \"passed\": true,\n      \"value\": [\n        \"600519.SH\",\n        \"600036.SH\",\n        \"000858.SZ\",\n        \"000001.SZ\",\n        \"601398.SH\"\n      ]\n    },\n    \"safety_boundaries_present\": {\n      \"passed\": true,\n      \"value\": [\n        \"no_real_trade\",\n        \"no_order_api\",\n        \"no_webhook_send\",\n        \"no_secret_output\"\n      ]\n    },\n    \"backtest_not_included_true\": {\n      \"passed\": true,\n      \"value\": true\n    },\n    \"allow_short_false\": {\n      \"passed\": true,\n      \"value\": false\n    },\n    \"allow_real_trade_false\": {\n      \"passed\": true,\n      \"value\": false\n    },\n    \"output_dry_run_true\": {\n      \"passed\": true,\n      \"value\": true\n    },\n    \"output_sent_false\": {\n      \"passed\": true,\n      \"value\": false\n    },\n    \"output_trading_called_false\": {\n      \"passed\": true,\n      \"value\": false\n    },\n    \"no_secret_value_detected\": {\n      \"passed\": true,\n      \"value\": []\n    }\n  },\n  \"failures\": [],\n  \"overall_verdict\": \"PASS\"\n}\nEND_STRATEGY_DEFINITION_VERDICT_JSON\n",
+      "stderr_tail": ""
+    },
+    {
+      "command": "make run-a-share-backtest-dry-run",
+      "exit_code": 0,
+      "stdout_tail": ".venv/bin/python scripts/run_a_share_backtest_dry_run.py\n",
+      "stderr_tail": ""
+    },
+    {
+      "command": "make validate-a-share-backtest-dry-run",
+      "exit_code": 0,
+      "stdout_tail": ".venv/bin/python scripts/validate_a_share_backtest_dry_run.py\nBACKTEST_DRY_RUN_VERDICT_JSON\n{\n  \"project\": \"Project Aegis\",\n  \"type\": \"backtest_dry_run_validation\",\n  \"validated_at\": \"2026-07-10T14:32:50.400498+08:00\",\n  \"strict_mode\": true,\n  \"checks\": {\n    \"backtest_json_exists\": {\n      \"passed\": true\n    },\n    \"backtest_md_exists\": {\n      \"passed\": true\n    },\n    \"input_json_exists\": {\n      \"passed\": true\n    },\n    \"backtest_json_parseable\": {\n      \"passed\": true\n    },\n    \"strategy_id_valid\": {\n      \"passed\": true,\n      \"value\": \"a_share_watchlist_v1\"\n    },\n    \"dry_run_true\": {\n      \"passed\": true,\n      \"value\": true\n    },\n    \"sent_false\": {\n      \"passed\": true,\n      \"value\": false\n    },\n    \"trading_called_false\": {\n      \"passed\": true,\n      \"value\": false\n    },\n    \"allow_real_trade_false\": {\n      \"passed\": true,\n      \"value\": false\n    },\n    \"allow_short_false\": {\n      \"passed\": true,\n      \"value\": false\n    },\n    \"static_snapshot_backtest_true\": {\n      \"passed\": true,\n      \"value\": true\n    },\n    \"lookahead_bias_warning_true\": {\n      \"passed\": true,\n      \"value\": true\n    },\n    \"selected_symbols_count_gte_5\": {\n      \"passed\": true,\n      \"value\": 20\n    },\n    \"valid_price_series_count_gte_5\": {\n      \"passed\": true,\n      \"value\": 20\n    },\n    \"portfolio_metrics_present\": {\n      \"passed\": true\n    },\n    \"no_secret_value_detected\": {\n      \"passed\": true,\n      \"value\": []\n    },\n    \"no_real_trade_call_detected\": {\n      \"passed\": true\n    }\n  },\n  \"failures\": [],\n  \"overall_verdict\": \"PASS\"\n}\nEND_BACKTEST_DRY_RUN_VERDICT_JSON\n",
+      "stderr_tail": ""
+    },
+    {
+      "command": "make validate-aegis-health-status",
+      "exit_code": 0,
+      "stdout_tail": ".venv/bin/python scripts/validate_aegis_health_status.py --strict\n[validate_aegis_health_status] starting …\nHEALTH_STATUS_VERDICT_JSON\n{\n  \"project\": \"Project Aegis\",\n  \"type\": \"health_status_validation\",\n  \"validated_at\": \"2026-07-10T11:39:00.000000+08:00\",\n  \"strict_mode\": true,\n  \"checks\": {\n    \"health_json_exists\": {\n      \"passed\": true\n    },\n    \"health_md_exists\": {\n      \"passed\": true\n    },\n    \"health_json_parseable\": {\n      \"passed\": true\n    },\n    \"health_status_valid\": {\n      \"passed\": true\n    },\n    \"current_should_be_normal\": {\n      \"passed\": true\n    },\n    \"sent_is_false\": {\n      \"passed\": true\n    },\n    \"webhook_not_called\": {\n      \"passed\": true\n    },\n    \"trading_not_called\": {\n      \"passed\": true\n    },\n    \"a_share_top5_count_5\": {\n      \"passed\": true\n    },\n    \"no_secrets_found\": {\n      \"passed\": true\n    }\n  },\n  \"failures\": [],\n  \"overall_verdict\": \"PASS\"\n}\nEND_HEALTH_STATUS_VERDICT_JSON\n",
+      "stderr_tail": ""
+    },
+    {
+      "command": "make verify-aegis-evidence-gate",
+      "exit_code": 0,
+      "stdout_tail": "      \"match\": true\n        },\n        \"feishu_daily_digest_dry_run.md\": {\n          \"available\": true,\n          \"python\": \"5190d9070369\",\n          \"shasum\": \"5190d9070369\",\n          \"match\": true\n        },\n        \"aegis_daily_digest_pipeline_latest.json\": {\n          \"available\": true,\n          \"python\": \"133fa7e7858e\",\n          \"shasum\": \"133fa7e7858e\",\n          \"match\": true\n        },\n        \"dashboard/index.html\": {\n          \"available\": true,\n          \"python\": \"e19f054a5045\",\n          \"shasum\": \"e19f054a5045\",\n          \"match\": true\n        }\n      }\n    },\n    \"K_md_hash_format\": {\n      \"passed\": true,\n      \"issues\": []\n    },\n    \"L_doc_duplicate_sections\": {\n      \"passed\": true,\n      \"issues\": []\n    },\n    \"N_history_json_exists\": {\n      \"passed\": true\n    },\n    \"N_history_json_parseable\": {\n      \"passed\": true\n    },\n    \"N_history_runs_count_between_1_and_7\": {\n      \"passed\": true,\n      \"count\": 7\n    },\n    \"N_history_latest_gate_pass\": {\n      \"passed\": true,\n      \"value\": \"PASS\"\n    },\n    \"N_history_latest_feishu_safety_flags_valid\": {\n      \"passed\": true,\n      \"details\": {\n        \"dry_run\": true,\n        \"sent\": false,\n        \"webhook_called\": false,\n        \"trading_called\": false\n      }\n    },\n    \"N_history_hash_values_hex_12\": {\n      \"passed\": true,\n      \"issues\": []\n    },\n    \"N_history_no_known_fake_hash\": {\n      \"passed\": true,\n      \"fake_found\": []\n    },\n    \"N_history_latest_snapshot_exists\": {\n      \"passed\": true,\n      \"path\": \"run_20260710_123016_history_entry.json\"\n    },\n    \"N_dashboard_history_section_present\": {\n      \"passed\": true\n    },\n    \"N_dashboard_history_fetch_present\": {\n      \"passed\": true\n    },\n    \"N_dashboard_history_degrade_present\": {\n      \"passed\": true,\n      \"has_missing_degrade\": true,\n      \"has_invalid_degrade\": true\n    },\n    \"M_feishu_hk_symbol\": {\n      \"passed\": true,\n      \"issues\": []\n    }\n  },\n  \"failures\": [],\n  \"overall_verdict\": \"PASS\"\n}\nEND_GATE_VERDICT_JSON\n",
+      "stderr_tail": "\n[evidence_gate] JSON → /Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/aegis_evidence_gate_latest.json\n[evidence_gate] MD   → /Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/aegis_evidence_gate_latest.md\n"
+    }
+  ],
+  "file_status": {
+    "backtest_json": true,
+    "backtest_md": true,
+    "input_json": true,
+    "validation_json": true
+  },
+  "safety": {
+    "dry_run": true,
+    "sent": false,
+    "webhook_called": false,
+    "trading_called": false,
+    "cron_modified": false
+  }
+}

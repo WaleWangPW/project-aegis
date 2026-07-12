@@ -1,0 +1,457 @@
+{
+  "type": "aegis_strategy_sandbox_validation",
+  "status": "PASS",
+  "generated_at": "2026-07-12T14:11:29+08:00",
+  "run_id": "aegis_strategy_sandbox_validation_20260712T061129Z",
+  "summary": {
+    "candidate_count": 13,
+    "proxy_validated_count": 2,
+    "pending_case_count": 11,
+    "direct_candidate_backtest_count": 0,
+    "point_in_time_backtest_available": true,
+    "lookahead_bias_control_passed": true,
+    "user_facing_suggestion_allowed": false,
+    "next_stage": "strategy-specific historical case assembly"
+  },
+  "items": [
+    {
+      "symbol": "603893",
+      "name": "瑞芯微",
+      "market": "A",
+      "score": 60,
+      "matched_strategy_ids": [
+        "qvm",
+        "low_vol_momentum",
+        "a_share_short_momentum",
+        "growth_breakout"
+      ],
+      "coverage_tier": "point_in_time_proxy",
+      "strategy_validation_status": "proxy_validated_needs_candidate_specific_cases",
+      "confidence": "medium_low",
+      "evidence_refs": [
+        "strategy_input:aegis_strategy_validation_input_latest.json:5ffc14d085cf98a12e80a4ffa7463bc0aaf6ec15cde04d916268e61359e847c4",
+        "a_share_point_in_time_rolling_backtest:a_share_point_in_time_rolling_backtest_latest.json:d0421469ac461859f0cd3349b4da6316919782c4216f08dc231c00990cf0a9ee"
+      ],
+      "notes": [
+        "A股已有按历史时点取数的滚动回测，可作为策略族代理证据。"
+      ],
+      "blockers": [
+        "尚未为当前单只候选生成逐标的 point-in-time 历史 case。"
+      ],
+      "user_facing_suggestion_allowed": false,
+      "simulation_research_only": true,
+      "real_trade_allowed": false
+    },
+    {
+      "symbol": "300059",
+      "name": "东方财富",
+      "market": "A",
+      "score": 33,
+      "matched_strategy_ids": [
+        "qvm",
+        "low_vol_momentum",
+        "a_share_short_momentum"
+      ],
+      "coverage_tier": "point_in_time_proxy",
+      "strategy_validation_status": "proxy_validated_needs_candidate_specific_cases",
+      "confidence": "medium_low",
+      "evidence_refs": [
+        "strategy_input:aegis_strategy_validation_input_latest.json:5ffc14d085cf98a12e80a4ffa7463bc0aaf6ec15cde04d916268e61359e847c4",
+        "a_share_point_in_time_rolling_backtest:a_share_point_in_time_rolling_backtest_latest.json:d0421469ac461859f0cd3349b4da6316919782c4216f08dc231c00990cf0a9ee"
+      ],
+      "notes": [
+        "A股已有按历史时点取数的滚动回测，可作为策略族代理证据。"
+      ],
+      "blockers": [
+        "尚未为当前单只候选生成逐标的 point-in-time 历史 case。"
+      ],
+      "user_facing_suggestion_allowed": false,
+      "simulation_research_only": true,
+      "real_trade_allowed": false
+    },
+    {
+      "symbol": "VRTX",
+      "name": "Vertex Pharmaceuticals Incorporated",
+      "market": "US",
+      "score": 25,
+      "matched_strategy_ids": [
+        "low_vol_momentum",
+        "growth_breakout"
+      ],
+      "coverage_tier": "needs_case_assembly",
+      "strategy_validation_status": "pending_h_us_history_case_assembly",
+      "confidence": "low",
+      "evidence_refs": [
+        "strategy_input:aegis_strategy_validation_input_latest.json:5ffc14d085cf98a12e80a4ffa7463bc0aaf6ec15cde04d916268e61359e847c4",
+        "legacy_refreshed_candidate_sandbox:v2_14_c_refreshed_candidate_historical_sandbox_latest.json:a0f866be5959c510534626bfffe1559d7f982227eb325fad293dd8e367871376"
+      ],
+      "notes": [
+        "H/US 当前具备候选和资讯层，但仍需补逐标的历史沙盘。"
+      ],
+      "blockers": [
+        "缺少当前候选对应的 H/US point-in-time 历史 case。"
+      ],
+      "user_facing_suggestion_allowed": false,
+      "simulation_research_only": true,
+      "real_trade_allowed": false
+    },
+    {
+      "symbol": "AMAT",
+      "name": "Applied Materials, Inc.",
+      "market": "US",
+      "score": 20,
+      "matched_strategy_ids": [
+        "low_vol_momentum",
+        "growth_breakout"
+      ],
+      "coverage_tier": "needs_case_assembly",
+      "strategy_validation_status": "pending_h_us_history_case_assembly",
+      "confidence": "low",
+      "evidence_refs": [
+        "strategy_input:aegis_strategy_validation_input_latest.json:5ffc14d085cf98a12e80a4ffa7463bc0aaf6ec15cde04d916268e61359e847c4",
+        "legacy_refreshed_candidate_sandbox:v2_14_c_refreshed_candidate_historical_sandbox_latest.json:a0f866be5959c510534626bfffe1559d7f982227eb325fad293dd8e367871376"
+      ],
+      "notes": [
+        "H/US 当前具备候选和资讯层，但仍需补逐标的历史沙盘。"
+      ],
+      "blockers": [
+        "缺少当前候选对应的 H/US point-in-time 历史 case。"
+      ],
+      "user_facing_suggestion_allowed": false,
+      "simulation_research_only": true,
+      "real_trade_allowed": false
+    },
+    {
+      "symbol": "00005",
+      "name": "汇丰控股",
+      "market": "HK",
+      "score": 18,
+      "matched_strategy_ids": [
+        "low_vol_momentum"
+      ],
+      "coverage_tier": "needs_case_assembly",
+      "strategy_validation_status": "pending_h_us_history_case_assembly",
+      "confidence": "low",
+      "evidence_refs": [
+        "strategy_input:aegis_strategy_validation_input_latest.json:5ffc14d085cf98a12e80a4ffa7463bc0aaf6ec15cde04d916268e61359e847c4",
+        "legacy_refreshed_candidate_sandbox:v2_14_c_refreshed_candidate_historical_sandbox_latest.json:a0f866be5959c510534626bfffe1559d7f982227eb325fad293dd8e367871376"
+      ],
+      "notes": [
+        "H/US 当前具备候选和资讯层，但仍需补逐标的历史沙盘。"
+      ],
+      "blockers": [
+        "缺少当前候选对应的 H/US point-in-time 历史 case。"
+      ],
+      "user_facing_suggestion_allowed": false,
+      "simulation_research_only": true,
+      "real_trade_allowed": false
+    },
+    {
+      "symbol": "OKTA",
+      "name": "Okta, Inc.",
+      "market": "US",
+      "score": 10,
+      "matched_strategy_ids": [
+        "low_vol_momentum",
+        "growth_breakout"
+      ],
+      "coverage_tier": "needs_case_assembly",
+      "strategy_validation_status": "pending_h_us_history_case_assembly",
+      "confidence": "low",
+      "evidence_refs": [
+        "strategy_input:aegis_strategy_validation_input_latest.json:5ffc14d085cf98a12e80a4ffa7463bc0aaf6ec15cde04d916268e61359e847c4",
+        "legacy_refreshed_candidate_sandbox:v2_14_c_refreshed_candidate_historical_sandbox_latest.json:a0f866be5959c510534626bfffe1559d7f982227eb325fad293dd8e367871376"
+      ],
+      "notes": [
+        "H/US 当前具备候选和资讯层，但仍需补逐标的历史沙盘。"
+      ],
+      "blockers": [
+        "缺少当前候选对应的 H/US point-in-time 历史 case。"
+      ],
+      "user_facing_suggestion_allowed": false,
+      "simulation_research_only": true,
+      "real_trade_allowed": false
+    },
+    {
+      "symbol": "MRNA",
+      "name": "Moderna, Inc.",
+      "market": "US",
+      "score": 10,
+      "matched_strategy_ids": [
+        "low_vol_momentum",
+        "growth_breakout"
+      ],
+      "coverage_tier": "needs_case_assembly",
+      "strategy_validation_status": "pending_h_us_history_case_assembly",
+      "confidence": "low",
+      "evidence_refs": [
+        "strategy_input:aegis_strategy_validation_input_latest.json:5ffc14d085cf98a12e80a4ffa7463bc0aaf6ec15cde04d916268e61359e847c4",
+        "legacy_refreshed_candidate_sandbox:v2_14_c_refreshed_candidate_historical_sandbox_latest.json:a0f866be5959c510534626bfffe1559d7f982227eb325fad293dd8e367871376"
+      ],
+      "notes": [
+        "H/US 当前具备候选和资讯层，但仍需补逐标的历史沙盘。"
+      ],
+      "blockers": [
+        "缺少当前候选对应的 H/US point-in-time 历史 case。"
+      ],
+      "user_facing_suggestion_allowed": false,
+      "simulation_research_only": true,
+      "real_trade_allowed": false
+    },
+    {
+      "symbol": "HOOD",
+      "name": "Robinhood Markets, Inc.",
+      "market": "US",
+      "score": 10,
+      "matched_strategy_ids": [
+        "low_vol_momentum"
+      ],
+      "coverage_tier": "needs_case_assembly",
+      "strategy_validation_status": "pending_h_us_history_case_assembly",
+      "confidence": "low",
+      "evidence_refs": [
+        "strategy_input:aegis_strategy_validation_input_latest.json:5ffc14d085cf98a12e80a4ffa7463bc0aaf6ec15cde04d916268e61359e847c4",
+        "legacy_refreshed_candidate_sandbox:v2_14_c_refreshed_candidate_historical_sandbox_latest.json:a0f866be5959c510534626bfffe1559d7f982227eb325fad293dd8e367871376"
+      ],
+      "notes": [
+        "H/US 当前具备候选和资讯层，但仍需补逐标的历史沙盘。"
+      ],
+      "blockers": [
+        "缺少当前候选对应的 H/US point-in-time 历史 case。"
+      ],
+      "user_facing_suggestion_allowed": false,
+      "simulation_research_only": true,
+      "real_trade_allowed": false
+    },
+    {
+      "symbol": "PANW",
+      "name": "Palo Alto Networks, Inc.",
+      "market": "US",
+      "score": 10,
+      "matched_strategy_ids": [
+        "low_vol_momentum",
+        "growth_breakout"
+      ],
+      "coverage_tier": "needs_case_assembly",
+      "strategy_validation_status": "pending_h_us_history_case_assembly",
+      "confidence": "low",
+      "evidence_refs": [
+        "strategy_input:aegis_strategy_validation_input_latest.json:5ffc14d085cf98a12e80a4ffa7463bc0aaf6ec15cde04d916268e61359e847c4",
+        "legacy_refreshed_candidate_sandbox:v2_14_c_refreshed_candidate_historical_sandbox_latest.json:a0f866be5959c510534626bfffe1559d7f982227eb325fad293dd8e367871376"
+      ],
+      "notes": [
+        "H/US 当前具备候选和资讯层，但仍需补逐标的历史沙盘。"
+      ],
+      "blockers": [
+        "缺少当前候选对应的 H/US point-in-time 历史 case。"
+      ],
+      "user_facing_suggestion_allowed": false,
+      "simulation_research_only": true,
+      "real_trade_allowed": false
+    },
+    {
+      "symbol": "KLAC",
+      "name": "KLA Corporation",
+      "market": "US",
+      "score": 10,
+      "matched_strategy_ids": [
+        "low_vol_momentum",
+        "growth_breakout"
+      ],
+      "coverage_tier": "needs_case_assembly",
+      "strategy_validation_status": "pending_h_us_history_case_assembly",
+      "confidence": "low",
+      "evidence_refs": [
+        "strategy_input:aegis_strategy_validation_input_latest.json:5ffc14d085cf98a12e80a4ffa7463bc0aaf6ec15cde04d916268e61359e847c4",
+        "legacy_refreshed_candidate_sandbox:v2_14_c_refreshed_candidate_historical_sandbox_latest.json:a0f866be5959c510534626bfffe1559d7f982227eb325fad293dd8e367871376"
+      ],
+      "notes": [
+        "H/US 当前具备候选和资讯层，但仍需补逐标的历史沙盘。"
+      ],
+      "blockers": [
+        "缺少当前候选对应的 H/US point-in-time 历史 case。"
+      ],
+      "user_facing_suggestion_allowed": false,
+      "simulation_research_only": true,
+      "real_trade_allowed": false
+    },
+    {
+      "symbol": "RBLX",
+      "name": "Roblox Corporation",
+      "market": "US",
+      "score": 10,
+      "matched_strategy_ids": [
+        "low_vol_momentum",
+        "ai_photonics_supply_chain"
+      ],
+      "coverage_tier": "theme_research_only",
+      "strategy_validation_status": "pending_theme_history_case_assembly",
+      "confidence": "low",
+      "evidence_refs": [
+        "strategy_input:aegis_strategy_validation_input_latest.json:5ffc14d085cf98a12e80a4ffa7463bc0aaf6ec15cde04d916268e61359e847c4",
+        "legacy_refreshed_candidate_sandbox:v2_14_c_refreshed_candidate_historical_sandbox_latest.json:a0f866be5959c510534626bfffe1559d7f982227eb325fad293dd8e367871376"
+      ],
+      "notes": [
+        "H/US 当前具备候选和资讯层，但仍需补逐标的历史沙盘。",
+        "AI 光子学主题只能作为研究线索，必须等待主题历史样本和估值过热否决验证。"
+      ],
+      "blockers": [
+        "缺少当前候选对应的 H/US point-in-time 历史 case。",
+        "主题策略未完成历史样本集合。"
+      ],
+      "user_facing_suggestion_allowed": false,
+      "simulation_research_only": true,
+      "real_trade_allowed": false
+    },
+    {
+      "symbol": "BAC",
+      "name": "Bank of America Corporation",
+      "market": "US",
+      "score": 10,
+      "matched_strategy_ids": [
+        "low_vol_momentum"
+      ],
+      "coverage_tier": "needs_case_assembly",
+      "strategy_validation_status": "pending_h_us_history_case_assembly",
+      "confidence": "low",
+      "evidence_refs": [
+        "strategy_input:aegis_strategy_validation_input_latest.json:5ffc14d085cf98a12e80a4ffa7463bc0aaf6ec15cde04d916268e61359e847c4",
+        "legacy_refreshed_candidate_sandbox:v2_14_c_refreshed_candidate_historical_sandbox_latest.json:a0f866be5959c510534626bfffe1559d7f982227eb325fad293dd8e367871376"
+      ],
+      "notes": [
+        "H/US 当前具备候选和资讯层，但仍需补逐标的历史沙盘。"
+      ],
+      "blockers": [
+        "缺少当前候选对应的 H/US point-in-time 历史 case。"
+      ],
+      "user_facing_suggestion_allowed": false,
+      "simulation_research_only": true,
+      "real_trade_allowed": false
+    },
+    {
+      "symbol": "NET",
+      "name": "Cloudflare, Inc.",
+      "market": "US",
+      "score": 10,
+      "matched_strategy_ids": [
+        "low_vol_momentum",
+        "growth_breakout"
+      ],
+      "coverage_tier": "needs_case_assembly",
+      "strategy_validation_status": "pending_h_us_history_case_assembly",
+      "confidence": "low",
+      "evidence_refs": [
+        "strategy_input:aegis_strategy_validation_input_latest.json:5ffc14d085cf98a12e80a4ffa7463bc0aaf6ec15cde04d916268e61359e847c4",
+        "legacy_refreshed_candidate_sandbox:v2_14_c_refreshed_candidate_historical_sandbox_latest.json:a0f866be5959c510534626bfffe1559d7f982227eb325fad293dd8e367871376"
+      ],
+      "notes": [
+        "H/US 当前具备候选和资讯层，但仍需补逐标的历史沙盘。"
+      ],
+      "blockers": [
+        "缺少当前候选对应的 H/US point-in-time 历史 case。"
+      ],
+      "user_facing_suggestion_allowed": false,
+      "simulation_research_only": true,
+      "real_trade_allowed": false
+    }
+  ],
+  "source_reports": {
+    "strategy_validation_input": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/aegis_strategy_validation_input_latest.json",
+    "a_share_point_in_time_rolling_backtest": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/a_share_point_in_time_rolling_backtest_latest.json",
+    "legacy_refreshed_candidate_historical_sandbox": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/v2_14_c_refreshed_candidate_historical_sandbox_latest.json"
+  },
+  "source_hashes": {
+    "strategy_validation_input": "5ffc14d085cf98a12e80a4ffa7463bc0aaf6ec15cde04d916268e61359e847c4",
+    "a_share_point_in_time_rolling_backtest": "d0421469ac461859f0cd3349b4da6316919782c4216f08dc231c00990cf0a9ee",
+    "legacy_refreshed_candidate_historical_sandbox": "a0f866be5959c510534626bfffe1559d7f982227eb325fad293dd8e367871376"
+  },
+  "checks": {
+    "strategy_validation_input_ready": true,
+    "source_hashes_recorded": true,
+    "point_in_time_backtest_referenced": true,
+    "direct_candidate_backtest_not_claimed": true,
+    "user_facing_suggestion_blocked": true,
+    "production_records_unchanged": true,
+    "network_not_used": true,
+    "no_broker_api": true,
+    "no_webhook": true,
+    "no_order_placement": true,
+    "no_position_size": true
+  },
+  "safety": {
+    "simulation_only": true,
+    "research_only": true,
+    "no_broker_api": true,
+    "no_order_placement": true,
+    "no_trading_webhook": true,
+    "no_position_size": true,
+    "no_live_order_signal": true,
+    "real_trade_allowed": false
+  },
+  "production_record_files_before": {
+    "recommendations_jsonl": {
+      "exists": true,
+      "size": 12284,
+      "sha256": "05b2e56c9b547cbe3ce4cb71b7cb776185e23ef2cc3bc9a46a918bce0cfb65dc"
+    },
+    "paper_trades_jsonl": {
+      "exists": false,
+      "size": null,
+      "sha256": null
+    },
+    "reviews_jsonl": {
+      "exists": false,
+      "size": null,
+      "sha256": null
+    },
+    "memory_jsonl": {
+      "exists": false,
+      "size": null,
+      "sha256": null
+    },
+    "investment_memory_jsonl": {
+      "exists": false,
+      "size": null,
+      "sha256": null
+    },
+    "feedback_events_jsonl": {
+      "exists": true,
+      "size": 1977,
+      "sha256": "c468fe43ec7097f129805fb71b6551c2db809213e2e13e9b2f1b2354f53ad65f"
+    }
+  },
+  "production_record_files_after": {
+    "recommendations_jsonl": {
+      "exists": true,
+      "size": 12284,
+      "sha256": "05b2e56c9b547cbe3ce4cb71b7cb776185e23ef2cc3bc9a46a918bce0cfb65dc"
+    },
+    "paper_trades_jsonl": {
+      "exists": false,
+      "size": null,
+      "sha256": null
+    },
+    "reviews_jsonl": {
+      "exists": false,
+      "size": null,
+      "sha256": null
+    },
+    "memory_jsonl": {
+      "exists": false,
+      "size": null,
+      "sha256": null
+    },
+    "investment_memory_jsonl": {
+      "exists": false,
+      "size": null,
+      "sha256": null
+    },
+    "feedback_events_jsonl": {
+      "exists": true,
+      "size": 1977,
+      "sha256": "c468fe43ec7097f129805fb71b6551c2db809213e2e13e9b2f1b2354f53ad65f"
+    }
+  },
+  "errors": [],
+  "run_dir": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/aegis_strategy_sandbox_validation/aegis_strategy_sandbox_validation_20260712T061129Z"
+}

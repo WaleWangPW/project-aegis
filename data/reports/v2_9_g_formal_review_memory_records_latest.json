@@ -1,0 +1,200 @@
+{
+  "overall_status": "PASS",
+  "acceptance_target": "V2.9-G Formal Review/Memory Records From Virtual Trade Candidates",
+  "run_id": "v2_9_g_20260711_acceptance",
+  "generated_at": "2026-07-11T21:39:33.791009+08:00",
+  "command": "validate_v2_9_g_formal_review_memory_records.py --run-id v2_9_g_20260711_acceptance",
+  "network_used": false,
+  "production_records_written": false,
+  "reviews_jsonl_written": false,
+  "memory_jsonl_written": false,
+  "paper_trades_written": false,
+  "recommendations_written": false,
+  "dashboard_contract_changed": false,
+  "summary": {
+    "review_evidence_link_count": 1,
+    "memory_candidate_count": 1,
+    "formal_review_count": 1,
+    "formal_memory_count": 1,
+    "symbols": [
+      "ptr_virtual_pending_entry_packet_paper_intake_packet_fb_watch_001"
+    ]
+  },
+  "formal_reviews": [
+    {
+      "review_id": "rev_virtual_ptr_virtual_pending_entry_packet_paper_intake_packet_fb_watch_001_entry",
+      "recommendation_id": "manual_entry_pending_entry_packet_paper_intake_packet_fb_watch_001",
+      "paper_trade_id": "ptr_virtual_pending_entry_packet_paper_intake_packet_fb_watch_001",
+      "review_date": "2026-07-11",
+      "horizon": "5d",
+      "outcome": "pending",
+      "actual_return": null,
+      "max_drawdown": null,
+      "decision_quality": "unclear",
+      "success_reason": null,
+      "failure_reason": null,
+      "expert_contribution": {
+        "status": "DATA_GAP: no forward-return evidence yet; simulation review is pending.",
+        "source": "V2.9-F virtual trade review evidence link"
+      },
+      "lessons": [
+        "600519.SH（A）已进入 simulation-only virtual PaperTrade 复盘队列；当前尚无 forward return，因此复盘结果保持 pending/unclear。"
+      ],
+      "created_at": "2026-07-11T21:39:33.790812+08:00",
+      "simulation_only": true,
+      "source_review_evidence_link_id": "virtual_trade_review_link_ptr_virtual_pending_entry_packet_paper_intake_packet_fb_watch_001",
+      "evidence_refs": [
+        "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v2_9_e_acceptance/v2_9_e_20260711_acceptance/virtual_paper_trades.json"
+      ],
+      "source_evidence_items": [
+        {
+          "evidence_ref": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v2_9_d_acceptance/v2_9_d_20260711_acceptance/user_entry_evidence/600519_SH_manual_entry.txt",
+          "exists": true,
+          "sha256": "5fcc95501fccee426ece1f9193431d71f16172f94ae1d30a5d74caa38b48324e"
+        }
+      ],
+      "no_return_fabrication": true,
+      "no_review_record_production_mutation": true,
+      "no_real_trade_execution": true,
+      "no_broker_api": true,
+      "no_webhook": true,
+      "no_order_placement": true
+    }
+  ],
+  "formal_memories": [
+    {
+      "memory_id": "mem_virtual_ptr_virtual_pending_entry_packet_paper_intake_packet_fb_watch_001_entry_context",
+      "date": "2026-07-11",
+      "source_type": "simulation_review_candidate",
+      "linked_recommendation_id": "manual_entry_pending_entry_packet_paper_intake_packet_fb_watch_001",
+      "lesson_type": "virtual_trade_entry_context",
+      "lesson": "600519.SH（A）：已从用户验证入场证据创建 simulation-only virtual PaperTrade ledger，入场价 1688.88，入场日 2026-07-11。该记录只能作为后续复盘候选，不能自动改变策略或触发真实交易。 当前记忆仅记录模拟入场上下文，后续收益/回撤需要等待正式复盘证据补齐。",
+      "tags": [
+        "virtual_paper_trade",
+        "simulation_only",
+        "A",
+        "review_pending"
+      ],
+      "confidence": 0.5,
+      "created_at": "2026-07-11T21:39:33.790989+08:00",
+      "simulation_only": true,
+      "source_memory_candidate_id": "virtual_trade_memory_candidate_ptr_virtual_pending_entry_packet_paper_intake_packet_fb_watch_001",
+      "paper_trade_id": "ptr_virtual_pending_entry_packet_paper_intake_packet_fb_watch_001",
+      "source_review_id": "rev_virtual_ptr_virtual_pending_entry_packet_paper_intake_packet_fb_watch_001_entry",
+      "evidence_refs": [
+        "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v2_9_e_acceptance/v2_9_e_20260711_acceptance/virtual_paper_trades.json"
+      ],
+      "source_evidence_items": [
+        {
+          "evidence_ref": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v2_9_d_acceptance/v2_9_d_20260711_acceptance/user_entry_evidence/600519_SH_manual_entry.txt",
+          "exists": true,
+          "sha256": "5fcc95501fccee426ece1f9193431d71f16172f94ae1d30a5d74caa38b48324e"
+        }
+      ],
+      "no_memory_jsonl_production_mutation": true,
+      "no_strategy_mutation": true,
+      "no_real_trade_execution": true,
+      "no_broker_api": true,
+      "no_webhook": true,
+      "no_order_placement": true
+    }
+  ],
+  "checks": {
+    "has_review_evidence_links": true,
+    "has_memory_candidates": true,
+    "formal_reviews_for_each_link": true,
+    "formal_memories_for_each_candidate": true,
+    "all_reviews_pending_without_return_fabrication": true,
+    "all_memories_simulation_only": true,
+    "all_reviews_simulation_only": true,
+    "no_review_record_production_mutation": true,
+    "no_memory_jsonl_production_mutation": true,
+    "no_strategy_mutation": true,
+    "no_real_trade_execution": true,
+    "no_broker_api": true,
+    "no_webhook": true,
+    "no_order_placement": true,
+    "acceptance_target_correct": true,
+    "report_status_pass": true,
+    "production_record_files_unchanged": true,
+    "production_records_not_written": true,
+    "reviews_jsonl_not_written": true,
+    "memory_jsonl_not_written": true,
+    "paper_trades_not_written": true,
+    "recommendations_not_written": true,
+    "dashboard_contract_unchanged": true,
+    "network_not_used": true
+  },
+  "safety": {
+    "simulation_only": true,
+    "production_records_not_written": true,
+    "no_return_fabrication": true,
+    "no_review_record_production_mutation": true,
+    "no_memory_jsonl_production_mutation": true,
+    "no_real_trade_execution": true,
+    "no_broker_api": true,
+    "no_webhook": true,
+    "no_order_placement": true,
+    "no_strategy_mutation": true,
+    "dashboard_contract_unchanged": true
+  },
+  "run_dir": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v2_9_g_acceptance/v2_9_g_20260711_acceptance",
+  "source_review_links_json": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v2_9_f_acceptance/v2_9_f_20260711_acceptance/virtual_trade_review_evidence_links.json",
+  "source_memory_candidates_json": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v2_9_f_acceptance/v2_9_f_20260711_acceptance/virtual_trade_memory_candidates.json",
+  "formal_reviews_json": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v2_9_g_acceptance/v2_9_g_20260711_acceptance/formal_simulation_reviews.json",
+  "formal_reviews_jsonl": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v2_9_g_acceptance/v2_9_g_20260711_acceptance/formal_simulation_reviews.jsonl",
+  "formal_memories_json": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v2_9_g_acceptance/v2_9_g_20260711_acceptance/formal_simulation_memories.json",
+  "formal_memories_jsonl": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v2_9_g_acceptance/v2_9_g_20260711_acceptance/formal_simulation_memories.jsonl",
+  "production_record_files_before": {
+    "reviews_jsonl": {
+      "exists": false,
+      "size": null,
+      "sha256": null
+    },
+    "memory_jsonl": {
+      "exists": false,
+      "size": null,
+      "sha256": null
+    },
+    "investment_memory_jsonl": {
+      "exists": false,
+      "size": null,
+      "sha256": null
+    },
+    "paper_trades_jsonl": {
+      "exists": false,
+      "size": null,
+      "sha256": null
+    }
+  },
+  "production_record_files_after": {
+    "reviews_jsonl": {
+      "exists": false,
+      "size": null,
+      "sha256": null
+    },
+    "memory_jsonl": {
+      "exists": false,
+      "size": null,
+      "sha256": null
+    },
+    "investment_memory_jsonl": {
+      "exists": false,
+      "size": null,
+      "sha256": null
+    },
+    "paper_trades_jsonl": {
+      "exists": false,
+      "size": null,
+      "sha256": null
+    }
+  },
+  "hashes": {
+    "source_review_links_json": "5938b7922a51c254819b211d544ac3bccc7af7b9421327674d795fa2676a79a4",
+    "source_memory_candidates_json": "b7cc9c4efd07b185c68f4a11db74363ee2b676a5895a1d8a54a22e511987fba3",
+    "formal_reviews_json": "02bc900b59542f16ee01556fa754206bf6c8d60aaf942493de034a9aac372c2f",
+    "formal_reviews_jsonl": "0ccf4fd8c0f14800d35c1e4cc21088b902bc8f41ccdae32c360a3252ae17a7a0",
+    "formal_memories_json": "2eaba996797dcf9d6bb49247f6666a71e261f93fca9cb8e63988aee612f52c35",
+    "formal_memories_jsonl": "e9975f05dc6e2942113459ec384c1d1f31bc6518d0139c4e6564895c1dbbf6a3"
+  }
+}

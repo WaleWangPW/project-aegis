@@ -1,0 +1,72 @@
+{
+  "project": "Project Aegis",
+  "type": "backtest_dry_run_validation",
+  "validated_at": "2026-07-12T08:00:31.499803+08:00",
+  "strict_mode": true,
+  "checks": {
+    "backtest_json_exists": {
+      "passed": true
+    },
+    "backtest_md_exists": {
+      "passed": true
+    },
+    "input_json_exists": {
+      "passed": true
+    },
+    "backtest_json_parseable": {
+      "passed": true
+    },
+    "strategy_id_valid": {
+      "passed": true,
+      "value": "a_share_watchlist_v1"
+    },
+    "dry_run_true": {
+      "passed": true,
+      "value": true
+    },
+    "sent_false": {
+      "passed": true,
+      "value": false
+    },
+    "trading_called_false": {
+      "passed": true,
+      "value": false
+    },
+    "allow_real_trade_false": {
+      "passed": true,
+      "value": false
+    },
+    "allow_short_false": {
+      "passed": true,
+      "value": false
+    },
+    "static_snapshot_backtest_true": {
+      "passed": true,
+      "value": true
+    },
+    "lookahead_bias_warning_true": {
+      "passed": true,
+      "value": true
+    },
+    "selected_symbols_count_gte_5": {
+      "passed": true,
+      "value": 20
+    },
+    "valid_price_series_count_gte_5": {
+      "passed": true,
+      "value": 20
+    },
+    "portfolio_metrics_present": {
+      "passed": true
+    },
+    "no_secret_value_detected": {
+      "passed": true,
+      "value": []
+    },
+    "no_real_trade_call_detected": {
+      "passed": true
+    }
+  },
+  "failures": [],
+  "overall_verdict": "PASS"
+}

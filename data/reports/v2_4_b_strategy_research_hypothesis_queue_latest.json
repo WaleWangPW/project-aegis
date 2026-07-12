@@ -1,0 +1,69 @@
+{
+  "overall_status": "PASS",
+  "generated_at": "2026-07-11T18:26:04.041212+08:00",
+  "run_id": "v2_4_b_20260711_acceptance",
+  "command": "validate_v2_4_b_strategy_research_hypothesis_queue.py --run-id v2_4_b_20260711_acceptance",
+  "acceptance_target": "V2.4-B Strategy Research To Sandbox Hypothesis Queue",
+  "network_used": false,
+  "production_records_written": false,
+  "dashboard_contract_changed": false,
+  "run_dir": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v2_4_b_acceptance/v2_4_b_20260711_acceptance",
+  "strategy_sandbox_hypothesis_queue": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v2_4_b_acceptance/v2_4_b_20260711_acceptance/strategy_sandbox_hypothesis_queue.json",
+  "checks": {
+    "hypothesis_count_at_least_6": true,
+    "covers_a_h_us": true,
+    "covers_core_hypothesis_families": true,
+    "all_have_source_research_refs": true,
+    "all_have_metrics": true,
+    "requires_sandbox": true,
+    "not_auto_applied": true,
+    "no_user_facing_suggestion": true,
+    "hypothesis_hashes_written": true,
+    "no_real_trade": true,
+    "no_broker_api": true,
+    "no_trading_webhook": true,
+    "no_strategy_auto_mutation": true,
+    "production_records_not_written": true,
+    "dashboard_contract_unchanged": true
+  },
+  "summary": {
+    "hypothesis_count": 6,
+    "market_coverage": {
+      "A": 2,
+      "H": 2,
+      "US": 2
+    },
+    "strategy_family_coverage": {
+      "dividend": 3,
+      "low_volatility": 4,
+      "momentum": 3,
+      "multi_factor": 3,
+      "quality": 3,
+      "risk_overlay": 3,
+      "value": 4
+    },
+    "hypothesis_ids": [
+      "hyp_a_low_vol_dividend_defensive",
+      "hyp_a_value_quality_multifactor",
+      "hyp_h_smart_beta_multifactor",
+      "hyp_h_low_vol_dividend",
+      "hyp_us_value_quality_momentum",
+      "hyp_us_low_vol_risk_overlay"
+    ],
+    "next_target": "V2.4-C Historical Sandbox Run For Research Hypotheses"
+  },
+  "safety": {
+    "hypothesis_only": true,
+    "requires_sandbox": true,
+    "auto_applied": false,
+    "user_facing_suggestion_allowed": false,
+    "no_real_trade": true,
+    "no_broker_api": true,
+    "no_trading_webhook": true,
+    "no_strategy_auto_mutation": true,
+    "no_production_records_mutation": true
+  },
+  "hashes": {
+    "strategy_sandbox_hypothesis_queue": "90df894a90f7ea37019285a4199022a2f19b9e16f35570f349dc22003f98e6a0"
+  }
+}

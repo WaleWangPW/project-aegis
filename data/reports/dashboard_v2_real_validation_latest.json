@@ -1,0 +1,94 @@
+{
+  "project": "Project Aegis",
+  "type": "dashboard_v2_real_validation",
+  "generated_at": "2026-07-11T01:15:12.515710+00:00",
+  "overall_verdict": "PASS",
+  "checks": [
+    {
+      "name": "v2_files_exist",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "probe_exists_and_counts_real_sources",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "no_prohibited_content",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "no_fixed_backtest_return",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "fetches_use_reports_relative_path",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "no_dashboard_data_reports_path",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "daily_decision_function_exists",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "gate_failure_blocks_action",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "daily_failure_blocks_action",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "risk_exit_precedes_action",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "backtest_metrics_map_real_reports",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "historical_strategy_notice",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "no_trade_controls",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "no_send_or_webhook_calls",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "mobile_media_query",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "degrade_copy_exists",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "index_unchanged_hash_available",
+      "passed": true,
+      "detail": "c046ba871b5fe809762baf281b60475920cb63dd20972bbad536fba7e50b27c4"
+    }
+  ],
+  "dashboard_index_html_sha256": "c046ba871b5fe809762baf281b60475920cb63dd20972bbad536fba7e50b27c4"
+}

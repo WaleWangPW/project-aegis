@@ -1,0 +1,14 @@
+{
+  "project": "Project Aegis",
+  "task": "P23.2",
+  "type": "signal_snapshot_generation",
+  "result": "PASS",
+  "generated_at": "2026-07-10T20:00:55.365720",
+  "components": [
+    "generate_a_share_signal_snapshots",
+    "validate_a_share_signal_snapshots",
+    "validate-p23-1-rolling-backtest-design",
+    "p22-6-full-pipeline",
+    "verify-aegis-evidence-gate"
+  ]
+}

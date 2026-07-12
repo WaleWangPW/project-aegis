@@ -1,0 +1,49 @@
+{
+  "overall_status": "PASS",
+  "generated_at": "2026-07-11T16:56:21.410167+08:00",
+  "run_id": "v2_0_c_20260711_acceptance",
+  "command": "validate_v2_0_c_research_workspace.py --run-id v2_0_c_20260711_acceptance",
+  "acceptance_target": "V2.0-C Research Workspace",
+  "isolated": true,
+  "production_records_written": false,
+  "dashboard_contract_changed": false,
+  "run_dir": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v2_0_c_acceptance/v2_0_c_20260711_acceptance",
+  "workspace_json": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v2_0_c_acceptance/v2_0_c_20260711_acceptance/research_workspace.json",
+  "workspace_md": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v2_0_c_acceptance/v2_0_c_20260711_acceptance/research_workspace.md",
+  "checks": {
+    "per_symbol_workspace": true,
+    "notes_have_evidence": true,
+    "evidence_links_present": true,
+    "verified_evidence_available": true,
+    "llm_unverified_not_accepted": true,
+    "decision_support_accepts_only_verified_links": true,
+    "dashboard_contract_unchanged": true,
+    "no_broker_or_real_trade": true
+  },
+  "summary": {
+    "symbol": "CRCL",
+    "market": "US",
+    "note_count": 1,
+    "evidence_count": 3,
+    "verified_evidence_count": 2,
+    "accepted_for_decision_support": true
+  },
+  "safety": {
+    "read_only": true,
+    "no_real_trade": true,
+    "no_broker_api": true,
+    "no_webhook": true,
+    "no_strategy_mutation": true,
+    "dashboard_contract_unchanged": true,
+    "llm_unverified_not_evidence": true,
+    "manual_external_execution_only": true,
+    "user_submitted_execution_facts_only": true,
+    "no_account_sync": true,
+    "no_auto_rebalance": true,
+    "no_production_records_mutation": true
+  },
+  "hashes": {
+    "workspace_json": "9637ffcff96b80270a3e0666d7a8cd86aa654d112ed73b37a7151280fd2b98ee",
+    "workspace_md": "7e5038a2eabacd8ce8c30564968002736245befae92fd447b3632bd6bc4d8bfc"
+  }
+}

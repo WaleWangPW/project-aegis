@@ -1,0 +1,9 @@
+INVALID
+Reason:
+- generator used random symbols and simulated calendar dates
+- snapshot_count was 3 rather than 6
+- non-trading dates were accepted
+- entry_date and exit_date were missing
+- source hashes were placeholders
+- validator contained unconditional PASS checks
+This marker blocks P23.3 until P23.2 is rebuilt from real data.

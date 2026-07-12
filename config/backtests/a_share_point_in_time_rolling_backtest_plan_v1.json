@@ -1,0 +1,39 @@
+{
+  "plan_id": "a_share_point_in_time_rolling_backtest_v1",
+  "strategy_id": "a_share_historical_liquidity_trend_v1",
+  "market": "A_SHARE",
+  "backtest_type": "point_in_time_rolling_backtest",
+  "static_snapshot_backtest_allowed": false,
+  "point_in_time_required": true,
+  "lookahead_bias_control_required": true,
+  "rebalance_frequency": "monthly",
+  "holding_period_days": 20,
+  "top_n": 20,
+  "benchmark": "000300.SH",
+  "transaction_cost_bps": 10,
+  "slippage_bps": 5,
+  "allow_short": false,
+  "allow_real_trade": false,
+  "dry_run": true,
+  "sent": false,
+  "trading_called": false,
+  "date_semantics": {
+    "signal_date": "选股信号计算日",
+    "data_cutoff_date": "可使用数据截止日，必须 <= signal_date",
+    "rebalance_date": "调仓日，必须 > signal_date",
+    "entry_date": "建仓价格日期，必须 >= rebalance_date",
+    "exit_date": "退出价格日期，必须 > entry_date"
+  },
+  "anti_future_data_rules": {
+    "selection": "must use only data <= data_cutoff_date",
+    "price_return": "uses entry_date to exit_date",
+    "no_current_watchlist": "for past periods",
+    "no_future_data": "no future status, future score, future liquidity",
+    "delisted_handling": "delisted/missing data must be recorded as warning or excluded by rule",
+    "benchmark_use": "uses same entry_date and exit_date window"
+  },
+  "original_display_strategy_id": "a_share_watchlist_v1",
+  "strategy_equivalence_claimed": false,
+  "strategy_semantics_note": "Historical rolling backtest uses a separate point-in-time liquidity/trend research strategy. It does not backtest the current Watchlist file.",
+  "historical_strategy_config": "config/strategies/a_share_historical_liquidity_trend_v1.json"
+}

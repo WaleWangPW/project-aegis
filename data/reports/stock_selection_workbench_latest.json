@@ -1,0 +1,1285 @@
+{
+  "stage": "V2.15-A Stock Selection Workbench",
+  "overall_status": "PASS",
+  "generated_at": "2026-07-12T13:39:33.749793+08:00",
+  "source": "Cached Aegis stock selection workbench; set AEGIS_LIVE_DEEP_SCAN=1 for full live refresh",
+  "summary": {
+    "total_candidates": 30,
+    "research_candidate_count": 13,
+    "high_risk_watch_count": 11,
+    "blocked_count": 6,
+    "markets_passed": [
+      "A",
+      "HK",
+      "US"
+    ],
+    "markets_failed_or_empty": [],
+    "real_trade_allowed": false,
+    "news_enriched_count": 9
+  },
+  "safety": {
+    "simulation_only": true,
+    "no_broker_api": true,
+    "no_order_placement": true,
+    "no_webhook": true,
+    "no_position_size": true
+  },
+  "strategy_blueprints": [
+    {
+      "id": "qvm",
+      "name": "质量 + 价值 + 动量",
+      "use_for": "A/US/HK 通用主筛选",
+      "signals": [
+        "ROE/现金流质量",
+        "估值不过热",
+        "3-12个月动量",
+        "风险过滤"
+      ],
+      "source": "OpenClaw stock-picker + public factor research"
+    },
+    {
+      "id": "low_vol_momentum",
+      "name": "低波动 + 动量",
+      "use_for": "避免只追涨，优先找趋势中但风险可承受的标的",
+      "signals": [
+        "近30日/中期动量",
+        "20日波动率",
+        "最大回撤",
+        "止损距离"
+      ],
+      "source": "Low-volatility / momentum factor literature"
+    },
+    {
+      "id": "a_share_short_momentum",
+      "name": "A股短周期动量 + 质量护栏",
+      "use_for": "适应A股热点轮动快的市场结构",
+      "signals": [
+        "成交额",
+        "短周期动量",
+        "现金流质量",
+        "过热降权"
+      ],
+      "source": "OpenClaw stock-picker A股扫描 + A股因子动量研究"
+    },
+    {
+      "id": "hk_smart_beta",
+      "name": "港股 Smart Beta 六因子",
+      "use_for": "港股候选池恢复后使用",
+      "signals": [
+        "价值",
+        "低波动",
+        "动量",
+        "质量",
+        "股息",
+        "规模"
+      ],
+      "source": "Hong Kong smart beta research"
+    },
+    {
+      "id": "growth_breakout",
+      "name": "成长突破 / CAN SLIM 候选",
+      "use_for": "只作研究候选，不直接给交易动作",
+      "signals": [
+        "增长",
+        "相对强度",
+        "技术突破",
+        "成交量确认"
+      ],
+      "source": "CAN SLIM-style public screening literature"
+    },
+    {
+      "id": "ai_photonics_supply_chain",
+      "name": "AI 光子学供应链瓶颈",
+      "use_for": "参考 Serenity/白毛股神式主题研究，只作线索，不直接推荐",
+      "signals": [
+        "光互连/光子学瓶颈",
+        "上游稀缺环节",
+        "收入放量验证",
+        "估值过热否决"
+      ],
+      "source": "User AI-news archive + public photonics supply-chain research"
+    }
+  ],
+  "public_research_sources": [
+    {
+      "name": "S&P DJI Hong Kong Smart Beta research",
+      "url": "https://www.spglobal.com/spdji/en/documents/research/research-how-smart-beta-strategies-work-in-the-hong-kong-market.pdf",
+      "takeaway": "港股可用 size/value/low volatility/momentum/quality/dividend 等因子，但需要分市场验证。"
+    },
+    {
+      "name": "Tsinghua PBCSF A-share factor momentum paper",
+      "url": "https://cfrc.pbcsf.tsinghua.edu.cn/__local/4/AE/67/89980D797AD790C70C6AD15BEAB_F3C5BFB8_73992.pdf",
+      "takeaway": "A股因子动量有实证价值，但应加风险和情绪状态过滤。"
+    },
+    {
+      "name": "Alpha Architect low-volatility momentum note",
+      "url": "https://alphaarchitect.com/low-volatility-momentum-factor-investing-portfolios/",
+      "takeaway": "动量与低波动组合可降低只追高带来的心理和回撤压力。"
+    },
+    {
+      "name": "QVM public screener description",
+      "url": "https://www.quant-investing.com/blog/quality-value-momentum-the-best-strategy-you-have-never-heard-of",
+      "takeaway": "质量、估值和价格动量可组合成可解释的多因子筛选。"
+    }
+  ],
+  "market_runs": [
+    {
+      "market": "A",
+      "status": "PASS",
+      "scanned_count": 40,
+      "raw_count": 10,
+      "raw_text_excerpt": "🇨🇳 A股选股  2026-07-12  全市场\n扫描 40 只 → 通过基础筛选 4 只\n\n\n1. ✅ 瑞芯微(603893)  ¥208.80  +0.7%  PE=76  1年+37%  得分+60\n   ✦ 毛利率连升3季 | 新增机构调研 | 高管增持 | 主业贡献高(97%) | 📰正面新闻(突破)\n   趋势↑  买点¥179.86 | 止损¥152.88 | 目标¥191.70 | 赔率0.4x\n\n2. ✅ 中国船舶(600150)  ¥37.04  +2.7%  PE=25  1年+19%  得分+53\n   ✦ 毛利率连升3季 | 新增机构调研 | 现金流优质(1.7x) | 主业贡献高(99%) | 📰正面新闻(突破)\n   趋势↓  买点¥35.06 | 止损¥29.80 | 目标¥105.84 | 赔率13.5x\n\n3. ✅ 香农芯创(300475)  ¥271.00  +1.1%  PE=69  1年+661%  得分+41\n   ✦ 毛利率连升3季 | 新增机构调研 | ROE连升3季 | ROE≥15%(31%) | 现金流优质(2.0x) | 主业贡献高(98%) | ⚠一年涨>300%\n   趋势↑  买点¥258.80 | 止损¥219.98 | 目标¥154.80\n\n4. ⬜ 胜宏科技(300476)  ¥272.00  -8.3%  PE=57  1年+105%  得分+38\n   ✦ 新增机构调研 | 高管增持 | 现金流优质(1.6x) | 主业贡献高(98%)\n   ✗ 营收增速不足\n   趋势↓  买点¥318.67 | 止损¥",
+      "logs_excerpt": "_survey 300059: 请指定正确的接口名\n[tushare] insider_trading 300059: 请指定正确的接口名\n[tushare] institution_survey 603893: 请指定正确的接口名\n[tushare] insider_trading 603893: 请指定正确的接口名\n[tushare] institution_survey 600378: 请指定正确的接口名\n[tushare] insider_trading 600378: 请指定正确的接口名\n[tushare] institution_survey 300857: 请指定正确的接口名\n[tushare] insider_trading 300857: 请指定正确的接口名\n[tushare] institution_survey 000657: 请指定正确的接口名\n[tushare] insider_trading 000657: 请指定正确的接口名\n[tushare] institution_survey 002916: 请指定正确的接口名\n[tushare] insider_trading 002916: 请指定正确的接口名\n[tushare] institution_survey 002202: 请指定正确的接口名\n[tushare] insider_trading 002202: 请指定正确的接口名\n[tushare] institution_survey 002709: 请指定正确的接口名\n[tushare] insider_trading 002709: 请指定正确的接口名\n[tushare] institution_survey 002938: 请指定正确的接口名\n[tushare] insider_trading 002938: 请指定正确的接口名\n[选股A] 进度 40/40...\n[news_sentiment] 对 4 只 Top 候选做新闻分析...\n[news_sentiment] 香农芯创(300475): neutral +0\n[news_sentiment] 瑞芯微(603893): positive +20\n[news_sentiment] 中国船舶(600150): positive +20\n[news_sentiment] 东方财富(300059): neutral +0\n[research] 对 4 只 Top 候选做研报分析...\n[research] 瑞芯微(603893): +0分 (0家买入)\n[research] 中国船舶(600150): +0分 (0家买入)\n[research] 香农芯创(300475): +0分 (0家买入)\n[research] 东方财富(300059): +0分 (0家买入)\n"
+    },
+    {
+      "market": "HK",
+      "status": "PASS",
+      "scanned_count": 15,
+      "raw_count": 10,
+      "raw_text_excerpt": "🇭🇰 港股选股 2026-07-12 EODHD扫描 15 只 → 候选 10 只",
+      "logs_excerpt": ""
+    },
+    {
+      "market": "US",
+      "status": "PASS",
+      "scanned_count": 75,
+      "raw_count": 10,
+      "raw_text_excerpt": "🇺🇸 美股选股  2026-07-12\n扫描 75 只 → 得分前 10 只（纯技术面）\n\n\n1. ✅ Vertex Pharmaceuticals Incorporated(VRTX)  $485.39  +0.3%  1年+1%  得分+25\n   ✦ ↑趋势 | 📍近买点\n   ～ 跳过: 财报(US轻量)\n   趋势↑  买点$472.40 | 止损$401.54\n\n2. ✅ Applied Materials, Inc.(AMAT)  $602.50  +1.1%  1年+206%  得分+20\n   ✦ ↑趋势 | 📍近买点 | ⚠一年涨>200%\n   ～ 跳过: 财报(US轻量)\n   趋势↑  买点$596.54 | 止损$507.06\n\n3. ✅ Okta, Inc.(OKTA)  $138.63  +1.5%  1年+47%  得分+10\n   ✦ ↑趋势\n   ～ 跳过: 财报(US轻量)\n   趋势↑  买点$126.23 | 止损$107.30\n\n4. ✅ Moderna, Inc.(MRNA)  $68.27  +1.5%  1年+99%  得分+10\n   ✦ ↑趋势\n   ～ 跳过: 财报(US轻量)\n   趋势↑  买点$64.33 | 止损$54.68\n\n5. ✅ Robinhood Markets, Inc.(HOOD)  $111.97  +1.1%  1年+13%  得分+10\n   ✦ ↑趋势\n   ～ 跳过: 财报(US轻量)\n   趋势↑  买点$102.24 | 止损$86.90\n\n6. ✅ Palo Alto Network",
+      "logs_excerpt": "[选股US] 扫描 75 只美股标的...\n[选股US] 有效标的 75 只\n[选股US] 深度分析 30 只\n"
+    }
+  ],
+  "candidates": [
+    {
+      "symbol": "603893",
+      "name": "瑞芯微",
+      "market": "A",
+      "rank": 1,
+      "price": 208.8,
+      "daily_change_pct": 0.6944,
+      "score": 60,
+      "status": "research_candidate",
+      "status_label": "可研究",
+      "strategy_matches": [
+        "毛利率连升3季",
+        "新增机构调研",
+        "高管增持",
+        "主业贡献高(97%)",
+        "📰正面新闻(突破)"
+      ],
+      "risk_flags": [],
+      "basic_pass": true,
+      "skipped": [],
+      "industry_or_description": "半导体",
+      "buy_point": 179.864,
+      "stop_loss": 152.885,
+      "trend_up": true,
+      "price_1y_pct": 0.3749506124061635,
+      "user_action": "加入模拟研究候选；人工核对实时行情、公告、新闻和持仓冲突后，才允许记录纸面模拟。",
+      "real_trade_allowed": false,
+      "news_status": "NO_NEWS",
+      "news_items": [],
+      "news_summary": "未找到近期公司动态。",
+      "news_logs_excerpt": "[news_search] 搜索失败: https://duckduckgo.com/news.js?l=cn-zh&o=json&noamp=1&q=%E7%91%9E%E8%8A%AF%E5%BE%AE+603893+%E5%85%AC%E5%91%8A+%E8%B4%A2%E6%8A%A5+%E6%96%B0%E9%97%BB+%E6%9C%80%E6%96%B0&vqd=4-159847280666060939100403218739914566954&p=-2 403 Ratelimit\n[]\n"
+    },
+    {
+      "symbol": "300059",
+      "name": "东方财富",
+      "market": "A",
+      "rank": 6,
+      "price": 20.19,
+      "daily_change_pct": -1.9427,
+      "score": 33,
+      "status": "research_candidate",
+      "status_label": "可研究",
+      "strategy_matches": [
+        "毛利率连升3季",
+        "新增机构调研",
+        "现金流优质(8.1x)",
+        "主业贡献高(99%)"
+      ],
+      "risk_flags": [],
+      "basic_pass": true,
+      "skipped": [],
+      "industry_or_description": "证券",
+      "buy_point": 19.746,
+      "stop_loss": 16.784,
+      "trend_up": true,
+      "price_1y_pct": -0.12369791666666657,
+      "user_action": "加入模拟研究候选；人工核对实时行情、公告、新闻和持仓冲突后，才允许记录纸面模拟。",
+      "real_trade_allowed": false,
+      "news_status": "NO_NEWS",
+      "news_items": [],
+      "news_summary": "未找到近期公司动态。",
+      "news_logs_excerpt": "[news_search] 搜索失败: https://duckduckgo.com/news.js?l=cn-zh&o=json&noamp=1&q=%E4%B8%9C%E6%96%B9%E8%B4%A2%E5%AF%8C+300059+%E5%85%AC%E5%91%8A+%E8%B4%A2%E6%8A%A5+%E6%96%B0%E9%97%BB+%E6%9C%80%E6%96%B0&vqd=4-110566046241958368276055526774856326917&p=-2 403 Ratelimit\n[]\n"
+    },
+    {
+      "symbol": "VRTX",
+      "name": "Vertex Pharmaceuticals Incorporated",
+      "market": "US",
+      "rank": 1,
+      "price": 485.3900146484375,
+      "daily_change_pct": 0.2784413638247063,
+      "score": 25,
+      "status": "research_candidate",
+      "status_label": "可研究",
+      "strategy_matches": [
+        "↑趋势",
+        "📍近买点"
+      ],
+      "risk_flags": [],
+      "basic_pass": true,
+      "skipped": [
+        "财报(US轻量)"
+      ],
+      "industry_or_description": "Healthcare · Vertex Pharmaceuticals Incorporated operates as a biotechnology company in the United States, Europe, and internationall",
+      "buy_point": 472.396,
+      "stop_loss": 401.537,
+      "trend_up": true,
+      "price_1y_pct": 0.012220332167034435,
+      "user_action": "加入模拟研究候选；人工核对实时行情、公告、新闻和持仓冲突后，才允许记录纸面模拟。",
+      "real_trade_allowed": false,
+      "news_status": "PASS",
+      "news_items": [
+        {
+          "title": "Vertex (VRTX) Wins FDA Expansion For CASGEVY And Advances ALYFTREK In Canada",
+          "source": "",
+          "url": "https://finance.yahoo.com/healthcare/articles/vertex-vrtx-wins-fda-expansion-031906914.html",
+          "date": "2026-07-12T03:19:06",
+          "summary": "",
+          "display_summary": "Vertex：CASGEVY 获 FDA 扩大适应症批准，ALYFTREK 在加拿大推进。"
+        },
+        {
+          "title": "Vertex Pharmaceuticals Bets $10 Billion on Crinetics to Build Endocrinology Powerhouse",
+          "source": "",
+          "url": "https://finance.yahoo.com/healthcare/articles/vertex-pharmaceuticals-bets-10-billion-210209246.html",
+          "date": "2026-07-11T21:02:09",
+          "summary": "",
+          "display_summary": "Vertex 拟以约 100 亿美元押注 Crinetics，扩展内分泌业务。"
+        },
+        {
+          "title": "Key deals this week: MGM, PERF, VRTX, and more",
+          "source": "",
+          "url": "https://seekingalpha.com/news/4613044-key-deals-this-week-mgm-perf-vrtx-and-more?utm_source=feed_news_all&amp;utm_medium=referral&amp;feed_item_type=news",
+          "date": "2026-07-11T19:15:49",
+          "summary": "",
+          "display_summary": "英文资讯摘要：Key deals this week: MGM, PERF, VRTX, and more"
+        }
+      ],
+      "news_summary": "Vertex：CASGEVY 获 FDA 扩大适应症批准，ALYFTREK 在加拿大推进。 | Vertex 拟以约 100 亿美元押注 Crinetics，扩展内分泌业务。",
+      "news_logs_excerpt": "eodhd_news"
+    },
+    {
+      "symbol": "AMAT",
+      "name": "Applied Materials, Inc.",
+      "market": "US",
+      "rank": 2,
+      "price": 602.5,
+      "daily_change_pct": 1.1328056233565618,
+      "score": 20,
+      "status": "research_candidate",
+      "status_label": "可研究",
+      "strategy_matches": [
+        "↑趋势",
+        "📍近买点",
+        "⚠一年涨>200%"
+      ],
+      "risk_flags": [],
+      "basic_pass": true,
+      "skipped": [
+        "财报(US轻量)"
+      ],
+      "industry_or_description": "Technology · Applied Materials, Inc. provides materials engineering solutions, equipment, services, and software to the semiconductor",
+      "buy_point": 596.543,
+      "stop_loss": 507.061,
+      "trend_up": true,
+      "price_1y_pct": 2.064787179156606,
+      "user_action": "加入模拟研究候选；人工核对实时行情、公告、新闻和持仓冲突后，才允许记录纸面模拟。",
+      "real_trade_allowed": false,
+      "news_status": "PASS",
+      "news_items": [
+        {
+          "title": "Goldman Sachs doubles down on Applied Materials stock target",
+          "source": "",
+          "url": "https://finance.yahoo.com/markets/stocks/articles/goldman-sachs-doubles-down-applied-133300462.html",
+          "date": "2026-07-11T13:33:00",
+          "summary": "",
+          "display_summary": "Goldman Sachs 重申看好 Applied Materials 目标价，需继续核对估值与周期位置。"
+        }
+      ],
+      "news_summary": "Goldman Sachs 重申看好 Applied Materials 目标价，需继续核对估值与周期位置。",
+      "news_logs_excerpt": "eodhd_news"
+    },
+    {
+      "symbol": "00005",
+      "name": "汇丰控股",
+      "market": "HK",
+      "rank": 1,
+      "price": 153.5,
+      "daily_change_pct": 10.830324909747292,
+      "score": 18,
+      "status": "research_candidate",
+      "status_label": "可研究",
+      "strategy_matches": [
+        "↑趋势",
+        "20日动量强",
+        "年内正动量"
+      ],
+      "risk_flags": [],
+      "basic_pass": true,
+      "skipped": [
+        "财报(HK EODHD轻量)",
+        "估值"
+      ],
+      "industry_or_description": "EODHD 港股日线轻量候选",
+      "buy_point": 145.574,
+      "stop_loss": 123.738,
+      "trend_up": true,
+      "price_1y_pct": 0.27559076056787474,
+      "user_action": "加入模拟研究候选；人工核对实时行情、公告、新闻和持仓冲突后，才允许记录纸面模拟。",
+      "real_trade_allowed": false,
+      "news_status": "PASS",
+      "news_items": [
+        {
+          "title": "Amazon, Microsoft and Meta Among HSBC Earnings Picks",
+          "source": "",
+          "url": "https://finance.yahoo.com/markets/stocks/articles/amazon-microsoft-meta-among-hsbc-201634977.html",
+          "date": "2026-07-10T20:16:34",
+          "summary": "",
+          "display_summary": "HSBC 财报季关注名单提到 Amazon、Microsoft、Meta，说明大型科技仍是机构重点线索。"
+        },
+        {
+          "title": "HSBC Tightens Private Credit Strategy Amid Rising Sector Concerns",
+          "source": "",
+          "url": "https://finance.yahoo.com/markets/stocks/articles/hsbc-tightens-private-credit-strategy-140700256.html",
+          "date": "2026-07-08T14:07:00",
+          "summary": "",
+          "display_summary": "HSBC 在行业担忧升温下收紧私募信贷策略，偏风险控制信号。"
+        }
+      ],
+      "news_summary": "HSBC 财报季关注名单提到 Amazon、Microsoft、Meta，说明大型科技仍是机构重点线索。 | HSBC 在行业担忧升温下收紧私募信贷策略，偏风险控制信号。",
+      "news_logs_excerpt": "eodhd_news"
+    },
+    {
+      "symbol": "OKTA",
+      "name": "Okta, Inc.",
+      "market": "US",
+      "rank": 3,
+      "price": 138.6300048828125,
+      "daily_change_pct": 1.5452563026541248,
+      "score": 10,
+      "status": "research_candidate",
+      "status_label": "可研究",
+      "strategy_matches": [
+        "↑趋势"
+      ],
+      "risk_flags": [],
+      "basic_pass": true,
+      "skipped": [
+        "财报(US轻量)"
+      ],
+      "industry_or_description": "Technology · Okta, Inc. operates as an identity partner in the United States and internationally. It offers Single Sign-on to secure ",
+      "buy_point": 126.233,
+      "stop_loss": 107.298,
+      "trend_up": true,
+      "price_1y_pct": 0.46838258135192123,
+      "user_action": "加入模拟研究候选；人工核对实时行情、公告、新闻和持仓冲突后，才允许记录纸面模拟。",
+      "real_trade_allowed": false,
+      "news_status": "NO_NEWS",
+      "news_items": [],
+      "news_summary": "未找到近期公司动态。",
+      "news_logs_excerpt": "[news_search] 搜索失败: https://duckduckgo.com/news.js?l=us-en&o=json&noamp=1&q=Okta%2C+Inc.+OKTA+stock+news+earnings+announcement&vqd=4-67564578170050165190322512489237904468&p=-2 403 Ratelimit\n[]\n"
+    },
+    {
+      "symbol": "MRNA",
+      "name": "Moderna, Inc.",
+      "market": "US",
+      "rank": 4,
+      "price": 68.2699966430664,
+      "daily_change_pct": 1.45049380429114,
+      "score": 10,
+      "status": "research_candidate",
+      "status_label": "可研究",
+      "strategy_matches": [
+        "↑趋势"
+      ],
+      "risk_flags": [],
+      "basic_pass": true,
+      "skipped": [
+        "财报(US轻量)"
+      ],
+      "industry_or_description": "Healthcare · Moderna, Inc., a biotechnology company, provides messenger RNA medicines in the United States, Europe, and international",
+      "buy_point": 64.328,
+      "stop_loss": 54.679,
+      "trend_up": true,
+      "price_1y_pct": 0.991540229700869,
+      "user_action": "加入模拟研究候选；人工核对实时行情、公告、新闻和持仓冲突后，才允许记录纸面模拟。",
+      "real_trade_allowed": false,
+      "news_status": "PASS",
+      "news_items": [
+        {
+          "title": "Stock Market Today: Dow Ends Higher; SK Hynix Jumps In U.S. Trading Debut; Moderna Tumbles",
+          "source": "",
+          "url": "https://finance.yahoo.com/m/44707f93-df29-35bc-8649-28477f0b5b59/stock-market-today%3A-dow-ends.html",
+          "date": "2026-07-10T20:44:02",
+          "summary": "",
+          "display_summary": "美股日报：道指收高，SK Hynix 美股首秀上涨，Moderna 下跌。"
+        }
+      ],
+      "news_summary": "美股日报：道指收高，SK Hynix 美股首秀上涨，Moderna 下跌。",
+      "news_logs_excerpt": "eodhd_news"
+    },
+    {
+      "symbol": "HOOD",
+      "name": "Robinhood Markets, Inc.",
+      "market": "US",
+      "rank": 5,
+      "price": 111.97000122070312,
+      "daily_change_pct": 1.0659282592282044,
+      "score": 10,
+      "status": "research_candidate",
+      "status_label": "可研究",
+      "strategy_matches": [
+        "↑趋势"
+      ],
+      "risk_flags": [],
+      "basic_pass": true,
+      "skipped": [
+        "财报(US轻量)"
+      ],
+      "industry_or_description": "Financial Services · Robinhood Markets, Inc. operates financial services platform in the United States. The company's platform allows users t",
+      "buy_point": 102.237,
+      "stop_loss": 86.901,
+      "trend_up": true,
+      "price_1y_pct": 0.1344478691262743,
+      "user_action": "加入模拟研究候选；人工核对实时行情、公告、新闻和持仓冲突后，才允许记录纸面模拟。",
+      "real_trade_allowed": false,
+      "news_status": "PASS",
+      "news_items": [
+        {
+          "title": "Cathie Wood buys $22.8 million of surging tech stock",
+          "source": "",
+          "url": "https://finance.yahoo.com/markets/stocks/articles/cathie-wood-buys-22-8-233000571.html",
+          "date": "2026-07-11T23:30:00",
+          "summary": "",
+          "display_summary": "Cathie Wood 买入约 2280 万美元热门科技股，HOOD 仍需警惕情绪拥挤。"
+        },
+        {
+          "title": "5 Top AI Stocks Investors Own on Robinhood",
+          "source": "",
+          "url": "https://finance.yahoo.com/markets/stocks/articles/5-top-ai-stocks-investors-202000090.html",
+          "date": "2026-07-11T20:20:00",
+          "summary": "",
+          "display_summary": "Robinhood 投资者持有的热门 AI 股票名单，可作为散户偏好温度计。"
+        },
+        {
+          "title": "Robinhood, AI Plays Lead Five Stocks Near Buy Points",
+          "source": "",
+          "url": "https://finance.yahoo.com/m/a1fee1db-e00a-3399-b0e1-f0ee0f7f167d/robinhood%2C-ai-plays-lead-five.html",
+          "date": "2026-07-11T15:34:00",
+          "summary": "",
+          "display_summary": "英文资讯摘要：Robinhood, AI Plays Lead Five Stocks Near Buy Points"
+        }
+      ],
+      "news_summary": "Cathie Wood 买入约 2280 万美元热门科技股，HOOD 仍需警惕情绪拥挤。 | Robinhood 投资者持有的热门 AI 股票名单，可作为散户偏好温度计。",
+      "news_logs_excerpt": "eodhd_news"
+    },
+    {
+      "symbol": "PANW",
+      "name": "Palo Alto Networks, Inc.",
+      "market": "US",
+      "rank": 6,
+      "price": 325.9100036621094,
+      "daily_change_pct": 0.8811475029756525,
+      "score": 10,
+      "status": "research_candidate",
+      "status_label": "可研究",
+      "strategy_matches": [
+        "↑趋势"
+      ],
+      "risk_flags": [],
+      "basic_pass": true,
+      "skipped": [
+        "财报(US轻量)"
+      ],
+      "industry_or_description": "Technology · Palo Alto Networks, Inc. provides cybersecurity solutions in the Americas, Europe, the Middle East, Africa, the Asia Pac",
+      "buy_point": 304.088,
+      "stop_loss": 258.474,
+      "trend_up": true,
+      "price_1y_pct": 0.6968292353525323,
+      "user_action": "加入模拟研究候选；人工核对实时行情、公告、新闻和持仓冲突后，才允许记录纸面模拟。",
+      "real_trade_allowed": false,
+      "news_status": "PASS",
+      "news_items": [
+        {
+          "title": "Insider trades: Palo Alto Networks, Taiwan Semiconductor, and Sony among major names",
+          "source": "",
+          "url": "https://seekingalpha.com/news/4612995-insider-trades-palo-alto-networks-taiwan-semiconductor-sony-among-major-names?utm_source=feed_news_all&amp;utm_medium=referral&amp;feed_item_type=news",
+          "date": "2026-07-11T15:03:34",
+          "summary": "",
+          "display_summary": "内部人交易追踪提到 Palo Alto Networks、TSMC、Sony 等重点公司。"
+        }
+      ],
+      "news_summary": "内部人交易追踪提到 Palo Alto Networks、TSMC、Sony 等重点公司。",
+      "news_logs_excerpt": "eodhd_news"
+    },
+    {
+      "symbol": "KLAC",
+      "name": "KLA Corporation",
+      "market": "US",
+      "rank": 7,
+      "price": 231.52000427246094,
+      "daily_change_pct": 0.6702012953040032,
+      "score": 10,
+      "status": "research_candidate",
+      "status_label": "可研究",
+      "strategy_matches": [
+        "↑趋势"
+      ],
+      "risk_flags": [],
+      "basic_pass": true,
+      "skipped": [
+        "财报(US轻量)"
+      ],
+      "industry_or_description": "Technology · KLA Corporation, together with its subsidiaries, designs, manufactures, and markets process control, process-enabling, a",
+      "buy_point": 243.195,
+      "stop_loss": 206.715,
+      "trend_up": true,
+      "price_1y_pct": 1.5092306607187582,
+      "user_action": "加入模拟研究候选；人工核对实时行情、公告、新闻和持仓冲突后，才允许记录纸面模拟。",
+      "real_trade_allowed": false,
+      "news_status": "NO_NEWS",
+      "news_items": [],
+      "news_summary": "未找到近期公司动态。",
+      "news_logs_excerpt": "[news_search] 搜索失败: https://duckduckgo.com/news.js?l=us-en&o=json&noamp=1&q=KLA+Corporation+KLAC+stock+news+earnings+announcement&vqd=4-53954493347938078500481022173348986774&p=-2 403 Ratelimit\n[]\n"
+    },
+    {
+      "symbol": "RBLX",
+      "name": "Roblox Corporation",
+      "market": "US",
+      "rank": 8,
+      "price": 55.349998474121094,
+      "daily_change_pct": 0.6064485949131072,
+      "score": 10,
+      "status": "research_candidate",
+      "status_label": "可研究",
+      "strategy_matches": [
+        "↑趋势"
+      ],
+      "risk_flags": [],
+      "basic_pass": true,
+      "skipped": [
+        "财报(US轻量)"
+      ],
+      "industry_or_description": "Communication Services · Roblox Corporation operates an immersive platform for connection and communication in the United States and internationa",
+      "buy_point": 49.997,
+      "stop_loss": 42.497,
+      "trend_up": true,
+      "price_1y_pct": -0.47300772048536405,
+      "user_action": "加入模拟研究候选；人工核对实时行情、公告、新闻和持仓冲突后，才允许记录纸面模拟。",
+      "real_trade_allowed": false,
+      "news_status": "PASS",
+      "news_items": [
+        {
+          "title": "備受認可的投資者顧問 ROSEN 鼓勵 Roblox Corporation 投資者在對 RBLX 發起證券集體訴訟的重要截止日期之前聘請律師",
+          "source": "",
+          "url": "https://www.globenewswire.com/news-release/2026/07/11/3325823/673/zh-hant/%E5%82%99%E5%8F%97%E8%AA%8D%E5%8F%AF%E7%9A%84%E6%8A%95%E8%B3%87%E8%80%85%E9%A1%A7%E5%95%8F-ROSEN-%E9%BC%93%E5%8B%B5-Roblox-Corporation-%E6%8A%95%E8%B3%87%E8%80%85%E5%9C%A8%E5%B0%8D-RBLX-%E7%99%BC%E8%B5%B7%E8%AD%89%E5%88%B8%E9%9B%86%E9%AB%94%E8%A8%B4%E8%A8%9F%E7%9A%84%E9%87%8D%E8%A6%81%E6%88%AA%E6%AD%A2%E6%97%A5%E6%9C%9F%E4%B9%8B%E5%89%8D%E8%81%98%E8%AB%8B%E5%BE%8B%E5%B8%AB.html",
+          "date": "2026-07-11T19:09:00",
+          "summary": "",
+          "display_summary": "備受認可的投資者顧問 ROSEN 鼓勵 Roblox Corporation 投資者在對 RBLX 發起證券集體訴訟的重要截止日期之前聘請律師"
+        },
+        {
+          "title": "RBLX SHAREHOLDER NOTICE: Faruqi &amp; Faruqi, LLP Notifies Roblox (RBLX) Investors of Securities Class Action Lawsuit Deadline on August 7, 2026",
+          "source": "",
+          "url": "https://www.globenewswire.com/news-release/2026/07/11/3325801/683/en/RBLX-SHAREHOLDER-NOTICE-Faruqi-Faruqi-LLP-Notifies-Roblox-RBLX-Investors-of-Securities-Class-Action-Lawsuit-Deadline-on-August-7-2026.html",
+          "date": "2026-07-11T12:12:00",
+          "summary": "",
+          "display_summary": "RBLX 股东提醒: Faruqi &amp; Faruqi, LLP Notifies Roblox (RBLX) 投资者 of 证券集体诉讼 截止日期 on August 7, 2026"
+        }
+      ],
+      "news_summary": "備受認可的投資者顧問 ROSEN 鼓勵 Roblox Corporation 投資者在對 RBLX 發起證券集體訴訟的重要截止日期之前聘請律師 | RBLX 股东提醒: Faruqi &amp; Faruqi, LLP Notifies Roblox (RBLX) 投资者 of 证券集体诉讼 截止日期 on August 7, 2026",
+      "news_logs_excerpt": "eodhd_news"
+    },
+    {
+      "symbol": "BAC",
+      "name": "Bank of America Corporation",
+      "market": "US",
+      "rank": 9,
+      "price": 59.66999816894531,
+      "daily_change_pct": 0.6046896266422199,
+      "score": 10,
+      "status": "research_candidate",
+      "status_label": "可研究",
+      "strategy_matches": [
+        "↑趋势"
+      ],
+      "risk_flags": [],
+      "basic_pass": true,
+      "skipped": [
+        "财报(US轻量)"
+      ],
+      "industry_or_description": "Financial Services · Bank of America Corporation, through its subsidiaries, provides various financial products and services for individual c",
+      "buy_point": 56.577,
+      "stop_loss": 48.09,
+      "trend_up": true,
+      "price_1y_pct": 0.2980587206868749,
+      "user_action": "加入模拟研究候选；人工核对实时行情、公告、新闻和持仓冲突后，才允许记录纸面模拟。",
+      "real_trade_allowed": false,
+      "news_status": "NO_NEWS",
+      "news_items": [],
+      "news_summary": "未找到近期公司动态。",
+      "news_logs_excerpt": "[news_search] 搜索失败: https://duckduckgo.com/news.js?l=us-en&o=json&noamp=1&q=Bank+of+America+Corporation+BAC+stock+news+earnings+announcement&vqd=4-186339912575885698773465649637642750188&p=-2 403 Ratelimit\n[]\n"
+    },
+    {
+      "symbol": "NET",
+      "name": "Cloudflare, Inc.",
+      "market": "US",
+      "rank": 10,
+      "price": 268.3999938964844,
+      "daily_change_pct": 0.5887509414804158,
+      "score": 10,
+      "status": "research_candidate",
+      "status_label": "可研究",
+      "strategy_matches": [
+        "↑趋势"
+      ],
+      "risk_flags": [],
+      "basic_pass": true,
+      "skipped": [
+        "财报(US轻量)"
+      ],
+      "industry_or_description": "Technology · Cloudflare, Inc. operates as a cloud services provider that delivers a range of services to businesses worldwide. The co",
+      "buy_point": 235.982,
+      "stop_loss": 200.585,
+      "trend_up": true,
+      "price_1y_pct": 0.4753737719765525,
+      "user_action": "加入模拟研究候选；人工核对实时行情、公告、新闻和持仓冲突后，才允许记录纸面模拟。",
+      "real_trade_allowed": false,
+      "news_status": "PASS",
+      "news_items": [
+        {
+          "title": "Cloudflare (NET) Could Be 60% Overvalued After Its OpenAI Pilot News",
+          "source": "",
+          "url": "https://finance.yahoo.com/markets/stocks/articles/cloudflare-net-could-60-overvalued-001840172.html",
+          "date": "2026-07-11T00:18:40",
+          "summary": "",
+          "display_summary": "英文资讯摘要：Cloudflare (NET) Could Be 60% Overvalued After Its OpenAI Pilot News"
+        },
+        {
+          "title": "Cloudflare (NET) Stock Falls Amid Market Uptick: What Investors Need to Know",
+          "source": "",
+          "url": "https://finance.yahoo.com/markets/stocks/articles/cloudflare-net-stock-falls-amid-215005377.html",
+          "date": "2026-07-10T21:50:05",
+          "summary": "",
+          "display_summary": "Cloudflare (NET) Stock Falls Amid Market Uptick: What 投资者 Need to Know"
+        }
+      ],
+      "news_summary": "英文资讯摘要：Cloudflare (NET) Could Be 60% Overvalued After Its OpenAI Pilot News | Cloudflare (NET) Stock Falls Amid Market Uptick: What 投资者 Need to Know",
+      "news_logs_excerpt": "eodhd_news"
+    },
+    {
+      "symbol": "600150",
+      "name": "中国船舶",
+      "market": "A",
+      "rank": 2,
+      "price": 37.04,
+      "daily_change_pct": 2.7177,
+      "score": 53,
+      "status": "high_risk_watch",
+      "status_label": "高风险观察",
+      "strategy_matches": [
+        "毛利率连升3季",
+        "新增机构调研",
+        "现金流优质(1.7x)",
+        "主业贡献高(99%)",
+        "📰正面新闻(突破)"
+      ],
+      "risk_flags": [
+        "趋势向下，暂不追"
+      ],
+      "basic_pass": true,
+      "skipped": [],
+      "industry_or_description": "船舶",
+      "buy_point": 35.056,
+      "stop_loss": 29.798,
+      "trend_up": false,
+      "price_1y_pct": 0.19329896907216496,
+      "user_action": "只观察，不模拟开仓；等过热、止损距离或赔率问题改善。",
+      "real_trade_allowed": false,
+      "news_status": "NO_NEWS",
+      "news_items": [],
+      "news_summary": "未找到近期公司动态。",
+      "news_logs_excerpt": "[news_search] 搜索失败: https://duckduckgo.com/news.js?l=cn-zh&o=json&noamp=1&q=%E4%B8%AD%E5%9B%BD%E8%88%B9%E8%88%B6+600150+%E5%85%AC%E5%91%8A+%E8%B4%A2%E6%8A%A5+%E6%96%B0%E9%97%BB+%E6%9C%80%E6%96%B0&vqd=4-313193860590555962339295252611952887877&p=-2 403 Ratelimit\n[]\n"
+    },
+    {
+      "symbol": "300475",
+      "name": "香农芯创",
+      "market": "A",
+      "rank": 3,
+      "price": 271.0,
+      "daily_change_pct": 1.1269,
+      "score": 41,
+      "status": "high_risk_watch",
+      "status_label": "高风险观察",
+      "strategy_matches": [
+        "毛利率连升3季",
+        "新增机构调研",
+        "ROE连升3季",
+        "ROE≥15%(31%)",
+        "现金流优质(2.0x)",
+        "主业贡献高(98%)",
+        "⚠一年涨>300%"
+      ],
+      "risk_flags": [
+        "一年涨幅超过300%，过热降权",
+        "买点赔率为负或目标价异常"
+      ],
+      "basic_pass": true,
+      "skipped": [],
+      "industry_or_description": "元器件",
+      "buy_point": 258.804,
+      "stop_loss": 219.984,
+      "trend_up": true,
+      "price_1y_pct": 6.614498454622084,
+      "user_action": "只观察，不模拟开仓；等过热、止损距离或赔率问题改善。",
+      "real_trade_allowed": false,
+      "news_status": "NO_NEWS",
+      "news_items": [],
+      "news_summary": "未找到近期公司动态。",
+      "news_logs_excerpt": "[news_search] 搜索失败: https://duckduckgo.com/news.js?l=cn-zh&o=json&noamp=1&q=%E9%A6%99%E5%86%9C%E8%8A%AF%E5%88%9B+300475+%E5%85%AC%E5%91%8A+%E8%B4%A2%E6%8A%A5+%E6%96%B0%E9%97%BB+%E6%9C%80%E6%96%B0&vqd=4-259733554051436602801344901995155792778&p=-2 403 Ratelimit\n[]\n"
+    },
+    {
+      "symbol": "01299",
+      "name": "友邦保险",
+      "market": "HK",
+      "rank": 2,
+      "price": 72.65,
+      "daily_change_pct": -1.4915254237288058,
+      "score": 7,
+      "status": "high_risk_watch",
+      "status_label": "高风险观察",
+      "strategy_matches": [
+        "趋势未确认",
+        "📍近买点"
+      ],
+      "risk_flags": [
+        "趋势向下，暂不追"
+      ],
+      "basic_pass": true,
+      "skipped": [
+        "财报(HK EODHD轻量)",
+        "估值"
+      ],
+      "industry_or_description": "EODHD 港股日线轻量候选",
+      "buy_point": 71.91,
+      "stop_loss": 61.123,
+      "trend_up": false,
+      "price_1y_pct": -0.11273135850416147,
+      "user_action": "只观察，不模拟开仓；等过热、止损距离或赔率问题改善。",
+      "real_trade_allowed": false,
+      "news_status": "PASS",
+      "news_items": [
+        {
+          "title": "Zacks Industry Outlook Highlights AIA, Reinsurance Group of America, Primerica and Voya",
+          "source": "",
+          "url": "https://finance.yahoo.com/markets/stocks/articles/zacks-industry-outlook-highlights-aia-085700959.html",
+          "date": "2026-06-02T08:57:00",
+          "summary": "",
+          "display_summary": "英文资讯摘要：Zacks Industry Outlook Highlights AIA, Reinsurance Group of America, Primerica and Voya"
+        }
+      ],
+      "news_summary": "英文资讯摘要：Zacks Industry Outlook Highlights AIA, Reinsurance Group of America, Primerica and Voya",
+      "news_logs_excerpt": "eodhd_news"
+    },
+    {
+      "symbol": "02318",
+      "name": "中国平安",
+      "market": "HK",
+      "rank": 3,
+      "price": 53.05,
+      "daily_change_pct": -6.684256816182945,
+      "score": 7,
+      "status": "high_risk_watch",
+      "status_label": "高风险观察",
+      "strategy_matches": [
+        "趋势未确认",
+        "📍近买点"
+      ],
+      "risk_flags": [
+        "当日跌幅较大，需要等企稳",
+        "趋势向下，暂不追"
+      ],
+      "basic_pass": true,
+      "skipped": [
+        "财报(HK EODHD轻量)",
+        "估值"
+      ],
+      "industry_or_description": "EODHD 港股日线轻量候选",
+      "buy_point": 52.651,
+      "stop_loss": 44.753,
+      "trend_up": false,
+      "price_1y_pct": -0.17819084252091708,
+      "user_action": "只观察，不模拟开仓；等过热、止损距离或赔率问题改善。",
+      "real_trade_allowed": false,
+      "news_status": "NO_NEWS",
+      "news_items": [],
+      "news_summary": "未找到近期公司动态。",
+      "news_logs_excerpt": "[news_search] 搜索失败: https://duckduckgo.com/news.js?l=cn-zh&o=json&noamp=1&q=%E4%B8%AD%E5%9B%BD%E5%B9%B3%E5%AE%89+02318+%E5%85%AC%E5%91%8A+%E8%B4%A2%E6%8A%A5+%E6%96%B0%E9%97%BB+%E6%9C%80%E6%96%B0&vqd=4-2263111675028285059422560862506165449&p=-2 403 Ratelimit\n[]\n"
+    },
+    {
+      "symbol": "00941",
+      "name": "中国移动",
+      "market": "HK",
+      "rank": 4,
+      "price": 78.75,
+      "daily_change_pct": -3.7874160048869814,
+      "score": 7,
+      "status": "high_risk_watch",
+      "status_label": "高风险观察",
+      "strategy_matches": [
+        "趋势未确认",
+        "📍近买点"
+      ],
+      "risk_flags": [
+        "趋势向下，暂不追"
+      ],
+      "basic_pass": true,
+      "skipped": [
+        "财报(HK EODHD轻量)",
+        "估值"
+      ],
+      "industry_or_description": "EODHD 港股日线轻量候选",
+      "buy_point": 77.182,
+      "stop_loss": 65.605,
+      "trend_up": false,
+      "price_1y_pct": -0.027401946678160802,
+      "user_action": "只观察，不模拟开仓；等过热、止损距离或赔率问题改善。",
+      "real_trade_allowed": false,
+      "news_status": "NO_NEWS",
+      "news_items": [],
+      "news_summary": "未找到近期公司动态。",
+      "news_logs_excerpt": "[news_search] 搜索失败: https://duckduckgo.com/news.js?l=cn-zh&o=json&noamp=1&q=%E4%B8%AD%E5%9B%BD%E7%A7%BB%E5%8A%A8+00941+%E5%85%AC%E5%91%8A+%E8%B4%A2%E6%8A%A5+%E6%96%B0%E9%97%BB+%E6%9C%80%E6%96%B0&vqd=4-172352431796682296437252121250934590203&p=-2 403 Ratelimit\n[]\n"
+    },
+    {
+      "symbol": "00883",
+      "name": "中国海洋石油",
+      "market": "HK",
+      "rank": 5,
+      "price": 21.82,
+      "daily_change_pct": -11.731391585760512,
+      "score": 7,
+      "status": "high_risk_watch",
+      "status_label": "高风险观察",
+      "strategy_matches": [
+        "趋势未确认",
+        "📍近买点"
+      ],
+      "risk_flags": [
+        "当日跌幅较大，需要等企稳",
+        "趋势向下，暂不追"
+      ],
+      "basic_pass": true,
+      "skipped": [
+        "财报(HK EODHD轻量)",
+        "估值"
+      ],
+      "industry_or_description": "EODHD 港股日线轻量候选",
+      "buy_point": 21.617,
+      "stop_loss": 18.374,
+      "trend_up": false,
+      "price_1y_pct": 0.020121928413808523,
+      "user_action": "只观察，不模拟开仓；等过热、止损距离或赔率问题改善。",
+      "real_trade_allowed": false,
+      "news_status": "SKIPPED",
+      "news_items": [],
+      "news_summary": "未进入本轮资讯抓取上限。"
+    },
+    {
+      "symbol": "02333",
+      "name": "长城汽车",
+      "market": "HK",
+      "rank": 6,
+      "price": 8.64,
+      "daily_change_pct": -11.45726583316252,
+      "score": 7,
+      "status": "high_risk_watch",
+      "status_label": "高风险观察",
+      "strategy_matches": [
+        "趋势未确认",
+        "📍近买点"
+      ],
+      "risk_flags": [
+        "当日跌幅较大，需要等企稳",
+        "趋势向下，暂不追"
+      ],
+      "basic_pass": true,
+      "skipped": [
+        "财报(HK EODHD轻量)",
+        "估值"
+      ],
+      "industry_or_description": "EODHD 港股日线轻量候选",
+      "buy_point": 8.923,
+      "stop_loss": 7.585,
+      "trend_up": false,
+      "price_1y_pct": -0.39975823595614896,
+      "user_action": "只观察，不模拟开仓；等过热、止损距离或赔率问题改善。",
+      "real_trade_allowed": false,
+      "news_status": "SKIPPED",
+      "news_items": [],
+      "news_summary": "未进入本轮资讯抓取上限。"
+    },
+    {
+      "symbol": "01398",
+      "name": "工商银行",
+      "market": "HK",
+      "rank": 7,
+      "price": 6.66,
+      "daily_change_pct": -4.584527220630377,
+      "score": 7,
+      "status": "high_risk_watch",
+      "status_label": "高风险观察",
+      "strategy_matches": [
+        "趋势未确认",
+        "📍近买点"
+      ],
+      "risk_flags": [
+        "趋势向下，暂不追"
+      ],
+      "basic_pass": true,
+      "skipped": [
+        "财报(HK EODHD轻量)",
+        "估值"
+      ],
+      "industry_or_description": "EODHD 港股日线轻量候选",
+      "buy_point": 6.627,
+      "stop_loss": 5.633,
+      "trend_up": false,
+      "price_1y_pct": 0.08071268620387496,
+      "user_action": "只观察，不模拟开仓；等过热、止损距离或赔率问题改善。",
+      "real_trade_allowed": false,
+      "news_status": "SKIPPED",
+      "news_items": [],
+      "news_summary": "未进入本轮资讯抓取上限。"
+    },
+    {
+      "symbol": "03988",
+      "name": "中国银行",
+      "market": "HK",
+      "rank": 8,
+      "price": 5.09,
+      "daily_change_pct": -2.7679611835947164,
+      "score": 7,
+      "status": "high_risk_watch",
+      "status_label": "高风险观察",
+      "strategy_matches": [
+        "趋势未确认",
+        "📍近买点"
+      ],
+      "risk_flags": [
+        "趋势向下，暂不追"
+      ],
+      "basic_pass": true,
+      "skipped": [
+        "财报(HK EODHD轻量)",
+        "估值"
+      ],
+      "industry_or_description": "EODHD 港股日线轻量候选",
+      "buy_point": 4.959,
+      "stop_loss": 4.215,
+      "trend_up": false,
+      "price_1y_pct": 0.15262681159420277,
+      "user_action": "只观察，不模拟开仓；等过热、止损距离或赔率问题改善。",
+      "real_trade_allowed": false,
+      "news_status": "SKIPPED",
+      "news_items": [],
+      "news_summary": "未进入本轮资讯抓取上限。"
+    },
+    {
+      "symbol": "00700",
+      "name": "腾讯控股",
+      "market": "HK",
+      "rank": 9,
+      "price": 460.2,
+      "daily_change_pct": 0.6561679790026247,
+      "score": -3,
+      "status": "high_risk_watch",
+      "status_label": "高风险观察",
+      "strategy_matches": [
+        "趋势未确认"
+      ],
+      "risk_flags": [
+        "趋势向下，暂不追"
+      ],
+      "basic_pass": true,
+      "skipped": [
+        "财报(HK EODHD轻量)",
+        "估值"
+      ],
+      "industry_or_description": "EODHD 港股日线轻量候选",
+      "buy_point": 433.964,
+      "stop_loss": 368.869,
+      "trend_up": false,
+      "price_1y_pct": -0.2527099009118011,
+      "user_action": "只观察，不模拟开仓；等过热、止损距离或赔率问题改善。",
+      "real_trade_allowed": false,
+      "news_status": "SKIPPED",
+      "news_items": [],
+      "news_summary": "未进入本轮资讯抓取上限。"
+    },
+    {
+      "symbol": "09988",
+      "name": "阿里巴巴-W",
+      "market": "HK",
+      "rank": 10,
+      "price": 110.2,
+      "daily_change_pct": 2.607076350093107,
+      "score": -3,
+      "status": "high_risk_watch",
+      "status_label": "高风险观察",
+      "strategy_matches": [
+        "趋势未确认"
+      ],
+      "risk_flags": [
+        "趋势向下，暂不追"
+      ],
+      "basic_pass": true,
+      "skipped": [
+        "财报(HK EODHD轻量)",
+        "估值"
+      ],
+      "industry_or_description": "EODHD 港股日线轻量候选",
+      "buy_point": 99.144,
+      "stop_loss": 84.272,
+      "trend_up": false,
+      "price_1y_pct": -0.25384857053094567,
+      "user_action": "只观察，不模拟开仓；等过热、止损距离或赔率问题改善。",
+      "real_trade_allowed": false,
+      "news_status": "SKIPPED",
+      "news_items": [],
+      "news_summary": "未进入本轮资讯抓取上限。"
+    },
+    {
+      "symbol": "300476",
+      "name": "胜宏科技",
+      "market": "A",
+      "rank": 4,
+      "price": 272.0,
+      "daily_change_pct": -8.3249,
+      "score": 38,
+      "status": "blocked",
+      "status_label": "暂不碰",
+      "strategy_matches": [
+        "新增机构调研",
+        "高管增持",
+        "现金流优质(1.6x)",
+        "主业贡献高(98%)"
+      ],
+      "risk_flags": [
+        "营收增速不足",
+        "当日跌幅较大，需要等企稳",
+        "趋势向下，暂不追"
+      ],
+      "basic_pass": false,
+      "skipped": [],
+      "industry_or_description": "元器件",
+      "buy_point": 318.671,
+      "stop_loss": 270.871,
+      "trend_up": false,
+      "price_1y_pct": 1.0528301886792453,
+      "user_action": "暂不碰；除非基础筛选或风险条件变化。",
+      "real_trade_allowed": false,
+      "news_status": "SKIPPED",
+      "news_items": [],
+      "news_summary": "未进入本轮资讯抓取上限。"
+    },
+    {
+      "symbol": "002709",
+      "name": "天赐材料",
+      "market": "A",
+      "rank": 5,
+      "price": 40.06,
+      "daily_change_pct": -3.3767,
+      "score": 35,
+      "status": "blocked",
+      "status_label": "暂不碰",
+      "strategy_matches": [
+        "毛利率连升3季",
+        "新增机构调研",
+        "高管增持",
+        "ROE连升3季",
+        "⚠现金流差(-0.0x)",
+        "主业贡献高(94%)"
+      ],
+      "risk_flags": [
+        "经营现金流为负",
+        "现金流质量极差(OCF/NI=-0.01)",
+        "趋势向下，暂不追",
+        "价格触及或跌破止损线",
+        "现金流质量风险"
+      ],
+      "basic_pass": false,
+      "skipped": [],
+      "industry_or_description": "化工原料",
+      "buy_point": 49.845,
+      "stop_loss": 42.368,
+      "trend_up": false,
+      "price_1y_pct": 1.2144831398562743,
+      "user_action": "暂不碰；除非基础筛选或风险条件变化。",
+      "real_trade_allowed": false,
+      "news_status": "SKIPPED",
+      "news_items": [],
+      "news_summary": "未进入本轮资讯抓取上限。"
+    },
+    {
+      "symbol": "688525",
+      "name": "佰维存储",
+      "market": "A",
+      "rank": 7,
+      "price": 388.5,
+      "daily_change_pct": -7.2527,
+      "score": 33,
+      "status": "blocked",
+      "status_label": "暂不碰",
+      "strategy_matches": [
+        "毛利率连升3季",
+        "新增机构调研",
+        "高管增持",
+        "ROE连升3季",
+        "ROE≥15%(42%)",
+        "⚠现金流差(-0.9x)",
+        "主业贡献高(97%)",
+        "⚠一年涨>300%"
+      ],
+      "risk_flags": [
+        "经营现金流为负",
+        "现金流质量极差(OCF/NI=-0.93)",
+        "一年涨幅超过300%，过热降权",
+        "当日跌幅较大，需要等企稳",
+        "买点赔率为负或目标价异常",
+        "现金流质量风险"
+      ],
+      "basic_pass": false,
+      "skipped": [],
+      "industry_or_description": "半导体",
+      "buy_point": 409.321,
+      "stop_loss": 347.922,
+      "trend_up": true,
+      "price_1y_pct": 4.7555555555555555,
+      "user_action": "暂不碰；除非基础筛选或风险条件变化。",
+      "real_trade_allowed": false,
+      "news_status": "SKIPPED",
+      "news_items": [],
+      "news_summary": "未进入本轮资讯抓取上限。"
+    },
+    {
+      "symbol": "001309",
+      "name": "德明利",
+      "market": "A",
+      "rank": 8,
+      "price": 799.98,
+      "daily_change_pct": -7.031,
+      "score": 33,
+      "status": "blocked",
+      "status_label": "暂不碰",
+      "strategy_matches": [
+        "毛利率连升3季",
+        "新增机构调研",
+        "高管增持",
+        "ROE连升3季",
+        "ROE≥15%(68%)",
+        "⚠现金流差(-0.1x)",
+        "主业贡献高(100%)",
+        "⚠一年涨>300%"
+      ],
+      "risk_flags": [
+        "经营现金流为负",
+        "现金流质量极差(OCF/NI=-0.07)",
+        "一年涨幅超过300%，过热降权",
+        "当日跌幅较大，需要等企稳",
+        "买点赔率为负或目标价异常",
+        "现金流质量风险"
+      ],
+      "basic_pass": false,
+      "skipped": [],
+      "industry_or_description": "半导体",
+      "buy_point": 796.306,
+      "stop_loss": 676.86,
+      "trend_up": true,
+      "price_1y_pct": 5.477570850202429,
+      "user_action": "暂不碰；除非基础筛选或风险条件变化。",
+      "real_trade_allowed": false,
+      "news_status": "SKIPPED",
+      "news_items": [],
+      "news_summary": "未进入本轮资讯抓取上限。"
+    },
+    {
+      "symbol": "000100",
+      "name": "TCL科技",
+      "market": "A",
+      "rank": 9,
+      "price": 5.12,
+      "daily_change_pct": -4.4776,
+      "score": 33,
+      "status": "blocked",
+      "status_label": "暂不碰",
+      "strategy_matches": [
+        "新增机构调研",
+        "高管增持",
+        "现金流优质(7.3x)"
+      ],
+      "risk_flags": [
+        "营收增速不足"
+      ],
+      "basic_pass": false,
+      "skipped": [],
+      "industry_or_description": "元器件",
+      "buy_point": 5.103,
+      "stop_loss": 4.337,
+      "trend_up": true,
+      "price_1y_pct": 0.17972350230414752,
+      "user_action": "暂不碰；除非基础筛选或风险条件变化。",
+      "real_trade_allowed": false,
+      "news_status": "SKIPPED",
+      "news_items": [],
+      "news_summary": "未进入本轮资讯抓取上限。"
+    },
+    {
+      "symbol": "002407",
+      "name": "多氟多",
+      "market": "A",
+      "rank": 10,
+      "price": 41.1,
+      "daily_change_pct": -5.8419,
+      "score": 30,
+      "status": "blocked",
+      "status_label": "暂不碰",
+      "strategy_matches": [
+        "毛利率连升3季",
+        "新增机构调研",
+        "高管增持",
+        "ROE连升3季",
+        "⚠现金流差(-1.8x)",
+        "主业贡献高(100%)",
+        "⚠一年涨>200%"
+      ],
+      "risk_flags": [
+        "经营现金流为负",
+        "现金流质量极差(OCF/NI=-1.83)",
+        "买点赔率为负或目标价异常",
+        "现金流质量风险"
+      ],
+      "basic_pass": false,
+      "skipped": [],
+      "industry_or_description": "化工原料",
+      "buy_point": 43.305,
+      "stop_loss": 36.809,
+      "trend_up": true,
+      "price_1y_pct": 2.4193011647254576,
+      "user_action": "暂不碰；除非基础筛选或风险条件变化。",
+      "real_trade_allowed": false,
+      "news_status": "SKIPPED",
+      "news_items": [],
+      "news_summary": "未进入本轮资讯抓取上限。"
+    }
+  ],
+  "refresh_mode": "cached_fast_default"
+}

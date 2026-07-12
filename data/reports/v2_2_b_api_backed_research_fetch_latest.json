@@ -1,0 +1,51 @@
+{
+  "overall_status": "PASS",
+  "generated_at": "2026-07-11T17:57:42.152053+08:00",
+  "run_id": "v2_2_b_20260711_acceptance_rerun",
+  "command": "validate_v2_2_b_api_backed_research_fetch.py --run-id v2_2_b_20260711_acceptance_rerun",
+  "acceptance_target": "V2.2-B API-backed Research Fetch Dry Run",
+  "isolated": true,
+  "network_used": false,
+  "production_records_written": false,
+  "dashboard_contract_changed": false,
+  "run_dir": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v2_2_b_acceptance/v2_2_b_20260711_acceptance_rerun",
+  "api_fetch_item_json": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v2_2_b_acceptance/v2_2_b_20260711_acceptance_rerun/api_fetch_item.json",
+  "checks": {
+    "approved_api_fetch_succeeded": true,
+    "summary_created": true,
+    "content_hash_created": true,
+    "raw_bytes_not_stored": true,
+    "request_headers_not_stored": true,
+    "env_var_name_recorded": true,
+    "secret_value_not_serialized": true,
+    "broker_api_denied": true,
+    "no_real_trade_or_broker": true,
+    "no_trading_webhook": true
+  },
+  "summary": {
+    "connector_id": "api_user_research_approved_env",
+    "endpoint_path": "/strategy-notes",
+    "status_code": 200,
+    "auth_env_vars_used": [
+      "AEGIS_RESEARCH_API_KEY"
+    ],
+    "next_target": "V2.2-C API Research To Sandbox Candidate Bridge"
+  },
+  "safety": {
+    "api_key_value_not_stored": true,
+    "env_var_names_only": true,
+    "request_headers_not_stored": true,
+    "raw_bytes_not_stored": true,
+    "no_cookie_access": true,
+    "no_paywall_bypass": true,
+    "no_real_trade": true,
+    "no_broker_api": true,
+    "no_trading_webhook": true,
+    "no_strategy_auto_mutation": true,
+    "dashboard_contract_unchanged": true,
+    "no_production_records_mutation": true
+  },
+  "hashes": {
+    "api_fetch_item_json": "a8e976b4ba2dd211cec9eedeed8b633fb9c9b65944d8a2881e5b2a70f46c2d00"
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "project": "Project Aegis",
+  "type": "health_status",
+  "generated_at": "2026-07-12T08:00:31.219805+08:00",
+  "health_status": "NORMAL",
+  "health_label": "正常",
+  "reason": "All systems nominal",
+  "gate_overall_verdict": "PASS",
+  "history_latest_result": "PASS",
+  "feishu_dry_run": true,
+  "sent": false,
+  "webhook_called": false,
+  "trading_called": false,
+  "a_share_top5_symbols": [
+    "600519.SH",
+    "600036.SH",
+    "000858.SZ",
+    "000001.SZ",
+    "601398.SH"
+  ],
+  "hk_00700_status": "MISSING",
+  "crcl_status": "PRESENT",
+  "sz_000002_status": "MISSING",
+  "source_files": {
+    "gate": true,
+    "history": true,
+    "feishu": true,
+    "watchlist": true
+  },
+  "safety_confirmations": {
+    "dry_run": true,
+    "sent_false": true,
+    "webhook_not_called": true,
+    "trading_not_called": true
+  }
+}

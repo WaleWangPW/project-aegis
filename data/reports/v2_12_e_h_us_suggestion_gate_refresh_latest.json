@@ -1,0 +1,245 @@
+{
+  "overall_status": "PASS",
+  "acceptance_target": "V2.12-E H-US Suggestion Gate Refresh From Sandbox Evidence",
+  "source_acceptance_target": "V2.12-D H-US Historical Sandbox Candidate Refresh Dry Run",
+  "run_id": "v2_12_e_20260712_acceptance",
+  "generated_at": "2026-07-12T00:47:08+08:00",
+  "command": "validate_v2_12_e_h_us_suggestion_gate_refresh.py --run-id v2_12_e_20260712_acceptance",
+  "network_used": false,
+  "production_records_written": false,
+  "dashboard_contract_changed": false,
+  "summary": {
+    "source_strategy_pass_count": 2,
+    "source_strategy_fail_count": 0,
+    "source_historical_case_count": 3,
+    "markets_with_cases": [
+      "H",
+      "US"
+    ],
+    "opportunity_count": 2,
+    "draft_count": 2,
+    "allowed_count": 2,
+    "blocked_count": 0,
+    "allowed_suggestions": [
+      "sug_h_us_h_strategy_h_cache_readiness_multifactor_probe",
+      "sug_h_us_us_strategy_us_cache_readiness_multifactor_probe"
+    ],
+    "blocked_suggestions": [],
+    "preliminary_only": true,
+    "user_facing_simulation_brief_allowed": true,
+    "real_trade_allowed": false,
+    "next_stage": "V2.12-F H-US Current Usable Simulation Brief Refresh"
+  },
+  "opportunities": [
+    {
+      "opportunity_id": "h_us_h_strategy_h_cache_readiness_multifactor_probe",
+      "strategy_id": "strategy_h_cache_readiness_multifactor_probe",
+      "symbol": "H_API_SANDBOX_PAPER_BASKET",
+      "market": "H",
+      "name": "H-share cache-readiness multifactor sandbox probe",
+      "risk_veto": false,
+      "evidence_refs": [
+        "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/v2_12_d_h_us_historical_sandbox_candidate_refresh_latest.json",
+        "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/V2_12_D_H_US_HISTORICAL_SANDBOX_CANDIDATE_REFRESH_PASS.marker",
+        "v2_12_c_normalized_cache:h_00700_eodhd_daily_bars:99a1513efba06494de61bcbefc4367358c2c3e1c1dd382786a32a2c7cb6469a5"
+      ],
+      "reasons": [
+        "h_us_sandbox_status=PASS",
+        "sample_count=1",
+        "win_rate=1.0000",
+        "average_return=0.1130",
+        "max_drawdown=-0.0112",
+        "historical_symbols=00700.HK",
+        "source_stage=V2.12-D"
+      ],
+      "risk_warnings": [
+        "Preliminary H/US API-backed sandbox sample only; sample size is too small for production strategy proof.",
+        "Simulation-only draft; user decides and executes manually outside Aegis.",
+        "Manual external execution only; Aegis does not connect to broker APIs or place orders.",
+        "No live price, position size, trading webhook, broker execution, or order is produced.",
+        "manual_execution_only",
+        "sample_size_warning",
+        "suggestion_gate_required"
+      ]
+    },
+    {
+      "opportunity_id": "h_us_us_strategy_us_cache_readiness_multifactor_probe",
+      "strategy_id": "strategy_us_cache_readiness_multifactor_probe",
+      "symbol": "US_API_SANDBOX_PAPER_BASKET",
+      "market": "US",
+      "name": "U.S. cache-readiness multifactor sandbox probe",
+      "risk_veto": false,
+      "evidence_refs": [
+        "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/v2_12_d_h_us_historical_sandbox_candidate_refresh_latest.json",
+        "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/V2_12_D_H_US_HISTORICAL_SANDBOX_CANDIDATE_REFRESH_PASS.marker",
+        "v2_12_c_normalized_cache:us_aapl_eodhd_daily_bars:8aadce47722d091f3c7e849a5da07c15ebe5c89d5ae925ea37a574f4f977466c",
+        "v2_12_c_normalized_cache:us_aapl_twelve_data_daily_bars:08769d39f7cfa35c101005c13968267a324701fe629ba9f5dc11e35b504510e5"
+      ],
+      "reasons": [
+        "h_us_sandbox_status=PASS",
+        "sample_count=2",
+        "win_rate=1.0000",
+        "average_return=0.0365",
+        "max_drawdown=-0.0181",
+        "historical_symbols=AAPL.US",
+        "source_stage=V2.12-D"
+      ],
+      "risk_warnings": [
+        "Preliminary H/US API-backed sandbox sample only; sample size is too small for production strategy proof.",
+        "Simulation-only draft; user decides and executes manually outside Aegis.",
+        "Manual external execution only; Aegis does not connect to broker APIs or place orders.",
+        "No live price, position size, trading webhook, broker execution, or order is produced.",
+        "manual_execution_only",
+        "sample_size_warning",
+        "suggestion_gate_required"
+      ]
+    }
+  ],
+  "suggestions": [
+    {
+      "suggestion_id": "sug_h_us_h_strategy_h_cache_readiness_multifactor_probe",
+      "opportunity_id": "h_us_h_strategy_h_cache_readiness_multifactor_probe",
+      "strategy_id": "strategy_h_cache_readiness_multifactor_probe",
+      "symbol": "H_API_SANDBOX_PAPER_BASKET",
+      "market": "H",
+      "action": "paper_entry_candidate",
+      "simulation_only": true,
+      "user_must_execute_externally": true,
+      "reasons": [
+        "h_us_sandbox_status=PASS",
+        "sample_count=1",
+        "win_rate=1.0000",
+        "average_return=0.1130",
+        "max_drawdown=-0.0112",
+        "historical_symbols=00700.HK",
+        "source_stage=V2.12-D"
+      ],
+      "risk_warnings": [
+        "Preliminary H/US API-backed sandbox sample only; sample size is too small for production strategy proof.",
+        "Simulation-only draft; user decides and executes manually outside Aegis.",
+        "Manual external execution only; Aegis does not connect to broker APIs or place orders.",
+        "No live price, position size, trading webhook, broker execution, or order is produced.",
+        "manual_execution_only",
+        "sample_size_warning",
+        "suggestion_gate_required",
+        "Simulation-only draft; user decides and executes manually outside Aegis."
+      ],
+      "evidence_refs": [
+        "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/v2_12_d_h_us_historical_sandbox_candidate_refresh_latest.json",
+        "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/V2_12_D_H_US_HISTORICAL_SANDBOX_CANDIDATE_REFRESH_PASS.marker",
+        "v2_12_c_normalized_cache:h_00700_eodhd_daily_bars:99a1513efba06494de61bcbefc4367358c2c3e1c1dd382786a32a2c7cb6469a5"
+      ],
+      "blocked_by": [],
+      "created_at": "2026-07-12T00:47:08+08:00"
+    },
+    {
+      "suggestion_id": "sug_h_us_us_strategy_us_cache_readiness_multifactor_probe",
+      "opportunity_id": "h_us_us_strategy_us_cache_readiness_multifactor_probe",
+      "strategy_id": "strategy_us_cache_readiness_multifactor_probe",
+      "symbol": "US_API_SANDBOX_PAPER_BASKET",
+      "market": "US",
+      "action": "paper_entry_candidate",
+      "simulation_only": true,
+      "user_must_execute_externally": true,
+      "reasons": [
+        "h_us_sandbox_status=PASS",
+        "sample_count=2",
+        "win_rate=1.0000",
+        "average_return=0.0365",
+        "max_drawdown=-0.0181",
+        "historical_symbols=AAPL.US",
+        "source_stage=V2.12-D"
+      ],
+      "risk_warnings": [
+        "Preliminary H/US API-backed sandbox sample only; sample size is too small for production strategy proof.",
+        "Simulation-only draft; user decides and executes manually outside Aegis.",
+        "Manual external execution only; Aegis does not connect to broker APIs or place orders.",
+        "No live price, position size, trading webhook, broker execution, or order is produced.",
+        "manual_execution_only",
+        "sample_size_warning",
+        "suggestion_gate_required",
+        "Simulation-only draft; user decides and executes manually outside Aegis."
+      ],
+      "evidence_refs": [
+        "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/v2_12_d_h_us_historical_sandbox_candidate_refresh_latest.json",
+        "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/V2_12_D_H_US_HISTORICAL_SANDBOX_CANDIDATE_REFRESH_PASS.marker",
+        "v2_12_c_normalized_cache:us_aapl_eodhd_daily_bars:8aadce47722d091f3c7e849a5da07c15ebe5c89d5ae925ea37a574f4f977466c",
+        "v2_12_c_normalized_cache:us_aapl_twelve_data_daily_bars:08769d39f7cfa35c101005c13968267a324701fe629ba9f5dc11e35b504510e5"
+      ],
+      "blocked_by": [],
+      "created_at": "2026-07-12T00:47:08+08:00"
+    }
+  ],
+  "checks": {
+    "source_is_v2_12_d": true,
+    "source_report_pass": true,
+    "source_has_h_and_us_cases": true,
+    "source_is_preliminary_only": true,
+    "source_user_facing_suggestion_was_blocked": true,
+    "source_required_suggestion_gate": true,
+    "source_has_passing_strategies": true,
+    "opportunity_count_matches_candidates": true,
+    "draft_count_matches_opportunities": true,
+    "allowed_count_matches_source_pass_count": true,
+    "allowed_suggestions_present": true,
+    "no_blocked_suggestions_for_passing_source": true,
+    "all_allowed_are_paper_entry_candidates": true,
+    "evidence_refs_present": true,
+    "cache_case_evidence_refs_present": true,
+    "sample_size_warning_visible": true,
+    "preliminary_only_warning_visible": true,
+    "manual_external_execution_only": true,
+    "every_draft_simulation_only": true,
+    "no_live_price_or_position_size": true,
+    "suggestion_drafts_not_orders": true,
+    "no_real_trade": true,
+    "no_broker_api": true,
+    "no_trading_webhook": true,
+    "no_order_placement": true,
+    "no_secret_storage": true,
+    "no_strategy_auto_mutation": true,
+    "no_production_records_mutation": true,
+    "dashboard_contract_unchanged": true,
+    "acceptance_target_correct": true,
+    "report_status_pass": true,
+    "source_marker_exists": true,
+    "opportunities_json_written": true,
+    "suggestions_json_written": true,
+    "gate_report_json_written": true,
+    "gate_report_md_written": true,
+    "hashes_recorded": true
+  },
+  "safety": {
+    "simulation_only": true,
+    "manual_external_execution_only": true,
+    "not_real_trade_advice": true,
+    "not_an_order": true,
+    "preliminary_sample_only": true,
+    "sample_size_warning_required": true,
+    "no_real_trade": true,
+    "no_broker_api": true,
+    "no_trading_webhook": true,
+    "no_order_placement": true,
+    "no_live_price": true,
+    "no_position_size": true,
+    "no_secret_storage": true,
+    "no_strategy_mutation": true,
+    "no_production_records_mutation": true,
+    "dashboard_contract_unchanged": true
+  },
+  "run_dir": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v2_12_e_acceptance/v2_12_e_20260712_acceptance",
+  "opportunities_json": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v2_12_e_acceptance/v2_12_e_20260712_acceptance/h_us_suggestion_opportunities.json",
+  "suggestions_json": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v2_12_e_acceptance/v2_12_e_20260712_acceptance/h_us_suggestion_drafts.json",
+  "gate_report_json": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v2_12_e_acceptance/v2_12_e_20260712_acceptance/h_us_suggestion_gate_report.json",
+  "gate_report_md": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v2_12_e_acceptance/v2_12_e_20260712_acceptance/h_us_suggestion_gate_report.md",
+  "source_v2_12_d_report_json": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/v2_12_d_h_us_historical_sandbox_candidate_refresh_latest.json",
+  "source_v2_12_d_pass_marker": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/V2_12_D_H_US_HISTORICAL_SANDBOX_CANDIDATE_REFRESH_PASS.marker",
+  "hashes": {
+    "source_v2_12_d_report_json": "60050a1cc3d8c68c065de5424644c3595b81d4257a383c7cf6cacfc26dd33938",
+    "source_v2_12_d_pass_marker": "04b6be5a14860c34d7cc77fdf17348cf554db6600c9fb91cc4612f44329484fa",
+    "opportunities_json": "aed2f36c2b501e3ab55d9016eb26b8cd46e181c8521ae08f76adfe36b167db25",
+    "suggestions_json": "529edaf76a3b0212a18e06a76dd965ead491bbc65d2215bb826b5abd075ee2b0",
+    "gate_report_json": "d0dc309ace322153851e23081f4bd9bc5db11bf5131f20def3787c4e09e75444",
+    "gate_report_md": "785b83c47c3e550ef92783f3e832bd252a8f36cc62e5e94acff5bb5be68e181d"
+  }
+}

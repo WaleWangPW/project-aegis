@@ -1,0 +1,85 @@
+{
+  "project": "Project Aegis",
+  "type": "p25_5_productization",
+  "generated_at": "2026-07-11T06:54:02.966251+00:00",
+  "overall_verdict": "PASS",
+  "checks": [
+    {
+      "name": "contract_meta",
+      "passed": true
+    },
+    {
+      "name": "index_equals_v2",
+      "passed": true
+    },
+    {
+      "name": "node_source_present",
+      "passed": true
+    },
+    {
+      "name": "required_chinese_copy",
+      "passed": true
+    },
+    {
+      "name": "decision_order",
+      "passed": true
+    },
+    {
+      "name": "risk_before_candidates",
+      "passed": true
+    },
+    {
+      "name": "research_collapsed",
+      "passed": true
+    },
+    {
+      "name": "system_details_collapsed",
+      "passed": true
+    },
+    {
+      "name": "action_empty_state",
+      "passed": true
+    },
+    {
+      "name": "data_insufficient_blocks",
+      "passed": true
+    },
+    {
+      "name": "no_horizontal_scroll",
+      "passed": true
+    },
+    {
+      "name": "media_390",
+      "passed": true
+    },
+    {
+      "name": "touch_targets",
+      "passed": true
+    },
+    {
+      "name": "no_prohibited",
+      "passed": true
+    },
+    {
+      "name": "no_trade_send",
+      "passed": true
+    },
+    {
+      "name": "no_secrets",
+      "passed": true
+    },
+    {
+      "name": "no_composite_score",
+      "passed": true
+    },
+    {
+      "name": "read_only_reports",
+      "passed": true
+    },
+    {
+      "name": "derive_logic_unchanged",
+      "passed": true
+    }
+  ],
+  "derive_daily_decision_sha256": "6d1af48d929d11091aa74c1e7caa79b4144749a56c0df3cd81173e8bc553287e"
+}

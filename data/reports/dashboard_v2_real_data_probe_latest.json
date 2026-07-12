@@ -1,0 +1,334 @@
+{
+  "project": "Project Aegis",
+  "type": "dashboard_v2_real_data_probe",
+  "generated_at": "2026-07-11T01:15:12.486114+00:00",
+  "required_file_count": 11,
+  "existing_file_count": 11,
+  "parseable_file_count": 11,
+  "files": [
+    {
+      "file": "aegis_health_status_latest.json",
+      "exists": true,
+      "json_parseable": true,
+      "top_level_fields": [
+        "project",
+        "type",
+        "generated_at",
+        "health_status",
+        "health_label",
+        "reason",
+        "gate_overall_verdict",
+        "history_latest_result",
+        "feishu_dry_run",
+        "sent",
+        "webhook_called",
+        "trading_called",
+        "a_share_top5_symbols",
+        "hk_00700_status",
+        "crcl_status",
+        "sz_000002_status",
+        "source_files",
+        "safety_confirmations"
+      ],
+      "generated_at": "2026-07-11T09:13:54.689558+08:00",
+      "mtime": "2026-07-11T01:13:54.690390+00:00",
+      "sha256": "1bcac48655649968a7c2299e07eb896359e7a7bdb20cb693bb80937e4d1f427c",
+      "mappable_fields": [
+        "health_status",
+        "health_label",
+        "generated_at",
+        "gate_overall_verdict",
+        "history_latest_result"
+      ],
+      "missing_fields": []
+    },
+    {
+      "file": "aegis_evidence_gate_latest.json",
+      "exists": true,
+      "json_parseable": true,
+      "top_level_fields": [
+        "project",
+        "type",
+        "gate_started_at",
+        "gate_finished_at",
+        "strict_mode",
+        "checks",
+        "failures",
+        "overall_verdict"
+      ],
+      "generated_at": "2026-07-11T09:14:00.404541+08:00",
+      "mtime": "2026-07-11T01:14:00.404868+00:00",
+      "sha256": "5a6ac6922a27179d34cd8e6570c23a9a65f227aa23e2dfd71e0388ba2b60884d",
+      "mappable_fields": [
+        "overall_verdict",
+        "failures",
+        "gate_finished_at"
+      ],
+      "missing_fields": []
+    },
+    {
+      "file": "aegis_daily_dry_run_hardened_latest.json",
+      "exists": true,
+      "json_parseable": true,
+      "top_level_fields": [
+        "project",
+        "type",
+        "run_id",
+        "generated_at",
+        "schedule_id",
+        "enabled",
+        "dry_run",
+        "cron_modified",
+        "launchd_modified",
+        "no_overlap",
+        "lock_recovery",
+        "pipeline_duration_seconds",
+        "stages",
+        "failure_reason",
+        "lock_removed_on_exit",
+        "overall_verdict"
+      ],
+      "generated_at": "2026-07-11T00:00:34.683551+00:00",
+      "mtime": "2026-07-11T00:00:34.684251+00:00",
+      "sha256": "3c75d8735b95e0e62ad66bb5af4b864ec7da52516ffbac7f68904ff1a3df25a5",
+      "mappable_fields": [
+        "generated_at",
+        "overall_verdict",
+        "stages",
+        "lock_recovery"
+      ],
+      "missing_fields": []
+    },
+    {
+      "file": "aegis_pipeline_history_latest.json",
+      "exists": true,
+      "json_parseable": true,
+      "top_level_fields": [
+        "project",
+        "type",
+        "updated_at",
+        "retention_limit",
+        "runs"
+      ],
+      "generated_at": "2026-07-11T09:13:54.599529+08:00",
+      "mtime": "2026-07-11T01:13:54.599889+00:00",
+      "sha256": "c7e0a48c35a26db8410e0dea4ec886e7379671d20e82de853025903702e9196a",
+      "mappable_fields": [
+        "updated_at",
+        "runs"
+      ],
+      "missing_fields": []
+    },
+    {
+      "file": "a_share_watchlist_latest.json",
+      "exists": true,
+      "json_parseable": true,
+      "top_level_fields": [
+        "report_type",
+        "generated_at",
+        "source",
+        "market",
+        "count",
+        "top5",
+        "stocks",
+        "metadata"
+      ],
+      "generated_at": "2026-07-10T04:08:07.772126+08:00",
+      "mtime": "2026-07-09T20:08:07.772482+00:00",
+      "sha256": "14b0c694b6fceef087b2ed9060d70a661a4dd6708f46dbe31851802075952ea6",
+      "mappable_fields": [
+        "generated_at",
+        "stocks",
+        "top5"
+      ],
+      "missing_fields": []
+    },
+    {
+      "file": "crcl_risk_monitor_latest.json",
+      "exists": true,
+      "json_parseable": true,
+      "top_level_fields": [
+        "report_metadata",
+        "current_status",
+        "exit_watch_eligibility",
+        "risk_metrics",
+        "expert_stances",
+        "must_conditions_status",
+        "optional_conditions_status",
+        "next_check",
+        "data_sources"
+      ],
+      "generated_at": null,
+      "mtime": "2026-07-09T05:10:56.572908+00:00",
+      "sha256": "d36831305b4f61e9ce8893842575cd9301cacc9866a794078793b1e4c125e426",
+      "mappable_fields": [
+        "report_metadata",
+        "current_status",
+        "exit_watch_eligibility",
+        "risk_metrics",
+        "data_sources"
+      ],
+      "missing_fields": []
+    },
+    {
+      "file": "000002.sz_risk_monitor_latest.json",
+      "exists": true,
+      "json_parseable": true,
+      "top_level_fields": [
+        "report_metadata",
+        "current_status",
+        "exit_watch_eligibility",
+        "risk_metrics",
+        "expert_stances",
+        "must_conditions_status",
+        "optional_conditions_status",
+        "next_check",
+        "data_sources"
+      ],
+      "generated_at": null,
+      "mtime": "2026-07-09T05:55:03.227714+00:00",
+      "sha256": "99b9cee1a74373ad5ad55eed360a97b9af68d775e7dce6931356c3bba933467f",
+      "mappable_fields": [
+        "report_metadata",
+        "current_status",
+        "exit_watch_eligibility",
+        "risk_metrics",
+        "data_sources"
+      ],
+      "missing_fields": []
+    },
+    {
+      "file": "feishu_daily_digest_dry_run.json",
+      "exists": true,
+      "json_parseable": true,
+      "top_level_fields": [
+        "project",
+        "type",
+        "dry_run",
+        "sent",
+        "webhook_called",
+        "trading_called",
+        "generated_at",
+        "a_share_top5",
+        "hk_sample",
+        "risk_monitors",
+        "review_exit_risks",
+        "mobile_links",
+        "message_text"
+      ],
+      "generated_at": "2026-07-11T09:13:50.462013+08:00",
+      "mtime": "2026-07-11T01:13:50.462701+00:00",
+      "sha256": "ac4d362562950bc7a7d5d9aacd9258fb361b22b8a287c03c2bd592af22b46faf",
+      "mappable_fields": [
+        "generated_at",
+        "hk_sample",
+        "risk_monitors",
+        "review_exit_risks"
+      ],
+      "missing_fields": []
+    },
+    {
+      "file": "a_share_point_in_time_rolling_backtest_latest.json",
+      "exists": true,
+      "json_parseable": true,
+      "top_level_fields": [
+        "project",
+        "type",
+        "run_id",
+        "generated_at",
+        "plan_id",
+        "strategy_id",
+        "original_display_strategy_id",
+        "strategy_equivalence_claimed",
+        "backtest_type",
+        "point_in_time_required",
+        "static_snapshot_backtest",
+        "lookahead_bias_control_passed",
+        "survivorship_bias_warning",
+        "benchmark",
+        "snapshot_count",
+        "periods_count",
+        "passed_periods_count",
+        "failed_periods_count",
+        "periods",
+        "portfolio_metrics",
+        "benchmark_metrics",
+        "excess_return",
+        "source_signal_snapshots_sha256",
+        "source_plan_sha256",
+        "data_quality_warnings",
+        "dry_run",
+        "sent",
+        "trading_called"
+      ],
+      "generated_at": "2026-07-11T00:00:21.079674+00:00",
+      "mtime": "2026-07-11T00:00:21.081772+00:00",
+      "sha256": "2ab507eaf3041cfcfa594a6591a93f6070db17d9b4be772f5bb77d049e74178b",
+      "mappable_fields": [
+        "generated_at",
+        "strategy_id",
+        "portfolio_metrics",
+        "benchmark_metrics",
+        "excess_return"
+      ],
+      "missing_fields": []
+    },
+    {
+      "file": "a_share_rolling_backtest_history_latest.json",
+      "exists": true,
+      "json_parseable": true,
+      "top_level_fields": [
+        "project",
+        "type",
+        "generated_at",
+        "retention_limit",
+        "runs_count",
+        "entries",
+        "dry_run",
+        "sent",
+        "trading_called"
+      ],
+      "generated_at": "2026-07-11T00:00:22.329502+00:00",
+      "mtime": "2026-07-11T00:00:22.329914+00:00",
+      "sha256": "a2302d45dc1d0cf642db80e716d21f5452d5299c4df879ec9eff037f2e3d39d6",
+      "mappable_fields": [
+        "generated_at",
+        "entries"
+      ],
+      "missing_fields": []
+    },
+    {
+      "file": "a_share_rolling_backtest_raw_price_audit_latest.json",
+      "exists": true,
+      "json_parseable": true,
+      "top_level_fields": [
+        "project",
+        "type",
+        "generated_at",
+        "tolerance",
+        "source_signal_snapshots_sha256",
+        "source_rolling_backtest_sha256",
+        "symbol_price_evidence_count",
+        "benchmark_price_evidence_count",
+        "period_evidence_count",
+        "symbol_price_evidence",
+        "benchmark_price_evidence",
+        "recomputed_periods",
+        "reported_aggregate_metrics",
+        "recomputed_aggregate_metrics",
+        "aggregate_metric_differences",
+        "failures",
+        "overall_verdict"
+      ],
+      "generated_at": "2026-07-11T00:00:22.113414+00:00",
+      "mtime": "2026-07-11T00:00:22.115548+00:00",
+      "sha256": "de5f4e4f6ee4e6b6558cfd0f091b794f4ccc946b311f492aab1efa866cc4523e",
+      "mappable_fields": [
+        "generated_at",
+        "overall_verdict",
+        "reported_aggregate_metrics"
+      ],
+      "missing_fields": []
+    }
+  ]
+}

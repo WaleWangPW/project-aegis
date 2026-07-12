@@ -1,0 +1,1466 @@
+{
+  "project": "Project Aegis",
+  "type": "a_share_point_in_time_rolling_backtest",
+  "run_id": "p23_3_20260712T000020Z",
+  "generated_at": "2026-07-12T00:00:20.330440+00:00",
+  "plan_id": "a_share_point_in_time_rolling_backtest_v1",
+  "strategy_id": "a_share_historical_liquidity_trend_v1",
+  "original_display_strategy_id": "a_share_watchlist_v1",
+  "strategy_equivalence_claimed": false,
+  "backtest_type": "point_in_time_rolling_backtest",
+  "point_in_time_required": true,
+  "static_snapshot_backtest": false,
+  "lookahead_bias_control_passed": true,
+  "survivorship_bias_warning": true,
+  "benchmark": "000300.SH",
+  "snapshot_count": 6,
+  "periods_count": 6,
+  "passed_periods_count": 6,
+  "failed_periods_count": 0,
+  "periods": [
+    {
+      "snapshot_id": "snapshot_20240102",
+      "strategy_id": "a_share_historical_liquidity_trend_v1",
+      "signal_date": "2024-01-02",
+      "data_cutoff_date": "2024-01-02",
+      "entry_date": "2024-01-03",
+      "exit_date": "2024-01-31",
+      "selected_symbols": [
+        "600900.SH",
+        "601225.SH",
+        "601985.SH",
+        "000333.SZ",
+        "600795.SH",
+        "600150.SH",
+        "601088.SH",
+        "601899.SH",
+        "600886.SH",
+        "600348.SH",
+        "601168.SH",
+        "003816.SZ",
+        "600777.SH",
+        "600025.SH",
+        "601939.SH",
+        "601288.SH",
+        "300498.SZ",
+        "600919.SH",
+        "600938.SH",
+        "601989.SH"
+      ],
+      "selected_symbols_count": 20,
+      "valid_symbols": [
+        "600900.SH",
+        "601225.SH",
+        "601985.SH",
+        "000333.SZ",
+        "600795.SH",
+        "600150.SH",
+        "601088.SH",
+        "601899.SH",
+        "600886.SH",
+        "600348.SH",
+        "601168.SH",
+        "003816.SZ",
+        "600777.SH",
+        "600025.SH",
+        "601939.SH",
+        "601288.SH",
+        "300498.SZ",
+        "600919.SH",
+        "600938.SH",
+        "601989.SH"
+      ],
+      "valid_symbols_count": 20,
+      "missing_symbols": [],
+      "symbol_returns": [
+        {
+          "symbol": "600900.SH",
+          "entry_date": "2024-01-03",
+          "exit_date": "2024-01-31",
+          "entry_close": 23.76,
+          "exit_close": 24.4,
+          "raw_return": 0.026936026936026813
+        },
+        {
+          "symbol": "601225.SH",
+          "entry_date": "2024-01-03",
+          "exit_date": "2024-01-31",
+          "entry_close": 21.5,
+          "exit_close": 24.18,
+          "raw_return": 0.12465116279069766
+        },
+        {
+          "symbol": "601985.SH",
+          "entry_date": "2024-01-03",
+          "exit_date": "2024-01-31",
+          "entry_close": 7.95,
+          "exit_close": 8.29,
+          "raw_return": 0.042767295597484045
+        },
+        {
+          "symbol": "000333.SZ",
+          "entry_date": "2024-01-03",
+          "exit_date": "2024-01-31",
+          "entry_close": 54.45,
+          "exit_close": 58.25,
+          "raw_return": 0.0697887970615243
+        },
+        {
+          "symbol": "600795.SH",
+          "entry_date": "2024-01-03",
+          "exit_date": "2024-01-31",
+          "entry_close": 4.37,
+          "exit_close": 4.47,
+          "raw_return": 0.022883295194507935
+        },
+        {
+          "symbol": "600150.SH",
+          "entry_date": "2024-01-03",
+          "exit_date": "2024-01-31",
+          "entry_close": 30.25,
+          "exit_close": 30.59,
+          "raw_return": 0.011239669421487575
+        },
+        {
+          "symbol": "601088.SH",
+          "entry_date": "2024-01-03",
+          "exit_date": "2024-01-31",
+          "entry_close": 32.98,
+          "exit_close": 37.12,
+          "raw_return": 0.1255306246209824
+        },
+        {
+          "symbol": "601899.SH",
+          "entry_date": "2024-01-03",
+          "exit_date": "2024-01-31",
+          "entry_close": 12.53,
+          "exit_close": 12.04,
+          "raw_return": -0.03910614525139666
+        },
+        {
+          "symbol": "600886.SH",
+          "entry_date": "2024-01-03",
+          "exit_date": "2024-01-31",
+          "entry_close": 13.53,
+          "exit_close": 14.01,
+          "raw_return": 0.0354767184035476
+        },
+        {
+          "symbol": "600348.SH",
+          "entry_date": "2024-01-03",
+          "exit_date": "2024-01-31",
+          "entry_close": 10.31,
+          "exit_close": 9.67,
+          "raw_return": -0.06207565470417076
+        },
+        {
+          "symbol": "601168.SH",
+          "entry_date": "2024-01-03",
+          "exit_date": "2024-01-31",
+          "entry_close": 14.8,
+          "exit_close": 14.22,
+          "raw_return": -0.03918918918918923
+        },
+        {
+          "symbol": "003816.SZ",
+          "entry_date": "2024-01-03",
+          "exit_date": "2024-01-31",
+          "entry_close": 3.27,
+          "exit_close": 3.82,
+          "raw_return": 0.16819571865443428
+        },
+        {
+          "symbol": "600777.SH",
+          "entry_date": "2024-01-03",
+          "exit_date": "2024-01-31",
+          "entry_close": 3.02,
+          "exit_close": 2.79,
+          "raw_return": -0.07615894039735094
+        },
+        {
+          "symbol": "600025.SH",
+          "entry_date": "2024-01-03",
+          "exit_date": "2024-01-31",
+          "entry_close": 8.91,
+          "exit_close": 8.74,
+          "raw_return": -0.019079685746352437
+        },
+        {
+          "symbol": "601939.SH",
+          "entry_date": "2024-01-03",
+          "exit_date": "2024-01-31",
+          "entry_close": 6.62,
+          "exit_close": 6.86,
+          "raw_return": 0.03625377643504546
+        },
+        {
+          "symbol": "601288.SH",
+          "entry_date": "2024-01-03",
+          "exit_date": "2024-01-31",
+          "entry_close": 3.72,
+          "exit_close": 3.89,
+          "raw_return": 0.045698924731182755
+        },
+        {
+          "symbol": "300498.SZ",
+          "entry_date": "2024-01-03",
+          "exit_date": "2024-01-31",
+          "entry_close": 19.96,
+          "exit_close": 18.79,
+          "raw_return": -0.05861723446893796
+        },
+        {
+          "symbol": "600919.SH",
+          "entry_date": "2024-01-03",
+          "exit_date": "2024-01-31",
+          "entry_close": 6.71,
+          "exit_close": 7.32,
+          "raw_return": 0.09090909090909105
+        },
+        {
+          "symbol": "600938.SH",
+          "entry_date": "2024-01-03",
+          "exit_date": "2024-01-31",
+          "entry_close": 21.09,
+          "exit_close": 22.94,
+          "raw_return": 0.08771929824561409
+        },
+        {
+          "symbol": "601989.SH",
+          "entry_date": "2024-01-03",
+          "exit_date": "2024-01-31",
+          "entry_close": 4.17,
+          "exit_close": 4.19,
+          "raw_return": 0.004796163069544557
+        }
+      ],
+      "gross_portfolio_return": 0.029930985615688625,
+      "transaction_cost": 0.001,
+      "slippage_cost": 0.0005,
+      "net_portfolio_return": 0.028430985615688624,
+      "benchmark_evidence": {
+        "benchmark": "000300.SH",
+        "entry_date": "2024-01-03",
+        "exit_date": "2024-01-31",
+        "entry_close": 3378.2971,
+        "exit_close": 3215.3518,
+        "raw_return": -0.04823296920806641,
+        "row_count": 21
+      },
+      "benchmark_return": -0.04823296920806641,
+      "excess_return": 0.07666395482375504,
+      "source_entry_daily_sha256": "4c94c82404724b3967ee60af5f3bdcc6da065ce15bd7ecdffb1180d51413d727",
+      "source_exit_daily_sha256": "de393e515b29508767ada507dde9512d1138b25e9568b6522b737d0e8186c65d",
+      "point_in_time_passed": true,
+      "warnings": []
+    },
+    {
+      "snapshot_id": "snapshot_20240201",
+      "strategy_id": "a_share_historical_liquidity_trend_v1",
+      "signal_date": "2024-02-01",
+      "data_cutoff_date": "2024-02-01",
+      "entry_date": "2024-02-02",
+      "exit_date": "2024-03-11",
+      "selected_symbols": [
+        "601398.SH",
+        "601288.SH",
+        "000333.SZ",
+        "601225.SH",
+        "600900.SH",
+        "600919.SH",
+        "600036.SH",
+        "601088.SH",
+        "601988.SH",
+        "000651.SZ",
+        "600887.SH",
+        "601318.SH",
+        "600941.SH",
+        "601668.SH",
+        "601328.SH",
+        "601728.SH",
+        "600938.SH",
+        "601985.SH",
+        "601939.SH",
+        "600030.SH"
+      ],
+      "selected_symbols_count": 20,
+      "valid_symbols": [
+        "601398.SH",
+        "601288.SH",
+        "000333.SZ",
+        "601225.SH",
+        "600900.SH",
+        "600919.SH",
+        "600036.SH",
+        "601088.SH",
+        "601988.SH",
+        "000651.SZ",
+        "600887.SH",
+        "601318.SH",
+        "600941.SH",
+        "601668.SH",
+        "601328.SH",
+        "601728.SH",
+        "600938.SH",
+        "601985.SH",
+        "601939.SH",
+        "600030.SH"
+      ],
+      "valid_symbols_count": 20,
+      "missing_symbols": [],
+      "symbol_returns": [
+        {
+          "symbol": "601398.SH",
+          "entry_date": "2024-02-02",
+          "exit_date": "2024-03-11",
+          "entry_close": 5.17,
+          "exit_close": 5.37,
+          "raw_return": 0.03868471953578334
+        },
+        {
+          "symbol": "601288.SH",
+          "entry_date": "2024-02-02",
+          "exit_date": "2024-03-11",
+          "entry_close": 3.94,
+          "exit_close": 4.24,
+          "raw_return": 0.07614213197969555
+        },
+        {
+          "symbol": "000333.SZ",
+          "entry_date": "2024-02-02",
+          "exit_date": "2024-03-11",
+          "entry_close": 58.25,
+          "exit_close": 65.42,
+          "raw_return": 0.12309012875536474
+        },
+        {
+          "symbol": "601225.SH",
+          "entry_date": "2024-02-02",
+          "exit_date": "2024-03-11",
+          "entry_close": 24.05,
+          "exit_close": 26.45,
+          "raw_return": 0.0997920997920998
+        },
+        {
+          "symbol": "600900.SH",
+          "entry_date": "2024-02-02",
+          "exit_date": "2024-03-11",
+          "entry_close": 24.28,
+          "exit_close": 25.76,
+          "raw_return": 0.060955518945634335
+        },
+        {
+          "symbol": "600919.SH",
+          "entry_date": "2024-02-02",
+          "exit_date": "2024-03-11",
+          "entry_close": 7.3,
+          "exit_close": 7.72,
+          "raw_return": 0.05753424657534256
+        },
+        {
+          "symbol": "600036.SH",
+          "entry_date": "2024-02-02",
+          "exit_date": "2024-03-11",
+          "entry_close": 30.23,
+          "exit_close": 31.48,
+          "raw_return": 0.04134965266291757
+        },
+        {
+          "symbol": "601088.SH",
+          "entry_date": "2024-02-02",
+          "exit_date": "2024-03-11",
+          "entry_close": 37.02,
+          "exit_close": 38.7,
+          "raw_return": 0.04538087520259326
+        },
+        {
+          "symbol": "601988.SH",
+          "entry_date": "2024-02-02",
+          "exit_date": "2024-03-11",
+          "entry_close": 4.32,
+          "exit_close": 4.51,
+          "raw_return": 0.0439814814814814
+        },
+        {
+          "symbol": "000651.SZ",
+          "entry_date": "2024-02-02",
+          "exit_date": "2024-03-11",
+          "entry_close": 35.6,
+          "exit_close": 40.47,
+          "raw_return": 0.13679775280898876
+        },
+        {
+          "symbol": "600887.SH",
+          "entry_date": "2024-02-02",
+          "exit_date": "2024-03-11",
+          "entry_close": 26.96,
+          "exit_close": 28.5,
+          "raw_return": 0.05712166172106814
+        },
+        {
+          "symbol": "601318.SH",
+          "entry_date": "2024-02-02",
+          "exit_date": "2024-03-11",
+          "entry_close": 40.1,
+          "exit_close": 43.16,
+          "raw_return": 0.07630922693266817
+        },
+        {
+          "symbol": "600941.SH",
+          "entry_date": "2024-02-02",
+          "exit_date": "2024-03-11",
+          "entry_close": 101.88,
+          "exit_close": 106.89,
+          "raw_return": 0.04917550058892828
+        },
+        {
+          "symbol": "601668.SH",
+          "entry_date": "2024-02-02",
+          "exit_date": "2024-03-11",
+          "entry_close": 5.05,
+          "exit_close": 5.32,
+          "raw_return": 0.05346534653465351
+        },
+        {
+          "symbol": "601328.SH",
+          "entry_date": "2024-02-02",
+          "exit_date": "2024-03-11",
+          "entry_close": 6.03,
+          "exit_close": 6.34,
+          "raw_return": 0.051409618573797555
+        },
+        {
+          "symbol": "601728.SH",
+          "entry_date": "2024-02-02",
+          "exit_date": "2024-03-11",
+          "entry_close": 5.83,
+          "exit_close": 5.88,
+          "raw_return": 0.00857632933104635
+        },
+        {
+          "symbol": "600938.SH",
+          "entry_date": "2024-02-02",
+          "exit_date": "2024-03-11",
+          "entry_close": 22.37,
+          "exit_close": 29.14,
+          "raw_return": 0.3026374608851139
+        },
+        {
+          "symbol": "601985.SH",
+          "entry_date": "2024-02-02",
+          "exit_date": "2024-03-11",
+          "entry_close": 8.26,
+          "exit_close": 8.98,
+          "raw_return": 0.0871670702179177
+        },
+        {
+          "symbol": "601939.SH",
+          "entry_date": "2024-02-02",
+          "exit_date": "2024-03-11",
+          "entry_close": 6.92,
+          "exit_close": 7.07,
+          "raw_return": 0.021676300578034713
+        },
+        {
+          "symbol": "600030.SH",
+          "entry_date": "2024-02-02",
+          "exit_date": "2024-03-11",
+          "entry_close": 20.18,
+          "exit_close": 21.19,
+          "raw_return": 0.05004955401387523
+        }
+      ],
+      "gross_portfolio_return": 0.07406483385585025,
+      "transaction_cost": 0.001,
+      "slippage_cost": 0.0005,
+      "net_portfolio_return": 0.07256483385585025,
+      "benchmark_evidence": {
+        "benchmark": "000300.SH",
+        "entry_date": "2024-02-02",
+        "exit_date": "2024-03-11",
+        "entry_close": 3179.6276,
+        "exit_close": 3589.2635,
+        "raw_return": 0.12883140780385727,
+        "row_count": 21
+      },
+      "benchmark_return": 0.12883140780385727,
+      "excess_return": -0.05626657394800702,
+      "source_entry_daily_sha256": "c8fb733c96748cc38844299e9a2567e2528ebe52bb835a10f95d8908bf06da58",
+      "source_exit_daily_sha256": "0c729d39acc2db7a004b4c345785c0fa9fb1de6fe5cb973329b2ab4236f9f961",
+      "point_in_time_passed": true,
+      "warnings": []
+    },
+    {
+      "snapshot_id": "snapshot_20240301",
+      "strategy_id": "a_share_historical_liquidity_trend_v1",
+      "signal_date": "2024-03-01",
+      "data_cutoff_date": "2024-03-01",
+      "entry_date": "2024-03-04",
+      "exit_date": "2024-04-01",
+      "selected_symbols": [
+        "000651.SZ",
+        "600150.SH",
+        "000333.SZ",
+        "601288.SH",
+        "601766.SH",
+        "000725.SZ",
+        "600660.SH",
+        "601058.SH",
+        "000100.SZ",
+        "002415.SZ",
+        "600096.SH",
+        "603993.SH",
+        "601899.SH",
+        "002371.SZ",
+        "000001.SZ",
+        "600938.SH",
+        "600188.SH",
+        "600809.SH",
+        "600690.SH",
+        "600160.SH"
+      ],
+      "selected_symbols_count": 20,
+      "valid_symbols": [
+        "000651.SZ",
+        "600150.SH",
+        "000333.SZ",
+        "601288.SH",
+        "601766.SH",
+        "000725.SZ",
+        "600660.SH",
+        "601058.SH",
+        "000100.SZ",
+        "002415.SZ",
+        "600096.SH",
+        "603993.SH",
+        "601899.SH",
+        "002371.SZ",
+        "000001.SZ",
+        "600938.SH",
+        "600188.SH",
+        "600809.SH",
+        "600690.SH",
+        "600160.SH"
+      ],
+      "valid_symbols_count": 20,
+      "missing_symbols": [],
+      "symbol_returns": [
+        {
+          "symbol": "000651.SZ",
+          "entry_date": "2024-03-04",
+          "exit_date": "2024-04-01",
+          "entry_close": 40.07,
+          "exit_close": 40.12,
+          "raw_return": 0.001247816321437334
+        },
+        {
+          "symbol": "600150.SH",
+          "entry_date": "2024-03-04",
+          "exit_date": "2024-04-01",
+          "entry_close": 36.91,
+          "exit_close": 37.45,
+          "raw_return": 0.014630181522622854
+        },
+        {
+          "symbol": "000333.SZ",
+          "entry_date": "2024-03-04",
+          "exit_date": "2024-04-01",
+          "entry_close": 64.6,
+          "exit_close": 66.22,
+          "raw_return": 0.02507739938080511
+        },
+        {
+          "symbol": "601288.SH",
+          "entry_date": "2024-03-04",
+          "exit_date": "2024-04-01",
+          "entry_close": 4.24,
+          "exit_close": 4.23,
+          "raw_return": -0.002358490566037652
+        },
+        {
+          "symbol": "601766.SH",
+          "entry_date": "2024-03-04",
+          "exit_date": "2024-04-01",
+          "entry_close": 6.65,
+          "exit_close": 6.87,
+          "raw_return": 0.03308270676691727
+        },
+        {
+          "symbol": "000725.SZ",
+          "entry_date": "2024-03-04",
+          "exit_date": "2024-04-01",
+          "entry_close": 4.05,
+          "exit_close": 4.34,
+          "raw_return": 0.07160493827160486
+        },
+        {
+          "symbol": "600660.SH",
+          "entry_date": "2024-03-04",
+          "exit_date": "2024-04-01",
+          "entry_close": 43.97,
+          "exit_close": 44.8,
+          "raw_return": 0.01887650670911989
+        },
+        {
+          "symbol": "601058.SH",
+          "entry_date": "2024-03-04",
+          "exit_date": "2024-04-01",
+          "entry_close": 14.5,
+          "exit_close": 15.25,
+          "raw_return": 0.051724137931034475
+        },
+        {
+          "symbol": "000100.SZ",
+          "entry_date": "2024-03-04",
+          "exit_date": "2024-04-01",
+          "entry_close": 4.73,
+          "exit_close": 5.14,
+          "raw_return": 0.08668076109936562
+        },
+        {
+          "symbol": "002415.SZ",
+          "entry_date": "2024-03-04",
+          "exit_date": "2024-04-01",
+          "entry_close": 35.0,
+          "exit_close": 32.85,
+          "raw_return": -0.06142857142857139
+        },
+        {
+          "symbol": "600096.SH",
+          "entry_date": "2024-03-04",
+          "exit_date": "2024-04-01",
+          "entry_close": 19.08,
+          "exit_close": 19.31,
+          "raw_return": 0.012054507337526221
+        },
+        {
+          "symbol": "603993.SH",
+          "entry_date": "2024-03-04",
+          "exit_date": "2024-04-01",
+          "entry_close": 6.28,
+          "exit_close": 8.25,
+          "raw_return": 0.31369426751592355
+        },
+        {
+          "symbol": "601899.SH",
+          "entry_date": "2024-03-04",
+          "exit_date": "2024-04-01",
+          "entry_close": 13.46,
+          "exit_close": 16.87,
+          "raw_return": 0.25334323922734026
+        },
+        {
+          "symbol": "002371.SZ",
+          "entry_date": "2024-03-04",
+          "exit_date": "2024-04-01",
+          "entry_close": 292.17,
+          "exit_close": 308.0,
+          "raw_return": 0.05418078515932501
+        },
+        {
+          "symbol": "000001.SZ",
+          "entry_date": "2024-03-04",
+          "exit_date": "2024-04-01",
+          "entry_close": 10.33,
+          "exit_close": 10.64,
+          "raw_return": 0.030009680542110395
+        },
+        {
+          "symbol": "600938.SH",
+          "entry_date": "2024-03-04",
+          "exit_date": "2024-04-01",
+          "entry_close": 26.97,
+          "exit_close": 28.98,
+          "raw_return": 0.07452725250278092
+        },
+        {
+          "symbol": "600188.SH",
+          "entry_date": "2024-03-04",
+          "exit_date": "2024-04-01",
+          "entry_close": 27.03,
+          "exit_close": 23.82,
+          "raw_return": -0.11875693673695897
+        },
+        {
+          "symbol": "600809.SH",
+          "entry_date": "2024-03-04",
+          "exit_date": "2024-04-01",
+          "entry_close": 236.6,
+          "exit_close": 252.54,
+          "raw_return": 0.06737109044801359
+        },
+        {
+          "symbol": "600690.SH",
+          "entry_date": "2024-03-04",
+          "exit_date": "2024-04-01",
+          "entry_close": 24.55,
+          "exit_close": 25.62,
+          "raw_return": 0.04358452138492863
+        },
+        {
+          "symbol": "600160.SH",
+          "entry_date": "2024-03-04",
+          "exit_date": "2024-04-01",
+          "entry_close": 20.41,
+          "exit_close": 23.13,
+          "raw_return": 0.13326800587947085
+        }
+      ],
+      "gross_portfolio_return": 0.05512068996343794,
+      "transaction_cost": 0.001,
+      "slippage_cost": 0.0005,
+      "net_portfolio_return": 0.05362068996343794,
+      "benchmark_evidence": {
+        "benchmark": "000300.SH",
+        "entry_date": "2024-03-04",
+        "exit_date": "2024-04-01",
+        "entry_close": 3540.8686,
+        "exit_close": 3595.6466,
+        "raw_return": 0.01547021541550575,
+        "row_count": 21
+      },
+      "benchmark_return": 0.01547021541550575,
+      "excess_return": 0.03815047454793219,
+      "source_entry_daily_sha256": "d8d96bd8ce43e40b9d691508698bd43bcb03bbd954e4ef665811543924d9ebe4",
+      "source_exit_daily_sha256": "effbf34a5fbecc1bf0c477fb0f17ebc9f2aa307d9296978e9f15115392ab3e9f",
+      "point_in_time_passed": true,
+      "warnings": []
+    },
+    {
+      "snapshot_id": "snapshot_20240401",
+      "strategy_id": "a_share_historical_liquidity_trend_v1",
+      "signal_date": "2024-04-01",
+      "data_cutoff_date": "2024-04-01",
+      "entry_date": "2024-04-02",
+      "exit_date": "2024-05-07",
+      "selected_symbols": [
+        "601899.SH",
+        "603993.SH",
+        "600362.SH",
+        "600547.SH",
+        "000630.SZ",
+        "600489.SH",
+        "300274.SZ",
+        "000878.SZ",
+        "300750.SZ",
+        "601600.SH",
+        "000975.SZ",
+        "002714.SZ",
+        "600988.SH",
+        "600023.SH",
+        "000596.SZ",
+        "000807.SZ",
+        "601168.SH",
+        "002444.SZ",
+        "000858.SZ",
+        "600026.SH"
+      ],
+      "selected_symbols_count": 20,
+      "valid_symbols": [
+        "601899.SH",
+        "603993.SH",
+        "600362.SH",
+        "600547.SH",
+        "000630.SZ",
+        "600489.SH",
+        "300274.SZ",
+        "000878.SZ",
+        "300750.SZ",
+        "601600.SH",
+        "000975.SZ",
+        "002714.SZ",
+        "600988.SH",
+        "600023.SH",
+        "000596.SZ",
+        "000807.SZ",
+        "601168.SH",
+        "002444.SZ",
+        "000858.SZ",
+        "600026.SH"
+      ],
+      "valid_symbols_count": 20,
+      "missing_symbols": [],
+      "symbol_returns": [
+        {
+          "symbol": "601899.SH",
+          "entry_date": "2024-04-02",
+          "exit_date": "2024-05-07",
+          "entry_close": 16.95,
+          "exit_close": 17.45,
+          "raw_return": 0.029498525073746285
+        },
+        {
+          "symbol": "603993.SH",
+          "entry_date": "2024-04-02",
+          "exit_date": "2024-05-07",
+          "entry_close": 8.34,
+          "exit_close": 8.83,
+          "raw_return": 0.058752997601918544
+        },
+        {
+          "symbol": "600362.SH",
+          "entry_date": "2024-04-02",
+          "exit_date": "2024-05-07",
+          "entry_close": 24.04,
+          "exit_close": 25.75,
+          "raw_return": 0.07113144758735435
+        },
+        {
+          "symbol": "600547.SH",
+          "entry_date": "2024-04-02",
+          "exit_date": "2024-05-07",
+          "entry_close": 29.07,
+          "exit_close": 29.45,
+          "raw_return": 0.013071895424836555
+        },
+        {
+          "symbol": "000630.SZ",
+          "entry_date": "2024-04-02",
+          "exit_date": "2024-05-07",
+          "entry_close": 3.97,
+          "exit_close": 4.0,
+          "raw_return": 0.007556675062972307
+        },
+        {
+          "symbol": "600489.SH",
+          "entry_date": "2024-04-02",
+          "exit_date": "2024-05-07",
+          "entry_close": 13.25,
+          "exit_close": 13.36,
+          "raw_return": 0.008301886792452695
+        },
+        {
+          "symbol": "300274.SZ",
+          "entry_date": "2024-04-02",
+          "exit_date": "2024-05-07",
+          "entry_close": 107.1,
+          "exit_close": 106.9,
+          "raw_return": -0.0018674136321193968
+        },
+        {
+          "symbol": "000878.SZ",
+          "entry_date": "2024-04-02",
+          "exit_date": "2024-05-07",
+          "entry_close": 13.47,
+          "exit_close": 14.14,
+          "raw_return": 0.04974016332590936
+        },
+        {
+          "symbol": "300750.SZ",
+          "entry_date": "2024-04-02",
+          "exit_date": "2024-05-07",
+          "entry_close": 199.7,
+          "exit_close": 206.88,
+          "raw_return": 0.03595393089634458
+        },
+        {
+          "symbol": "601600.SH",
+          "entry_date": "2024-04-02",
+          "exit_date": "2024-05-07",
+          "entry_close": 7.23,
+          "exit_close": 7.69,
+          "raw_return": 0.0636237897648686
+        },
+        {
+          "symbol": "000975.SZ",
+          "entry_date": "2024-04-02",
+          "exit_date": "2024-05-07",
+          "entry_close": 18.18,
+          "exit_close": 18.56,
+          "raw_return": 0.020902090209020896
+        },
+        {
+          "symbol": "002714.SZ",
+          "entry_date": "2024-04-02",
+          "exit_date": "2024-05-07",
+          "entry_close": 44.33,
+          "exit_close": 45.11,
+          "raw_return": 0.017595307917888547
+        },
+        {
+          "symbol": "600988.SH",
+          "entry_date": "2024-04-02",
+          "exit_date": "2024-05-07",
+          "entry_close": 17.44,
+          "exit_close": 18.07,
+          "raw_return": 0.03612385321100908
+        },
+        {
+          "symbol": "600023.SH",
+          "entry_date": "2024-04-02",
+          "exit_date": "2024-05-07",
+          "entry_close": 6.63,
+          "exit_close": 6.22,
+          "raw_return": -0.06184012066365008
+        },
+        {
+          "symbol": "000596.SZ",
+          "entry_date": "2024-04-02",
+          "exit_date": "2024-05-07",
+          "entry_close": 266.8,
+          "exit_close": 280.38,
+          "raw_return": 0.05089955022488746
+        },
+        {
+          "symbol": "000807.SZ",
+          "entry_date": "2024-04-02",
+          "exit_date": "2024-05-07",
+          "entry_close": 14.24,
+          "exit_close": 14.8,
+          "raw_return": 0.0393258426966292
+        },
+        {
+          "symbol": "601168.SH",
+          "entry_date": "2024-04-02",
+          "exit_date": "2024-05-07",
+          "entry_close": 19.22,
+          "exit_close": 19.32,
+          "raw_return": 0.005202913631633832
+        },
+        {
+          "symbol": "002444.SZ",
+          "entry_date": "2024-04-02",
+          "exit_date": "2024-05-07",
+          "entry_close": 26.47,
+          "exit_close": 25.52,
+          "raw_return": -0.035889686437476365
+        },
+        {
+          "symbol": "000858.SZ",
+          "entry_date": "2024-04-02",
+          "exit_date": "2024-05-07",
+          "entry_close": 155.5,
+          "exit_close": 155.94,
+          "raw_return": 0.002829581993569086
+        },
+        {
+          "symbol": "600026.SH",
+          "entry_date": "2024-04-02",
+          "exit_date": "2024-05-07",
+          "entry_close": 17.02,
+          "exit_close": 16.06,
+          "raw_return": -0.05640423031727382
+        }
+      ],
+      "gross_portfolio_return": 0.017725450018226084,
+      "transaction_cost": 0.001,
+      "slippage_cost": 0.0005,
+      "net_portfolio_return": 0.016225450018226083,
+      "benchmark_evidence": {
+        "benchmark": "000300.SH",
+        "entry_date": "2024-04-02",
+        "exit_date": "2024-05-07",
+        "entry_close": 3580.6759,
+        "exit_close": 3659.0076,
+        "raw_return": 0.021876232920158944,
+        "row_count": 21
+      },
+      "benchmark_return": 0.021876232920158944,
+      "excess_return": -0.005650782901932862,
+      "source_entry_daily_sha256": "40da51db4832a8673401b882ef471840939aea7e0c6a2bc5f19da5b367fbaa78",
+      "source_exit_daily_sha256": "787b5e61e33531acdbae65d6bf084be12ca184ed47f9c16377eda4cc3c02fffe",
+      "point_in_time_passed": true,
+      "warnings": []
+    },
+    {
+      "snapshot_id": "snapshot_20240506",
+      "strategy_id": "a_share_historical_liquidity_trend_v1",
+      "signal_date": "2024-05-06",
+      "data_cutoff_date": "2024-05-06",
+      "entry_date": "2024-05-07",
+      "exit_date": "2024-06-04",
+      "selected_symbols": [
+        "600690.SH",
+        "601919.SH",
+        "600031.SH",
+        "000538.SZ",
+        "600660.SH",
+        "688169.SH",
+        "000651.SZ",
+        "300760.SZ",
+        "600036.SH",
+        "600309.SH",
+        "600426.SH",
+        "601166.SH",
+        "002028.SZ",
+        "000333.SZ",
+        "002422.SZ",
+        "000425.SZ",
+        "600926.SH",
+        "000999.SZ",
+        "000423.SZ",
+        "600487.SH"
+      ],
+      "selected_symbols_count": 20,
+      "valid_symbols": [
+        "600690.SH",
+        "601919.SH",
+        "600031.SH",
+        "000538.SZ",
+        "600660.SH",
+        "688169.SH",
+        "000651.SZ",
+        "300760.SZ",
+        "600036.SH",
+        "600309.SH",
+        "600426.SH",
+        "601166.SH",
+        "002028.SZ",
+        "000333.SZ",
+        "002422.SZ",
+        "000425.SZ",
+        "600926.SH",
+        "000999.SZ",
+        "000423.SZ",
+        "600487.SH"
+      ],
+      "valid_symbols_count": 20,
+      "missing_symbols": [],
+      "symbol_returns": [
+        {
+          "symbol": "600690.SH",
+          "entry_date": "2024-05-07",
+          "exit_date": "2024-06-04",
+          "entry_close": 31.28,
+          "exit_close": 30.12,
+          "raw_return": -0.037084398976982125
+        },
+        {
+          "symbol": "601919.SH",
+          "entry_date": "2024-05-07",
+          "exit_date": "2024-06-04",
+          "entry_close": 12.07,
+          "exit_close": 16.58,
+          "raw_return": 0.3736536868268432
+        },
+        {
+          "symbol": "600031.SH",
+          "entry_date": "2024-05-07",
+          "exit_date": "2024-06-04",
+          "entry_close": 16.87,
+          "exit_close": 15.91,
+          "raw_return": -0.05690574985180796
+        },
+        {
+          "symbol": "000538.SZ",
+          "entry_date": "2024-05-07",
+          "exit_date": "2024-06-04",
+          "entry_close": 56.98,
+          "exit_close": 53.9,
+          "raw_return": -0.05405405405405406
+        },
+        {
+          "symbol": "600660.SH",
+          "entry_date": "2024-05-07",
+          "exit_date": "2024-06-04",
+          "entry_close": 50.98,
+          "exit_close": 46.2,
+          "raw_return": -0.09376225970968999
+        },
+        {
+          "symbol": "688169.SH",
+          "entry_date": "2024-05-07",
+          "exit_date": "2024-06-04",
+          "entry_close": 441.3,
+          "exit_close": 439.16,
+          "raw_return": -0.004849308860185753
+        },
+        {
+          "symbol": "000651.SZ",
+          "entry_date": "2024-05-07",
+          "exit_date": "2024-06-04",
+          "entry_close": 42.67,
+          "exit_close": 41.58,
+          "raw_return": -0.025544879306304225
+        },
+        {
+          "symbol": "300760.SZ",
+          "entry_date": "2024-05-07",
+          "exit_date": "2024-06-04",
+          "entry_close": 311.6,
+          "exit_close": 298.5,
+          "raw_return": -0.04204107830551995
+        },
+        {
+          "symbol": "600036.SH",
+          "entry_date": "2024-05-07",
+          "exit_date": "2024-06-04",
+          "entry_close": 34.87,
+          "exit_close": 34.54,
+          "raw_return": -0.009463722397476282
+        },
+        {
+          "symbol": "600309.SH",
+          "entry_date": "2024-05-07",
+          "exit_date": "2024-06-04",
+          "entry_close": 91.96,
+          "exit_close": 88.1,
+          "raw_return": -0.04197477163984342
+        },
+        {
+          "symbol": "600426.SH",
+          "entry_date": "2024-05-07",
+          "exit_date": "2024-06-04",
+          "entry_close": 31.21,
+          "exit_close": 28.83,
+          "raw_return": -0.07625760974046791
+        },
+        {
+          "symbol": "601166.SH",
+          "entry_date": "2024-05-07",
+          "exit_date": "2024-06-04",
+          "entry_close": 16.82,
+          "exit_close": 17.75,
+          "raw_return": 0.055291319857312615
+        },
+        {
+          "symbol": "002028.SZ",
+          "entry_date": "2024-05-07",
+          "exit_date": "2024-06-04",
+          "entry_close": 68.31,
+          "exit_close": 73.63,
+          "raw_return": 0.07788025179329527
+        },
+        {
+          "symbol": "000333.SZ",
+          "entry_date": "2024-05-07",
+          "exit_date": "2024-06-04",
+          "entry_close": 71.1,
+          "exit_close": 64.68,
+          "raw_return": -0.09029535864978888
+        },
+        {
+          "symbol": "002422.SZ",
+          "entry_date": "2024-05-07",
+          "exit_date": "2024-06-04",
+          "entry_close": 33.94,
+          "exit_close": 33.22,
+          "raw_return": -0.02121390689451974
+        },
+        {
+          "symbol": "000425.SZ",
+          "entry_date": "2024-05-07",
+          "exit_date": "2024-06-04",
+          "entry_close": 7.49,
+          "exit_close": 7.38,
+          "raw_return": -0.01468624833110821
+        },
+        {
+          "symbol": "600926.SH",
+          "entry_date": "2024-05-07",
+          "exit_date": "2024-06-04",
+          "entry_close": 12.8,
+          "exit_close": 13.37,
+          "raw_return": 0.04453124999999991
+        },
+        {
+          "symbol": "000999.SZ",
+          "entry_date": "2024-05-07",
+          "exit_date": "2024-06-04",
+          "entry_close": 60.35,
+          "exit_close": 63.68,
+          "raw_return": 0.05517812758906371
+        },
+        {
+          "symbol": "000423.SZ",
+          "entry_date": "2024-05-07",
+          "exit_date": "2024-06-04",
+          "entry_close": 71.0,
+          "exit_close": 69.0,
+          "raw_return": -0.028169014084507005
+        },
+        {
+          "symbol": "600487.SH",
+          "entry_date": "2024-05-07",
+          "exit_date": "2024-06-04",
+          "entry_close": 13.85,
+          "exit_close": 15.03,
+          "raw_return": 0.08519855595667858
+        }
+      ],
+      "gross_portfolio_return": 0.0047715415610468884,
+      "transaction_cost": 0.001,
+      "slippage_cost": 0.0005,
+      "net_portfolio_return": 0.0032715415610468884,
+      "benchmark_evidence": {
+        "benchmark": "000300.SH",
+        "entry_date": "2024-05-07",
+        "exit_date": "2024-06-04",
+        "entry_close": 3659.0076,
+        "exit_close": 3615.6714,
+        "raw_return": -0.011843703194275856,
+        "row_count": 21
+      },
+      "benchmark_return": -0.011843703194275856,
+      "excess_return": 0.015115244755322745,
+      "source_entry_daily_sha256": "787b5e61e33531acdbae65d6bf084be12ca184ed47f9c16377eda4cc3c02fffe",
+      "source_exit_daily_sha256": "34d6d7cea1f22dea46d155e7ece139bc43ad0c43f2b297895ca4fcf9057bc435",
+      "point_in_time_passed": true,
+      "warnings": []
+    },
+    {
+      "snapshot_id": "snapshot_20240603",
+      "strategy_id": "a_share_historical_liquidity_trend_v1",
+      "signal_date": "2024-06-03",
+      "data_cutoff_date": "2024-06-03",
+      "entry_date": "2024-06-04",
+      "exit_date": "2024-07-03",
+      "selected_symbols": [
+        "600900.SH",
+        "601919.SH",
+        "601088.SH",
+        "601166.SH",
+        "300498.SZ",
+        "002714.SZ",
+        "601985.SH",
+        "601328.SH",
+        "601668.SH",
+        "601117.SH",
+        "600886.SH",
+        "002142.SZ",
+        "601658.SH",
+        "600021.SH",
+        "601077.SH",
+        "601398.SH",
+        "000001.SZ",
+        "601669.SH",
+        "601288.SH",
+        "600795.SH"
+      ],
+      "selected_symbols_count": 20,
+      "valid_symbols": [
+        "600900.SH",
+        "601919.SH",
+        "601088.SH",
+        "601166.SH",
+        "300498.SZ",
+        "002714.SZ",
+        "601985.SH",
+        "601328.SH",
+        "601668.SH",
+        "601117.SH",
+        "600886.SH",
+        "002142.SZ",
+        "601658.SH",
+        "600021.SH",
+        "601077.SH",
+        "601398.SH",
+        "000001.SZ",
+        "601669.SH",
+        "601288.SH",
+        "600795.SH"
+      ],
+      "valid_symbols_count": 20,
+      "missing_symbols": [],
+      "symbol_returns": [
+        {
+          "symbol": "600900.SH",
+          "entry_date": "2024-06-04",
+          "exit_date": "2024-07-03",
+          "entry_close": 27.48,
+          "exit_close": 29.3,
+          "raw_return": 0.0662299854439592
+        },
+        {
+          "symbol": "601919.SH",
+          "entry_date": "2024-06-04",
+          "exit_date": "2024-07-03",
+          "entry_close": 16.58,
+          "exit_close": 15.47,
+          "raw_return": -0.06694813027744262
+        },
+        {
+          "symbol": "601088.SH",
+          "entry_date": "2024-06-04",
+          "exit_date": "2024-07-03",
+          "entry_close": 42.34,
+          "exit_close": 45.25,
+          "raw_return": 0.06872933396315539
+        },
+        {
+          "symbol": "601166.SH",
+          "entry_date": "2024-06-04",
+          "exit_date": "2024-07-03",
+          "entry_close": 17.75,
+          "exit_close": 17.7,
+          "raw_return": -0.0028169014084507005
+        },
+        {
+          "symbol": "300498.SZ",
+          "entry_date": "2024-06-04",
+          "exit_date": "2024-07-03",
+          "entry_close": 21.86,
+          "exit_close": 19.95,
+          "raw_return": -0.08737419945105218
+        },
+        {
+          "symbol": "002714.SZ",
+          "entry_date": "2024-06-04",
+          "exit_date": "2024-07-03",
+          "entry_close": 48.74,
+          "exit_close": 44.12,
+          "raw_return": -0.09478867459991802
+        },
+        {
+          "symbol": "601985.SH",
+          "entry_date": "2024-06-04",
+          "exit_date": "2024-07-03",
+          "entry_close": 10.13,
+          "exit_close": 10.91,
+          "raw_return": 0.07699901283316879
+        },
+        {
+          "symbol": "601328.SH",
+          "entry_date": "2024-06-04",
+          "exit_date": "2024-07-03",
+          "entry_close": 7.21,
+          "exit_close": 7.62,
+          "raw_return": 0.0568654646324549
+        },
+        {
+          "symbol": "601668.SH",
+          "entry_date": "2024-06-04",
+          "exit_date": "2024-07-03",
+          "entry_close": 5.67,
+          "exit_close": 5.46,
+          "raw_return": -0.03703703703703698
+        },
+        {
+          "symbol": "601117.SH",
+          "entry_date": "2024-06-04",
+          "exit_date": "2024-07-03",
+          "entry_close": 8.61,
+          "exit_close": 7.89,
+          "raw_return": -0.08362369337979092
+        },
+        {
+          "symbol": "600886.SH",
+          "entry_date": "2024-06-04",
+          "exit_date": "2024-07-03",
+          "entry_close": 17.8,
+          "exit_close": 19.03,
+          "raw_return": 0.06910112359550569
+        },
+        {
+          "symbol": "002142.SZ",
+          "entry_date": "2024-06-04",
+          "exit_date": "2024-07-03",
+          "entry_close": 24.21,
+          "exit_close": 22.49,
+          "raw_return": -0.07104502271788526
+        },
+        {
+          "symbol": "601658.SH",
+          "entry_date": "2024-06-04",
+          "exit_date": "2024-07-03",
+          "entry_close": 5.04,
+          "exit_close": 5.12,
+          "raw_return": 0.015873015873015817
+        },
+        {
+          "symbol": "600021.SH",
+          "entry_date": "2024-06-04",
+          "exit_date": "2024-07-03",
+          "entry_close": 10.44,
+          "exit_close": 10.13,
+          "raw_return": -0.02969348659003823
+        },
+        {
+          "symbol": "601077.SH",
+          "entry_date": "2024-06-04",
+          "exit_date": "2024-07-03",
+          "entry_close": 5.06,
+          "exit_close": 5.14,
+          "raw_return": 0.015810276679841806
+        },
+        {
+          "symbol": "601398.SH",
+          "entry_date": "2024-06-04",
+          "exit_date": "2024-07-03",
+          "entry_close": 5.47,
+          "exit_close": 5.89,
+          "raw_return": 0.07678244972577697
+        },
+        {
+          "symbol": "000001.SZ",
+          "entry_date": "2024-06-04",
+          "exit_date": "2024-07-03",
+          "entry_close": 11.02,
+          "exit_close": 10.31,
+          "raw_return": -0.06442831215970957
+        },
+        {
+          "symbol": "601669.SH",
+          "entry_date": "2024-06-04",
+          "exit_date": "2024-07-03",
+          "entry_close": 5.39,
+          "exit_close": 5.69,
+          "raw_return": 0.0556586270871986
+        },
+        {
+          "symbol": "601288.SH",
+          "entry_date": "2024-06-04",
+          "exit_date": "2024-07-03",
+          "entry_close": 4.41,
+          "exit_close": 4.49,
+          "raw_return": 0.018140589569161092
+        },
+        {
+          "symbol": "600795.SH",
+          "entry_date": "2024-06-04",
+          "exit_date": "2024-07-03",
+          "entry_close": 5.57,
+          "exit_close": 6.07,
+          "raw_return": 0.08976660682226201
+        }
+      ],
+      "gross_portfolio_return": 0.0036100514302087883,
+      "transaction_cost": 0.001,
+      "slippage_cost": 0.0005,
+      "net_portfolio_return": 0.0021100514302087882,
+      "benchmark_evidence": {
+        "benchmark": "000300.SH",
+        "entry_date": "2024-06-04",
+        "exit_date": "2024-07-03",
+        "entry_close": 3615.6714,
+        "exit_close": 3463.4141,
+        "raw_return": -0.042110380937825376,
+        "row_count": 21
+      },
+      "benchmark_return": -0.042110380937825376,
+      "excess_return": 0.04422043236803416,
+      "source_entry_daily_sha256": "34d6d7cea1f22dea46d155e7ece139bc43ad0c43f2b297895ca4fcf9057bc435",
+      "source_exit_daily_sha256": "4ab3b3d54f30dc4e3f17488156e9cfe594840a5e790ab87b55e8bd327562ba40",
+      "point_in_time_passed": true,
+      "warnings": []
+    }
+  ],
+  "portfolio_metrics": {
+    "total_return": 0.1874271526996436,
+    "annualized_return": 0.4344144410181623,
+    "max_drawdown": 0.0,
+    "volatility": 0.10104700866212489,
+    "sharpe": 4.299132124442516,
+    "win_rate": 1.0,
+    "positive_period_rate": 1.0,
+    "average_period_return": 0.029370592074076426,
+    "periods_count": 6
+  },
+  "benchmark_metrics": {
+    "total_return": 0.05527667356935417,
+    "average_period_return": 0.010665133799892387,
+    "positive_period_rate": 0.5,
+    "periods_count": 6
+  },
+  "excess_return": 0.13215047913028943,
+  "source_signal_snapshots_sha256": "e974abd6f79f843f096fa184691656865c3199c650f41b40bf57b0e52afb5329",
+  "source_plan_sha256": "1423af0466cdc1428f401b60220bf4822b24820e2e083d032cf3614d09d05689",
+  "data_quality_warnings": [
+    "Historical stock eligibility is reconstructed from stock_basic list_date/delist_date.",
+    "Historical name and status changes may be incomplete.",
+    "This historical strategy is not equivalent to the current display Watchlist."
+  ],
+  "dry_run": true,
+  "sent": false,
+  "trading_called": false
+}

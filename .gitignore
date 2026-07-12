@@ -1,0 +1,42 @@
+# Local secrets and machine state
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+*.crt
+*.cer
+*.cookie
+*.cookies
+
+# Python / tooling
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Browser/test artifacts
+.playwright-cli/
+playwright-report/
+test-results/
+screenshots/
+tmp/
+
+# Generated caches and bulky derived data
+data/cache/
+data/processed/
+data/backups/
+output/
+
+# Local logs that may include terminal-specific state
+*.log
+
+# OS/editor noise
+.DS_Store
+*.swp
+*.swo

@@ -1,0 +1,54 @@
+{
+  "overall_status": "PASS",
+  "generated_at": "2026-07-11T17:12:43.231477+08:00",
+  "run_id": "v2_0_e_20260711_acceptance",
+  "command": "validate_v2_0_e_external_source_policy.py --run-id v2_0_e_20260711_acceptance",
+  "acceptance_target": "V2.0-E External Source Registry and Policy Gate",
+  "isolated": true,
+  "network_used": false,
+  "production_records_written": false,
+  "dashboard_contract_changed": false,
+  "run_dir": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v2_0_e_acceptance/v2_0_e_20260711_acceptance",
+  "registry_json": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v2_0_e_acceptance/v2_0_e_20260711_acceptance/external_source_policy_gate.json",
+  "checks": {
+    "source_registry_present": true,
+    "official_source_allowed": true,
+    "bloomberg_unlicensed_denied": true,
+    "reddit_pending_denied": true,
+    "x_pending_denied": true,
+    "unsafe_scrape_rejected": true,
+    "no_live_fetch": true,
+    "no_secret_or_cookie_access": true,
+    "no_broker_or_real_trade": true
+  },
+  "summary": {
+    "source_count": 4,
+    "allow_count": 1,
+    "deny_count": 3,
+    "allowed_sources": [
+      "src_sec_company_filings"
+    ],
+    "denied_sources": [
+      "src_bloomberg_unlicensed",
+      "src_reddit_pending",
+      "src_x_pending"
+    ]
+  },
+  "safety": {
+    "no_live_fetch": true,
+    "no_cookie_access": true,
+    "no_secret_storage": true,
+    "no_paywall_bypass": true,
+    "no_real_trade": true,
+    "no_broker_api": true,
+    "no_webhook": true,
+    "no_strategy_mutation": true,
+    "dashboard_contract_unchanged": true,
+    "no_live_web_ingestion": true,
+    "no_production_records_mutation": true,
+    "source_terms_required_before_collection": true
+  },
+  "hashes": {
+    "registry_json": "206b90730c2f588c855dac358b47ae8e6924a950e8e1f86c3076af0a4fda42b0"
+  }
+}

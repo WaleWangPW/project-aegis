@@ -1,0 +1,1844 @@
+{
+  "overall_status": "PASS",
+  "acceptance_target": "V2.13-V Finnhub Quote Multi-Symbol Sandbox Evaluation",
+  "source_acceptance_target": "V2.13-U Finnhub Quote Multi-Symbol Historical Case Assembly",
+  "run_id": "v2_13_v_20260712_acceptance",
+  "generated_at": "2026-07-12T03:44:07+08:00",
+  "command": "validate_v2_13_v_finnhub_quote_multi_symbol_sandbox_evaluation.py --run-id v2_13_v_20260712_acceptance",
+  "network_used": false,
+  "production_records_written": false,
+  "production_cache_mutated": false,
+  "production_provider_config_mutated": false,
+  "dashboard_contract_changed": false,
+  "summary": {
+    "candidate_count": 3,
+    "historical_case_count": 81,
+    "strategy_pass_count": 0,
+    "strategy_fail_count": 3,
+    "passing_strategies": [],
+    "failing_strategies": [
+      "strategy_crcl_us_finnhub_multi_quote_context_probe",
+      "strategy_msft_us_finnhub_multi_quote_context_probe",
+      "strategy_nvda_us_finnhub_multi_quote_context_probe"
+    ],
+    "symbols": [
+      "CRCL.US",
+      "MSFT.US",
+      "NVDA.US"
+    ],
+    "markets": [
+      "US"
+    ],
+    "blocked_symbols": [
+      "CRCL.US",
+      "MSFT.US",
+      "NVDA.US"
+    ],
+    "sandbox_evaluation_run": true,
+    "suggestion_gate_ready": false,
+    "suggestion_gate_required_for_passed_results": false,
+    "user_facing_suggestion_allowed": false,
+    "social_sentiment_status": "blocked_plan_or_rate_limit",
+    "next_stage": "V2.13-W Finnhub Quote Multi-Symbol Sandbox Result Brief"
+  },
+  "candidates": [
+    {
+      "strategy_id": "strategy_crcl_us_finnhub_multi_quote_context_probe",
+      "name": "CRCL.US Finnhub multi-symbol quote context sandbox probe",
+      "market": "US",
+      "universe": "CRCL.US Finnhub verified quote context universe",
+      "factor_family": "multi_factor",
+      "entry_rule": "Use Finnhub quote context as research evidence only; historical cases are still required.",
+      "exit_rule": "No exit rule is active until historical sandbox cases are supplied.",
+      "exit_horizon_days": 5,
+      "risk_controls": [
+        "manual_execution_only",
+        "historical_cases_required",
+        "suggestion_gate_required",
+        "single_quote_snapshot_not_strategy_evidence",
+        "multi_symbol_context_not_cross_symbol_signal"
+      ],
+      "pass_criteria": {
+        "min_sample_count": 3,
+        "min_win_rate": 0.5,
+        "min_average_return": 0.0,
+        "max_drawdown_floor": -0.12
+      },
+      "source_research_refs": [
+        "finnhub_quote_context_us_crcl_finnhub_quote",
+        "36ccb10e3524d0971782304bf71021736ae22dba87699abfd63140babcfbe81a",
+        "20bab0819d43d773cd53d0477f60fe10d814f8ebf9f5c9acf16ed53610ce6dcf"
+      ],
+      "created_at": "2026-07-12T03:29:33+08:00"
+    },
+    {
+      "strategy_id": "strategy_msft_us_finnhub_multi_quote_context_probe",
+      "name": "MSFT.US Finnhub multi-symbol quote context sandbox probe",
+      "market": "US",
+      "universe": "MSFT.US Finnhub verified quote context universe",
+      "factor_family": "multi_factor",
+      "entry_rule": "Use Finnhub quote context as research evidence only; historical cases are still required.",
+      "exit_rule": "No exit rule is active until historical sandbox cases are supplied.",
+      "exit_horizon_days": 5,
+      "risk_controls": [
+        "manual_execution_only",
+        "historical_cases_required",
+        "suggestion_gate_required",
+        "single_quote_snapshot_not_strategy_evidence",
+        "multi_symbol_context_not_cross_symbol_signal"
+      ],
+      "pass_criteria": {
+        "min_sample_count": 3,
+        "min_win_rate": 0.5,
+        "min_average_return": 0.0,
+        "max_drawdown_floor": -0.12
+      },
+      "source_research_refs": [
+        "finnhub_quote_context_us_msft_finnhub_quote",
+        "d7cf4c9d95a2808dd1d6cf3922467659293aab751f84fa8cdbd4efaa94498181",
+        "b47ae4893c9685132f73ceca6db246dea282abafeded33b0b98fd96abb403fd3"
+      ],
+      "created_at": "2026-07-12T03:29:33+08:00"
+    },
+    {
+      "strategy_id": "strategy_nvda_us_finnhub_multi_quote_context_probe",
+      "name": "NVDA.US Finnhub multi-symbol quote context sandbox probe",
+      "market": "US",
+      "universe": "NVDA.US Finnhub verified quote context universe",
+      "factor_family": "multi_factor",
+      "entry_rule": "Use Finnhub quote context as research evidence only; historical cases are still required.",
+      "exit_rule": "No exit rule is active until historical sandbox cases are supplied.",
+      "exit_horizon_days": 5,
+      "risk_controls": [
+        "manual_execution_only",
+        "historical_cases_required",
+        "suggestion_gate_required",
+        "single_quote_snapshot_not_strategy_evidence",
+        "multi_symbol_context_not_cross_symbol_signal"
+      ],
+      "pass_criteria": {
+        "min_sample_count": 3,
+        "min_win_rate": 0.5,
+        "min_average_return": 0.0,
+        "max_drawdown_floor": -0.12
+      },
+      "source_research_refs": [
+        "finnhub_quote_context_us_nvda_finnhub_quote",
+        "d25e4d90bec86bae1e741c2c3623a8971062d099198650f00e96de9a95f1fb71",
+        "0f97bdfde2474e8039eb8c4095d0086021d9ed4f0e5a793c7a5eb165f88ba006"
+      ],
+      "created_at": "2026-07-12T03:29:33+08:00"
+    }
+  ],
+  "historical_cases": [
+    {
+      "case_id": "v2_13_u_crcl_us_rolling_1",
+      "strategy_id": "strategy_crcl_us_finnhub_multi_quote_context_probe",
+      "date": "2026-06-01",
+      "symbol": "CRCL.US",
+      "market": "US",
+      "eligible": true,
+      "entry_price": 104.97,
+      "exit_price": 100.85,
+      "max_drawdown": -0.061160331523292366,
+      "risk_flags": [
+        "historical_drawdown_watch"
+      ],
+      "factor_values": {
+        "actual_return": -0.039249309326474274,
+        "rolling_window_days": 1.0,
+        "source_row_index": 0.0
+      },
+      "evidence_ref": "v2_13_u_multi_symbol_case:bind_finnhub_quote_context_us_crcl_finnhub_quote_multi_symbol_sandbox_candidate:finnhub_quote_context_us_crcl_finnhub_quote:CRCL.US:45e3e6482378d3427a35f66ab4211686c90279423cd1fddb1225b81ec9e339cf"
+    },
+    {
+      "case_id": "v2_13_u_crcl_us_rolling_2",
+      "strategy_id": "strategy_crcl_us_finnhub_multi_quote_context_probe",
+      "date": "2026-06-02",
+      "symbol": "CRCL.US",
+      "market": "US",
+      "eligible": true,
+      "entry_price": 100.85,
+      "exit_price": 90.13,
+      "max_drawdown": -0.10629647992067426,
+      "risk_flags": [
+        "historical_drawdown_watch"
+      ],
+      "factor_values": {
+        "actual_return": -0.10629647992067426,
+        "rolling_window_days": 1.0,
+        "source_row_index": 1.0
+      },
+      "evidence_ref": "v2_13_u_multi_symbol_case:bind_finnhub_quote_context_us_crcl_finnhub_quote_multi_symbol_sandbox_candidate:finnhub_quote_context_us_crcl_finnhub_quote:CRCL.US:45e3e6482378d3427a35f66ab4211686c90279423cd1fddb1225b81ec9e339cf"
+    },
+    {
+      "case_id": "v2_13_u_crcl_us_rolling_3",
+      "strategy_id": "strategy_crcl_us_finnhub_multi_quote_context_probe",
+      "date": "2026-06-03",
+      "symbol": "CRCL.US",
+      "market": "US",
+      "eligible": true,
+      "entry_price": 90.13,
+      "exit_price": 90.54,
+      "max_drawdown": -0.010318428935981228,
+      "risk_flags": [],
+      "factor_values": {
+        "actual_return": 0.004548984799733838,
+        "rolling_window_days": 1.0,
+        "source_row_index": 2.0
+      },
+      "evidence_ref": "v2_13_u_multi_symbol_case:bind_finnhub_quote_context_us_crcl_finnhub_quote_multi_symbol_sandbox_candidate:finnhub_quote_context_us_crcl_finnhub_quote:CRCL.US:45e3e6482378d3427a35f66ab4211686c90279423cd1fddb1225b81ec9e339cf"
+    },
+    {
+      "case_id": "v2_13_u_crcl_us_rolling_4",
+      "strategy_id": "strategy_crcl_us_finnhub_multi_quote_context_probe",
+      "date": "2026-06-04",
+      "symbol": "CRCL.US",
+      "market": "US",
+      "eligible": true,
+      "entry_price": 90.54,
+      "exit_price": 80.28,
+      "max_drawdown": -0.1339739341727414,
+      "risk_flags": [
+        "historical_drawdown_breach"
+      ],
+      "factor_values": {
+        "actual_return": -0.11332007952286287,
+        "rolling_window_days": 1.0,
+        "source_row_index": 3.0
+      },
+      "evidence_ref": "v2_13_u_multi_symbol_case:bind_finnhub_quote_context_us_crcl_finnhub_quote_multi_symbol_sandbox_candidate:finnhub_quote_context_us_crcl_finnhub_quote:CRCL.US:45e3e6482378d3427a35f66ab4211686c90279423cd1fddb1225b81ec9e339cf"
+    },
+    {
+      "case_id": "v2_13_u_crcl_us_rolling_5",
+      "strategy_id": "strategy_crcl_us_finnhub_multi_quote_context_probe",
+      "date": "2026-06-05",
+      "symbol": "CRCL.US",
+      "market": "US",
+      "eligible": true,
+      "entry_price": 80.28,
+      "exit_price": 82.53,
+      "max_drawdown": -0.023293472845042462,
+      "risk_flags": [],
+      "factor_values": {
+        "actual_return": 0.028026905829596414,
+        "rolling_window_days": 1.0,
+        "source_row_index": 4.0
+      },
+      "evidence_ref": "v2_13_u_multi_symbol_case:bind_finnhub_quote_context_us_crcl_finnhub_quote_multi_symbol_sandbox_candidate:finnhub_quote_context_us_crcl_finnhub_quote:CRCL.US:45e3e6482378d3427a35f66ab4211686c90279423cd1fddb1225b81ec9e339cf"
+    },
+    {
+      "case_id": "v2_13_u_crcl_us_rolling_6",
+      "strategy_id": "strategy_crcl_us_finnhub_multi_quote_context_probe",
+      "date": "2026-06-08",
+      "symbol": "CRCL.US",
+      "market": "US",
+      "eligible": true,
+      "entry_price": 82.53,
+      "exit_price": 81.1,
+      "max_drawdown": -0.05646431600630075,
+      "risk_flags": [],
+      "factor_values": {
+        "actual_return": -0.017327032594208248,
+        "rolling_window_days": 1.0,
+        "source_row_index": 5.0
+      },
+      "evidence_ref": "v2_13_u_multi_symbol_case:bind_finnhub_quote_context_us_crcl_finnhub_quote_multi_symbol_sandbox_candidate:finnhub_quote_context_us_crcl_finnhub_quote:CRCL.US:45e3e6482378d3427a35f66ab4211686c90279423cd1fddb1225b81ec9e339cf"
+    },
+    {
+      "case_id": "v2_13_u_crcl_us_rolling_7",
+      "strategy_id": "strategy_crcl_us_finnhub_multi_quote_context_probe",
+      "date": "2026-06-09",
+      "symbol": "CRCL.US",
+      "market": "US",
+      "eligible": true,
+      "entry_price": 81.1,
+      "exit_price": 78.93,
+      "max_drawdown": -0.03982737361282351,
+      "risk_flags": [],
+      "factor_values": {
+        "actual_return": -0.026757090012330304,
+        "rolling_window_days": 1.0,
+        "source_row_index": 6.0
+      },
+      "evidence_ref": "v2_13_u_multi_symbol_case:bind_finnhub_quote_context_us_crcl_finnhub_quote_multi_symbol_sandbox_candidate:finnhub_quote_context_us_crcl_finnhub_quote:CRCL.US:45e3e6482378d3427a35f66ab4211686c90279423cd1fddb1225b81ec9e339cf"
+    },
+    {
+      "case_id": "v2_13_u_crcl_us_rolling_8",
+      "strategy_id": "strategy_crcl_us_finnhub_multi_quote_context_probe",
+      "date": "2026-06-10",
+      "symbol": "CRCL.US",
+      "market": "US",
+      "eligible": true,
+      "entry_price": 78.93,
+      "exit_price": 82.63,
+      "max_drawdown": -0.004180919802356686,
+      "risk_flags": [],
+      "factor_values": {
+        "actual_return": 0.046876979602179,
+        "rolling_window_days": 1.0,
+        "source_row_index": 7.0
+      },
+      "evidence_ref": "v2_13_u_multi_symbol_case:bind_finnhub_quote_context_us_crcl_finnhub_quote_multi_symbol_sandbox_candidate:finnhub_quote_context_us_crcl_finnhub_quote:CRCL.US:45e3e6482378d3427a35f66ab4211686c90279423cd1fddb1225b81ec9e339cf"
+    },
+    {
+      "case_id": "v2_13_u_crcl_us_rolling_9",
+      "strategy_id": "strategy_crcl_us_finnhub_multi_quote_context_probe",
+      "date": "2026-06-11",
+      "symbol": "CRCL.US",
+      "market": "US",
+      "eligible": true,
+      "entry_price": 82.63,
+      "exit_price": 77.84,
+      "max_drawdown": -0.06075275323732299,
+      "risk_flags": [
+        "historical_drawdown_watch"
+      ],
+      "factor_values": {
+        "actual_return": -0.05796926055911887,
+        "rolling_window_days": 1.0,
+        "source_row_index": 8.0
+      },
+      "evidence_ref": "v2_13_u_multi_symbol_case:bind_finnhub_quote_context_us_crcl_finnhub_quote_multi_symbol_sandbox_candidate:finnhub_quote_context_us_crcl_finnhub_quote:CRCL.US:45e3e6482378d3427a35f66ab4211686c90279423cd1fddb1225b81ec9e339cf"
+    },
+    {
+      "case_id": "v2_13_u_crcl_us_rolling_10",
+      "strategy_id": "strategy_crcl_us_finnhub_multi_quote_context_probe",
+      "date": "2026-06-12",
+      "symbol": "CRCL.US",
+      "market": "US",
+      "eligible": true,
+      "entry_price": 77.84,
+      "exit_price": 83.37,
+      "max_drawdown": -0.002954779033915722,
+      "risk_flags": [],
+      "factor_values": {
+        "actual_return": 0.07104316546762592,
+        "rolling_window_days": 1.0,
+        "source_row_index": 9.0
+      },
+      "evidence_ref": "v2_13_u_multi_symbol_case:bind_finnhub_quote_context_us_crcl_finnhub_quote_multi_symbol_sandbox_candidate:finnhub_quote_context_us_crcl_finnhub_quote:CRCL.US:45e3e6482378d3427a35f66ab4211686c90279423cd1fddb1225b81ec9e339cf"
+    },
+    {
+      "case_id": "v2_13_u_crcl_us_rolling_11",
+      "strategy_id": "strategy_crcl_us_finnhub_multi_quote_context_probe",
+      "date": "2026-06-15",
+      "symbol": "CRCL.US",
+      "market": "US",
+      "eligible": true,
+      "entry_price": 83.37,
+      "exit_price": 79.72,
+      "max_drawdown": -0.05588341129902852,
+      "risk_flags": [],
+      "factor_values": {
+        "actual_return": -0.04378073647595065,
+        "rolling_window_days": 1.0,
+        "source_row_index": 10.0
+      },
+      "evidence_ref": "v2_13_u_multi_symbol_case:bind_finnhub_quote_context_us_crcl_finnhub_quote_multi_symbol_sandbox_candidate:finnhub_quote_context_us_crcl_finnhub_quote:CRCL.US:45e3e6482378d3427a35f66ab4211686c90279423cd1fddb1225b81ec9e339cf"
+    },
+    {
+      "case_id": "v2_13_u_crcl_us_rolling_12",
+      "strategy_id": "strategy_crcl_us_finnhub_multi_quote_context_probe",
+      "date": "2026-06-16",
+      "symbol": "CRCL.US",
+      "market": "US",
+      "eligible": true,
+      "entry_price": 79.72,
+      "exit_price": 80.59,
+      "max_drawdown": -0.015303562468640175,
+      "risk_flags": [],
+      "factor_values": {
+        "actual_return": 0.010913196186653344,
+        "rolling_window_days": 1.0,
+        "source_row_index": 11.0
+      },
+      "evidence_ref": "v2_13_u_multi_symbol_case:bind_finnhub_quote_context_us_crcl_finnhub_quote_multi_symbol_sandbox_candidate:finnhub_quote_context_us_crcl_finnhub_quote:CRCL.US:45e3e6482378d3427a35f66ab4211686c90279423cd1fddb1225b81ec9e339cf"
+    },
+    {
+      "case_id": "v2_13_u_crcl_us_rolling_13",
+      "strategy_id": "strategy_crcl_us_finnhub_multi_quote_context_probe",
+      "date": "2026-06-17",
+      "symbol": "CRCL.US",
+      "market": "US",
+      "eligible": true,
+      "entry_price": 80.59,
+      "exit_price": 80.23,
+      "max_drawdown": -0.04653182777019482,
+      "risk_flags": [],
+      "factor_values": {
+        "actual_return": -0.004467055465938695,
+        "rolling_window_days": 1.0,
+        "source_row_index": 12.0
+      },
+      "evidence_ref": "v2_13_u_multi_symbol_case:bind_finnhub_quote_context_us_crcl_finnhub_quote_multi_symbol_sandbox_candidate:finnhub_quote_context_us_crcl_finnhub_quote:CRCL.US:45e3e6482378d3427a35f66ab4211686c90279423cd1fddb1225b81ec9e339cf"
+    },
+    {
+      "case_id": "v2_13_u_crcl_us_rolling_14",
+      "strategy_id": "strategy_crcl_us_finnhub_multi_quote_context_probe",
+      "date": "2026-06-18",
+      "symbol": "CRCL.US",
+      "market": "US",
+      "eligible": true,
+      "entry_price": 80.23,
+      "exit_price": 79.95,
+      "max_drawdown": -0.04225352112676062,
+      "risk_flags": [],
+      "factor_values": {
+        "actual_return": -0.003489966346753099,
+        "rolling_window_days": 1.0,
+        "source_row_index": 13.0
+      },
+      "evidence_ref": "v2_13_u_multi_symbol_case:bind_finnhub_quote_context_us_crcl_finnhub_quote_multi_symbol_sandbox_candidate:finnhub_quote_context_us_crcl_finnhub_quote:CRCL.US:45e3e6482378d3427a35f66ab4211686c90279423cd1fddb1225b81ec9e339cf"
+    },
+    {
+      "case_id": "v2_13_u_crcl_us_rolling_15",
+      "strategy_id": "strategy_crcl_us_finnhub_multi_quote_context_probe",
+      "date": "2026-06-22",
+      "symbol": "CRCL.US",
+      "market": "US",
+      "eligible": true,
+      "entry_price": 79.95,
+      "exit_price": 75.68,
+      "max_drawdown": -0.06566604127579734,
+      "risk_flags": [
+        "historical_drawdown_watch"
+      ],
+      "factor_values": {
+        "actual_return": -0.053408380237648476,
+        "rolling_window_days": 1.0,
+        "source_row_index": 14.0
+      },
+      "evidence_ref": "v2_13_u_multi_symbol_case:bind_finnhub_quote_context_us_crcl_finnhub_quote_multi_symbol_sandbox_candidate:finnhub_quote_context_us_crcl_finnhub_quote:CRCL.US:45e3e6482378d3427a35f66ab4211686c90279423cd1fddb1225b81ec9e339cf"
+    },
+    {
+      "case_id": "v2_13_u_crcl_us_rolling_16",
+      "strategy_id": "strategy_crcl_us_finnhub_multi_quote_context_probe",
+      "date": "2026-06-23",
+      "symbol": "CRCL.US",
+      "market": "US",
+      "eligible": true,
+      "entry_price": 75.68,
+      "exit_price": 70.98,
+      "max_drawdown": -0.07412790697674432,
+      "risk_flags": [
+        "historical_drawdown_watch"
+      ],
+      "factor_values": {
+        "actual_return": -0.0621035940803383,
+        "rolling_window_days": 1.0,
+        "source_row_index": 15.0
+      },
+      "evidence_ref": "v2_13_u_multi_symbol_case:bind_finnhub_quote_context_us_crcl_finnhub_quote_multi_symbol_sandbox_candidate:finnhub_quote_context_us_crcl_finnhub_quote:CRCL.US:45e3e6482378d3427a35f66ab4211686c90279423cd1fddb1225b81ec9e339cf"
+    },
+    {
+      "case_id": "v2_13_u_crcl_us_rolling_17",
+      "strategy_id": "strategy_crcl_us_finnhub_multi_quote_context_probe",
+      "date": "2026-06-24",
+      "symbol": "CRCL.US",
+      "market": "US",
+      "eligible": true,
+      "entry_price": 70.98,
+      "exit_price": 68.81,
+      "max_drawdown": -0.048887010425471944,
+      "risk_flags": [],
+      "factor_values": {
+        "actual_return": -0.03057199211045367,
+        "rolling_window_days": 1.0,
+        "source_row_index": 16.0
+      },
+      "evidence_ref": "v2_13_u_multi_symbol_case:bind_finnhub_quote_context_us_crcl_finnhub_quote_multi_symbol_sandbox_candidate:finnhub_quote_context_us_crcl_finnhub_quote:CRCL.US:45e3e6482378d3427a35f66ab4211686c90279423cd1fddb1225b81ec9e339cf"
+    },
+    {
+      "case_id": "v2_13_u_crcl_us_rolling_18",
+      "strategy_id": "strategy_crcl_us_finnhub_multi_quote_context_probe",
+      "date": "2026-06-25",
+      "symbol": "CRCL.US",
+      "market": "US",
+      "eligible": true,
+      "entry_price": 68.81,
+      "exit_price": 73.57,
+      "max_drawdown": -0.020999854672286156,
+      "risk_flags": [],
+      "factor_values": {
+        "actual_return": 0.06917599186164788,
+        "rolling_window_days": 1.0,
+        "source_row_index": 17.0
+      },
+      "evidence_ref": "v2_13_u_multi_symbol_case:bind_finnhub_quote_context_us_crcl_finnhub_quote_multi_symbol_sandbox_candidate:finnhub_quote_context_us_crcl_finnhub_quote:CRCL.US:45e3e6482378d3427a35f66ab4211686c90279423cd1fddb1225b81ec9e339cf"
+    },
+    {
+      "case_id": "v2_13_u_crcl_us_rolling_19",
+      "strategy_id": "strategy_crcl_us_finnhub_multi_quote_context_probe",
+      "date": "2026-06-26",
+      "symbol": "CRCL.US",
+      "market": "US",
+      "eligible": true,
+      "entry_price": 73.57,
+      "exit_price": 75.96,
+      "max_drawdown": -0.08434144352317519,
+      "risk_flags": [
+        "historical_drawdown_watch"
+      ],
+      "factor_values": {
+        "actual_return": 0.03248606769063478,
+        "rolling_window_days": 1.0,
+        "source_row_index": 18.0
+      },
+      "evidence_ref": "v2_13_u_multi_symbol_case:bind_finnhub_quote_context_us_crcl_finnhub_quote_multi_symbol_sandbox_candidate:finnhub_quote_context_us_crcl_finnhub_quote:CRCL.US:45e3e6482378d3427a35f66ab4211686c90279423cd1fddb1225b81ec9e339cf"
+    },
+    {
+      "case_id": "v2_13_u_crcl_us_rolling_20",
+      "strategy_id": "strategy_crcl_us_finnhub_multi_quote_context_probe",
+      "date": "2026-06-29",
+      "symbol": "CRCL.US",
+      "market": "US",
+      "eligible": true,
+      "entry_price": 75.96,
+      "exit_price": 62.63,
+      "max_drawdown": -0.17693522906793036,
+      "risk_flags": [
+        "historical_drawdown_breach"
+      ],
+      "factor_values": {
+        "actual_return": -0.17548709847288035,
+        "rolling_window_days": 1.0,
+        "source_row_index": 19.0
+      },
+      "evidence_ref": "v2_13_u_multi_symbol_case:bind_finnhub_quote_context_us_crcl_finnhub_quote_multi_symbol_sandbox_candidate:finnhub_quote_context_us_crcl_finnhub_quote:CRCL.US:45e3e6482378d3427a35f66ab4211686c90279423cd1fddb1225b81ec9e339cf"
+    },
+    {
+      "case_id": "v2_13_u_crcl_us_rolling_21",
+      "strategy_id": "strategy_crcl_us_finnhub_multi_quote_context_probe",
+      "date": "2026-06-30",
+      "symbol": "CRCL.US",
+      "market": "US",
+      "eligible": true,
+      "entry_price": 62.63,
+      "exit_price": 61.95,
+      "max_drawdown": -0.01368353824045987,
+      "risk_flags": [],
+      "factor_values": {
+        "actual_return": -0.010857416573527059,
+        "rolling_window_days": 1.0,
+        "source_row_index": 20.0
+      },
+      "evidence_ref": "v2_13_u_multi_symbol_case:bind_finnhub_quote_context_us_crcl_finnhub_quote_multi_symbol_sandbox_candidate:finnhub_quote_context_us_crcl_finnhub_quote:CRCL.US:45e3e6482378d3427a35f66ab4211686c90279423cd1fddb1225b81ec9e339cf"
+    },
+    {
+      "case_id": "v2_13_u_crcl_us_rolling_22",
+      "strategy_id": "strategy_crcl_us_finnhub_multi_quote_context_probe",
+      "date": "2026-07-01",
+      "symbol": "CRCL.US",
+      "market": "US",
+      "eligible": true,
+      "entry_price": 61.95,
+      "exit_price": 64.62,
+      "max_drawdown": -0.0028571428571428914,
+      "risk_flags": [],
+      "factor_values": {
+        "actual_return": 0.043099273607748206,
+        "rolling_window_days": 1.0,
+        "source_row_index": 21.0
+      },
+      "evidence_ref": "v2_13_u_multi_symbol_case:bind_finnhub_quote_context_us_crcl_finnhub_quote_multi_symbol_sandbox_candidate:finnhub_quote_context_us_crcl_finnhub_quote:CRCL.US:45e3e6482378d3427a35f66ab4211686c90279423cd1fddb1225b81ec9e339cf"
+    },
+    {
+      "case_id": "v2_13_u_crcl_us_rolling_23",
+      "strategy_id": "strategy_crcl_us_finnhub_multi_quote_context_probe",
+      "date": "2026-07-02",
+      "symbol": "CRCL.US",
+      "market": "US",
+      "eligible": true,
+      "entry_price": 64.62,
+      "exit_price": 68.65,
+      "max_drawdown": -0.02584339213865683,
+      "risk_flags": [],
+      "factor_values": {
+        "actual_return": 0.062364593005261544,
+        "rolling_window_days": 1.0,
+        "source_row_index": 22.0
+      },
+      "evidence_ref": "v2_13_u_multi_symbol_case:bind_finnhub_quote_context_us_crcl_finnhub_quote_multi_symbol_sandbox_candidate:finnhub_quote_context_us_crcl_finnhub_quote:CRCL.US:45e3e6482378d3427a35f66ab4211686c90279423cd1fddb1225b81ec9e339cf"
+    },
+    {
+      "case_id": "v2_13_u_crcl_us_rolling_24",
+      "strategy_id": "strategy_crcl_us_finnhub_multi_quote_context_probe",
+      "date": "2026-07-06",
+      "symbol": "CRCL.US",
+      "market": "US",
+      "eligible": true,
+      "entry_price": 68.65,
+      "exit_price": 65.15,
+      "max_drawdown": -0.0830298616168973,
+      "risk_flags": [
+        "historical_drawdown_watch"
+      ],
+      "factor_values": {
+        "actual_return": -0.050983248361252724,
+        "rolling_window_days": 1.0,
+        "source_row_index": 23.0
+      },
+      "evidence_ref": "v2_13_u_multi_symbol_case:bind_finnhub_quote_context_us_crcl_finnhub_quote_multi_symbol_sandbox_candidate:finnhub_quote_context_us_crcl_finnhub_quote:CRCL.US:45e3e6482378d3427a35f66ab4211686c90279423cd1fddb1225b81ec9e339cf"
+    },
+    {
+      "case_id": "v2_13_u_crcl_us_rolling_25",
+      "strategy_id": "strategy_crcl_us_finnhub_multi_quote_context_probe",
+      "date": "2026-07-07",
+      "symbol": "CRCL.US",
+      "market": "US",
+      "eligible": true,
+      "entry_price": 65.15,
+      "exit_price": 64.07,
+      "max_drawdown": -0.05026861089792789,
+      "risk_flags": [],
+      "factor_values": {
+        "actual_return": -0.016577129700690904,
+        "rolling_window_days": 1.0,
+        "source_row_index": 24.0
+      },
+      "evidence_ref": "v2_13_u_multi_symbol_case:bind_finnhub_quote_context_us_crcl_finnhub_quote_multi_symbol_sandbox_candidate:finnhub_quote_context_us_crcl_finnhub_quote:CRCL.US:45e3e6482378d3427a35f66ab4211686c90279423cd1fddb1225b81ec9e339cf"
+    },
+    {
+      "case_id": "v2_13_u_crcl_us_rolling_26",
+      "strategy_id": "strategy_crcl_us_finnhub_multi_quote_context_probe",
+      "date": "2026-07-08",
+      "symbol": "CRCL.US",
+      "market": "US",
+      "eligible": true,
+      "entry_price": 64.07,
+      "exit_price": 63.01,
+      "max_drawdown": -0.03752146090213826,
+      "risk_flags": [],
+      "factor_values": {
+        "actual_return": -0.016544404557515144,
+        "rolling_window_days": 1.0,
+        "source_row_index": 25.0
+      },
+      "evidence_ref": "v2_13_u_multi_symbol_case:bind_finnhub_quote_context_us_crcl_finnhub_quote_multi_symbol_sandbox_candidate:finnhub_quote_context_us_crcl_finnhub_quote:CRCL.US:45e3e6482378d3427a35f66ab4211686c90279423cd1fddb1225b81ec9e339cf"
+    },
+    {
+      "case_id": "v2_13_u_crcl_us_rolling_27",
+      "strategy_id": "strategy_crcl_us_finnhub_multi_quote_context_probe",
+      "date": "2026-07-09",
+      "symbol": "CRCL.US",
+      "market": "US",
+      "eligible": true,
+      "entry_price": 63.01,
+      "exit_price": 66.14,
+      "max_drawdown": -0.021329947627360735,
+      "risk_flags": [],
+      "factor_values": {
+        "actual_return": 0.04967465481669581,
+        "rolling_window_days": 1.0,
+        "source_row_index": 26.0
+      },
+      "evidence_ref": "v2_13_u_multi_symbol_case:bind_finnhub_quote_context_us_crcl_finnhub_quote_multi_symbol_sandbox_candidate:finnhub_quote_context_us_crcl_finnhub_quote:CRCL.US:45e3e6482378d3427a35f66ab4211686c90279423cd1fddb1225b81ec9e339cf"
+    },
+    {
+      "case_id": "v2_13_u_msft_us_rolling_1",
+      "strategy_id": "strategy_msft_us_finnhub_multi_quote_context_probe",
+      "date": "2026-06-01",
+      "symbol": "MSFT.US",
+      "market": "US",
+      "eligible": true,
+      "entry_price": 460.52,
+      "exit_price": 441.31,
+      "max_drawdown": -0.04362459828020493,
+      "risk_flags": [],
+      "factor_values": {
+        "actual_return": -0.04171371493094758,
+        "rolling_window_days": 1.0,
+        "source_row_index": 0.0
+      },
+      "evidence_ref": "v2_13_u_multi_symbol_case:bind_finnhub_quote_context_us_msft_finnhub_quote_multi_symbol_sandbox_candidate:finnhub_quote_context_us_msft_finnhub_quote:MSFT.US:222272041e119792c621265619d20f345f9eaba3c28908d076fd2b22be488219"
+    },
+    {
+      "case_id": "v2_13_u_msft_us_rolling_2",
+      "strategy_id": "strategy_msft_us_finnhub_multi_quote_context_probe",
+      "date": "2026-06-02",
+      "symbol": "MSFT.US",
+      "market": "US",
+      "eligible": true,
+      "entry_price": 441.31,
+      "exit_price": 427.34,
+      "max_drawdown": -0.038657632956425214,
+      "risk_flags": [],
+      "factor_values": {
+        "actual_return": -0.03165575219233652,
+        "rolling_window_days": 1.0,
+        "source_row_index": 1.0
+      },
+      "evidence_ref": "v2_13_u_multi_symbol_case:bind_finnhub_quote_context_us_msft_finnhub_quote_multi_symbol_sandbox_candidate:finnhub_quote_context_us_msft_finnhub_quote:MSFT.US:222272041e119792c621265619d20f345f9eaba3c28908d076fd2b22be488219"
+    },
+    {
+      "case_id": "v2_13_u_msft_us_rolling_3",
+      "strategy_id": "strategy_msft_us_finnhub_multi_quote_context_probe",
+      "date": "2026-06-03",
+      "symbol": "MSFT.US",
+      "market": "US",
+      "eligible": true,
+      "entry_price": 427.34,
+      "exit_price": 428.05,
+      "max_drawdown": -0.00723077643094483,
+      "risk_flags": [],
+      "factor_values": {
+        "actual_return": 0.0016614405391492404,
+        "rolling_window_days": 1.0,
+        "source_row_index": 2.0
+      },
+      "evidence_ref": "v2_13_u_multi_symbol_case:bind_finnhub_quote_context_us_msft_finnhub_quote_multi_symbol_sandbox_candidate:finnhub_quote_context_us_msft_finnhub_quote:MSFT.US:222272041e119792c621265619d20f345f9eaba3c28908d076fd2b22be488219"
+    },
+    {
+      "case_id": "v2_13_u_msft_us_rolling_4",
+      "strategy_id": "strategy_msft_us_finnhub_multi_quote_context_probe",
+      "date": "2026-06-04",
+      "symbol": "MSFT.US",
+      "market": "US",
+      "eligible": true,
+      "entry_price": 428.05,
+      "exit_price": 416.67,
+      "max_drawdown": -0.031888798037612465,
+      "risk_flags": [],
+      "factor_values": {
+        "actual_return": -0.026585679243079068,
+        "rolling_window_days": 1.0,
+        "source_row_index": 3.0
+      },
+      "evidence_ref": "v2_13_u_multi_symbol_case:bind_finnhub_quote_context_us_msft_finnhub_quote_multi_symbol_sandbox_candidate:finnhub_quote_context_us_msft_finnhub_quote:MSFT.US:222272041e119792c621265619d20f345f9eaba3c28908d076fd2b22be488219"
+    },
+    {
+      "case_id": "v2_13_u_msft_us_rolling_5",
+      "strategy_id": "strategy_msft_us_finnhub_multi_quote_context_probe",
+      "date": "2026-06-05",
+      "symbol": "MSFT.US",
+      "market": "US",
+      "eligible": true,
+      "entry_price": 416.67,
+      "exit_price": 411.74,
+      "max_drawdown": -0.019463844289245746,
+      "risk_flags": [],
+      "factor_values": {
+        "actual_return": -0.011831905344757258,
+        "rolling_window_days": 1.0,
+        "source_row_index": 4.0
+      },
+      "evidence_ref": "v2_13_u_multi_symbol_case:bind_finnhub_quote_context_us_msft_finnhub_quote_multi_symbol_sandbox_candidate:finnhub_quote_context_us_msft_finnhub_quote:MSFT.US:222272041e119792c621265619d20f345f9eaba3c28908d076fd2b22be488219"
+    },
+    {
+      "case_id": "v2_13_u_msft_us_rolling_6",
+      "strategy_id": "strategy_msft_us_finnhub_multi_quote_context_probe",
+      "date": "2026-06-08",
+      "symbol": "MSFT.US",
+      "market": "US",
+      "eligible": true,
+      "entry_price": 411.74,
+      "exit_price": 403.41,
+      "max_drawdown": -0.03220478943022298,
+      "risk_flags": [],
+      "factor_values": {
+        "actual_return": -0.020231213872832332,
+        "rolling_window_days": 1.0,
+        "source_row_index": 5.0
+      },
+      "evidence_ref": "v2_13_u_multi_symbol_case:bind_finnhub_quote_context_us_msft_finnhub_quote_multi_symbol_sandbox_candidate:finnhub_quote_context_us_msft_finnhub_quote:MSFT.US:222272041e119792c621265619d20f345f9eaba3c28908d076fd2b22be488219"
+    },
+    {
+      "case_id": "v2_13_u_msft_us_rolling_7",
+      "strategy_id": "strategy_msft_us_finnhub_multi_quote_context_probe",
+      "date": "2026-06-09",
+      "symbol": "MSFT.US",
+      "market": "US",
+      "eligible": true,
+      "entry_price": 403.41,
+      "exit_price": 397.36,
+      "max_drawdown": -0.015492922832849976,
+      "risk_flags": [],
+      "factor_values": {
+        "actual_return": -0.014997149302198783,
+        "rolling_window_days": 1.0,
+        "source_row_index": 6.0
+      },
+      "evidence_ref": "v2_13_u_multi_symbol_case:bind_finnhub_quote_context_us_msft_finnhub_quote_multi_symbol_sandbox_candidate:finnhub_quote_context_us_msft_finnhub_quote:MSFT.US:222272041e119792c621265619d20f345f9eaba3c28908d076fd2b22be488219"
+    },
+    {
+      "case_id": "v2_13_u_msft_us_rolling_8",
+      "strategy_id": "strategy_msft_us_finnhub_multi_quote_context_probe",
+      "date": "2026-06-10",
+      "symbol": "MSFT.US",
+      "market": "US",
+      "eligible": true,
+      "entry_price": 397.36,
+      "exit_price": 390.34,
+      "max_drawdown": -0.03362190457016312,
+      "risk_flags": [],
+      "factor_values": {
+        "actual_return": -0.017666599557076803,
+        "rolling_window_days": 1.0,
+        "source_row_index": 7.0
+      },
+      "evidence_ref": "v2_13_u_multi_symbol_case:bind_finnhub_quote_context_us_msft_finnhub_quote_multi_symbol_sandbox_candidate:finnhub_quote_context_us_msft_finnhub_quote:MSFT.US:222272041e119792c621265619d20f345f9eaba3c28908d076fd2b22be488219"
+    },
+    {
+      "case_id": "v2_13_u_msft_us_rolling_9",
+      "strategy_id": "strategy_msft_us_finnhub_multi_quote_context_probe",
+      "date": "2026-06-11",
+      "symbol": "MSFT.US",
+      "market": "US",
+      "eligible": true,
+      "entry_price": 390.34,
+      "exit_price": 390.74,
+      "max_drawdown": -0.020674283957575423,
+      "risk_flags": [],
+      "factor_values": {
+        "actual_return": 0.0010247476558898246,
+        "rolling_window_days": 1.0,
+        "source_row_index": 8.0
+      },
+      "evidence_ref": "v2_13_u_multi_symbol_case:bind_finnhub_quote_context_us_msft_finnhub_quote_multi_symbol_sandbox_candidate:finnhub_quote_context_us_msft_finnhub_quote:MSFT.US:222272041e119792c621265619d20f345f9eaba3c28908d076fd2b22be488219"
+    },
+    {
+      "case_id": "v2_13_u_msft_us_rolling_10",
+      "strategy_id": "strategy_msft_us_finnhub_multi_quote_context_probe",
+      "date": "2026-06-12",
+      "symbol": "MSFT.US",
+      "market": "US",
+      "eligible": true,
+      "entry_price": 390.74,
+      "exit_price": 399.76,
+      "max_drawdown": -0.021676818344679383,
+      "risk_flags": [],
+      "factor_values": {
+        "actual_return": 0.023084403951476637,
+        "rolling_window_days": 1.0,
+        "source_row_index": 9.0
+      },
+      "evidence_ref": "v2_13_u_multi_symbol_case:bind_finnhub_quote_context_us_msft_finnhub_quote_multi_symbol_sandbox_candidate:finnhub_quote_context_us_msft_finnhub_quote:MSFT.US:222272041e119792c621265619d20f345f9eaba3c28908d076fd2b22be488219"
+    },
+    {
+      "case_id": "v2_13_u_msft_us_rolling_11",
+      "strategy_id": "strategy_msft_us_finnhub_multi_quote_context_probe",
+      "date": "2026-06-15",
+      "symbol": "MSFT.US",
+      "market": "US",
+      "eligible": true,
+      "entry_price": 399.76,
+      "exit_price": 393.83,
+      "max_drawdown": -0.022688613167900717,
+      "risk_flags": [],
+      "factor_values": {
+        "actual_return": -0.01483390034020414,
+        "rolling_window_days": 1.0,
+        "source_row_index": 10.0
+      },
+      "evidence_ref": "v2_13_u_multi_symbol_case:bind_finnhub_quote_context_us_msft_finnhub_quote_multi_symbol_sandbox_candidate:finnhub_quote_context_us_msft_finnhub_quote:MSFT.US:222272041e119792c621265619d20f345f9eaba3c28908d076fd2b22be488219"
+    },
+    {
+      "case_id": "v2_13_u_msft_us_rolling_12",
+      "strategy_id": "strategy_msft_us_finnhub_multi_quote_context_probe",
+      "date": "2026-06-16",
+      "symbol": "MSFT.US",
+      "market": "US",
+      "eligible": true,
+      "entry_price": 393.83,
+      "exit_price": 378.91,
+      "max_drawdown": -0.04192164131731968,
+      "risk_flags": [],
+      "factor_values": {
+        "actual_return": -0.03788436635096351,
+        "rolling_window_days": 1.0,
+        "source_row_index": 11.0
+      },
+      "evidence_ref": "v2_13_u_multi_symbol_case:bind_finnhub_quote_context_us_msft_finnhub_quote_multi_symbol_sandbox_candidate:finnhub_quote_context_us_msft_finnhub_quote:MSFT.US:222272041e119792c621265619d20f345f9eaba3c28908d076fd2b22be488219"
+    },
+    {
+      "case_id": "v2_13_u_msft_us_rolling_13",
+      "strategy_id": "strategy_msft_us_finnhub_multi_quote_context_probe",
+      "date": "2026-06-17",
+      "symbol": "MSFT.US",
+      "market": "US",
+      "eligible": true,
+      "entry_price": 378.91,
+      "exit_price": 379.4,
+      "max_drawdown": -0.01485840964872942,
+      "risk_flags": [],
+      "factor_values": {
+        "actual_return": 0.001293183077775599,
+        "rolling_window_days": 1.0,
+        "source_row_index": 12.0
+      },
+      "evidence_ref": "v2_13_u_multi_symbol_case:bind_finnhub_quote_context_us_msft_finnhub_quote_multi_symbol_sandbox_candidate:finnhub_quote_context_us_msft_finnhub_quote:MSFT.US:222272041e119792c621265619d20f345f9eaba3c28908d076fd2b22be488219"
+    },
+    {
+      "case_id": "v2_13_u_msft_us_rolling_14",
+      "strategy_id": "strategy_msft_us_finnhub_multi_quote_context_probe",
+      "date": "2026-06-18",
+      "symbol": "MSFT.US",
+      "market": "US",
+      "eligible": true,
+      "entry_price": 379.4,
+      "exit_price": 367.34,
+      "max_drawdown": -0.032498682129678436,
+      "risk_flags": [],
+      "factor_values": {
+        "actual_return": -0.03178703215603585,
+        "rolling_window_days": 1.0,
+        "source_row_index": 13.0
+      },
+      "evidence_ref": "v2_13_u_multi_symbol_case:bind_finnhub_quote_context_us_msft_finnhub_quote_multi_symbol_sandbox_candidate:finnhub_quote_context_us_msft_finnhub_quote:MSFT.US:222272041e119792c621265619d20f345f9eaba3c28908d076fd2b22be488219"
+    },
+    {
+      "case_id": "v2_13_u_msft_us_rolling_15",
+      "strategy_id": "strategy_msft_us_finnhub_multi_quote_context_probe",
+      "date": "2026-06-22",
+      "symbol": "MSFT.US",
+      "market": "US",
+      "eligible": true,
+      "entry_price": 367.34,
+      "exit_price": 373.94,
+      "max_drawdown": -0.0007350138835955367,
+      "risk_flags": [],
+      "factor_values": {
+        "actual_return": 0.017967006043447552,
+        "rolling_window_days": 1.0,
+        "source_row_index": 14.0
+      },
+      "evidence_ref": "v2_13_u_multi_symbol_case:bind_finnhub_quote_context_us_msft_finnhub_quote_multi_symbol_sandbox_candidate:finnhub_quote_context_us_msft_finnhub_quote:MSFT.US:222272041e119792c621265619d20f345f9eaba3c28908d076fd2b22be488219"
+    },
+    {
+      "case_id": "v2_13_u_msft_us_rolling_16",
+      "strategy_id": "strategy_msft_us_finnhub_multi_quote_context_probe",
+      "date": "2026-06-23",
+      "symbol": "MSFT.US",
+      "market": "US",
+      "eligible": true,
+      "entry_price": 373.94,
+      "exit_price": 365.46,
+      "max_drawdown": -0.02449590843450833,
+      "risk_flags": [],
+      "factor_values": {
+        "actual_return": -0.022677434882601537,
+        "rolling_window_days": 1.0,
+        "source_row_index": 15.0
+      },
+      "evidence_ref": "v2_13_u_multi_symbol_case:bind_finnhub_quote_context_us_msft_finnhub_quote_multi_symbol_sandbox_candidate:finnhub_quote_context_us_msft_finnhub_quote:MSFT.US:222272041e119792c621265619d20f345f9eaba3c28908d076fd2b22be488219"
+    },
+    {
+      "case_id": "v2_13_u_msft_us_rolling_17",
+      "strategy_id": "strategy_msft_us_finnhub_multi_quote_context_probe",
+      "date": "2026-06-24",
+      "symbol": "MSFT.US",
+      "market": "US",
+      "eligible": true,
+      "entry_price": 365.46,
+      "exit_price": 352.83,
+      "max_drawdown": -0.04449187325562298,
+      "risk_flags": [],
+      "factor_values": {
+        "actual_return": -0.034559185683795755,
+        "rolling_window_days": 1.0,
+        "source_row_index": 16.0
+      },
+      "evidence_ref": "v2_13_u_multi_symbol_case:bind_finnhub_quote_context_us_msft_finnhub_quote_multi_symbol_sandbox_candidate:finnhub_quote_context_us_msft_finnhub_quote:MSFT.US:222272041e119792c621265619d20f345f9eaba3c28908d076fd2b22be488219"
+    },
+    {
+      "case_id": "v2_13_u_msft_us_rolling_18",
+      "strategy_id": "strategy_msft_us_finnhub_multi_quote_context_probe",
+      "date": "2026-06-25",
+      "symbol": "MSFT.US",
+      "market": "US",
+      "eligible": true,
+      "entry_price": 352.83,
+      "exit_price": 372.97,
+      "max_drawdown": -0.010288240795850667,
+      "risk_flags": [],
+      "factor_values": {
+        "actual_return": 0.05708131394722683,
+        "rolling_window_days": 1.0,
+        "source_row_index": 17.0
+      },
+      "evidence_ref": "v2_13_u_multi_symbol_case:bind_finnhub_quote_context_us_msft_finnhub_quote_multi_symbol_sandbox_candidate:finnhub_quote_context_us_msft_finnhub_quote:MSFT.US:222272041e119792c621265619d20f345f9eaba3c28908d076fd2b22be488219"
+    },
+    {
+      "case_id": "v2_13_u_msft_us_rolling_19",
+      "strategy_id": "strategy_msft_us_finnhub_multi_quote_context_probe",
+      "date": "2026-06-26",
+      "symbol": "MSFT.US",
+      "market": "US",
+      "eligible": true,
+      "entry_price": 372.97,
+      "exit_price": 368.57,
+      "max_drawdown": -0.04702791109204496,
+      "risk_flags": [],
+      "factor_values": {
+        "actual_return": -0.011797195484891637,
+        "rolling_window_days": 1.0,
+        "source_row_index": 18.0
+      },
+      "evidence_ref": "v2_13_u_multi_symbol_case:bind_finnhub_quote_context_us_msft_finnhub_quote_multi_symbol_sandbox_candidate:finnhub_quote_context_us_msft_finnhub_quote:MSFT.US:222272041e119792c621265619d20f345f9eaba3c28908d076fd2b22be488219"
+    },
+    {
+      "case_id": "v2_13_u_msft_us_rolling_20",
+      "strategy_id": "strategy_msft_us_finnhub_multi_quote_context_probe",
+      "date": "2026-06-29",
+      "symbol": "MSFT.US",
+      "market": "US",
+      "eligible": true,
+      "entry_price": 368.57,
+      "exit_price": 373.02,
+      "max_drawdown": -0.02352334698971703,
+      "risk_flags": [],
+      "factor_values": {
+        "actual_return": 0.012073690208101551,
+        "rolling_window_days": 1.0,
+        "source_row_index": 19.0
+      },
+      "evidence_ref": "v2_13_u_multi_symbol_case:bind_finnhub_quote_context_us_msft_finnhub_quote_multi_symbol_sandbox_candidate:finnhub_quote_context_us_msft_finnhub_quote:MSFT.US:222272041e119792c621265619d20f345f9eaba3c28908d076fd2b22be488219"
+    },
+    {
+      "case_id": "v2_13_u_msft_us_rolling_21",
+      "strategy_id": "strategy_msft_us_finnhub_multi_quote_context_probe",
+      "date": "2026-06-30",
+      "symbol": "MSFT.US",
+      "market": "US",
+      "eligible": true,
+      "entry_price": 373.02,
+      "exit_price": 384.28,
+      "max_drawdown": -0.014932175218486887,
+      "risk_flags": [],
+      "factor_values": {
+        "actual_return": 0.030186049005415237,
+        "rolling_window_days": 1.0,
+        "source_row_index": 20.0
+      },
+      "evidence_ref": "v2_13_u_multi_symbol_case:bind_finnhub_quote_context_us_msft_finnhub_quote_multi_symbol_sandbox_candidate:finnhub_quote_context_us_msft_finnhub_quote:MSFT.US:222272041e119792c621265619d20f345f9eaba3c28908d076fd2b22be488219"
+    },
+    {
+      "case_id": "v2_13_u_msft_us_rolling_22",
+      "strategy_id": "strategy_msft_us_finnhub_multi_quote_context_probe",
+      "date": "2026-07-01",
+      "symbol": "MSFT.US",
+      "market": "US",
+      "eligible": true,
+      "entry_price": 384.28,
+      "exit_price": 390.49,
+      "max_drawdown": -0.02443530758821688,
+      "risk_flags": [],
+      "factor_values": {
+        "actual_return": 0.016160091599875186,
+        "rolling_window_days": 1.0,
+        "source_row_index": 21.0
+      },
+      "evidence_ref": "v2_13_u_multi_symbol_case:bind_finnhub_quote_context_us_msft_finnhub_quote_multi_symbol_sandbox_candidate:finnhub_quote_context_us_msft_finnhub_quote:MSFT.US:222272041e119792c621265619d20f345f9eaba3c28908d076fd2b22be488219"
+    },
+    {
+      "case_id": "v2_13_u_msft_us_rolling_23",
+      "strategy_id": "strategy_msft_us_finnhub_multi_quote_context_probe",
+      "date": "2026-07-02",
+      "symbol": "MSFT.US",
+      "market": "US",
+      "eligible": true,
+      "entry_price": 390.49,
+      "exit_price": 386.74,
+      "max_drawdown": -0.02373940433813926,
+      "risk_flags": [],
+      "factor_values": {
+        "actual_return": -0.009603318907014264,
+        "rolling_window_days": 1.0,
+        "source_row_index": 22.0
+      },
+      "evidence_ref": "v2_13_u_multi_symbol_case:bind_finnhub_quote_context_us_msft_finnhub_quote_multi_symbol_sandbox_candidate:finnhub_quote_context_us_msft_finnhub_quote:MSFT.US:222272041e119792c621265619d20f345f9eaba3c28908d076fd2b22be488219"
+    },
+    {
+      "case_id": "v2_13_u_msft_us_rolling_24",
+      "strategy_id": "strategy_msft_us_finnhub_multi_quote_context_probe",
+      "date": "2026-07-06",
+      "symbol": "MSFT.US",
+      "market": "US",
+      "eligible": true,
+      "entry_price": 386.74,
+      "exit_price": 388.84,
+      "max_drawdown": -0.014273155091275691,
+      "risk_flags": [],
+      "factor_values": {
+        "actual_return": 0.005430004654289615,
+        "rolling_window_days": 1.0,
+        "source_row_index": 23.0
+      },
+      "evidence_ref": "v2_13_u_multi_symbol_case:bind_finnhub_quote_context_us_msft_finnhub_quote_multi_symbol_sandbox_candidate:finnhub_quote_context_us_msft_finnhub_quote:MSFT.US:222272041e119792c621265619d20f345f9eaba3c28908d076fd2b22be488219"
+    },
+    {
+      "case_id": "v2_13_u_msft_us_rolling_25",
+      "strategy_id": "strategy_msft_us_finnhub_multi_quote_context_probe",
+      "date": "2026-07-07",
+      "symbol": "MSFT.US",
+      "market": "US",
+      "eligible": true,
+      "entry_price": 388.84,
+      "exit_price": 383.34,
+      "max_drawdown": -0.01931385659911533,
+      "risk_flags": [],
+      "factor_values": {
+        "actual_return": -0.014144635325583788,
+        "rolling_window_days": 1.0,
+        "source_row_index": 24.0
+      },
+      "evidence_ref": "v2_13_u_multi_symbol_case:bind_finnhub_quote_context_us_msft_finnhub_quote_multi_symbol_sandbox_candidate:finnhub_quote_context_us_msft_finnhub_quote:MSFT.US:222272041e119792c621265619d20f345f9eaba3c28908d076fd2b22be488219"
+    },
+    {
+      "case_id": "v2_13_u_msft_us_rolling_26",
+      "strategy_id": "strategy_msft_us_finnhub_multi_quote_context_probe",
+      "date": "2026-07-08",
+      "symbol": "MSFT.US",
+      "market": "US",
+      "eligible": true,
+      "entry_price": 383.34,
+      "exit_price": 384.36,
+      "max_drawdown": -0.026060416340585313,
+      "risk_flags": [],
+      "factor_values": {
+        "actual_return": 0.0026608232900298396,
+        "rolling_window_days": 1.0,
+        "source_row_index": 25.0
+      },
+      "evidence_ref": "v2_13_u_multi_symbol_case:bind_finnhub_quote_context_us_msft_finnhub_quote_multi_symbol_sandbox_candidate:finnhub_quote_context_us_msft_finnhub_quote:MSFT.US:222272041e119792c621265619d20f345f9eaba3c28908d076fd2b22be488219"
+    },
+    {
+      "case_id": "v2_13_u_msft_us_rolling_27",
+      "strategy_id": "strategy_msft_us_finnhub_multi_quote_context_probe",
+      "date": "2026-07-09",
+      "symbol": "MSFT.US",
+      "market": "US",
+      "eligible": true,
+      "entry_price": 384.36,
+      "exit_price": 385.1,
+      "max_drawdown": -0.02864502029347482,
+      "risk_flags": [],
+      "factor_values": {
+        "actual_return": 0.0019252783848475623,
+        "rolling_window_days": 1.0,
+        "source_row_index": 26.0
+      },
+      "evidence_ref": "v2_13_u_multi_symbol_case:bind_finnhub_quote_context_us_msft_finnhub_quote_multi_symbol_sandbox_candidate:finnhub_quote_context_us_msft_finnhub_quote:MSFT.US:222272041e119792c621265619d20f345f9eaba3c28908d076fd2b22be488219"
+    },
+    {
+      "case_id": "v2_13_u_nvda_us_rolling_1",
+      "strategy_id": "strategy_nvda_us_finnhub_multi_quote_context_probe",
+      "date": "2026-06-01",
+      "symbol": "NVDA.US",
+      "market": "US",
+      "eligible": true,
+      "entry_price": 224.36,
+      "exit_price": 222.82,
+      "max_drawdown": -0.038598680691745546,
+      "risk_flags": [],
+      "factor_values": {
+        "actual_return": -0.006863968621857819,
+        "rolling_window_days": 1.0,
+        "source_row_index": 0.0
+      },
+      "evidence_ref": "v2_13_u_multi_symbol_case:bind_finnhub_quote_context_us_nvda_finnhub_quote_multi_symbol_sandbox_candidate:finnhub_quote_context_us_nvda_finnhub_quote:NVDA.US:e7fdf774ee8e038b83657a51aca394190208c9d6ad17e39248ea683ff2cf229b"
+    },
+    {
+      "case_id": "v2_13_u_nvda_us_rolling_2",
+      "strategy_id": "strategy_nvda_us_finnhub_multi_quote_context_probe",
+      "date": "2026-06-02",
+      "symbol": "NVDA.US",
+      "market": "US",
+      "eligible": true,
+      "entry_price": 222.82,
+      "exit_price": 214.75,
+      "max_drawdown": -0.0372946773180145,
+      "risk_flags": [],
+      "factor_values": {
+        "actual_return": -0.03621757472399243,
+        "rolling_window_days": 1.0,
+        "source_row_index": 1.0
+      },
+      "evidence_ref": "v2_13_u_multi_symbol_case:bind_finnhub_quote_context_us_nvda_finnhub_quote_multi_symbol_sandbox_candidate:finnhub_quote_context_us_nvda_finnhub_quote:NVDA.US:e7fdf774ee8e038b83657a51aca394190208c9d6ad17e39248ea683ff2cf229b"
+    },
+    {
+      "case_id": "v2_13_u_nvda_us_rolling_3",
+      "strategy_id": "strategy_nvda_us_finnhub_multi_quote_context_probe",
+      "date": "2026-06-03",
+      "symbol": "NVDA.US",
+      "market": "US",
+      "eligible": true,
+      "entry_price": 214.75,
+      "exit_price": 218.66,
+      "max_drawdown": -0.017601862630966192,
+      "risk_flags": [],
+      "factor_values": {
+        "actual_return": 0.018207217694994164,
+        "rolling_window_days": 1.0,
+        "source_row_index": 2.0
+      },
+      "evidence_ref": "v2_13_u_multi_symbol_case:bind_finnhub_quote_context_us_nvda_finnhub_quote_multi_symbol_sandbox_candidate:finnhub_quote_context_us_nvda_finnhub_quote:NVDA.US:e7fdf774ee8e038b83657a51aca394190208c9d6ad17e39248ea683ff2cf229b"
+    },
+    {
+      "case_id": "v2_13_u_nvda_us_rolling_4",
+      "strategy_id": "strategy_nvda_us_finnhub_multi_quote_context_probe",
+      "date": "2026-06-04",
+      "symbol": "NVDA.US",
+      "market": "US",
+      "eligible": true,
+      "entry_price": 218.66,
+      "exit_price": 205.1,
+      "max_drawdown": -0.06553553461995787,
+      "risk_flags": [
+        "historical_drawdown_watch"
+      ],
+      "factor_values": {
+        "actual_return": -0.06201408579529865,
+        "rolling_window_days": 1.0,
+        "source_row_index": 3.0
+      },
+      "evidence_ref": "v2_13_u_multi_symbol_case:bind_finnhub_quote_context_us_nvda_finnhub_quote_multi_symbol_sandbox_candidate:finnhub_quote_context_us_nvda_finnhub_quote:NVDA.US:e7fdf774ee8e038b83657a51aca394190208c9d6ad17e39248ea683ff2cf229b"
+    },
+    {
+      "case_id": "v2_13_u_nvda_us_rolling_5",
+      "strategy_id": "strategy_nvda_us_finnhub_multi_quote_context_probe",
+      "date": "2026-06-05",
+      "symbol": "NVDA.US",
+      "market": "US",
+      "eligible": true,
+      "entry_price": 205.1,
+      "exit_price": 208.64,
+      "max_drawdown": -0.003754266211604018,
+      "risk_flags": [],
+      "factor_values": {
+        "actual_return": 0.01725987323256944,
+        "rolling_window_days": 1.0,
+        "source_row_index": 4.0
+      },
+      "evidence_ref": "v2_13_u_multi_symbol_case:bind_finnhub_quote_context_us_nvda_finnhub_quote_multi_symbol_sandbox_candidate:finnhub_quote_context_us_nvda_finnhub_quote:NVDA.US:e7fdf774ee8e038b83657a51aca394190208c9d6ad17e39248ea683ff2cf229b"
+    },
+    {
+      "case_id": "v2_13_u_nvda_us_rolling_6",
+      "strategy_id": "strategy_nvda_us_finnhub_multi_quote_context_probe",
+      "date": "2026-06-08",
+      "symbol": "NVDA.US",
+      "market": "US",
+      "eligible": true,
+      "entry_price": 208.64,
+      "exit_price": 208.19,
+      "max_drawdown": -0.04457438650306744,
+      "risk_flags": [],
+      "factor_values": {
+        "actual_return": -0.0021568251533741786,
+        "rolling_window_days": 1.0,
+        "source_row_index": 5.0
+      },
+      "evidence_ref": "v2_13_u_multi_symbol_case:bind_finnhub_quote_context_us_nvda_finnhub_quote_multi_symbol_sandbox_candidate:finnhub_quote_context_us_nvda_finnhub_quote:NVDA.US:e7fdf774ee8e038b83657a51aca394190208c9d6ad17e39248ea683ff2cf229b"
+    },
+    {
+      "case_id": "v2_13_u_nvda_us_rolling_7",
+      "strategy_id": "strategy_nvda_us_finnhub_multi_quote_context_probe",
+      "date": "2026-06-09",
+      "symbol": "NVDA.US",
+      "market": "US",
+      "eligible": true,
+      "entry_price": 208.19,
+      "exit_price": 200.42,
+      "max_drawdown": -0.042509246361496666,
+      "risk_flags": [],
+      "factor_values": {
+        "actual_return": -0.03732167731399207,
+        "rolling_window_days": 1.0,
+        "source_row_index": 6.0
+      },
+      "evidence_ref": "v2_13_u_multi_symbol_case:bind_finnhub_quote_context_us_nvda_finnhub_quote_multi_symbol_sandbox_candidate:finnhub_quote_context_us_nvda_finnhub_quote:NVDA.US:e7fdf774ee8e038b83657a51aca394190208c9d6ad17e39248ea683ff2cf229b"
+    },
+    {
+      "case_id": "v2_13_u_nvda_us_rolling_8",
+      "strategy_id": "strategy_nvda_us_finnhub_multi_quote_context_probe",
+      "date": "2026-06-10",
+      "symbol": "NVDA.US",
+      "market": "US",
+      "eligible": true,
+      "entry_price": 200.42,
+      "exit_price": 204.87,
+      "max_drawdown": -0.004390779363336983,
+      "risk_flags": [],
+      "factor_values": {
+        "actual_return": 0.02220337291687465,
+        "rolling_window_days": 1.0,
+        "source_row_index": 7.0
+      },
+      "evidence_ref": "v2_13_u_multi_symbol_case:bind_finnhub_quote_context_us_nvda_finnhub_quote_multi_symbol_sandbox_candidate:finnhub_quote_context_us_nvda_finnhub_quote:NVDA.US:e7fdf774ee8e038b83657a51aca394190208c9d6ad17e39248ea683ff2cf229b"
+    },
+    {
+      "case_id": "v2_13_u_nvda_us_rolling_9",
+      "strategy_id": "strategy_nvda_us_finnhub_multi_quote_context_probe",
+      "date": "2026-06-11",
+      "symbol": "NVDA.US",
+      "market": "US",
+      "eligible": true,
+      "entry_price": 204.87,
+      "exit_price": 205.19,
+      "max_drawdown": -0.026016498267193877,
+      "risk_flags": [],
+      "factor_values": {
+        "actual_return": 0.0015619661248596338,
+        "rolling_window_days": 1.0,
+        "source_row_index": 8.0
+      },
+      "evidence_ref": "v2_13_u_multi_symbol_case:bind_finnhub_quote_context_us_nvda_finnhub_quote_multi_symbol_sandbox_candidate:finnhub_quote_context_us_nvda_finnhub_quote:NVDA.US:e7fdf774ee8e038b83657a51aca394190208c9d6ad17e39248ea683ff2cf229b"
+    },
+    {
+      "case_id": "v2_13_u_nvda_us_rolling_10",
+      "strategy_id": "strategy_nvda_us_finnhub_multi_quote_context_probe",
+      "date": "2026-06-12",
+      "symbol": "NVDA.US",
+      "market": "US",
+      "eligible": true,
+      "entry_price": 205.19,
+      "exit_price": 212.45,
+      "max_drawdown": -0.008535991032701418,
+      "risk_flags": [],
+      "factor_values": {
+        "actual_return": 0.03538184122033233,
+        "rolling_window_days": 1.0,
+        "source_row_index": 9.0
+      },
+      "evidence_ref": "v2_13_u_multi_symbol_case:bind_finnhub_quote_context_us_nvda_finnhub_quote_multi_symbol_sandbox_candidate:finnhub_quote_context_us_nvda_finnhub_quote:NVDA.US:e7fdf774ee8e038b83657a51aca394190208c9d6ad17e39248ea683ff2cf229b"
+    },
+    {
+      "case_id": "v2_13_u_nvda_us_rolling_11",
+      "strategy_id": "strategy_nvda_us_finnhub_multi_quote_context_probe",
+      "date": "2026-06-15",
+      "symbol": "NVDA.US",
+      "market": "US",
+      "eligible": true,
+      "entry_price": 212.45,
+      "exit_price": 207.41,
+      "max_drawdown": -0.024288067780654288,
+      "risk_flags": [],
+      "factor_values": {
+        "actual_return": -0.023723228995057626,
+        "rolling_window_days": 1.0,
+        "source_row_index": 10.0
+      },
+      "evidence_ref": "v2_13_u_multi_symbol_case:bind_finnhub_quote_context_us_nvda_finnhub_quote_multi_symbol_sandbox_candidate:finnhub_quote_context_us_nvda_finnhub_quote:NVDA.US:e7fdf774ee8e038b83657a51aca394190208c9d6ad17e39248ea683ff2cf229b"
+    },
+    {
+      "case_id": "v2_13_u_nvda_us_rolling_12",
+      "strategy_id": "strategy_nvda_us_finnhub_multi_quote_context_probe",
+      "date": "2026-06-16",
+      "symbol": "NVDA.US",
+      "market": "US",
+      "eligible": true,
+      "entry_price": 207.41,
+      "exit_price": 204.65,
+      "max_drawdown": -0.020876524757726167,
+      "risk_flags": [],
+      "factor_values": {
+        "actual_return": -0.013306976519936314,
+        "rolling_window_days": 1.0,
+        "source_row_index": 11.0
+      },
+      "evidence_ref": "v2_13_u_multi_symbol_case:bind_finnhub_quote_context_us_nvda_finnhub_quote_multi_symbol_sandbox_candidate:finnhub_quote_context_us_nvda_finnhub_quote:NVDA.US:e7fdf774ee8e038b83657a51aca394190208c9d6ad17e39248ea683ff2cf229b"
+    },
+    {
+      "case_id": "v2_13_u_nvda_us_rolling_13",
+      "strategy_id": "strategy_nvda_us_finnhub_multi_quote_context_probe",
+      "date": "2026-06-17",
+      "symbol": "NVDA.US",
+      "market": "US",
+      "eligible": true,
+      "entry_price": 204.65,
+      "exit_price": 210.69,
+      "max_drawdown": -0.0076716344979232964,
+      "risk_flags": [],
+      "factor_values": {
+        "actual_return": 0.029513804055704824,
+        "rolling_window_days": 1.0,
+        "source_row_index": 12.0
+      },
+      "evidence_ref": "v2_13_u_multi_symbol_case:bind_finnhub_quote_context_us_nvda_finnhub_quote_multi_symbol_sandbox_candidate:finnhub_quote_context_us_nvda_finnhub_quote:NVDA.US:e7fdf774ee8e038b83657a51aca394190208c9d6ad17e39248ea683ff2cf229b"
+    },
+    {
+      "case_id": "v2_13_u_nvda_us_rolling_14",
+      "strategy_id": "strategy_nvda_us_finnhub_multi_quote_context_probe",
+      "date": "2026-06-18",
+      "symbol": "NVDA.US",
+      "market": "US",
+      "eligible": true,
+      "entry_price": 210.69,
+      "exit_price": 208.65,
+      "max_drawdown": -0.01988703782808865,
+      "risk_flags": [],
+      "factor_values": {
+        "actual_return": -0.009682471878114728,
+        "rolling_window_days": 1.0,
+        "source_row_index": 13.0
+      },
+      "evidence_ref": "v2_13_u_multi_symbol_case:bind_finnhub_quote_context_us_nvda_finnhub_quote_multi_symbol_sandbox_candidate:finnhub_quote_context_us_nvda_finnhub_quote:NVDA.US:e7fdf774ee8e038b83657a51aca394190208c9d6ad17e39248ea683ff2cf229b"
+    },
+    {
+      "case_id": "v2_13_u_nvda_us_rolling_15",
+      "strategy_id": "strategy_nvda_us_finnhub_multi_quote_context_probe",
+      "date": "2026-06-22",
+      "symbol": "NVDA.US",
+      "market": "US",
+      "eligible": true,
+      "entry_price": 208.65,
+      "exit_price": 200.04,
+      "max_drawdown": -0.04145698538221909,
+      "risk_flags": [],
+      "factor_values": {
+        "actual_return": -0.041265276779295534,
+        "rolling_window_days": 1.0,
+        "source_row_index": 14.0
+      },
+      "evidence_ref": "v2_13_u_multi_symbol_case:bind_finnhub_quote_context_us_nvda_finnhub_quote_multi_symbol_sandbox_candidate:finnhub_quote_context_us_nvda_finnhub_quote:NVDA.US:e7fdf774ee8e038b83657a51aca394190208c9d6ad17e39248ea683ff2cf229b"
+    },
+    {
+      "case_id": "v2_13_u_nvda_us_rolling_16",
+      "strategy_id": "strategy_nvda_us_finnhub_multi_quote_context_probe",
+      "date": "2026-06-23",
+      "symbol": "NVDA.US",
+      "market": "US",
+      "eligible": true,
+      "entry_price": 200.04,
+      "exit_price": 199.0,
+      "max_drawdown": -0.017296540691861484,
+      "risk_flags": [],
+      "factor_values": {
+        "actual_return": -0.005198960207958369,
+        "rolling_window_days": 1.0,
+        "source_row_index": 15.0
+      },
+      "evidence_ref": "v2_13_u_multi_symbol_case:bind_finnhub_quote_context_us_nvda_finnhub_quote_multi_symbol_sandbox_candidate:finnhub_quote_context_us_nvda_finnhub_quote:NVDA.US:e7fdf774ee8e038b83657a51aca394190208c9d6ad17e39248ea683ff2cf229b"
+    },
+    {
+      "case_id": "v2_13_u_nvda_us_rolling_17",
+      "strategy_id": "strategy_nvda_us_finnhub_multi_quote_context_probe",
+      "date": "2026-06-24",
+      "symbol": "NVDA.US",
+      "market": "US",
+      "eligible": true,
+      "entry_price": 199.0,
+      "exit_price": 195.74,
+      "max_drawdown": -0.03452261306532667,
+      "risk_flags": [],
+      "factor_values": {
+        "actual_return": -0.016381909547738646,
+        "rolling_window_days": 1.0,
+        "source_row_index": 16.0
+      },
+      "evidence_ref": "v2_13_u_multi_symbol_case:bind_finnhub_quote_context_us_nvda_finnhub_quote_multi_symbol_sandbox_candidate:finnhub_quote_context_us_nvda_finnhub_quote:NVDA.US:e7fdf774ee8e038b83657a51aca394190208c9d6ad17e39248ea683ff2cf229b"
+    },
+    {
+      "case_id": "v2_13_u_nvda_us_rolling_18",
+      "strategy_id": "strategy_nvda_us_finnhub_multi_quote_context_probe",
+      "date": "2026-06-25",
+      "symbol": "NVDA.US",
+      "market": "US",
+      "eligible": true,
+      "entry_price": 195.74,
+      "exit_price": 192.53,
+      "max_drawdown": -0.023091856544395717,
+      "risk_flags": [],
+      "factor_values": {
+        "actual_return": -0.01639930520077658,
+        "rolling_window_days": 1.0,
+        "source_row_index": 17.0
+      },
+      "evidence_ref": "v2_13_u_multi_symbol_case:bind_finnhub_quote_context_us_nvda_finnhub_quote_multi_symbol_sandbox_candidate:finnhub_quote_context_us_nvda_finnhub_quote:NVDA.US:e7fdf774ee8e038b83657a51aca394190208c9d6ad17e39248ea683ff2cf229b"
+    },
+    {
+      "case_id": "v2_13_u_nvda_us_rolling_19",
+      "strategy_id": "strategy_nvda_us_finnhub_multi_quote_context_probe",
+      "date": "2026-06-26",
+      "symbol": "NVDA.US",
+      "market": "US",
+      "eligible": true,
+      "entry_price": 192.53,
+      "exit_price": 194.97,
+      "max_drawdown": -0.014179608372721031,
+      "risk_flags": [],
+      "factor_values": {
+        "actual_return": 0.01267334960785331,
+        "rolling_window_days": 1.0,
+        "source_row_index": 18.0
+      },
+      "evidence_ref": "v2_13_u_multi_symbol_case:bind_finnhub_quote_context_us_nvda_finnhub_quote_multi_symbol_sandbox_candidate:finnhub_quote_context_us_nvda_finnhub_quote:NVDA.US:e7fdf774ee8e038b83657a51aca394190208c9d6ad17e39248ea683ff2cf229b"
+    },
+    {
+      "case_id": "v2_13_u_nvda_us_rolling_20",
+      "strategy_id": "strategy_nvda_us_finnhub_multi_quote_context_probe",
+      "date": "2026-06-29",
+      "symbol": "NVDA.US",
+      "market": "US",
+      "eligible": true,
+      "entry_price": 194.97,
+      "exit_price": 200.09,
+      "max_drawdown": -0.0265169000359029,
+      "risk_flags": [],
+      "factor_values": {
+        "actual_return": 0.026260450325691156,
+        "rolling_window_days": 1.0,
+        "source_row_index": 19.0
+      },
+      "evidence_ref": "v2_13_u_multi_symbol_case:bind_finnhub_quote_context_us_nvda_finnhub_quote_multi_symbol_sandbox_candidate:finnhub_quote_context_us_nvda_finnhub_quote:NVDA.US:e7fdf774ee8e038b83657a51aca394190208c9d6ad17e39248ea683ff2cf229b"
+    },
+    {
+      "case_id": "v2_13_u_nvda_us_rolling_21",
+      "strategy_id": "strategy_nvda_us_finnhub_multi_quote_context_probe",
+      "date": "2026-06-30",
+      "symbol": "NVDA.US",
+      "market": "US",
+      "eligible": true,
+      "entry_price": 200.09,
+      "exit_price": 197.58,
+      "max_drawdown": -0.03318506671997612,
+      "risk_flags": [],
+      "factor_values": {
+        "actual_return": -0.01254435504023185,
+        "rolling_window_days": 1.0,
+        "source_row_index": 20.0
+      },
+      "evidence_ref": "v2_13_u_multi_symbol_case:bind_finnhub_quote_context_us_nvda_finnhub_quote_multi_symbol_sandbox_candidate:finnhub_quote_context_us_nvda_finnhub_quote:NVDA.US:e7fdf774ee8e038b83657a51aca394190208c9d6ad17e39248ea683ff2cf229b"
+    },
+    {
+      "case_id": "v2_13_u_nvda_us_rolling_22",
+      "strategy_id": "strategy_nvda_us_finnhub_multi_quote_context_probe",
+      "date": "2026-07-01",
+      "symbol": "NVDA.US",
+      "market": "US",
+      "eligible": true,
+      "entry_price": 197.58,
+      "exit_price": 194.83,
+      "max_drawdown": -0.026470290515234418,
+      "risk_flags": [],
+      "factor_values": {
+        "actual_return": -0.013918412794817288,
+        "rolling_window_days": 1.0,
+        "source_row_index": 21.0
+      },
+      "evidence_ref": "v2_13_u_multi_symbol_case:bind_finnhub_quote_context_us_nvda_finnhub_quote_multi_symbol_sandbox_candidate:finnhub_quote_context_us_nvda_finnhub_quote:NVDA.US:e7fdf774ee8e038b83657a51aca394190208c9d6ad17e39248ea683ff2cf229b"
+    },
+    {
+      "case_id": "v2_13_u_nvda_us_rolling_23",
+      "strategy_id": "strategy_nvda_us_finnhub_multi_quote_context_probe",
+      "date": "2026-07-02",
+      "symbol": "NVDA.US",
+      "market": "US",
+      "eligible": true,
+      "entry_price": 194.83,
+      "exit_price": 195.55,
+      "max_drawdown": -0.012729045834830477,
+      "risk_flags": [],
+      "factor_values": {
+        "actual_return": 0.003695529435918487,
+        "rolling_window_days": 1.0,
+        "source_row_index": 22.0
+      },
+      "evidence_ref": "v2_13_u_multi_symbol_case:bind_finnhub_quote_context_us_nvda_finnhub_quote_multi_symbol_sandbox_candidate:finnhub_quote_context_us_nvda_finnhub_quote:NVDA.US:e7fdf774ee8e038b83657a51aca394190208c9d6ad17e39248ea683ff2cf229b"
+    },
+    {
+      "case_id": "v2_13_u_nvda_us_rolling_24",
+      "strategy_id": "strategy_nvda_us_finnhub_multi_quote_context_probe",
+      "date": "2026-07-06",
+      "symbol": "NVDA.US",
+      "market": "US",
+      "eligible": true,
+      "entry_price": 195.55,
+      "exit_price": 196.93,
+      "max_drawdown": -0.02255177703912059,
+      "risk_flags": [],
+      "factor_values": {
+        "actual_return": 0.007057018665302968,
+        "rolling_window_days": 1.0,
+        "source_row_index": 23.0
+      },
+      "evidence_ref": "v2_13_u_multi_symbol_case:bind_finnhub_quote_context_us_nvda_finnhub_quote_multi_symbol_sandbox_candidate:finnhub_quote_context_us_nvda_finnhub_quote:NVDA.US:e7fdf774ee8e038b83657a51aca394190208c9d6ad17e39248ea683ff2cf229b"
+    },
+    {
+      "case_id": "v2_13_u_nvda_us_rolling_25",
+      "strategy_id": "strategy_nvda_us_finnhub_multi_quote_context_probe",
+      "date": "2026-07-07",
+      "symbol": "NVDA.US",
+      "market": "US",
+      "eligible": true,
+      "entry_price": 196.93,
+      "exit_price": 204.12,
+      "max_drawdown": -0.029401310110191536,
+      "risk_flags": [],
+      "factor_values": {
+        "actual_return": 0.03651043518001319,
+        "rolling_window_days": 1.0,
+        "source_row_index": 24.0
+      },
+      "evidence_ref": "v2_13_u_multi_symbol_case:bind_finnhub_quote_context_us_nvda_finnhub_quote_multi_symbol_sandbox_candidate:finnhub_quote_context_us_nvda_finnhub_quote:NVDA.US:e7fdf774ee8e038b83657a51aca394190208c9d6ad17e39248ea683ff2cf229b"
+    },
+    {
+      "case_id": "v2_13_u_nvda_us_rolling_26",
+      "strategy_id": "strategy_nvda_us_finnhub_multi_quote_context_probe",
+      "date": "2026-07-08",
+      "symbol": "NVDA.US",
+      "market": "US",
+      "eligible": true,
+      "entry_price": 204.12,
+      "exit_price": 202.78,
+      "max_drawdown": -0.04438565549676665,
+      "risk_flags": [],
+      "factor_values": {
+        "actual_return": -0.0065647658240251,
+        "rolling_window_days": 1.0,
+        "source_row_index": 25.0
+      },
+      "evidence_ref": "v2_13_u_multi_symbol_case:bind_finnhub_quote_context_us_nvda_finnhub_quote_multi_symbol_sandbox_candidate:finnhub_quote_context_us_nvda_finnhub_quote:NVDA.US:e7fdf774ee8e038b83657a51aca394190208c9d6ad17e39248ea683ff2cf229b"
+    },
+    {
+      "case_id": "v2_13_u_nvda_us_rolling_27",
+      "strategy_id": "strategy_nvda_us_finnhub_multi_quote_context_probe",
+      "date": "2026-07-09",
+      "symbol": "NVDA.US",
+      "market": "US",
+      "eligible": true,
+      "entry_price": 202.78,
+      "exit_price": 210.96,
+      "max_drawdown": -0.018838149718907182,
+      "risk_flags": [],
+      "factor_values": {
+        "actual_return": 0.040339283953052606,
+        "rolling_window_days": 1.0,
+        "source_row_index": 26.0
+      },
+      "evidence_ref": "v2_13_u_multi_symbol_case:bind_finnhub_quote_context_us_nvda_finnhub_quote_multi_symbol_sandbox_candidate:finnhub_quote_context_us_nvda_finnhub_quote:NVDA.US:e7fdf774ee8e038b83657a51aca394190208c9d6ad17e39248ea683ff2cf229b"
+    }
+  ],
+  "results": [
+    {
+      "strategy_id": "strategy_crcl_us_finnhub_multi_quote_context_probe",
+      "status": "FAIL",
+      "metrics": {
+        "strategy_id": "strategy_crcl_us_finnhub_multi_quote_context_probe",
+        "sample_count": 27,
+        "eligible_case_count": 27,
+        "win_rate": 0.37037037037037035,
+        "average_return": -0.015221498572253377,
+        "max_drawdown": -0.17693522906793036,
+        "turnover_proxy": 1.0,
+        "exposure_count": 1,
+        "risk_flag_counts": {
+          "historical_drawdown_watch": 7,
+          "historical_drawdown_breach": 2
+        },
+        "failed_reasons": [
+          "win_rate_below_threshold",
+          "average_return_below_threshold",
+          "max_drawdown_breached"
+        ]
+      },
+      "safety": {
+        "simulation_only": true,
+        "no_real_trade": true,
+        "no_broker_api": true,
+        "no_webhook": true,
+        "no_strategy_auto_mutation": true,
+        "no_production_records_mutation": true
+      },
+      "notes": [
+        "Historical sandbox result only; user-facing suggestions still require recommendation and risk gates.",
+        "Evidence is based on supplied historical cases, not future prediction."
+      ]
+    },
+    {
+      "strategy_id": "strategy_msft_us_finnhub_multi_quote_context_probe",
+      "status": "FAIL",
+      "metrics": {
+        "strategy_id": "strategy_msft_us_finnhub_multi_quote_context_probe",
+        "sample_count": 27,
+        "eligible_case_count": 27,
+        "win_rate": 0.4444444444444444,
+        "average_return": -0.006348927822844228,
+        "max_drawdown": -0.04702791109204496,
+        "turnover_proxy": 1.0,
+        "exposure_count": 1,
+        "risk_flag_counts": {},
+        "failed_reasons": [
+          "win_rate_below_threshold",
+          "average_return_below_threshold"
+        ]
+      },
+      "safety": {
+        "simulation_only": true,
+        "no_real_trade": true,
+        "no_broker_api": true,
+        "no_webhook": true,
+        "no_strategy_auto_mutation": true,
+        "no_production_records_mutation": true
+      },
+      "notes": [
+        "Historical sandbox result only; user-facing suggestions still require recommendation and risk gates.",
+        "Evidence is based on supplied historical cases, not future prediction."
+      ]
+    },
+    {
+      "strategy_id": "strategy_nvda_us_finnhub_multi_quote_context_probe",
+      "status": "FAIL",
+      "metrics": {
+        "strategy_id": "strategy_nvda_us_finnhub_multi_quote_context_probe",
+        "sample_count": 27,
+        "eligible_case_count": 27,
+        "win_rate": 0.4444444444444444,
+        "average_return": -0.001959098221603719,
+        "max_drawdown": -0.06553553461995787,
+        "turnover_proxy": 1.0,
+        "exposure_count": 1,
+        "risk_flag_counts": {
+          "historical_drawdown_watch": 1
+        },
+        "failed_reasons": [
+          "win_rate_below_threshold",
+          "average_return_below_threshold"
+        ]
+      },
+      "safety": {
+        "simulation_only": true,
+        "no_real_trade": true,
+        "no_broker_api": true,
+        "no_webhook": true,
+        "no_strategy_auto_mutation": true,
+        "no_production_records_mutation": true
+      },
+      "notes": [
+        "Historical sandbox result only; user-facing suggestions still require recommendation and risk gates.",
+        "Evidence is based on supplied historical cases, not future prediction."
+      ]
+    }
+  ],
+  "source_evidence": {
+    "source_target": "V2.13-U Finnhub Quote Multi-Symbol Historical Case Assembly",
+    "source_run_id": "v2_13_u_20260712_acceptance",
+    "source_summary_sha256": "6f240f488c4ea59b4a741709206bd8d7df20adb6dfa77ab3e49fc8c41d37a575"
+  },
+  "checks": {
+    "source_report_pass": true,
+    "source_acceptance_target_correct": true,
+    "source_historical_cases_present": true,
+    "source_sandbox_not_already_run": true,
+    "source_social_sentiment_still_blocked": true,
+    "candidate_count_at_least_three": true,
+    "historical_cases_present": true,
+    "sandbox_results_present": true,
+    "all_results_have_metrics": true,
+    "all_cases_have_multi_symbol_quote_context_evidence": true,
+    "failed_results_not_promoted_to_suggestions": true,
+    "suggestion_gate_not_run": true,
+    "user_facing_suggestion_not_allowed": true,
+    "network_not_used": true,
+    "production_records_not_written": true,
+    "production_cache_not_mutated": true,
+    "production_provider_config_not_mutated": true,
+    "no_secret_values_stored": true,
+    "request_urls_not_stored": true,
+    "raw_payloads_not_stored": true,
+    "no_real_trade": true,
+    "no_broker_api": true,
+    "no_trading_webhook": true,
+    "no_order_placement": true,
+    "no_position_size": true,
+    "no_live_order_signal": true,
+    "dashboard_contract_unchanged": true,
+    "acceptance_target_correct": true,
+    "report_status_pass": true,
+    "source_v2_13_u_report_exists": true,
+    "source_v2_13_u_marker_exists": true,
+    "sandbox_json_written": true,
+    "sandbox_md_written": true,
+    "results_json_written": true,
+    "production_record_files_unchanged": true,
+    "source_report_hash_only": true
+  },
+  "safety": {
+    "sandbox_evaluation_only": true,
+    "suggestion_gate_not_run": true,
+    "user_facing_suggestion_allowed": false,
+    "network_not_used": true,
+    "social_sentiment_not_enabled": true,
+    "production_records_not_written": true,
+    "production_cache_not_mutated": true,
+    "production_provider_config_not_mutated": true,
+    "no_secret_values_stored": true,
+    "no_request_url_storage": true,
+    "no_raw_payload_storage": true,
+    "no_real_trade": true,
+    "no_broker_api": true,
+    "no_trading_webhook": true,
+    "no_order_placement": true,
+    "no_position_size": true,
+    "no_live_order_signal": true,
+    "dashboard_contract_unchanged": true
+  },
+  "run_dir": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v2_13_v_acceptance/v2_13_v_20260712_acceptance",
+  "sandbox_json": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v2_13_v_acceptance/v2_13_v_20260712_acceptance/finnhub_quote_multi_symbol_sandbox_evaluation.json",
+  "sandbox_md": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v2_13_v_acceptance/v2_13_v_20260712_acceptance/finnhub_quote_multi_symbol_sandbox_evaluation.md",
+  "results_json": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v2_13_v_acceptance/v2_13_v_20260712_acceptance/finnhub_quote_multi_symbol_sandbox_results.json",
+  "source_v2_13_u_report_json": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/v2_13_u_finnhub_quote_multi_symbol_historical_case_assembly_latest.json",
+  "source_v2_13_u_pass_marker": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/V2_13_U_FINNHUB_QUOTE_MULTI_SYMBOL_HISTORICAL_CASE_ASSEMBLY_PASS.marker",
+  "production_record_files_before": {
+    "recommendations_jsonl": {
+      "exists": true,
+      "size": 12284,
+      "sha256": "05b2e56c9b547cbe3ce4cb71b7cb776185e23ef2cc3bc9a46a918bce0cfb65dc"
+    },
+    "paper_trades_jsonl": {
+      "exists": false,
+      "size": null,
+      "sha256": null
+    },
+    "reviews_jsonl": {
+      "exists": false,
+      "size": null,
+      "sha256": null
+    },
+    "memory_jsonl": {
+      "exists": false,
+      "size": null,
+      "sha256": null
+    },
+    "investment_memory_jsonl": {
+      "exists": false,
+      "size": null,
+      "sha256": null
+    }
+  },
+  "production_record_files_after": {
+    "recommendations_jsonl": {
+      "exists": true,
+      "size": 12284,
+      "sha256": "05b2e56c9b547cbe3ce4cb71b7cb776185e23ef2cc3bc9a46a918bce0cfb65dc"
+    },
+    "paper_trades_jsonl": {
+      "exists": false,
+      "size": null,
+      "sha256": null
+    },
+    "reviews_jsonl": {
+      "exists": false,
+      "size": null,
+      "sha256": null
+    },
+    "memory_jsonl": {
+      "exists": false,
+      "size": null,
+      "sha256": null
+    },
+    "investment_memory_jsonl": {
+      "exists": false,
+      "size": null,
+      "sha256": null
+    }
+  },
+  "hashes": {
+    "source_v2_13_u_report_json": "e9070b396a5a076d4fa2c1e07a54732bf76234532b3459940ad91ea95775db3d",
+    "source_v2_13_u_pass_marker": "968b37a350dd7c2b8a65857046af9809887c1258761a3f3b3652d3107f31b202",
+    "sandbox_json": "2c536baab14b2bdc4a6dd4ff133da0806d47bc141146ef4b99b9909a0aeef7eb",
+    "sandbox_md": "146dcf615ce2197e3a1a3cb91f1ab6e8d76849c0367af29ac82d0bcce442f43f",
+    "results_json": "d408d03ca60daee195339e0c69f3e9f2cb17128f68d88c5eef149c3a1a12d47e"
+  }
+}

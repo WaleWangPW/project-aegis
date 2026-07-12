@@ -1,0 +1,56 @@
+{
+  "schedule_id": "aegis_daily_dry_run_v1",
+  "timezone": "Asia/Shanghai",
+  "enabled": false,
+  "dry_run": true,
+  "cron_modified": false,
+  "launchd_modified": false,
+  "no_overlap": true,
+  "lock_file": "data/reports/aegis_daily_dry_run.lock",
+  "lock_stale_seconds": 7200,
+  "log_file": "data/logs/aegis_daily_dry_run.log",
+  "log_max_bytes": 1048576,
+  "log_backup_count": 3,
+  "stage_timeout_seconds": 900,
+  "pipeline_timeout_seconds": 2400,
+  "stages": [
+    {
+      "name": "morning_health",
+      "command": [
+        "make",
+        "p22-6-full-pipeline"
+      ],
+      "timeout_seconds": 900
+    },
+    {
+      "name": "rolling_pipeline",
+      "command": [
+        "make",
+        "p23-6-full-rolling-pipeline"
+      ],
+      "timeout_seconds": 1800
+    },
+    {
+      "name": "final_evidence_gate",
+      "command": [
+        "make",
+        "verify-aegis-evidence-gate"
+      ],
+      "timeout_seconds": 600
+    }
+  ],
+  "failure_policy": {
+    "stop_on_first_failure": true,
+    "remove_lock_on_exit": true,
+    "write_failure_report": true,
+    "preserve_stdout_stderr_tail": true
+  },
+  "safety": {
+    "no_real_send": true,
+    "no_webhook": true,
+    "no_real_trade": true,
+    "no_secret_output": true,
+    "no_cron_install": true,
+    "no_launchd_install": true
+  }
+}

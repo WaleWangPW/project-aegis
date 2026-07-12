@@ -1,0 +1,55 @@
+{
+  "project": "Project Aegis",
+  "type": "p23_5_rolling_history_validation",
+  "validated_at": "2026-07-12T00:00:21.833634+00:00",
+  "checks": {
+    "history_json_exists": {
+      "passed": true
+    },
+    "history_md_exists": {
+      "passed": true
+    },
+    "snapshot_dir_exists": {
+      "passed": true
+    },
+    "runs_count_between_1_and_20": {
+      "passed": true,
+      "count": 10
+    },
+    "run_id_unique": {
+      "passed": true
+    },
+    "runs_sorted_desc": {
+      "passed": true
+    },
+    "latest_result_pass": {
+      "passed": true
+    },
+    "latest_audits_pass": {
+      "passed": true
+    },
+    "latest_semantics_valid": {
+      "passed": true
+    },
+    "latest_safety_flags_valid": {
+      "passed": true
+    },
+    "full_sha256_format_valid": {
+      "passed": true
+    },
+    "latest_source_hashes_match": {
+      "passed": true
+    },
+    "latest_snapshot_file_exists": {
+      "passed": true
+    },
+    "portfolio_metrics_present": {
+      "passed": true
+    },
+    "benchmark_metrics_present": {
+      "passed": true
+    }
+  },
+  "failures": [],
+  "overall_verdict": "PASS"
+}

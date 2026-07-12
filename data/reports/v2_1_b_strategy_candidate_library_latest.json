@@ -1,0 +1,62 @@
+{
+  "overall_status": "PASS",
+  "generated_at": "2026-07-11T17:38:57.483693+08:00",
+  "run_id": "v2_1_b_20260711_acceptance",
+  "command": "validate_v2_1_b_strategy_candidate_library.py --run-id v2_1_b_20260711_acceptance",
+  "acceptance_target": "V2.1-B Strategy Candidate Library",
+  "isolated": true,
+  "network_used": false,
+  "production_records_written": false,
+  "dashboard_contract_changed": false,
+  "run_dir": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v2_1_b_acceptance/v2_1_b_20260711_acceptance",
+  "library_json": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v2_1_b_acceptance/v2_1_b_20260711_acceptance/strategy_candidate_library.json",
+  "checks": {
+    "library_written": true,
+    "schema_version_present": true,
+    "candidate_count": true,
+    "a_h_us_coverage": true,
+    "risk_overlay_present": true,
+    "duplicate_rejected": true,
+    "market_filter_works": true,
+    "factor_filter_works": true,
+    "simulation_only": true,
+    "no_real_trade_or_broker": true,
+    "no_strategy_auto_mutation": true
+  },
+  "summary": {
+    "candidate_count": 4,
+    "markets": {
+      "A": [
+        "value_quality_defensive_a"
+      ],
+      "H": [
+        "low_volatility_dividend_h"
+      ],
+      "US": [
+        "risk_adjusted_momentum_us",
+        "portfolio_risk_veto_overlay"
+      ]
+    },
+    "multi_factor_ids": [
+      "value_quality_defensive_a",
+      "low_volatility_dividend_h",
+      "risk_adjusted_momentum_us"
+    ],
+    "risk_overlay_id": "portfolio_risk_veto_overlay",
+    "next_gate_required": "V2.1-C Suggestion Gate"
+  },
+  "safety": {
+    "simulation_only": true,
+    "no_real_trade": true,
+    "no_broker_api": true,
+    "no_webhook": true,
+    "no_strategy_auto_mutation": true,
+    "no_secret_storage": true,
+    "suggestion_gate_still_required": true,
+    "dashboard_contract_unchanged": true,
+    "no_production_records_mutation": true
+  },
+  "hashes": {
+    "library_json": "dbdfb2ed23f7b38050da2b9541f19f2f6bc4eef76b8e9b83f9751a4cd26c1ee3"
+  }
+}

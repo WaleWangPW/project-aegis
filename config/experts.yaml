@@ -1,0 +1,10 @@
+# Per Master Spec §20.3 — Expert Committee toggles. Phase 0: config only,
+# agents themselves are implemented in Phase 3.
+experts:
+  MarketRegimeAgent: {enabled: true}
+  TrendAgent: {enabled: true}
+  FundamentalAgent: {enabled: true, allow_missing_data: true}
+  CapitalFlowAgent: {enabled: true}
+  SectorAgent: {enabled: true}
+  TimingAgent: {enabled: true}
+  RiskAgent: {enabled: true, veto_enabled: true}

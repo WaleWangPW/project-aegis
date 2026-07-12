@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="950" viewBox="0 0 1600 950">
+  <defs>
+    <radialGradient id="bgGlow" cx="30%" cy="10%" r="80%">
+      <stop offset="0%" stop-color="#21403a"/>
+      <stop offset="45%" stop-color="#0b1115"/>
+      <stop offset="100%" stop-color="#050607"/>
+    </radialGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#d8c99b"/>
+      <stop offset="100%" stop-color="#6ee7b7"/>
+    </linearGradient>
+    <filter id="softShadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="24" stdDeviation="28" flood-color="#000000" flood-opacity="0.35"/>
+    </filter>
+    <style>
+      .title { font-family: "Avenir Next", "SF Pro Display", sans-serif; font-size: 58px; font-weight: 700; fill: #f6f0df; letter-spacing: -1px; }
+      .sub { font-family: "Avenir Next", "SF Pro Text", sans-serif; font-size: 22px; fill: #9ba7a2; }
+      .label { font-family: "Avenir Next", "SF Pro Display", sans-serif; font-size: 31px; font-weight: 700; fill: #f8f1dc; }
+      .body { font-family: "Avenir Next", "SF Pro Text", sans-serif; font-size: 18px; fill: #c8d0ca; }
+      .tiny { font-family: "Avenir Next", "SF Pro Text", sans-serif; font-size: 14px; fill: #89938d; letter-spacing: 1.2px; text-transform: uppercase; }
+      .card { fill: rgba(255,255,255,0.055); stroke: rgba(255,255,255,0.14); stroke-width: 1.4; }
+      .done { fill: rgba(110,231,183,0.13); stroke: rgba(110,231,183,0.55); }
+      .future { fill: rgba(216,201,155,0.08); stroke: rgba(216,201,155,0.35); }
+      .blocked { fill: rgba(255,255,255,0.035); stroke: rgba(255,255,255,0.11); }
+    </style>
+  </defs>
+
+  <rect width="1600" height="950" fill="url(#bgGlow)"/>
+  <circle cx="1290" cy="112" r="270" fill="#d8c99b" opacity="0.08"/>
+  <circle cx="245" cy="810" r="300" fill="#6ee7b7" opacity="0.07"/>
+
+  <text x="92" y="112" class="title">Project Aegis Product Versions</text>
+  <text x="96" y="154" class="sub">Version decides product direction. Pxx only proves engineering acceptance.</text>
+
+  <line x1="188" y1="474" x2="1390" y2="474" stroke="url(#accent)" stroke-width="5" stroke-linecap="round" opacity="0.75"/>
+  <circle cx="215" cy="474" r="12" fill="#6ee7b7"/>
+  <circle cx="510" cy="474" r="12" fill="#6ee7b7"/>
+  <circle cx="805" cy="474" r="12" fill="#d8c99b"/>
+  <circle cx="1100" cy="474" r="12" fill="#8aa4ff"/>
+  <circle cx="1390" cy="474" r="12" fill="#f2f2f2" opacity="0.55"/>
+
+  <g filter="url(#softShadow)">
+    <rect x="80" y="230" width="270" height="190" rx="34" class="card done"/>
+    <text x="110" y="282" class="tiny">Accepted</text>
+    <text x="110" y="326" class="label">V1.0</text>
+    <text x="110" y="362" class="body">Personal Decision System</text>
+    <text x="110" y="392" class="body">Daily brief, traceability,</text>
+    <text x="110" y="420" class="body">single review-memory loop.</text>
+
+    <rect x="375" y="528" width="270" height="200" rx="34" class="card done"/>
+    <text x="405" y="580" class="tiny">Accepted now</text>
+    <text x="405" y="624" class="label">V1.5</text>
+    <text x="405" y="660" class="body">Review System</text>
+    <text x="405" y="690" class="body">Weekly/monthly review,</text>
+    <text x="405" y="718" class="body">error attribution, memory reuse.</text>
+
+    <rect x="670" y="230" width="270" height="210" rx="34" class="card future"/>
+    <text x="700" y="282" class="tiny">Needs scope approval</text>
+    <text x="700" y="326" class="label">V2.0</text>
+    <text x="700" y="362" class="body">Personal Investment OS</text>
+    <text x="700" y="392" class="body">Portfolio, research workspace,</text>
+    <text x="700" y="420" class="body">events, strategy library.</text>
+
+    <rect x="965" y="528" width="270" height="200" rx="34" class="card blocked"/>
+    <text x="995" y="580" class="tiny">Future</text>
+    <text x="995" y="624" class="label">V3.0</text>
+    <text x="995" y="660" class="body">AI Investment Partner</text>
+    <text x="995" y="690" class="body">Natural language, alerts,</text>
+    <text x="995" y="718" class="body">analyst behavior, no auto trade.</text>
+
+    <rect x="1260" y="230" width="270" height="190" rx="34" class="card blocked"/>
+    <text x="1290" y="282" class="tiny">Forbidden for now</text>
+    <text x="1290" y="326" class="label">V4.0</text>
+    <text x="1290" y="362" class="body">Enterprise</text>
+    <text x="1290" y="392" class="body">Multi-user, SaaS, API,</text>
+    <text x="1290" y="420" class="body">permissions, collaboration.</text>
+  </g>
+
+  <rect x="96" y="810" width="1410" height="70" rx="28" fill="rgba(255,255,255,0.055)" stroke="rgba(255,255,255,0.12)"/>
+  <text x="128" y="854" class="body">Permanent boundary: no real trade, no broker API, no webhook, no repo secrets, no automatic strategy mutation.</text>
+</svg>
+

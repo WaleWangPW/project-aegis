@@ -1,0 +1,13 @@
+generated_at=2026-07-11T17:06:45.211751+08:00
+command=validate_v2_0_d_event_timeline.py --run-id v2_0_d_20260711_acceptance
+exit_code=0
+target=V2.0-D Event Timeline and Scenarios
+report_json=/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/v2_0_d_event_timeline_latest.json
+report_json_sha256=1e46b837c94509a274ea14f4457aa03ef3af969e1895204dc912807d2fa9e629
+report_md=/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/v2_0_d_event_timeline_latest.md
+report_md_sha256=105147b6e488d29c599b1e35e3f0c16cc8508526ab52798def7213c77c6169fa
+run_dir=/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v2_0_d_acceptance/v2_0_d_20260711_acceptance
+dashboard_contract_changed=false
+production_records_written=false
+network_used=false
+failed=0

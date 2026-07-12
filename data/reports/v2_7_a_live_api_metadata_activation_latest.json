@@ -1,0 +1,48 @@
+{
+  "overall_status": "PASS",
+  "acceptance_target": "V2.7-A Live API Metadata Activation",
+  "generated_at": "2026-07-11T19:32:01.796199+08:00",
+  "run_id": "v2_7_a_20260711_acceptance",
+  "command": "validate_v2_7_a_live_api_metadata_activation.py --run-id v2_7_a_20260711_acceptance",
+  "network_used": false,
+  "production_records_written": false,
+  "dashboard_contract_changed": false,
+  "fixture_ready_activation_report": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v2_7_a_acceptance/v2_7_a_20260711_acceptance/fixture_ready_activation_report.json",
+  "fixture_missing_env_activation_report": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v2_7_a_acceptance/v2_7_a_20260711_acceptance/fixture_missing_env_activation_report.json",
+  "real_user_activation_report": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v2_7_a_acceptance/v2_7_a_20260711_acceptance/real_user_activation_report.json",
+  "real_user_activation_status": "blocked_missing_metadata",
+  "real_user_can_run_live_dry_run": false,
+  "real_user_blocked_by": [
+    "missing_connector_metadata"
+  ],
+  "real_user_missing_env_vars": [],
+  "checks": {
+    "fixture_ready_for_live_dry_run": true,
+    "fixture_missing_env_is_blocked": true,
+    "real_user_status_recorded": true,
+    "secret_value_not_serialized": true,
+    "env_var_names_only": true,
+    "network_not_used": true,
+    "no_real_trade_or_broker": true,
+    "dashboard_contract_unchanged": true,
+    "production_records_not_written": true
+  },
+  "safety": {
+    "preflight_only": true,
+    "env_values_not_stored": true,
+    "env_var_names_only": true,
+    "network_not_used": true,
+    "no_real_trade": true,
+    "no_broker_api": true,
+    "no_webhook": true,
+    "no_order_placement": true,
+    "dashboard_contract_unchanged": true,
+    "no_production_records_mutation": true
+  },
+  "hashes": {
+    "fixture_config": "0140089a53833dcdc1a274da04965b202914fd2a64885c129d876295efc11384",
+    "fixture_ready_activation_report": "cde6de8dcdbfa9006e7702129cc66cbcdefc60c0fc606666aa1ed2f5e0c5c6b0",
+    "fixture_missing_env_activation_report": "be650a64ed025d7d458500565b146dfaa5c2bddb3a6af76a9c8fcbff2b62f2ee",
+    "real_user_activation_report": "017c2986eb79497fd205f2307ca5a7096e47214deea1919d0d7a46aa6ae2011a"
+  }
+}

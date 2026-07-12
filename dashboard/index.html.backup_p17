@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<title>Project Aegis 风险监控</title>
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-title" content="Aegis 风险监控" />
+<meta name="theme-color" content="#0a0e1a" />
+<meta name="description" content="Project Aegis 股票风险监控系统 - CRCL 和 000002.SZ 实时风险监控" />
+<link rel="apple-touch-icon" href="data:,">
+<style>
+  :root{
+    /* surfaces */
+    --bg:#0a0e1a;
+    --bg-soft:#0f1526;
+    --card:#131a2e;
+    --card-border:#1f2a45;
+
+    /* text — 3 tiers only. faint is reserved for pure decoration/timestamps. */
+    --text:#eef1f8;
+    --text-dim:#a2acc4;
+    --text-faint:#5b6478;
+
+    /* role colors: bg-soft(12%) / solid / on-dark-text(readable on soft) */
+    --accent:#3ecfd6;        --accent-soft:rgba(62,207,214,.14);
+    --green:#34d399;         --green-soft:rgba(52,211,153,.14);
+    --amber:#f5ab3d;         --amber-soft:rgba(245,171,61,.14);
+    --blue:#5b8def;          --blue-soft:rgba(91,141,239,.14);
+    --red:#f2637a;           --red-soft:rgba(242,99,122,.14);
+
+    /* radius scale */
+    --radius-sm:8px;
+    --radius-md:12px;
+    --radius-lg:16px;
+
+    /* spacing scale (4px base) */
+    --sp-1:4px; --sp-2:8px; --sp-3:12px; --sp-4:16px; --sp-5:24px; --sp-6:32px;
+
+    /* type scale — 5 tiers */
+    --fs-2xs:11px;  /* footer / pure metadata only */
+    --fs-xs:12px;   /* labels, captions, secondary table cells */
+    --fs-sm:13px;   /* body / table primary text */
+    --fs-base:15px; /* emphasized data: ticker, key values */
+    --fs-lg:19px;   /* section brand title */
+    --fs-xl:26px;   /* hero stat number */
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--text);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;
+    line-height:1.5;
+    padding:0 0 60px;
+    -webkit-tap-highlight-color:transparent;
+  }
+  .wrap{max-width:1000px;margin:0 auto;padding:0 var(--sp-3);}
+  .top-band{background:linear-gradient(180deg,rgba(15,21,38,.95),var(--bg));border-bottom:1px solid var(--card-border);padding:var(--sp-4) 0 var(--sp-5);}
+  .header{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:var(--sp-5);}
+  .brand{display:flex;align-items:center;gap:var(--sp-3);}
+  .brand-mark{width:40px;height:40px;border-radius:var(--radius-md);background:linear-gradient(135deg,var(--accent),var(--blue));display:flex;align-items:center;justify-content:center;color:#fff;}
+  .brand-mark svg{width:20px;height:20px;}
+  .brand h1{margin:0;font-size:var(--fs-lg);font-weight:700;color:var(--text);}
+  .brand p{margin:4px 0 0;font-size:var(--fs-sm);color:var(--text-dim);}
+  .header-meta{text-align:right;font-size:var(--fs-2xs);color:var(--text-faint);}
+  .header-meta .date{font-size:var(--fs-sm);color:var(--text-dim);font-weight:600;margin-bottom:4px;}
+  .badge-stage{display:inline-block;background:var(--accent-soft);color:var(--accent);padding:2px 8px;border-radius:100px;font-size:10px;font-weight:600;}
+  .stat-row{display:flex;gap:var(--sp-4);align-items:center;margin-top:var(--sp-4);}
+  .stat-hero{flex:0 0 auto;}
+  .stat-hero .label{display:block;font-size:var(--fs-xs);color:var(--text-dim);margin-bottom:4px;}
+  .stat-hero .value{display:block;font-size:var(--fs-xl);font-weight:700;color:var(--text);line-height:1.1;}
+  .stat-hero .sub{display:block;font-size:var(--fs-2xs);color:var(--text-faint);margin-top:4px;}
+  .snapshot{flex:1;display:flex;gap:var(--sp-2);flex-wrap:wrap;}
+  .snapshot-item{background:var(--bg-soft);border-radius:var(--radius-sm);padding:8px 12px;font-size:var(--fs-2xs);color:var(--text-dim);border:1px solid var(--card-border);}
+  .card{background:var(--card);border-radius:var(--radius-md);border:1px solid var(--card-border);padding:var(--sp-4);margin-bottom:var(--sp-4);}
+  .card-title{display:flex;justify-content:space-between;align-items:center;margin-bottom:var(--sp-3);}
+  .card-title h2{margin:0;font-size:var(--fs-base);font-weight:600;color:var(--text);display:flex;align-items:center;gap:var(--sp-2);}
+  .card-title .num{display:inline-flex;align-items:center;justify-content:center;width:20px;height:20px;border-radius:50%;background:var(--accent-soft);color:var(--accent);font-size:11px;font-weight:700;}
+  .card-title .hint{font-size:var(--fs-2xs);color:var(--text-faint);}
+  table{width:100%;border-collapse:collapse;font-size:var(--fs-sm);}
+  th{text-align:left;padding:var(--sp-2) var(--sp-2);color:var(--text-dim);font-weight:600;font-size:var(--fs-xs);border-bottom:1px solid var(--card-border);}
+  td{padding:var(--sp-2) var(--sp-2);border-bottom:1px solid rgba(255,255,255,.04);}
+  tr:last-child td{border-bottom:none;}
+  .ticker-cell{display:flex;flex-direction:column;gap:2px;}
+  .ticker-cell .t{font-weight:700;color:var(--text);font-size:var(--fs-base);}
+  .ticker-cell .m{font-size:var(--fs-2xs);color:var(--text-faint);}
+  .pill{display:inline-flex;align-items:center;gap:6px;padding:4px 10px;border-radius:100px;font-size:var(--fs-2xs);font-weight:600;white-space:nowrap;}
+  .pill-hold{background:var(--green-soft);color:var(--green);}
+  .pill-add{background:var(--blue-soft);color:var(--blue);}
+  .pill-trim{background:var(--amber-soft);color:var(--amber);}
+  .pill-exit{background:var(--red-soft);color:var(--red);}
+  .pill-neutral{background:rgba(255,255,255,.08);color:var(--text-dim);}
+  .pill-pending{background:var(--accent-soft);color:var(--accent);}
+  .pill-pending .dot{width:6px;height:6px;border-radius:50%;background:var(--accent);opacity:.7;}
+
+  .cell-note{color:var(--text-dim);font-size:var(--fs-xs);line-height:1.5;}
+  .cell-note .risk{color:var(--text-faint);display:block;margin-top:4px;}
+  .cell-dim{color:var(--text-faint);font-size:var(--fs-xs);}
+
+  /* recommendation tabs */
+  .tabs{display:flex;gap:var(--sp-2);margin-bottom:var(--sp-3);}
+  .tab-btn{
+    flex:1;padding:var(--sp-2) var(--sp-1);border-radius:var(--radius-sm);border:1px solid var(--card-border);
+    background:var(--bg-soft);color:var(--text-dim);font-size:var(--fs-xs);font-weight:600;
+    cursor:pointer;text-align:center;transition:background .15s, color .15s, border-color .15s;
+  }
+  .tab-btn.active{background:var(--accent-soft);color:var(--accent);border-color:rgba(62,207,214,.35);}
+  .tab-count{display:block;font-size:var(--fs-base);margin-top:2px;font-weight:700;color:var(--text-faint);}
+  .tab-btn.active .tab-count{color:var(--accent);}
+  .tab-panel{display:none;opacity:0;}
+  .tab-panel.active{display:block;animation:fadeIn .18s ease-out forwards;}
+  @keyframes fadeIn{from{opacity:0;transform:translateY(2px);}to{opacity:1;transform:translateY(0);}}
+
+  /* paper trading + review */
+  .kv-row{display:flex;justify-content:space-between;font-size:var(--fs-xs);padding:var(--sp-2) 0;border-bottom:1px solid rgba(255,255,255,.04);}
+  .kv-row:last-child{border-bottom:none;}
+  .kv-row .k{color:var(--text-dim);}
+  .kv-row .v{color:var(--text);font-weight:600;font-size:var(--fs-sm);}
+
+  /* Mobile app notice */
+  .mobile-notice{background:var(--bg-soft);border-radius:var(--radius-sm);padding:var(--sp-3);margin-bottom:var(--sp-3);border:1px solid var(--card-border);}
+  .mobile-notice h3{margin:0 0 var(--sp-2);font-size:var(--fs-base);font-weight:600;color:var(--text);}
+  .mobile-notice p{margin:0 0 var(--sp-2);font-size:var(--fs-sm);color:var(--text-dim);line-height:1.4;}
+  .mobile-notice p:last-child{margin-bottom:0;}
+  .mobile-notice .icon{display:inline-block;margin-right:6px;}
+
+  /* Multi Stock Risk Monitor Module */
+  .stock-monitor-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:var(--sp-3);margin-bottom:var(--sp-3);}
+  .stock-monitor-card{background:var(--bg-soft);border:1px solid var(--card-border);border-radius:var(--radius-sm);padding:var(--sp-3);}
+  .stock-monitor-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:var(--sp-2);padding-bottom:var(--sp-2);border-bottom:1px solid rgba(255,255,255,.08);}
+  .stock-monitor-title{display:flex;flex-direction:column;gap:2px;}
+  .stock-monitor-title .symbol{font-size:var(--fs-base);font-weight:700;color:var(--text);}
+  .stock-monitor-title .meta{font-size:var(--fs-2xs);color:var(--text-faint);}
+  .stock-monitor-status{display:inline-flex;align-items:center;gap:6px;padding:2px 8px;border-radius:100px;font-size:10px;font-weight:600;}
+  .stock-monitor-status.eligible{background:var(--green-soft);color:var(--green);}
+  .stock-monitor-status.not-eligible{background:var(--red-soft);color:var(--red);}
+  .stock-metrics{display:grid;grid-template-columns:1fr 1fr;gap:var(--sp-2);margin-bottom:var(--sp-2);}
+  .stock-metric{background:rgba(0,0,0,.2);padding:var(--sp-1) var(--sp-2);border-radius:var(--radius-sm);}
+  .stock-metric .label{font-size:var(--fs-2xs);color:var(--text-faint);margin-bottom:2px;}
+  .stock-metric .value{font-size:var(--fs-sm);font-weight:600;color:var(--text);}
+  .stock-metric .value.warning{color:var(--amber);}
+  .stock-metric .value.danger{color:var(--red);}
+  .stock-experts{display:flex;gap:var(--sp-1);margin-bottom:var(--sp-2);}
+  .stock-expert{flex:1;background:rgba(0,0,0,.2);padding:4px 8px;border-radius:var(--radius-sm);text-align:center;font-size:var(--fs-2xs);}
+  .stock-expert .name{color:var(--text-faint);margin-bottom:2px;}
+  .stock-expert .stance{font-weight:600;}
+  .stock-expert .stance.veto{color:var(--red);}
+  .stock-expert .stance.oppose{color:var(--amber);}
+  .stock-expert .stance.neutral{color:var(--text-dim);}
+  .stock-expert .stance.support{color:var(--green);}
+  .blocking-conditions{font-size:var(--fs-2xs);color:var(--text-faint);line-height:1.3;}
+  .blocking-conditions .title{color:var(--text-dim);font-weight:600;margin-bottom:4px;display:block;}
+  .blocking-conditions ul{margin:0;padding:0 0 0 12px;list-style-type:square;}
+  .blocking-conditions li{margin-bottom:2px;}
+
+  footer{
+    margin-top:var(--sp-6);padding-top:var(--sp-4);border-top:1px solid var(--card-border);
+    font-size:var(--fs-2xs);color:var(--text-faint);
+  }
+  footer code{background:rgba(255,255,255,.06);padding:1px 5px;border-radius:var(--radius-sm);font-size:10px;}
+</style>
+</head>
+<body>
+<div class="top-band">
+  <div class="wrap">
+    <div class="header">
+      <div class="brand">
+        <div class="brand-mark">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 3l7 3v5c0 4.5-3 8-7 10-4-2-7-5.5-7-10V6l7-3z"/>
+            <path d="M9.5 12l1.8 1.8L14.8 10"/>
+          </svg>
+        </div>
+        <div>
+          <h1>Project Aegis 风险监控</h1>
+          <p>多股票实时风险监控系统</p>
+        </div>
+      </div>
+      <div class="header-meta">
+        <div class="date" id="today-date">—</div>
+        <div>最后更新: <span id="last-updated">-</span></div>
+        <span class="badge-stage" id="stage-badge">v1 · 多股票监控</span>
+      </div>
+    </div>
+
+    <div class="stat-row">
+      <div class="stat-hero">
+        <span class="label">监控股票</span>
+        <span class="value" id="stock-count">—</span>
+        <span class="sub" id="stock-count-sub">跨市场风险跟踪</span>
+      </div>
+      <div class="snapshot" id="snapshot"></div>
+    </div>
+  </div>
+</div>
+
+<div class="wrap">
+
+  <!-- Mobile App Notice -->
+  <div class="mobile-notice">
+    <h3>📱 手机使用说明</h3>
+    <p><span class="icon">🔒</span> 局域网安全访问，数据每天 8 点自动刷新</p>
+    <p><span class="icon">📊</span> 当前监控: CRCL (美股) · 000002.SZ (A股)</p>
+    <p><span class="icon">➕</span> iPhone: Safari → 分享 → 添加到主屏幕，获得 App 体验</p>
+  </div>
+
+  <div class="card">
+    <div class="card-title">
+      <h2><span class="num">1</span>今日重点</h2>
+      <span class="hint">风险提醒</span>
+    </div>
+    <div class="focus-list" id="focus-list"></div>
+  </div>
+
+  <!-- Multi Stock Risk Monitor Module -->
+  <div class="card" id="multi-stock-risk-monitor-card">
+    <div class="card-title">
+      <h2><span class="num">2</span>多股票风险监控</h2>
+      <span class="hint">实时 Exit → Watch 转换状态</span>
+    </div>
+    <div id="multi-stock-risk-monitor-content"></div>
+  </div>
+
+  <div class="grid" style="margin-top:var(--sp-4);">
+    <!-- left: holdings -->
+    <div class="card">
+      <div class="card-title">
+        <h2><span class="num">3</span>当前持仓</h2>
+        <span class="hint" id="holdings-count"></span>
+      </div>
+      <table>
+        <thead>
+          <tr><th>标的</th><th>建议动作</th><th>理由 / 风险</th><th>失效条件</th></tr>
+        </thead>
+        <tbody id="holdings-body"></tbody>
+      </table>
+    </div>
+
+    <!-- right: recommendations + paper trading -->
+    <div>
+      <div class="card">
+        <div class="card-title">
+          <h2><span class="num">4</span>今日推荐</h2>
+        </div>
+        <div id="rec-banner"></div>
+        <div class="tabs" id="rec-tabs"></div>
+        <div id="rec-panels"></div>
+      </div>
+
+      <div class="card">
+        <div class="card-title">
+          <h2><span class="num">5</span>虚拟盘与复盘</h2>
+        </div>
+        <div id="paper-body"></div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    Project Aegis 股票风险监控系统 · 本地局域网安全访问 · 数据仅供学习参考，不构成投资建议
+  </footer>
+</div>
+
+<script>
+/* ============================================================
+   多股票风险监控系统数据
+   ============================================================ */
+const STOCK_RISK_MONITORS = [
+  {
+    "report_metadata": {
+      "report_type": "crcl_risk_monitor",
+      "generated_at": "2026-07-09T11:55:00+08:00",
+      "symbol": "CRCL",
+      "stock_name": "Circle Internet Group",
+      "market": "US",
+      "report_version": "1.0"
+    },
+    "current_status": {
+      "recommendation": "Exit",
+      "confidence": 0.25,
+      "last_updated": "2026-07-06T00:00:00+08:00"
+    },
+    "exit_watch_eligibility": {
+      "eligible": false,
+      "blocking_conditions": [
+        "max_drawdown > -15% (current: -31.58%)",
+        "volatility > 4% (current: 6.19%)", 
+        "liquidity_not_ok = true",
+        "RiskAgent stance = veto (current: veto)",
+        "high_volatility flag triggered",
+        "severe_drawdown flag triggered"
+      ],
+      "optional_conditions_not_met": [
+        "TrendAgent stance = oppose (requires: neutral or better)",
+        "TimingAgent stance = oppose (requires: neutral or better)"
+      ]
+    },
+    "risk_metrics": {
+      "max_drawdown": -0.3157720329521754,
+      "max_drawdown_percent": "-31.58%",
+      "volatility": 0.0618692952369419,
+      "volatility_percent": "6.19%",
+      "liquidity_flags": [
+        "high_volatility",
+        "severe_drawdown", 
+        "liquidity_risk",
+        "liquidity_not_ok"
+      ],
+      "threshold_checks": {
+        "max_drawdown_ok": false,
+        "volatility_ok": false,
+        "liquidity_ok": false
+      }
+    },
+    "expert_stances": {
+      "RiskAgent": {
+        "stance": "veto",
+        "confidence": 0.75,
+        "summary": "Unacceptable risk detected: high_volatility, severe_drawdown, liquidity_risk, liquidity_not_ok",
+        "evidence_strength": "strong"
+      },
+      "TrendAgent": {
+        "stance": "oppose",
+        "confidence": 0.60,
+        "summary": "Trend direction=downtrend, relative strength weak=True"
+      },
+      "TimingAgent": {
+        "stance": "oppose",
+        "confidence": 0.50,
+        "summary": "Timing unfavorable: direction=downtrend, overextended=False"
+      }
+    },
+    "next_check": "2026-07-10"
+  },
+  {
+    "report_metadata": {
+      "report_type": "000002.sz_risk_monitor",
+      "generated_at": "2026-07-09T13:55:03+08:00",
+      "symbol": "000002.SZ",
+      "stock_name": "万科A",
+      "market": "A",
+      "report_version": "1.0"
+    },
+    "current_status": {
+      "recommendation": "Exit",
+      "confidence": 0.25,
+      "last_updated": "2026-07-09T00:00:00+08:00"
+    },
+    "exit_watch_eligibility": {
+      "eligible": false,
+      "blocking_conditions": [
+        "liquidity_not_ok = true"
+      ],
+      "optional_conditions_not_met": []
+    },
+    "risk_metrics": {
+      "max_drawdown": -0.06645569620253163,
+      "max_drawdown_percent": "-6.65%",
+      "volatility": 0.01874005368127791,
+      "volatility_percent": "1.87%",
+      "liquidity_flags": [
+        "liquidity_not_ok",
+        "liquidity_risk",
+        "market_liquidity=weak",
+        "market_risk=high",
+        "market_trend=downtrend",
+        "poor_entry_location_downtrend",
+        "trend_down",
+        "volume_contraction"
+      ],
+      "threshold_checks": {
+        "max_drawdown_ok": true,
+        "volatility_ok": true,
+        "liquidity_ok": false
+      }
+    },
+    "expert_stances": {
+      "RiskAgent": {
+        "stance": "neutral",
+        "confidence": 0.50,
+        "summary": "Liquidity concern: liquidity_not_ok",
+        "evidence_strength": "moderate"
+      },
+      "TrendAgent": {
+        "stance": "neutral",
+        "confidence": 0.50,
+        "summary": "Market trend neutral"
+      },
+      "TimingAgent": {
+        "stance": "neutral",
+        "confidence": 0.50,
+        "summary": "Entry timing neutral"
+      }
+    },
+    "next_check": "2026-07-09"
+  }
+];
+
+// 原有系统数据
+const DATA = {
+  date: "2026-07-09",
+  stage_note: "v1 · 多股票监控",
+  market_snapshot: {
+    A:  "行情引擎正常",
+    H:  "行情引擎待配置",
+    US: "行情引擎正常"
+  },
+  today_focus: [
+    { text: "CRCL 风险监控: Exit 状态，最大回撤 -31.58%，波动率 6.19%", type: "风险提醒" },
+    { text: "000002.SZ 风险监控: Exit 状态，流动性问题待观察", type: "风险提醒" },
+    { text: "数据每天 8 点自动刷新，建议定期查看风险状态变化", type: "使用说明" }
+  ],
+  holdings: [
+    {
+      ticker: "CRCL", market: "US", shares: 254, cost_price: 109.157,
+      action: "wait", action_label: "持有（待引擎输出）",
+      reason: "风险监控中，建议关注 Exit 状态变化",
+      risk: "高回撤风险 (-31.58%)",
+      invalidation_condition: "回撤改善到 -15% 以内"
+    },
+    {
+      ticker: "000002.SZ", market: "A", shares: 1000, cost_price: 8.50,
+      action: "wait", action_label: "持有（待引擎输出）",
+      reason: "风险监控中，流动性需改善",
+      risk: "流动性风险",
+      invalidation_condition: "流动性指标改善"
+    }
+  ],
+  recommendations: { action: [], ready: [], watch: [] },
+  paper_trading: { new_today: [], open_positions_perf: [] },
+  review_note: "尚无复盘记录"
+};
+
+const ACTION_PILL = {
+  "持有": "pill-hold", "加仓观察": "pill-add", "减仓": "pill-trim",
+  "卖出": "pill-exit", "不操作": "pill-neutral", "wait": "pill-pending"
+};
+
+const ICONS = {
+  clock: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>',
+  inbox: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h4l2 3h4l2-3h4"/><path d="M4 12l1.6-6.4A2 2 0 0 1 7.5 4h9a2 2 0 0 1 1.9 1.6L20 12v6a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-6z"/></svg>'
+};
+
+function el(tag, cls, html){
+  const e = document.createElement(tag);
+  if(cls) e.className = cls;
+  if(html !== undefined) e.innerHTML = html;
+  return e;
+}
+function fmtUSD(n){ return "$" + n.toLocaleString("en-US", {minimumFractionDigits:2, maximumFractionDigits:2}); }
+
+function renderHeader(){
+  const now = new Date();
+  const dateStr = now.toLocaleDateString('zh-CN', {year:'numeric', month:'2-digit', day:'2-digit'});
+  const timeStr = now.toLocaleTimeString('zh-CN', {hour:'2-digit', minute:'2-digit'});
+  document.getElementById('today-date').textContent = dateStr + " · " + timeStr;
+  document.getElementById('stage-badge').textContent = DATA.stage_note;
+  
+  // 设置最后更新时间（取最新的报告时间）
+  const lastUpdate = STOCK_RISK_MONITORS.reduce((latest, stock) => {
+    const stockTime = new Date(stock.report_metadata.generated_at);
+    return stockTime > latest ? stockTime : latest;
+  }, new Date(0));
+  document.getElementById('last-updated').textContent = lastUpdate.toLocaleString('zh-CN', {month:'2-digit', day:'2-digit', hour:'2-digit', minute:'2-digit'});
+}
+
+function renderHeroStat(){
+  document.getElementById('stock-count').textContent = STOCK_RISK_MONITORS.length + " 只";
+  document.getElementById('stock-count-sub').textContent = "跨市场风险跟踪 · 每天 8 点刷新";
+}
+
+function renderFocusList(){
+  const list = document.getElementById('focus-list');
+  list.innerHTML = '';
+  DATA.today_focus.slice(0,5).forEach(item=>{
+    const row = el('div','focus-row');
+    row.innerHTML = '<span class="type">' + item.type + '</span> ' + item.text;
+    list.appendChild(row);
+  });
+}
+
+function renderHoldings(){
+  const body = document.getElementById('holdings-body');
+  body.innerHTML = '';
+  document.getElementById('holdings-count').textContent = DATA.holdings.length + " 只";
+  if(!DATA.holdings.length){
+    body.innerHTML = '<tr><td colspan="4"><div class="empty-basic">当前无持仓</div></td></tr>';
+    return;
+  }
+  DATA.holdings.forEach(h=>{
+    const tr = document.createElement('tr');
+
+    const tdTicker = el('td');
+    const tc = el('div','ticker-cell');
+    tc.appendChild(el('span','t', h.ticker));
+    tc.appendChild(el('span','m', h.market + " · " + h.shares + " 股 @ ¥" + h.cost_price.toFixed(2) + (h.market === 'US' ? ' ($' + h.cost_price.toFixed(2) + ')' : '')));
+    tdTicker.appendChild(tc);
+
+    const tdAction = el('td');
+    const pillClass = ACTION_PILL[h.action] || ACTION_PILL[h.action_label] || 'pill-neutral';
+    const dotHtml = h.action === 'wait' ? '<span class="dot"></span>' : '';
+    tdAction.appendChild(el('span','pill ' + pillClass, dotHtml + h.action_label));
+
+    const tdReason = el('td','cell-note', h.reason + '<span class="risk">风险：' + h.risk + '</span>');
+    const tdInvalid = el('td','cell-dim', h.invalidation_condition);
+
+    tr.appendChild(tdTicker);
+    tr.appendChild(tdAction);
+    tr.appendChild(tdReason);
+    tr.appendChild(tdInvalid);
+    body.appendChild(tr);
+  });
+}
+
+function renderRecommendations(){
+  const tabsWrap = document.getElementById('rec-tabs');
+  const panelsWrap = document.getElementById('rec-panels');
+  const bannerWrap = document.getElementById('rec-banner');
+  const cats = [
+    {key:'action', label:'Action'}, {key:'ready', label:'Ready'}, {key:'watch', label:'Watch'}
+  ];
+  const totalRecs = cats.reduce((n,c)=> n + (DATA.recommendations[c.key]||[]).length, 0);
+
+  if(totalRecs === 0){
+    const pending = el('div','empty-pending');
+    pending.style.marginBottom = 'var(--sp-3)';
+    pending.innerHTML =
+      '<div class="ic">'+ICONS.clock+'</div>' +
+      '<div>' +
+        '<p class="head">当前无新推荐</p>' +
+        '<p class="body">关注风险监控状态变化，等待系统自动更新</p>' +
+      '</div>';
+    bannerWrap.appendChild(pending);
+  }
+
+  cats.forEach(c=>{
+    const recs = DATA.recommendations[c.key] || [];
+    const btn = el('button','tab-btn', c.label + '<span class="tab-count">' + recs.length + '</span>');
+    btn.dataset.key = c.key;
+    if(recs.length === 0) btn.disabled = true;
+    tabsWrap.appendChild(btn);
+
+    const panel = el('div','tab-panel');
+    if(recs.length === 0){
+      panel.innerHTML = '<div class="empty-basic">暂无 ' + c.label + ' 推荐</div>';
+    }else{
+      const table = el('table');
+      recs.forEach(r=>{
+        const tr = document.createElement('tr');
+        tr.innerHTML =
+          '<td><div class="ticker-cell"><span class="t">' + r.ticker + '</span><span class="m">' + r.market + '</span></div></td>' +
+          '<td>' + r.reason + '</td>';
+        table.appendChild(tr);
+      });
+      panel.appendChild(table);
+    }
+    panelsWrap.appendChild(panel);
+  });
+
+  if(totalRecs > 0){
+    tabsWrap.addEventListener('click',e=>{
+      const btn = e.target.closest('.tab-btn');
+      if(!btn || btn.disabled) return;
+      const key = btn.dataset.key;
+      document.querySelectorAll('.tab-btn').forEach(b=>b.classList.toggle('active', b.dataset.key===key));
+      document.querySelectorAll('.tab-panel').forEach(p=>p.classList.toggle('active', p.dataset.key===key));
+    });
+  }
+}
+
+function renderPaperTrading(){
+  const body = document.getElementById('paper-body');
+  body.innerHTML = '';
+  const paper = DATA.paper_trading;
+  if(!paper.new_today.length && !paper.open_positions_perf.length){
+    body.innerHTML = '<div class="empty-basic">暂无虚拟盘记录</div>';
+    return;
+  }
+
+  if(paper.new_today.length){
+    const title = el('div','section-title', '今日新增虚拟盘');
+    body.appendChild(title);
+    paper.new_today.forEach(p=>{
+      const row = el('div','kv-row');
+      row.innerHTML = '<span class="k">' + p.ticker + ' ' + p.market + '</span><span class="v">' + p.action + '</span>';
+      body.appendChild(row);
+    });
+  }
+
+  if(paper.open_positions_perf.length){
+    const title = el('div','section-title', '虚拟盘持仓表现');
+    body.appendChild(title);
+    paper.open_positions_perf.forEach(p=>{
+      const row = el('div','kv-row');
+      row.innerHTML = '<span class="k">' + p.ticker + '</span><span class="v">' + p.return_pct + '%</span>';
+      body.appendChild(row);
+    });
+  }
+}
+
+function renderMultiStockRiskMonitor(){
+  const container = document.getElementById('multi-stock-risk-monitor-content');
+  if(!container) return;
+  
+  let html = '';
+  html += '<div class="stock-monitor-grid">';
+  
+  STOCK_RISK_MONITORS.forEach(data => {
+    const status = data.exit_watch_eligibility.eligible;
+    const metrics = data.risk_metrics;
+    const experts = data.expert_stances;
+    const meta = data.report_metadata;
+    const current = data.current_status;
+    
+    html += '<div class="stock-monitor-card">';
+    
+    // Header with symbol and status
+    html += '<div class="stock-monitor-header">';
+    html += '<div class="stock-monitor-title">';
+    html += '<span class="symbol">' + meta.symbol + '</span>';
+    html += '<span class="meta">' + meta.stock_name + ' · ' + meta.market + '</span>';
+    html += '</div>';
+    html += '<span class="stock-monitor-status ' + (status ? 'eligible' : 'not-eligible') + '">' + (status ? '可转为 Watch' : '保持 Exit') + '</span>';
+    html += '</div>';
+    
+    // Current status and confidence
+    html += '<div style="margin-bottom:12px;font-size:11px;">';
+    html += '<span style="color:' + (current.recommendation === 'Exit' ? '#f2637a' : '#34d399') + ';font-weight:600;">' + current.recommendation + '</span>';
+    html += '<span style="margin-left:8px;color:#5b6478;">置信度: ' + (current.confidence * 100).toFixed(0) + '%</span>';
+    html += '</div>';
+    
+    // Risk metrics
+    html += '<div class="stock-metrics">';
+    html += '<div class="stock-metric">';
+    html += '<div class="label">最大回撤</div>';
+    html += '<div class="value ' + (metrics.max_drawdown_ok ? '' : 'danger') + '">' + metrics.max_drawdown_percent + '</div>';
+    html += '</div>';
+    html += '<div class="stock-metric">';
+    html += '<div class="label">波动率</div>';
+    html += '<div class="value ' + (metrics.volatility_ok ? '' : 'danger') + '">' + metrics.volatility_percent + '</div>';
+    html += '</div>';
+    html += '</div>';
+    
+    // Expert stances
+    if(Object.keys(experts).length > 0){
+      html += '<div class="stock-experts">';
+      for(const [expertName, expertInfo] of Object.entries(experts)){
+        html += '<div class="stock-expert">';
+        html += '<div class="name">' + expertName + '</div>';
+        html += '<div class="stance ' + expertInfo.stance + '">' + expertInfo.stance.toUpperCase() + '</div>';
+        html += '</div>';
+      }
+      html += '</div>';
+    }
+    
+    // Blocking conditions
+    if(!status && data.exit_watch_eligibility.blocking_conditions.length > 0){
+      html += '<div class="blocking-conditions">';
+      html += '<span class="title">阻塞条件:</span>';
+      const maxConditions = 3; // Show only top 3 to save space
+      const conditions = data.exit_watch_eligibility.blocking_conditions.slice(0, maxConditions);
+      html += '<ul>';
+      conditions.forEach(cond => {
+        html += '<li>' + cond + '</li>';
+      });
+      if(data.exit_watch_eligibility.blocking_conditions.length > maxConditions){
+        html += '<li>+ ' + (data.exit_watch_eligibility.blocking_conditions.length - maxConditions) + ' more</li>';
+      }
+      html += '</ul>';
+      html += '</div>';
+    }
+    
+    // Next check
+    html += '<div style="margin-top:8px;font-size:10px;color:#5b6478;">';
+    html += '下次检查: ' + data.next_check;
+    html += '</div>';
+    
+    html += '</div>';
+  });
+  
+  html += '</div>';
+  container.innerHTML = html;
+}
+
+function init(){
+  renderHeader();
+  renderHeroStat();
+  renderFocusList();
+  renderMultiStockRiskMonitor();
+  renderHoldings();
+  renderRecommendations();
+  renderPaperTrading();
+}
+init();
+</script>

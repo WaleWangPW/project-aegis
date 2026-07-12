@@ -1,0 +1,57 @@
+{
+  "overall_status": "PASS",
+  "generated_at": "2026-07-11T18:02:50.371832+08:00",
+  "run_id": "v2_3_a_20260711_acceptance",
+  "command": "validate_v2_3_a_api_configuration_handoff.py --run-id v2_3_a_20260711_acceptance",
+  "acceptance_target": "V2.3-A Real User API Configuration Handoff",
+  "isolated": true,
+  "network_used": false,
+  "production_records_written": false,
+  "dashboard_contract_changed": false,
+  "run_dir": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v2_3_a_acceptance/v2_3_a_20260711_acceptance",
+  "handoff_doc": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/docs/API_CONFIGURATION_HANDOFF.md",
+  "example_config": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/config/external_api_connectors.example.json",
+  "validated_registry_json": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v2_3_a_acceptance/v2_3_a_20260711_acceptance/validated_api_connector_registry.json",
+  "checks": {
+    "handoff_doc_exists": true,
+    "example_config_exists": true,
+    "handoff_lists_required_metadata": true,
+    "handoff_forbids_secret_values": true,
+    "example_specs_parse": true,
+    "example_official_api_allowed": true,
+    "example_user_api_allowed": true,
+    "env_var_name_only": true,
+    "no_forbidden_secret_values_in_example": true,
+    "no_broker_or_webhook": true,
+    "safety_registry_ok": true
+  },
+  "summary": {
+    "example_connector_count": 2,
+    "allow_count": 2,
+    "deny_count": 0,
+    "required_env_vars": [
+      "AEGIS_RESEARCH_API_KEY"
+    ],
+    "next_target": "V2.3-B Real User API Dry Run When Metadata Is Provided"
+  },
+  "safety": {
+    "metadata_only_connector_specs": true,
+    "no_secret_values_stored": true,
+    "env_var_names_only": true,
+    "no_cookie_access": true,
+    "no_broker_api": true,
+    "no_trading_webhook": true,
+    "no_real_trade": true,
+    "no_strategy_auto_mutation": true,
+    "dashboard_contract_unchanged": true,
+    "handoff_collects_metadata_only": true,
+    "do_not_send_secret_in_chat": true,
+    "api_key_values_not_stored": true,
+    "no_production_records_mutation": true
+  },
+  "hashes": {
+    "handoff_doc": "1681771cc0b0948108afbd259122a851749535a93d07732944588a97f6cf9c1a",
+    "example_config": "932c41d0deb8597b07706381f2249e6b55d69351cfb09fcd5f0f3fa66e7a9f60",
+    "validated_registry_json": "96bb20183b29e9e9be86a7f94608dc5a846720b36c9c70639db4e907f65c26f8"
+  }
+}

@@ -1,0 +1,325 @@
+{
+  "type": "aegis_strategy_validation_input",
+  "status": "READY",
+  "generated_at": "2026-07-12T13:42:30.104823+08:00",
+  "source_workbench_sha256": "c563552921b67f1ad4bfe8e2744ca4ef945123e3307b4aa46d62336ee36f8da9",
+  "strategy_blueprints": [
+    {
+      "id": "qvm",
+      "name": "质量 + 价值 + 动量",
+      "use_for": "A/US/HK 通用主筛选",
+      "signals": [
+        "ROE/现金流质量",
+        "估值不过热",
+        "3-12个月动量",
+        "风险过滤"
+      ],
+      "source": "OpenClaw stock-picker + public factor research"
+    },
+    {
+      "id": "low_vol_momentum",
+      "name": "低波动 + 动量",
+      "use_for": "避免只追涨，优先找趋势中但风险可承受的标的",
+      "signals": [
+        "近30日/中期动量",
+        "20日波动率",
+        "最大回撤",
+        "止损距离"
+      ],
+      "source": "Low-volatility / momentum factor literature"
+    },
+    {
+      "id": "a_share_short_momentum",
+      "name": "A股短周期动量 + 质量护栏",
+      "use_for": "适应A股热点轮动快的市场结构",
+      "signals": [
+        "成交额",
+        "短周期动量",
+        "现金流质量",
+        "过热降权"
+      ],
+      "source": "OpenClaw stock-picker A股扫描 + A股因子动量研究"
+    },
+    {
+      "id": "hk_smart_beta",
+      "name": "港股 Smart Beta 六因子",
+      "use_for": "港股候选池恢复后使用",
+      "signals": [
+        "价值",
+        "低波动",
+        "动量",
+        "质量",
+        "股息",
+        "规模"
+      ],
+      "source": "Hong Kong smart beta research"
+    },
+    {
+      "id": "growth_breakout",
+      "name": "成长突破 / CAN SLIM 候选",
+      "use_for": "只作研究候选，不直接给交易动作",
+      "signals": [
+        "增长",
+        "相对强度",
+        "技术突破",
+        "成交量确认"
+      ],
+      "source": "CAN SLIM-style public screening literature"
+    },
+    {
+      "id": "ai_photonics_supply_chain",
+      "name": "AI 光子学供应链瓶颈",
+      "use_for": "参考 Serenity/白毛股神式主题研究，只作线索，不直接推荐",
+      "signals": [
+        "光互连/光子学瓶颈",
+        "上游稀缺环节",
+        "收入放量验证",
+        "估值过热否决"
+      ],
+      "source": "User AI-news archive + public photonics supply-chain research"
+    }
+  ],
+  "candidate_count": 13,
+  "items": [
+    {
+      "symbol": "603893",
+      "name": "瑞芯微",
+      "market": "A",
+      "status": "research_candidate",
+      "score": 60,
+      "matched_strategy_ids": [
+        "qvm",
+        "low_vol_momentum",
+        "a_share_short_momentum",
+        "growth_breakout"
+      ],
+      "evidence_summary": "毛利率连升3季 | 新增机构调研 | 高管增持 | 主业贡献高(97%)",
+      "news_status": "NO_NEWS",
+      "news_summary": "未找到近期公司动态。",
+      "risk_veto_status": "no_local_veto_detected",
+      "risk_flags": [],
+      "sandbox_validation_status": "pending_point_in_time_history_test",
+      "real_trade_allowed": false
+    },
+    {
+      "symbol": "300059",
+      "name": "东方财富",
+      "market": "A",
+      "status": "research_candidate",
+      "score": 33,
+      "matched_strategy_ids": [
+        "qvm",
+        "low_vol_momentum",
+        "a_share_short_momentum"
+      ],
+      "evidence_summary": "毛利率连升3季 | 新增机构调研 | 现金流优质(8.1x) | 主业贡献高(99%)",
+      "news_status": "NO_NEWS",
+      "news_summary": "未找到近期公司动态。",
+      "risk_veto_status": "no_local_veto_detected",
+      "risk_flags": [],
+      "sandbox_validation_status": "pending_point_in_time_history_test",
+      "real_trade_allowed": false
+    },
+    {
+      "symbol": "VRTX",
+      "name": "Vertex Pharmaceuticals Incorporated",
+      "market": "US",
+      "status": "research_candidate",
+      "score": 25,
+      "matched_strategy_ids": [
+        "low_vol_momentum",
+        "growth_breakout"
+      ],
+      "evidence_summary": "↑趋势 | 📍近买点",
+      "news_status": "PASS",
+      "news_summary": "Vertex：CASGEVY 获 FDA 扩大适应症批准，ALYFTREK 在加拿大推进。 | Vertex 拟以约 100 亿美元押注 Crinetics，扩展内分泌业务。",
+      "risk_veto_status": "no_local_veto_detected",
+      "risk_flags": [],
+      "sandbox_validation_status": "pending_point_in_time_history_test",
+      "real_trade_allowed": false
+    },
+    {
+      "symbol": "AMAT",
+      "name": "Applied Materials, Inc.",
+      "market": "US",
+      "status": "research_candidate",
+      "score": 20,
+      "matched_strategy_ids": [
+        "low_vol_momentum",
+        "growth_breakout"
+      ],
+      "evidence_summary": "↑趋势 | 📍近买点 | ⚠一年涨>200%",
+      "news_status": "PASS",
+      "news_summary": "Goldman Sachs 重申看好 Applied Materials 目标价，需继续核对估值与周期位置。",
+      "risk_veto_status": "no_local_veto_detected",
+      "risk_flags": [],
+      "sandbox_validation_status": "pending_point_in_time_history_test",
+      "real_trade_allowed": false
+    },
+    {
+      "symbol": "00005",
+      "name": "汇丰控股",
+      "market": "HK",
+      "status": "research_candidate",
+      "score": 18,
+      "matched_strategy_ids": [
+        "low_vol_momentum"
+      ],
+      "evidence_summary": "↑趋势 | 20日动量强 | 年内正动量",
+      "news_status": "PASS",
+      "news_summary": "HSBC 财报季关注名单提到 Amazon、Microsoft、Meta，说明大型科技仍是机构重点线索。 | HSBC 在行业担忧升温下收紧私募信贷策略，偏风险控制信号。",
+      "risk_veto_status": "no_local_veto_detected",
+      "risk_flags": [],
+      "sandbox_validation_status": "pending_point_in_time_history_test",
+      "real_trade_allowed": false
+    },
+    {
+      "symbol": "OKTA",
+      "name": "Okta, Inc.",
+      "market": "US",
+      "status": "research_candidate",
+      "score": 10,
+      "matched_strategy_ids": [
+        "low_vol_momentum",
+        "growth_breakout"
+      ],
+      "evidence_summary": "↑趋势",
+      "news_status": "NO_NEWS",
+      "news_summary": "未找到近期公司动态。",
+      "risk_veto_status": "no_local_veto_detected",
+      "risk_flags": [],
+      "sandbox_validation_status": "pending_point_in_time_history_test",
+      "real_trade_allowed": false
+    },
+    {
+      "symbol": "MRNA",
+      "name": "Moderna, Inc.",
+      "market": "US",
+      "status": "research_candidate",
+      "score": 10,
+      "matched_strategy_ids": [
+        "low_vol_momentum",
+        "growth_breakout"
+      ],
+      "evidence_summary": "↑趋势",
+      "news_status": "PASS",
+      "news_summary": "美股日报：道指收高，SK Hynix 美股首秀上涨，Moderna 下跌。",
+      "risk_veto_status": "no_local_veto_detected",
+      "risk_flags": [],
+      "sandbox_validation_status": "pending_point_in_time_history_test",
+      "real_trade_allowed": false
+    },
+    {
+      "symbol": "HOOD",
+      "name": "Robinhood Markets, Inc.",
+      "market": "US",
+      "status": "research_candidate",
+      "score": 10,
+      "matched_strategy_ids": [
+        "low_vol_momentum"
+      ],
+      "evidence_summary": "↑趋势",
+      "news_status": "PASS",
+      "news_summary": "Cathie Wood 买入约 2280 万美元热门科技股，HOOD 仍需警惕情绪拥挤。 | Robinhood 投资者持有的热门 AI 股票名单，可作为散户偏好温度计。",
+      "risk_veto_status": "no_local_veto_detected",
+      "risk_flags": [],
+      "sandbox_validation_status": "pending_point_in_time_history_test",
+      "real_trade_allowed": false
+    },
+    {
+      "symbol": "PANW",
+      "name": "Palo Alto Networks, Inc.",
+      "market": "US",
+      "status": "research_candidate",
+      "score": 10,
+      "matched_strategy_ids": [
+        "low_vol_momentum",
+        "growth_breakout"
+      ],
+      "evidence_summary": "↑趋势",
+      "news_status": "PASS",
+      "news_summary": "内部人交易追踪提到 Palo Alto Networks、TSMC、Sony 等重点公司。",
+      "risk_veto_status": "no_local_veto_detected",
+      "risk_flags": [],
+      "sandbox_validation_status": "pending_point_in_time_history_test",
+      "real_trade_allowed": false
+    },
+    {
+      "symbol": "KLAC",
+      "name": "KLA Corporation",
+      "market": "US",
+      "status": "research_candidate",
+      "score": 10,
+      "matched_strategy_ids": [
+        "low_vol_momentum",
+        "growth_breakout"
+      ],
+      "evidence_summary": "↑趋势",
+      "news_status": "NO_NEWS",
+      "news_summary": "未找到近期公司动态。",
+      "risk_veto_status": "no_local_veto_detected",
+      "risk_flags": [],
+      "sandbox_validation_status": "pending_point_in_time_history_test",
+      "real_trade_allowed": false
+    },
+    {
+      "symbol": "RBLX",
+      "name": "Roblox Corporation",
+      "market": "US",
+      "status": "research_candidate",
+      "score": 10,
+      "matched_strategy_ids": [
+        "low_vol_momentum",
+        "ai_photonics_supply_chain"
+      ],
+      "evidence_summary": "↑趋势",
+      "news_status": "PASS",
+      "news_summary": "備受認可的投資者顧問 ROSEN 鼓勵 Roblox Corporation 投資者在對 RBLX 發起證券集體訴訟的重要截止日期之前聘請律師 | RBLX 股东提醒: Faruqi &amp; Faruqi, LLP Notifies Roblox (RBLX) 投资者 of 证券集体诉讼 截止日期 on August 7, 2026",
+      "risk_veto_status": "no_local_veto_detected",
+      "risk_flags": [],
+      "sandbox_validation_status": "pending_point_in_time_history_test",
+      "real_trade_allowed": false
+    },
+    {
+      "symbol": "BAC",
+      "name": "Bank of America Corporation",
+      "market": "US",
+      "status": "research_candidate",
+      "score": 10,
+      "matched_strategy_ids": [
+        "low_vol_momentum"
+      ],
+      "evidence_summary": "↑趋势",
+      "news_status": "NO_NEWS",
+      "news_summary": "未找到近期公司动态。",
+      "risk_veto_status": "no_local_veto_detected",
+      "risk_flags": [],
+      "sandbox_validation_status": "pending_point_in_time_history_test",
+      "real_trade_allowed": false
+    },
+    {
+      "symbol": "NET",
+      "name": "Cloudflare, Inc.",
+      "market": "US",
+      "status": "research_candidate",
+      "score": 10,
+      "matched_strategy_ids": [
+        "low_vol_momentum",
+        "growth_breakout"
+      ],
+      "evidence_summary": "↑趋势",
+      "news_status": "PASS",
+      "news_summary": "英文资讯摘要：Cloudflare (NET) Could Be 60% Overvalued After Its OpenAI Pilot News | Cloudflare (NET) Stock Falls Amid Market Uptick: What 投资者 Need to Know",
+      "risk_veto_status": "no_local_veto_detected",
+      "risk_flags": [],
+      "sandbox_validation_status": "pending_point_in_time_history_test",
+      "real_trade_allowed": false
+    }
+  ],
+  "safety": {
+    "simulation_only": true,
+    "no_broker_api": true,
+    "no_order_placement": true,
+    "no_trading_webhook": true
+  }
+}

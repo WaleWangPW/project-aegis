@@ -1,0 +1,13 @@
+generated_at=2026-07-11T17:12:43.231477+08:00
+command=validate_v2_0_e_external_source_policy.py --run-id v2_0_e_20260711_acceptance
+exit_code=0
+target=V2.0-E External Source Registry and Policy Gate
+report_json=/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/v2_0_e_external_source_policy_latest.json
+report_json_sha256=5a8c8db1f9a723da371fed58ef58fc561d9bbc1313d92f604df6595c45a26a73
+report_md=/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/v2_0_e_external_source_policy_latest.md
+report_md_sha256=8a7bb968a12cf4f1de392d86e8fa14d00266bd9c4ce79da51411af840ab94fac
+run_dir=/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v2_0_e_acceptance/v2_0_e_20260711_acceptance
+dashboard_contract_changed=false
+production_records_written=false
+network_used=false
+failed=0

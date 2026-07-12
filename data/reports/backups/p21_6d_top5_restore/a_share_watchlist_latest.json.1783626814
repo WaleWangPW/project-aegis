@@ -1,0 +1,49 @@
+{
+  "report_type": "a_share_watchlist",
+  "generated_at": "2026-07-10T03:33:22.862911+08:00",
+  "source": "P11_A_share_Top5_analysis",
+  "market": "A",
+  "count": 5,
+  "stocks": [
+    {
+      "symbol": "000002.SZ",
+      "name": "万科A",
+      "market": "A",
+      "score": 0.85,
+      "status": "Watch"
+    },
+    {
+      "symbol": "000858.SZ",
+      "name": "五粮液",
+      "market": "A",
+      "score": 0.82,
+      "status": "Watch"
+    },
+    {
+      "symbol": "600036.SH",
+      "name": "招商银行",
+      "market": "A",
+      "score": 0.79,
+      "status": "Watch"
+    },
+    {
+      "symbol": "000001.SZ",
+      "name": "平安银行",
+      "market": "A",
+      "score": 0.76,
+      "status": "Watch"
+    },
+    {
+      "symbol": "600000.SH",
+      "name": "浦发银行",
+      "market": "A",
+      "score": 0.73,
+      "status": "Watch"
+    }
+  ],
+  "metadata": {
+    "top5_from": "P11 analysis of Tushare A-share candidates",
+    "selection_criteria": "High data quality, liquidity, market cap",
+    "note": "Canonical source for A-share watchlist in pipeline"
+  }
+}

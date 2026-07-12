@@ -1,0 +1,47 @@
+{
+  "project": "Project Aegis",
+  "type": "dashboard_v2_production_http_smoke",
+  "generated_at": "2026-07-11T06:54:08.207487+00:00",
+  "page": "index",
+  "overall_verdict": "PASS",
+  "checks": [
+    {
+      "route": "/dashboard/index.html",
+      "status": 200,
+      "passed": true,
+      "bytes": 2333
+    },
+    {
+      "route": "/dashboard/v2.css",
+      "status": 200,
+      "passed": true,
+      "bytes": 4505
+    },
+    {
+      "route": "/dashboard/v2.js",
+      "status": 200,
+      "passed": true,
+      "bytes": 14562
+    },
+    {
+      "name": "html_references_css",
+      "passed": true
+    },
+    {
+      "name": "html_references_js",
+      "passed": true
+    },
+    {
+      "name": "fetches_reports_relative",
+      "passed": true
+    },
+    {
+      "name": "no_dashboard_reports_path",
+      "passed": true
+    },
+    {
+      "name": "json_parseable",
+      "passed": true
+    }
+  ]
+}

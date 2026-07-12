@@ -1,0 +1,331 @@
+#!/usr/bin/env python3
+"""
+verify_aegis_evidence_gate.py
+
+Machine gate that independently verifies all evidence.
+Does NOT trust self-reported results; recomputes everything from filesystem.
+Outputs GATE_VERDICT_JSON to stdout.
+With --write-report, also writes JSON + MD report files.
+
+Checks:
+  A. File existence
+  B. Real file fingerprints (hashlib.sha256)
+  C. Hash validity (^[0-9a-f]{12}$, no known fakes)
+  D. Self-referential hash strategy
+  E. Feishu dry-run safety fields
+  F. Dashboard
+  G. Makefile targets (if Makefile exists)
+  H. Secret scan
+  I. Real send/trading risk scan
+  J. Cross-validate hash (Python hashlib vs /usr/bin/shasum)
+"""
+
+from __future__ import annotations
+
+import argparse
+import hashlib
+import json
+import re
+import subprocess
+import sys
+from datetime import datetime, timezone
+from pathlib import Path
+
+SCRIPT_DIR = Path(__file__).resolve().parent
+REPO_ROOT = SCRIPT_DIR.parent
+REPORTS_DIR = REPO_ROOT / "data" / "reports"
+
+PIPELINE_JSON = REPORTS_DIR / "aegis_daily_digest_pipeline_latest.json"
+FEISHU_JSON = REPORTS_DIR / "feishu_daily_digest_dry_run.json"
+FEISHU_MD = REPORTS_DIR / "feishu_daily_digest_dry_run.md"
+DASHBOARD_HTML = REPO_ROOT / "dashboard" / "index.html"
+AUDIT_JSON = REPORTS_DIR / "aegis_pipeline_evidence_audit_latest.json"
+MAKEFILE = REPO_ROOT / "Makefile"
+
+OUTPUT_JSON = REPORTS_DIR / "aegis_evidence_gate_latest.json"
+OUTPUT_MD = REPORTS_DIR / "aegis_evidence_gate_latest.md"
+
+HASH_RE = re.compile(r"^[0-9a-f]{12}$")
+KNOWN_FAKE_HASHES = {"000000000000", "deadbeefdead", "aaaaaaaaaaaa", "ffffffffffff"}
+
+ALL_FILES = [
+    ("crcl_risk_monitor_latest.json", REPORTS_DIR / "crcl_risk_monitor_latest.json"),
+    ("000002.sz_risk_monitor_latest.json", REPORTS_DIR / "000002.sz_risk_monitor_latest.json"),
+    ("feishu_daily_digest_dry_run.json", FEISHU_JSON),
+    ("feishu_daily_digest_dry_run.md", FEISHU_MD),
+    ("aegis_daily_digest_pipeline_latest.json", PIPELINE_JSON),
+    ("dashboard/index.html", DASHBOARD_HTML),
+]
+
+SECRET_PATTERNS = [
+    (re.compile(r"sk-[a-zA-Z0-9]{20,}"), "api_key_pattern"),
+    (re.compile(r"[aA]uthorization['\"]?\s*[:=]\s*['\"]?[bB]earer\s+"), "bearer_token"),
+    (re.compile(r"webhook['\"]?\s*[:=]\s*['\"]?https?://"), "webhook_url"),
+    (re.compile(r"password['\"]?\s*[:=]\s*['\"]?[^\s'\"]{4,}"), "password_literal"),
+]
+
+RISK_PATTERNS = [
+    (re.compile(r"requests\.(post|get|put|delete)\("), "requests_call"),
+    (re.compile(r"httpx\.(post|get|put|delete)\("), "httpx_call"),
+    (re.compile(r"aiohttp.*\.(post|get|put|delete)\("), "aiohttp_call"),
+    (re.compile(r"urllib\.request\.urlopen\("), "urllib_call"),
+    (re.compile(r"webhook\.send\(|send_webhook\("), "webhook_send"),
+    (re.compile(r"place_order\(|submit_order\(|buy_stock\(|sell_stock\("), "trading_call"),
+]
+
+
+def _now_iso() -> str:
+    return datetime.now(timezone.utc).astimezone().isoformat()
+
+
+def _fingerprint(path: Path) -> dict:
+    if not path.exists():
+        return {"exists": False, "mtime": None, "size": None, "sha256_12": None}
+    stat = path.stat()
+    raw = path.read_bytes()
+    sha = hashlib.sha256(raw).hexdigest()[:12]
+    return {
+        "exists": True,
+        "mtime": datetime.fromtimestamp(stat.st_mtime, timezone.utc).astimezone().isoformat(),
+        "size": stat.st_size,
+        "sha256_12": sha,
+    }
+
+
+def _cross_validate(path: Path) -> dict:
+    if not path.exists():
+        return {"available": False}
+    py_hash = hashlib.sha256(path.read_bytes()).hexdigest()[:12]
+    try:
+        result = subprocess.run(
+            ["/usr/bin/shasum", "-a", "256", str(path)],
+            capture_output=True, text=True, timeout=10,
+        )
+        if result.returncode == 0:
+            shasum_hash = result.stdout.strip().split()[0][:12]
+            return {"available": True, "python": py_hash, "shasum": shasum_hash, "match": py_hash == shasum_hash}
+    except Exception:
+        pass
+    return {"available": True, "python": py_hash, "shasum": None, "match": None}
+
+
+def main() -> int:
+    parser = argparse.ArgumentParser(description="Aegis Evidence Gate")
+    parser.add_argument("--strict", action="store_true", help="Strict mode")
+    parser.add_argument("--write-report", action="store_true", help="Write report files")
+    args = parser.parse_args()
+
+    gate_started = _now_iso()
+    checks: dict = {}
+    failures: list[str] = []
+
+    # A. File existence
+    existence = {}
+    for label, path in ALL_FILES:
+        existence[label] = path.exists()
+        if not path.exists() and label not in ("feishu_daily_digest_dry_run.md",):
+            # feishu MD may not be critical but others are
+            if label not in ("crcl_risk_monitor_latest.json", "000002.sz_risk_monitor_latest.json"):
+                failures.append(f"A. Missing file: {label}")
+    checks["A_file_existence"] = {"passed": len(failures) == 0, "details": existence}
+
+    # B. Real file fingerprints
+    fingerprints = {}
+    for label, path in ALL_FILES:
+        fingerprints[label] = _fingerprint(path)
+    checks["B_real_fingerprints"] = {"passed": True, "details": fingerprints}
+
+    # C. Hash validity
+    hash_issues = []
+    for label, fp in fingerprints.items():
+        sha = fp.get("sha256_12")
+        if sha is not None:
+            if not HASH_RE.match(sha):
+                hash_issues.append(f"Invalid format: {label} = {sha}")
+            if sha in KNOWN_FAKE_HASHES:
+                hash_issues.append(f"Fake hash: {label} = {sha}")
+    checks["C_hash_validity"] = {"passed": len(hash_issues) == 0, "issues": hash_issues}
+    failures.extend(hash_issues)
+
+    # D. Self-referential hash strategy
+    self_hash_ok = False
+    if PIPELINE_JSON.exists():
+        try:
+            pipeline = json.loads(PIPELINE_JSON.read_text(encoding="utf-8"))
+            ep = pipeline.get("evidence_policy", {})
+            self_hash_ok = ep.get("raw_self_hash_not_claimed_in_pipeline_json") is True
+            # Also check that no raw self hash field exists
+            has_raw_self = any(k for k in pipeline if "self_hash_raw" in k.lower())
+            if has_raw_self:
+                self_hash_ok = False
+        except Exception:
+            pass
+    checks["D_self_hash_strategy"] = {"passed": self_hash_ok}
+    if not self_hash_ok:
+        failures.append("D. Self-referential hash strategy not verified")
+
+    # E. Feishu dry-run safety fields
+    feishu_safe = False
+    feishu_details = {}
+    if FEISHU_JSON.exists():
+        try:
+            feishu = json.loads(FEISHU_JSON.read_text(encoding="utf-8"))
+            feishu_details = {
+                "dry_run": feishu.get("dry_run"),
+                "sent": feishu.get("sent"),
+                "webhook_called": feishu.get("webhook_called"),
+                "trading_called": feishu.get("trading_called"),
+            }
+            feishu_safe = (
+                feishu.get("dry_run") is True
+                and feishu.get("sent") is False
+                and feishu.get("webhook_called") is False
+                and feishu.get("trading_called") is False
+            )
+        except Exception as e:
+            feishu_details = {"error": str(e)}
+    checks["E_feishu_dry_run_safety"] = {"passed": feishu_safe, "details": feishu_details}
+    if not feishu_safe:
+        failures.append("E. Feishu dry-run safety fields not safe")
+
+    # F. Dashboard
+    dashboard_ok = False
+    dashboard_details = {}
+    if DASHBOARD_HTML.exists():
+        html = DASHBOARD_HTML.read_text(encoding="utf-8")
+        has_feishu = ("飞书日报" in html) or ("feishu" in html.lower()) or ("Dry-run" in html)
+        has_degrade = ("降级" in html) or ("degrade" in html.lower())
+        dashboard_details = {"has_feishu_reference": has_feishu, "has_degrade_notice": has_degrade, "size": len(html)}
+        # In strict mode, require both; in non-strict, just record
+        if args.strict:
+            dashboard_ok = has_feishu and has_degrade
+        else:
+            dashboard_ok = True  # informational only
+    checks["F_dashboard"] = {"passed": dashboard_ok, "details": dashboard_details}
+    if args.strict and not dashboard_ok:
+        failures.append("F. Dashboard missing feishu/degrade references (strict)")
+
+    # G. Makefile targets (if Makefile exists)
+    makefile_details = {"exists": MAKEFILE.exists()}
+    if MAKEFILE.exists():
+        makefile_text = MAKEFILE.read_text(encoding="utf-8")
+        # Check for duplicate targets
+        target_re = re.compile(r"^([a-zA-Z_-][a-zA-Z0-9_-]*):", re.MULTILINE)
+        targets = target_re.findall(makefile_text)
+        from collections import Counter
+        dupes = [t for t, c in Counter(targets).items() if c > 1]
+        makefile_details["targets"] = targets
+        makefile_details["duplicates"] = dupes
+        makefile_details["passed"] = len(dupes) == 0
+    else:
+        makefile_details["passed"] = True  # No Makefile is OK
+    checks["G_makefile_targets"] = makefile_details
+    if makefile_details.get("duplicates"):
+        failures.append(f"G. Duplicate Makefile targets: {makefile_details['duplicates']}")
+
+    # H. Secret scan
+    secret_findings = []
+    for label, path in ALL_FILES:
+        if not path.exists():
+            continue
+        text = path.read_text(encoding="utf-8", errors="ignore")
+        for pat, name in SECRET_PATTERNS:
+            if pat.search(text):
+                secret_findings.append({"file": label, "pattern": name})
+    checks["H_secret_scan"] = {"passed": len(secret_findings) == 0, "findings": secret_findings}
+    if secret_findings:
+        failures.append(f"H. Secrets detected: {secret_findings}")
+
+    # I. Real send/trading risk scan
+    risk_findings = []
+    for sp in SCRIPT_DIR.glob("*.py"):
+        text = sp.read_text(encoding="utf-8", errors="ignore")
+        for pat, name in RISK_PATTERNS:
+            if pat.search(text):
+                risk_findings.append({"file": sp.name, "pattern": name})
+    checks["I_real_send_risk_scan"] = {"passed": len(risk_findings) == 0, "findings": risk_findings}
+    if risk_findings:
+        failures.append(f"I. Network/trading calls detected: {risk_findings}")
+
+    # J. Cross-validate hash (Python hashlib vs /usr/bin/shasum)
+    cross_results = {}
+    cross_ok = True
+    for label, path in ALL_FILES:
+        if path.exists():
+            cv = _cross_validate(path)
+            cross_results[label] = cv
+            if cv.get("match") is False:
+                cross_ok = False
+                failures.append(f"J. Hash mismatch for {label}: python={cv.get('python')} shasum={cv.get('shasum')}")
+    checks["J_cross_validation"] = {"passed": cross_ok, "details": cross_results}
+
+    # Overall verdict
+    overall_passed = len(failures) == 0
+    gate_finished = _now_iso()
+
+    gate = {
+        "project": "Project Aegis",
+        "type": "evidence_gate",
+        "gate_started_at": gate_started,
+        "gate_finished_at": gate_finished,
+        "strict_mode": args.strict,
+        "checks": checks,
+        "failures": failures,
+        "overall_verdict": "PASS" if overall_passed else "FAIL",
+    }
+
+    # Output GATE_VERDICT_JSON to stdout
+    print("GATE_VERDICT_JSON")
+    print(json.dumps(gate, ensure_ascii=False, indent=2))
+    print("END_GATE_VERDICT_JSON")
+
+    # Write report if requested
+    if args.write_report:
+        OUTPUT_JSON.parent.mkdir(parents=True, exist_ok=True)
+        OUTPUT_JSON.write_text(json.dumps(gate, ensure_ascii=False, indent=2), encoding="utf-8")
+
+        md_lines = [
+            "# Project Aegis Evidence Gate",
+            "",
+            f"> Gate time: {gate_started} → {gate_finished}",
+            f"> Strict mode: `{args.strict}`",
+            "",
+            f"## Overall Verdict: {gate['overall_verdict']}",
+            "",
+            "## Checks",
+            "",
+        ]
+        for key, val in checks.items():
+            md_lines.append(f"### {key}")
+            md_lines.append(f"- Passed: `{val.get('passed')}`")
+            if "details" in val:
+                md_lines.append(f"- Details: `{json.dumps(val['details'], ensure_ascii=False)[:200]}`")
+            if "issues" in val:
+                md_lines.append(f"- Issues: `{val['issues']}`")
+            if "findings" in val:
+                md_lines.append(f"- Findings: `{val['findings']}`")
+            md_lines.append("")
+
+        if failures:
+            md_lines.append("## Failures")
+            for f in failures:
+                md_lines.append(f"- ❌ {f}")
+        else:
+            md_lines.append("## Failures")
+            md_lines.append("- (none)")
+
+        md_lines.extend([
+            "",
+            "---",
+            f"_Generated by verify_aegis_evidence_gate.py at {gate_finished}_",
+        ])
+        OUTPUT_MD.write_text("\n".join(md_lines), encoding="utf-8")
+
+        print(f"\n[evidence_gate] JSON → {OUTPUT_JSON}", file=sys.stderr)
+        print(f"[evidence_gate] MD   → {OUTPUT_MD}", file=sys.stderr)
+
+    return 0 if overall_passed else 1
+
+
+if __name__ == "__main__":
+    sys.exit(main())

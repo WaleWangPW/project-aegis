@@ -1,0 +1,33 @@
+{
+  "schema_version": "external_api_connectors.example.v1",
+  "connectors": [
+    {
+      "connector_id": "api_sec_companyfacts",
+      "name": "SEC Companyfacts API",
+      "provider_type": "official_regulator",
+      "markets": ["US"],
+      "base_url": "https://data.sec.gov/api/xbrl/companyfacts/",
+      "auth_method": "none",
+      "required_env_vars": [],
+      "license_status": "not_required",
+      "retention_policy": "summary_only",
+      "allowed_purposes": ["official_filings_context", "evidence_metadata"],
+      "can_connect": true,
+      "notes": "Official regulator API; no API key."
+    },
+    {
+      "connector_id": "api_user_research_approved_env",
+      "name": "User Approved Strategy Research API",
+      "provider_type": "user_provided_research_api",
+      "markets": ["A", "H", "US"],
+      "base_url": "https://api.example-research-provider.invalid/v1",
+      "auth_method": "env_var",
+      "required_env_vars": ["AEGIS_RESEARCH_API_KEY"],
+      "license_status": "approved",
+      "retention_policy": "summary_only",
+      "allowed_purposes": ["strategy_research_ingestion"],
+      "can_connect": true,
+      "notes": "Example only. Store the actual API key outside repo and Vault."
+    }
+  ]
+}

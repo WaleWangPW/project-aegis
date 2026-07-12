@@ -1,0 +1,163 @@
+{
+  "project": "Project Aegis",
+  "type": "feishu_daily_digest",
+  "dry_run": true,
+  "sent": false,
+  "webhook_called": false,
+  "trading_called": false,
+  "generated_at": "2026-07-10T11:07:34.193369+08:00",
+  "a_share_top5": [
+    {
+      "symbol": "600519.SH",
+      "name": "贵州茅台",
+      "market": "A",
+      "score": 0.95,
+      "status": "Watch"
+    },
+    {
+      "symbol": "600036.SH",
+      "name": "招商银行",
+      "market": "A",
+      "score": 0.85,
+      "status": "Watch"
+    },
+    {
+      "symbol": "000858.SZ",
+      "name": "五粮液",
+      "market": "A",
+      "score": 0.82,
+      "status": "Watch"
+    },
+    {
+      "symbol": "000001.SZ",
+      "name": "平安银行",
+      "market": "A",
+      "score": 0.76,
+      "status": "Watch"
+    },
+    {
+      "symbol": "601398.SH",
+      "name": "工商银行",
+      "market": "A",
+      "score": 0.72,
+      "status": "Watch"
+    }
+  ],
+  "hk_sample": {
+    "missing": true
+  },
+  "risk_monitors": {
+    "CRCL": {
+      "report_metadata": {
+        "report_type": "crcl_risk_monitor",
+        "generated_at": "2026-07-09T13:10:56.572694",
+        "symbol": "CRCL",
+        "stock_name": "Circle Internet Group",
+        "market": "US",
+        "report_version": "1.0"
+      },
+      "current_status": {
+        "recommendation": "Exit",
+        "confidence": 0.25,
+        "last_updated": "2026-07-06T00:00:00+08:00"
+      },
+      "exit_watch_eligibility": {
+        "eligible": false,
+        "blocking_conditions": [
+          "max_drawdown > -15% (current: -31.58%)",
+          "volatility > 4% (current: 6.19%)",
+          "liquidity_not_ok = true",
+          "high_volatility flag triggered",
+          "severe_drawdown flag triggered"
+        ],
+        "optional_conditions_not_met": []
+      },
+      "risk_metrics": {
+        "max_drawdown": -0.3157720329521754,
+        "max_drawdown_percent": "-31.58%",
+        "volatility": 0.0618692952369419,
+        "volatility_percent": "6.19%",
+        "liquidity_flags": [
+          "high_volatility",
+          "liquidity_not_ok",
+          "liquidity_risk",
+          "poor_entry_location_downtrend",
+          "relative_weakness_vs_index",
+          "severe_drawdown",
+          "trend_down"
+        ],
+        "threshold_checks": {
+          "max_drawdown_ok": false,
+          "volatility_ok": false,
+          "liquidity_ok": false
+        }
+      },
+      "expert_stances": {},
+      "must_conditions_status": {
+        "max_drawdown_le_neg15_percent": {
+          "condition": "max_drawdown ≤ -15%",
+          "current_value": "-31.58%",
+          "passed": false
+        },
+        "volatility_le_4_percent": {
+          "condition": "volatility ≤ 4%",
+          "current_value": "6.19%",
+          "passed": false
+        },
+        "liquidity_not_ok_false": {
+          "condition": "liquidity_not_ok = false",
+          "current_value": "True",
+          "passed": false
+        },
+        "risk_agent_stance_neutral_or_better": {
+          "condition": "RiskAgent stance ≥ neutral",
+          "current_value": "neutral",
+          "passed": true
+        },
+        "high_volatility_flag_not_triggered": {
+          "condition": "high_volatility flag not triggered",
+          "current_value": "triggered",
+          "passed": false
+        },
+        "severe_drawdown_flag_not_triggered": {
+          "condition": "severe_drawdown flag not triggered",
+          "current_value": "triggered",
+          "passed": false
+        }
+      },
+      "optional_conditions_status": {
+        "trend_agent_stance_neutral_or_better": {
+          "condition": "TrendAgent stance ≥ neutral",
+          "current_value": "neutral",
+          "passed": true
+        },
+        "timing_agent_stance_neutral_or_better": {
+          "condition": "TimingAgent stance ≥ neutral",
+          "current_value": "neutral",
+          "passed": true
+        }
+      },
+      "next_check": "2026-07-09",
+      "data_sources": {
+        "risk_signal": "signal:sig_20260709_US_CRCL_risk_volatility_drawdown",
+        "risk_opinion": "opn_20260709_US_CRCL_risk",
+        "recommendation": "rec_20260709_pre_market_US_CRCL"
+      },
+      "missing": false
+    },
+    "000002.SZ": {
+      "symbol": "000002.SZ",
+      "name": "万科A",
+      "missing": true
+    }
+  },
+  "review_exit_risks": {
+    "issues": [],
+    "summary": "OK"
+  },
+  "mobile_links": {
+    "mdns": "http://aegis.local:8080",
+    "tailscale": "https://aegis.ts.net"
+  },
+  "message_text": "📊 Project Aegis 每日风险摘要 (Dry-run)\n生成时间: 2026-07-10T11:07:34.193369+08:00\n\nA股 Watch Top5: 5 只\n  • 600519.SH 贵州茅台 - Watch\n  • 600036.SH 招商银行 - Watch\n  • 000858.SZ 五粮液 - Watch\n  • 000001.SZ 平安银行 - Watch\n  • 601398.SH 工商银行 - Watch\n港股样本: 报告缺失\n\n风险监控:\n  • CRCL (?): ? | vol=? | dd=? | liq_ok=?\n  • 000002.SZ: 报告缺失\n\n⚠️ 安全确认: dry-run=是, webhook=未调用, 下单=未调用"
+}

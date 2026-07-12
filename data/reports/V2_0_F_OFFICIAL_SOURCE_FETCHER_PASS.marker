@@ -1,0 +1,13 @@
+generated_at=2026-07-11T17:21:03.407108+08:00
+command=validate_v2_0_f_official_source_fetcher.py --run-id v2_0_f_20260711_acceptance_live_sec --live-sec --user-agent ProjectAegis/0.1 weihongwang@example.com
+exit_code=0
+target=V2.0-F Official Source Fetcher
+report_json=/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/v2_0_f_official_source_fetcher_latest.json
+report_json_sha256=6ad1e1d8b04057de9a577917c7c4e7a9eac540de31faecd57e827e8a78de04c8
+report_md=/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/v2_0_f_official_source_fetcher_latest.md
+report_md_sha256=5b101f4fc4e876f4a67cf15edc41591861e1f56f212eb8e765327f429a5a7ff4
+run_dir=/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v2_0_f_acceptance/v2_0_f_20260711_acceptance_live_sec
+network_used=true
+dashboard_contract_changed=false
+production_records_written=false
+failed=0

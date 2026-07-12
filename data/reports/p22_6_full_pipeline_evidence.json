@@ -1,0 +1,106 @@
+{
+  "project": "Project Aegis",
+  "type": "p22_6_full_pipeline",
+  "generated_at": "2026-07-12T08:00:33",
+  "success": true,
+  "reason": "",
+  "commands": [
+    {
+      "command": "make validate-a-share-strategy-definition",
+      "exit_code": 0,
+      "stdout_tail": ".venv/bin/python scripts/validate_a_share_strategy_definition.py\nSTRATEGY_DEFINITION_VERDICT_JSON\n{\n  \"project\": \"Project Aegis\",\n  \"type\": \"strategy_definition_validation\",\n  \"validated_at\": \"2026-07-12T08:00:22.078984+08:00\",\n  \"strict_mode\": true,\n  \"checks\": {\n    \"strategy_json_exists\": {\n      \"passed\": true\n    },\n    \"strategy_md_exists\": {\n      \"passed\": true\n    },\n    \"input_schema_exists\": {\n      \"passed\": true\n    },\n    \"output_schema_exists\": {\n      \"passed\": true\n    },\n    \"strategy_json_parseable\": {\n      \"passed\": true\n    },\n    \"input_schema_parseable\": {\n      \"passed\": true\n    },\n    \"output_schema_parseable\": {\n      \"passed\": true\n    },\n    \"strategy_id_valid\": {\n      \"passed\": true,\n      \"value\": \"a_share_watchlist_v1\"\n    },\n    \"top_n_20\": {\n      \"passed\": true,\n      \"value\": 20\n    },\n    \"canonical_top5_matches_p19_10\": {\n      \"passed\": true,\n      \"value\": [\n        \"600519.SH\",\n        \"600036.SH\",\n        \"000858.SZ\",\n        \"000001.SZ\",\n        \"601398.SH\"\n      ]\n    },\n    \"safety_boundaries_present\": {\n      \"passed\": true,\n      \"value\": [\n        \"no_real_trade\",\n        \"no_order_api\",\n        \"no_webhook_send\",\n        \"no_secret_output\"\n      ]\n    },\n    \"backtest_not_included_true\": {\n      \"passed\": true,\n      \"value\": true\n    },\n    \"allow_short_false\": {\n      \"passed\": true,\n      \"value\": false\n    },\n    \"allow_real_trade_false\": {\n      \"passed\": true,\n      \"value\": false\n    },\n    \"output_dry_run_true\": {\n      \"passed\": true,\n      \"value\": true\n    },\n    \"output_sent_false\": {\n      \"passed\": true,\n      \"value\": false\n    },\n    \"output_trading_called_false\": {\n      \"passed\": true,\n      \"value\": false\n    },\n    \"no_secret_value_detected\": {\n      \"passed\": true,\n      \"value\": []\n    }\n  },\n  \"failures\": [],\n  \"overall_verdict\": \"PASS\"\n}\nEND_STRATEGY_DEFINITION_VERDICT_JSON\n",
+      "stderr_tail": "",
+      "result": "PASS"
+    },
+    {
+      "command": "make validate-a-share-backtest-dry-run",
+      "exit_code": 0,
+      "stdout_tail": ".venv/bin/python scripts/validate_a_share_backtest_dry_run.py\nBACKTEST_DRY_RUN_VERDICT_JSON\n{\n  \"project\": \"Project Aegis\",\n  \"type\": \"backtest_dry_run_validation\",\n  \"validated_at\": \"2026-07-12T08:00:22.213283+08:00\",\n  \"strict_mode\": true,\n  \"checks\": {\n    \"backtest_json_exists\": {\n      \"passed\": true\n    },\n    \"backtest_md_exists\": {\n      \"passed\": true\n    },\n    \"input_json_exists\": {\n      \"passed\": true\n    },\n    \"backtest_json_parseable\": {\n      \"passed\": true\n    },\n    \"strategy_id_valid\": {\n      \"passed\": true,\n      \"value\": \"a_share_watchlist_v1\"\n    },\n    \"dry_run_true\": {\n      \"passed\": true,\n      \"value\": true\n    },\n    \"sent_false\": {\n      \"passed\": true,\n      \"value\": false\n    },\n    \"trading_called_false\": {\n      \"passed\": true,\n      \"value\": false\n    },\n    \"allow_real_trade_false\": {\n      \"passed\": true,\n      \"value\": false\n    },\n    \"allow_short_false\": {\n      \"passed\": true,\n      \"value\": false\n    },\n    \"static_snapshot_backtest_true\": {\n      \"passed\": true,\n      \"value\": true\n    },\n    \"lookahead_bias_warning_true\": {\n      \"passed\": true,\n      \"value\": true\n    },\n    \"selected_symbols_count_gte_5\": {\n      \"passed\": true,\n      \"value\": 20\n    },\n    \"valid_price_series_count_gte_5\": {\n      \"passed\": true,\n      \"value\": 20\n    },\n    \"portfolio_metrics_present\": {\n      \"passed\": true\n    },\n    \"no_secret_value_detected\": {\n      \"passed\": true,\n      \"value\": []\n    },\n    \"no_real_trade_call_detected\": {\n      \"passed\": true\n    }\n  },\n  \"failures\": [],\n  \"overall_verdict\": \"PASS\"\n}\nEND_BACKTEST_DRY_RUN_VERDICT_JSON\n",
+      "stderr_tail": "",
+      "result": "PASS"
+    },
+    {
+      "command": "make p22-4-filemode",
+      "exit_code": 0,
+      "stdout_tail": ".venv/bin/python scripts/run_p22_4_filemode.py\nBACKTEST_HISTORY_VERDICT_JSON\n{\n  \"project\": \"Project Aegis\",\n  \"type\": \"backtest_history_validation\",\n  \"validated_at\": \"2026-07-12T08:00:22\",\n  \"checks\": {\n    \"history_json_exists\": {\n      \"passed\": true\n    },\n    \"history_md_exists\": {\n      \"passed\": true\n    },\n    \"snapshots_dir_exists\": {\n      \"passed\": true\n    },\n    \"history_json_parseable\": {\n      \"passed\": true\n    },\n    \"runs_count_between_1_and_20\": {\n      \"passed\": true,\n      \"count\": 20\n    },\n    \"run_id_unique\": {\n      \"passed\": true\n    },\n    \"latest_result_pass\": {\n      \"passed\": true\n    },\n    \"latest_safety_flags_valid\": {\n      \"passed\": true\n    },\n    \"latest_static_snapshot_true\": {\n      \"passed\": true\n    },\n    \"latest_lookahead_bias_warning_true\": {\n      \"passed\": true\n    },\n    \"latest_selected_symbols_count_gte_5\": {\n      \"passed\": true\n    },\n    \"latest_valid_price_series_count_gte_5\": {\n      \"passed\": true\n    },\n    \"latest_portfolio_metrics_present\": {\n      \"passed\": true\n    },\n    \"latest_snapshot_exists\": {\n      \"passed\": true,\n      \"path\": \"/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/a_share_backtest_history_snapshots/bt_run_20260710_143250_hist_20260712_080022.json\"\n    },\n    \"sha256_values_valid\": {\n      \"passed\": true,\n      \"values\": [\n        \"15d75ff6c9e3\",\n        \"15d75ff6c9e3\",\n        \"15d75ff6c9e3\",\n        \"15d75ff6c9e3\",\n        \"15d75ff6c9e3\",\n        \"15d75ff6c9e3\",\n        \"15d75ff6c9e3\",\n        \"15d75ff6c9e3\",\n        \"15d75ff6c9e3\",\n        \"15d75ff6c9e3\",\n        \"15d75ff6c9e3\",\n        \"15d75ff6c9e3\",\n        \"15d75ff6c9e3\",\n        \"15d75ff6c9e3\",\n        \"15d75ff6c9e3\",\n        \"15d75ff6c9e3\",\n        \"15d75ff6c9e3\",\n        \"15d75ff6c9e3\",\n        \"15d75ff6c9e3\",\n        \"15d75ff6c9e3\"\n      ]\n    },\n    \"no_secret_value_detected\": {\n      \"passed\": true\n    },\n    \"no_real_trade_call_detected\": {\n      \"passed\": true\n    }\n  },\n  \"failures\": [],\n  \"overall_verdict\": \"PASS\"\n}\n",
+      "stderr_tail": "",
+      "result": "PASS"
+    },
+    {
+      "command": "make p22-5-filemode",
+      "exit_code": 0,
+      "stdout_tail": ".venv/bin/python scripts/run_p22_5_filemode.py\n",
+      "stderr_tail": "",
+      "result": "PASS"
+    },
+    {
+      "command": "make validate-a-share-backtest-history",
+      "exit_code": 0,
+      "stdout_tail": ".venv/bin/python scripts/validate_a_share_backtest_history.py\nBACKTEST_HISTORY_VERDICT_JSON\n{\n  \"project\": \"Project Aegis\",\n  \"type\": \"backtest_history_validation\",\n  \"validated_at\": \"2026-07-12T08:00:32\",\n  \"checks\": {\n    \"history_json_exists\": {\n      \"passed\": true\n    },\n    \"history_md_exists\": {\n      \"passed\": true\n    },\n    \"snapshots_dir_exists\": {\n      \"passed\": true\n    },\n    \"history_json_parseable\": {\n      \"passed\": true\n    },\n    \"runs_count_between_1_and_20\": {\n      \"passed\": true,\n      \"count\": 20\n    },\n    \"run_id_unique\": {\n      \"passed\": true\n    },\n    \"latest_result_pass\": {\n      \"passed\": true\n    },\n    \"latest_safety_flags_valid\": {\n      \"passed\": true\n    },\n    \"latest_static_snapshot_true\": {\n      \"passed\": true\n    },\n    \"latest_lookahead_bias_warning_true\": {\n      \"passed\": true\n    },\n    \"latest_selected_symbols_count_gte_5\": {\n      \"passed\": true\n    },\n    \"latest_valid_price_series_count_gte_5\": {\n      \"passed\": true\n    },\n    \"latest_portfolio_metrics_present\": {\n      \"passed\": true\n    },\n    \"latest_snapshot_exists\": {\n      \"passed\": true,\n      \"path\": \"/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/a_share_backtest_history_snapshots/bt_run_20260710_143250_hist_20260712_080022.json\"\n    },\n    \"sha256_values_valid\": {\n      \"passed\": true,\n      \"values\": [\n        \"15d75ff6c9e3\",\n        \"15d75ff6c9e3\",\n        \"15d75ff6c9e3\",\n        \"15d75ff6c9e3\",\n        \"15d75ff6c9e3\",\n        \"15d75ff6c9e3\",\n        \"15d75ff6c9e3\",\n        \"15d75ff6c9e3\",\n        \"15d75ff6c9e3\",\n        \"15d75ff6c9e3\",\n        \"15d75ff6c9e3\",\n        \"15d75ff6c9e3\",\n        \"15d75ff6c9e3\",\n        \"15d75ff6c9e3\",\n        \"15d75ff6c9e3\",\n        \"15d75ff6c9e3\",\n        \"15d75ff6c9e3\",\n        \"15d75ff6c9e3\",\n        \"15d75ff6c9e3\",\n        \"15d75ff6c9e3\"\n      ]\n    },\n    \"no_secret_value_detected\": {\n      \"passed\": true\n    },\n    \"no_real_trade_call_detected\": {\n      \"passed\": true\n    }\n  },\n  \"failures\": [],\n  \"overall_verdict\": \"PASS\"\n}\n",
+      "stderr_tail": "",
+      "result": "PASS"
+    },
+    {
+      "command": "make validate-aegis-health-status",
+      "exit_code": 0,
+      "stdout_tail": ".venv/bin/python scripts/validate_aegis_health_status.py --strict\n[validate_aegis_health_status] starting …\nHEALTH_STATUS_VERDICT_JSON\n{\n  \"project\": \"Project Aegis\",\n  \"type\": \"health_status_validation\",\n  \"validated_at\": \"2026-07-10T11:39:00.000000+08:00\",\n  \"strict_mode\": true,\n  \"checks\": {\n    \"health_json_exists\": {\n      \"passed\": true\n    },\n    \"health_md_exists\": {\n      \"passed\": true\n    },\n    \"health_json_parseable\": {\n      \"passed\": true\n    },\n    \"health_status_valid\": {\n      \"passed\": true\n    },\n    \"current_should_be_normal\": {\n      \"passed\": true\n    },\n    \"sent_is_false\": {\n      \"passed\": true\n    },\n    \"webhook_not_called\": {\n      \"passed\": true\n    },\n    \"trading_not_called\": {\n      \"passed\": true\n    },\n    \"a_share_top5_count_5\": {\n      \"passed\": true\n    },\n    \"no_secrets_found\": {\n      \"passed\": true\n    }\n  },\n  \"failures\": [],\n  \"overall_verdict\": \"PASS\"\n}\nEND_HEALTH_STATUS_VERDICT_JSON\n",
+      "stderr_tail": "",
+      "result": "PASS"
+    },
+    {
+      "command": "make verify-aegis-evidence-gate",
+      "exit_code": 0,
+      "stdout_tail": "_risk_scan\": {\n      \"passed\": true,\n      \"findings\": []\n    },\n    \"J_cross_validation\": {\n      \"passed\": true,\n      \"details\": {\n        \"crcl_risk_monitor_latest.json\": {\n          \"available\": true,\n          \"python\": \"d36831305b4f\",\n          \"shasum\": \"d36831305b4f\",\n          \"match\": true\n        },\n        \"000002.sz_risk_monitor_latest.json\": {\n          \"available\": true,\n          \"python\": \"99b9cee1a743\",\n          \"shasum\": \"99b9cee1a743\",\n          \"match\": true\n        },\n        \"feishu_daily_digest_dry_run.json\": {\n          \"available\": true,\n          \"python\": \"1df8ce62a693\",\n          \"shasum\": \"1df8ce62a693\",\n          \"match\": true\n        },\n        \"feishu_daily_digest_dry_run.md\": {\n          \"available\": true,\n          \"python\": \"b571726085a7\",\n          \"shasum\": \"b571726085a7\",\n          \"match\": true\n        },\n        \"aegis_daily_digest_pipeline_latest.json\": {\n          \"available\": true,\n          \"python\": \"0db8b32e9d09\",\n          \"shasum\": \"0db8b32e9d09\",\n          \"match\": true\n        },\n        \"dashboard/index.html\": {\n          \"available\": true,\n          \"python\": \"e777047e93fc\",\n          \"shasum\": \"e777047e93fc\",\n          \"match\": true\n        }\n      }\n    },\n    \"K_md_hash_format\": {\n      \"passed\": true,\n      \"issues\": []\n    },\n    \"L_doc_duplicate_sections\": {\n      \"passed\": true,\n      \"issues\": []\n    },\n    \"N_history_json_exists\": {\n      \"passed\": true\n    },\n    \"N_history_json_parseable\": {\n      \"passed\": true\n    },\n    \"N_history_runs_count_between_1_and_7\": {\n      \"passed\": true,\n      \"count\": 7\n    },\n    \"N_history_latest_gate_pass\": {\n      \"passed\": true,\n      \"value\": \"PASS\"\n    },\n    \"N_history_latest_feishu_safety_flags_valid\": {\n      \"passed\": true,\n      \"details\": {\n        \"dry_run\": true,\n        \"sent\": false,\n        \"webhook_called\": false,\n        \"trading_called\": false\n      }\n    },\n    \"N_history_hash_values_hex_12\": {\n      \"passed\": true,\n      \"issues\": []\n    },\n    \"N_history_no_known_fake_hash\": {\n      \"passed\": true,\n      \"fake_found\": []\n    },\n    \"N_history_latest_snapshot_exists\": {\n      \"passed\": true,\n      \"path\": \"run_20260712_080030_history_entry.json\"\n    },\n    \"N_dashboard_legacy_ui\": {\n      \"passed\": true,\n      \"warning\": \"legacy history UI checks are not applicable to CEO Brief v2\"\n    },\n    \"M_feishu_hk_symbol\": {\n      \"passed\": true,\n      \"issues\": []\n    }\n  },\n  \"failures\": [],\n  \"overall_verdict\": \"PASS\"\n}\nEND_GATE_VERDICT_JSON\n",
+      "stderr_tail": "\n[evidence_gate] JSON → /Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/aegis_evidence_gate_latest.json\n[evidence_gate] MD   → /Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/aegis_evidence_gate_latest.md\n",
+      "result": "PASS"
+    }
+  ],
+  "checks": {
+    "p22_2_pass_marker": true,
+    "p22_3_pass_marker": true,
+    "p22_4_pass_marker": true,
+    "p22_5_pass_marker": true,
+    "health_json_exists": true,
+    "backtest_json_exists": true,
+    "backtest_history_json_exists": true,
+    "dashboard_exists": true,
+    "dashboard_contract_v2": true,
+    "no_secret_value_detected": true,
+    "no_send_call_detected": true,
+    "no_trading_call_detected": true
+  },
+  "summary": {
+    "health_status": "NORMAL",
+    "health_label": "正常",
+    "gate_overall_verdict": "PASS",
+    "backtest": {
+      "strategy_id": "a_share_watchlist_v1",
+      "selected_symbols_count": 20,
+      "valid_price_series_count": 20,
+      "total_return": -0.132762,
+      "annualized_return": -0.361538,
+      "max_drawdown": -0.157806,
+      "volatility": 0.139429,
+      "sharpe": -2.59298,
+      "win_rate": 0.4875,
+      "benchmark_total_return": 0.040267,
+      "excess_return": -0.173029,
+      "dry_run": true,
+      "sent": false,
+      "trading_called": false
+    },
+    "history": {
+      "runs_count": 20,
+      "latest_run_id": "bt_run_20260710_143250_hist_20260712_080022",
+      "latest_result": "PASS",
+      "retention_limit": 20
+    }
+  },
+  "safety": {
+    "dry_run": true,
+    "sent": false,
+    "webhook_called": false,
+    "trading_called": false,
+    "cron_modified": false
+  }
+}

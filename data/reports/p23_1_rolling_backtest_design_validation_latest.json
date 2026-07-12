@@ -1,0 +1,78 @@
+{
+  "project": "Project Aegis",
+  "type": "rolling_backtest_design_validation",
+  "validated_at": "2026-07-12T08:00:16",
+  "checks": {
+    "plan_json_exists": {
+      "passed": true
+    },
+    "plan_md_exists": {
+      "passed": true
+    },
+    "signal_snapshot_schema_exists": {
+      "passed": true
+    },
+    "rolling_input_schema_exists": {
+      "passed": true
+    },
+    "rolling_output_schema_exists": {
+      "passed": true
+    },
+    "json_parseable": {
+      "passed": true
+    },
+    "plan_id_valid": {
+      "passed": true,
+      "value": "a_share_point_in_time_rolling_backtest_v1"
+    },
+    "backtest_type_valid": {
+      "passed": true,
+      "value": "point_in_time_rolling_backtest"
+    },
+    "point_in_time_required_true": {
+      "passed": true,
+      "value": true
+    },
+    "static_snapshot_backtest_allowed_false": {
+      "passed": true,
+      "value": false
+    },
+    "lookahead_bias_control_required_true": {
+      "passed": true,
+      "value": true
+    },
+    "allow_real_trade_false": {
+      "passed": true,
+      "value": false
+    },
+    "allow_short_false": {
+      "passed": true,
+      "value": false
+    },
+    "safety_flags_valid": {
+      "passed": true,
+      "values": {
+        "dry_run": true,
+        "sent": false,
+        "trading_called": false
+      }
+    },
+    "date_semantics_present": {
+      "passed": true
+    },
+    "no_future_data_rules_present": {
+      "passed": true
+    },
+    "no_secret_value_detected": {
+      "passed": true
+    },
+    "no_real_trade_call_detected": {
+      "passed": true
+    },
+    "schema_fields_complete": {
+      "passed": true
+    }
+  },
+  "failures": [],
+  "overall_verdict": "PASS"
+}

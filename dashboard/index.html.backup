@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Project Aegis · P0 Dashboard</title>
+<style>
+  :root{
+    /* surfaces */
+    --bg:#0a0e1a;
+    --bg-soft:#0f1526;
+    --card:#131a2e;
+    --card-border:#1f2a45;
+
+    /* text — 3 tiers only. faint is reserved for pure decoration/timestamps. */
+    --text:#eef1f8;
+    --text-dim:#a2acc4;
+    --text-faint:#5b6478;
+
+    /* role colors: bg-soft(12%) / solid / on-dark-text(readable on soft) */
+    --accent:#3ecfd6;        --accent-soft:rgba(62,207,214,.14);
+    --green:#34d399;         --green-soft:rgba(52,211,153,.14);
+    --amber:#f5ab3d;         --amber-soft:rgba(245,171,61,.14);
+    --blue:#5b8def;          --blue-soft:rgba(91,141,239,.14);
+    --red:#f2637a;           --red-soft:rgba(242,99,122,.14);
+
+    /* radius scale */
+    --radius-sm:8px;
+    --radius-md:12px;
+    --radius-lg:16px;
+
+    /* spacing scale (4px base) */
+    --sp-1:4px; --sp-2:8px; --sp-3:12px; --sp-4:16px; --sp-5:24px; --sp-6:32px;
+
+    /* type scale — 5 tiers */
+    --fs-2xs:11px;  /* footer / pure metadata only */
+    --fs-xs:12px;   /* labels, captions, secondary table cells */
+    --fs-sm:13px;   /* body / table primary text */
+    --fs-base:15px; /* emphasized data: ticker, key values */
+    --fs-lg:19px;   /* section brand title */
+    --fs-xl:26px;   /* hero stat number */
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--text);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;
+    line-height:1.5;
+    padding:0 0 60px;
+  }
+  .wrap{max-width:1180px;margin:0 auto;padding:0 20px;}
+
+  /* ---- hero band: the only place with a gradient wash, functionally scoped ---- */
+  .top-band{
+    background:
+      radial-gradient(900px 420px at 12% -20%, rgba(62,207,214,.09), transparent 60%),
+      radial-gradient(700px 380px at 100% -20%, rgba(91,141,239,.08), transparent 55%),
+      var(--bg);
+    border-bottom:1px solid var(--card-border);
+    padding:var(--sp-5) 0 var(--sp-5);
+    margin-bottom:var(--sp-5);
+    position:sticky;top:0;z-index:10;
+  }
+
+  /* header */
+  .header{
+    display:flex;justify-content:space-between;align-items:flex-start;
+    flex-wrap:wrap;gap:var(--sp-4);margin-bottom:var(--sp-5);
+  }
+  .brand{display:flex;align-items:center;gap:var(--sp-3);flex:1 1 340px;min-width:0;}
+  .brand-mark{
+    width:42px;height:42px;border-radius:var(--radius-md);flex:none;
+    background:var(--accent-soft);border:1px solid rgba(62,207,214,.35);
+    display:flex;align-items:center;justify-content:center;color:var(--accent);
+  }
+  .brand-mark svg{width:22px;height:22px;}
+  .brand h1{font-size:var(--fs-lg);margin:0;font-weight:650;letter-spacing:.2px;}
+  .brand p{margin:2px 0 0;font-size:var(--fs-xs);color:var(--text-dim);}
+  .header-meta{text-align:right;font-size:var(--fs-xs);color:var(--text-dim);flex:0 0 auto;}
+  .header-meta .date{color:var(--text);font-weight:600;font-size:var(--fs-sm);}
+  .badge-stage{
+    display:inline-block;margin-top:var(--sp-2);padding:3px 10px;border-radius:99px;
+    background:rgba(139,149,171,.12);color:var(--text-dim);font-size:var(--fs-2xs);font-weight:600;
+    border:1px solid var(--card-border);
+  }
+  @media (max-width:520px){
+    .header-meta{text-align:left;width:100%;}
+  }
+
+  /* hero stat row */
+  .stat-row{display:grid;grid-template-columns:1fr 1.6fr;gap:var(--sp-4);}
+  .stat-hero{
+    background:var(--card);border:1px solid var(--card-border);border-radius:var(--radius-lg);
+    padding:var(--sp-4) var(--sp-4);display:flex;flex-direction:column;justify-content:center;gap:var(--sp-1);
+  }
+  .stat-hero .label{font-size:var(--fs-xs);color:var(--text-dim);}
+  .stat-hero .value{font-size:var(--fs-xl);font-weight:650;letter-spacing:-.3px;}
+  .stat-hero .sub{font-size:var(--fs-2xs);color:var(--text-faint);}
+
+  .snapshot{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--sp-3);}
+  .snap-chip{
+    background:var(--card);border:1px solid var(--card-border);border-radius:var(--radius-lg);
+    padding:var(--sp-3) var(--sp-4);display:flex;align-items:center;gap:var(--sp-3);
+  }
+  .snap-flag{
+    width:32px;height:32px;border-radius:var(--radius-sm);display:flex;align-items:center;justify-content:center;
+    font-size:11px;font-weight:700;letter-spacing:-.2px;flex:none;
+  }
+  .flag-a{background:var(--red-soft);color:var(--red);}
+  .flag-h{background:var(--amber-soft);color:var(--amber);}
+  .flag-us{background:var(--blue-soft);color:var(--blue);}
+  .snap-body{min-width:0;}
+  .snap-body .snap-label{font-size:var(--fs-xs);color:var(--text-dim);}
+  .snap-body .snap-value{
+    font-size:var(--fs-xs);color:var(--text-faint);margin-top:1px;
+    white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+  }
+
+  @media (max-width:760px){ .stat-row{grid-template-columns:1fr;} .snapshot{grid-template-columns:1fr;} }
+
+  /* section card */
+  .card{
+    background:var(--card);border:1px solid var(--card-border);border-radius:var(--radius-lg);
+    padding:var(--sp-4);
+  }
+  .card + .card{margin-top:var(--sp-4);}
+  .card-title{display:flex;align-items:center;justify-content:space-between;margin-bottom:var(--sp-3);}
+  .card-title h2{
+    font-size:var(--fs-sm);margin:0;font-weight:650;display:flex;align-items:center;gap:var(--sp-2);
+    color:var(--text);white-space:nowrap;
+  }
+  .card-title h2 .num{
+    width:18px;height:18px;border-radius:50%;border:1px solid var(--card-border);color:var(--text-faint);
+    font-size:10px;display:inline-flex;align-items:center;justify-content:center;font-weight:600;
+  }
+  .card-title .hint{font-size:var(--fs-2xs);color:var(--text-faint);}
+
+  /* today focus */
+  .focus-list{display:flex;flex-direction:column;gap:var(--sp-2);}
+  .focus-item{
+    display:flex;align-items:flex-start;gap:var(--sp-3);padding:var(--sp-3);
+    background:var(--bg-soft);border:1px solid var(--card-border);border-radius:var(--radius-md);font-size:var(--fs-sm);
+  }
+  .focus-rank{
+    width:18px;height:18px;border-radius:99px;background:var(--accent-soft);color:var(--accent);
+    font-size:10px;font-weight:700;display:flex;align-items:center;justify-content:center;flex:none;margin-top:2px;
+  }
+  .focus-text{color:var(--text);}
+  .focus-tag{display:block;margin-top:3px;font-size:var(--fs-2xs);color:var(--text-faint);}
+
+  /* empty states — two intents, not one dashed box for everything */
+  .empty-basic{
+    padding:var(--sp-4);text-align:center;color:var(--text-faint);font-size:var(--fs-xs);
+    border:1px solid var(--card-border);border-radius:var(--radius-md);background:var(--bg-soft);
+  }
+  .empty-pending{
+    display:flex;gap:var(--sp-3);align-items:flex-start;
+    padding:var(--sp-3) var(--sp-4);border-radius:var(--radius-md);background:var(--bg-soft);
+    border-left:3px solid var(--accent);
+  }
+  .empty-pending .ic{
+    width:26px;height:26px;border-radius:50%;background:var(--accent-soft);color:var(--accent);
+    display:flex;align-items:center;justify-content:center;flex:none;margin-top:1px;
+  }
+  .empty-pending .ic svg{width:14px;height:14px;}
+  .empty-pending .head{font-size:var(--fs-xs);font-weight:600;color:var(--text-dim);margin:0 0 2px;}
+  .empty-pending .body{font-size:var(--fs-2xs);color:var(--text-faint);margin:0;line-height:1.5;}
+
+  /* main grid */
+  .grid{display:grid;grid-template-columns:1.35fr 1fr;gap:var(--sp-4);align-items:start;}
+  @media (max-width:880px){.grid{grid-template-columns:1fr;}}
+
+  /* holdings table — auto layout: more robust across renderers than
+     table-layout:fixed + colgroup percentages, which broke down on
+     narrow widths in testing. */
+  table{width:100%;border-collapse:collapse;font-size:var(--fs-xs);}
+  thead th{
+    text-align:left;color:var(--text-faint);font-weight:600;font-size:var(--fs-2xs);
+    text-transform:uppercase;letter-spacing:.4px;padding:0 var(--sp-2) var(--sp-2);border-bottom:1px solid var(--card-border);
+    white-space:nowrap;
+  }
+  tbody td{padding:var(--sp-3) var(--sp-2);border-bottom:1px solid rgba(255,255,255,.04);vertical-align:top;overflow-wrap:break-word;}
+  th:nth-child(1),td:nth-child(1){width:24%;}
+  th:nth-child(2),td:nth-child(2){width:18%;}
+  th:nth-child(3),td:nth-child(3){width:36%;}
+  th:nth-child(4),td:nth-child(4){width:22%;}
+  tbody tr:last-child td{border-bottom:none;}
+  tbody tr:hover{background:rgba(255,255,255,.02);}
+  .ticker-cell{display:flex;flex-direction:column;}
+  .ticker-cell .t{font-weight:650;font-size:var(--fs-base);}
+  .ticker-cell .m{font-size:var(--fs-xs);color:var(--text-dim);margin-top:2px;}
+
+  .pill{display:inline-flex;align-items:center;gap:5px;padding:3px 10px;border-radius:99px;font-size:var(--fs-2xs);font-weight:600;white-space:nowrap;}
+  .pill-hold{background:var(--blue-soft);color:var(--blue);}
+  .pill-add{background:var(--green-soft);color:var(--green);}
+  .pill-trim{background:var(--amber-soft);color:var(--amber);}
+  .pill-exit{background:var(--red-soft);color:var(--red);}
+  .pill-neutral{background:rgba(139,149,171,.14);color:var(--text-dim);}
+  .pill-pending{background:var(--accent-soft);color:var(--accent);}
+  .pill-pending .dot{width:6px;height:6px;border-radius:50%;background:var(--accent);opacity:.7;}
+
+  .cell-note{color:var(--text-dim);font-size:var(--fs-xs);line-height:1.5;}
+  .cell-note .risk{color:var(--text-faint);display:block;margin-top:4px;}
+  .cell-dim{color:var(--text-faint);font-size:var(--fs-xs);}
+
+  /* recommendation tabs */
+  .tabs{display:flex;gap:var(--sp-2);margin-bottom:var(--sp-3);}
+  .tab-btn{
+    flex:1;padding:var(--sp-2) var(--sp-1);border-radius:var(--radius-sm);border:1px solid var(--card-border);
+    background:var(--bg-soft);color:var(--text-dim);font-size:var(--fs-xs);font-weight:600;
+    cursor:pointer;text-align:center;transition:background .15s, color .15s, border-color .15s;
+  }
+  .tab-btn.active{background:var(--accent-soft);color:var(--accent);border-color:rgba(62,207,214,.35);}
+  .tab-count{display:block;font-size:var(--fs-base);margin-top:2px;font-weight:700;color:var(--text-faint);}
+  .tab-btn.active .tab-count{color:var(--accent);}
+  .tab-panel{display:none;opacity:0;}
+  .tab-panel.active{display:block;animation:fadeIn .18s ease-out forwards;}
+  @keyframes fadeIn{from{opacity:0;transform:translateY(2px);}to{opacity:1;transform:translateY(0);}}
+
+  /* paper trading + review */
+  .kv-row{display:flex;justify-content:space-between;font-size:var(--fs-xs);padding:var(--sp-2) 0;border-bottom:1px solid rgba(255,255,255,.04);}
+  .kv-row:last-child{border-bottom:none;}
+  .kv-row .k{color:var(--text-dim);}
+  .kv-row .v{color:var(--text);font-weight:600;font-size:var(--fs-sm);}
+
+  footer{
+    margin-top:var(--sp-6);padding-top:var(--sp-4);border-top:1px solid var(--card-border);
+    font-size:var(--fs-2xs);color:var(--text-faint);
+  }
+  footer code{background:rgba(255,255,255,.06);padding:1px 5px;border-radius:var(--radius-sm);font-size:10px;}
+</style>
+</head>
+<body>
+<div class="top-band">
+  <div class="wrap">
+    <div class="header">
+      <div class="brand">
+        <div class="brand-mark">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 3l7 3v5c0 4.5-3 8-7 10-4-2-7-5.5-7-10V6l7-3z"/>
+            <path d="M9.5 12l1.8 1.8L14.8 10"/>
+          </svg>
+        </div>
+        <div>
+          <h1>Project Aegis · P0 Dashboard</h1>
+          <p>AI 波段投资操作系统 — 提高决策质量，不预测涨跌</p>
+        </div>
+      </div>
+      <div class="header-meta">
+        <div class="date" id="today-date">—</div>
+        <div>数据源：Tushare（优先）</div>
+        <span class="badge-stage" id="stage-badge">v1 · 引擎接入前 UI 骨架</span>
+      </div>
+    </div>
+
+    <div class="stat-row">
+      <div class="stat-hero">
+        <span class="label">持仓成本合计</span>
+        <span class="value" id="stat-cost">—</span>
+        <span class="sub" id="stat-cost-sub">按建仓成本计算，非实时市值</span>
+      </div>
+      <div class="snapshot" id="snapshot"></div>
+    </div>
+  </div>
+</div>
+
+<div class="wrap">
+
+  <div class="card">
+    <div class="card-title">
+      <h2><span class="num">1</span>今日重点</h2>
+      <span class="hint">最多 5 条</span>
+    </div>
+    <div class="focus-list" id="focus-list"></div>
+  </div>
+
+  <div class="grid" style="margin-top:var(--sp-4);">
+    <!-- left: holdings -->
+    <div class="card">
+      <div class="card-title">
+        <h2><span class="num">2</span>当前持仓</h2>
+        <span class="hint" id="holdings-count"></span>
+      </div>
+      <table>
+        <thead>
+          <tr><th>标的</th><th>建议动作</th><th>理由 / 风险</th><th>失效条件</th></tr>
+        </thead>
+        <tbody id="holdings-body"></tbody>
+      </table>
+    </div>
+
+    <!-- right: recommendations + paper trading -->
+    <div>
+      <div class="card">
+        <div class="card-title">
+          <h2><span class="num">3</span>今日推荐</h2>
+        </div>
+        <div id="rec-banner"></div>
+        <div class="tabs" id="rec-tabs"></div>
+        <div id="rec-panels"></div>
+      </div>
+
+      <div class="card">
+        <div class="card-title">
+          <h2><span class="num">4</span>虚拟盘与复盘</h2>
+        </div>
+        <div id="paper-body"></div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    设计说明书：<code>projects/project-aegis/P0_SPEC.md</code>（§4 Dashboard 数据模型）· 本页最后更新 2026-07-03
+  </footer>
+</div>
+
+<script>
+/* ============================================================
+   数据源：对应 P0_SPEC.md §4 Dashboard 数据模型。
+   Expert Committee / Decision Engine 尚未实现，本文件只用
+   「真实持仓事实 + 明确标注的空状态」渲染 UI，不编造推荐或收益数字。
+   总成本等衍生数字均由 JS 从 holdings 计算得出，不是硬编码。
+   后续 build_dashboard.py 生成同结构 JSON 后，替换下面 DATA 常量即可。
+   ============================================================ */
+const DATA = {
+  date: "2026-07-03",
+  stage_note: "v1 · 引擎接入前 UI 骨架",
+  market_snapshot: {
+    A:  "行情引擎未接入",
+    H:  "行情引擎未接入",
+    US: "行情引擎未接入"
+  },
+  today_focus: [
+    { text: "CRCL 已于 2026-07-01 建仓，254 股 @ $109.157", type: "持仓变化" },
+    { text: "Expert Committee / Decision Engine 尚未实现，以下持仓建议为静态记录，非引擎判断", type: "系统状态" }
+  ],
+  holdings: [
+    {
+      ticker: "CRCL", market: "US", shares: 254, cost_price: 109.157,
+      action: "wait", action_label: "持有（待引擎输出）",
+      reason: "建仓静态记录，尚未接入 Decision Engine 判断",
+      risk: "—",
+      invalidation_condition: "—"
+    }
+  ],
+  recommendations: { action: [], ready: [], watch: [] },
+  paper_trading: { new_today: [], open_positions_perf: [] },
+  review_note: "尚无复盘记录"
+};
+
+const ACTION_PILL = {
+  "持有": "pill-hold", "加仓观察": "pill-add", "减仓": "pill-trim",
+  "卖出": "pill-exit", "不操作": "pill-neutral", "wait": "pill-pending"
+};
+
+const ICONS = {
+  clock: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>',
+  inbox: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h4l2 3h4l2-3h4"/><path d="M4 12l1.6-6.4A2 2 0 0 1 7.5 4h9a2 2 0 0 1 1.9 1.6L20 12v6a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-6z"/></svg>'
+};
+
+function el(tag, cls, html){
+  const e = document.createElement(tag);
+  if(cls) e.className = cls;
+  if(html !== undefined) e.innerHTML = html;
+  return e;
+}
+function fmtUSD(n){ return "$" + n.toLocaleString("en-US", {minimumFractionDigits:2, maximumFractionDigits:2}); }
+
+function renderHeader(){
+  document.getElementById('today-date').textContent = DATA.date + " · 开盘前视图";
+  document.getElementById('stage-badge').textContent = DATA.stage_note;
+}
+
+function renderHeroStat(){
+  const totalCost = DATA.holdings.reduce((sum,h)=> sum + h.shares * h.cost_price, 0);
+  document.getElementById('stat-cost').textContent = DATA.holdings.length ? fmtUSD(totalCost) : "—";
+  document.getElementById('stat-cost-sub').textContent = DATA.holdings.length
+    ? DATA.holdings.length + " 只标的 · 按建仓成本计算，非实时市值"
+    : "当前无持仓";
+}
+
+function renderSnapshot(){
+  const wrap = document.getElementById('snapshot');
+  const rows = [
+    {k:"A", flag:"flag-a", label:"A 股", value: DATA.market_snapshot.A},
+    {k:"H", flag:"flag-h", label:"H 股", value: DATA.market_snapshot.H},
+    {k:"US", flag:"flag-us", label:"美股", value: DATA.market_snapshot.US}
+  ];
+  rows.forEach(r=>{
+    const chip = el('div','snap-chip');
+    chip.appendChild(el('div', 'snap-flag ' + r.flag, r.k));
+    const body = el('div','snap-body');
+    body.appendChild(el('div','snap-label', r.label));
+    body.appendChild(el('div','snap-value', r.value));
+    chip.appendChild(body);
+    wrap.appendChild(chip);
+  });
+}
+
+function renderFocus(){
+  const wrap = document.getElementById('focus-list');
+  if(!DATA.today_focus.length){
+    wrap.appendChild(el('div','empty-basic','今日暂无重点'));
+    return;
+  }
+  DATA.today_focus.slice(0,5).forEach((f,i)=>{
+    const item = el('div','focus-item');
+    item.appendChild(el('div','focus-rank', i+1));
+    const textWrap = document.createElement('div');
+    textWrap.appendChild(el('span','focus-text', f.text));
+    textWrap.appendChild(el('span','focus-tag', f.type));
+    item.appendChild(textWrap);
+    wrap.appendChild(item);
+  });
+}
+
+function renderHoldings(){
+  const body = document.getElementById('holdings-body');
+  document.getElementById('holdings-count').textContent = DATA.holdings.length + " 只";
+  if(!DATA.holdings.length){
+    body.innerHTML = '<tr><td colspan="4"><div class="empty-basic">当前无持仓</div></td></tr>';
+    return;
+  }
+  DATA.holdings.forEach(h=>{
+    const tr = document.createElement('tr');
+
+    const tdTicker = el('td');
+    const tc = el('div','ticker-cell');
+    tc.appendChild(el('span','t', h.ticker));
+    tc.appendChild(el('span','m', h.market + " · " + h.shares + " 股 @ $" + h.cost_price));
+    tdTicker.appendChild(tc);
+
+    const tdAction = el('td');
+    const pillClass = ACTION_PILL[h.action] || ACTION_PILL[h.action_label] || 'pill-neutral';
+    const dotHtml = h.action === 'wait' ? '<span class="dot"></span>' : '';
+    tdAction.appendChild(el('span','pill ' + pillClass, dotHtml + h.action_label));
+
+    const tdReason = el('td','cell-note', h.reason + '<span class="risk">风险：' + h.risk + '</span>');
+    const tdInvalid = el('td','cell-dim', h.invalidation_condition);
+
+    tr.appendChild(tdTicker);
+    tr.appendChild(tdAction);
+    tr.appendChild(tdReason);
+    tr.appendChild(tdInvalid);
+    body.appendChild(tr);
+  });
+}
+
+function renderRecommendations(){
+  const tabsWrap = document.getElementById('rec-tabs');
+  const panelsWrap = document.getElementById('rec-panels');
+  const bannerWrap = document.getElementById('rec-banner');
+  const cats = [
+    {key:'action', label:'Action'}, {key:'ready', label:'Ready'}, {key:'watch', label:'Watch'}
+  ];
+  const totalRecs = cats.reduce((n,c)=> n + (DATA.recommendations[c.key]||[]).length, 0);
+
+  if(totalRecs === 0){
+    const pending = el('div','empty-pending');
+    pending.style.marginBottom = 'var(--sp-3)';
+    pending.innerHTML =
+      '<div class="ic">'+ICONS.clock+'</div>' +
+      '<div>' +
+        '<p class="head">Expert Committee 尚未接入</p>' +
+        '<p class="body">三类推荐将在 Decision Engine 上线后自动生成（见 P0 开发计划 Week 2）。当前不展示任何占位推荐，避免误导。</p>' +
+      '</div>';
+    bannerWrap.appendChild(pending);
+  }
+
+  cats.forEach((c,i)=>{
+    const list = DATA.recommendations[c.key] || [];
+    const btn = el('div','tab-btn' + (i===0?' active':''));
+    btn.innerHTML = c.label + '<span class="tab-count">' + list.length + '</span>';
+    btn.dataset.key = c.key;
+    btn.onclick = () => switchTab(c.key);
+    tabsWrap.appendChild(btn);
+
+    const panel = el('div','tab-panel' + (i===0?' active':''));
+    panel.id = 'panel-' + c.key;
+    if(!list.length){
+      panel.appendChild(el('div','empty-basic', '暂无 ' + c.label + ' 推荐'));
+    } else {
+      list.forEach(r=>{
+        const item = el('div','focus-item');
+        item.style.flexDirection = 'column';
+        item.innerHTML =
+          '<div style="display:flex;justify-content:space-between;width:100%;">' +
+            '<span class="focus-text" style="font-weight:650;">'+r.ticker+' · '+r.market+' · '+(r.industry||'')+'</span>' +
+          '</div>' +
+          '<div class="cell-note" style="margin-top:6px;">'+ (r.reason||'') +'</div>' +
+          '<div class="cell-dim" style="margin-top:4px;">反对：'+(r.counter_reason||'—')+' · 风险：'+(r.risk||'—')+'</div>';
+        panel.appendChild(item);
+      });
+    }
+    panelsWrap.appendChild(panel);
+  });
+}
+
+function switchTab(key){
+  document.querySelectorAll('.tab-btn').forEach(b=>b.classList.toggle('active', b.dataset.key===key));
+  document.querySelectorAll('.tab-panel').forEach(p=>p.classList.toggle('active', p.id==='panel-'+key));
+}
+
+function renderPaperTrading(){
+  const wrap = document.getElementById('paper-body');
+  if(!DATA.paper_trading.new_today.length && !DATA.paper_trading.open_positions_perf.length){
+    const pending = el('div','empty-pending');
+    pending.innerHTML =
+      '<div class="ic">'+ICONS.inbox+'</div>' +
+      '<div>' +
+        '<p class="head">尚无虚拟盘记录</p>' +
+        '<p class="body">Paper Trading 模块随 Decision Engine 上线后自动建仓（见 P0 开发计划 Week 3）。复盘结论同期开始累积。</p>' +
+      '</div>';
+    wrap.appendChild(pending);
+    return;
+  }
+  const rows = [
+    {k:'今日新增', v: DATA.paper_trading.new_today.length + ' 笔'},
+    {k:'持仓中虚拟盘估值', v: DATA.paper_trading.open_positions_perf.length + ' 笔'},
+    {k:'复盘结论', v: DATA.review_note}
+  ];
+  rows.forEach(r=>{
+    const row = el('div','kv-row');
+    row.appendChild(el('span','k', r.k));
+    row.appendChild(el('span','v', r.v));
+    wrap.appendChild(row);
+  });
+}
+
+renderHeader();
+renderHeroStat();
+renderSnapshot();
+renderFocus();
+renderHoldings();
+renderRecommendations();
+renderPaperTrading();
+</script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+{
+  "run_id": "run_20260711_135122",
+  "generated_at": "2026-07-11T13:51:22.072808+08:00",
+  "source_reports": {
+    "gate": {
+      "exists": true,
+      "sha256_12": "f8c94090f452"
+    },
+    "evidence_pack": {
+      "exists": true,
+      "sha256_12": "f7940dad273f"
+    },
+    "redteam": {
+      "exists": true,
+      "sha256_12": "21807709a14d"
+    },
+    "degradation": {
+      "exists": true,
+      "sha256_12": "7dfecf379986"
+    },
+    "pipeline": {
+      "exists": true,
+      "sha256_12": "082e829bbfc3"
+    },
+    "feishu": {
+      "exists": true,
+      "sha256_12": "c13e94fdc67c"
+    }
+  },
+  "gate_overall_verdict": "PASS",
+  "gate_failures_count": 0,
+  "gate_json_sha256_12": "f8c94090f452",
+  "redteam_passed": 20,
+  "redteam_total": 20,
+  "redteam_all_rejected": true,
+  "redteam_json_sha256_12": "21807709a14d",
+  "degradation_total": 5,
+  "degradation_passed": 5,
+  "degradation_json_sha256_12": "7dfecf379986",
+  "evidence_pack_json_sha256_12": "f7940dad273f",
+  "pipeline_json_sha256_12": "082e829bbfc3",
+  "feishu_json_sha256_12": "c13e94fdc67c",
+  "feishu_dry_run": true,
+  "feishu_sent": false,
+  "feishu_webhook_called": false,
+  "feishu_trading_called": false,
+  "hk_00700_status": "missing",
+  "crcl_status": "unknown",
+  "sz_000002_status": "unknown",
+  "a_share_top5_symbols": [
+    "600519.SH",
+    "600036.SH",
+    "000858.SZ",
+    "000001.SZ",
+    "601398.SH"
+  ],
+  "mdns_link_present": true,
+  "tailscale_link_present": true,
+  "safety_summary": "dry-run, not sent, no webhook, no trading",
+  "result": "PASS",
+  "result_reason": "all checks passed"
+}

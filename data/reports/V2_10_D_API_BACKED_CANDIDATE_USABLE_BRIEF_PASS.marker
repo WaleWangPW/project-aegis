@@ -1,0 +1,8 @@
+{
+  "status": "PASS",
+  "acceptance_target": "V2.10-D API-Backed Candidate Usable Brief After Real Metadata",
+  "run_id": "v2_10_d_20260711_acceptance",
+  "brief_status": "blocked_missing_real_api_artifacts",
+  "report_json": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/v2_10_d_api_backed_candidate_usable_brief_latest.json",
+  "generated_at": "2026-07-11T22:48:22+08:00"
+}

@@ -1,0 +1,12 @@
+generated_at=2026-07-11T16:56:21.410167+08:00
+command=validate_v2_0_c_research_workspace.py --run-id v2_0_c_20260711_acceptance
+exit_code=0
+target=V2.0-C Research Workspace
+report_json=/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/v2_0_c_research_workspace_latest.json
+report_json_sha256=5b913561c8bc8c04de7aa0c8c164674d6508b920124743f3544f23d247f5659a
+report_md=/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/v2_0_c_research_workspace_latest.md
+report_md_sha256=4e6e63a514a9e9c0d6da6320e02af0da185fedc9ebb9f5ffe2c2a0c24222bfc5
+run_dir=/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v2_0_c_acceptance/v2_0_c_20260711_acceptance
+dashboard_contract_changed=false
+production_records_written=false
+failed=0

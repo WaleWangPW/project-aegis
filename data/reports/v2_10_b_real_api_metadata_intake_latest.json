@@ -1,0 +1,71 @@
+{
+  "overall_status": "PASS",
+  "acceptance_target": "V2.10-B Real API Metadata Intake And Live Readiness Check",
+  "run_id": "v2_10_b_20260711_acceptance",
+  "generated_at": "2026-07-11T22:28:12+08:00",
+  "command": "validate_v2_10_b_real_api_metadata_intake.py",
+  "network_used": false,
+  "production_records_written": false,
+  "dashboard_contract_changed": false,
+  "intake": {
+    "intake_status": "blocked_missing_metadata",
+    "connector_id": "api_user_candidate_refresh_approved_env",
+    "local_config_path": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/config/external_api_connectors.local.json",
+    "local_config_gitignored": true,
+    "checked_at": "2026-07-11T22:28:12+08:00",
+    "blocked_by": [
+      "missing_connector_metadata"
+    ],
+    "blocked_reason": "config/external_api_connectors.local.json is missing",
+    "connectors": [],
+    "selected_connector": null,
+    "required_env_vars": [],
+    "present_env_vars": [],
+    "missing_env_vars": [],
+    "secret_like_material_detected": false,
+    "raw_config_stored": false
+  },
+  "summary": {
+    "intake_status": "blocked_missing_metadata",
+    "blocked_by": [
+      "missing_connector_metadata"
+    ],
+    "connector_id": "api_user_candidate_refresh_approved_env",
+    "required_env_vars": [],
+    "present_env_vars": [],
+    "missing_env_vars": [],
+    "next_target": "V2.10-C Real API Candidate Refresh Live Dry Run When Ready"
+  },
+  "checks": {
+    "status_recorded": true,
+    "missing_metadata_not_overclaimed": true,
+    "ready_requires_env_present": true,
+    "ready_requires_a_h_us": true,
+    "secret_like_material_blocked": true,
+    "raw_config_not_stored": true,
+    "env_values_not_stored": true,
+    "env_var_names_only": true,
+    "network_not_used": true,
+    "no_real_trade": true,
+    "no_broker_api": true,
+    "no_trading_webhook": true,
+    "no_order_placement": true
+  },
+  "safety": {
+    "metadata_preflight_only": true,
+    "raw_config_not_stored": true,
+    "env_values_not_stored": true,
+    "env_var_names_only": true,
+    "network_not_used": true,
+    "no_raw_api_response": true,
+    "no_request_headers_stored": true,
+    "no_real_trade": true,
+    "no_broker_api": true,
+    "no_trading_webhook": true,
+    "no_order_placement": true,
+    "no_production_records_mutation": true,
+    "dashboard_contract_unchanged": true
+  },
+  "local_config_sha256": null,
+  "gitignore_sha256": "9aa03182884fe292580e45667697ae34eb842a924433cc2af434bceafb05970b"
+}

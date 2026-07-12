@@ -1,0 +1,9 @@
+# Per Master Spec §20.x — Time Travel Backtest config. Implemented in
+# Phase 7. Kept minimal per PHASE7 doc §4 ("keep minimal") — reuses
+# universe.yaml/experts.yaml/decision_rules.yaml for the actual pipeline
+# rules, same as the live pre-market pipeline. This file only holds
+# backtest-run-level defaults.
+backtest:
+  default_session: close
+  horizons_trading_days: [5, 10, 20, 40]
+  output_dir: data/processed/backtests

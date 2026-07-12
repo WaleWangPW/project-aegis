@@ -1,0 +1,69 @@
+# ProviderRouter routing table — P1B.1. No secrets here (never a token,
+# never a key). See docs/P1B_HUS_CRCL_PROVIDER_IMPLEMENTATION_SPEC.md and
+# docs/P1B1_PROVIDER_ROUTER_RESULT.md for the decisions this file encodes.
+#
+# `routing.<data_type>.<market>` values are either:
+#   - a provider name that must have a matching entry in the
+#     ProviderRouter's `providers` dict at construction time (e.g.
+#     "tushare", "yahoo_finance"), or
+#   - the literal sentinel "not_configured" — no route has been decided
+#     yet; ProviderRouter raises ProviderNotConfiguredError rather than
+#     guessing, or
+#   - the literal sentinel "unsupported" — this capability is not
+#     expected to ever be satisfied for this market by this provider
+#     generation; ProviderRouter raises ProviderUnsupportedError.
+#
+# A 股 stays Tushare-first for every capability (confirmed working per
+# docs/P1A_PROVIDER_COVERAGE_DECISION.md). H/US daily_bars and index_bars
+# route to the yahoo_finance secondary adapter skeleton (P1B.1) — this is
+# NOT yet verified against real live data from inside this Cowork
+# sandbox; see docs/P1B1_PROVIDER_ROUTER_RESULT.md's "Known gaps".
+# H/US stock_basic, sector_classification, and fundamentals remain
+# "not_configured" — do not recreate the P1A.1 bug where H/US
+# stock_basic silently looked like A股's stock_basic.
+
+providers:
+  default:
+    A: tushare
+    H: yahoo_finance
+    US: yahoo_finance
+
+routing:
+  daily_bars:
+    A: tushare
+    H: yahoo_finance
+    US: yahoo_finance
+  index_bars:
+    A: tushare
+    H: yahoo_finance
+    US: yahoo_finance
+  stock_basic:
+    A: tushare
+    H: not_configured
+    US: not_configured
+  sector_classification:
+    A: tushare
+    H: not_configured
+    US: not_configured
+  fundamentals:
+    A: tushare
+    H: not_configured
+    US: not_configured
+  trading_calendar:
+    A: tushare
+    H: not_configured
+    US: not_configured
+
+symbol_mapping:
+  yahoo_finance:
+    H:
+      symbols:
+        "00700.HK": "0700.HK"
+      indexes:
+        "HSI.HI": "^HSI"
+    US:
+      symbols:
+        "CRCL": "CRCL"
+      indexes:
+        "SPX": "^GSPC"
+        "NDX": "^IXIC"

@@ -1,0 +1,166 @@
+{
+  "project": "Project Aegis",
+  "type": "pipeline_evidence_audit",
+  "audit_started_at": "2026-07-12T08:00:24.300560+08:00",
+  "audit_finished_at": "2026-07-12T08:00:24.691788+08:00",
+  "auditor": "audit_aegis_pipeline_evidence.py (independent)",
+  "trust_source": "filesystem_direct_read",
+  "real_fingerprints": {
+    "crcl_risk_monitor_latest.json": {
+      "exists": true,
+      "mtime": "2026-07-09T13:10:56.572908+08:00",
+      "size": 2784,
+      "sha256_12": "d36831305b4f"
+    },
+    "000002.sz_risk_monitor_latest.json": {
+      "exists": true,
+      "mtime": "2026-07-09T13:55:03.227714+08:00",
+      "size": 2657,
+      "sha256_12": "99b9cee1a743"
+    },
+    "a_share_watchlist_latest.json": {
+      "exists": true,
+      "mtime": "2026-07-10T04:08:07.772482+08:00",
+      "size": 4324,
+      "sha256_12": "14b0c694b6fc"
+    },
+    "hk_watchlist_sample.json": {
+      "exists": false,
+      "mtime": null,
+      "size": null,
+      "sha256_12": null
+    },
+    "feishu_daily_digest_dry_run.json": {
+      "exists": true,
+      "mtime": "2026-07-12T08:00:23.876859+08:00",
+      "size": 4991,
+      "sha256_12": "1df8ce62a693"
+    },
+    "feishu_daily_digest_dry_run.md": {
+      "exists": true,
+      "mtime": "2026-07-12T08:00:23.877476+08:00",
+      "size": 1285,
+      "sha256_12": "b571726085a7"
+    },
+    "aegis_daily_digest_pipeline_latest.json": {
+      "exists": true,
+      "mtime": "2026-07-12T08:00:23.977118+08:00",
+      "size": 8566,
+      "sha256_12": "0db8b32e9d09"
+    },
+    "aegis_daily_digest_pipeline_latest.md": {
+      "exists": true,
+      "mtime": "2026-07-12T08:00:23.977362+08:00",
+      "size": 2416,
+      "sha256_12": "d01c02d83458"
+    },
+    "dashboard/index.html": {
+      "exists": true,
+      "mtime": "2026-07-11T14:18:32.530670+08:00",
+      "size": 2333,
+      "sha256_12": "e777047e93fc"
+    }
+  },
+  "pipeline_json_audit": {
+    "exists": true,
+    "parseable": true,
+    "stage_count": 12,
+    "has_evidence_policy": true,
+    "raw_self_hash_not_claimed": true,
+    "placeholder_hash_detected": false,
+    "fingerprint_comparisons": {
+      "before:dashboard/index.html": {
+        "reported": "e777047e93fc",
+        "real": "e777047e93fc",
+        "match": true
+      },
+      "after:dashboard/index.html": {
+        "reported": "e777047e93fc",
+        "real": "e777047e93fc",
+        "match": true
+      },
+      "after:aegis_daily_digest_pipeline_latest.json": {
+        "reported": "self_hash_verified_by_evidence_gate",
+        "real": "0db8b32e9d09",
+        "match": false
+      },
+      "after:aegis_daily_digest_pipeline_latest.md": {
+        "reported": "self_hash_verified_by_evidence_gate",
+        "real": "d01c02d83458",
+        "match": false
+      }
+    }
+  },
+  "hash_audit": {
+    "all_valid": true,
+    "invalid": [],
+    "fake": []
+  },
+  "dry_run_audit": {
+    "exists": true,
+    "dry_run": true,
+    "sent": false,
+    "webhook_called": false,
+    "trading_called": false,
+    "safe": true
+  },
+  "dashboard_audit": {
+    "exists": true,
+    "has_feishu_reference": false,
+    "has_degrade_notice": false,
+    "size": 2164
+  },
+  "secret_scan": {
+    "findings": [],
+    "clean": true
+  },
+  "real_send_risk_scan": {
+    "findings": [],
+    "clean": true
+  },
+  "cross_validation": {
+    "crcl_risk_monitor_latest.json": {
+      "available": true,
+      "python_hash": "d36831305b4f",
+      "shasum_hash": "d36831305b4f",
+      "match": true
+    },
+    "000002.sz_risk_monitor_latest.json": {
+      "available": true,
+      "python_hash": "99b9cee1a743",
+      "shasum_hash": "99b9cee1a743",
+      "match": true
+    },
+    "a_share_watchlist_latest.json": {
+      "available": true,
+      "python_hash": "14b0c694b6fc",
+      "shasum_hash": "14b0c694b6fc",
+      "match": true
+    },
+    "feishu_daily_digest_dry_run.json": {
+      "available": true,
+      "python_hash": "1df8ce62a693",
+      "shasum_hash": "1df8ce62a693",
+      "match": true
+    },
+    "feishu_daily_digest_dry_run.md": {
+      "available": true,
+      "python_hash": "b571726085a7",
+      "shasum_hash": "b571726085a7",
+      "match": true
+    },
+    "aegis_daily_digest_pipeline_latest.md": {
+      "available": true,
+      "python_hash": "d01c02d83458",
+      "shasum_hash": "d01c02d83458",
+      "match": true
+    },
+    "dashboard/index.html": {
+      "available": true,
+      "python_hash": "e777047e93fc",
+      "shasum_hash": "e777047e93fc",
+      "match": true
+    }
+  },
+  "overall_verdict": "PASS"
+}

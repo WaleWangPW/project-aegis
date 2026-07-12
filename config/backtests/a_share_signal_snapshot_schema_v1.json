@@ -1,0 +1,23 @@
+{
+  "snapshot_id": "信号快照唯一标识",
+  "strategy_id": "策略ID",
+  "strategy_version": "策略版本",
+  "signal_date": "信号日期",
+  "data_cutoff_date": "数据截止日期",
+  "rebalance_date": "调仓日期",
+  "selected_symbols": "选中的股票代码列表",
+  "top_n": "选择的股票数量",
+  "ranking_inputs": "排名依据的输入数据",
+  "risk_filters": "风险过滤条件",
+  "liquidity_filters": "流动性过滤条件",
+  "exclusions": "排除的股票",
+  "source_data_hashes": "源数据哈希值",
+  "generated_at": "生成时间",
+  "dry_run": "是否为dry run",
+  "sent": "是否发送",
+  "trading_called": "是否调用了交易",
+  "current_watchlist_used": "是否使用了当前选股列表",
+  "point_in_time": "是否为时点数据",
+  "lookahead_bias_control_passed": "前瞻偏差控制是否通过",
+  "warnings": "警告信息"
+}

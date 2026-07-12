@@ -1,0 +1,139 @@
+{
+  "project": "Project Aegis",
+  "type": "pipeline_history_redteam",
+  "generated_at": "2026-07-10T01:35:43.497439+08:00",
+  "total_tests": 16,
+  "passed": 14,
+  "failed": 2,
+  "tests": [
+    {
+      "test_name": "missing_history_file",
+      "mutation": "删除 history JSON 文件",
+      "expected_exit_nonzero": true,
+      "actual_exit_code": 1,
+      "rejected": true,
+      "result": "PASS"
+    },
+    {
+      "test_name": "invalid_history_json",
+      "mutation": "写入非法 JSON 内容",
+      "expected_exit_nonzero": true,
+      "actual_exit_code": 1,
+      "rejected": true,
+      "result": "PASS"
+    },
+    {
+      "test_name": "runs_count_gt_7",
+      "mutation": "构造 10 条 run（超过 7 条限制）",
+      "expected_exit_nonzero": true,
+      "actual_exit_code": 1,
+      "rejected": true,
+      "result": "PASS"
+    },
+    {
+      "test_name": "duplicate_run_id",
+      "mutation": "构造重复的 run_id",
+      "expected_exit_nonzero": true,
+      "actual_exit_code": 1,
+      "rejected": true,
+      "result": "PASS"
+    },
+    {
+      "test_name": "invalid_hash_format",
+      "mutation": "将 gate_json_sha256_12 改为 ZZZinvalidZZZ",
+      "expected_exit_nonzero": true,
+      "actual_exit_code": 1,
+      "rejected": true,
+      "result": "PASS"
+    },
+    {
+      "test_name": "known_fake_hash",
+      "mutation": "插入已知假 hash a1c3e5g7i9k2",
+      "expected_exit_nonzero": true,
+      "actual_exit_code": 1,
+      "rejected": true,
+      "result": "PASS"
+    },
+    {
+      "test_name": "latest_gate_fail",
+      "mutation": "latest run gate_overall_verdict=FAIL",
+      "expected_exit_nonzero": true,
+      "actual_exit_code": 1,
+      "rejected": true,
+      "result": "PASS"
+    },
+    {
+      "test_name": "redteam_not_all_rejected",
+      "mutation": "latest run redteam_all_rejected=false",
+      "expected_exit_nonzero": true,
+      "actual_exit_code": 1,
+      "rejected": true,
+      "result": "PASS"
+    },
+    {
+      "test_name": "feishu_sent_true",
+      "mutation": "latest run feishu_sent=true",
+      "expected_exit_nonzero": true,
+      "actual_exit_code": 1,
+      "rejected": true,
+      "result": "PASS"
+    },
+    {
+      "test_name": "webhook_called_true",
+      "mutation": "latest run feishu_webhook_called=true",
+      "expected_exit_nonzero": true,
+      "actual_exit_code": 1,
+      "rejected": true,
+      "result": "PASS"
+    },
+    {
+      "test_name": "trading_called_true",
+      "mutation": "latest run feishu_trading_called=true",
+      "expected_exit_nonzero": true,
+      "actual_exit_code": 1,
+      "rejected": true,
+      "result": "PASS"
+    },
+    {
+      "test_name": "missing_00700",
+      "mutation": "删除 hk_00700_status 字段",
+      "expected_exit_nonzero": true,
+      "actual_exit_code": 1,
+      "rejected": true,
+      "result": "PASS"
+    },
+    {
+      "test_name": "missing_mobile_link",
+      "mutation": "mdns_link_present=false",
+      "expected_exit_nonzero": true,
+      "actual_exit_code": 1,
+      "rejected": true,
+      "result": "PASS"
+    },
+    {
+      "test_name": "missing_snapshot_file",
+      "mutation": "删除 latest run 对应的 snapshot 文件",
+      "expected_exit_nonzero": true,
+      "actual_exit_code": 1,
+      "rejected": true,
+      "result": "PASS"
+    },
+    {
+      "test_name": "dashboard_missing_history_degrade",
+      "mutation": "检查 dashboard 是否包含'未生成 pipeline 历史快照'降级提示",
+      "expected_exit_nonzero": true,
+      "actual_exit_code": 1,
+      "rejected": false,
+      "result": "FAIL"
+    },
+    {
+      "test_name": "dashboard_invalid_history_degrade",
+      "mutation": "检查 dashboard 是否包含'pipeline 历史 JSON 解析失败'降级提示",
+      "expected_exit_nonzero": true,
+      "actual_exit_code": 1,
+      "rejected": false,
+      "result": "FAIL"
+    }
+  ],
+  "overall_verdict": "FAIL"
+}

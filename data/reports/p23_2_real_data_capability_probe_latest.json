@@ -1,0 +1,54 @@
+{
+  "project": "Project Aegis",
+  "type": "p23_2_real_data_capability_probe",
+  "generated_at": "2026-07-10T12:59:08.653946+00:00",
+  "checks": {
+    "token_present": {
+      "passed": true,
+      "token_value_exposed": false
+    },
+    "tushare_import": {
+      "passed": true
+    },
+    "pro_api_created": {
+      "passed": true
+    },
+    "trade_cal": {
+      "passed": true,
+      "row_count": 275,
+      "open_day_count": 183,
+      "columns": [
+        "exchange",
+        "cal_date",
+        "is_open",
+        "pretrade_date"
+      ]
+    },
+    "stock_basic": {
+      "passed": true,
+      "row_count": 5865,
+      "list_statuses_requested": [
+        "L",
+        "D",
+        "P"
+      ]
+    },
+    "daily_cross_section": {
+      "passed": true,
+      "row_count": 5330,
+      "columns": [
+        "ts_code",
+        "trade_date",
+        "open",
+        "high",
+        "low",
+        "close",
+        "vol",
+        "amount"
+      ],
+      "trade_date": "20240103"
+    }
+  },
+  "failures": [],
+  "overall_verdict": "PASS"
+}

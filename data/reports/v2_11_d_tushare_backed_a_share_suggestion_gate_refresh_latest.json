@@ -1,0 +1,257 @@
+{
+  "overall_status": "PASS",
+  "acceptance_target": "V2.11-D Tushare-Backed A-Share Suggestion Gate Refresh",
+  "source_acceptance_target": "V2.11-C Tushare A-Share Historical Sandbox Live Data Refresh",
+  "run_id": "v2_11_d_20260711_acceptance",
+  "generated_at": "2026-07-11T23:19:47+08:00",
+  "command": "validate_v2_11_d_tushare_backed_a_share_suggestion_gate_refresh.py --run-id v2_11_d_20260711_acceptance",
+  "network_used": false,
+  "production_records_written": false,
+  "dashboard_contract_changed": false,
+  "summary": {
+    "source_strategy_pass_count": 0,
+    "source_strategy_fail_count": 2,
+    "opportunity_count": 2,
+    "draft_count": 2,
+    "allowed_count": 0,
+    "blocked_count": 2,
+    "blocked_strategies": [
+      "strategy_a_low_vol_dividend_defensive",
+      "strategy_a_value_quality_multifactor"
+    ],
+    "blocked_suggestions": [
+      "sug_tushare_a_share_strategy_a_low_vol_dividend_defensive",
+      "sug_tushare_a_share_strategy_a_value_quality_multifactor"
+    ],
+    "allowed_suggestions": [],
+    "tushare_historical_case_count": 8
+  },
+  "opportunities": [
+    {
+      "opportunity_id": "tushare_a_share_strategy_a_low_vol_dividend_defensive",
+      "strategy_id": "strategy_a_low_vol_dividend_defensive",
+      "symbol": "STRATEGY_A_LOW_VOL_DIVIDEND_DEFENSIVE_TUSHARE_SANDBOX_BASKET",
+      "market": "A",
+      "name": "A-share low-volatility dividend defensive sandbox candidate",
+      "risk_veto": false,
+      "evidence_refs": [
+        "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/v2_11_c_tushare_a_share_historical_sandbox_live_data_refresh_latest.json",
+        "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/V2_11_C_TUSHARE_A_SHARE_HISTORICAL_SANDBOX_LIVE_DATA_REFRESH_PASS.marker"
+      ],
+      "reasons": [
+        "tushare_sandbox_status=FAIL",
+        "sample_count=4",
+        "win_rate=0.2500",
+        "average_return=-0.0439",
+        "max_drawdown=-0.1038",
+        "failed_reasons=win_rate_below_threshold,average_return_below_threshold,max_drawdown_breached",
+        "historical_symbols=000001.SZ,600000.SH,600519.SH,601318.SH"
+      ],
+      "risk_warnings": [
+        "Tushare-backed historical sandbox evidence only; not user-facing trade advice.",
+        "This strategy failed the bounded A-share historical sample and must remain blocked.",
+        "No live price, position size, broker execution, webhook, or order is produced.",
+        "liquidity_filter",
+        "max_drawdown_floor",
+        "dividend_trap_check"
+      ]
+    },
+    {
+      "opportunity_id": "tushare_a_share_strategy_a_value_quality_multifactor",
+      "strategy_id": "strategy_a_value_quality_multifactor",
+      "symbol": "STRATEGY_A_VALUE_QUALITY_MULTIFACTOR_TUSHARE_SANDBOX_BASKET",
+      "market": "A",
+      "name": "A-share value quality multi-factor sandbox candidate",
+      "risk_veto": false,
+      "evidence_refs": [
+        "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/v2_11_c_tushare_a_share_historical_sandbox_live_data_refresh_latest.json",
+        "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/V2_11_C_TUSHARE_A_SHARE_HISTORICAL_SANDBOX_LIVE_DATA_REFRESH_PASS.marker"
+      ],
+      "reasons": [
+        "tushare_sandbox_status=FAIL",
+        "sample_count=4",
+        "win_rate=0.7500",
+        "average_return=-0.0041",
+        "max_drawdown=-0.1045",
+        "failed_reasons=average_return_below_threshold,max_drawdown_breached",
+        "historical_symbols=000858.SZ,002475.SZ,600036.SH,601899.SH"
+      ],
+      "risk_warnings": [
+        "Tushare-backed historical sandbox evidence only; not user-facing trade advice.",
+        "This strategy failed the bounded A-share historical sample and must remain blocked.",
+        "No live price, position size, broker execution, webhook, or order is produced.",
+        "liquidity_filter",
+        "financial_quality_check",
+        "policy_event_note"
+      ]
+    }
+  ],
+  "suggestions": [
+    {
+      "suggestion_id": "sug_tushare_a_share_strategy_a_low_vol_dividend_defensive",
+      "opportunity_id": "tushare_a_share_strategy_a_low_vol_dividend_defensive",
+      "strategy_id": "strategy_a_low_vol_dividend_defensive",
+      "symbol": "STRATEGY_A_LOW_VOL_DIVIDEND_DEFENSIVE_TUSHARE_SANDBOX_BASKET",
+      "market": "A",
+      "action": "blocked",
+      "simulation_only": true,
+      "user_must_execute_externally": true,
+      "reasons": [
+        "tushare_sandbox_status=FAIL",
+        "sample_count=4",
+        "win_rate=0.2500",
+        "average_return=-0.0439",
+        "max_drawdown=-0.1038",
+        "failed_reasons=win_rate_below_threshold,average_return_below_threshold,max_drawdown_breached",
+        "historical_symbols=000001.SZ,600000.SH,600519.SH,601318.SH"
+      ],
+      "risk_warnings": [
+        "Tushare-backed historical sandbox evidence only; not user-facing trade advice.",
+        "This strategy failed the bounded A-share historical sample and must remain blocked.",
+        "No live price, position size, broker execution, webhook, or order is produced.",
+        "liquidity_filter",
+        "max_drawdown_floor",
+        "dividend_trap_check",
+        "Simulation-only draft; user decides and executes manually outside Aegis."
+      ],
+      "evidence_refs": [
+        "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/v2_11_c_tushare_a_share_historical_sandbox_live_data_refresh_latest.json",
+        "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/V2_11_C_TUSHARE_A_SHARE_HISTORICAL_SANDBOX_LIVE_DATA_REFRESH_PASS.marker"
+      ],
+      "blocked_by": [
+        "strategy_sandbox_not_passed"
+      ],
+      "created_at": "2026-07-11T23:19:47+08:00"
+    },
+    {
+      "suggestion_id": "sug_tushare_a_share_strategy_a_value_quality_multifactor",
+      "opportunity_id": "tushare_a_share_strategy_a_value_quality_multifactor",
+      "strategy_id": "strategy_a_value_quality_multifactor",
+      "symbol": "STRATEGY_A_VALUE_QUALITY_MULTIFACTOR_TUSHARE_SANDBOX_BASKET",
+      "market": "A",
+      "action": "blocked",
+      "simulation_only": true,
+      "user_must_execute_externally": true,
+      "reasons": [
+        "tushare_sandbox_status=FAIL",
+        "sample_count=4",
+        "win_rate=0.7500",
+        "average_return=-0.0041",
+        "max_drawdown=-0.1045",
+        "failed_reasons=average_return_below_threshold,max_drawdown_breached",
+        "historical_symbols=000858.SZ,002475.SZ,600036.SH,601899.SH"
+      ],
+      "risk_warnings": [
+        "Tushare-backed historical sandbox evidence only; not user-facing trade advice.",
+        "This strategy failed the bounded A-share historical sample and must remain blocked.",
+        "No live price, position size, broker execution, webhook, or order is produced.",
+        "liquidity_filter",
+        "financial_quality_check",
+        "policy_event_note",
+        "Simulation-only draft; user decides and executes manually outside Aegis."
+      ],
+      "evidence_refs": [
+        "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/v2_11_c_tushare_a_share_historical_sandbox_live_data_refresh_latest.json",
+        "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/V2_11_C_TUSHARE_A_SHARE_HISTORICAL_SANDBOX_LIVE_DATA_REFRESH_PASS.marker"
+      ],
+      "blocked_by": [
+        "strategy_sandbox_not_passed"
+      ],
+      "created_at": "2026-07-11T23:19:47+08:00"
+    }
+  ],
+  "blocked_strategy_evidence": [
+    {
+      "strategy_id": "strategy_a_low_vol_dividend_defensive",
+      "status": "FAIL",
+      "failed_reasons": [
+        "win_rate_below_threshold",
+        "average_return_below_threshold",
+        "max_drawdown_breached"
+      ],
+      "win_rate": 0.25,
+      "average_return": -0.04391166937325774,
+      "max_drawdown": -0.10383536014967254
+    },
+    {
+      "strategy_id": "strategy_a_value_quality_multifactor",
+      "status": "FAIL",
+      "failed_reasons": [
+        "average_return_below_threshold",
+        "max_drawdown_breached"
+      ],
+      "win_rate": 0.75,
+      "average_return": -0.004099832492812086,
+      "max_drawdown": -0.10450450450450444
+    }
+  ],
+  "checks": {
+    "source_is_v2_11_c": true,
+    "source_report_pass": true,
+    "source_is_tushare_a_share": true,
+    "source_has_zero_strategy_pass": true,
+    "source_has_failed_strategies": true,
+    "opportunity_count_matches_candidates": true,
+    "draft_count_matches_opportunities": true,
+    "all_source_failed_strategies_blocked": true,
+    "all_drafts_blocked": true,
+    "no_allowed_suggestions": true,
+    "blocked_by_sandbox_failure": true,
+    "evidence_refs_present": true,
+    "every_draft_simulation_only": true,
+    "manual_external_execution_only": true,
+    "no_live_price_or_position_size": true,
+    "suggestion_drafts_not_orders": true,
+    "no_real_trade": true,
+    "no_broker_api": true,
+    "no_trading_webhook": true,
+    "no_order_placement": true,
+    "no_secret_storage": true,
+    "no_strategy_auto_mutation": true,
+    "no_production_records_mutation": true,
+    "dashboard_contract_unchanged": true,
+    "acceptance_target_correct": true,
+    "report_status_pass": true,
+    "source_marker_exists": true,
+    "opportunities_json_written": true,
+    "suggestions_json_written": true,
+    "blocked_evidence_json_written": true,
+    "gate_report_json_written": true,
+    "gate_report_md_written": true,
+    "hashes_recorded": true
+  },
+  "safety": {
+    "simulation_only": true,
+    "manual_external_execution_only": true,
+    "not_user_facing_trade_advice": true,
+    "all_v2_11_c_failed_strategies_blocked": true,
+    "no_allowed_suggestions_when_all_source_strategies_failed": true,
+    "no_real_trade": true,
+    "no_broker_api": true,
+    "no_trading_webhook": true,
+    "no_order_placement": true,
+    "no_live_price": true,
+    "no_position_size": true,
+    "no_secret_storage": true,
+    "no_strategy_mutation": true,
+    "no_production_records_mutation": true,
+    "dashboard_contract_unchanged": true
+  },
+  "run_dir": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v2_11_d_acceptance/v2_11_d_20260711_acceptance",
+  "opportunities_json": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v2_11_d_acceptance/v2_11_d_20260711_acceptance/tushare_a_share_suggestion_opportunities.json",
+  "suggestions_json": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v2_11_d_acceptance/v2_11_d_20260711_acceptance/tushare_a_share_suggestion_drafts.json",
+  "blocked_evidence_json": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v2_11_d_acceptance/v2_11_d_20260711_acceptance/tushare_a_share_blocked_strategy_evidence.json",
+  "gate_report_json": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v2_11_d_acceptance/v2_11_d_20260711_acceptance/tushare_a_share_suggestion_gate_report.json",
+  "gate_report_md": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v2_11_d_acceptance/v2_11_d_20260711_acceptance/tushare_a_share_suggestion_gate_report.md",
+  "source_v2_11_c_report_json": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/v2_11_c_tushare_a_share_historical_sandbox_live_data_refresh_latest.json",
+  "source_v2_11_c_pass_marker": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/V2_11_C_TUSHARE_A_SHARE_HISTORICAL_SANDBOX_LIVE_DATA_REFRESH_PASS.marker",
+  "hashes": {
+    "source_v2_11_c_report_json": "a48afb03d1993c7a5b696ad11510e35c82ebd6f747f272f5dc3690d6c27fa6f7",
+    "source_v2_11_c_pass_marker": "f3928ae77fda518c4e07cfdb9a832133b51ae8c3739dc7207a3cd68b7b1aebe1",
+    "opportunities_json": "f3aadaf8252365280175389a141ae85cde34218bb1b8a3e3dc7040d3c82a4246",
+    "suggestions_json": "bf7874e677f4945f3517dea3b2dd2b226eee3f4bbf8d4fe04f8a07ba0ac3e13b",
+    "blocked_evidence_json": "914fca4571eca1bea5813811e03a057ea3046a84604c447e89c3be8c9c7fd166",
+    "gate_report_json": "f0eebe4bf373b7a8488d0f3e728c1e4b272bbbf56a23b79b628d82025a3594f1",
+    "gate_report_md": "07b4e172c1dfb6c57309d5aa4ddd2fe5bc7b2d38c2766086377fbc5b790bfef2"
+  }
+}

@@ -1,0 +1,602 @@
+{
+  "overall_status": "PASS",
+  "acceptance_target": "V2.9-A Current User Decision Packet",
+  "packet_type": "current_simulation_user_decision_packet",
+  "run_id": "v2_9_a_20260711_acceptance",
+  "generated_at": "2026-07-11T20:57:59.191653+08:00",
+  "network_used": false,
+  "production_records_written": false,
+  "dashboard_contract_changed": false,
+  "summary": {
+    "candidate_count": 9,
+    "blocked_count": 3,
+    "candidate_markets": [
+      "A",
+      "H",
+      "US"
+    ],
+    "blocked_markets": [
+      "A",
+      "H",
+      "US"
+    ],
+    "candidate_symbols": [
+      "600519.SH",
+      "600036.SH",
+      "601398.SH",
+      "00700.HK",
+      "00005.HK",
+      "00941.HK",
+      "CRCL",
+      "MSFT",
+      "NVDA"
+    ],
+    "sandbox_pass_count": 3,
+    "sandbox_fail_count": 3,
+    "passing_hypotheses": [
+      "hyp_a_low_vol_dividend_defensive",
+      "hyp_h_low_vol_dividend",
+      "hyp_us_value_quality_momentum"
+    ],
+    "failing_hypotheses": [
+      "hyp_a_value_quality_multifactor",
+      "hyp_h_smart_beta_multifactor",
+      "hyp_us_low_vol_risk_overlay"
+    ],
+    "real_user_api_status": "blocked_missing_metadata",
+    "fixture_api_bound_markets": [
+      "A",
+      "H",
+      "US"
+    ]
+  },
+  "user_boundary": {
+    "what_you_can_do_now": [
+      "查看 simulation_candidate 项，作为人工观察和纸面验证清单。",
+      "在外部行情/券商软件手动核对实时价格、流动性、公司事件和持仓风险。",
+      "如果你决定实际操作，只能在 Aegis 外部手动下单。",
+      "把截图、成交记录或文字决策回传给 Aegis 作为 evidence input。"
+    ],
+    "what_aegis_does_not_do": [
+      "不自动下单。",
+      "不连接 Broker API。",
+      "不使用 trading webhook。",
+      "不提供实时价格或仓位数量。",
+      "不把 fixture candidates 冒充为 live API candidates。"
+    ],
+    "current_blocker": "真实用户 API 仍缺 config/external_api_connectors.local.json 的非敏感 metadata 和本机 env var，因此 live API-backed candidates 尚不可声明。"
+  },
+  "items": [
+    {
+      "symbol": "600519.SH",
+      "name": "贵州茅台",
+      "market": "A",
+      "strategy_id": "strategy_a_low_vol_dividend_defensive",
+      "candidate_score": 0.95,
+      "candidate_status": "Watch",
+      "source_mode": "approved_fixture_not_live_market_data",
+      "decision_packet_status": "simulation_candidate",
+      "user_action": "加入模拟观察清单；先人工核对实时行情、公司事件、持仓冲突和个人风险预算，如要交易只能在 Aegis 外部软件手动执行，并把截图或文字结果回传。",
+      "why": [
+        "A-share names with lower realized volatility and stronger dividend profile may reduce drawdown while preserving acceptable forward return.",
+        "sandbox_status=PASS",
+        "win_rate=0.7500",
+        "average_return=0.0167",
+        "max_drawdown=-0.0520"
+      ],
+      "risk_warnings": [
+        "Research-hypothesis draft only; not a production recommendation.",
+        "No live price, order size, or broker execution is produced.",
+        "liquidity_filter",
+        "max_drawdown_floor",
+        "dividend_trap_check",
+        "Simulation-only draft; user decides and executes manually outside Aegis.",
+        "Simulation-only refreshed candidate binding; user decides and executes manually outside Aegis.",
+        "Refreshed candidates are not production RecommendationRecords and not orders."
+      ],
+      "blocked_by": [],
+      "evidence_refs": [
+        "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/v2_8_d_refresh_queue_historical_sandbox_latest.json",
+        "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/V2_8_D_REFRESH_QUEUE_HISTORICAL_SANDBOX_PASS.marker",
+        "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v2_8_d_acceptance/v2_8_d_20260711_acceptance/refreshed_hypotheses.json",
+        "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/v2_8_d_refresh_queue_historical_sandbox_latest.json",
+        "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/V2_8_D_REFRESH_QUEUE_HISTORICAL_SANDBOX_PASS.marker",
+        "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v2_8_d_acceptance/v2_8_d_20260711_acceptance/refreshed_hypotheses.json",
+        "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v2_8_g_acceptance/v2_8_g_20260711_acceptance/approved_concrete_candidate_source_registry.json",
+        "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/v2_8_g_concrete_candidate_binding_refresh_latest.json",
+        "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/V2_8_G_CONCRETE_CANDIDATE_BINDING_REFRESH_PASS.marker"
+      ]
+    },
+    {
+      "symbol": "600036.SH",
+      "name": "招商银行",
+      "market": "A",
+      "strategy_id": "strategy_a_low_vol_dividend_defensive",
+      "candidate_score": 0.85,
+      "candidate_status": "Watch",
+      "source_mode": "approved_fixture_not_live_market_data",
+      "decision_packet_status": "simulation_candidate",
+      "user_action": "加入模拟观察清单；先人工核对实时行情、公司事件、持仓冲突和个人风险预算，如要交易只能在 Aegis 外部软件手动执行，并把截图或文字结果回传。",
+      "why": [
+        "A-share names with lower realized volatility and stronger dividend profile may reduce drawdown while preserving acceptable forward return.",
+        "sandbox_status=PASS",
+        "win_rate=0.7500",
+        "average_return=0.0167",
+        "max_drawdown=-0.0520"
+      ],
+      "risk_warnings": [
+        "Research-hypothesis draft only; not a production recommendation.",
+        "No live price, order size, or broker execution is produced.",
+        "liquidity_filter",
+        "max_drawdown_floor",
+        "dividend_trap_check",
+        "Simulation-only draft; user decides and executes manually outside Aegis.",
+        "Simulation-only refreshed candidate binding; user decides and executes manually outside Aegis.",
+        "Refreshed candidates are not production RecommendationRecords and not orders."
+      ],
+      "blocked_by": [],
+      "evidence_refs": [
+        "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/v2_8_d_refresh_queue_historical_sandbox_latest.json",
+        "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/V2_8_D_REFRESH_QUEUE_HISTORICAL_SANDBOX_PASS.marker",
+        "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v2_8_d_acceptance/v2_8_d_20260711_acceptance/refreshed_hypotheses.json",
+        "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/v2_8_d_refresh_queue_historical_sandbox_latest.json",
+        "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/V2_8_D_REFRESH_QUEUE_HISTORICAL_SANDBOX_PASS.marker",
+        "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v2_8_d_acceptance/v2_8_d_20260711_acceptance/refreshed_hypotheses.json",
+        "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v2_8_g_acceptance/v2_8_g_20260711_acceptance/approved_concrete_candidate_source_registry.json",
+        "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/v2_8_g_concrete_candidate_binding_refresh_latest.json",
+        "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/V2_8_G_CONCRETE_CANDIDATE_BINDING_REFRESH_PASS.marker"
+      ]
+    },
+    {
+      "symbol": "601398.SH",
+      "name": "工商银行",
+      "market": "A",
+      "strategy_id": "strategy_a_low_vol_dividend_defensive",
+      "candidate_score": 0.72,
+      "candidate_status": "Watch",
+      "source_mode": "approved_fixture_not_live_market_data",
+      "decision_packet_status": "simulation_candidate",
+      "user_action": "加入模拟观察清单；先人工核对实时行情、公司事件、持仓冲突和个人风险预算，如要交易只能在 Aegis 外部软件手动执行，并把截图或文字结果回传。",
+      "why": [
+        "A-share names with lower realized volatility and stronger dividend profile may reduce drawdown while preserving acceptable forward return.",
+        "sandbox_status=PASS",
+        "win_rate=0.7500",
+        "average_return=0.0167",
+        "max_drawdown=-0.0520"
+      ],
+      "risk_warnings": [
+        "Research-hypothesis draft only; not a production recommendation.",
+        "No live price, order size, or broker execution is produced.",
+        "liquidity_filter",
+        "max_drawdown_floor",
+        "dividend_trap_check",
+        "Simulation-only draft; user decides and executes manually outside Aegis.",
+        "Simulation-only refreshed candidate binding; user decides and executes manually outside Aegis.",
+        "Refreshed candidates are not production RecommendationRecords and not orders."
+      ],
+      "blocked_by": [],
+      "evidence_refs": [
+        "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/v2_8_d_refresh_queue_historical_sandbox_latest.json",
+        "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/V2_8_D_REFRESH_QUEUE_HISTORICAL_SANDBOX_PASS.marker",
+        "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v2_8_d_acceptance/v2_8_d_20260711_acceptance/refreshed_hypotheses.json",
+        "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/v2_8_d_refresh_queue_historical_sandbox_latest.json",
+        "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/V2_8_D_REFRESH_QUEUE_HISTORICAL_SANDBOX_PASS.marker",
+        "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v2_8_d_acceptance/v2_8_d_20260711_acceptance/refreshed_hypotheses.json",
+        "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v2_8_g_acceptance/v2_8_g_20260711_acceptance/approved_concrete_candidate_source_registry.json",
+        "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/v2_8_g_concrete_candidate_binding_refresh_latest.json",
+        "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/V2_8_G_CONCRETE_CANDIDATE_BINDING_REFRESH_PASS.marker"
+      ]
+    },
+    {
+      "symbol": "00700.HK",
+      "name": "Tencent Holdings",
+      "market": "H",
+      "strategy_id": "strategy_h_low_vol_dividend",
+      "candidate_score": 0.82,
+      "candidate_status": "Watch",
+      "source_mode": "approved_fixture_not_live_market_data",
+      "decision_packet_status": "simulation_candidate",
+      "user_action": "加入模拟观察清单；先人工核对实时行情、公司事件、持仓冲突和个人风险预算，如要交易只能在 Aegis 外部软件手动执行，并把截图或文字结果回传。",
+      "why": [
+        "Hong Kong lower-volatility dividend candidates may be useful defensive ideas if liquidity and event risks are controlled.",
+        "sandbox_status=PASS",
+        "win_rate=0.7500",
+        "average_return=0.0110",
+        "max_drawdown=-0.0550"
+      ],
+      "risk_warnings": [
+        "Research-hypothesis draft only; not a production recommendation.",
+        "No live price, order size, or broker execution is produced.",
+        "liquidity_filter",
+        "event_risk_block",
+        "max_drawdown_floor",
+        "Simulation-only draft; user decides and executes manually outside Aegis.",
+        "Simulation-only refreshed candidate binding; user decides and executes manually outside Aegis.",
+        "Refreshed candidates are not production RecommendationRecords and not orders."
+      ],
+      "blocked_by": [],
+      "evidence_refs": [
+        "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/v2_8_d_refresh_queue_historical_sandbox_latest.json",
+        "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/V2_8_D_REFRESH_QUEUE_HISTORICAL_SANDBOX_PASS.marker",
+        "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v2_8_d_acceptance/v2_8_d_20260711_acceptance/refreshed_hypotheses.json",
+        "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/v2_8_d_refresh_queue_historical_sandbox_latest.json",
+        "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/V2_8_D_REFRESH_QUEUE_HISTORICAL_SANDBOX_PASS.marker",
+        "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v2_8_d_acceptance/v2_8_d_20260711_acceptance/refreshed_hypotheses.json",
+        "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v2_8_g_acceptance/v2_8_g_20260711_acceptance/approved_concrete_candidate_source_registry.json",
+        "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/v2_8_g_concrete_candidate_binding_refresh_latest.json",
+        "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/V2_8_G_CONCRETE_CANDIDATE_BINDING_REFRESH_PASS.marker"
+      ]
+    },
+    {
+      "symbol": "00005.HK",
+      "name": "HSBC Holdings",
+      "market": "H",
+      "strategy_id": "strategy_h_low_vol_dividend",
+      "candidate_score": 0.74,
+      "candidate_status": "Watch",
+      "source_mode": "approved_fixture_not_live_market_data",
+      "decision_packet_status": "simulation_candidate",
+      "user_action": "加入模拟观察清单；先人工核对实时行情、公司事件、持仓冲突和个人风险预算，如要交易只能在 Aegis 外部软件手动执行，并把截图或文字结果回传。",
+      "why": [
+        "Hong Kong lower-volatility dividend candidates may be useful defensive ideas if liquidity and event risks are controlled.",
+        "sandbox_status=PASS",
+        "win_rate=0.7500",
+        "average_return=0.0110",
+        "max_drawdown=-0.0550"
+      ],
+      "risk_warnings": [
+        "Research-hypothesis draft only; not a production recommendation.",
+        "No live price, order size, or broker execution is produced.",
+        "liquidity_filter",
+        "event_risk_block",
+        "max_drawdown_floor",
+        "Simulation-only draft; user decides and executes manually outside Aegis.",
+        "Simulation-only refreshed candidate binding; user decides and executes manually outside Aegis.",
+        "Refreshed candidates are not production RecommendationRecords and not orders."
+      ],
+      "blocked_by": [],
+      "evidence_refs": [
+        "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/v2_8_d_refresh_queue_historical_sandbox_latest.json",
+        "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/V2_8_D_REFRESH_QUEUE_HISTORICAL_SANDBOX_PASS.marker",
+        "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v2_8_d_acceptance/v2_8_d_20260711_acceptance/refreshed_hypotheses.json",
+        "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/v2_8_d_refresh_queue_historical_sandbox_latest.json",
+        "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/V2_8_D_REFRESH_QUEUE_HISTORICAL_SANDBOX_PASS.marker",
+        "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v2_8_d_acceptance/v2_8_d_20260711_acceptance/refreshed_hypotheses.json",
+        "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v2_8_g_acceptance/v2_8_g_20260711_acceptance/approved_concrete_candidate_source_registry.json",
+        "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/v2_8_g_concrete_candidate_binding_refresh_latest.json",
+        "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/V2_8_G_CONCRETE_CANDIDATE_BINDING_REFRESH_PASS.marker"
+      ]
+    },
+    {
+      "symbol": "00941.HK",
+      "name": "China Mobile",
+      "market": "H",
+      "strategy_id": "strategy_h_low_vol_dividend",
+      "candidate_score": 0.71,
+      "candidate_status": "Watch",
+      "source_mode": "approved_fixture_not_live_market_data",
+      "decision_packet_status": "simulation_candidate",
+      "user_action": "加入模拟观察清单；先人工核对实时行情、公司事件、持仓冲突和个人风险预算，如要交易只能在 Aegis 外部软件手动执行，并把截图或文字结果回传。",
+      "why": [
+        "Hong Kong lower-volatility dividend candidates may be useful defensive ideas if liquidity and event risks are controlled.",
+        "sandbox_status=PASS",
+        "win_rate=0.7500",
+        "average_return=0.0110",
+        "max_drawdown=-0.0550"
+      ],
+      "risk_warnings": [
+        "Research-hypothesis draft only; not a production recommendation.",
+        "No live price, order size, or broker execution is produced.",
+        "liquidity_filter",
+        "event_risk_block",
+        "max_drawdown_floor",
+        "Simulation-only draft; user decides and executes manually outside Aegis.",
+        "Simulation-only refreshed candidate binding; user decides and executes manually outside Aegis.",
+        "Refreshed candidates are not production RecommendationRecords and not orders."
+      ],
+      "blocked_by": [],
+      "evidence_refs": [
+        "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/v2_8_d_refresh_queue_historical_sandbox_latest.json",
+        "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/V2_8_D_REFRESH_QUEUE_HISTORICAL_SANDBOX_PASS.marker",
+        "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v2_8_d_acceptance/v2_8_d_20260711_acceptance/refreshed_hypotheses.json",
+        "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/v2_8_d_refresh_queue_historical_sandbox_latest.json",
+        "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/V2_8_D_REFRESH_QUEUE_HISTORICAL_SANDBOX_PASS.marker",
+        "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v2_8_d_acceptance/v2_8_d_20260711_acceptance/refreshed_hypotheses.json",
+        "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v2_8_g_acceptance/v2_8_g_20260711_acceptance/approved_concrete_candidate_source_registry.json",
+        "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/v2_8_g_concrete_candidate_binding_refresh_latest.json",
+        "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/V2_8_G_CONCRETE_CANDIDATE_BINDING_REFRESH_PASS.marker"
+      ]
+    },
+    {
+      "symbol": "CRCL",
+      "name": "Circle Internet Group",
+      "market": "US",
+      "strategy_id": "strategy_us_value_quality_momentum",
+      "candidate_score": 0.78,
+      "candidate_status": "Watch",
+      "source_mode": "approved_fixture_not_live_market_data",
+      "decision_packet_status": "simulation_candidate",
+      "user_action": "加入模拟观察清单；先人工核对实时行情、公司事件、持仓冲突和个人风险预算，如要交易只能在 Aegis 外部软件手动执行，并把截图或文字结果回传。",
+      "why": [
+        "U.S. candidates with complementary value, quality, and momentum evidence may be more robust than a single-factor ranking.",
+        "sandbox_status=PASS",
+        "win_rate=0.7500",
+        "average_return=0.0146",
+        "max_drawdown=-0.0680"
+      ],
+      "risk_warnings": [
+        "Research-hypothesis draft only; not a production recommendation.",
+        "No live price, order size, or broker execution is produced.",
+        "sector_concentration_check",
+        "drawdown_floor",
+        "quality_overlay",
+        "Simulation-only draft; user decides and executes manually outside Aegis.",
+        "Simulation-only refreshed candidate binding; user decides and executes manually outside Aegis.",
+        "Refreshed candidates are not production RecommendationRecords and not orders."
+      ],
+      "blocked_by": [],
+      "evidence_refs": [
+        "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/v2_8_d_refresh_queue_historical_sandbox_latest.json",
+        "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/V2_8_D_REFRESH_QUEUE_HISTORICAL_SANDBOX_PASS.marker",
+        "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v2_8_d_acceptance/v2_8_d_20260711_acceptance/refreshed_hypotheses.json",
+        "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/v2_8_d_refresh_queue_historical_sandbox_latest.json",
+        "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/V2_8_D_REFRESH_QUEUE_HISTORICAL_SANDBOX_PASS.marker",
+        "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v2_8_d_acceptance/v2_8_d_20260711_acceptance/refreshed_hypotheses.json",
+        "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v2_8_g_acceptance/v2_8_g_20260711_acceptance/approved_concrete_candidate_source_registry.json",
+        "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/v2_8_g_concrete_candidate_binding_refresh_latest.json",
+        "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/V2_8_G_CONCRETE_CANDIDATE_BINDING_REFRESH_PASS.marker"
+      ]
+    },
+    {
+      "symbol": "MSFT",
+      "name": "Microsoft",
+      "market": "US",
+      "strategy_id": "strategy_us_value_quality_momentum",
+      "candidate_score": 0.76,
+      "candidate_status": "Watch",
+      "source_mode": "approved_fixture_not_live_market_data",
+      "decision_packet_status": "simulation_candidate",
+      "user_action": "加入模拟观察清单；先人工核对实时行情、公司事件、持仓冲突和个人风险预算，如要交易只能在 Aegis 外部软件手动执行，并把截图或文字结果回传。",
+      "why": [
+        "U.S. candidates with complementary value, quality, and momentum evidence may be more robust than a single-factor ranking.",
+        "sandbox_status=PASS",
+        "win_rate=0.7500",
+        "average_return=0.0146",
+        "max_drawdown=-0.0680"
+      ],
+      "risk_warnings": [
+        "Research-hypothesis draft only; not a production recommendation.",
+        "No live price, order size, or broker execution is produced.",
+        "sector_concentration_check",
+        "drawdown_floor",
+        "quality_overlay",
+        "Simulation-only draft; user decides and executes manually outside Aegis.",
+        "Simulation-only refreshed candidate binding; user decides and executes manually outside Aegis.",
+        "Refreshed candidates are not production RecommendationRecords and not orders."
+      ],
+      "blocked_by": [],
+      "evidence_refs": [
+        "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/v2_8_d_refresh_queue_historical_sandbox_latest.json",
+        "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/V2_8_D_REFRESH_QUEUE_HISTORICAL_SANDBOX_PASS.marker",
+        "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v2_8_d_acceptance/v2_8_d_20260711_acceptance/refreshed_hypotheses.json",
+        "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/v2_8_d_refresh_queue_historical_sandbox_latest.json",
+        "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/V2_8_D_REFRESH_QUEUE_HISTORICAL_SANDBOX_PASS.marker",
+        "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v2_8_d_acceptance/v2_8_d_20260711_acceptance/refreshed_hypotheses.json",
+        "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v2_8_g_acceptance/v2_8_g_20260711_acceptance/approved_concrete_candidate_source_registry.json",
+        "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/v2_8_g_concrete_candidate_binding_refresh_latest.json",
+        "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/V2_8_G_CONCRETE_CANDIDATE_BINDING_REFRESH_PASS.marker"
+      ]
+    },
+    {
+      "symbol": "NVDA",
+      "name": "NVIDIA",
+      "market": "US",
+      "strategy_id": "strategy_us_value_quality_momentum",
+      "candidate_score": 0.73,
+      "candidate_status": "Watch",
+      "source_mode": "approved_fixture_not_live_market_data",
+      "decision_packet_status": "simulation_candidate",
+      "user_action": "加入模拟观察清单；先人工核对实时行情、公司事件、持仓冲突和个人风险预算，如要交易只能在 Aegis 外部软件手动执行，并把截图或文字结果回传。",
+      "why": [
+        "U.S. candidates with complementary value, quality, and momentum evidence may be more robust than a single-factor ranking.",
+        "sandbox_status=PASS",
+        "win_rate=0.7500",
+        "average_return=0.0146",
+        "max_drawdown=-0.0680"
+      ],
+      "risk_warnings": [
+        "Research-hypothesis draft only; not a production recommendation.",
+        "No live price, order size, or broker execution is produced.",
+        "sector_concentration_check",
+        "drawdown_floor",
+        "quality_overlay",
+        "Simulation-only draft; user decides and executes manually outside Aegis.",
+        "Simulation-only refreshed candidate binding; user decides and executes manually outside Aegis.",
+        "Refreshed candidates are not production RecommendationRecords and not orders."
+      ],
+      "blocked_by": [],
+      "evidence_refs": [
+        "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/v2_8_d_refresh_queue_historical_sandbox_latest.json",
+        "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/V2_8_D_REFRESH_QUEUE_HISTORICAL_SANDBOX_PASS.marker",
+        "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v2_8_d_acceptance/v2_8_d_20260711_acceptance/refreshed_hypotheses.json",
+        "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/v2_8_d_refresh_queue_historical_sandbox_latest.json",
+        "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/V2_8_D_REFRESH_QUEUE_HISTORICAL_SANDBOX_PASS.marker",
+        "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v2_8_d_acceptance/v2_8_d_20260711_acceptance/refreshed_hypotheses.json",
+        "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v2_8_g_acceptance/v2_8_g_20260711_acceptance/approved_concrete_candidate_source_registry.json",
+        "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/v2_8_g_concrete_candidate_binding_refresh_latest.json",
+        "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/V2_8_G_CONCRETE_CANDIDATE_BINDING_REFRESH_PASS.marker"
+      ]
+    },
+    {
+      "symbol": "A_VALUE_QUALITY_PAPER_BASKET",
+      "name": null,
+      "market": "A",
+      "strategy_id": "strategy_a_value_quality_multifactor",
+      "candidate_score": null,
+      "candidate_status": null,
+      "source_mode": "approved_fixture_not_live_market_data",
+      "decision_packet_status": "blocked",
+      "user_action": "不要用于模拟入场；先解决阻断原因：strategy_sandbox_not_passed。",
+      "why": [
+        "A-share candidates that combine reasonable valuation with profitability and cash-flow quality may outperform single-factor value screens.",
+        "sandbox_status=FAIL",
+        "win_rate=0.5000",
+        "average_return=-0.0090",
+        "max_drawdown=-0.0950"
+      ],
+      "risk_warnings": [
+        "Research-hypothesis draft only; not a production recommendation.",
+        "No live price, order size, or broker execution is produced.",
+        "liquidity_filter",
+        "financial_quality_check",
+        "policy_event_note",
+        "Simulation-only draft; user decides and executes manually outside Aegis.",
+        "Simulation-only refreshed candidate binding; user decides and executes manually outside Aegis.",
+        "Refreshed candidates are not production RecommendationRecords and not orders."
+      ],
+      "blocked_by": [
+        "strategy_sandbox_not_passed"
+      ],
+      "evidence_refs": [
+        "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/v2_8_d_refresh_queue_historical_sandbox_latest.json",
+        "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/V2_8_D_REFRESH_QUEUE_HISTORICAL_SANDBOX_PASS.marker",
+        "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v2_8_d_acceptance/v2_8_d_20260711_acceptance/refreshed_hypotheses.json",
+        "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/v2_8_d_refresh_queue_historical_sandbox_latest.json",
+        "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/V2_8_D_REFRESH_QUEUE_HISTORICAL_SANDBOX_PASS.marker",
+        "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v2_8_d_acceptance/v2_8_d_20260711_acceptance/refreshed_hypotheses.json",
+        "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/v2_8_g_concrete_candidate_binding_refresh_latest.json",
+        "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/V2_8_G_CONCRETE_CANDIDATE_BINDING_REFRESH_PASS.marker"
+      ]
+    },
+    {
+      "symbol": "H_SMART_BETA_PAPER_BASKET",
+      "name": null,
+      "market": "H",
+      "strategy_id": "strategy_h_smart_beta_multifactor",
+      "candidate_score": null,
+      "candidate_status": null,
+      "source_mode": "approved_fixture_not_live_market_data",
+      "decision_packet_status": "blocked",
+      "user_action": "不要用于模拟入场；先解决阻断原因：strategy_sandbox_not_passed。",
+      "why": [
+        "Hong Kong smart-beta factors may require regime-aware blending rather than one dominant factor.",
+        "sandbox_status=FAIL",
+        "win_rate=0.2500",
+        "average_return=-0.0113",
+        "max_drawdown=-0.1120"
+      ],
+      "risk_warnings": [
+        "Research-hypothesis draft only; not a production recommendation.",
+        "No live price, order size, or broker execution is produced.",
+        "stock_connect_awareness",
+        "liquidity_filter",
+        "event_risk_block",
+        "Simulation-only draft; user decides and executes manually outside Aegis.",
+        "Simulation-only refreshed candidate binding; user decides and executes manually outside Aegis.",
+        "Refreshed candidates are not production RecommendationRecords and not orders."
+      ],
+      "blocked_by": [
+        "strategy_sandbox_not_passed"
+      ],
+      "evidence_refs": [
+        "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/v2_8_d_refresh_queue_historical_sandbox_latest.json",
+        "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/V2_8_D_REFRESH_QUEUE_HISTORICAL_SANDBOX_PASS.marker",
+        "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v2_8_d_acceptance/v2_8_d_20260711_acceptance/refreshed_hypotheses.json",
+        "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/v2_8_d_refresh_queue_historical_sandbox_latest.json",
+        "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/V2_8_D_REFRESH_QUEUE_HISTORICAL_SANDBOX_PASS.marker",
+        "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v2_8_d_acceptance/v2_8_d_20260711_acceptance/refreshed_hypotheses.json",
+        "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/v2_8_g_concrete_candidate_binding_refresh_latest.json",
+        "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/V2_8_G_CONCRETE_CANDIDATE_BINDING_REFRESH_PASS.marker"
+      ]
+    },
+    {
+      "symbol": "US_LOW_VOL_RISK_OVERLAY_PAPER_BASKET",
+      "name": null,
+      "market": "US",
+      "strategy_id": "strategy_us_low_vol_risk_overlay",
+      "candidate_score": null,
+      "candidate_status": null,
+      "source_mode": "approved_fixture_not_live_market_data",
+      "decision_packet_status": "blocked",
+      "user_action": "不要用于模拟入场；先解决阻断原因：strategy_sandbox_not_passed。",
+      "why": [
+        "Low-volatility U.S. candidates may need valuation and momentum context to avoid cycle-specific underperformance.",
+        "sandbox_status=FAIL",
+        "win_rate=0.2500",
+        "average_return=-0.0111",
+        "max_drawdown=-0.1050"
+      ],
+      "risk_warnings": [
+        "Research-hypothesis draft only; not a production recommendation.",
+        "No live price, order size, or broker execution is produced.",
+        "max_drawdown_floor",
+        "valuation_context_check",
+        "momentum_context_check",
+        "Simulation-only draft; user decides and executes manually outside Aegis.",
+        "Simulation-only refreshed candidate binding; user decides and executes manually outside Aegis.",
+        "Refreshed candidates are not production RecommendationRecords and not orders."
+      ],
+      "blocked_by": [
+        "strategy_sandbox_not_passed"
+      ],
+      "evidence_refs": [
+        "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/v2_8_d_refresh_queue_historical_sandbox_latest.json",
+        "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/V2_8_D_REFRESH_QUEUE_HISTORICAL_SANDBOX_PASS.marker",
+        "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v2_8_d_acceptance/v2_8_d_20260711_acceptance/refreshed_hypotheses.json",
+        "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/v2_8_d_refresh_queue_historical_sandbox_latest.json",
+        "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/V2_8_D_REFRESH_QUEUE_HISTORICAL_SANDBOX_PASS.marker",
+        "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v2_8_d_acceptance/v2_8_d_20260711_acceptance/refreshed_hypotheses.json",
+        "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/v2_8_g_concrete_candidate_binding_refresh_latest.json",
+        "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/V2_8_G_CONCRETE_CANDIDATE_BINDING_REFRESH_PASS.marker"
+      ]
+    }
+  ],
+  "checks": {
+    "has_a_h_us_candidates": true,
+    "has_blocked_paths": true,
+    "sandbox_pass_fail_visible": true,
+    "api_status_visible": true,
+    "fixture_boundary_visible": true,
+    "every_candidate_has_user_action": true,
+    "every_candidate_has_evidence": true,
+    "no_live_price": true,
+    "no_position_size": true,
+    "manual_external_execution_only": true,
+    "no_real_trade": true,
+    "no_broker_api": true,
+    "no_trading_webhook": true,
+    "production_records_not_written": true,
+    "dashboard_contract_unchanged": true,
+    "packet_status_pass": true,
+    "packet_json_written": true,
+    "packet_md_written": true
+  },
+  "safety": {
+    "simulation_only": true,
+    "manual_external_execution_only": true,
+    "fixture_not_live_market_data": true,
+    "real_user_api_blocked_missing_metadata": true,
+    "no_live_price": true,
+    "no_position_size": true,
+    "no_real_trade": true,
+    "no_broker_api": true,
+    "no_trading_webhook": true,
+    "no_order_placement": true,
+    "no_production_records_mutation": true,
+    "dashboard_contract_unchanged": true
+  },
+  "command": "validate_v2_9_a_current_user_decision_packet.py --run-id v2_9_a_20260711_acceptance",
+  "run_dir": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v2_9_a_acceptance/v2_9_a_20260711_acceptance",
+  "packet_json": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v2_9_a_acceptance/v2_9_a_20260711_acceptance/current_user_decision_packet.json",
+  "packet_md": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v2_9_a_acceptance/v2_9_a_20260711_acceptance/current_user_decision_packet.md",
+  "source_concrete_brief_json": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v2_8_h_acceptance/v2_8_h_20260711_acceptance/concrete_candidate_usable_brief.json",
+  "source_sandbox_report_json": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/v2_8_d_refresh_queue_historical_sandbox_latest.json",
+  "source_api_dry_run_json": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/v2_8_j_real_user_api_candidate_refresh_dry_run_latest.json",
+  "hashes": {
+    "packet_json": "9764fa50ea3703a4f811686bc302e031facbc721e728c10f4131ecc2ea6b4fb3",
+    "packet_md": "02d0e70e070e834f5ff52ebd78e9c9528b7ef0b19dc2ca79e9db782e556b7789",
+    "source_concrete_brief_json": "9cd55b38b5a5e4b2269999369253e857a354c8f391ec0bb4b0614029830480ee",
+    "source_sandbox_report_json": "8715eb44212f55091ec3970b5692862afbbe6283f4e81b26b585ff94944ff03e",
+    "source_api_dry_run_json": "8f25f83aaac7861ec3004cde92dfeea0dfd5865be70f39c68e6be55b502250e1"
+  }
+}

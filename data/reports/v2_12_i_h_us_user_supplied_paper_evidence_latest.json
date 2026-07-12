@@ -1,0 +1,247 @@
+{
+  "overall_status": "PASS",
+  "acceptance_target": "V2.12-I H-US User-Supplied Paper Evidence Validation",
+  "source_acceptance_target": "V2.12-H H-US Feedback To Paper Simulation Review Queue",
+  "run_id": "v2_12_i_20260712_acceptance",
+  "generated_at": "2026-07-12T01:17:30+08:00",
+  "command": "validate_v2_12_i_h_us_user_supplied_paper_evidence.py --run-id v2_12_i_20260712_acceptance",
+  "network_used": false,
+  "production_records_written": false,
+  "paper_trades_written": false,
+  "recommendations_written": false,
+  "reviews_written": false,
+  "memory_written": false,
+  "dashboard_contract_changed": false,
+  "summary": {
+    "source_review_queue_count": 2,
+    "user_evidence_input_count": 2,
+    "validated_user_evidence_count": 1,
+    "blocked_user_evidence_count": 1,
+    "symbols_ready": [
+      "H_API_SANDBOX_PAPER_BASKET"
+    ],
+    "symbols_blocked": [
+      "US_API_SANDBOX_PAPER_BASKET"
+    ],
+    "next_stage": "V2.12-J H-US Virtual PaperTrade Creation From Validated Evidence"
+  },
+  "validated_user_evidence_records": [
+    {
+      "queue_id": "h_us_review_queue_h_us_feedback_followup_h_us_fb_watch_001",
+      "followup_id": "h_us_feedback_followup_h_us_fb_watch_001",
+      "feedback_id": "h_us_fb_watch_001",
+      "suggestion_id": "sug_h_us_h_strategy_h_cache_readiness_multifactor_probe",
+      "symbol": "H_API_SANDBOX_PAPER_BASKET",
+      "market": "H",
+      "entry_price": 188.88,
+      "entry_date": "2026-07-12",
+      "virtual_position_size": 1.0,
+      "explicit_simulation_confirmation": true,
+      "evidence_items": [
+        {
+          "evidence_ref": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v2_12_i_acceptance/v2_12_i_20260712_acceptance/user_supplied_h_us_evidence/H_API_SANDBOX_PAPER_BASKET_entry_evidence.txt",
+          "exists": true,
+          "sha256": "5a2d4e6f46935e88d0d7275fef397b03535640e619db24ed016d2cf39c050729",
+          "raw_image_stored_in_record": false,
+          "ocr_performed": false
+        }
+      ],
+      "notes_hash": "5703d4bb7db51878626c4918a376e16724a8da224baf6a3a61f257c3a82d6de6",
+      "created_at": "2026-07-12T01:17:30+08:00",
+      "ready_to_create_paper_trade": true,
+      "simulation_only": true,
+      "manual_external_execution_only": true,
+      "user_supplied_evidence_only": true,
+      "no_price_fabrication": true,
+      "no_date_fabrication": true,
+      "no_paper_trade_mutation": true,
+      "no_recommendation_mutation": true,
+      "no_review_mutation": true,
+      "no_memory_mutation": true,
+      "no_real_trade_execution": true,
+      "no_broker_api": true,
+      "no_webhook": true,
+      "no_order_placement": true,
+      "status": "ready_for_virtual_paper_trade_creation_candidate",
+      "virtual_paper_trade_create_candidate_id": "h_us_paper_create_candidate_h_us_review_queue_h_us_feedback_followup_h_us_fb_watch_001",
+      "requires_paper_trade_creation_step": true,
+      "source_review_queue_status": "pending_user_price_date_evidence",
+      "source_evidence_refs": [
+        "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/v2_12_g_h_us_feedback_intake_latest.json",
+        "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/v2_12_f_h_us_current_simulation_brief_latest.json",
+        "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/v2_12_f_h_us_current_simulation_brief_latest.json",
+        "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/v2_12_d_h_us_historical_sandbox_candidate_refresh_latest.json",
+        "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/V2_12_D_H_US_HISTORICAL_SANDBOX_CANDIDATE_REFRESH_PASS.marker",
+        "v2_12_c_normalized_cache:h_00700_eodhd_daily_bars:99a1513efba06494de61bcbefc4367358c2c3e1c1dd382786a32a2c7cb6469a5"
+      ]
+    }
+  ],
+  "blocked_user_evidence_records": [
+    {
+      "queue_id": "h_us_review_queue_h_us_feedback_followup_h_us_fb_external_003",
+      "followup_id": "h_us_feedback_followup_h_us_fb_external_003",
+      "feedback_id": "h_us_fb_external_003",
+      "suggestion_id": "sug_h_us_us_strategy_us_cache_readiness_multifactor_probe",
+      "symbol": "US_API_SANDBOX_PAPER_BASKET",
+      "market": "US",
+      "entry_price": null,
+      "entry_date": "2026-07-12",
+      "virtual_position_size": 1.0,
+      "explicit_simulation_confirmation": false,
+      "evidence_items": [],
+      "notes_hash": "cf48e479a6dcbbf412000166ccaeb09debeb8b5ea69a5bdf5d8a1d29580c333c",
+      "created_at": "2026-07-12T01:17:30+08:00",
+      "ready_to_create_paper_trade": false,
+      "simulation_only": true,
+      "manual_external_execution_only": true,
+      "user_supplied_evidence_only": true,
+      "no_price_fabrication": true,
+      "no_date_fabrication": true,
+      "no_paper_trade_mutation": true,
+      "no_recommendation_mutation": true,
+      "no_review_mutation": true,
+      "no_memory_mutation": true,
+      "no_real_trade_execution": true,
+      "no_broker_api": true,
+      "no_webhook": true,
+      "no_order_placement": true,
+      "status": "blocked",
+      "blocked_reasons": [
+        "invalid_entry_price",
+        "missing_explicit_simulation_confirmation",
+        "missing_evidence_refs"
+      ]
+    }
+  ],
+  "checks": {
+    "source_is_v2_12_h": true,
+    "source_report_pass": true,
+    "source_has_review_queue": true,
+    "has_user_evidence_inputs": true,
+    "has_validated_user_evidence": true,
+    "has_blocked_user_evidence": true,
+    "validated_records_ready_for_virtual_paper_trade_creation_candidate": true,
+    "blocked_records_not_ready": true,
+    "validated_prices_positive": true,
+    "validated_dates_present": true,
+    "validated_evidence_hashed": true,
+    "explicit_simulation_confirmation_required": true,
+    "blocked_invalid_inputs_present": true,
+    "no_price_fabrication": true,
+    "no_date_fabrication": true,
+    "no_paper_trade_mutation": true,
+    "no_recommendation_mutation": true,
+    "no_review_mutation": true,
+    "no_memory_mutation": true,
+    "no_real_trade_execution": true,
+    "no_broker_api": true,
+    "no_webhook": true,
+    "no_order_placement": true,
+    "acceptance_target_correct": true,
+    "report_status_pass": true,
+    "source_marker_exists": true,
+    "user_evidence_inputs_json_written": true,
+    "validated_user_evidence_json_written": true,
+    "blocked_user_evidence_json_written": true,
+    "virtual_paper_trade_candidates_json_written": true,
+    "production_record_files_unchanged": true,
+    "production_records_not_written": true,
+    "paper_trades_not_written": true,
+    "recommendations_not_written": true,
+    "reviews_not_written": true,
+    "memory_not_written": true,
+    "dashboard_contract_unchanged": true,
+    "network_not_used": true
+  },
+  "safety": {
+    "validation_only": true,
+    "simulation_only": true,
+    "manual_external_execution_only": true,
+    "user_supplied_evidence_only": true,
+    "paper_trade_creation_deferred": true,
+    "requires_user_price": true,
+    "requires_user_date": true,
+    "requires_user_evidence": true,
+    "requires_explicit_simulation_confirmation": true,
+    "no_price_fabrication": true,
+    "no_date_fabrication": true,
+    "no_paper_trade_mutation": true,
+    "no_recommendation_mutation": true,
+    "no_review_mutation": true,
+    "no_memory_mutation": true,
+    "no_real_trade_execution": true,
+    "no_broker_api": true,
+    "no_webhook": true,
+    "no_order_placement": true,
+    "dashboard_contract_unchanged": true
+  },
+  "run_dir": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v2_12_i_acceptance/v2_12_i_20260712_acceptance",
+  "source_v2_12_h_report_json": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/v2_12_h_h_us_feedback_review_queue_latest.json",
+  "source_v2_12_h_pass_marker": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/V2_12_H_H_US_FEEDBACK_REVIEW_QUEUE_PASS.marker",
+  "source_user_evidence_inputs_json": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v2_12_i_acceptance/v2_12_i_20260712_acceptance/h_us_user_supplied_evidence_inputs.fixture.json",
+  "validated_user_evidence_records_json": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v2_12_i_acceptance/v2_12_i_20260712_acceptance/validated_h_us_user_evidence_records.json",
+  "blocked_user_evidence_records_json": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v2_12_i_acceptance/v2_12_i_20260712_acceptance/blocked_h_us_user_evidence_records.json",
+  "virtual_paper_trade_create_candidates_json": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v2_12_i_acceptance/v2_12_i_20260712_acceptance/h_us_virtual_paper_trade_create_candidates.json",
+  "production_record_files_before": {
+    "recommendations_jsonl": {
+      "exists": true,
+      "size": 12284,
+      "sha256": "05b2e56c9b547cbe3ce4cb71b7cb776185e23ef2cc3bc9a46a918bce0cfb65dc"
+    },
+    "paper_trades_jsonl": {
+      "exists": false,
+      "size": null,
+      "sha256": null
+    },
+    "reviews_jsonl": {
+      "exists": false,
+      "size": null,
+      "sha256": null
+    },
+    "memory_jsonl": {
+      "exists": false,
+      "size": null,
+      "sha256": null
+    },
+    "investment_memory_jsonl": {
+      "exists": false,
+      "size": null,
+      "sha256": null
+    }
+  },
+  "production_record_files_after": {
+    "recommendations_jsonl": {
+      "exists": true,
+      "size": 12284,
+      "sha256": "05b2e56c9b547cbe3ce4cb71b7cb776185e23ef2cc3bc9a46a918bce0cfb65dc"
+    },
+    "paper_trades_jsonl": {
+      "exists": false,
+      "size": null,
+      "sha256": null
+    },
+    "reviews_jsonl": {
+      "exists": false,
+      "size": null,
+      "sha256": null
+    },
+    "memory_jsonl": {
+      "exists": false,
+      "size": null,
+      "sha256": null
+    },
+    "investment_memory_jsonl": {
+      "exists": false,
+      "size": null,
+      "sha256": null
+    }
+  },
+  "hashes": {
+    "source_v2_12_h_report_json": "49b644468721e372bd02da8aefaccddf3e95df1bd914bc0e2685e225c92584c0",
+    "source_v2_12_h_pass_marker": "1b780f2061b43b4dac5e3871864238640b6097700d07c53f211d9da24ea05252",
+    "source_user_evidence_inputs_json": "2764fd79d08809d01da2e8483c4d38d30bb0e0d8d3bb15a6c18d8276bf6e3e25",
+    "validated_user_evidence_records_json": "93bac622e81626722f37e1874e7ace03467ba4193bf7012e9c4b6f55f1ed034e",
+    "blocked_user_evidence_records_json": "1bc229dc0408c3483ab3e785f7c52ab9aed0bb5144e592746032c241f3d4f6ed",
+    "virtual_paper_trade_create_candidates_json": "93bac622e81626722f37e1874e7ace03467ba4193bf7012e9c4b6f55f1ed034e"
+  }
+}

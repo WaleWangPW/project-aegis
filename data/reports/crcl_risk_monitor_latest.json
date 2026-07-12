@@ -1,0 +1,97 @@
+{
+  "report_metadata": {
+    "report_type": "crcl_risk_monitor",
+    "generated_at": "2026-07-09T13:10:56.572694",
+    "symbol": "CRCL",
+    "stock_name": "Circle Internet Group",
+    "market": "US",
+    "report_version": "1.0"
+  },
+  "current_status": {
+    "recommendation": "Exit",
+    "confidence": 0.25,
+    "last_updated": "2026-07-06T00:00:00+08:00"
+  },
+  "exit_watch_eligibility": {
+    "eligible": false,
+    "blocking_conditions": [
+      "max_drawdown > -15% (current: -31.58%)",
+      "volatility > 4% (current: 6.19%)",
+      "liquidity_not_ok = true",
+      "high_volatility flag triggered",
+      "severe_drawdown flag triggered"
+    ],
+    "optional_conditions_not_met": []
+  },
+  "risk_metrics": {
+    "max_drawdown": -0.3157720329521754,
+    "max_drawdown_percent": "-31.58%",
+    "volatility": 0.0618692952369419,
+    "volatility_percent": "6.19%",
+    "liquidity_flags": [
+      "high_volatility",
+      "liquidity_not_ok",
+      "liquidity_risk",
+      "poor_entry_location_downtrend",
+      "relative_weakness_vs_index",
+      "severe_drawdown",
+      "trend_down"
+    ],
+    "threshold_checks": {
+      "max_drawdown_ok": false,
+      "volatility_ok": false,
+      "liquidity_ok": false
+    }
+  },
+  "expert_stances": {},
+  "must_conditions_status": {
+    "max_drawdown_le_neg15_percent": {
+      "condition": "max_drawdown ≤ -15%",
+      "current_value": "-31.58%",
+      "passed": false
+    },
+    "volatility_le_4_percent": {
+      "condition": "volatility ≤ 4%",
+      "current_value": "6.19%",
+      "passed": false
+    },
+    "liquidity_not_ok_false": {
+      "condition": "liquidity_not_ok = false",
+      "current_value": "True",
+      "passed": false
+    },
+    "risk_agent_stance_neutral_or_better": {
+      "condition": "RiskAgent stance ≥ neutral",
+      "current_value": "neutral",
+      "passed": true
+    },
+    "high_volatility_flag_not_triggered": {
+      "condition": "high_volatility flag not triggered",
+      "current_value": "triggered",
+      "passed": false
+    },
+    "severe_drawdown_flag_not_triggered": {
+      "condition": "severe_drawdown flag not triggered",
+      "current_value": "triggered",
+      "passed": false
+    }
+  },
+  "optional_conditions_status": {
+    "trend_agent_stance_neutral_or_better": {
+      "condition": "TrendAgent stance ≥ neutral",
+      "current_value": "neutral",
+      "passed": true
+    },
+    "timing_agent_stance_neutral_or_better": {
+      "condition": "TimingAgent stance ≥ neutral",
+      "current_value": "neutral",
+      "passed": true
+    }
+  },
+  "next_check": "2026-07-09",
+  "data_sources": {
+    "risk_signal": "signal:sig_20260709_US_CRCL_risk_volatility_drawdown",
+    "risk_opinion": "opn_20260709_US_CRCL_risk",
+    "recommendation": "rec_20260709_pre_market_US_CRCL"
+  }
+}

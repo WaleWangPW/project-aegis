@@ -1,0 +1,38 @@
+{
+  "run_id": "bt_run_20260710_143250_hist_20260710_152120",
+  "generated_at": "2026-07-10T15:21:20",
+  "strategy_id": "a_share_watchlist_v1",
+  "strategy_version": "1.0.0",
+  "backtest_type": "static_snapshot_backtest",
+  "dry_run": true,
+  "sent": false,
+  "trading_called": false,
+  "static_snapshot_backtest": true,
+  "lookahead_bias_warning": true,
+  "selected_symbols_count": 20,
+  "valid_price_series_count": 20,
+  "top5": [
+    "600519.SH",
+    "600036.SH",
+    "000858.SZ",
+    "000001.SZ",
+    "601398.SH"
+  ],
+  "start_date": "2026-03-12",
+  "end_date": "2026-07-09",
+  "benchmark": "000300.SH",
+  "portfolio_metrics": {
+    "total_return": -0.132762,
+    "annualized_return": -0.361538,
+    "max_drawdown": -0.157806,
+    "volatility": 0.139429,
+    "sharpe": -2.59298,
+    "win_rate": 0.4875
+  },
+  "benchmark_total_return": 0.040267,
+  "excess_return": -0.173029,
+  "warnings": [],
+  "source_backtest_json_sha256_12": "15d75ff6c9e3",
+  "validation_overall_verdict": "PASS",
+  "result": "PASS"
+}

@@ -1,0 +1,170 @@
+{
+  "project": "Project Aegis",
+  "type": "pipeline_redteam",
+  "generated_at": "2026-07-12T08:00:30.138489+08:00",
+  "total_tests": 20,
+  "passed": 20,
+  "failed": 0,
+  "tests": [
+    {
+      "test_name": "invalid_hash_format_json",
+      "mutation": "Inject invalid hash format in pipeline JSON",
+      "expected_exit_nonzero": true,
+      "actual_exit_code": 1,
+      "rejected": true,
+      "result": "REJECTED"
+    },
+    {
+      "test_name": "invalid_hash_format_md",
+      "mutation": "Inject invalid hash in pipeline MD",
+      "expected_exit_nonzero": true,
+      "actual_exit_code": 1,
+      "rejected": true,
+      "result": "REJECTED"
+    },
+    {
+      "test_name": "known_fake_hash_present",
+      "mutation": "Inject known fake hash 000000000000",
+      "expected_exit_nonzero": true,
+      "actual_exit_code": 1,
+      "rejected": true,
+      "result": "REJECTED"
+    },
+    {
+      "test_name": "mismatched_real_hash",
+      "mutation": "Set hash that doesn't match real file",
+      "expected_exit_nonzero": true,
+      "actual_exit_code": 1,
+      "rejected": true,
+      "result": "REJECTED"
+    },
+    {
+      "test_name": "self_hash_claimed_in_pipeline",
+      "mutation": "Claim raw self hash in pipeline JSON",
+      "expected_exit_nonzero": true,
+      "actual_exit_code": 1,
+      "rejected": true,
+      "result": "REJECTED"
+    },
+    {
+      "test_name": "missing_evidence_policy",
+      "mutation": "Remove evidence_policy from pipeline JSON",
+      "expected_exit_nonzero": true,
+      "actual_exit_code": 1,
+      "rejected": true,
+      "result": "REJECTED"
+    },
+    {
+      "test_name": "false_dry_run",
+      "mutation": "Set dry_run=false in feishu JSON",
+      "expected_exit_nonzero": true,
+      "actual_exit_code": 1,
+      "rejected": true,
+      "result": "REJECTED"
+    },
+    {
+      "test_name": "sent_true",
+      "mutation": "Set sent=true in feishu JSON",
+      "expected_exit_nonzero": true,
+      "actual_exit_code": 1,
+      "rejected": true,
+      "result": "REJECTED"
+    },
+    {
+      "test_name": "webhook_called_true",
+      "mutation": "Set webhook_called=true in feishu JSON",
+      "expected_exit_nonzero": true,
+      "actual_exit_code": 1,
+      "rejected": true,
+      "result": "REJECTED"
+    },
+    {
+      "test_name": "trading_called_true",
+      "mutation": "Set trading_called=true in feishu JSON",
+      "expected_exit_nonzero": true,
+      "actual_exit_code": 1,
+      "rejected": true,
+      "result": "REJECTED"
+    },
+    {
+      "test_name": "missing_00700",
+      "mutation": "Remove 00700.HK from feishu JSON",
+      "expected_exit_nonzero": true,
+      "actual_exit_code": 1,
+      "rejected": true,
+      "result": "REJECTED"
+    },
+    {
+      "test_name": "missing_crcl",
+      "mutation": "Remove CRCL from feishu JSON",
+      "expected_exit_nonzero": true,
+      "actual_exit_code": 1,
+      "rejected": true,
+      "result": "REJECTED"
+    },
+    {
+      "test_name": "missing_000002",
+      "mutation": "Remove 000002.SZ from feishu JSON",
+      "expected_exit_nonzero": true,
+      "actual_exit_code": 1,
+      "rejected": true,
+      "result": "REJECTED"
+    },
+    {
+      "test_name": "missing_mobile_link",
+      "mutation": "Remove mobile links from feishu JSON",
+      "expected_exit_nonzero": true,
+      "actual_exit_code": 1,
+      "rejected": true,
+      "result": "REJECTED"
+    },
+    {
+      "test_name": "injected_dummy_secret",
+      "mutation": "Inject dummy secret into feishu JSON",
+      "expected_exit_nonzero": true,
+      "actual_exit_code": 1,
+      "rejected": true,
+      "result": "REJECTED"
+    },
+    {
+      "test_name": "injected_network_send_call",
+      "mutation": "Inject network send call in script",
+      "expected_exit_nonzero": true,
+      "actual_exit_code": 1,
+      "rejected": true,
+      "result": "REJECTED"
+    },
+    {
+      "test_name": "injected_trading_call",
+      "mutation": "Inject trading call in script",
+      "expected_exit_nonzero": true,
+      "actual_exit_code": 1,
+      "rejected": true,
+      "result": "REJECTED"
+    },
+    {
+      "test_name": "invalid_dashboard_degrade",
+      "mutation": "Remove degrade notice from dashboard",
+      "expected_exit_nonzero": true,
+      "actual_exit_code": 1,
+      "rejected": true,
+      "result": "REJECTED"
+    },
+    {
+      "test_name": "duplicate_makefile_target",
+      "mutation": "Create Makefile with duplicate target",
+      "expected_exit_nonzero": true,
+      "actual_exit_code": 1,
+      "rejected": true,
+      "result": "REJECTED"
+    },
+    {
+      "test_name": "duplicate_doc_section",
+      "mutation": "Create doc with duplicate section",
+      "expected_exit_nonzero": true,
+      "actual_exit_code": 1,
+      "rejected": true,
+      "result": "REJECTED"
+    }
+  ]
+}

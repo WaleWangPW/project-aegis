@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000">
+  <defs>
+    <linearGradient id="paper" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#fbf4e8"/>
+      <stop offset="100%" stop-color="#e7ded0"/>
+    </linearGradient>
+    <filter id="paperShadow" x="-20%" y="-20%" width="140%" height="150%">
+      <feDropShadow dx="0" dy="22" stdDeviation="28" flood-color="#614d36" flood-opacity="0.18"/>
+    </filter>
+    <style>
+      .h1 { font-family: "Avenir Next", "SF Pro Display", sans-serif; font-size: 56px; font-weight: 800; fill: #241f18; letter-spacing: -1px; }
+      .h2 { font-family: "Avenir Next", "SF Pro Display", sans-serif; font-size: 27px; font-weight: 750; fill: #2a241b; }
+      .text { font-family: "Avenir Next", "SF Pro Text", sans-serif; font-size: 18px; fill: #62594c; }
+      .muted { font-family: "Avenir Next", "SF Pro Text", sans-serif; font-size: 14px; fill: #8b8173; }
+      .eyebrow { font-family: "Avenir Next", "SF Pro Text", sans-serif; font-size: 13px; letter-spacing: 2px; fill: #8f6d2f; }
+      .panel { fill: rgba(255,255,255,0.74); stroke: rgba(47,39,28,0.11); stroke-width: 1.2; }
+      .inner { fill: rgba(255,252,246,0.9); stroke: rgba(47,39,28,0.08); }
+      .dark { fill: #151b19; }
+      .pill { fill: rgba(34,48,42,0.08); stroke: rgba(34,48,42,0.12); }
+    </style>
+  </defs>
+
+  <rect width="1600" height="1000" fill="url(#paper)"/>
+  <circle cx="1330" cy="155" r="270" fill="#bfa16a" opacity="0.11"/>
+  <circle cx="180" cy="850" r="280" fill="#7d9b86" opacity="0.12"/>
+
+  <text x="88" y="96" class="eyebrow">V2.0 PERSONAL INVESTMENT OS CONCEPT</text>
+  <text x="86" y="160" class="h1">From dashboard to operating workspace</text>
+  <text x="88" y="202" class="text">A calm OS for portfolio, research, evidence, events, and scenario thinking.</text>
+
+  <g filter="url(#paperShadow)">
+    <rect x="72" y="258" width="330" height="650" rx="40" class="dark"/>
+    <text x="112" y="322" font-family="Avenir Next, SF Pro Display, sans-serif" font-size="30" font-weight="750" fill="#f9f1df">Aegis OS</text>
+    <text x="112" y="370" font-family="Avenir Next, SF Pro Text, sans-serif" font-size="17" fill="#a8b1aa">Today</text>
+    <text x="112" y="430" font-family="Avenir Next, SF Pro Text, sans-serif" font-size="21" fill="#f9f1df">Portfolio</text>
+    <text x="112" y="478" font-family="Avenir Next, SF Pro Text, sans-serif" font-size="21" fill="#d9cab0">Research</text>
+    <text x="112" y="526" font-family="Avenir Next, SF Pro Text, sans-serif" font-size="21" fill="#d9cab0">Event Timeline</text>
+    <text x="112" y="574" font-family="Avenir Next, SF Pro Text, sans-serif" font-size="21" fill="#d9cab0">Strategy Library</text>
+    <text x="112" y="622" font-family="Avenir Next, SF Pro Text, sans-serif" font-size="21" fill="#d9cab0">Scenarios</text>
+    <rect x="108" y="800" width="230" height="56" rx="28" fill="rgba(255,255,255,0.08)" stroke="rgba(255,255,255,0.12)"/>
+    <text x="132" y="836" font-family="Avenir Next, SF Pro Text, sans-serif" font-size="17" fill="#f9f1df">Read-only evidence mode</text>
+
+    <rect x="440" y="258" width="1010" height="650" rx="46" class="panel"/>
+    <rect x="466" y="286" width="958" height="594" rx="36" class="inner"/>
+
+    <text x="506" y="346" class="h2">Portfolio and risk budget</text>
+    <rect x="506" y="386" width="260" height="140" rx="28" class="pill"/>
+    <text x="532" y="426" class="muted">Exposure</text>
+    <text x="532" y="478" font-family="Avenir Next, SF Pro Display, sans-serif" font-size="42" font-weight="750" fill="#241f18">62%</text>
+    <text x="532" y="506" class="text">equity allocation</text>
+
+    <rect x="800" y="386" width="260" height="140" rx="28" class="pill"/>
+    <text x="826" y="426" class="muted">Risk budget</text>
+    <text x="826" y="478" font-family="Avenir Next, SF Pro Display, sans-serif" font-size="42" font-weight="750" fill="#241f18">Low</text>
+    <text x="826" y="506" class="text">veto still active</text>
+
+    <rect x="1094" y="386" width="260" height="140" rx="28" class="pill"/>
+    <text x="1120" y="426" class="muted">Cash</text>
+    <text x="1120" y="478" font-family="Avenir Next, SF Pro Display, sans-serif" font-size="42" font-weight="750" fill="#241f18">38%</text>
+    <text x="1120" y="506" class="text">available buffer</text>
+
+    <text x="506" y="592" class="h2">Research workspace</text>
+    <rect x="506" y="630" width="400" height="170" rx="30" fill="#f9f1df" stroke="rgba(47,39,28,0.10)"/>
+    <text x="536" y="674" class="text">Symbol timeline</text>
+    <text x="536" y="716" class="muted">Earnings, announcements, notes, evidence</text>
+    <line x1="540" y1="760" x2="860" y2="760" stroke="#bfa16a" stroke-width="4" stroke-linecap="round"/>
+    <circle cx="575" cy="760" r="8" fill="#2f4a3f"/>
+    <circle cx="705" cy="760" r="8" fill="#bfa16a"/>
+    <circle cx="835" cy="760" r="8" fill="#2f4a3f"/>
+
+    <rect x="946" y="630" width="408" height="170" rx="30" fill="#f9f1df" stroke="rgba(47,39,28,0.10)"/>
+    <text x="976" y="674" class="text">Scenario analysis</text>
+    <text x="976" y="716" class="muted">Rate up, dollar up, sector drawdown</text>
+    <text x="976" y="766" class="text">Impact: watchlist reduced, cash preserved.</text>
+  </g>
+
+  <text x="88" y="952" class="text">Approval focus: choose V2.0 first wedge: Portfolio-first or Research Workspace-first.</text>
+</svg>
+

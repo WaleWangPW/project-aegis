@@ -1,0 +1,15 @@
+# Per Master Spec §20.4 — Decision Engine rules. Evidence voting only,
+# no composite scoring. Decision Engine itself is implemented in Phase 4.
+decision:
+  action:
+    min_support_count: 3
+    min_confidence: 0.65
+    require_invalidation_conditions: true
+    require_risk_no_veto: true
+    require_entry_price: true
+  ready:
+    min_support_count: 2
+    min_confidence: 0.45
+  downgrade:
+    timing_oppose_max_status: Ready
+    risk_veto_max_status: Watch

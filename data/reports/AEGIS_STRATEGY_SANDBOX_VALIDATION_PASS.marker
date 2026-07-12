@@ -1,0 +1,17 @@
+generated_at=2026-07-12T14:11:29+08:00
+exit_code=0
+report_json=/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/aegis_strategy_sandbox_validation_latest.json
+report_json_sha256=ece45915bc7b20aa09fdda865ef9d4a94f2cb9f4107b72f6e9adab1011618028
+report_md=/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/aegis_strategy_sandbox_validation_latest.md
+report_md_sha256=cf43adf2cea81cd9d086b690a26b933cff31446d5ab27d4d527205d7953f7537
+candidate_count=13
+proxy_validated_count=2
+pending_case_count=11
+direct_candidate_backtest_count=0
+network_used=false
+user_facing_suggestion_allowed=false
+no_real_trade=true
+no_broker_api=true
+no_webhook=true
+no_order_placement=true
+no_position_size=true

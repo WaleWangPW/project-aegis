@@ -1,0 +1,35 @@
+{
+  "type": "aegis_stock_feedback_latest",
+  "status": "RECORDED",
+  "event": {
+    "event_id": "aegis_stock_feedback_20260712T053815354605Z",
+    "received_at": "2026-07-12T13:38:15.354760+08:00",
+    "source": "openclaw_stock_assistant_feishu_card",
+    "action": "aegis_more_news",
+    "feedback_type": "user_requests_more_news",
+    "symbol": "HOOD",
+    "name": "Robinhood Markets",
+    "market": "US",
+    "status": "research_candidate",
+    "score": 10,
+    "raw_value_sha256": "8872d2e997234903b8182c1d93e992445f2c483ca180a7dc92bec19883a298cd",
+    "record_mode": "feedback_evidence_only",
+    "effects": {
+      "recommendation_mutated": false,
+      "paper_trade_created": false,
+      "holding_mutated": false,
+      "broker_called": false,
+      "order_placed": false,
+      "trading_webhook_called": false
+    }
+  },
+  "event_log": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/records/aegis_stock_feedback_events.jsonl",
+  "safety": {
+    "recommendation_mutated": false,
+    "paper_trade_created": false,
+    "holding_mutated": false,
+    "broker_called": false,
+    "order_placed": false,
+    "trading_webhook_called": false
+  }
+}

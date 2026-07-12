@@ -1,0 +1,83 @@
+{
+  "overall_status": "PASS",
+  "acceptance_target": "V2.8-I Real User API Handoff Refresh",
+  "generated_at": "2026-07-11T20:45:03.680225+08:00",
+  "run_id": "v2_8_i_20260711_acceptance",
+  "command": "validate_v2_8_i_real_user_api_handoff_refresh.py --run-id v2_8_i_20260711_acceptance",
+  "network_used": false,
+  "production_records_written": false,
+  "dashboard_contract_changed": false,
+  "run_dir": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v2_8_i_acceptance/v2_8_i_20260711_acceptance",
+  "handoff_doc": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/docs/API_CONFIGURATION_HANDOFF.md",
+  "refresh_doc": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/docs/V2_8_I_REAL_USER_API_HANDOFF_REFRESH.md",
+  "user_template": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/config/external_api_connectors.user-template.json",
+  "template_copy": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v2_8_i_acceptance/v2_8_i_20260711_acceptance/external_api_connectors.user-template.json",
+  "validated_registry_json": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v2_8_i_acceptance/v2_8_i_20260711_acceptance/candidate_refresh_api_connector_registry.json",
+  "real_user_config_path": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/config/external_api_connectors.local.json",
+  "real_user_config_status": "blocked_missing_metadata",
+  "checks": {
+    "handoff_doc_exists": true,
+    "refresh_doc_exists": true,
+    "user_template_exists": true,
+    "docs_require_non_secret_metadata": true,
+    "docs_define_candidate_refresh_fields": true,
+    "template_has_connector": true,
+    "template_connector_required_fields": true,
+    "template_candidate_schema_ok": true,
+    "template_parses_existing_policy_model": true,
+    "template_policy_allows_research_connector": true,
+    "allowed_purposes_are_candidate_refresh_only": true,
+    "env_var_names_only": true,
+    "no_secret_values_in_template": true,
+    "no_broker_or_webhook": true,
+    "real_user_config_status_recorded": true,
+    "no_production_records_mutation": true,
+    "dashboard_contract_unchanged": true
+  },
+  "summary": {
+    "connector_count": 1,
+    "allow_count": 1,
+    "deny_count": 0,
+    "required_env_vars": [
+      "AEGIS_CANDIDATE_REFRESH_API_KEY"
+    ],
+    "candidate_refresh_fields": [
+      "allowed_markets",
+      "candidate_summary_only",
+      "freshness_policy",
+      "items_path",
+      "market_field",
+      "max_items_per_market",
+      "name_field",
+      "score_field",
+      "status_field",
+      "symbol_field"
+    ],
+    "next_target": "V2.8-J Real User API Candidate Refresh Dry Run After Local Metadata"
+  },
+  "safety": {
+    "metadata_template_only": true,
+    "env_values_not_stored": true,
+    "env_var_names_only": true,
+    "no_raw_api_response": true,
+    "no_request_headers_stored": true,
+    "candidate_refresh_research_input_only": true,
+    "requires_historical_sandbox": true,
+    "requires_suggestion_gate": true,
+    "simulation_only": true,
+    "manual_external_execution_only": true,
+    "no_real_trade": true,
+    "no_broker_api": true,
+    "no_trading_webhook": true,
+    "no_order_placement": true,
+    "dashboard_contract_unchanged": true,
+    "no_production_records_mutation": true
+  },
+  "hashes": {
+    "handoff_doc": "3a1b94906f702e3f865325cb930abfdb0deabfca859fa19861c6172a0316cd50",
+    "refresh_doc": "cff20dfc07d18f0fada2be639674dc2ccc6e34827a70a1f8ec67cf333732cfa3",
+    "user_template": "930bc3f7c2d63bc7e4b817d31b1d20c772292d41fee0be8cc0ed012e2294a01f",
+    "template_copy": "ad46369429d27f8cbb94f5486d82850ce93fd544f48585938b7a6c10e7f19110",
+    "validated_registry_json": "633f4707003d042b73d5df92967fc4132f4a820ab193b930fb8bc97144cd3bfa"
+  }
+}

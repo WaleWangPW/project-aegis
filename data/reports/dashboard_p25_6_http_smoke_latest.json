@@ -1,0 +1,17 @@
+{
+  "project": "Project Aegis",
+  "type": "p25_6_real_usage_http_smoke",
+  "generated_at": "2026-07-11T06:54:08.270999+00:00",
+  "tested_url": "http://localhost:8080/dashboard/index.html",
+  "overall_verdict": "PASS",
+  "checks": {
+    "index_http_200": true,
+    "css_http_200": true,
+    "js_http_200": true,
+    "contract_meta": true,
+    "correct_assets": true,
+    "no_bad_report_path": true,
+    "all_real_report_fetches_http_200": true,
+    "report_statuses": {}
+  }
+}

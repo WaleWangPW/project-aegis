@@ -1,0 +1,29 @@
+{
+  "plan_id": "计划ID",
+  "strategy_id": "策略ID",
+  "run_id": "运行ID",
+  "generated_at": "生成时间",
+  "period": "期间",
+  "point_in_time_required": "是否需要时点数据",
+  "static_snapshot_backtest": "是否为静态快照回测",
+  "lookahead_bias_control_passed": "前瞻偏差控制是否通过",
+  "signal_snapshots_count": "信号快照数量",
+  "rebalance_records": "调仓记录",
+  "selected_symbols_by_period": "各期选中的股票",
+  "portfolio_metrics": {
+    "total_return": "总收益",
+    "annualized_return": "年化收益",
+    "max_drawdown": "最大回撤",
+    "volatility": "波动率",
+    "sharpe": "夏普比率",
+    "win_rate": "胜率"
+  },
+  "benchmark_metrics": "基准指标",
+  "excess_return": "超额收益",
+  "period_returns": "期间收益",
+  "risk_events": "风险事件",
+  "data_quality_warnings": "数据质量警告",
+  "dry_run": "是否为dry run",
+  "sent": "是否发送",
+  "trading_called": "是否调用了交易"
+}

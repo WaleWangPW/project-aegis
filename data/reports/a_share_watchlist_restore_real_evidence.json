@@ -1,0 +1,58 @@
+{
+  "project": "Project Aegis",
+  "task": "P21.6d-top5-restore-real",
+  "generated_at": "2026-07-10T04:09:58.123456+08:00",
+  "evidence_type": "a_share_watchlist_restore_real",
+  "sha256_12": null,
+  "records_count": 23,
+  "watchlist_top5": [
+    "600519.SH",
+    "600036.SH",
+    "000858.SZ",
+    "000001.SZ",
+    "601398.SH"
+  ],
+  "feishu_top5": [
+    "600519.SH",
+    "600036.SH",
+    "000858.SZ",
+    "000001.SZ",
+    "601398.SH"
+  ],
+  "history_latest_top5": [
+    "600519.SH",
+    "600036.SH",
+    "000858.SZ",
+    "000001.SZ",
+    "601398.SH"
+  ],
+  "failures_file_exists": true,
+  "command_results": {
+    "generate_a_share_watchlist": {
+      "exit_code": 0,
+      "success": true
+    },
+    "refresh_feishu_dry_run": {
+      "exit_code": 0,
+      "success": true
+    },
+    "update_aegis_pipeline_history": {
+      "exit_code": 0,
+      "success": true
+    }
+  },
+  "gate_overall_verdict": "FAIL",
+  "safety_confirmations": {
+    "no_real_send": true,
+    "no_webhook_call": true,
+    "no_secret_output": true,
+    "no_trading_call": true,
+    "cron_not_modified": true
+  },
+  "validation_results": {
+    "json_files_parsable": true,
+    "records_count_gte_20": true,
+    "watchlist_top5_matches_p19_10": true,
+    "sha256_12_valid": true
+  }
+}

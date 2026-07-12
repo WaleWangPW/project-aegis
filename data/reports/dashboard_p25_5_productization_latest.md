@@ -1,0 +1,21 @@
+# P25.5 产品化验证
+
+- contract_meta: PASS
+- index_equals_v2: PASS
+- node_source_present: PASS
+- required_chinese_copy: PASS
+- decision_order: PASS
+- risk_before_candidates: PASS
+- research_collapsed: PASS
+- system_details_collapsed: PASS
+- action_empty_state: PASS
+- data_insufficient_blocks: PASS
+- no_horizontal_scroll: PASS
+- media_390: PASS
+- touch_targets: PASS
+- no_prohibited: PASS
+- no_trade_send: PASS
+- no_secrets: PASS
+- no_composite_score: PASS
+- read_only_reports: PASS
+- derive_logic_unchanged: PASS

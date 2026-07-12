@@ -1,0 +1,151 @@
+{
+  "overall_status": "PASS",
+  "acceptance_target": "V2.12-A EODHD Twelve Data H-US Provider Probe",
+  "run_id": "v2_12_a_20260712_acceptance",
+  "generated_at": "2026-07-12T00:14:49+08:00",
+  "command": "validate_v2_12_a_eodhd_twelve_h_us_provider_probe.py --run-id v2_12_a_20260712_acceptance",
+  "network_used": true,
+  "production_records_written": false,
+  "dashboard_contract_changed": false,
+  "summary": {
+    "case_count": 4,
+    "pass_count": 3,
+    "fail_count": 1,
+    "blocked_count": 0,
+    "h_us_provider_status": {
+      "H": [
+        "eodhd"
+      ],
+      "US": [
+        "eodhd",
+        "twelve_data"
+      ]
+    },
+    "next_stage": "V2.12-B H-US Provider Metadata Activation"
+  },
+  "results": [
+    {
+      "provider": "eodhd",
+      "market": "US",
+      "symbol": "AAPL.US",
+      "data_type": "daily_bars",
+      "required_env_var": "AEGIS_EODHD_API_TOKEN",
+      "env_present": true,
+      "request_url_stored": false,
+      "raw_payload_stored": false,
+      "token_value_stored": false,
+      "status": "pass",
+      "ok": true,
+      "http_status": 200,
+      "summary": {
+        "shape": "list",
+        "rows": 2,
+        "has_close": true,
+        "first_date": "2026-07-01",
+        "last_date": "2026-07-02"
+      },
+      "summary_sha256": "909b99148c24a9579d33869d512aacf9a65e338a273d03269d95ee1beea4353c",
+      "blocked_by": []
+    },
+    {
+      "provider": "eodhd",
+      "market": "H",
+      "symbol": "0700.HK",
+      "data_type": "daily_bars",
+      "required_env_var": "AEGIS_EODHD_API_TOKEN",
+      "env_present": true,
+      "request_url_stored": false,
+      "raw_payload_stored": false,
+      "token_value_stored": false,
+      "status": "pass",
+      "ok": true,
+      "http_status": 200,
+      "summary": {
+        "shape": "list",
+        "rows": 2,
+        "has_close": true,
+        "first_date": "2026-07-02",
+        "last_date": "2026-07-03"
+      },
+      "summary_sha256": "acfe4b3ea25a161e65b2ae382e89c772120fc123b3cfcda2abf7ead4b6486150",
+      "blocked_by": []
+    },
+    {
+      "provider": "twelve_data",
+      "market": "US",
+      "symbol": "AAPL",
+      "data_type": "daily_bars",
+      "required_env_var": "AEGIS_TWELVE_DATA_API_KEY",
+      "env_present": true,
+      "request_url_stored": false,
+      "raw_payload_stored": false,
+      "token_value_stored": false,
+      "status": "pass",
+      "ok": true,
+      "http_status": 200,
+      "summary": {
+        "shape": "dict",
+        "api_status": "ok",
+        "rows": 1,
+        "has_close": true,
+        "first_datetime": "2026-07-10"
+      },
+      "summary_sha256": "4e92f8ebc940fb5fc949bdf75e9dd8da9a599f162106ca7f4f7e41536062f5d6",
+      "blocked_by": []
+    },
+    {
+      "provider": "twelve_data",
+      "market": "H",
+      "symbol": "0700",
+      "data_type": "daily_bars",
+      "required_env_var": "AEGIS_TWELVE_DATA_API_KEY",
+      "env_present": true,
+      "request_url_stored": false,
+      "raw_payload_stored": false,
+      "token_value_stored": false,
+      "status": "fail",
+      "ok": false,
+      "error_type": "HTTPError",
+      "blocked_by": [
+        "fetch_error"
+      ]
+    }
+  ],
+  "checks": {
+    "env_var_names_only": true,
+    "no_secret_values_stored": true,
+    "request_urls_not_stored": true,
+    "raw_payloads_not_stored": true,
+    "at_least_one_h_provider_passed": true,
+    "at_least_one_us_provider_passed": true,
+    "eodhd_us_passed": true,
+    "eodhd_h_passed": true,
+    "twelve_data_us_passed": true,
+    "twelve_data_h_recorded": true,
+    "no_real_trade": true,
+    "no_broker_api": true,
+    "no_trading_webhook": true,
+    "no_order_placement": true,
+    "no_production_records_mutation": true,
+    "dashboard_contract_unchanged": true
+  },
+  "safety": {
+    "market_data_probe_only": true,
+    "summary_hash_only": true,
+    "no_secret_values_stored": true,
+    "no_raw_payload_storage": true,
+    "no_request_url_storage": true,
+    "no_real_trade": true,
+    "no_broker_api": true,
+    "no_trading_webhook": true,
+    "no_order_placement": true,
+    "no_production_records_mutation": true,
+    "dashboard_contract_unchanged": true
+  },
+  "run_report_json": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v2_12_a_acceptance/v2_12_a_20260712_acceptance/eodhd_twelve_h_us_provider_probe_report.json",
+  "run_report_md": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v2_12_a_acceptance/v2_12_a_20260712_acceptance/eodhd_twelve_h_us_provider_probe_report.md",
+  "hashes": {
+    "run_report_json": "a1387d9f6857d3d03f76022d1ca7f063e54a886bed981bd5288e7a8caf0f3c1e",
+    "run_report_md": "21395eb60fd4261c685d457bbabbc380a6dc0f9bd7581fb0b6c7b818e26fc313"
+  }
+}

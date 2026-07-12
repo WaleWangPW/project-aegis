@@ -1,0 +1,37 @@
+{
+  "schema_version": "external_api_connectors.user_template.v2_8_i",
+  "connectors": [
+    {
+      "connector_id": "api_user_candidate_refresh_approved_env",
+      "name": "User Approved Candidate Refresh API",
+      "provider_type": "user_provided_research_api",
+      "markets": ["A", "H", "US"],
+      "base_url": "https://api.example-candidate-provider.invalid/v1",
+      "auth_method": "env_var",
+      "required_env_vars": ["AEGIS_CANDIDATE_REFRESH_API_KEY"],
+      "license_status": "approved",
+      "retention_policy": "summary_only",
+      "allowed_purposes": ["candidate_refresh", "strategy_research_ingestion"],
+      "can_connect": true,
+      "endpoint_path": "/candidate-refresh",
+      "request_query_template": {
+        "markets": "A,H,US",
+        "purpose": "candidate_refresh"
+      },
+      "candidate_payload_schema": {
+        "items_path": "items",
+        "symbol_field": "symbol",
+        "market_field": "market",
+        "name_field": "name",
+        "score_field": "score",
+        "status_field": "status",
+        "allowed_markets": ["A", "H", "US"],
+        "max_items_per_market": 50,
+        "freshness_policy": "same_day_or_latest_available",
+        "candidate_summary_only": true
+      },
+      "rate_limit_note": "Respect provider terms; do not scrape or bypass paywalls.",
+      "notes": "Template only. Put real non-secret metadata in config/external_api_connectors.local.json and store the actual API key only in the named local environment variable."
+    }
+  ]
+}

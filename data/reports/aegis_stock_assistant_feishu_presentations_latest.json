@@ -1,0 +1,278 @@
+[
+  {
+    "title": "Aegis 候选 1: VRTX Vertex Pharmaceuticals",
+    "tone": "success",
+    "blocks": [
+      {
+        "type": "text",
+        "text": "**1. 美股 VRTX · Vertex Pharmaceuticals**\n结论：可加入模拟观察，等待你确认。\n公司：Healthcare：Vertex Pharmaceuticals Incorporated operates as a biotechnol…\n行情：现价 `485.39`｜当日 `+0.3%`｜1年 `+1.2%`\n位置：买点 `472.40`｜止损 `401.54`｜趋势 `向上`\n理由：↑趋势 | 📍近买点\n资讯摘要：\n- 2026-07-12 Vertex：CASGEVY 获 FDA 扩大适应症批准，ALYFTREK 在加拿大推进。\n- 2026-07-11 Vertex 拟以约 100 亿美元押注 Crinetics，扩展内分泌业务。\n风险：需人工核对实时行情、公告、新闻和持仓冲突"
+      },
+      {
+        "type": "divider"
+      },
+      {
+        "type": "buttons",
+        "buttons": [
+          {
+            "label": "加入模拟观察",
+            "style": "primary",
+            "action": {
+              "type": "command",
+              "command": "Aegis反馈 US VRTX Vertex Pharmaceuticals Incorporated 加入模拟观察"
+            }
+          },
+          {
+            "label": "暂不关注",
+            "style": "default",
+            "action": {
+              "type": "command",
+              "command": "Aegis反馈 US VRTX Vertex Pharmaceuticals Incorporated 暂不关注"
+            }
+          },
+          {
+            "label": "要更多资讯",
+            "style": "default",
+            "action": {
+              "type": "command",
+              "command": "Aegis反馈 US VRTX Vertex Pharmaceuticals Incorporated 要更多资讯"
+            }
+          }
+        ]
+      },
+      {
+        "type": "context",
+        "text": "仅模拟研究。按钮只向股票助手回传你的研究反馈，不触发真实交易、券商 API、Webhook 或下单。"
+      }
+    ]
+  },
+  {
+    "title": "Aegis 候选 2: AMAT Applied Materials",
+    "tone": "success",
+    "blocks": [
+      {
+        "type": "text",
+        "text": "**2. 美股 AMAT · Applied Materials**\n结论：可加入模拟观察，等待你确认。\n公司：Technology：Applied Materials, Inc. provides materials engineering solut…\n行情：现价 `602.50`｜当日 `+1.1%`｜1年 `+206.5%`\n位置：买点 `596.54`｜止损 `507.06`｜趋势 `向上`\n理由：↑趋势 | 📍近买点 | ⚠一年涨>200%\n资讯摘要：\n- 2026-07-11 Goldman Sachs 重申看好 Applied Materials 目标价，需继续核对估值与周期位置。\n风险：一年涨幅过高，追高风险"
+      },
+      {
+        "type": "divider"
+      },
+      {
+        "type": "buttons",
+        "buttons": [
+          {
+            "label": "加入模拟观察",
+            "style": "primary",
+            "action": {
+              "type": "command",
+              "command": "Aegis反馈 US AMAT Applied Materials, Inc. 加入模拟观察"
+            }
+          },
+          {
+            "label": "暂不关注",
+            "style": "default",
+            "action": {
+              "type": "command",
+              "command": "Aegis反馈 US AMAT Applied Materials, Inc. 暂不关注"
+            }
+          },
+          {
+            "label": "要更多资讯",
+            "style": "default",
+            "action": {
+              "type": "command",
+              "command": "Aegis反馈 US AMAT Applied Materials, Inc. 要更多资讯"
+            }
+          }
+        ]
+      },
+      {
+        "type": "context",
+        "text": "仅模拟研究。按钮只向股票助手回传你的研究反馈，不触发真实交易、券商 API、Webhook 或下单。"
+      }
+    ]
+  },
+  {
+    "title": "Aegis 候选 3: 00005 汇丰控股",
+    "tone": "success",
+    "blocks": [
+      {
+        "type": "text",
+        "text": "**3. 港股 00005 · 汇丰控股**\n结论：可加入模拟观察，等待你确认。\n公司：EODHD 港股日线轻量候选\n行情：现价 `153.50`｜当日 `+10.8%`｜1年 `+27.6%`\n位置：买点 `145.57`｜止损 `123.74`｜趋势 `向上`\n理由：↑趋势 | 20日动量强 | 年内正动量\n资讯摘要：\n- 2026-07-10 HSBC 财报季关注名单提到 Amazon、Microsoft、Meta，说明大型科技仍是机构重点线索。\n- 2026-07-08 HSBC 在行业担忧升温下收紧私募信贷策略，偏风险控制信号。\n风险：需人工核对实时行情、公告、新闻和持仓冲突"
+      },
+      {
+        "type": "divider"
+      },
+      {
+        "type": "buttons",
+        "buttons": [
+          {
+            "label": "加入模拟观察",
+            "style": "primary",
+            "action": {
+              "type": "command",
+              "command": "Aegis反馈 HK 00005 汇丰控股 加入模拟观察"
+            }
+          },
+          {
+            "label": "暂不关注",
+            "style": "default",
+            "action": {
+              "type": "command",
+              "command": "Aegis反馈 HK 00005 汇丰控股 暂不关注"
+            }
+          },
+          {
+            "label": "要更多资讯",
+            "style": "default",
+            "action": {
+              "type": "command",
+              "command": "Aegis反馈 HK 00005 汇丰控股 要更多资讯"
+            }
+          }
+        ]
+      },
+      {
+        "type": "context",
+        "text": "仅模拟研究。按钮只向股票助手回传你的研究反馈，不触发真实交易、券商 API、Webhook 或下单。"
+      }
+    ]
+  },
+  {
+    "title": "Aegis 候选 4: MRNA Moderna",
+    "tone": "success",
+    "blocks": [
+      {
+        "type": "text",
+        "text": "**4. 美股 MRNA · Moderna**\n结论：可加入模拟观察，等待你确认。\n公司：Healthcare：Moderna, Inc., a biotechnology company, provides messenger R…\n行情：现价 `68.27`｜当日 `+1.5%`｜1年 `+99.2%`\n位置：买点 `64.33`｜止损 `54.68`｜趋势 `向上`\n理由：↑趋势\n资讯摘要：\n- 2026-07-10 美股日报：道指收高，SK Hynix 美股首秀上涨，Moderna 下跌。\n风险：需人工核对实时行情、公告、新闻和持仓冲突"
+      },
+      {
+        "type": "divider"
+      },
+      {
+        "type": "buttons",
+        "buttons": [
+          {
+            "label": "加入模拟观察",
+            "style": "primary",
+            "action": {
+              "type": "command",
+              "command": "Aegis反馈 US MRNA Moderna, Inc. 加入模拟观察"
+            }
+          },
+          {
+            "label": "暂不关注",
+            "style": "default",
+            "action": {
+              "type": "command",
+              "command": "Aegis反馈 US MRNA Moderna, Inc. 暂不关注"
+            }
+          },
+          {
+            "label": "要更多资讯",
+            "style": "default",
+            "action": {
+              "type": "command",
+              "command": "Aegis反馈 US MRNA Moderna, Inc. 要更多资讯"
+            }
+          }
+        ]
+      },
+      {
+        "type": "context",
+        "text": "仅模拟研究。按钮只向股票助手回传你的研究反馈，不触发真实交易、券商 API、Webhook 或下单。"
+      }
+    ]
+  },
+  {
+    "title": "Aegis 候选 5: HOOD Robinhood Markets",
+    "tone": "success",
+    "blocks": [
+      {
+        "type": "text",
+        "text": "**5. 美股 HOOD · Robinhood Markets**\n结论：可加入模拟观察，等待你确认。\n公司：Financial Services：Robinhood Markets, Inc. operates financial services …\n行情：现价 `111.97`｜当日 `+1.1%`｜1年 `+13.4%`\n位置：买点 `102.24`｜止损 `86.90`｜趋势 `向上`\n理由：↑趋势\n资讯摘要：\n- 2026-07-11 Cathie Wood 买入约 2280 万美元热门科技股，HOOD 仍需警惕情绪拥挤。\n- 2026-07-11 Robinhood 投资者持有的热门 AI 股票名单，可作为散户偏好温度计。\n风险：需人工核对实时行情、公告、新闻和持仓冲突"
+      },
+      {
+        "type": "divider"
+      },
+      {
+        "type": "buttons",
+        "buttons": [
+          {
+            "label": "加入模拟观察",
+            "style": "primary",
+            "action": {
+              "type": "command",
+              "command": "Aegis反馈 US HOOD Robinhood Markets, Inc. 加入模拟观察"
+            }
+          },
+          {
+            "label": "暂不关注",
+            "style": "default",
+            "action": {
+              "type": "command",
+              "command": "Aegis反馈 US HOOD Robinhood Markets, Inc. 暂不关注"
+            }
+          },
+          {
+            "label": "要更多资讯",
+            "style": "default",
+            "action": {
+              "type": "command",
+              "command": "Aegis反馈 US HOOD Robinhood Markets, Inc. 要更多资讯"
+            }
+          }
+        ]
+      },
+      {
+        "type": "context",
+        "text": "仅模拟研究。按钮只向股票助手回传你的研究反馈，不触发真实交易、券商 API、Webhook 或下单。"
+      }
+    ]
+  },
+  {
+    "title": "Aegis 候选 6: PANW Palo Alto Networks",
+    "tone": "success",
+    "blocks": [
+      {
+        "type": "text",
+        "text": "**6. 美股 PANW · Palo Alto Networks**\n结论：可加入模拟观察，等待你确认。\n公司：Technology：Palo Alto Networks, Inc. provides cybersecurity solutions in…\n行情：现价 `325.91`｜当日 `+0.9%`｜1年 `+69.7%`\n位置：买点 `304.09`｜止损 `258.47`｜趋势 `向上`\n理由：↑趋势\n资讯摘要：\n- 2026-07-11 内部人交易追踪提到 Palo Alto Networks、TSMC、Sony 等重点公司。\n风险：需人工核对实时行情、公告、新闻和持仓冲突"
+      },
+      {
+        "type": "divider"
+      },
+      {
+        "type": "buttons",
+        "buttons": [
+          {
+            "label": "加入模拟观察",
+            "style": "primary",
+            "action": {
+              "type": "command",
+              "command": "Aegis反馈 US PANW Palo Alto Networks, Inc. 加入模拟观察"
+            }
+          },
+          {
+            "label": "暂不关注",
+            "style": "default",
+            "action": {
+              "type": "command",
+              "command": "Aegis反馈 US PANW Palo Alto Networks, Inc. 暂不关注"
+            }
+          },
+          {
+            "label": "要更多资讯",
+            "style": "default",
+            "action": {
+              "type": "command",
+              "command": "Aegis反馈 US PANW Palo Alto Networks, Inc. 要更多资讯"
+            }
+          }
+        ]
+      },
+      {
+        "type": "context",
+        "text": "仅模拟研究。按钮只向股票助手回传你的研究反馈，不触发真实交易、券商 API、Webhook 或下单。"
+      }
+    ]
+  }
+]

@@ -1,0 +1,288 @@
+{
+  "overall_status": "PASS",
+  "generated_at": "2026-07-11T18:42:04.974746+08:00",
+  "run_id": "v2_4_d_20260711_acceptance",
+  "command": "validate_v2_4_d_research_hypotheses_suggestion_gate.py --run-id v2_4_d_20260711_acceptance",
+  "acceptance_target": "V2.4-D Research Hypotheses To Suggestion Gate Drafts",
+  "isolated": true,
+  "network_used": false,
+  "production_records_written": false,
+  "dashboard_contract_changed": false,
+  "summary": {
+    "opportunity_count": 6,
+    "draft_count": 6,
+    "allowed_count": 3,
+    "blocked_count": 3,
+    "allowed_suggestions": [
+      "sug_research_hyp_a_low_vol_dividend_defensive",
+      "sug_research_hyp_h_low_vol_dividend",
+      "sug_research_hyp_us_value_quality_momentum"
+    ],
+    "blocked_suggestions": [
+      "sug_research_hyp_a_value_quality_multifactor",
+      "sug_research_hyp_h_smart_beta_multifactor",
+      "sug_research_hyp_us_low_vol_risk_overlay"
+    ]
+  },
+  "suggestions": [
+    {
+      "suggestion_id": "sug_research_hyp_a_low_vol_dividend_defensive",
+      "opportunity_id": "research_hyp_a_low_vol_dividend_defensive",
+      "strategy_id": "strategy_a_low_vol_dividend_defensive",
+      "symbol": "A_LOW_VOL_DIVIDEND_PAPER_BASKET",
+      "market": "A",
+      "action": "paper_entry_candidate",
+      "simulation_only": true,
+      "user_must_execute_externally": true,
+      "reasons": [
+        "A-share names with lower realized volatility and stronger dividend profile may reduce drawdown while preserving acceptable forward return.",
+        "sandbox_status=PASS",
+        "win_rate=0.7500",
+        "average_return=0.0167",
+        "max_drawdown=-0.0520"
+      ],
+      "risk_warnings": [
+        "Research-hypothesis draft only; not a production recommendation.",
+        "No live price, order size, or broker execution is produced.",
+        "liquidity_filter",
+        "max_drawdown_floor",
+        "dividend_trap_check",
+        "Simulation-only draft; user decides and executes manually outside Aegis."
+      ],
+      "evidence_refs": [
+        "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/v2_4_c_historical_sandbox_research_hypotheses_latest.json",
+        "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/V2_4_C_HISTORICAL_SANDBOX_RESEARCH_HYPOTHESES_PASS.marker",
+        "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v2_4_c_acceptance/v2_4_c_20260711_acceptance/hypothesis_sandbox_report.json"
+      ],
+      "blocked_by": [],
+      "created_at": "2026-07-11T18:42:04.974605+08:00"
+    },
+    {
+      "suggestion_id": "sug_research_hyp_a_value_quality_multifactor",
+      "opportunity_id": "research_hyp_a_value_quality_multifactor",
+      "strategy_id": "strategy_a_value_quality_multifactor",
+      "symbol": "A_VALUE_QUALITY_PAPER_BASKET",
+      "market": "A",
+      "action": "blocked",
+      "simulation_only": true,
+      "user_must_execute_externally": true,
+      "reasons": [
+        "A-share candidates that combine reasonable valuation with profitability and cash-flow quality may outperform single-factor value screens.",
+        "sandbox_status=FAIL",
+        "win_rate=0.5000",
+        "average_return=-0.0090",
+        "max_drawdown=-0.0950",
+        "failed_reasons=average_return_below_threshold,max_drawdown_breached"
+      ],
+      "risk_warnings": [
+        "Research-hypothesis draft only; not a production recommendation.",
+        "No live price, order size, or broker execution is produced.",
+        "liquidity_filter",
+        "financial_quality_check",
+        "policy_event_note",
+        "Simulation-only draft; user decides and executes manually outside Aegis."
+      ],
+      "evidence_refs": [
+        "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/v2_4_c_historical_sandbox_research_hypotheses_latest.json",
+        "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/V2_4_C_HISTORICAL_SANDBOX_RESEARCH_HYPOTHESES_PASS.marker",
+        "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v2_4_c_acceptance/v2_4_c_20260711_acceptance/hypothesis_sandbox_report.json"
+      ],
+      "blocked_by": [
+        "strategy_sandbox_not_passed"
+      ],
+      "created_at": "2026-07-11T18:42:04.974605+08:00"
+    },
+    {
+      "suggestion_id": "sug_research_hyp_h_low_vol_dividend",
+      "opportunity_id": "research_hyp_h_low_vol_dividend",
+      "strategy_id": "strategy_h_low_vol_dividend",
+      "symbol": "H_LOW_VOL_DIVIDEND_PAPER_BASKET",
+      "market": "H",
+      "action": "paper_entry_candidate",
+      "simulation_only": true,
+      "user_must_execute_externally": true,
+      "reasons": [
+        "Hong Kong lower-volatility dividend candidates may be useful defensive ideas if liquidity and event risks are controlled.",
+        "sandbox_status=PASS",
+        "win_rate=0.7500",
+        "average_return=0.0110",
+        "max_drawdown=-0.0550"
+      ],
+      "risk_warnings": [
+        "Research-hypothesis draft only; not a production recommendation.",
+        "No live price, order size, or broker execution is produced.",
+        "liquidity_filter",
+        "event_risk_block",
+        "max_drawdown_floor",
+        "Simulation-only draft; user decides and executes manually outside Aegis."
+      ],
+      "evidence_refs": [
+        "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/v2_4_c_historical_sandbox_research_hypotheses_latest.json",
+        "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/V2_4_C_HISTORICAL_SANDBOX_RESEARCH_HYPOTHESES_PASS.marker",
+        "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v2_4_c_acceptance/v2_4_c_20260711_acceptance/hypothesis_sandbox_report.json"
+      ],
+      "blocked_by": [],
+      "created_at": "2026-07-11T18:42:04.974605+08:00"
+    },
+    {
+      "suggestion_id": "sug_research_hyp_h_smart_beta_multifactor",
+      "opportunity_id": "research_hyp_h_smart_beta_multifactor",
+      "strategy_id": "strategy_h_smart_beta_multifactor",
+      "symbol": "H_SMART_BETA_PAPER_BASKET",
+      "market": "H",
+      "action": "blocked",
+      "simulation_only": true,
+      "user_must_execute_externally": true,
+      "reasons": [
+        "Hong Kong smart-beta factors may require regime-aware blending rather than one dominant factor.",
+        "sandbox_status=FAIL",
+        "win_rate=0.2500",
+        "average_return=-0.0113",
+        "max_drawdown=-0.1120",
+        "failed_reasons=win_rate_below_threshold,average_return_below_threshold,max_drawdown_breached"
+      ],
+      "risk_warnings": [
+        "Research-hypothesis draft only; not a production recommendation.",
+        "No live price, order size, or broker execution is produced.",
+        "stock_connect_awareness",
+        "liquidity_filter",
+        "event_risk_block",
+        "Simulation-only draft; user decides and executes manually outside Aegis."
+      ],
+      "evidence_refs": [
+        "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/v2_4_c_historical_sandbox_research_hypotheses_latest.json",
+        "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/V2_4_C_HISTORICAL_SANDBOX_RESEARCH_HYPOTHESES_PASS.marker",
+        "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v2_4_c_acceptance/v2_4_c_20260711_acceptance/hypothesis_sandbox_report.json"
+      ],
+      "blocked_by": [
+        "strategy_sandbox_not_passed"
+      ],
+      "created_at": "2026-07-11T18:42:04.974605+08:00"
+    },
+    {
+      "suggestion_id": "sug_research_hyp_us_low_vol_risk_overlay",
+      "opportunity_id": "research_hyp_us_low_vol_risk_overlay",
+      "strategy_id": "strategy_us_low_vol_risk_overlay",
+      "symbol": "US_LOW_VOL_RISK_OVERLAY_PAPER_BASKET",
+      "market": "US",
+      "action": "blocked",
+      "simulation_only": true,
+      "user_must_execute_externally": true,
+      "reasons": [
+        "Low-volatility U.S. candidates may need valuation and momentum context to avoid cycle-specific underperformance.",
+        "sandbox_status=FAIL",
+        "win_rate=0.2500",
+        "average_return=-0.0111",
+        "max_drawdown=-0.1050",
+        "failed_reasons=win_rate_below_threshold,average_return_below_threshold,max_drawdown_breached"
+      ],
+      "risk_warnings": [
+        "Research-hypothesis draft only; not a production recommendation.",
+        "No live price, order size, or broker execution is produced.",
+        "max_drawdown_floor",
+        "valuation_context_check",
+        "momentum_context_check",
+        "Simulation-only draft; user decides and executes manually outside Aegis."
+      ],
+      "evidence_refs": [
+        "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/v2_4_c_historical_sandbox_research_hypotheses_latest.json",
+        "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/V2_4_C_HISTORICAL_SANDBOX_RESEARCH_HYPOTHESES_PASS.marker",
+        "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v2_4_c_acceptance/v2_4_c_20260711_acceptance/hypothesis_sandbox_report.json"
+      ],
+      "blocked_by": [
+        "strategy_sandbox_not_passed"
+      ],
+      "created_at": "2026-07-11T18:42:04.974605+08:00"
+    },
+    {
+      "suggestion_id": "sug_research_hyp_us_value_quality_momentum",
+      "opportunity_id": "research_hyp_us_value_quality_momentum",
+      "strategy_id": "strategy_us_value_quality_momentum",
+      "symbol": "US_VALUE_QUALITY_MOMENTUM_PAPER_BASKET",
+      "market": "US",
+      "action": "paper_entry_candidate",
+      "simulation_only": true,
+      "user_must_execute_externally": true,
+      "reasons": [
+        "U.S. candidates with complementary value, quality, and momentum evidence may be more robust than a single-factor ranking.",
+        "sandbox_status=PASS",
+        "win_rate=0.7500",
+        "average_return=0.0146",
+        "max_drawdown=-0.0680"
+      ],
+      "risk_warnings": [
+        "Research-hypothesis draft only; not a production recommendation.",
+        "No live price, order size, or broker execution is produced.",
+        "sector_concentration_check",
+        "drawdown_floor",
+        "quality_overlay",
+        "Simulation-only draft; user decides and executes manually outside Aegis."
+      ],
+      "evidence_refs": [
+        "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/v2_4_c_historical_sandbox_research_hypotheses_latest.json",
+        "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/V2_4_C_HISTORICAL_SANDBOX_RESEARCH_HYPOTHESES_PASS.marker",
+        "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v2_4_c_acceptance/v2_4_c_20260711_acceptance/hypothesis_sandbox_report.json"
+      ],
+      "blocked_by": [],
+      "created_at": "2026-07-11T18:42:04.974605+08:00"
+    }
+  ],
+  "safety": {
+    "simulation_only": true,
+    "manual_external_execution_only": true,
+    "no_real_trade": true,
+    "no_broker_api": true,
+    "no_webhook": true,
+    "no_secret_storage": true,
+    "strategy_sandbox_required": true,
+    "risk_veto_blocks_suggestion": true,
+    "evidence_refs_required": true,
+    "dashboard_contract_unchanged": true,
+    "no_production_records_mutation": true,
+    "research_hypothesis_source_only": true,
+    "no_live_price_or_position_size": true,
+    "suggestion_drafts_not_orders": true
+  },
+  "source_acceptance_target": "V2.4-C Historical Sandbox Run For Research Hypotheses",
+  "source_hypothesis_count": 6,
+  "source_passing_hypotheses": [
+    "hyp_a_low_vol_dividend_defensive",
+    "hyp_h_low_vol_dividend",
+    "hyp_us_value_quality_momentum"
+  ],
+  "source_failing_hypotheses": [
+    "hyp_a_value_quality_multifactor",
+    "hyp_h_smart_beta_multifactor",
+    "hyp_us_low_vol_risk_overlay"
+  ],
+  "run_dir": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v2_4_d_acceptance/v2_4_d_20260711_acceptance",
+  "source_hypothesis_queue_json": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v2_4_b_acceptance/v2_4_b_20260711_acceptance/strategy_sandbox_hypothesis_queue.json",
+  "source_hypothesis_sandbox_report_json": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v2_4_c_acceptance/v2_4_c_20260711_acceptance/hypothesis_sandbox_report.json",
+  "opportunities_json": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v2_4_d_acceptance/v2_4_d_20260711_acceptance/research_hypothesis_suggestion_opportunities.json",
+  "suggestions_json": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v2_4_d_acceptance/v2_4_d_20260711_acceptance/research_hypothesis_suggestion_drafts.json",
+  "copied_source_sandbox_json": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v2_4_d_acceptance/v2_4_d_20260711_acceptance/source_hypothesis_sandbox_report.json",
+  "checks": {
+    "suggestion_gate_passed": true,
+    "opportunity_count_matches_hypotheses": true,
+    "allowed_count_matches_sandbox_pass": true,
+    "blocked_count_matches_sandbox_fail": true,
+    "all_allowed_are_simulation_only": true,
+    "all_allowed_require_external_execution": true,
+    "blocked_failed_sandbox_hypotheses": true,
+    "evidence_refs_present": true,
+    "no_live_price_or_position_size": true,
+    "suggestion_drafts_not_orders": true,
+    "manual_external_execution_only": true,
+    "no_real_trade_or_broker": true,
+    "no_webhook_or_secrets": true,
+    "no_production_records_mutation": true,
+    "dashboard_contract_unchanged": true
+  },
+  "hashes": {
+    "source_hypothesis_queue_json": "90df894a90f7ea37019285a4199022a2f19b9e16f35570f349dc22003f98e6a0",
+    "source_hypothesis_sandbox_report_json": "f24e365814d6d17ab9b3bdac896b062bc57d28a3e1da96ec465a878e89faaf2e",
+    "opportunities_json": "0a621cf3013cab9b2b7396619fdd78f20d43233dd018741daa8486f847745a40",
+    "suggestions_json": "35a925fbb4c3a6a4e91ab94d2e3150dbe312dcc7a0161ea9775b439293770f92",
+    "copied_source_sandbox_json": "f24e365814d6d17ab9b3bdac896b062bc57d28a3e1da96ec465a878e89faaf2e"
+  }
+}

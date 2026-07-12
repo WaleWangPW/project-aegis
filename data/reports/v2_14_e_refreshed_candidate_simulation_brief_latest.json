@@ -1,0 +1,505 @@
+{
+  "overall_status": "PASS",
+  "acceptance_target": "V2.14-E Current Usable Simulation Suggestion Brief",
+  "source_acceptance_target": "V2.14-D Refreshed Candidate Suggestion Gate",
+  "brief_type": "refreshed_candidate_current_simulation_brief",
+  "run_id": "v2_14_e_20260712_acceptance",
+  "generated_at": "2026-07-12T04:19:36+08:00",
+  "command": "validate_v2_14_e_refreshed_candidate_simulation_brief.py --run-id v2_14_e_20260712_acceptance",
+  "network_used": false,
+  "production_records_written": false,
+  "production_cache_mutated": false,
+  "production_provider_config_mutated": false,
+  "dashboard_contract_changed": false,
+  "summary": {
+    "candidate_count": 1,
+    "blocked_count": 5,
+    "candidate_symbols": [
+      "00700.HK"
+    ],
+    "blocked_symbols": [
+      "00005.HK",
+      "00941.HK",
+      "600036.SH",
+      "600519.SH",
+      "601398.SH"
+    ],
+    "candidate_markets": [
+      "H"
+    ],
+    "source_allowed_count": 1,
+    "source_blocked_count": 5,
+    "simulation_suggestion_available": true,
+    "real_trade_allowed": false,
+    "next_stage": "V2.14-F User Feedback Intake For Refreshed Simulation Brief"
+  },
+  "current_answer": {
+    "online_reading_status": "Aegis 已能通过批准 API 路线读取外部数据；本简报复用已验收的 V2.14-D evidence，不重新联网。",
+    "historical_sandbox_status": "V2.14-C 已对 refreshed A/H 候选做历史沙盘；只有 H 股低波股息策略通过，A 股防御策略未通过，缺覆盖标的继续阻断。",
+    "strategy_research_status": "当前建议来自已研究的低波/股息/防御类策略假设，并经过历史沙盘和 Suggestion Gate。",
+    "usable_suggestion_status": "当前可给出 1 条 simulation-only 观察候选：00700.HK。你必须在外部软件自行核对并手动决策，再把截图、价格、日期或文字判断回传给 Aegis 做复盘。"
+  },
+  "user_boundary": {
+    "allowed": [
+      "把 00700.HK 加入模拟观察清单。",
+      "在外部行情或券商软件手动核对实时价格、公告、新闻事件、持仓冲突和个人风险预算。",
+      "如果你手动做了模拟或真实外部动作，可把截图、价格、日期和文字判断回传给 Aegis 做复盘证据。"
+    ],
+    "forbidden": [
+      "Aegis 不真实下单。",
+      "Aegis 不连接 Broker API。",
+      "Aegis 不使用 trading webhook。",
+      "Aegis 不给实时价格。",
+      "Aegis 不给仓位数量。",
+      "Aegis 不把小样本 sandbox PASS 解释成正式策略稳定通过。"
+    ]
+  },
+  "items": [
+    {
+      "item_id": "brief_sug_v2_14_d_600519_sh",
+      "suggestion_id": "sug_v2_14_d_600519_sh",
+      "strategy_id": "strategy_a_low_vol_dividend_defensive",
+      "symbol": "600519.SH",
+      "market": "A",
+      "brief_status": "blocked",
+      "user_action": "不要作为当前模拟候选使用；等待补历史覆盖、重新沙盘或重新筛选。",
+      "plain_summary": "600519.SH 当前被阻断，原因是：历史沙盘未通过。",
+      "sandbox_metrics": {
+        "coverage_status": "historical_case_available",
+        "sandbox_status": "FAIL",
+        "sample_count": "1",
+        "win_rate": "0.0",
+        "average_return": "-0.03752763164658912",
+        "max_drawdown": "-0.06609318505063666",
+        "failed_reasons": "sample_count_below_minimum,win_rate_below_threshold,average_return_below_threshold"
+      },
+      "why": [
+        "symbol=600519.SH",
+        "coverage_status=historical_case_available",
+        "sandbox_status=FAIL",
+        "sample_count=1",
+        "win_rate=0.0",
+        "average_return=-0.03752763164658912",
+        "max_drawdown=-0.06609318505063666",
+        "failed_reasons=sample_count_below_minimum,win_rate_below_threshold,average_return_below_threshold",
+        "source_stage=V2.14-C"
+      ],
+      "risk_warnings": [
+        "Simulation-only draft; user decides and executes manually outside Aegis.",
+        "Historical sandbox evidence only; not a future prediction.",
+        "No live price, position size, broker API, webhook, or order is produced.",
+        "If user acts elsewhere, user must return external evidence for paper-trade review.",
+        "Simulation-only draft; user decides and executes manually outside Aegis."
+      ],
+      "evidence_refs": [
+        "v2_14_a_refresh_plan:v2_14_a_20260712_acceptance:1a0dc9d636f4857ce00cd7fdcc18b6869cf800a5923a65a7af1c8f6b981f6549",
+        "tushare_cache:600519.SH:20231204:20240102"
+      ],
+      "blocked_by": [
+        "strategy_sandbox_not_passed"
+      ],
+      "blocked_reason_labels": [
+        "历史沙盘未通过"
+      ],
+      "simulation_only": true,
+      "user_must_execute_externally": true,
+      "no_live_price": true,
+      "no_position_size": true,
+      "no_real_trade": true,
+      "no_broker_api": true,
+      "no_webhook": true,
+      "no_order_placement": true,
+      "no_live_order_signal": true
+    },
+    {
+      "item_id": "brief_sug_v2_14_d_600036_sh",
+      "suggestion_id": "sug_v2_14_d_600036_sh",
+      "strategy_id": "strategy_a_low_vol_dividend_defensive",
+      "symbol": "600036.SH",
+      "market": "A",
+      "brief_status": "blocked",
+      "user_action": "不要作为当前模拟候选使用；等待补历史覆盖、重新沙盘或重新筛选。",
+      "plain_summary": "600036.SH 当前被阻断，原因是：历史沙盘未通过。",
+      "sandbox_metrics": {
+        "coverage_status": "historical_case_available",
+        "sandbox_status": "FAIL",
+        "sample_count": "1",
+        "win_rate": "0.0",
+        "average_return": "-0.03752763164658912",
+        "max_drawdown": "-0.06609318505063666",
+        "failed_reasons": "sample_count_below_minimum,win_rate_below_threshold,average_return_below_threshold"
+      },
+      "why": [
+        "symbol=600036.SH",
+        "coverage_status=historical_case_available",
+        "sandbox_status=FAIL",
+        "sample_count=1",
+        "win_rate=0.0",
+        "average_return=-0.03752763164658912",
+        "max_drawdown=-0.06609318505063666",
+        "failed_reasons=sample_count_below_minimum,win_rate_below_threshold,average_return_below_threshold",
+        "source_stage=V2.14-C"
+      ],
+      "risk_warnings": [
+        "Simulation-only draft; user decides and executes manually outside Aegis.",
+        "Historical sandbox evidence only; not a future prediction.",
+        "No live price, position size, broker API, webhook, or order is produced.",
+        "If user acts elsewhere, user must return external evidence for paper-trade review.",
+        "Simulation-only draft; user decides and executes manually outside Aegis."
+      ],
+      "evidence_refs": [
+        "v2_14_a_refresh_plan:v2_14_a_20260712_acceptance:1a0dc9d636f4857ce00cd7fdcc18b6869cf800a5923a65a7af1c8f6b981f6549",
+        "tushare_cache:600036.SH:20230901:20231009"
+      ],
+      "blocked_by": [
+        "strategy_sandbox_not_passed"
+      ],
+      "blocked_reason_labels": [
+        "历史沙盘未通过"
+      ],
+      "simulation_only": true,
+      "user_must_execute_externally": true,
+      "no_live_price": true,
+      "no_position_size": true,
+      "no_real_trade": true,
+      "no_broker_api": true,
+      "no_webhook": true,
+      "no_order_placement": true,
+      "no_live_order_signal": true
+    },
+    {
+      "item_id": "brief_sug_v2_14_d_00700_hk",
+      "suggestion_id": "sug_v2_14_d_00700_hk",
+      "strategy_id": "strategy_h_low_vol_dividend",
+      "symbol": "00700.HK",
+      "market": "H",
+      "brief_status": "simulation_candidate",
+      "user_action": "可加入模拟观察清单；如果你感兴趣，只能在外部软件手动核对实时价格、公告、新闻、持仓冲突和个人风险预算，再决定是否记录一笔纸面模拟。",
+      "plain_summary": "00700.HK 是本轮 refreshed candidate 中唯一通过历史沙盘和 Suggestion Gate 的模拟候选。它不是实盘买卖建议，也不包含实时价格、仓位或订单。",
+      "sandbox_metrics": {
+        "coverage_status": "historical_case_available",
+        "sandbox_status": "PASS",
+        "sample_count": "1",
+        "win_rate": "1.0",
+        "average_return": "0.11297071129707119",
+        "max_drawdown": "-0.01115760111576014",
+        "failed_reasons": ""
+      },
+      "why": [
+        "symbol=00700.HK",
+        "coverage_status=historical_case_available",
+        "sandbox_status=PASS",
+        "sample_count=1",
+        "win_rate=1.0",
+        "average_return=0.11297071129707119",
+        "max_drawdown=-0.01115760111576014",
+        "failed_reasons=",
+        "source_stage=V2.14-C"
+      ],
+      "risk_warnings": [
+        "Simulation-only draft; user decides and executes manually outside Aegis.",
+        "Historical sandbox evidence only; not a future prediction.",
+        "No live price, position size, broker API, webhook, or order is produced.",
+        "If user acts elsewhere, user must return external evidence for paper-trade review.",
+        "Simulation-only draft; user decides and executes manually outside Aegis."
+      ],
+      "evidence_refs": [
+        "v2_14_a_refresh_plan:v2_14_a_20260712_acceptance:1a0dc9d636f4857ce00cd7fdcc18b6869cf800a5923a65a7af1c8f6b981f6549",
+        "v2_12_c_normalized_cache:h_00700_eodhd_daily_bars:99a1513efba06494de61bcbefc4367358c2c3e1c1dd382786a32a2c7cb6469a5"
+      ],
+      "blocked_by": [],
+      "blocked_reason_labels": [],
+      "simulation_only": true,
+      "user_must_execute_externally": true,
+      "no_live_price": true,
+      "no_position_size": true,
+      "no_real_trade": true,
+      "no_broker_api": true,
+      "no_webhook": true,
+      "no_order_placement": true,
+      "no_live_order_signal": true
+    },
+    {
+      "item_id": "brief_sug_v2_14_d_missing_601398_sh",
+      "suggestion_id": "sug_v2_14_d_missing_601398_sh",
+      "strategy_id": "strategy_a_low_vol_dividend_defensive",
+      "symbol": "601398.SH",
+      "market": "A",
+      "brief_status": "blocked",
+      "user_action": "不要作为当前模拟候选使用；等待补历史覆盖、重新沙盘或重新筛选。",
+      "plain_summary": "601398.SH 当前被阻断，原因是：历史沙盘未通过、缺少完整证据引用。",
+      "sandbox_metrics": {
+        "coverage_status": "missing_historical_case",
+        "sandbox_status": "FAIL",
+        "sample_count": "1",
+        "win_rate": "0.0",
+        "average_return": "-0.03752763164658912",
+        "max_drawdown": "-0.06609318505063666",
+        "failed_reasons": "sample_count_below_minimum,win_rate_below_threshold,average_return_below_threshold"
+      },
+      "why": [
+        "symbol=601398.SH",
+        "coverage_status=missing_historical_case",
+        "sandbox_status=FAIL",
+        "sample_count=1",
+        "win_rate=0.0",
+        "average_return=-0.03752763164658912",
+        "max_drawdown=-0.06609318505063666",
+        "failed_reasons=sample_count_below_minimum,win_rate_below_threshold,average_return_below_threshold",
+        "source_stage=V2.14-C",
+        "missing_reason=no_source_case_for_symbol"
+      ],
+      "risk_warnings": [
+        "Blocked: no historical coverage for this candidate in V2.14-C.",
+        "Missing coverage cannot be treated as a pass.",
+        "No live price, position size, broker API, webhook, or order is produced.",
+        "Simulation-only draft; user decides and executes manually outside Aegis."
+      ],
+      "evidence_refs": [],
+      "blocked_by": [
+        "strategy_sandbox_not_passed",
+        "missing_evidence_refs"
+      ],
+      "blocked_reason_labels": [
+        "历史沙盘未通过",
+        "缺少完整证据引用"
+      ],
+      "simulation_only": true,
+      "user_must_execute_externally": true,
+      "no_live_price": true,
+      "no_position_size": true,
+      "no_real_trade": true,
+      "no_broker_api": true,
+      "no_webhook": true,
+      "no_order_placement": true,
+      "no_live_order_signal": true
+    },
+    {
+      "item_id": "brief_sug_v2_14_d_missing_00005_hk",
+      "suggestion_id": "sug_v2_14_d_missing_00005_hk",
+      "strategy_id": "strategy_h_low_vol_dividend",
+      "symbol": "00005.HK",
+      "market": "H",
+      "brief_status": "blocked",
+      "user_action": "不要作为当前模拟候选使用；等待补历史覆盖、重新沙盘或重新筛选。",
+      "plain_summary": "00005.HK 当前被阻断，原因是：缺少完整证据引用。",
+      "sandbox_metrics": {
+        "coverage_status": "missing_historical_case",
+        "sandbox_status": "PASS",
+        "sample_count": "1",
+        "win_rate": "1.0",
+        "average_return": "0.11297071129707119",
+        "max_drawdown": "-0.01115760111576014",
+        "failed_reasons": ""
+      },
+      "why": [
+        "symbol=00005.HK",
+        "coverage_status=missing_historical_case",
+        "sandbox_status=PASS",
+        "sample_count=1",
+        "win_rate=1.0",
+        "average_return=0.11297071129707119",
+        "max_drawdown=-0.01115760111576014",
+        "failed_reasons=",
+        "source_stage=V2.14-C",
+        "missing_reason=no_source_case_for_symbol"
+      ],
+      "risk_warnings": [
+        "Blocked: no historical coverage for this candidate in V2.14-C.",
+        "Missing coverage cannot be treated as a pass.",
+        "No live price, position size, broker API, webhook, or order is produced.",
+        "Simulation-only draft; user decides and executes manually outside Aegis."
+      ],
+      "evidence_refs": [],
+      "blocked_by": [
+        "missing_evidence_refs"
+      ],
+      "blocked_reason_labels": [
+        "缺少完整证据引用"
+      ],
+      "simulation_only": true,
+      "user_must_execute_externally": true,
+      "no_live_price": true,
+      "no_position_size": true,
+      "no_real_trade": true,
+      "no_broker_api": true,
+      "no_webhook": true,
+      "no_order_placement": true,
+      "no_live_order_signal": true
+    },
+    {
+      "item_id": "brief_sug_v2_14_d_missing_00941_hk",
+      "suggestion_id": "sug_v2_14_d_missing_00941_hk",
+      "strategy_id": "strategy_h_low_vol_dividend",
+      "symbol": "00941.HK",
+      "market": "H",
+      "brief_status": "blocked",
+      "user_action": "不要作为当前模拟候选使用；等待补历史覆盖、重新沙盘或重新筛选。",
+      "plain_summary": "00941.HK 当前被阻断，原因是：缺少完整证据引用。",
+      "sandbox_metrics": {
+        "coverage_status": "missing_historical_case",
+        "sandbox_status": "PASS",
+        "sample_count": "1",
+        "win_rate": "1.0",
+        "average_return": "0.11297071129707119",
+        "max_drawdown": "-0.01115760111576014",
+        "failed_reasons": ""
+      },
+      "why": [
+        "symbol=00941.HK",
+        "coverage_status=missing_historical_case",
+        "sandbox_status=PASS",
+        "sample_count=1",
+        "win_rate=1.0",
+        "average_return=0.11297071129707119",
+        "max_drawdown=-0.01115760111576014",
+        "failed_reasons=",
+        "source_stage=V2.14-C",
+        "missing_reason=no_source_case_for_symbol"
+      ],
+      "risk_warnings": [
+        "Blocked: no historical coverage for this candidate in V2.14-C.",
+        "Missing coverage cannot be treated as a pass.",
+        "No live price, position size, broker API, webhook, or order is produced.",
+        "Simulation-only draft; user decides and executes manually outside Aegis."
+      ],
+      "evidence_refs": [],
+      "blocked_by": [
+        "missing_evidence_refs"
+      ],
+      "blocked_reason_labels": [
+        "缺少完整证据引用"
+      ],
+      "simulation_only": true,
+      "user_must_execute_externally": true,
+      "no_live_price": true,
+      "no_position_size": true,
+      "no_real_trade": true,
+      "no_broker_api": true,
+      "no_webhook": true,
+      "no_order_placement": true,
+      "no_live_order_signal": true
+    }
+  ],
+  "source_evidence": {
+    "source_target": "V2.14-D Refreshed Candidate Suggestion Gate",
+    "source_run_id": "v2_14_d_20260712_acceptance",
+    "source_summary_sha256": "9905e9d3121be5a22eb028f2a31820b7cdd29c4537660a93106ad5d578430070"
+  },
+  "checks": {
+    "source_is_v2_14_d": true,
+    "source_report_pass": true,
+    "source_has_allowed_draft": true,
+    "source_has_blocked_drafts": true,
+    "candidate_count_matches_allowed_count": true,
+    "blocked_count_matches_source": true,
+    "has_user_readable_items": true,
+    "has_00700_candidate": true,
+    "all_candidates_have_evidence": true,
+    "blocked_symbols_visible": true,
+    "every_item_simulation_only": true,
+    "manual_external_execution_only": true,
+    "warning_blocks_live_price_and_position_size": true,
+    "no_live_price": true,
+    "no_position_size": true,
+    "no_real_trade": true,
+    "no_broker_api": true,
+    "no_webhook": true,
+    "no_order_placement": true,
+    "no_live_order_signal": true,
+    "production_records_not_written": true,
+    "production_cache_not_mutated": true,
+    "production_provider_config_not_mutated": true,
+    "dashboard_contract_unchanged": true,
+    "network_not_used": true,
+    "acceptance_target_correct": true,
+    "brief_status_pass": true,
+    "source_marker_exists": true,
+    "brief_json_written": true,
+    "brief_md_written": true,
+    "production_record_files_unchanged": true,
+    "source_hashes_recorded": true
+  },
+  "safety": {
+    "simulation_only": true,
+    "manual_external_execution_only": true,
+    "not_real_trade_advice": true,
+    "no_live_price": true,
+    "no_position_size": true,
+    "no_real_trade": true,
+    "no_broker_api": true,
+    "no_webhook": true,
+    "no_order_placement": true,
+    "no_live_order_signal": true,
+    "no_production_records_mutation": true,
+    "no_production_cache_mutation": true,
+    "no_production_provider_config_mutation": true,
+    "no_strategy_mutation": true,
+    "dashboard_contract_unchanged": true
+  },
+  "run_dir": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v2_14_e_acceptance/v2_14_e_20260712_acceptance",
+  "brief_json": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v2_14_e_acceptance/v2_14_e_20260712_acceptance/refreshed_candidate_current_simulation_brief.json",
+  "brief_md": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v2_14_e_acceptance/v2_14_e_20260712_acceptance/refreshed_candidate_current_simulation_brief.md",
+  "source_v2_14_d_report_json": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/v2_14_d_refreshed_candidate_suggestion_gate_latest.json",
+  "source_v2_14_d_pass_marker": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/V2_14_D_REFRESHED_CANDIDATE_SUGGESTION_GATE_PASS.marker",
+  "production_record_files_before": {
+    "recommendations_jsonl": {
+      "exists": true,
+      "size": 12284,
+      "sha256": "05b2e56c9b547cbe3ce4cb71b7cb776185e23ef2cc3bc9a46a918bce0cfb65dc"
+    },
+    "paper_trades_jsonl": {
+      "exists": false,
+      "size": null,
+      "sha256": null
+    },
+    "reviews_jsonl": {
+      "exists": false,
+      "size": null,
+      "sha256": null
+    },
+    "memory_jsonl": {
+      "exists": false,
+      "size": null,
+      "sha256": null
+    },
+    "investment_memory_jsonl": {
+      "exists": false,
+      "size": null,
+      "sha256": null
+    }
+  },
+  "production_record_files_after": {
+    "recommendations_jsonl": {
+      "exists": true,
+      "size": 12284,
+      "sha256": "05b2e56c9b547cbe3ce4cb71b7cb776185e23ef2cc3bc9a46a918bce0cfb65dc"
+    },
+    "paper_trades_jsonl": {
+      "exists": false,
+      "size": null,
+      "sha256": null
+    },
+    "reviews_jsonl": {
+      "exists": false,
+      "size": null,
+      "sha256": null
+    },
+    "memory_jsonl": {
+      "exists": false,
+      "size": null,
+      "sha256": null
+    },
+    "investment_memory_jsonl": {
+      "exists": false,
+      "size": null,
+      "sha256": null
+    }
+  },
+  "hashes": {
+    "source_v2_14_d_report_json": "c0fadcfc4776eee5e8d083f2661c1f795b0143d772b88055ae0ad4b45ba37f1c",
+    "source_v2_14_d_pass_marker": "f251ff8fb368e4a02fd23743e91896e13204b3edf76f6a765250eed2a5ecf8e1",
+    "brief_json": "a1738f42a3ae15cbd9ab8cdc88bad0cacfbc3969f7616e94c822eebb2527ec47",
+    "brief_md": "d99a8654db50842f31653b456cb487cc2a75c9ac3908f59c240a60c49b3b9a63"
+  }
+}

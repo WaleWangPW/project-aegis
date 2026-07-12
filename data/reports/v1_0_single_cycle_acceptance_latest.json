@@ -1,0 +1,47 @@
+{
+  "overall_status": "PASS",
+  "generated_at": "2026-07-11T16:10:30.971373+08:00",
+  "run_id": "v1_0_20260711_acceptance",
+  "command": "validate_v1_0_single_cycle.py --run-id v1_0_20260711_acceptance",
+  "acceptance_target": "V1.0 Review/Memory single-cycle acceptance",
+  "isolated": true,
+  "production_records_written": false,
+  "run_dir": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v1_0_acceptance/v1_0_20260711_acceptance",
+  "records_dir": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v1_0_acceptance/v1_0_20260711_acceptance/data/records",
+  "dashboard_path": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v1_0_acceptance/v1_0_20260711_acceptance/data/dashboard/dashboard_data.json",
+  "chain": {
+    "recommendation_id": "rec_20260701_pre_market_US_AAA_v1_0_acceptance",
+    "paper_trade_id": "ptr_20260701_US_AAA",
+    "review_id": "rev_20260701_US_AAA_5d",
+    "memory_id": "mem_rev_20260701_US_AAA_5d_0",
+    "status": "Recommendation -> PaperTrade -> Review -> InvestmentMemory"
+  },
+  "counts": {
+    "updated_trades": 1,
+    "generated_reviews": 1,
+    "created_memories": 1
+  },
+  "review": {
+    "horizon": "5d",
+    "outcome": "success",
+    "actual_return": 0.05,
+    "decision_quality": "good_decision",
+    "lessons_count": 1
+  },
+  "safety": {
+    "no_real_trade": true,
+    "no_broker_api": true,
+    "no_webhook": true,
+    "no_secrets": true,
+    "no_production_records_mutation": true
+  },
+  "hashes": {
+    "recommendations": "d9015f96c881fc7738e810a6310dfe0bf8811df05f955d818d38c449fb587966",
+    "decisions": "d9553fa2afef9b713cb69c513efc071f7c06ac6b793c8d348fc77662c3b31c04",
+    "expert_opinions": "51e39d55c2b9d0e585e1df5c3c8c81401a3528d6329b730889676993cedd458b",
+    "paper_trades": "1e239c1f75987cdea39e14bb3140f37241a4772e3cc87d80bbae8c552986aacf",
+    "reviews": "8dc3753cc6e990d3e509e8749e2013ce40076a9f75725aa21261e1aee3a7d325",
+    "memory": "ae0d9a8956d3d0c946f3abf14d93feacf0cd38fa9d09fe92210960d4c8931250",
+    "dashboard": "42bf416dd46c27427c7647d540f49a0f7f212a39143a8497092e2613c5707ddd"
+  }
+}

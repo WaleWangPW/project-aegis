@@ -1,0 +1,284 @@
+{
+  "overall_status": "PASS",
+  "generated_at": "2026-07-11T18:33:09.697293+08:00",
+  "run_id": "v2_4_c_20260711_acceptance",
+  "command": "validate_v2_4_c_historical_sandbox_research_hypotheses.py --run-id v2_4_c_20260711_acceptance",
+  "acceptance_target": "V2.4-C Historical Sandbox Run For Research Hypotheses",
+  "isolated": true,
+  "network_used": false,
+  "production_records_written": false,
+  "dashboard_contract_changed": false,
+  "historical_cache_file_count": 222,
+  "summary": {
+    "candidate_count": 6,
+    "historical_case_count": 24,
+    "pass_count": 3,
+    "fail_count": 3,
+    "passing_strategies": [
+      "strategy_a_low_vol_dividend_defensive",
+      "strategy_h_low_vol_dividend",
+      "strategy_us_value_quality_momentum"
+    ],
+    "failing_strategies": [
+      "strategy_a_value_quality_multifactor",
+      "strategy_h_smart_beta_multifactor",
+      "strategy_us_low_vol_risk_overlay"
+    ],
+    "hypothesis_count": 6,
+    "passing_hypotheses": [
+      "hyp_a_low_vol_dividend_defensive",
+      "hyp_h_low_vol_dividend",
+      "hyp_us_value_quality_momentum"
+    ],
+    "failing_hypotheses": [
+      "hyp_a_value_quality_multifactor",
+      "hyp_h_smart_beta_multifactor",
+      "hyp_us_low_vol_risk_overlay"
+    ]
+  },
+  "results": [
+    {
+      "strategy_id": "strategy_a_low_vol_dividend_defensive",
+      "status": "PASS",
+      "metrics": {
+        "strategy_id": "strategy_a_low_vol_dividend_defensive",
+        "sample_count": 4,
+        "eligible_case_count": 4,
+        "win_rate": 0.75,
+        "average_return": 0.016749999999999998,
+        "max_drawdown": -0.052,
+        "turnover_proxy": 1.0,
+        "exposure_count": 4,
+        "risk_flag_counts": {
+          "dividend_trap_watch": 1
+        },
+        "failed_reasons": []
+      },
+      "safety": {
+        "simulation_only": true,
+        "no_real_trade": true,
+        "no_broker_api": true,
+        "no_webhook": true,
+        "no_strategy_auto_mutation": true,
+        "no_production_records_mutation": true
+      },
+      "notes": [
+        "Historical sandbox result only; user-facing suggestions still require recommendation and risk gates.",
+        "Evidence is based on supplied historical cases, not future prediction."
+      ]
+    },
+    {
+      "strategy_id": "strategy_a_value_quality_multifactor",
+      "status": "FAIL",
+      "metrics": {
+        "strategy_id": "strategy_a_value_quality_multifactor",
+        "sample_count": 4,
+        "eligible_case_count": 4,
+        "win_rate": 0.5,
+        "average_return": -0.009017857142857102,
+        "max_drawdown": -0.095,
+        "turnover_proxy": 1.0,
+        "exposure_count": 4,
+        "risk_flag_counts": {
+          "max_drawdown_breach": 1,
+          "quality_deterioration": 1
+        },
+        "failed_reasons": [
+          "average_return_below_threshold",
+          "max_drawdown_breached"
+        ]
+      },
+      "safety": {
+        "simulation_only": true,
+        "no_real_trade": true,
+        "no_broker_api": true,
+        "no_webhook": true,
+        "no_strategy_auto_mutation": true,
+        "no_production_records_mutation": true
+      },
+      "notes": [
+        "Historical sandbox result only; user-facing suggestions still require recommendation and risk gates.",
+        "Evidence is based on supplied historical cases, not future prediction."
+      ]
+    },
+    {
+      "strategy_id": "strategy_h_smart_beta_multifactor",
+      "status": "FAIL",
+      "metrics": {
+        "strategy_id": "strategy_h_smart_beta_multifactor",
+        "sample_count": 4,
+        "eligible_case_count": 4,
+        "win_rate": 0.25,
+        "average_return": -0.011282415501165495,
+        "max_drawdown": -0.112,
+        "turnover_proxy": 1.0,
+        "exposure_count": 4,
+        "risk_flag_counts": {
+          "regime_shift": 1,
+          "currency_context": 1,
+          "event_risk_block": 1
+        },
+        "failed_reasons": [
+          "win_rate_below_threshold",
+          "average_return_below_threshold",
+          "max_drawdown_breached"
+        ]
+      },
+      "safety": {
+        "simulation_only": true,
+        "no_real_trade": true,
+        "no_broker_api": true,
+        "no_webhook": true,
+        "no_strategy_auto_mutation": true,
+        "no_production_records_mutation": true
+      },
+      "notes": [
+        "Historical sandbox result only; user-facing suggestions still require recommendation and risk gates.",
+        "Evidence is based on supplied historical cases, not future prediction."
+      ]
+    },
+    {
+      "strategy_id": "strategy_h_low_vol_dividend",
+      "status": "PASS",
+      "metrics": {
+        "strategy_id": "strategy_h_low_vol_dividend",
+        "sample_count": 4,
+        "eligible_case_count": 4,
+        "win_rate": 0.75,
+        "average_return": 0.0109957184628237,
+        "max_drawdown": -0.055,
+        "turnover_proxy": 1.0,
+        "exposure_count": 4,
+        "risk_flag_counts": {
+          "event_risk_watch": 1
+        },
+        "failed_reasons": []
+      },
+      "safety": {
+        "simulation_only": true,
+        "no_real_trade": true,
+        "no_broker_api": true,
+        "no_webhook": true,
+        "no_strategy_auto_mutation": true,
+        "no_production_records_mutation": true
+      },
+      "notes": [
+        "Historical sandbox result only; user-facing suggestions still require recommendation and risk gates.",
+        "Evidence is based on supplied historical cases, not future prediction."
+      ]
+    },
+    {
+      "strategy_id": "strategy_us_value_quality_momentum",
+      "status": "PASS",
+      "metrics": {
+        "strategy_id": "strategy_us_value_quality_momentum",
+        "sample_count": 4,
+        "eligible_case_count": 4,
+        "win_rate": 0.75,
+        "average_return": 0.014602806034694596,
+        "max_drawdown": -0.068,
+        "turnover_proxy": 1.0,
+        "exposure_count": 4,
+        "risk_flag_counts": {
+          "crowding_risk_note": 1
+        },
+        "failed_reasons": []
+      },
+      "safety": {
+        "simulation_only": true,
+        "no_real_trade": true,
+        "no_broker_api": true,
+        "no_webhook": true,
+        "no_strategy_auto_mutation": true,
+        "no_production_records_mutation": true
+      },
+      "notes": [
+        "Historical sandbox result only; user-facing suggestions still require recommendation and risk gates.",
+        "Evidence is based on supplied historical cases, not future prediction."
+      ]
+    },
+    {
+      "strategy_id": "strategy_us_low_vol_risk_overlay",
+      "status": "FAIL",
+      "metrics": {
+        "strategy_id": "strategy_us_low_vol_risk_overlay",
+        "sample_count": 4,
+        "eligible_case_count": 4,
+        "win_rate": 0.25,
+        "average_return": -0.011107666527021361,
+        "max_drawdown": -0.105,
+        "turnover_proxy": 1.0,
+        "exposure_count": 4,
+        "risk_flag_counts": {
+          "valuation_context": 1,
+          "max_drawdown_breach": 1
+        },
+        "failed_reasons": [
+          "win_rate_below_threshold",
+          "average_return_below_threshold",
+          "max_drawdown_breached"
+        ]
+      },
+      "safety": {
+        "simulation_only": true,
+        "no_real_trade": true,
+        "no_broker_api": true,
+        "no_webhook": true,
+        "no_strategy_auto_mutation": true,
+        "no_production_records_mutation": true
+      },
+      "notes": [
+        "Historical sandbox result only; user-facing suggestions still require recommendation and risk gates.",
+        "Evidence is based on supplied historical cases, not future prediction."
+      ]
+    }
+  ],
+  "safety": {
+    "simulation_only": true,
+    "no_real_trade": true,
+    "no_broker_api": true,
+    "no_webhook": true,
+    "no_secret_storage": true,
+    "no_strategy_auto_mutation": true,
+    "no_production_records_mutation": true,
+    "dashboard_contract_unchanged": true,
+    "suggestion_gate_still_required": true,
+    "hypothesis_only_until_suggestion_gate": true
+  },
+  "strategy_to_hypothesis": {
+    "strategy_a_low_vol_dividend_defensive": "hyp_a_low_vol_dividend_defensive",
+    "strategy_a_value_quality_multifactor": "hyp_a_value_quality_multifactor",
+    "strategy_h_smart_beta_multifactor": "hyp_h_smart_beta_multifactor",
+    "strategy_h_low_vol_dividend": "hyp_h_low_vol_dividend",
+    "strategy_us_value_quality_momentum": "hyp_us_value_quality_momentum",
+    "strategy_us_low_vol_risk_overlay": "hyp_us_low_vol_risk_overlay"
+  },
+  "run_dir": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v2_4_c_acceptance/v2_4_c_20260711_acceptance",
+  "source_hypothesis_queue_json": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v2_4_b_acceptance/v2_4_b_20260711_acceptance/strategy_sandbox_hypothesis_queue.json",
+  "hypothesis_strategy_candidates_json": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v2_4_c_acceptance/v2_4_c_20260711_acceptance/hypothesis_strategy_candidates.json",
+  "hypothesis_historical_cases_jsonl": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v2_4_c_acceptance/v2_4_c_20260711_acceptance/hypothesis_historical_strategy_cases.jsonl",
+  "hypothesis_sandbox_report_json": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v2_4_c_acceptance/v2_4_c_20260711_acceptance/hypothesis_sandbox_report.json",
+  "checks": {
+    "sandbox_report_passed": true,
+    "all_hypotheses_evaluated": true,
+    "candidate_count_matches_hypotheses": true,
+    "historical_cases_present": true,
+    "at_least_two_hypotheses_passed": true,
+    "at_least_two_hypotheses_failed": true,
+    "metrics_present": true,
+    "failure_reasons_present": true,
+    "historical_cache_detected": true,
+    "suggestion_gate_still_required": true,
+    "no_real_trade": true,
+    "no_broker_api": true,
+    "no_strategy_auto_mutation": true,
+    "production_records_not_written": true,
+    "dashboard_contract_unchanged": true
+  },
+  "hashes": {
+    "source_hypothesis_queue_json": "90df894a90f7ea37019285a4199022a2f19b9e16f35570f349dc22003f98e6a0",
+    "hypothesis_strategy_candidates_json": "b225c74ac4b6caf19f3080caaf3e321e2785a7da17f389fe6b8f90edeb2d3f12",
+    "hypothesis_historical_cases_jsonl": "b0f10aba635fc56cedae7930227a760a6780de9381000b2b6b20a3f92bc69610",
+    "hypothesis_sandbox_report_json": "f24e365814d6d17ab9b3bdac896b062bc57d28a3e1da96ec465a878e89faaf2e"
+  }
+}

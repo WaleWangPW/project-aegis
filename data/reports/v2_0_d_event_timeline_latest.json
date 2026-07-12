@@ -1,0 +1,52 @@
+{
+  "overall_status": "PASS",
+  "generated_at": "2026-07-11T17:06:45.211751+08:00",
+  "run_id": "v2_0_d_20260711_acceptance",
+  "command": "validate_v2_0_d_event_timeline.py --run-id v2_0_d_20260711_acceptance",
+  "acceptance_target": "V2.0-D Event Timeline and Scenarios",
+  "isolated": true,
+  "production_records_written": false,
+  "dashboard_contract_changed": false,
+  "network_used": false,
+  "run_dir": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v2_0_d_acceptance/v2_0_d_20260711_acceptance",
+  "timeline_json": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v2_0_d_acceptance/v2_0_d_20260711_acceptance/event_timeline.json",
+  "timeline_md": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v2_0_d_acceptance/v2_0_d_20260711_acceptance/event_timeline.md",
+  "checks": {
+    "events_present": true,
+    "verified_event_present": true,
+    "community_context_not_verified": true,
+    "scenario_has_evidence": true,
+    "scenario_evidence_resolved": true,
+    "accepted_for_decision_support": true,
+    "does_not_bypass_evidence_gate": true,
+    "no_broker_or_real_trade": true
+  },
+  "summary": {
+    "symbol": "CRCL",
+    "market": "US",
+    "event_count": 2,
+    "verified_event_count": 1,
+    "scenario_count": 1,
+    "accepted_for_decision_support": true
+  },
+  "safety": {
+    "read_only": true,
+    "no_real_trade": true,
+    "no_broker_api": true,
+    "no_webhook": true,
+    "no_strategy_mutation": true,
+    "dashboard_contract_unchanged": true,
+    "does_not_bypass_evidence_gate": true,
+    "social_sentiment_not_fact": true,
+    "manual_external_execution_only": true,
+    "user_submitted_execution_facts_only": true,
+    "no_account_sync": true,
+    "no_auto_rebalance": true,
+    "no_production_records_mutation": true,
+    "no_live_web_ingestion": true
+  },
+  "hashes": {
+    "timeline_json": "b9a465ba9547fc5034948906a9d9885fa59525287b724f8a5703d41ed43e53cc",
+    "timeline_md": "c06d64cfec4cd92d99312e0d617f4507302662e017653daf42e92875dc1752e8"
+  }
+}

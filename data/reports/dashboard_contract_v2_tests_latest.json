@@ -1,0 +1,374 @@
+{
+  "project": "Project Aegis",
+  "type": "dashboard_contract_v2_tests",
+  "generated_at": "2026-07-11T06:54:03.158538+00:00",
+  "overall_verdict": "PASS",
+  "test_count": 19,
+  "failed": 0,
+  "cases": [
+    {
+      "name": "legacy_v1_legal",
+      "description": "真实旧首页备份",
+      "expected_verdict": "PASS",
+      "actual_verdict": "PASS",
+      "expected_dashboard_type": "legacy_dashboard_v1",
+      "actual_dashboard_type": "legacy_dashboard_v1",
+      "validator_exit_code": 0,
+      "passed": true,
+      "triggered_failures": [],
+      "fixture_path": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/dashboard/backups/index_pre_p25_4b_20260711T125736.html",
+      "fixture_sha256": "c046ba871b5fe809762baf281b60475920cb63dd20972bbad536fba7e50b27c4",
+      "tested_contract_version": "legacy-v1",
+      "timestamp": "2026-07-11T06:54:03.062732+00:00"
+    },
+    {
+      "name": "v2_legal",
+      "description": "完整 v2",
+      "expected_verdict": "PASS",
+      "actual_verdict": "PASS",
+      "expected_dashboard_type": "ceo_daily_brief_v2",
+      "actual_dashboard_type": "ceo_daily_brief_v2",
+      "validator_exit_code": 0,
+      "passed": true,
+      "triggered_failures": [],
+      "fixture_path": "/var/folders/t6/gh6wx7k91wg3f066fp18z15c0000gn/T/aegis-contract-czqwtj1s/v2.html",
+      "fixture_sha256": "e777047e93fc13705df2e6c0dd58728c12ed97ee3f338b512d26ae84b1897a41",
+      "tested_contract_version": "2.0",
+      "timestamp": "2026-07-11T06:54:03.064967+00:00"
+    },
+    {
+      "name": "missing_contract_from_v2",
+      "description": "从 v2 删除 meta",
+      "expected_verdict": "FAIL",
+      "actual_verdict": "FAIL",
+      "expected_dashboard_type": "unknown",
+      "actual_dashboard_type": "unknown",
+      "validator_exit_code": 1,
+      "passed": true,
+      "triggered_failures": [
+        "recognized_contract"
+      ],
+      "fixture_path": "/var/folders/t6/gh6wx7k91wg3f066fp18z15c0000gn/T/aegis-contract-czqwtj1s/missing_contract.html",
+      "fixture_sha256": "90e05e69b010ddfd04aa487da47fc38b616c91d05282d5e1fde42caafbdc5477",
+      "tested_contract_version": "missing",
+      "timestamp": "2026-07-11T06:54:03.066563+00:00"
+    },
+    {
+      "name": "plain_html_without_contract",
+      "description": "普通 HTML",
+      "expected_verdict": "FAIL",
+      "actual_verdict": "FAIL",
+      "expected_dashboard_type": "unknown",
+      "actual_dashboard_type": "unknown",
+      "validator_exit_code": 1,
+      "passed": true,
+      "triggered_failures": [
+        "recognized_contract"
+      ],
+      "fixture_path": "/var/folders/t6/gh6wx7k91wg3f066fp18z15c0000gn/T/aegis-contract-czqwtj1s/plain.html",
+      "fixture_sha256": "54a5a9672d36ff986a9d2f0365bc6306ca346827c603d76f874ce2347dd0513d",
+      "tested_contract_version": "missing",
+      "timestamp": "2026-07-11T06:54:03.067870+00:00"
+    },
+    {
+      "name": "incomplete_legacy_without_contract",
+      "description": "只有旧标题和飞书字样",
+      "expected_verdict": "FAIL",
+      "actual_verdict": "FAIL",
+      "expected_dashboard_type": "unknown",
+      "actual_dashboard_type": "unknown",
+      "validator_exit_code": 1,
+      "passed": true,
+      "triggered_failures": [
+        "recognized_contract"
+      ],
+      "fixture_path": "/var/folders/t6/gh6wx7k91wg3f066fp18z15c0000gn/T/aegis-contract-czqwtj1s/incomplete.html",
+      "fixture_sha256": "f3bebc431e9eaf675c7b4de5a02f2cdc55ff0da11d86caac21fa50cba0494665",
+      "tested_contract_version": "missing",
+      "timestamp": "2026-07-11T06:54:03.069440+00:00"
+    },
+    {
+      "name": "unknown_contract",
+      "description": "contract=9.9",
+      "expected_verdict": "FAIL",
+      "actual_verdict": "FAIL",
+      "expected_dashboard_type": "unknown",
+      "actual_dashboard_type": "unknown",
+      "validator_exit_code": 1,
+      "passed": true,
+      "triggered_failures": [
+        "recognized_contract"
+      ],
+      "fixture_path": "/var/folders/t6/gh6wx7k91wg3f066fp18z15c0000gn/T/aegis-contract-czqwtj1s/unknown.html",
+      "fixture_sha256": "e02c075293588eb7c893971a53e4af33156daf24c4a770273517dfaebf07e2a8",
+      "tested_contract_version": "9.9",
+      "timestamp": "2026-07-11T06:54:03.071388+00:00"
+    },
+    {
+      "name": "missing_v2_js",
+      "description": "错误 JS 引用",
+      "expected_verdict": "FAIL",
+      "actual_verdict": "FAIL",
+      "expected_dashboard_type": "ceo_daily_brief_v2",
+      "actual_dashboard_type": "ceo_daily_brief_v2",
+      "validator_exit_code": 1,
+      "passed": true,
+      "triggered_failures": [
+        "v2_assets_referenced"
+      ],
+      "fixture_path": "/var/folders/t6/gh6wx7k91wg3f066fp18z15c0000gn/T/aegis-contract-czqwtj1s/nojs.html",
+      "fixture_sha256": "cd8b08a26e769ea0fb60f5772e5e8c1b969ba8f22a56a53d2302149e366ca629",
+      "tested_contract_version": "2.0",
+      "timestamp": "2026-07-11T06:54:03.073777+00:00"
+    },
+    {
+      "name": "missing_v2_css",
+      "description": "错误 CSS 引用",
+      "expected_verdict": "FAIL",
+      "actual_verdict": "FAIL",
+      "expected_dashboard_type": "ceo_daily_brief_v2",
+      "actual_dashboard_type": "ceo_daily_brief_v2",
+      "validator_exit_code": 1,
+      "passed": true,
+      "triggered_failures": [
+        "v2_assets_referenced"
+      ],
+      "fixture_path": "/var/folders/t6/gh6wx7k91wg3f066fp18z15c0000gn/T/aegis-contract-czqwtj1s/nocss.html",
+      "fixture_sha256": "f8fcc34c50441796ba1ae9106f63926af9dbe76f15089289b59df6de9deb4cfe",
+      "tested_contract_version": "2.0",
+      "timestamp": "2026-07-11T06:54:03.076057+00:00"
+    },
+    {
+      "name": "missing_no_data_message",
+      "description": "缺少数据不足阻断文案",
+      "expected_verdict": "FAIL",
+      "actual_verdict": "FAIL",
+      "expected_dashboard_type": "ceo_daily_brief_v2",
+      "actual_dashboard_type": "ceo_daily_brief_v2",
+      "validator_exit_code": 1,
+      "passed": true,
+      "triggered_failures": [
+        "no_data_action_block"
+      ],
+      "fixture_path": "/var/folders/t6/gh6wx7k91wg3f066fp18z15c0000gn/T/aegis-contract-czqwtj1s/v2.html",
+      "fixture_sha256": "e777047e93fc13705df2e6c0dd58728c12ed97ee3f338b512d26ae84b1897a41",
+      "tested_contract_version": "2.0",
+      "timestamp": "2026-07-11T06:54:03.078169+00:00"
+    },
+    {
+      "name": "missing_no_action_message",
+      "description": "缺少无候选文案",
+      "expected_verdict": "FAIL",
+      "actual_verdict": "FAIL",
+      "expected_dashboard_type": "ceo_daily_brief_v2",
+      "actual_dashboard_type": "ceo_daily_brief_v2",
+      "validator_exit_code": 1,
+      "passed": true,
+      "triggered_failures": [
+        "no_action_empty_state"
+      ],
+      "fixture_path": "/var/folders/t6/gh6wx7k91wg3f066fp18z15c0000gn/T/aegis-contract-czqwtj1s/v2.html",
+      "fixture_sha256": "e777047e93fc13705df2e6c0dd58728c12ed97ee3f338b512d26ae84b1897a41",
+      "tested_contract_version": "2.0",
+      "timestamp": "2026-07-11T06:54:03.080724+00:00"
+    },
+    {
+      "name": "bad_fetch",
+      "description": "错误报告路径",
+      "expected_verdict": "FAIL",
+      "actual_verdict": "FAIL",
+      "expected_dashboard_type": "ceo_daily_brief_v2",
+      "actual_dashboard_type": "ceo_daily_brief_v2",
+      "validator_exit_code": 1,
+      "passed": true,
+      "triggered_failures": [
+        "reports_relative_fetch",
+        "no_dashboard_reports_path"
+      ],
+      "fixture_path": "/var/folders/t6/gh6wx7k91wg3f066fp18z15c0000gn/T/aegis-contract-czqwtj1s/v2.html",
+      "fixture_sha256": "e777047e93fc13705df2e6c0dd58728c12ed97ee3f338b512d26ae84b1897a41",
+      "tested_contract_version": "2.0",
+      "timestamp": "2026-07-11T06:54:03.083735+00:00"
+    },
+    {
+      "name": "trade_call",
+      "description": "执行调用",
+      "expected_verdict": "FAIL",
+      "actual_verdict": "FAIL",
+      "expected_dashboard_type": "ceo_daily_brief_v2",
+      "actual_dashboard_type": "ceo_daily_brief_v2",
+      "validator_exit_code": 1,
+      "passed": true,
+      "triggered_failures": [
+        "reports_relative_fetch",
+        "fetch_failure_degrades",
+        "gate_failure_blocks_action",
+        "daily_failure_blocks_action",
+        "risk_before_action",
+        "no_trade_execution",
+        "read_only_report_links",
+        "decision_function",
+        "no_data_action_block",
+        "no_action_empty_state",
+        "history_isolation_notice",
+        "real_rolling_mapping"
+      ],
+      "fixture_path": "/var/folders/t6/gh6wx7k91wg3f066fp18z15c0000gn/T/aegis-contract-czqwtj1s/v2.html",
+      "fixture_sha256": "e777047e93fc13705df2e6c0dd58728c12ed97ee3f338b512d26ae84b1897a41",
+      "tested_contract_version": "2.0",
+      "timestamp": "2026-07-11T06:54:03.096682+00:00"
+    },
+    {
+      "name": "send_or_webhook_call",
+      "description": "发送调用",
+      "expected_verdict": "FAIL",
+      "actual_verdict": "FAIL",
+      "expected_dashboard_type": "ceo_daily_brief_v2",
+      "actual_dashboard_type": "ceo_daily_brief_v2",
+      "validator_exit_code": 1,
+      "passed": true,
+      "triggered_failures": [
+        "reports_relative_fetch",
+        "fetch_failure_degrades",
+        "gate_failure_blocks_action",
+        "daily_failure_blocks_action",
+        "risk_before_action",
+        "no_send_or_webhook",
+        "read_only_report_links",
+        "decision_function",
+        "no_data_action_block",
+        "no_action_empty_state",
+        "history_isolation_notice",
+        "real_rolling_mapping"
+      ],
+      "fixture_path": "/var/folders/t6/gh6wx7k91wg3f066fp18z15c0000gn/T/aegis-contract-czqwtj1s/v2.html",
+      "fixture_sha256": "e777047e93fc13705df2e6c0dd58728c12ed97ee3f338b512d26ae84b1897a41",
+      "tested_contract_version": "2.0",
+      "timestamp": "2026-07-11T06:54:03.108781+00:00"
+    },
+    {
+      "name": "secret_value",
+      "description": "密钥形状",
+      "expected_verdict": "FAIL",
+      "actual_verdict": "FAIL",
+      "expected_dashboard_type": "ceo_daily_brief_v2",
+      "actual_dashboard_type": "ceo_daily_brief_v2",
+      "validator_exit_code": 1,
+      "passed": true,
+      "triggered_failures": [
+        "reports_relative_fetch",
+        "fetch_failure_degrades",
+        "gate_failure_blocks_action",
+        "daily_failure_blocks_action",
+        "risk_before_action",
+        "no_secrets",
+        "read_only_report_links",
+        "decision_function",
+        "no_data_action_block",
+        "no_action_empty_state",
+        "history_isolation_notice",
+        "real_rolling_mapping"
+      ],
+      "fixture_path": "/var/folders/t6/gh6wx7k91wg3f066fp18z15c0000gn/T/aegis-contract-czqwtj1s/v2.html",
+      "fixture_sha256": "e777047e93fc13705df2e6c0dd58728c12ed97ee3f338b512d26ae84b1897a41",
+      "tested_contract_version": "2.0",
+      "timestamp": "2026-07-11T06:54:03.145507+00:00"
+    },
+    {
+      "name": "simulated_marker",
+      "description": "模拟标记",
+      "expected_verdict": "FAIL",
+      "actual_verdict": "FAIL",
+      "expected_dashboard_type": "ceo_daily_brief_v2",
+      "actual_dashboard_type": "ceo_daily_brief_v2",
+      "validator_exit_code": 1,
+      "passed": true,
+      "triggered_failures": [
+        "reports_relative_fetch",
+        "fetch_failure_degrades",
+        "gate_failure_blocks_action",
+        "daily_failure_blocks_action",
+        "risk_before_action",
+        "no_simulated_content",
+        "read_only_report_links",
+        "decision_function",
+        "no_data_action_block",
+        "no_action_empty_state",
+        "history_isolation_notice",
+        "real_rolling_mapping"
+      ],
+      "fixture_path": "/var/folders/t6/gh6wx7k91wg3f066fp18z15c0000gn/T/aegis-contract-czqwtj1s/v2.html",
+      "fixture_sha256": "e777047e93fc13705df2e6c0dd58728c12ed97ee3f338b512d26ae84b1897a41",
+      "tested_contract_version": "2.0",
+      "timestamp": "2026-07-11T06:54:03.152986+00:00"
+    },
+    {
+      "name": "dry_run_false",
+      "description": "Safety field dry_run=False",
+      "expected_verdict": "FAIL",
+      "actual_verdict": "FAIL",
+      "expected_dashboard_type": "safety_fixture",
+      "actual_dashboard_type": "safety_fixture",
+      "validator_exit_code": 1,
+      "passed": true,
+      "triggered_failures": [
+        "dry_run"
+      ],
+      "fixture_path": "temporary safety fixture",
+      "fixture_sha256": "3acdf225dae5979484317f4b1c4e7f9fecda188962329571198a0aee5d8b6292",
+      "tested_contract_version": "2.0",
+      "timestamp": "2026-07-11T06:54:03.153044+00:00"
+    },
+    {
+      "name": "sent_true",
+      "description": "Safety field sent=True",
+      "expected_verdict": "FAIL",
+      "actual_verdict": "FAIL",
+      "expected_dashboard_type": "safety_fixture",
+      "actual_dashboard_type": "safety_fixture",
+      "validator_exit_code": 1,
+      "passed": true,
+      "triggered_failures": [
+        "sent"
+      ],
+      "fixture_path": "temporary safety fixture",
+      "fixture_sha256": "c4b0452fe74105538c1f99dbde825a682392b14f62e53eca36ce8fa6bd295c0a",
+      "tested_contract_version": "2.0",
+      "timestamp": "2026-07-11T06:54:03.153062+00:00"
+    },
+    {
+      "name": "webhook_true",
+      "description": "Safety field webhook_called=True",
+      "expected_verdict": "FAIL",
+      "actual_verdict": "FAIL",
+      "expected_dashboard_type": "safety_fixture",
+      "actual_dashboard_type": "safety_fixture",
+      "validator_exit_code": 1,
+      "passed": true,
+      "triggered_failures": [
+        "webhook_called"
+      ],
+      "fixture_path": "temporary safety fixture",
+      "fixture_sha256": "0b3ec99b759ac4931bf0c9cef43224e51386e7b4c0952dec142262ba11c31843",
+      "tested_contract_version": "2.0",
+      "timestamp": "2026-07-11T06:54:03.153073+00:00"
+    },
+    {
+      "name": "trading_true",
+      "description": "Safety field trading_called=True",
+      "expected_verdict": "FAIL",
+      "actual_verdict": "FAIL",
+      "expected_dashboard_type": "safety_fixture",
+      "actual_dashboard_type": "safety_fixture",
+      "validator_exit_code": 1,
+      "passed": true,
+      "triggered_failures": [
+        "trading_called"
+      ],
+      "fixture_path": "temporary safety fixture",
+      "fixture_sha256": "032677de25e038d52d504e4bf6906eb22acf4b7dca8a2cb504d2a089709424c1",
+      "tested_contract_version": "2.0",
+      "timestamp": "2026-07-11T06:54:03.153081+00:00"
+    }
+  ]
+}

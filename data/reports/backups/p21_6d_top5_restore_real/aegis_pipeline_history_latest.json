@@ -1,0 +1,442 @@
+{
+  "project": "Project Aegis",
+  "type": "pipeline_history",
+  "updated_at": "2026-07-10T03:34:15.662206+08:00",
+  "retention_limit": 7,
+  "runs": [
+    {
+      "run_id": "run_20260710_033415",
+      "generated_at": "2026-07-10T03:34:15.660852+08:00",
+      "source_reports": {
+        "gate": {
+          "exists": true,
+          "sha256_12": "20c7ce4d0239"
+        },
+        "evidence_pack": {
+          "exists": true,
+          "sha256_12": "f7940dad273f"
+        },
+        "redteam": {
+          "exists": true,
+          "sha256_12": "63c8814b7e00"
+        },
+        "degradation": {
+          "exists": true,
+          "sha256_12": "7dfecf379986"
+        },
+        "pipeline": {
+          "exists": true,
+          "sha256_12": "70a7a4b92ef3"
+        },
+        "feishu": {
+          "exists": true,
+          "sha256_12": "a8221d4c9fd8"
+        }
+      },
+      "gate_overall_verdict": "FAIL",
+      "gate_failures_count": 2,
+      "gate_json_sha256_12": "20c7ce4d0239",
+      "redteam_passed": 20,
+      "redteam_total": 20,
+      "redteam_all_rejected": true,
+      "redteam_json_sha256_12": "63c8814b7e00",
+      "degradation_total": 5,
+      "degradation_passed": 5,
+      "degradation_json_sha256_12": "7dfecf379986",
+      "evidence_pack_json_sha256_12": "f7940dad273f",
+      "pipeline_json_sha256_12": "70a7a4b92ef3",
+      "feishu_json_sha256_12": "a8221d4c9fd8",
+      "feishu_dry_run": true,
+      "feishu_sent": false,
+      "feishu_webhook_called": false,
+      "feishu_trading_called": false,
+      "hk_00700_status": "missing",
+      "crcl_status": "Exit",
+      "sz_000002_status": "Exit",
+      "a_share_top5_symbols": [
+        "000002.SZ",
+        "000858.SZ",
+        "600036.SH",
+        "000001.SZ",
+        "600000.SH"
+      ],
+      "mdns_link_present": true,
+      "tailscale_link_present": true,
+      "safety_summary": "dry-run, not sent, no webhook, no trading",
+      "result": "FAIL",
+      "result_reason": "gate_overall_verdict=FAIL"
+    },
+    {
+      "run_id": "run_20260710_024456",
+      "generated_at": "2026-07-10T02:44:56.172873+08:00",
+      "source_reports": {
+        "gate": {
+          "exists": true,
+          "sha256_12": "c5dea19faac7"
+        },
+        "evidence_pack": {
+          "exists": true,
+          "sha256_12": "f7940dad273f"
+        },
+        "redteam": {
+          "exists": true,
+          "sha256_12": "63c8814b7e00"
+        },
+        "degradation": {
+          "exists": true,
+          "sha256_12": "7dfecf379986"
+        },
+        "pipeline": {
+          "exists": true,
+          "sha256_12": "70a7a4b92ef3"
+        },
+        "feishu": {
+          "exists": true,
+          "sha256_12": "46723354543d"
+        }
+      },
+      "gate_overall_verdict": "PASS",
+      "gate_failures_count": 0,
+      "gate_json_sha256_12": "c5dea19faac7",
+      "redteam_passed": 20,
+      "redteam_total": 20,
+      "redteam_all_rejected": true,
+      "redteam_json_sha256_12": "63c8814b7e00",
+      "degradation_total": 5,
+      "degradation_passed": 5,
+      "degradation_json_sha256_12": "7dfecf379986",
+      "evidence_pack_json_sha256_12": "f7940dad273f",
+      "pipeline_json_sha256_12": "70a7a4b92ef3",
+      "feishu_json_sha256_12": "46723354543d",
+      "feishu_dry_run": true,
+      "feishu_sent": false,
+      "feishu_webhook_called": false,
+      "feishu_trading_called": false,
+      "hk_00700_status": "missing",
+      "crcl_status": "Exit",
+      "sz_000002_status": "Exit",
+      "a_share_top5_symbols": [
+        "000002.SZ",
+        "000001.SZ",
+        "000858.SZ",
+        "600036.SH",
+        "600000.SH"
+      ],
+      "mdns_link_present": true,
+      "tailscale_link_present": true,
+      "safety_summary": "dry-run, not sent, no webhook, no trading",
+      "result": "PASS",
+      "result_reason": "all checks passed"
+    },
+    {
+      "run_id": "run_20260710_024433",
+      "generated_at": "2026-07-10T02:44:33.889468+08:00",
+      "source_reports": {
+        "gate": {
+          "exists": true,
+          "sha256_12": "d1ec45085685"
+        },
+        "evidence_pack": {
+          "exists": true,
+          "sha256_12": "f7940dad273f"
+        },
+        "redteam": {
+          "exists": true,
+          "sha256_12": "63c8814b7e00"
+        },
+        "degradation": {
+          "exists": true,
+          "sha256_12": "7dfecf379986"
+        },
+        "pipeline": {
+          "exists": true,
+          "sha256_12": "70a7a4b92ef3"
+        },
+        "feishu": {
+          "exists": true,
+          "sha256_12": "46723354543d"
+        }
+      },
+      "gate_overall_verdict": "FAIL",
+      "gate_failures_count": 2,
+      "gate_json_sha256_12": "d1ec45085685",
+      "redteam_passed": 20,
+      "redteam_total": 20,
+      "redteam_all_rejected": true,
+      "redteam_json_sha256_12": "63c8814b7e00",
+      "degradation_total": 5,
+      "degradation_passed": 5,
+      "degradation_json_sha256_12": "7dfecf379986",
+      "evidence_pack_json_sha256_12": "f7940dad273f",
+      "pipeline_json_sha256_12": "70a7a4b92ef3",
+      "feishu_json_sha256_12": "46723354543d",
+      "feishu_dry_run": true,
+      "feishu_sent": false,
+      "feishu_webhook_called": false,
+      "feishu_trading_called": false,
+      "hk_00700_status": "missing",
+      "crcl_status": "Exit",
+      "sz_000002_status": "Exit",
+      "a_share_top5_symbols": [
+        "000002.SZ",
+        "000001.SZ",
+        "000858.SZ",
+        "600036.SH",
+        "600000.SH"
+      ],
+      "mdns_link_present": true,
+      "tailscale_link_present": true,
+      "safety_summary": "dry-run, not sent, no webhook, no trading",
+      "result": "FAIL",
+      "result_reason": "gate_overall_verdict=FAIL"
+    },
+    {
+      "run_id": "run_20260710_024221",
+      "generated_at": "2026-07-10T02:42:21.703986+08:00",
+      "source_reports": {
+        "gate": {
+          "exists": true,
+          "sha256_12": "12dbd3ec24d6"
+        },
+        "evidence_pack": {
+          "exists": true,
+          "sha256_12": "f7940dad273f"
+        },
+        "redteam": {
+          "exists": true,
+          "sha256_12": "63c8814b7e00"
+        },
+        "degradation": {
+          "exists": true,
+          "sha256_12": "7dfecf379986"
+        },
+        "pipeline": {
+          "exists": true,
+          "sha256_12": "06bb9d16777d"
+        },
+        "feishu": {
+          "exists": true,
+          "sha256_12": "693856771194"
+        }
+      },
+      "gate_overall_verdict": "PASS",
+      "gate_failures_count": 0,
+      "gate_json_sha256_12": "12dbd3ec24d6",
+      "redteam_passed": 20,
+      "redteam_total": 20,
+      "redteam_all_rejected": true,
+      "redteam_json_sha256_12": "63c8814b7e00",
+      "degradation_total": 5,
+      "degradation_passed": 5,
+      "degradation_json_sha256_12": "7dfecf379986",
+      "evidence_pack_json_sha256_12": "f7940dad273f",
+      "pipeline_json_sha256_12": "06bb9d16777d",
+      "feishu_json_sha256_12": "693856771194",
+      "feishu_dry_run": true,
+      "feishu_sent": false,
+      "feishu_webhook_called": false,
+      "feishu_trading_called": false,
+      "hk_00700_status": "missing",
+      "crcl_status": "Exit",
+      "sz_000002_status": "Exit",
+      "a_share_top5_symbols": [
+        "000002.SZ",
+        "CRCL",
+        "000001.SZ",
+        "000858.SZ",
+        "600036.SH"
+      ],
+      "mdns_link_present": true,
+      "tailscale_link_present": true,
+      "safety_summary": "dry-run, not sent, no webhook, no trading",
+      "result": "PASS",
+      "result_reason": "all checks passed"
+    },
+    {
+      "run_id": "run_20260710_024107",
+      "generated_at": "2026-07-10T02:41:07.903520+08:00",
+      "source_reports": {
+        "gate": {
+          "exists": true,
+          "sha256_12": "8568e0eaba11"
+        },
+        "evidence_pack": {
+          "exists": true,
+          "sha256_12": "f7940dad273f"
+        },
+        "redteam": {
+          "exists": true,
+          "sha256_12": "63c8814b7e00"
+        },
+        "degradation": {
+          "exists": true,
+          "sha256_12": "7dfecf379986"
+        },
+        "pipeline": {
+          "exists": true,
+          "sha256_12": "1586a67dfddf"
+        },
+        "feishu": {
+          "exists": true,
+          "sha256_12": "fdd80a9ea071"
+        }
+      },
+      "gate_overall_verdict": "PASS",
+      "gate_failures_count": 0,
+      "gate_json_sha256_12": "8568e0eaba11",
+      "redteam_passed": 20,
+      "redteam_total": 20,
+      "redteam_all_rejected": true,
+      "redteam_json_sha256_12": "63c8814b7e00",
+      "degradation_total": 5,
+      "degradation_passed": 5,
+      "degradation_json_sha256_12": "7dfecf379986",
+      "evidence_pack_json_sha256_12": "f7940dad273f",
+      "pipeline_json_sha256_12": "1586a67dfddf",
+      "feishu_json_sha256_12": "fdd80a9ea071",
+      "feishu_dry_run": true,
+      "feishu_sent": false,
+      "feishu_webhook_called": false,
+      "feishu_trading_called": false,
+      "hk_00700_status": "missing",
+      "crcl_status": "Exit",
+      "sz_000002_status": "Exit",
+      "a_share_top5_symbols": [
+        "000002.SZ",
+        "CRCL",
+        "000001.SZ",
+        "000858.SZ",
+        "600036.SH"
+      ],
+      "mdns_link_present": true,
+      "tailscale_link_present": true,
+      "safety_summary": "dry-run, not sent, no webhook, no trading",
+      "result": "PASS",
+      "result_reason": "all checks passed"
+    },
+    {
+      "run_id": "run_20260710_024045",
+      "generated_at": "2026-07-10T02:40:45.209010+08:00",
+      "source_reports": {
+        "gate": {
+          "exists": true,
+          "sha256_12": "da646bc382bc"
+        },
+        "evidence_pack": {
+          "exists": true,
+          "sha256_12": "f7940dad273f"
+        },
+        "redteam": {
+          "exists": true,
+          "sha256_12": "63c8814b7e00"
+        },
+        "degradation": {
+          "exists": true,
+          "sha256_12": "7dfecf379986"
+        },
+        "pipeline": {
+          "exists": true,
+          "sha256_12": "1586a67dfddf"
+        },
+        "feishu": {
+          "exists": true,
+          "sha256_12": "fdd80a9ea071"
+        }
+      },
+      "gate_overall_verdict": "PASS",
+      "gate_failures_count": 0,
+      "gate_json_sha256_12": "da646bc382bc",
+      "redteam_passed": 20,
+      "redteam_total": 20,
+      "redteam_all_rejected": true,
+      "redteam_json_sha256_12": "63c8814b7e00",
+      "degradation_total": 5,
+      "degradation_passed": 5,
+      "degradation_json_sha256_12": "7dfecf379986",
+      "evidence_pack_json_sha256_12": "f7940dad273f",
+      "pipeline_json_sha256_12": "1586a67dfddf",
+      "feishu_json_sha256_12": "fdd80a9ea071",
+      "feishu_dry_run": true,
+      "feishu_sent": false,
+      "feishu_webhook_called": false,
+      "feishu_trading_called": false,
+      "hk_00700_status": "missing",
+      "crcl_status": "Exit",
+      "sz_000002_status": "Exit",
+      "a_share_top5_symbols": [
+        "000002.SZ",
+        "CRCL",
+        "000001.SZ",
+        "000858.SZ",
+        "600036.SH"
+      ],
+      "mdns_link_present": true,
+      "tailscale_link_present": true,
+      "safety_summary": "dry-run, not sent, no webhook, no trading",
+      "result": "PASS",
+      "result_reason": "all checks passed"
+    },
+    {
+      "run_id": "run_20260710_024015",
+      "generated_at": "2026-07-10T02:40:15.739661+08:00",
+      "source_reports": {
+        "gate": {
+          "exists": true,
+          "sha256_12": "6e88397273ec"
+        },
+        "evidence_pack": {
+          "exists": true,
+          "sha256_12": "f7940dad273f"
+        },
+        "redteam": {
+          "exists": true,
+          "sha256_12": "63c8814b7e00"
+        },
+        "degradation": {
+          "exists": true,
+          "sha256_12": "7dfecf379986"
+        },
+        "pipeline": {
+          "exists": true,
+          "sha256_12": "95fafe27c9c2"
+        },
+        "feishu": {
+          "exists": true,
+          "sha256_12": "7591f6686f5c"
+        }
+      },
+      "gate_overall_verdict": "PASS",
+      "gate_failures_count": 0,
+      "gate_json_sha256_12": "6e88397273ec",
+      "redteam_passed": 20,
+      "redteam_total": 20,
+      "redteam_all_rejected": true,
+      "redteam_json_sha256_12": "63c8814b7e00",
+      "degradation_total": 5,
+      "degradation_passed": 5,
+      "degradation_json_sha256_12": "7dfecf379986",
+      "evidence_pack_json_sha256_12": "f7940dad273f",
+      "pipeline_json_sha256_12": "95fafe27c9c2",
+      "feishu_json_sha256_12": "7591f6686f5c",
+      "feishu_dry_run": true,
+      "feishu_sent": false,
+      "feishu_webhook_called": false,
+      "feishu_trading_called": false,
+      "hk_00700_status": "missing",
+      "crcl_status": "Exit",
+      "sz_000002_status": "Exit",
+      "a_share_top5_symbols": [
+        "000002.SZ",
+        "CRCL",
+        "000001.SZ",
+        "000858.SZ",
+        "600036.SH"
+      ],
+      "mdns_link_present": true,
+      "tailscale_link_present": true,
+      "safety_summary": "dry-run, not sent, no webhook, no trading",
+      "result": "PASS",
+      "result_reason": "all checks passed"
+    }
+  ]
+}

@@ -1,0 +1,5 @@
+generated_at=2026-07-11T19:53:50.997431+08:00
+command=validate_v2_8_a_public_strategy_source_audit.py --run-id v2_8_a_live_probe_20260711 --live-network --max-sources 4
+exit_code=1
+target=V2.8-A Public Strategy Source Audit
+error=HTTP Error 403: Forbidden

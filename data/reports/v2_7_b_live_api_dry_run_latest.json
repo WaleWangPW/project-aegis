@@ -1,0 +1,54 @@
+{
+  "overall_status": "PASS",
+  "acceptance_target": "V2.7-B Bounded Live API Dry Run Entrypoint",
+  "generated_at": "2026-07-11T19:42:31.733616+08:00",
+  "run_id": "v2_7_b_20260711_acceptance_rerun",
+  "command": "validate_v2_7_b_live_api_dry_run.py --run-id v2_7_b_20260711_acceptance_rerun",
+  "network_used": false,
+  "production_records_written": false,
+  "dashboard_contract_changed": false,
+  "fixture_live_dry_run_report": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v2_7_b_acceptance/v2_7_b_20260711_acceptance_rerun/fixture_ready_live_api_dry_run/live_api_dry_run_report.json",
+  "real_user_live_dry_run_report": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v2_7_b_acceptance/v2_7_b_20260711_acceptance_rerun/real_user_live_api_dry_run/live_api_dry_run_report.json",
+  "fixture_live_dry_run_status": "completed",
+  "real_user_live_dry_run_status": "blocked_missing_metadata",
+  "real_user_can_run_live_dry_run": false,
+  "real_user_blocked_by": [
+    "missing_connector_metadata"
+  ],
+  "real_user_missing_env_vars": [],
+  "checks": {
+    "fixture_live_dry_run_completed": true,
+    "fixture_api_fetch_item_exists": true,
+    "real_user_status_recorded": true,
+    "real_user_not_claimed_completed_when_blocked": true,
+    "secret_value_not_serialized": true,
+    "env_var_names_only": true,
+    "query_values_not_stored": true,
+    "raw_bytes_not_stored": true,
+    "request_headers_not_stored": true,
+    "no_real_trade_or_broker": true,
+    "dashboard_contract_unchanged": true,
+    "production_records_not_written": true
+  },
+  "safety": {
+    "activation_gate_before_fetch": true,
+    "summary_hash_only": true,
+    "env_values_not_stored": true,
+    "env_var_names_only": true,
+    "query_values_not_stored": true,
+    "request_headers_not_stored": true,
+    "raw_bytes_not_stored": true,
+    "no_real_trade": true,
+    "no_broker_api": true,
+    "no_trading_webhook": true,
+    "no_order_placement": true,
+    "dashboard_contract_unchanged": true,
+    "no_production_records_mutation": true
+  },
+  "hashes": {
+    "fixture_config": "9b5f71b167c92b0b46e626ecb6cb3166c8475a53cc4570087e14c1a4d3f945f6",
+    "fixture_live_dry_run_report": "8fb24366857d72b277f7270a880d4b35dade980c3e681286d33a7512040fbf10",
+    "real_user_live_dry_run_report": "4fc954df07cc09acb35fb72d7892ce6132cfbed65be44fabad8d52be01b67837",
+    "fixture_api_fetch_item_json": "d0313dab70009d16b2bcae01e047905c381678594a9d3d50e739790141145f06"
+  }
+}

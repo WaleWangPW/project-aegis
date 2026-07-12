@@ -1,0 +1,55 @@
+{
+  "overall_status": "PASS",
+  "generated_at": "2026-07-11T18:10:32.357957+08:00",
+  "run_id": "v2_3_b_20260711_acceptance_final",
+  "command": "validate_v2_3_b_real_user_api_dry_run.py --run-id v2_3_b_20260711_acceptance_final",
+  "acceptance_target": "V2.3-B Real User API Dry Run When Metadata Is Provided",
+  "isolated": true,
+  "network_used": false,
+  "production_records_written": false,
+  "dashboard_contract_changed": false,
+  "run_dir": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v2_3_b_acceptance/v2_3_b_20260711_acceptance_final",
+  "fixture_config": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v2_3_b_acceptance/v2_3_b_20260711_acceptance_final/external_api_connectors.local.fixture.json",
+  "fixture_dry_run_report": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v2_3_b_acceptance/v2_3_b_20260711_acceptance_final/fixture_api_dry_run/api_research_dry_run_report.json",
+  "real_user_config_path": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/config/external_api_connectors.local.json",
+  "real_user_config_status": "blocked_missing_metadata",
+  "real_user_config_blocked_reason": "API connector config not found: /Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/config/external_api_connectors.local.json",
+  "checks": {
+    "fixture_user_config_written": true,
+    "fixture_dry_run_passed": true,
+    "fixture_dry_run_report_exists": true,
+    "secret_value_not_serialized": true,
+    "env_var_name_recorded": true,
+    "raw_bytes_not_stored": true,
+    "request_headers_not_stored": true,
+    "no_real_trade_or_broker": true,
+    "real_user_config_missing_is_blocked": true,
+    "dashboard_contract_unchanged": true,
+    "production_records_not_written": true
+  },
+  "summary": {
+    "fixture_connector_id": "api_fixture_real_user_research",
+    "auth_env_vars_used": [
+      "AEGIS_RESEARCH_API_KEY"
+    ],
+    "dry_run_content_hash": "e99726ce1474613cb362eb8947780b016f347e46676aed1a5e4e91095469506f",
+    "next_target": "V2.3-C Live API Dry Run After User Provides Metadata"
+  },
+  "safety": {
+    "fixture_mode": true,
+    "real_user_config_not_required_for_acceptance": true,
+    "api_key_value_not_stored": true,
+    "env_var_names_only": true,
+    "request_headers_not_stored": true,
+    "raw_bytes_not_stored": true,
+    "no_real_trade": true,
+    "no_broker_api": true,
+    "no_trading_webhook": true,
+    "dashboard_contract_unchanged": true,
+    "no_production_records_mutation": true
+  },
+  "hashes": {
+    "fixture_config": "f3835d00689e43306bff7d43cdcac6039735ca285fd8ccca36cbdf0326d7a672",
+    "fixture_dry_run_report": "a833ce8aa32f19fbcf5c4b779afca7ba370459bac79e5de8574c5846be6e94ff"
+  }
+}

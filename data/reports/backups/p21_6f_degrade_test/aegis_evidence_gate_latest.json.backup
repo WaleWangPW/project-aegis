@@ -1,0 +1,221 @@
+{
+  "project": "Project Aegis",
+  "type": "evidence_gate",
+  "gate_started_at": "2026-07-10T11:28:48.446914+08:00",
+  "gate_finished_at": "2026-07-10T11:28:48.520190+08:00",
+  "strict_mode": true,
+  "checks": {
+    "A_file_existence": {
+      "passed": true,
+      "details": {
+        "crcl_risk_monitor_latest.json": true,
+        "000002.sz_risk_monitor_latest.json": true,
+        "feishu_daily_digest_dry_run.json": true,
+        "feishu_daily_digest_dry_run.md": true,
+        "aegis_daily_digest_pipeline_latest.json": true,
+        "dashboard/index.html": true
+      }
+    },
+    "B_real_fingerprints": {
+      "passed": true,
+      "details": {
+        "crcl_risk_monitor_latest.json": {
+          "exists": true,
+          "mtime": "2026-07-09T13:10:56.572908+08:00",
+          "size": 2784,
+          "sha256_12": "d36831305b4f"
+        },
+        "000002.sz_risk_monitor_latest.json": {
+          "exists": true,
+          "mtime": "2026-07-09T13:55:03.227714+08:00",
+          "size": 2657,
+          "sha256_12": "99b9cee1a743"
+        },
+        "feishu_daily_digest_dry_run.json": {
+          "exists": true,
+          "mtime": "2026-07-10T11:07:34.193963+08:00",
+          "size": 4991,
+          "sha256_12": "7c0cfa755161"
+        },
+        "feishu_daily_digest_dry_run.md": {
+          "exists": true,
+          "mtime": "2026-07-10T11:07:34.194205+08:00",
+          "size": 1285,
+          "sha256_12": "6df7dedf1a1a"
+        },
+        "aegis_daily_digest_pipeline_latest.json": {
+          "exists": true,
+          "mtime": "2026-07-10T11:07:34.204558+08:00",
+          "size": 8567,
+          "sha256_12": "1b3f629a6239"
+        },
+        "dashboard/index.html": {
+          "exists": true,
+          "mtime": "2026-07-10T11:21:33.716843+08:00",
+          "size": 45926,
+          "sha256_12": "9807f61ca009"
+        }
+      }
+    },
+    "C_hash_validity": {
+      "passed": true,
+      "issues": []
+    },
+    "C2_claimed_vs_actual_hash": {
+      "passed": false,
+      "issues": [
+        "Hash mismatch for dashboard/index.html: JSON claims bbc7f54e2083, actual 9807f61ca009"
+      ]
+    },
+    "D_self_hash_strategy": {
+      "passed": true
+    },
+    "E_feishu_dry_run_safety": {
+      "passed": true,
+      "details": {
+        "dry_run": true,
+        "sent": false,
+        "webhook_called": false,
+        "trading_called": false
+      }
+    },
+    "F_dashboard": {
+      "passed": true,
+      "details": {
+        "has_feishu_reference": true,
+        "has_degrade_notice": true,
+        "size": 44192
+      }
+    },
+    "G_makefile_targets": {
+      "exists": true,
+      "targets": [
+        "refresh-feishu-dry-run",
+        "refresh-aegis-daily-digest",
+        "validate-aegis-daily-digest",
+        "audit-aegis-pipeline-evidence",
+        "redteam-aegis-pipeline-validator",
+        "verify-aegis-evidence-gate-base",
+        "verify-aegis-evidence-gate",
+        "full-aegis-daily-digest-check",
+        "update-aegis-pipeline-history",
+        "validate-aegis-pipeline-history",
+        "redteam-aegis-pipeline-history",
+        "full-aegis-history-check"
+      ],
+      "duplicates": [],
+      "passed": true
+    },
+    "H_secret_scan": {
+      "passed": true,
+      "findings": []
+    },
+    "I_real_send_risk_scan": {
+      "passed": true,
+      "findings": []
+    },
+    "J_cross_validation": {
+      "passed": true,
+      "details": {
+        "crcl_risk_monitor_latest.json": {
+          "available": true,
+          "python": "d36831305b4f",
+          "shasum": "d36831305b4f",
+          "match": true
+        },
+        "000002.sz_risk_monitor_latest.json": {
+          "available": true,
+          "python": "99b9cee1a743",
+          "shasum": "99b9cee1a743",
+          "match": true
+        },
+        "feishu_daily_digest_dry_run.json": {
+          "available": true,
+          "python": "7c0cfa755161",
+          "shasum": "7c0cfa755161",
+          "match": true
+        },
+        "feishu_daily_digest_dry_run.md": {
+          "available": true,
+          "python": "6df7dedf1a1a",
+          "shasum": "6df7dedf1a1a",
+          "match": true
+        },
+        "aegis_daily_digest_pipeline_latest.json": {
+          "available": true,
+          "python": "1b3f629a6239",
+          "shasum": "1b3f629a6239",
+          "match": true
+        },
+        "dashboard/index.html": {
+          "available": true,
+          "python": "9807f61ca009",
+          "shasum": "9807f61ca009",
+          "match": true
+        }
+      }
+    },
+    "K_md_hash_format": {
+      "passed": true,
+      "issues": []
+    },
+    "L_doc_duplicate_sections": {
+      "passed": true,
+      "issues": []
+    },
+    "N_history_json_exists": {
+      "passed": true
+    },
+    "N_history_json_parseable": {
+      "passed": true
+    },
+    "N_history_runs_count_between_1_and_7": {
+      "passed": true,
+      "count": 7
+    },
+    "N_history_latest_gate_pass": {
+      "passed": true,
+      "value": "PASS"
+    },
+    "N_history_latest_feishu_safety_flags_valid": {
+      "passed": true,
+      "details": {
+        "dry_run": true,
+        "sent": false,
+        "webhook_called": false,
+        "trading_called": false
+      }
+    },
+    "N_history_hash_values_hex_12": {
+      "passed": true,
+      "issues": []
+    },
+    "N_history_no_known_fake_hash": {
+      "passed": true,
+      "fake_found": []
+    },
+    "N_history_latest_snapshot_exists": {
+      "passed": true,
+      "path": "run_20260710_110752_history_entry.json"
+    },
+    "N_dashboard_history_section_present": {
+      "passed": true
+    },
+    "N_dashboard_history_fetch_present": {
+      "passed": true
+    },
+    "N_dashboard_history_degrade_present": {
+      "passed": true,
+      "has_missing_degrade": true,
+      "has_invalid_degrade": true
+    },
+    "M_feishu_hk_symbol": {
+      "passed": true,
+      "issues": []
+    }
+  },
+  "failures": [
+    "Hash mismatch for dashboard/index.html: JSON claims bbc7f54e2083, actual 9807f61ca009"
+  ],
+  "overall_verdict": "FAIL"
+}

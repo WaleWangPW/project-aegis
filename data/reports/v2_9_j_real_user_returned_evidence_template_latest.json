@@ -1,0 +1,221 @@
+{
+  "overall_status": "PASS",
+  "acceptance_target": "V2.9-J Real User Returned Evidence Intake Template",
+  "generated_at": "2026-07-11T22:06:18.811497+08:00",
+  "run_id": "v2_9_j_20260711_acceptance",
+  "command": "validate_v2_9_j_real_user_returned_evidence_intake_template.py --run-id v2_9_j_20260711_acceptance",
+  "network_used": false,
+  "production_records_written": false,
+  "dashboard_contract_changed": false,
+  "run_dir": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v2_9_j_acceptance/v2_9_j_20260711_acceptance",
+  "user_template": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/config/user_returned_evidence.user-template.json",
+  "template_copy": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v2_9_j_acceptance/v2_9_j_20260711_acceptance/user_returned_evidence.user-template.json",
+  "local_user_file_path": "config/user_returned_evidence.local.json",
+  "materialized_example_json": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v2_9_j_acceptance/v2_9_j_20260711_acceptance/user_returned_evidence.local.example.json",
+  "example_evidence_path": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v2_9_j_acceptance/v2_9_j_20260711_acceptance/example_user_returned_outcome_note.txt",
+  "refresh_report_json": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v2_9_j_acceptance/v2_9_j_20260711_acceptance/v2_9_i_refresh_from_template_example.json",
+  "source_current_brief_json": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/v2_9_h_current_usable_simulation_brief_latest.json",
+  "source_review_memory_json": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/v2_9_g_formal_review_memory_records_latest.json",
+  "template_validation": {
+    "overall_status": "PASS",
+    "known_paper_trade_ids": [
+      "ptr_virtual_pending_entry_packet_paper_intake_packet_fb_watch_001"
+    ],
+    "record_types": [
+      "outcome",
+      "screenshot",
+      "text_note"
+    ],
+    "checks": {
+      "top_level_fields_present": true,
+      "schema_version_correct": true,
+      "local_path_is_local_json": true,
+      "local_path_gitignored": true,
+      "instructions_warn_no_secrets": true,
+      "has_records": true,
+      "record_fields_present": true,
+      "has_outcome_screenshot_and_text_note": true,
+      "record_types_allowed": true,
+      "template_uses_placeholders_for_trade_id": true,
+      "current_brief_has_trade_id_to_fill": true,
+      "no_secret_like_values": true,
+      "no_forbidden_automation_terms": true,
+      "safety_flags_present": true
+    }
+  },
+  "materialized_example_validation": {
+    "overall_status": "PASS",
+    "accepted_returned_evidence_records": [
+      {
+        "returned_evidence_id": "returned_real_user_template_example_001",
+        "paper_trade_id": "ptr_virtual_pending_entry_packet_paper_intake_packet_fb_watch_001",
+        "evidence_type": "outcome",
+        "submitted_at": "2026-07-11T22:10:00+08:00",
+        "user_note_hash": "2b96dada0c4ce779be5c3504c1354010284f0c49ab05014d7af955cf8fc8ab3d",
+        "user_note_summary": "Template validation example: user manually supplied simulation outcome evidence.",
+        "evidence_items": [
+          {
+            "evidence_ref": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v2_9_j_acceptance/v2_9_j_20260711_acceptance/example_user_returned_outcome_note.txt",
+            "resolved_path": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v2_9_j_acceptance/v2_9_j_20260711_acceptance/example_user_returned_outcome_note.txt",
+            "exists": true,
+            "sha256": "26579d66916d76880aa5c88cced2e8eb9497973050934b2f8efa1411d4f2f92c",
+            "raw_content_stored": false
+          }
+        ],
+        "user_confirmed": true,
+        "created_at": "2026-07-11T22:06:18.810890+08:00",
+        "simulation_only": true,
+        "user_returned_evidence_only": true,
+        "raw_content_not_stored": true,
+        "no_real_trade_execution": true,
+        "no_broker_api": true,
+        "no_webhook": true,
+        "no_order_placement": true,
+        "no_strategy_mutation": true,
+        "no_production_record_mutation": true,
+        "status": "accepted",
+        "outcome": "mixed",
+        "decision_quality": "reasonable_decision",
+        "actual_return": 0.003,
+        "max_drawdown": -0.006,
+        "actual_return_source": "user_returned_evidence",
+        "no_return_fabrication": true
+      }
+    ],
+    "blocked_returned_evidence_records": [],
+    "checks": {
+      "example_has_records": true,
+      "example_accepted": true,
+      "example_actual_return_user_supplied": true,
+      "example_no_return_fabrication": true,
+      "example_no_real_trade": true,
+      "example_no_broker_api": true,
+      "example_no_webhook": true,
+      "example_no_order_placement": true
+    }
+  },
+  "refresh_report_summary": {
+    "candidate_count": 9,
+    "blocked_count": 3,
+    "candidate_markets": [
+      "A",
+      "H",
+      "US"
+    ],
+    "blocked_markets": [
+      "A",
+      "H",
+      "US"
+    ],
+    "top_candidate_symbols": [
+      "600519.SH",
+      "600036.SH",
+      "00700.HK",
+      "CRCL",
+      "MSFT",
+      "00005.HK"
+    ],
+    "sandbox_pass_count": 3,
+    "sandbox_fail_count": 3,
+    "real_user_api_status": "blocked_missing_metadata",
+    "formal_review_count": 1,
+    "formal_memory_count": 1,
+    "review_pending_count": 0,
+    "accepted_returned_evidence_count": 1,
+    "blocked_returned_evidence_count": 0,
+    "refreshed_review_count": 1,
+    "refreshed_memory_count": 1,
+    "review_resolved_count": 1
+  },
+  "production_record_files_before": {
+    "reviews_jsonl": {
+      "exists": false,
+      "size": null,
+      "sha256": null
+    },
+    "memory_jsonl": {
+      "exists": false,
+      "size": null,
+      "sha256": null
+    },
+    "investment_memory_jsonl": {
+      "exists": false,
+      "size": null,
+      "sha256": null
+    },
+    "paper_trades_jsonl": {
+      "exists": false,
+      "size": null,
+      "sha256": null
+    },
+    "recommendations_jsonl": {
+      "exists": true,
+      "size": 12284,
+      "sha256": "05b2e56c9b547cbe3ce4cb71b7cb776185e23ef2cc3bc9a46a918bce0cfb65dc"
+    }
+  },
+  "production_record_files_after": {
+    "reviews_jsonl": {
+      "exists": false,
+      "size": null,
+      "sha256": null
+    },
+    "memory_jsonl": {
+      "exists": false,
+      "size": null,
+      "sha256": null
+    },
+    "investment_memory_jsonl": {
+      "exists": false,
+      "size": null,
+      "sha256": null
+    },
+    "paper_trades_jsonl": {
+      "exists": false,
+      "size": null,
+      "sha256": null
+    },
+    "recommendations_jsonl": {
+      "exists": true,
+      "size": 12284,
+      "sha256": "05b2e56c9b547cbe3ce4cb71b7cb776185e23ef2cc3bc9a46a918bce0cfb65dc"
+    }
+  },
+  "checks": {
+    "template_file_exists": true,
+    "gitignore_exists": true,
+    "template_validation_pass": true,
+    "materialized_example_validation_pass": true,
+    "v2_9_i_refresh_compatible": true,
+    "actual_return_source_user_evidence": true,
+    "no_return_fabrication": true,
+    "production_record_files_unchanged": true,
+    "production_records_not_written": true,
+    "network_not_used": true,
+    "dashboard_contract_unchanged": true
+  },
+  "safety": {
+    "simulation_only": true,
+    "template_only": true,
+    "local_user_file_gitignored": true,
+    "user_returned_evidence_only": true,
+    "actual_return_from_user_evidence_only": true,
+    "no_return_fabrication": true,
+    "production_records_not_written": true,
+    "no_real_trade_execution": true,
+    "no_broker_api": true,
+    "no_webhook": true,
+    "no_order_placement": true,
+    "no_strategy_mutation": true,
+    "dashboard_contract_unchanged": true
+  },
+  "hashes": {
+    "user_template": "dad977c819ee7e868accad61c2d491d11b19beffbdb5af8df15b4cba3d6ea3d4",
+    "template_copy": "21d00fef3cfa2d6b1662fe93d4f3be2d949cf1afe6a822ff28558f56714d692d",
+    "materialized_example_json": "fc7ac2e0a6a854e8de0904bcd627402c094292c37e2a65b25e7cfc97e3c77ed2",
+    "example_evidence_path": "26579d66916d76880aa5c88cced2e8eb9497973050934b2f8efa1411d4f2f92c",
+    "refresh_report_json": "f3da9ed94536b0bcdf8cba8f506c7c9bdbd981aefb660ccf51f08a6fda99e29d",
+    "source_current_brief_json": "93bde7619bbcb6c9f61873377a6362496d8a31d4f4131bd6895533261da34082",
+    "source_review_memory_json": "e146030647a2c3e49ba5568791ccd1e78564f4c11a90b752467ed308d4a56f7d"
+  }
+}

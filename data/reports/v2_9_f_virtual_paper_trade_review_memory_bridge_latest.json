@@ -1,0 +1,191 @@
+{
+  "overall_status": "PASS",
+  "acceptance_target": "V2.9-F Virtual PaperTrade Review/Memory Bridge",
+  "run_id": "v2_9_f_20260711_acceptance",
+  "generated_at": "2026-07-11T21:31:45.144459+08:00",
+  "command": "validate_v2_9_f_virtual_paper_trade_review_memory_bridge.py --run-id v2_9_f_20260711_acceptance",
+  "network_used": false,
+  "production_records_written": false,
+  "reviews_written": false,
+  "memory_records_written": false,
+  "paper_trades_written": false,
+  "recommendations_written": false,
+  "dashboard_contract_changed": false,
+  "summary": {
+    "virtual_paper_trade_count": 1,
+    "review_link_count": 1,
+    "memory_candidate_count": 1,
+    "symbols": [
+      "600519.SH"
+    ]
+  },
+  "review_evidence_links": [
+    {
+      "review_evidence_link_id": "virtual_trade_review_link_ptr_virtual_pending_entry_packet_paper_intake_packet_fb_watch_001",
+      "source_type": "virtual_paper_trade_ledger",
+      "paper_trade_id": "ptr_virtual_pending_entry_packet_paper_intake_packet_fb_watch_001",
+      "recommendation_id": "manual_entry_pending_entry_packet_paper_intake_packet_fb_watch_001",
+      "symbol": "600519.SH",
+      "market": "A",
+      "entry_date": "2026-07-11",
+      "entry_price": 1688.88,
+      "status": "open",
+      "review_input_status": "candidate_evidence",
+      "review_use": "virtual_paper_trade_context",
+      "suggested_review_horizons": [
+        "5d",
+        "10d",
+        "20d",
+        "40d",
+        "exit"
+      ],
+      "evidence_refs": [
+        "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v2_9_e_acceptance/v2_9_e_20260711_acceptance/virtual_paper_trades.json"
+      ],
+      "source_evidence_items": [
+        {
+          "evidence_ref": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v2_9_d_acceptance/v2_9_d_20260711_acceptance/user_entry_evidence/600519_SH_manual_entry.txt",
+          "exists": true,
+          "sha256": "5fcc95501fccee426ece1f9193431d71f16172f94ae1d30a5d74caa38b48324e"
+        }
+      ],
+      "created_at": "2026-07-11T21:31:45.144282+08:00",
+      "simulation_only": true,
+      "requires_review_before_record_write": true,
+      "no_review_record_mutation": true,
+      "no_memory_jsonl_mutation": true,
+      "no_paper_trade_mutation": true,
+      "no_recommendation_mutation": true
+    }
+  ],
+  "memory_candidates": [
+    {
+      "memory_candidate_id": "virtual_trade_memory_candidate_ptr_virtual_pending_entry_packet_paper_intake_packet_fb_watch_001",
+      "source_type": "virtual_paper_trade_ledger",
+      "linked_recommendation_id": "manual_entry_pending_entry_packet_paper_intake_packet_fb_watch_001",
+      "paper_trade_id": "ptr_virtual_pending_entry_packet_paper_intake_packet_fb_watch_001",
+      "symbol": "600519.SH",
+      "market": "A",
+      "lesson_type": "virtual_trade_entry_context",
+      "lesson": "600519.SH（A）：已从用户验证入场证据创建 simulation-only virtual PaperTrade ledger，入场价 1688.88，入场日 2026-07-11。该记录只能作为后续复盘候选，不能自动改变策略或触发真实交易。",
+      "tags": [
+        "virtual_paper_trade",
+        "simulation_only",
+        "A"
+      ],
+      "confidence": 0.5,
+      "evidence_refs": [
+        "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v2_9_e_acceptance/v2_9_e_20260711_acceptance/virtual_paper_trades.json"
+      ],
+      "source_evidence_items": [
+        {
+          "evidence_ref": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v2_9_d_acceptance/v2_9_d_20260711_acceptance/user_entry_evidence/600519_SH_manual_entry.txt",
+          "exists": true,
+          "sha256": "5fcc95501fccee426ece1f9193431d71f16172f94ae1d30a5d74caa38b48324e"
+        }
+      ],
+      "created_at": "2026-07-11T21:31:45.144445+08:00",
+      "requires_review_before_memory_write": true,
+      "no_memory_jsonl_mutation": true,
+      "no_strategy_mutation": true,
+      "no_real_trade_execution": true,
+      "no_broker_api": true,
+      "no_webhook": true,
+      "no_order_placement": true
+    }
+  ],
+  "checks": {
+    "has_virtual_paper_trades": true,
+    "review_links_for_each_virtual_trade": true,
+    "memory_candidates_for_each_virtual_trade": true,
+    "all_review_links_are_candidate_evidence": true,
+    "all_memory_candidates_require_review": true,
+    "all_items_simulation_only": true,
+    "no_review_record_mutation": true,
+    "no_memory_jsonl_mutation": true,
+    "no_paper_trade_mutation": true,
+    "no_recommendation_mutation": true,
+    "no_strategy_mutation": true,
+    "no_real_trade_execution": true,
+    "no_broker_api": true,
+    "no_webhook": true,
+    "no_order_placement": true,
+    "acceptance_target_correct": true,
+    "report_status_pass": true,
+    "production_record_files_unchanged": true,
+    "production_records_not_written": true,
+    "reviews_not_written": true,
+    "memory_records_not_written": true,
+    "paper_trades_not_written": true,
+    "recommendations_not_written": true,
+    "dashboard_contract_unchanged": true,
+    "network_not_used": true
+  },
+  "safety": {
+    "simulation_only": true,
+    "candidate_evidence_only": true,
+    "no_real_trade_execution": true,
+    "no_broker_api": true,
+    "no_webhook": true,
+    "no_order_placement": true,
+    "no_review_record_mutation": true,
+    "no_memory_jsonl_mutation": true,
+    "no_paper_trade_mutation": true,
+    "no_recommendation_mutation": true,
+    "no_strategy_mutation": true,
+    "dashboard_contract_unchanged": true
+  },
+  "run_dir": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v2_9_f_acceptance/v2_9_f_20260711_acceptance",
+  "source_virtual_paper_trades_json": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v2_9_e_acceptance/v2_9_e_20260711_acceptance/virtual_paper_trades.json",
+  "review_evidence_links_json": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v2_9_f_acceptance/v2_9_f_20260711_acceptance/virtual_trade_review_evidence_links.json",
+  "memory_candidates_json": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/v2_9_f_acceptance/v2_9_f_20260711_acceptance/virtual_trade_memory_candidates.json",
+  "production_record_files_before": {
+    "paper_trades_jsonl": {
+      "exists": false,
+      "size": null,
+      "sha256": null
+    },
+    "reviews_jsonl": {
+      "exists": false,
+      "size": null,
+      "sha256": null
+    },
+    "memory_jsonl": {
+      "exists": false,
+      "size": null,
+      "sha256": null
+    },
+    "investment_memory_jsonl": {
+      "exists": false,
+      "size": null,
+      "sha256": null
+    }
+  },
+  "production_record_files_after": {
+    "paper_trades_jsonl": {
+      "exists": false,
+      "size": null,
+      "sha256": null
+    },
+    "reviews_jsonl": {
+      "exists": false,
+      "size": null,
+      "sha256": null
+    },
+    "memory_jsonl": {
+      "exists": false,
+      "size": null,
+      "sha256": null
+    },
+    "investment_memory_jsonl": {
+      "exists": false,
+      "size": null,
+      "sha256": null
+    }
+  },
+  "hashes": {
+    "source_virtual_paper_trades_json": "f19c42475a12502e48dd74f00486e076df8eaf315ce8d7f8a9dd7540ec319f5d",
+    "review_evidence_links_json": "5938b7922a51c254819b211d544ac3bccc7af7b9421327674d795fa2676a79a4",
+    "memory_candidates_json": "b7cc9c4efd07b185c68f4a11db74363ee2b676a5895a1d8a54a22e511987fba3"
+  }
+}

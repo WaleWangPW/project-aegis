@@ -1,0 +1,6 @@
+# Per Master Spec §20.5 — Paper Trading rules. Implemented in Phase 6.
+paper_trading:
+  enabled: true
+  create_for_status: ["Action"]
+  observe_status: ["Ready", "Watch"]
+  horizons_trading_days: [5, 10, 20, 40]
