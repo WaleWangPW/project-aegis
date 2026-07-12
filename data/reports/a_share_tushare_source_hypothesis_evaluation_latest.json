@@ -1,8 +1,8 @@
 {
   "type": "a_share_tushare_source_hypothesis_evaluation",
   "status": "PASS",
-  "generated_at": "2026-07-13T01:43:17+08:00",
-  "run_id": "a_share_tushare_source_hypothesis_evaluation_20260713T014317",
+  "generated_at": "2026-07-13T01:59:00+08:00",
+  "run_id": "a_share_tushare_source_hypothesis_evaluation_20260713T015900",
   "command": "scripts/evaluate_a_share_tushare_source_hypotheses.py",
   "thresholds": {
     "min_proxy_case_count": 4,
@@ -316,8 +316,8 @@
     "strategy_specific_historical_cases": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/aegis_strategy_specific_historical_cases_latest.json"
   },
   "source_hashes": {
-    "source_hypothesis_queue": "24a0cb4c201fed5b3402d16191d206d928ca6f55915ea64a32920b7483aca51a",
-    "strategy_specific_historical_cases": "7a5bdc838530c96a917d91731ae384173423eb948d17bdeac255281dea2e8e22"
+    "source_hypothesis_queue": "adf0cb1842d582ce3673e0290ec134eb02f751721447dd894af93dda543537d7",
+    "strategy_specific_historical_cases": "b661cd143c55937943fb474a0042117e1586c7eae0407056409055d7a16f064d"
   },
   "checks": {
     "source_queue_present": true,

@@ -1,7 +1,7 @@
 # A-share Tushare Source Feature Coverage
 
 - Status: `PASS`
-- Generated At: `2026-07-13T01:44:44+08:00`
+- Generated At: `2026-07-13T02:00:24+08:00`
 - Ready For Deep Sandbox: `5`
 - Feature Gaps: `0`
 - Observations: `684`

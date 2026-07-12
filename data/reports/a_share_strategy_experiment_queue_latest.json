@@ -1,8 +1,8 @@
 {
   "type": "a_share_strategy_experiment_queue",
   "status": "PASS",
-  "generated_at": "2026-07-13T01:47:01+08:00",
-  "run_id": "a_share_strategy_experiment_queue_20260713T014701",
+  "generated_at": "2026-07-13T02:02:51+08:00",
+  "run_id": "a_share_strategy_experiment_queue_20260713T020251",
   "command": "scripts/build_a_share_strategy_experiment_queue.py",
   "summary": {
     "experiment_count": 6,
@@ -303,15 +303,15 @@
     "diagnostics": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/a_share_tushare_strategy_diagnostics_latest.json"
   },
   "source_hashes": {
-    "source_probe": "8addc53b01ebef2a93e7349d69b12b163c6e4fae8f40d28bcc0e6793cc983a77",
-    "dragon_tiger": "384bc94c694c80d7d7361de0ae8117a9484b85758abafe225e6640ae3264d832",
-    "historical_cases": "7a5bdc838530c96a917d91731ae384173423eb948d17bdeac255281dea2e8e22",
-    "feature_coverage": "d0c95838b2fccafb89cdb5f86bad266ffc59ba53f472db2d7274069244d1e4f8",
-    "deep_sandbox": "3abae027a9c19adeb3e66bef082ce6221dad9ea23d60d59f029dac46c60ab585",
-    "refined_sandbox": "6ef66fef402bf370a137ed821bccbf113b12c56908c2bfaea5642ac0e28a99e1",
-    "signal_tuning": "c79b0526b44c9ddd547615da88cdc2df6e6f2d2dbf6563b727e0eabd887ca130",
-    "ranking_gate": "6c1df1bb1c7104b992e0cb1f1a03d11eb8478bbd2a28de7f3057318aa217c085",
-    "diagnostics": "b06dd49eb8962d5b5171ce11572db374ec62b4077e39c82d843ade0ba8105ea5"
+    "source_probe": "bd484d73586dfc177b5274b253c380865f8b2a93d35890b85041a405e37b86ac",
+    "dragon_tiger": "41dc11b32fe7d757f220c2e9c5db88ef49d43da1b35a21f8711bf749b24ac433",
+    "historical_cases": "b661cd143c55937943fb474a0042117e1586c7eae0407056409055d7a16f064d",
+    "feature_coverage": "e032384c8377c79fc5e0182dc7c19fb00eb92a9bf3a5f71ce834b0e73268a4da",
+    "deep_sandbox": "71ed987bb02fd42046898accb5d0adb1df2a500162978dc752ebe93ad245e743",
+    "refined_sandbox": "2cbea82ecfb2ea58dd128c4054b98f4783d5c5c04630e388a18abb8df3f2a049",
+    "signal_tuning": "d66d2d4b5fbb348f7f2eac728e66d7420f850a47e7f83c4a4f552bc14a98aff6",
+    "ranking_gate": "1442d3a0f364b5220860a564b5654717979ae89cdca0edd9c47c7203f18c82eb",
+    "diagnostics": "f3515a1d5dfbb5b53dd1b562ae8c97057c6b9ecd11dfc86561bb7fcba76a1bb1"
   },
   "checks": {
     "has_experiments": true,

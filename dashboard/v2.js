@@ -98,6 +98,33 @@ function actionHub(decision, feedback) {
   ];
   return items.map(item => `<article class="hub-card ${item.tone}"><div><b>${esc(item.title)}</b><p>${esc(item.body)}</p></div><button type="button" data-page-jump="${esc(item.page)}"><span>打开</span><i>↗</i></button></article>`).join('');
 }
+function morningReadinessPanel(decision, stockSelection, fullYearCoverage, stockAgentCycle, rankingGate) {
+  const coverageOk = fullYearCoverage?.answer_label === 'YES';
+  const rankingApproved = Number(rankingGate?.summary?.ranking_gate_approved_count || 0);
+  const researchCount = Number(stockSelection?.summary?.research_candidate_count || 0);
+  const newsCount = Number(stockSelection?.summary?.news_enriched_count || 0);
+  const commandCount = stockAgentCycle?.summary?.command_count ?? 'N/A';
+  const failedCount = stockAgentCycle?.summary?.failed_command_count ?? 'N/A';
+  const status = decision.risk_count > 0 ? '先处理风险' : researchCount > 0 ? '可以开始研究' : '等待数据';
+  const statusTone = decision.risk_count > 0 ? 'risk' : researchCount > 0 ? 'good' : 'warn';
+  return `<section class="morning-readiness ${statusTone}" aria-label="明早可用状态">
+    <div class="morning-topline">
+      <span>明早打开先看这里</span>
+      <b>${esc(status)}</b>
+      <p>${decision.risk_count > 0 ? '今天第一动作不是选股，是复核风险；选股页仍可作为研究参考。' : '今天可以看 Top 3 候选，但只能加入模拟研究，不能自动交易。'}</p>
+    </div>
+    <div class="morning-grid">
+      <article><span>Top 候选</span><b>${esc(researchCount)}</b><small>已补资讯 ${esc(newsCount)}</small></article>
+      <article class="${coverageOk ? 'ok' : 'hold'}"><span>全A股一年</span><b>${coverageOk ? 'YES' : 'NO'}</b><small>${esc(fullYearCoverage?.coverage_status || '等待报告')}</small></article>
+      <article class="${rankingApproved > 0 ? 'ok' : 'hold'}"><span>策略放行</span><b>${esc(rankingApproved)}</b><small>ranking gate</small></article>
+      <article><span>stock-agent</span><b>${esc(commandCount)}</b><small>失败 ${esc(failedCount)}</small></article>
+    </div>
+    <div class="morning-next">
+      <b>${coverageOk ? '下一步：继续验证策略稳定性' : '醒来后可批准：补当前过去一年全A股缓存'}</b>
+      <span>${coverageOk ? '仍需 ranking gate 放行后才允许影响排序。' : '未批准前不会消耗大量 Tushare API，也不会写入大缓存。'}</span>
+    </div>
+  </section>`;
+}
 function compactCandidate(item) {
   const news=(item.news_items||[])[0];
   const newsLine=news ? `${news.date ? `${String(news.date).slice(5,10)}｜` : ''}${newsText(news)}` : '暂无近期资讯摘要';
@@ -211,7 +238,7 @@ function render() { const invalid=[]; return Promise.all(Object.entries(sources)
   byId('system-status').textContent=stateLabel(system); byId('daily-status').textContent=stateLabel(daily); byId('data-time').textContent=`数据更新时间：${d.health?.generated_at || d.daily?.generated_at || '数据未提供'}`;
   const hero=byId('decision'); hero.className=`section hero ${decision.state==='Risk / Exit'?'risk-state':decision.state==='BLOCKED'?'blocked-state':decision.state==='Watch / Review'||decision.state==='Ready'?'warn-state':''}`;
   byId('decision-content').innerHTML=`${tag(decision.state)}<h2 class="decision-title">${esc(decision.title)}</h2><p class="decision-summary">${esc(decision.summary)}</p><div class="decision-actions"><div class="directive"><b>今天允许做什么</b>${esc(decision.allowed)}</div><div class="directive forbid"><b>今天禁止做什么</b>${esc(decision.forbidden)}</div></div><div class="metrics"><div class="metric"><span>风险数量</span><strong>${decision.risk_count}</strong></div><div class="metric"><span>可执行候选</span><strong>${decision.action_count}</strong></div><div class="metric"><span>下次检查</span><strong>${esc(decision.next_check)}</strong></div></div>${decision.blocking_reasons.length?`<p class="muted">${esc(decision.blocking_reasons.join('；'))}</p>`:''}`;
-  byId('overview-actions').innerHTML=actionHub(decision,d.feedback);
+  byId('overview-actions').innerHTML=morningReadinessPanel(decision,d.stockSelection,d.fullYearCoverage,d.stockAgentCycle,d.rankingGate)+actionHub(decision,d.feedback);
   byId('overview-candidates').innerHTML=overviewCandidates(d.stockSelection);
   const risks=positions.filter(p=>p.status==='Exit'||p.riskVeto).slice(0,3); byId('risk-summary').textContent=risks.length?`${risks.length} 项需复核`:'无紧急风险'; byId('risk-content').innerHTML=risks.length?risks.map(riskCard).join(''):'<p class="empty">当前没有紧急风险。</p>';
   byId('holdings-summary').textContent=`${positions.length} 个持仓/监控对象`; byId('holdings-content').innerHTML=positions.map(holdingCard).join('');

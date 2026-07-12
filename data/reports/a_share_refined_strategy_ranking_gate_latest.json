@@ -1,8 +1,8 @@
 {
   "type": "a_share_refined_strategy_ranking_gate",
   "status": "PASS",
-  "generated_at": "2026-07-13T01:47:00+08:00",
-  "run_id": "a_share_refined_strategy_ranking_gate_20260713T014700",
+  "generated_at": "2026-07-13T02:02:49+08:00",
+  "run_id": "a_share_refined_strategy_ranking_gate_20260713T020249",
   "command": "scripts/review_a_share_refined_strategy_ranking_gate.py",
   "thresholds": {
     "min_case_count": 6,
@@ -28,7 +28,7 @@
     "refined_strategy_sandbox": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/a_share_tushare_refined_strategy_sandbox_latest.json"
   },
   "source_hashes": {
-    "refined_strategy_sandbox": "6ef66fef402bf370a137ed821bccbf113b12c56908c2bfaea5642ac0e28a99e1"
+    "refined_strategy_sandbox": "2cbea82ecfb2ea58dd128c4054b98f4783d5c5c04630e388a18abb8df3f2a049"
   },
   "checks": {
     "refined_sandbox_pass": true,

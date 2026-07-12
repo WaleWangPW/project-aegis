@@ -1644,6 +1644,113 @@ details > summary::-webkit-details-marker { display: none; }
   gap: 12px;
 }
 
+.morning-readiness {
+  padding: 7px;
+  border-radius: 31px;
+  background:
+    radial-gradient(circle at 0 0, rgba(255,255,252,.92), transparent 16rem),
+    linear-gradient(145deg, rgba(18,23,21,.07), rgba(18,23,21,.035));
+  outline: 1px solid rgba(18,23,21,.09);
+}
+
+.morning-readiness,
+.morning-readiness * {
+  min-width: 0;
+}
+
+.morning-readiness.good {
+  background:
+    radial-gradient(circle at 0 0, rgba(233,246,239,.96), transparent 16rem),
+    linear-gradient(145deg, rgba(27,111,91,.12), rgba(18,23,21,.035));
+}
+
+.morning-readiness.risk {
+  background:
+    radial-gradient(circle at 0 0, rgba(255,240,236,.98), transparent 16rem),
+    linear-gradient(145deg, rgba(178,68,59,.12), rgba(18,23,21,.035));
+}
+
+.morning-topline,
+.morning-next {
+  padding: 18px;
+  border-radius: 25px;
+  background: rgba(255,255,252,.86);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.9);
+}
+
+.morning-topline span,
+.morning-grid span,
+.morning-grid small {
+  display: block;
+  color: var(--muted);
+  font-size: 12px;
+  overflow-wrap: anywhere;
+}
+
+.morning-topline > span {
+  color: var(--accent);
+  font-weight: 900;
+  letter-spacing: .12em;
+}
+
+.morning-topline b {
+  display: block;
+  margin-top: 7px;
+  font-size: clamp(28px, 3vw, 42px);
+  line-height: .98;
+  letter-spacing: -.065em;
+}
+
+.morning-topline p,
+.morning-next span {
+  margin: 8px 0 0;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.morning-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+  margin: 8px 0;
+}
+
+.morning-grid article {
+  min-height: 92px;
+  padding: 14px;
+  border-radius: 21px;
+  background: rgba(255,255,252,.72);
+  outline: 1px solid rgba(18,23,21,.08);
+}
+
+.morning-grid article.hold {
+  background: linear-gradient(145deg, rgba(255,245,221,.9), rgba(255,255,252,.72));
+  outline-color: rgba(152,98,27,.2);
+}
+
+.morning-grid article.ok {
+  background: linear-gradient(145deg, rgba(233,246,239,.92), rgba(255,255,252,.72));
+  outline-color: rgba(27,111,91,.18);
+}
+
+.morning-grid b {
+  display: block;
+  margin: 3px 0 2px;
+  color: var(--ink);
+  font-size: 26px;
+  line-height: 1;
+  letter-spacing: -.06em;
+}
+
+.morning-next {
+  display: grid;
+  gap: 4px;
+}
+
+.morning-next b {
+  color: var(--ink);
+}
+
 .hub-card {
   padding: 5px;
   border-radius: 28px;
