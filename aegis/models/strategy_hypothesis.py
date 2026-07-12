@@ -16,6 +16,11 @@ HypothesisFamily = Literal[
     "size",
     "multi_factor",
     "risk_overlay",
+    "capital_flow",
+    "hot_money",
+    "institutional_ownership",
+    "holder_concentration",
+    "governance",
 ]
 
 

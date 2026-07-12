@@ -20,11 +20,22 @@ priority endpoints ready for historical sandbox. Available modules include
 The report stores metadata, row counts, columns, and hashes only; it does not
 store raw payloads or secrets.
 
+**A-share strategy hypothesis queue:** Aegis now converts PASS Tushare source
+modules into sandbox-only A-share strategy hypotheses. Command:
+`make build-a-share-tushare-source-hypotheses`. Latest report:
+`data/reports/a_share_tushare_source_hypothesis_queue_latest.json`, status
+`PASS`, `6` hypotheses created: capital-flow accumulation, dragon-tiger/hot
+money seat confirmation, institutional ownership stability, holder
+concentration improvement, factor/liquidity/quality overlay, and governance
+reward-alignment. These are not recommendations and cannot affect ranking until
+historical sandbox validation passes. Latest SHA256:
+`999657cd138800a8d1c7cc99c9293386ac896bf8af501eac38217468946afbaf`.
+
 **OpenClaw stock-agent handoff:** daily A-share strategy maintenance should
 now be run by OpenClaw `stock-agent`, not Codex. Run `make
 stock-agent-a-share-strategy-cycle` from the repo to execute: Tushare source
-probe, strategy-specific historical case build, case evaluation, and stock-agent
-workspace preparation. The task packet is written to
+probe, source hypothesis queue build, strategy-specific historical case build,
+case evaluation, and stock-agent workspace preparation. The task packet is written to
 `~/.openclaw/agents/stock-agent/workspace/project-aegis/AEGIS_STOCK_AGENT_STRATEGY_SIMULATION_TASK.md`,
 with mirrored evidence reports and safety rules. Codex should only review
 blocked sources, changed strategy ranking, or evidence-gate/contract/security
@@ -32,11 +43,13 @@ boundaries.
 
 **Dashboard strategy page update:** `http://localhost:8080/dashboard/index.html`
 now includes a `策略` page. It reads
-`a_share_tushare_strategy_source_probe_latest.json` and shows real Tushare
-probe status (`PASS`, usable endpoint count, module-level PASS/blocked status)
-next to the existing strategy slate and historical case status. Browser QA
-verified desktop and 390px mobile have no horizontal overflow and no console
-warnings/errors.
+`a_share_tushare_strategy_source_probe_latest.json` and
+`a_share_tushare_source_hypothesis_queue_latest.json`; it shows real Tushare
+probe status plus the six A-share source hypotheses as a visible strategy
+queue. The selection page also has clearer card action bars and stronger
+expand controls. Verified with `node --check dashboard/v2.js`; Playwright
+package was not installed in this repo, so screenshot automation was not run in
+this pass.
 
 **Dashboard navigation update:** the live page at
 `http://localhost:8080/dashboard/index.html` is no longer a single long report.

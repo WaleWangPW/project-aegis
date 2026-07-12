@@ -1882,27 +1882,32 @@ details > summary::-webkit-details-marker { display: none; }
 
 .selection-card {
   min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
 }
 
 .card-actions {
   display: grid;
   grid-template-columns: 1.2fr 1fr .9fr;
   gap: 10px;
-  margin-top: 16px;
-  padding: 6px;
-  border-radius: 24px;
-  background: rgba(18, 23, 21, .045);
-  outline: 1px solid rgba(18, 23, 21, .07);
+  margin: auto -10px -10px;
+  padding: 10px;
+  border-radius: 0 0 28px 28px;
+  background:
+    linear-gradient(180deg, rgba(18, 23, 21, .03), rgba(18, 23, 21, .07));
+  border-top: 1px solid rgba(18, 23, 21, .1);
+  outline: 0;
 }
 
 .candidate-action {
-  min-height: 48px;
+  min-height: 54px;
   padding: 10px 13px;
   color: var(--ink);
   background: rgba(255,255,252,.9);
   outline: 1px solid rgba(18,23,21,.12);
   box-shadow: inset 0 1px 0 rgba(255,255,255,.9), 0 12px 30px rgba(35,44,40,.08);
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 900;
 }
 
@@ -1922,7 +1927,7 @@ details > summary::-webkit-details-marker { display: none; }
   display: inline-flex;
   width: fit-content;
   max-width: 100%;
-  margin-top: 10px;
+  margin-top: -4px;
   padding: 8px 11px;
   border-radius: 999px;
   color: var(--muted);
@@ -2032,14 +2037,16 @@ details > summary::-webkit-details-marker { display: none; }
 }
 
 .strategy-current-grid,
-.strategy-module-grid {
+.strategy-module-grid,
+.source-hypothesis-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 12px;
 }
 
 .strategy-current-card h3,
-.strategy-module-card h3 {
+.strategy-module-card h3,
+.source-hypothesis-card h3 {
   margin: 9px 0 8px;
   font-size: 22px;
   line-height: 1.08;
@@ -2047,7 +2054,8 @@ details > summary::-webkit-details-marker { display: none; }
 }
 
 .strategy-current-card p,
-.strategy-module-card p {
+.strategy-module-card p,
+.source-hypothesis-card p {
   color: var(--muted);
 }
 
@@ -2113,6 +2121,115 @@ details > summary::-webkit-details-marker { display: none; }
   padding: 7px 9px;
   color: var(--ink-soft);
   font-size: 12px;
+}
+
+.source-hypothesis-card {
+  position: relative;
+  overflow: hidden;
+  padding: 20px;
+  border-radius: 26px;
+  color: #f8fffb;
+  background:
+    radial-gradient(circle at 12% 0%, rgba(97, 193, 158, .42), transparent 15rem),
+    linear-gradient(145deg, #10201b, #184b3f 58%, #11342d);
+  box-shadow: 0 22px 58px rgba(17, 52, 45, .22), inset 0 1px 0 rgba(255,255,255,.18);
+}
+
+.source-hypothesis-card::after {
+  content: "";
+  position: absolute;
+  right: -38px;
+  bottom: -52px;
+  width: 138px;
+  height: 138px;
+  border-radius: 999px;
+  background: rgba(255,255,255,.08);
+}
+
+.source-hypothesis-top {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.source-hypothesis-top span,
+.source-hypothesis-top small,
+.source-hypothesis-card b {
+  color: rgba(248,255,251,.72);
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.source-hypothesis-card p {
+  color: rgba(248,255,251,.78);
+}
+
+.hypothesis-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin: 14px 0;
+}
+
+.hypothesis-tags small {
+  padding: 6px 9px;
+  border-radius: 999px;
+  color: #eafff5;
+  background: rgba(255,255,255,.12);
+}
+
+.source-hypothesis-card ul {
+  display: grid;
+  gap: 7px;
+  margin: 0 0 14px;
+  padding: 0;
+  list-style: none;
+}
+
+.source-hypothesis-card li {
+  padding: 7px 9px;
+  border-radius: 999px;
+  color: rgba(248,255,251,.82);
+  background: rgba(255,255,255,.1);
+  font-size: 12px;
+}
+
+.selection-card .card-more {
+  margin-top: -2px;
+}
+
+.selection-card .card-more summary,
+.more-candidates > summary,
+.selection-workbench > details > summary,
+details > summary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  width: fit-content;
+  min-height: 42px;
+  padding: 10px 15px;
+  border-radius: 999px;
+  color: #14513f;
+  background: rgba(255,255,252,.88);
+  outline: 1px solid rgba(27,111,91,.13);
+  box-shadow: 0 12px 28px rgba(35,44,40,.06);
+  font-weight: 900;
+}
+
+.selection-card .card-more summary::before,
+.more-candidates > summary::before,
+.selection-workbench > details > summary::before,
+details > summary::before {
+  content: "+";
+  display: grid;
+  place-items: center;
+  width: 20px;
+  height: 20px;
+  border-radius: 99px;
+  color: #fbfffc;
+  background: linear-gradient(135deg, #174f42, #1e8068);
+  font-size: 14px;
+  line-height: 1;
 }
 
 .strategy-boundary {
@@ -2264,6 +2381,7 @@ details > summary {
   .strategy-hero,
   .strategy-current-grid,
   .strategy-module-grid,
+  .source-hypothesis-grid,
   .strategy-next-step,
   .strategy-boundary {
     grid-template-columns: 1fr;

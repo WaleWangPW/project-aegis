@@ -93,6 +93,9 @@ daily-real-scene-pilot-dry-run:
 probe-a-share-tushare-strategy-sources:
 	.venv/bin/python scripts/probe_a_share_tushare_strategy_sources.py
 
+build-a-share-tushare-source-hypotheses:
+	.venv/bin/python scripts/build_a_share_tushare_source_hypothesis_queue.py
+
 prepare-stock-agent-strategy-simulation:
 	.venv/bin/python scripts/prepare_stock_agent_strategy_simulation_workspace.py
 
@@ -104,6 +107,7 @@ evaluate-strategy-specific-cases:
 
 stock-agent-a-share-strategy-cycle:
 	.venv/bin/python scripts/probe_a_share_tushare_strategy_sources.py
+	.venv/bin/python scripts/build_a_share_tushare_source_hypothesis_queue.py
 	.venv/bin/python scripts/build_aegis_strategy_specific_historical_cases.py
 	.venv/bin/python scripts/evaluate_aegis_strategy_specific_cases.py
 	.venv/bin/python scripts/prepare_stock_agent_strategy_simulation_workspace.py

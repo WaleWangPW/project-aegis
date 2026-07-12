@@ -1,6 +1,6 @@
 {
   "overall_status": "PASS",
-  "generated_at": "2026-07-12T20:13:46+08:00",
+  "generated_at": "2026-07-12T20:29:28+08:00",
   "provider": "tushare",
   "market": "A",
   "network_used": true,
@@ -232,7 +232,7 @@
         "rsi_6",
         "rsi_12"
       ],
-      "sample_hash": "88719cba02913251deae3f72f7b328548926698c27edf0df4f8202b0bff9f2b3",
+      "sample_hash": "39c0bbbfc0e833ac575fca48a4bc0a2b4371a58b2100f8da9dee6620f8b7002f",
       "error_type": null,
       "error_message": null,
       "latest_trade_date": "20260710",

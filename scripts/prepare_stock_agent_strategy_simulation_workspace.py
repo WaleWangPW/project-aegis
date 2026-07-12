@@ -19,6 +19,8 @@ FILES_TO_MIRROR = [
     ROOT / "docs" / "STRATEGY_RESEARCH.md",
     REPORTS / "a_share_tushare_strategy_source_probe_latest.json",
     REPORTS / "a_share_tushare_strategy_source_probe_latest.md",
+    REPORTS / "a_share_tushare_source_hypothesis_queue_latest.json",
+    REPORTS / "a_share_tushare_source_hypothesis_queue_latest.md",
     REPORTS / "aegis_strategy_specific_historical_cases_latest.json",
     REPORTS / "aegis_strategy_specific_case_evaluation_latest.json",
     REPORTS / "stock_selection_workbench_latest.json",
@@ -54,6 +56,7 @@ top10 holders/floatholders, holder number, daily_basic/stk_factor.
 - Read the compact files in this directory first.
 - Allowed commands:
   - `make probe-a-share-tushare-strategy-sources`
+  - `make build-a-share-tushare-source-hypotheses`
   - `make build-strategy-specific-historical-cases`
   - `make evaluate-strategy-specific-cases`
   - `make prepare-stock-agent-strategy-simulation`
@@ -71,6 +74,7 @@ top10 holders/floatholders, holder number, daily_basic/stk_factor.
 ## Required Evidence
 
 - `a_share_tushare_strategy_source_probe_latest.json`
+- `a_share_tushare_source_hypothesis_queue_latest.json`
 - `aegis_strategy_specific_historical_cases_latest.json`
 - `aegis_strategy_specific_case_evaluation_latest.json`
 - Any blocking source must be reported as `EMPTY`, `PERMISSION_BLOCKED`, or `ERROR`, not hidden.

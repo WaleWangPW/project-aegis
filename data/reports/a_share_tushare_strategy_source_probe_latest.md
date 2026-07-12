@@ -1,7 +1,7 @@
 # A-share Tushare Strategy Source Probe
 
 - Status: `PASS`
-- Generated At: `2026-07-12T20:13:46+08:00`
+- Generated At: `2026-07-12T20:29:28+08:00`
 - Latest Trade Date: `20260710`
 - Sample Symbol: `000001.SZ`
 - Boundary: simulation research only; no broker, no order, no trading webhook.
