@@ -1,7 +1,7 @@
 {
   "type": "aegis_h_us_candidate_daily_bars_refresh",
   "status": "PASS",
-  "generated_at": "2026-07-12T14:46:37+08:00",
+  "generated_at": "2026-07-12T16:42:34+08:00",
   "summary": {
     "candidate_count": 11,
     "refreshed_count": 11,
@@ -95,7 +95,7 @@
       "first_date": "2024-01-02",
       "last_date": "2026-07-10",
       "csv_path": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/cache/aegis_h_us_candidate_daily_bars/HK/daily_bars/0005_hk.csv",
-      "csv_sha256": "7401f4f97a658d8e0ce176c6ca679bd5b2b69f03fb337ad5d50d1a8952b0b636",
+      "csv_sha256": "92db50b1bebf1682e1740adc512800bd30f1c09625578d2e587ca6b32aa12d7a",
       "fallback_status": {
         "provider": "twelve_data",
         "http_status": 0,

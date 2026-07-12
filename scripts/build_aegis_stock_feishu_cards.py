@@ -277,7 +277,7 @@ def build_cards(limit: int = 6) -> tuple[list[dict[str, Any]], dict[str, Any]]:
     items = sorted(
         items,
         key=lambda item: (
-            item.get("news_status") == "PASS",
+            item.get("news_status") in {"PASS", "CACHED"},
             item.get("status") == "research_candidate",
             item.get("score") or 0,
         ),

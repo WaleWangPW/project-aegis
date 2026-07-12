@@ -1,7 +1,7 @@
 # Aegis Strategy-Specific Case Evaluation
 
 - Status: PASS
-- Generated At: 2026-07-12T14:47:51+08:00
+- Generated At: 2026-07-12T16:42:36+08:00
 - Candidate Count: 13
 - Simulation Research Candidates: 8
 - Watch Only: 2
@@ -15,7 +15,7 @@ Evaluation only. No real trade, no broker API, no webhook, no order placement.
 - 300059 东方财富: downgraded cases=4 win_rate=0.25 avg_return=-0.03885265782271061 reasons=win_rate_below_threshold,average_return_below_threshold
 - VRTX Vertex Pharmaceuticals Incorporated: simulation_research_candidate cases=4 win_rate=0.75 avg_return=0.02828282052451242 reasons=historical_case_thresholds_passed
 - AMAT Applied Materials, Inc.: simulation_research_candidate cases=4 win_rate=0.75 avg_return=0.06461384459845404 reasons=historical_case_thresholds_passed
-- 00005 汇丰控股: simulation_research_candidate cases=4 win_rate=0.75 avg_return=0.0543184305522163 reasons=historical_case_thresholds_passed
+- 00005 汇丰控股: simulation_research_candidate cases=4 win_rate=0.75 avg_return=0.05431836465484807 reasons=historical_case_thresholds_passed
 - OKTA Okta, Inc.: simulation_research_candidate cases=4 win_rate=0.5 avg_return=0.037684686707321335 reasons=historical_case_thresholds_passed
 - MRNA Moderna, Inc.: downgraded cases=4 win_rate=0.25 avg_return=-0.01669040209446676 reasons=win_rate_below_threshold,average_return_below_threshold,hard_worst_return_breached
 - HOOD Robinhood Markets, Inc.: watch_only cases=4 win_rate=0.75 avg_return=0.11405548407776533 reasons=average_drawdown_watch,worst_return_watch

@@ -1,6 +1,6 @@
 {
   "type": "aegis_stock_assistant_feishu_send",
-  "generated_at": "2026-07-12T13:41:01.948946+08:00",
+  "generated_at": "2026-07-12T16:43:13.151355+08:00",
   "sender": "openclaw_stock_account",
   "channel": "feishu",
   "account": "stock",
@@ -22,7 +22,6 @@
       "account": "stock",
       "http_status": 200,
       "feishu_code": 0,
-      "message_id": "om_x100b6a06c06e20a8b2815939f5f14d5",
       "reason": null
     },
     {
@@ -31,7 +30,6 @@
       "account": "stock",
       "http_status": 200,
       "feishu_code": 0,
-      "message_id": "om_x100b6a06c06364b0b296d34fa40b206",
       "reason": null
     },
     {
@@ -40,7 +38,6 @@
       "account": "stock",
       "http_status": 200,
       "feishu_code": 0,
-      "message_id": "om_x100b6a06c07448a0b36722b96ea4ffd",
       "reason": null
     },
     {
@@ -49,7 +46,6 @@
       "account": "stock",
       "http_status": 200,
       "feishu_code": 0,
-      "message_id": "om_x100b6a06c0095900b3e4e89ad65c872",
       "reason": null
     },
     {
@@ -58,7 +54,6 @@
       "account": "stock",
       "http_status": 200,
       "feishu_code": 0,
-      "message_id": "om_x100b6a06c00298a4b3f9435151642d0",
       "reason": null
     },
     {
@@ -67,7 +62,6 @@
       "account": "stock",
       "http_status": 200,
       "feishu_code": 0,
-      "message_id": "om_x100b6a06c0140ca4b0383e4500839f8",
       "reason": null
     }
   ],
@@ -114,6 +108,7 @@
     "no_broker_api": true,
     "no_order_placement": true,
     "no_trading_webhook": true,
-    "no_secret_values_recorded": true
+    "no_secret_values_recorded": true,
+    "no_message_ids_recorded": true
   }
 }

@@ -1,7 +1,7 @@
 # Aegis H/US Candidate Daily Bars Refresh
 
 - Status: PASS
-- Generated At: 2026-07-12T14:46:37+08:00
+- Generated At: 2026-07-12T16:42:34+08:00
 - Candidate Count: 11
 - Refreshed Count: 11
 - Blocked Count: 0

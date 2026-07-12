@@ -1,10 +1,10 @@
 {
   "type": "aegis_stock_assistant_feishu_cards",
   "status": "PASS",
-  "generated_at": "2026-07-12T13:40:22.103607+08:00",
+  "generated_at": "2026-07-12T16:42:36.691581+08:00",
   "card_count": 6,
   "presentation_count": 6,
-  "source_workbench_sha256": "c563552921b67f1ad4bfe8e2744ca4ef945123e3307b4aa46d62336ee36f8da9",
+  "source_workbench_sha256": "ddea037d923a116e60cfeb545c38a833311fd954d635f165f8ac5381a14e4420",
   "output": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/aegis_stock_assistant_feishu_cards_latest.json",
   "presentation_output": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/aegis_stock_assistant_feishu_presentations_latest.json",
   "safety": {

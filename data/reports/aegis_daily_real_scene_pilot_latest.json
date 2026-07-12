@@ -1,0 +1,254 @@
+{
+  "type": "aegis_daily_real_scene_pilot",
+  "status": "PASS",
+  "generated_at": "2026-07-12T16:43:13+08:00",
+  "dashboard_check": {
+    "url": "http://localhost:8080/dashboard/index.html",
+    "ok": true,
+    "status": 200
+  },
+  "commands": [
+    {
+      "label": "build_stock_selection_workbench",
+      "command": [
+        "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/.venv/bin/python",
+        "scripts/build_stock_selection_workbench_v2_15_a.py"
+      ],
+      "started_at": "2026-07-12T16:41:15+08:00",
+      "finished_at": "2026-07-12T16:41:36+08:00",
+      "exit_code": 0,
+      "stdout_tail": "output=/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/stock_selection_workbench_latest.json\nsha256=ddea037d923a116e60cfeb545c38a833311fd954d635f165f8ac5381a14e4420\nnews_digest=/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/stock_selection_news_digest_latest.md\nnews_digest_sha256=8c19790e89f781d4cdd7c8a2d2d1c1f0078b74dad80f5d0452f7a923f37af9b3\noverall_status=PASS\nresearch_candidate_count=13\nnews_enriched_count=9\nmarkets_passed=A,HK,US\n",
+      "stderr_tail": ""
+    },
+    {
+      "label": "refresh_h_us_daily_bars",
+      "command": [
+        "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/.venv/bin/python",
+        "scripts/refresh_aegis_h_us_candidate_daily_bars.py"
+      ],
+      "started_at": "2026-07-12T16:41:36+08:00",
+      "finished_at": "2026-07-12T16:42:34+08:00",
+      "exit_code": 0,
+      "stdout_tail": "{\"status\": \"PASS\", \"candidate_count\": 11, \"refreshed_count\": 11, \"blocked_count\": 0, \"network_used\": true, \"report_json\": \"/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/aegis_h_us_candidate_daily_bars_refresh_latest.json\"}\n",
+      "stderr_tail": ""
+    },
+    {
+      "label": "build_strategy_specific_historical_cases",
+      "command": [
+        "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/.venv/bin/python",
+        "scripts/build_aegis_strategy_specific_historical_cases.py"
+      ],
+      "started_at": "2026-07-12T16:42:34+08:00",
+      "finished_at": "2026-07-12T16:42:36+08:00",
+      "exit_code": 0,
+      "stdout_tail": "{\"status\": \"PASS\", \"candidate_count\": 13, \"candidates_with_cases\": 13, \"historical_case_count\": 52, \"data_gap_count\": 0, \"report_json\": \"/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/aegis_strategy_specific_historical_cases_latest.json\"}\n",
+      "stderr_tail": ""
+    },
+    {
+      "label": "evaluate_strategy_specific_cases",
+      "command": [
+        "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/.venv/bin/python",
+        "scripts/evaluate_aegis_strategy_specific_cases.py"
+      ],
+      "started_at": "2026-07-12T16:42:36+08:00",
+      "finished_at": "2026-07-12T16:42:36+08:00",
+      "exit_code": 0,
+      "stdout_tail": "{\"status\": \"PASS\", \"candidate_count\": 13, \"simulation_research_candidate_count\": 8, \"watch_only_count\": 2, \"downgraded_count\": 3, \"report_json\": \"/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/aegis_strategy_specific_case_evaluation_latest.json\"}\n",
+      "stderr_tail": ""
+    },
+    {
+      "label": "build_stock_assistant_cards",
+      "command": [
+        "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/.venv/bin/python",
+        "scripts/build_aegis_stock_feishu_cards.py"
+      ],
+      "started_at": "2026-07-12T16:42:36+08:00",
+      "finished_at": "2026-07-12T16:42:36+08:00",
+      "exit_code": 0,
+      "stdout_tail": "cards=/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/aegis_stock_assistant_feishu_cards_latest.json\ncards_sha256=da6406d37f59875c8b90523f103cb1b21489bcf9d29800671a703271664d40b4\npresentations=/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/aegis_stock_assistant_feishu_presentations_latest.json\npresentations_sha256=94d18cb5c4792bbf7de82dad85f98c12ec533c1f91d7dbd59ad573cea398d740\nreport=/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/aegis_stock_assistant_feishu_cards_latest_report.json\nstatus=PASS\ncard_count=6\n",
+      "stderr_tail": ""
+    },
+    {
+      "label": "send_stock_assistant_cards",
+      "command": [
+        "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/.venv/bin/python",
+        "scripts/send_aegis_stock_feishu_cards_via_stock_assistant.py"
+      ],
+      "started_at": "2026-07-12T16:42:36+08:00",
+      "finished_at": "2026-07-12T16:43:13+08:00",
+      "exit_code": 0,
+      "stdout_tail": "output=/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/aegis_stock_assistant_feishu_send_latest.json\nstatus=SENT\nsent_count=6\nfailed_count=0\n",
+      "stderr_tail": ""
+    }
+  ],
+  "summary": {
+    "send_mode": "send_if_target_available",
+    "candidate_summary": {
+      "total_candidates": 30,
+      "research_candidate_count": 13,
+      "high_risk_watch_count": 11,
+      "blocked_count": 6,
+      "markets_passed": [
+        "A",
+        "HK",
+        "US"
+      ],
+      "markets_failed_or_empty": [],
+      "real_trade_allowed": false,
+      "news_enriched_count": 9,
+      "news_cached_fallback_count": 9
+    },
+    "case_evaluation_summary": {
+      "candidate_count": 13,
+      "simulation_research_candidate_count": 8,
+      "watch_only_count": 2,
+      "downgraded_count": 3,
+      "user_facing_suggestion_allowed": false,
+      "next_stage": "surface dispositions in dashboard and stock assistant brief"
+    },
+    "card_count": 6,
+    "send_status": "SENT",
+    "sent_count": 6,
+    "failed_count": 0,
+    "transport": "feishu_official_api_stock_app",
+    "next_user_action": [
+      "Open http://localhost:8080/dashboard/index.html",
+      "Read 今日结论 and 风险阻塞 first",
+      "Review Top 3 candidates only",
+      "Use stock assistant buttons to record watch / ignore / more-news feedback",
+      "If you place any real order externally, record it manually as external evidence only"
+    ]
+  },
+  "checks": {
+    "strategy_specific_historical_cases": true,
+    "strategy_specific_case_evaluation": true,
+    "stock_assistant_cards_report": true,
+    "dashboard_http_ok": true,
+    "critical_commands_passed": true,
+    "production_records_unchanged": true,
+    "real_trade_allowed_false": true,
+    "case_user_facing_suggestion_disabled": true
+  },
+  "report_files": {
+    "stock_selection_workbench": {
+      "exists": true,
+      "size": 49509,
+      "sha256": "ddea037d923a116e60cfeb545c38a833311fd954d635f165f8ac5381a14e4420"
+    },
+    "h_us_daily_bar_refresh": {
+      "exists": true,
+      "size": 15658,
+      "sha256": "c9ceb1ead15de55b365e2a340cc363deaef52b6bc61b7314b67d759a265e8703"
+    },
+    "strategy_specific_historical_cases": {
+      "exists": true,
+      "size": 57346,
+      "sha256": "ac3a6623bfe5ce98dce6a2ce12a94427b200eb4f853e7dddf6295c2c10f418a6"
+    },
+    "strategy_specific_case_evaluation": {
+      "exists": true,
+      "size": 12189,
+      "sha256": "eed01c04e8b907043bd660ed4e277b1d5bcf5e4b0b420cf0f54ea7325a3404ed"
+    },
+    "stock_assistant_cards_report": {
+      "exists": true,
+      "size": 1085,
+      "sha256": "1c0decd6acb667bc95ad167d086316469bfe12ee3c4a4075e9239e8639fc1894"
+    },
+    "stock_assistant_cards": {
+      "exists": true,
+      "size": 23258,
+      "sha256": "da6406d37f59875c8b90523f103cb1b21489bcf9d29800671a703271664d40b4"
+    },
+    "stock_assistant_send": {
+      "exists": true,
+      "size": 2953,
+      "sha256": "d9ace735cc0dc294b1464ea6cca8769b4141a25024ecb20d3f8eb653962e92f2"
+    },
+    "feedback_latest": {
+      "exists": true,
+      "size": 1249,
+      "sha256": "98d2416eb39fee569e9f9271a817425b596fe31a8e4b1547a57a5fbf21ddd58a"
+    },
+    "dashboard_index": {
+      "exists": true,
+      "size": 2677,
+      "sha256": "48ffdd82bf1849529f253a7632fdbfa24ee3c73832ccee8aae896b3c91cffb6e"
+    },
+    "dashboard_css": {
+      "exists": true,
+      "size": 23265,
+      "sha256": "5c9fa76bc6e000b805323ae513c8901f0415ce63de8e8ab08974bd9d4632a25e"
+    },
+    "dashboard_js": {
+      "exists": true,
+      "size": 28184,
+      "sha256": "bed70ed33f1f261ed2a4dbeb7db9d33901f60df25ba02b8577c237ea16d57d4d"
+    }
+  },
+  "production_record_files_before": {
+    "recommendations_jsonl": {
+      "exists": true,
+      "size": 12284,
+      "sha256": "05b2e56c9b547cbe3ce4cb71b7cb776185e23ef2cc3bc9a46a918bce0cfb65dc"
+    },
+    "paper_trades_jsonl": {
+      "exists": false,
+      "size": null,
+      "sha256": null
+    },
+    "reviews_jsonl": {
+      "exists": false,
+      "size": null,
+      "sha256": null
+    },
+    "memory_jsonl": {
+      "exists": false,
+      "size": null,
+      "sha256": null
+    },
+    "investment_memory_jsonl": {
+      "exists": false,
+      "size": null,
+      "sha256": null
+    }
+  },
+  "production_record_files_after": {
+    "recommendations_jsonl": {
+      "exists": true,
+      "size": 12284,
+      "sha256": "05b2e56c9b547cbe3ce4cb71b7cb776185e23ef2cc3bc9a46a918bce0cfb65dc"
+    },
+    "paper_trades_jsonl": {
+      "exists": false,
+      "size": null,
+      "sha256": null
+    },
+    "reviews_jsonl": {
+      "exists": false,
+      "size": null,
+      "sha256": null
+    },
+    "memory_jsonl": {
+      "exists": false,
+      "size": null,
+      "sha256": null
+    },
+    "investment_memory_jsonl": {
+      "exists": false,
+      "size": null,
+      "sha256": null
+    }
+  },
+  "safety": {
+    "simulation_only": true,
+    "research_only": true,
+    "no_broker_api": true,
+    "no_order_placement": true,
+    "no_trading_webhook": true,
+    "no_position_size": true,
+    "no_live_order_signal": true,
+    "feedback_evidence_only": true,
+    "real_trade_allowed": false
+  }
+}

@@ -1,6 +1,6 @@
 # Project Aegis 选股 + 资讯简报
 
-- Generated At: 2026-07-12T13:39:33.749793+08:00
+- Generated At: 2026-07-12T16:41:15.993401+08:00
 - Overall Status: PASS
 - Markets: A, HK, US
 - Research Candidates: 13

@@ -84,6 +84,12 @@ p22-5-filemode:
 serve-dashboard:
 	.venv/bin/python -m http.server 8080
 
+daily-real-scene-pilot:
+	.venv/bin/python scripts/run_aegis_daily_real_scene_pilot.py
+
+daily-real-scene-pilot-dry-run:
+	.venv/bin/python scripts/run_aegis_daily_real_scene_pilot.py --send-dry-run
+
 p22-6-full-pipeline:
 	.venv/bin/python scripts/run_p22_6_full_pipeline_terminal.py
 

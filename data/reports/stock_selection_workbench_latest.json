@@ -1,7 +1,7 @@
 {
   "stage": "V2.15-A Stock Selection Workbench",
   "overall_status": "PASS",
-  "generated_at": "2026-07-12T13:39:33.749793+08:00",
+  "generated_at": "2026-07-12T16:41:15.993401+08:00",
   "source": "Cached Aegis stock selection workbench; set AEGIS_LIVE_DEEP_SCAN=1 for full live refresh",
   "summary": {
     "total_candidates": 30,
@@ -15,7 +15,8 @@
     ],
     "markets_failed_or_empty": [],
     "real_trade_allowed": false,
-    "news_enriched_count": 9
+    "news_enriched_count": 9,
+    "news_cached_fallback_count": 9
   },
   "safety": {
     "simulation_only": true,
@@ -179,7 +180,7 @@
       "news_status": "NO_NEWS",
       "news_items": [],
       "news_summary": "未找到近期公司动态。",
-      "news_logs_excerpt": "[news_search] 搜索失败: https://duckduckgo.com/news.js?l=cn-zh&o=json&noamp=1&q=%E7%91%9E%E8%8A%AF%E5%BE%AE+603893+%E5%85%AC%E5%91%8A+%E8%B4%A2%E6%8A%A5+%E6%96%B0%E9%97%BB+%E6%9C%80%E6%96%B0&vqd=4-159847280666060939100403218739914566954&p=-2 403 Ratelimit\n[]\n"
+      "news_logs_excerpt": "eodhd_news_HTTPError"
     },
     {
       "symbol": "300059",
@@ -210,7 +211,7 @@
       "news_status": "NO_NEWS",
       "news_items": [],
       "news_summary": "未找到近期公司动态。",
-      "news_logs_excerpt": "[news_search] 搜索失败: https://duckduckgo.com/news.js?l=cn-zh&o=json&noamp=1&q=%E4%B8%9C%E6%96%B9%E8%B4%A2%E5%AF%8C+300059+%E5%85%AC%E5%91%8A+%E8%B4%A2%E6%8A%A5+%E6%96%B0%E9%97%BB+%E6%9C%80%E6%96%B0&vqd=4-110566046241958368276055526774856326917&p=-2 403 Ratelimit\n[]\n"
+      "news_logs_excerpt": "eodhd_news_HTTPError"
     },
     {
       "symbol": "VRTX",
@@ -238,7 +239,7 @@
       "price_1y_pct": 0.012220332167034435,
       "user_action": "加入模拟研究候选；人工核对实时行情、公告、新闻和持仓冲突后，才允许记录纸面模拟。",
       "real_trade_allowed": false,
-      "news_status": "PASS",
+      "news_status": "CACHED",
       "news_items": [
         {
           "title": "Vertex (VRTX) Wins FDA Expansion For CASGEVY And Advances ALYFTREK In Canada",
@@ -266,7 +267,7 @@
         }
       ],
       "news_summary": "Vertex：CASGEVY 获 FDA 扩大适应症批准，ALYFTREK 在加拿大推进。 | Vertex 拟以约 100 亿美元押注 Crinetics，扩展内分泌业务。",
-      "news_logs_excerpt": "eodhd_news"
+      "news_logs_excerpt": "fallback_cached_previous_workbench"
     },
     {
       "symbol": "AMAT",
@@ -295,7 +296,7 @@
       "price_1y_pct": 2.064787179156606,
       "user_action": "加入模拟研究候选；人工核对实时行情、公告、新闻和持仓冲突后，才允许记录纸面模拟。",
       "real_trade_allowed": false,
-      "news_status": "PASS",
+      "news_status": "CACHED",
       "news_items": [
         {
           "title": "Goldman Sachs doubles down on Applied Materials stock target",
@@ -307,7 +308,7 @@
         }
       ],
       "news_summary": "Goldman Sachs 重申看好 Applied Materials 目标价，需继续核对估值与周期位置。",
-      "news_logs_excerpt": "eodhd_news"
+      "news_logs_excerpt": "fallback_cached_previous_workbench"
     },
     {
       "symbol": "00005",
@@ -337,7 +338,7 @@
       "price_1y_pct": 0.27559076056787474,
       "user_action": "加入模拟研究候选；人工核对实时行情、公告、新闻和持仓冲突后，才允许记录纸面模拟。",
       "real_trade_allowed": false,
-      "news_status": "PASS",
+      "news_status": "CACHED",
       "news_items": [
         {
           "title": "Amazon, Microsoft and Meta Among HSBC Earnings Picks",
@@ -357,7 +358,7 @@
         }
       ],
       "news_summary": "HSBC 财报季关注名单提到 Amazon、Microsoft、Meta，说明大型科技仍是机构重点线索。 | HSBC 在行业担忧升温下收紧私募信贷策略，偏风险控制信号。",
-      "news_logs_excerpt": "eodhd_news"
+      "news_logs_excerpt": "fallback_cached_previous_workbench"
     },
     {
       "symbol": "OKTA",
@@ -387,7 +388,7 @@
       "news_status": "NO_NEWS",
       "news_items": [],
       "news_summary": "未找到近期公司动态。",
-      "news_logs_excerpt": "[news_search] 搜索失败: https://duckduckgo.com/news.js?l=us-en&o=json&noamp=1&q=Okta%2C+Inc.+OKTA+stock+news+earnings+announcement&vqd=4-67564578170050165190322512489237904468&p=-2 403 Ratelimit\n[]\n"
+      "news_logs_excerpt": "eodhd_news_HTTPError"
     },
     {
       "symbol": "MRNA",
@@ -414,7 +415,7 @@
       "price_1y_pct": 0.991540229700869,
       "user_action": "加入模拟研究候选；人工核对实时行情、公告、新闻和持仓冲突后，才允许记录纸面模拟。",
       "real_trade_allowed": false,
-      "news_status": "PASS",
+      "news_status": "CACHED",
       "news_items": [
         {
           "title": "Stock Market Today: Dow Ends Higher; SK Hynix Jumps In U.S. Trading Debut; Moderna Tumbles",
@@ -426,7 +427,7 @@
         }
       ],
       "news_summary": "美股日报：道指收高，SK Hynix 美股首秀上涨，Moderna 下跌。",
-      "news_logs_excerpt": "eodhd_news"
+      "news_logs_excerpt": "fallback_cached_previous_workbench"
     },
     {
       "symbol": "HOOD",
@@ -453,7 +454,7 @@
       "price_1y_pct": 0.1344478691262743,
       "user_action": "加入模拟研究候选；人工核对实时行情、公告、新闻和持仓冲突后，才允许记录纸面模拟。",
       "real_trade_allowed": false,
-      "news_status": "PASS",
+      "news_status": "CACHED",
       "news_items": [
         {
           "title": "Cathie Wood buys $22.8 million of surging tech stock",
@@ -481,7 +482,7 @@
         }
       ],
       "news_summary": "Cathie Wood 买入约 2280 万美元热门科技股，HOOD 仍需警惕情绪拥挤。 | Robinhood 投资者持有的热门 AI 股票名单，可作为散户偏好温度计。",
-      "news_logs_excerpt": "eodhd_news"
+      "news_logs_excerpt": "fallback_cached_previous_workbench"
     },
     {
       "symbol": "PANW",
@@ -508,7 +509,7 @@
       "price_1y_pct": 0.6968292353525323,
       "user_action": "加入模拟研究候选；人工核对实时行情、公告、新闻和持仓冲突后，才允许记录纸面模拟。",
       "real_trade_allowed": false,
-      "news_status": "PASS",
+      "news_status": "CACHED",
       "news_items": [
         {
           "title": "Insider trades: Palo Alto Networks, Taiwan Semiconductor, and Sony among major names",
@@ -520,7 +521,7 @@
         }
       ],
       "news_summary": "内部人交易追踪提到 Palo Alto Networks、TSMC、Sony 等重点公司。",
-      "news_logs_excerpt": "eodhd_news"
+      "news_logs_excerpt": "fallback_cached_previous_workbench"
     },
     {
       "symbol": "KLAC",
@@ -550,7 +551,7 @@
       "news_status": "NO_NEWS",
       "news_items": [],
       "news_summary": "未找到近期公司动态。",
-      "news_logs_excerpt": "[news_search] 搜索失败: https://duckduckgo.com/news.js?l=us-en&o=json&noamp=1&q=KLA+Corporation+KLAC+stock+news+earnings+announcement&vqd=4-53954493347938078500481022173348986774&p=-2 403 Ratelimit\n[]\n"
+      "news_logs_excerpt": "eodhd_news_HTTPError"
     },
     {
       "symbol": "RBLX",
@@ -577,7 +578,7 @@
       "price_1y_pct": -0.47300772048536405,
       "user_action": "加入模拟研究候选；人工核对实时行情、公告、新闻和持仓冲突后，才允许记录纸面模拟。",
       "real_trade_allowed": false,
-      "news_status": "PASS",
+      "news_status": "CACHED",
       "news_items": [
         {
           "title": "備受認可的投資者顧問 ROSEN 鼓勵 Roblox Corporation 投資者在對 RBLX 發起證券集體訴訟的重要截止日期之前聘請律師",
@@ -597,7 +598,7 @@
         }
       ],
       "news_summary": "備受認可的投資者顧問 ROSEN 鼓勵 Roblox Corporation 投資者在對 RBLX 發起證券集體訴訟的重要截止日期之前聘請律師 | RBLX 股东提醒: Faruqi &amp; Faruqi, LLP Notifies Roblox (RBLX) 投资者 of 证券集体诉讼 截止日期 on August 7, 2026",
-      "news_logs_excerpt": "eodhd_news"
+      "news_logs_excerpt": "fallback_cached_previous_workbench"
     },
     {
       "symbol": "BAC",
@@ -627,7 +628,7 @@
       "news_status": "NO_NEWS",
       "news_items": [],
       "news_summary": "未找到近期公司动态。",
-      "news_logs_excerpt": "[news_search] 搜索失败: https://duckduckgo.com/news.js?l=us-en&o=json&noamp=1&q=Bank+of+America+Corporation+BAC+stock+news+earnings+announcement&vqd=4-186339912575885698773465649637642750188&p=-2 403 Ratelimit\n[]\n"
+      "news_logs_excerpt": "eodhd_news_HTTPError"
     },
     {
       "symbol": "NET",
@@ -654,7 +655,7 @@
       "price_1y_pct": 0.4753737719765525,
       "user_action": "加入模拟研究候选；人工核对实时行情、公告、新闻和持仓冲突后，才允许记录纸面模拟。",
       "real_trade_allowed": false,
-      "news_status": "PASS",
+      "news_status": "CACHED",
       "news_items": [
         {
           "title": "Cloudflare (NET) Could Be 60% Overvalued After Its OpenAI Pilot News",
@@ -674,7 +675,7 @@
         }
       ],
       "news_summary": "英文资讯摘要：Cloudflare (NET) Could Be 60% Overvalued After Its OpenAI Pilot News | Cloudflare (NET) Stock Falls Amid Market Uptick: What 投资者 Need to Know",
-      "news_logs_excerpt": "eodhd_news"
+      "news_logs_excerpt": "fallback_cached_previous_workbench"
     },
     {
       "symbol": "600150",
@@ -708,7 +709,7 @@
       "news_status": "NO_NEWS",
       "news_items": [],
       "news_summary": "未找到近期公司动态。",
-      "news_logs_excerpt": "[news_search] 搜索失败: https://duckduckgo.com/news.js?l=cn-zh&o=json&noamp=1&q=%E4%B8%AD%E5%9B%BD%E8%88%B9%E8%88%B6+600150+%E5%85%AC%E5%91%8A+%E8%B4%A2%E6%8A%A5+%E6%96%B0%E9%97%BB+%E6%9C%80%E6%96%B0&vqd=4-313193860590555962339295252611952887877&p=-2 403 Ratelimit\n[]\n"
+      "news_logs_excerpt": "eodhd_news_HTTPError"
     },
     {
       "symbol": "300475",
@@ -745,7 +746,7 @@
       "news_status": "NO_NEWS",
       "news_items": [],
       "news_summary": "未找到近期公司动态。",
-      "news_logs_excerpt": "[news_search] 搜索失败: https://duckduckgo.com/news.js?l=cn-zh&o=json&noamp=1&q=%E9%A6%99%E5%86%9C%E8%8A%AF%E5%88%9B+300475+%E5%85%AC%E5%91%8A+%E8%B4%A2%E6%8A%A5+%E6%96%B0%E9%97%BB+%E6%9C%80%E6%96%B0&vqd=4-259733554051436602801344901995155792778&p=-2 403 Ratelimit\n[]\n"
+      "news_logs_excerpt": "eodhd_news_HTTPError"
     },
     {
       "symbol": "01299",
@@ -776,7 +777,7 @@
       "price_1y_pct": -0.11273135850416147,
       "user_action": "只观察，不模拟开仓；等过热、止损距离或赔率问题改善。",
       "real_trade_allowed": false,
-      "news_status": "PASS",
+      "news_status": "CACHED",
       "news_items": [
         {
           "title": "Zacks Industry Outlook Highlights AIA, Reinsurance Group of America, Primerica and Voya",
@@ -788,7 +789,7 @@
         }
       ],
       "news_summary": "英文资讯摘要：Zacks Industry Outlook Highlights AIA, Reinsurance Group of America, Primerica and Voya",
-      "news_logs_excerpt": "eodhd_news"
+      "news_logs_excerpt": "fallback_cached_previous_workbench"
     },
     {
       "symbol": "02318",
@@ -823,7 +824,7 @@
       "news_status": "NO_NEWS",
       "news_items": [],
       "news_summary": "未找到近期公司动态。",
-      "news_logs_excerpt": "[news_search] 搜索失败: https://duckduckgo.com/news.js?l=cn-zh&o=json&noamp=1&q=%E4%B8%AD%E5%9B%BD%E5%B9%B3%E5%AE%89+02318+%E5%85%AC%E5%91%8A+%E8%B4%A2%E6%8A%A5+%E6%96%B0%E9%97%BB+%E6%9C%80%E6%96%B0&vqd=4-2263111675028285059422560862506165449&p=-2 403 Ratelimit\n[]\n"
+      "news_logs_excerpt": "eodhd_news_HTTPError"
     },
     {
       "symbol": "00941",
@@ -857,7 +858,7 @@
       "news_status": "NO_NEWS",
       "news_items": [],
       "news_summary": "未找到近期公司动态。",
-      "news_logs_excerpt": "[news_search] 搜索失败: https://duckduckgo.com/news.js?l=cn-zh&o=json&noamp=1&q=%E4%B8%AD%E5%9B%BD%E7%A7%BB%E5%8A%A8+00941+%E5%85%AC%E5%91%8A+%E8%B4%A2%E6%8A%A5+%E6%96%B0%E9%97%BB+%E6%9C%80%E6%96%B0&vqd=4-172352431796682296437252121250934590203&p=-2 403 Ratelimit\n[]\n"
+      "news_logs_excerpt": "eodhd_news_HTTPError"
     },
     {
       "symbol": "00883",

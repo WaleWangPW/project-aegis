@@ -1,5 +1,25 @@
 # Project Aegis HANDOFF
 
+## 2026-07-12 Update: Daily Real-Scene Pilot V0 PASS
+
+- Aegis can now be used in a daily real-scene simulation workflow.
+- Added `scripts/run_aegis_daily_real_scene_pilot.py`.
+- Added Make targets:
+  - `make daily-real-scene-pilot`
+  - `make daily-real-scene-pilot-dry-run`
+- Added `docs/DAILY_REAL_SCENE_PILOT.md` as the daily-use entry.
+- The pilot refreshes the stock selection workbench, H/US daily bars, strategy-specific historical cases, case evaluation, stock-assistant cards, stock-assistant sending, Dashboard HTTP status, hashes, and safety checks.
+- Added news fallback behavior: when fresh news fetch returns no usable items, the workbench preserves the most recent verified stock news as `CACHED` instead of degrading all candidates to no-news.
+- Updated stock-assistant card ranking so `PASS` and `CACHED` news both count as news-covered candidates.
+- Real pilot run result:
+  - `data/reports/aegis_daily_real_scene_pilot_latest.json` status `PASS`.
+  - Candidate summary: 30 total candidates, 13 research candidates, 9 news-enriched candidates, A/HK/US passed.
+  - Case evaluation: 13 candidates evaluated, 8 simulation research, 2 watch-only, 3 downgraded.
+  - Stock assistant send: `SENT`, sent `6`, failed `0`, account `stock`, transport `feishu_official_api_stock_app`.
+  - Dashboard HTTP check: `http://localhost:8080/dashboard/index.html` OK.
+- Safety boundary unchanged: simulation/research only; no broker API, no webhook, no real order placement, no position sizing, no live order signal. Stock assistant buttons record feedback evidence only.
+- Next stage: test button feedback from the newly sent stock-assistant cards and surface the latest feedback more clearly on Dashboard.
+
 ## 2026-07-12 Update: Silver Command Dashboard Implemented
 
 - Live Dashboard UI has been implemented from the approved modern silver-grey / Linear-style direction.

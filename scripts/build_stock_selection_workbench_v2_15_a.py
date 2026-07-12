@@ -635,6 +635,41 @@ def _enrich_news(candidates: list[dict[str, Any]]) -> None:
             item["news_logs_excerpt"] = ""
 
 
+def _news_cache_from_candidates(candidates: list[dict[str, Any]]) -> dict[tuple[str, str], dict[str, Any]]:
+    cache: dict[tuple[str, str], dict[str, Any]] = {}
+    for item in candidates:
+        key = (str(item.get("market") or ""), str(item.get("symbol") or ""))
+        if not key[0] or not key[1]:
+            continue
+        news_items = item.get("news_items") or []
+        news_summary = item.get("news_summary") or ""
+        if item.get("news_status") in {"PASS", "CACHED"} and (news_items or news_summary):
+            cache[key] = {
+                "news_items": news_items,
+                "news_summary": news_summary,
+                "news_logs_excerpt": item.get("news_logs_excerpt", ""),
+            }
+    return cache
+
+
+def _apply_cached_news(candidates: list[dict[str, Any]], cache: dict[tuple[str, str], dict[str, Any]]) -> None:
+    for item in candidates:
+        if item.get("news_status") == "PASS":
+            continue
+        key = (str(item.get("market") or ""), str(item.get("symbol") or ""))
+        cached = cache.get(key)
+        if not cached:
+            continue
+        item["news_status"] = "CACHED"
+        item["news_items"] = cached.get("news_items") or []
+        item["news_summary"] = cached.get("news_summary") or "使用最近一次已验证资讯摘要。"
+        item["news_logs_excerpt"] = "fallback_cached_previous_workbench"
+
+
+def _news_enriched_count(candidates: list[dict[str, Any]]) -> int:
+    return sum(1 for x in candidates if x.get("news_status") in {"PASS", "CACHED"})
+
+
 def _mark_news_deferred(candidates: list[dict[str, Any]], reason: str) -> None:
     for item in candidates:
         item.setdefault("news_status", "DEFERRED")
@@ -688,16 +723,22 @@ def _render_news_digest(report: dict[str, Any]) -> str:
 def build_report() -> dict[str, Any]:
     _load_stock_picker_env()
     sys.path.insert(0, str(STOCK_PICKER_DIR))
+    previous_news_cache: dict[tuple[str, str], dict[str, Any]] = {}
+    if OUTPUT.exists():
+        previous_payload = json.loads(OUTPUT.read_text(encoding="utf-8"))
+        previous_news_cache = _news_cache_from_candidates(previous_payload.get("candidates", []))
     if os.environ.get("AEGIS_LIVE_DEEP_SCAN") != "1" and OUTPUT.exists():
-        cached = json.loads(OUTPUT.read_text(encoding="utf-8"))
+        cached = previous_payload
         cached["generated_at"] = dt.datetime.now(dt.timezone.utc).astimezone().isoformat()
         cached["refresh_mode"] = "cached_fast_default"
         cached["source"] = "Cached Aegis stock selection workbench; set AEGIS_LIVE_DEEP_SCAN=1 for full live refresh"
         cached["strategy_blueprints"] = STRATEGY_BLUEPRINTS
         cached["public_research_sources"] = PUBLIC_RESEARCH_SOURCES
         _enrich_news(cached.get("candidates", []))
-        cached.setdefault("summary", {})["news_enriched_count"] = sum(
-            1 for x in cached.get("candidates", []) if x.get("news_status") == "PASS"
+        _apply_cached_news(cached.get("candidates", []), previous_news_cache)
+        cached.setdefault("summary", {})["news_enriched_count"] = _news_enriched_count(cached.get("candidates", []))
+        cached.setdefault("summary", {})["news_cached_fallback_count"] = sum(
+            1 for x in cached.get("candidates", []) if x.get("news_status") == "CACHED"
         )
         return cached
 
@@ -721,12 +762,14 @@ def build_report() -> dict[str, Any]:
         reverse=True,
     )
     _enrich_news(ranked)
+    _apply_cached_news(ranked, previous_news_cache)
     summary = {
         "total_candidates": len(ranked),
         "research_candidate_count": sum(1 for x in ranked if x["status"] == "research_candidate"),
         "high_risk_watch_count": sum(1 for x in ranked if x["status"] == "high_risk_watch"),
         "blocked_count": sum(1 for x in ranked if x["status"] == "blocked"),
-        "news_enriched_count": sum(1 for x in ranked if x.get("news_status") == "PASS"),
+        "news_enriched_count": _news_enriched_count(ranked),
+        "news_cached_fallback_count": sum(1 for x in ranked if x.get("news_status") == "CACHED"),
         "markets_passed": [r["market"] for r in runs if r["status"] == "PASS"],
         "markets_failed_or_empty": [r["market"] for r in runs if r["status"] != "PASS"],
         "real_trade_allowed": False,

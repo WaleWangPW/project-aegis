@@ -194,7 +194,6 @@ def send_cards_direct(cards: list[dict[str, Any]], target: str, dry_run: bool) -
                     "account": "stock",
                     "http_status": status,
                     "feishu_code": payload.get("code"),
-                    "message_id": (payload.get("data") or {}).get("message_id"),
                     "reason": None if ok else payload.get("msg"),
                 }
             )
@@ -252,6 +251,7 @@ def main(argv: list[str] | None = None) -> int:
             "no_order_placement": True,
             "no_trading_webhook": True,
             "no_secret_values_recorded": True,
+            "no_message_ids_recorded": True,
         },
     }
     OUTPUT.write_text(json.dumps(report, ensure_ascii=False, indent=2), encoding="utf-8")
