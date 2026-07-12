@@ -1,5 +1,22 @@
 # Project Aegis HANDOFF
 
+## 2026-07-12 Update: Silver Command Dashboard Implemented
+
+- Live Dashboard UI has been implemented from the approved modern silver-grey / Linear-style direction.
+- Changed only Dashboard presentation files: `dashboard/index.html` and `dashboard/v2.css`.
+- Dashboard cache version is now `v2.css?v=20260712i` / `v2.js?v=20260712i`.
+- Desktop first viewport now surfaces: `今日结论`, opened `风险阻塞`, and the `今日选股` entry with `先看 3 只重点候选`.
+- Risk blockers are open by default and shown as compact cards, while holdings/watchlist/market/check/system details remain drawer-based.
+- Mobile layout was checked at `390x844`: no horizontal overflow; top status bar and stock-selection entry remain readable.
+- Validation run:
+  - `node --check dashboard/v2.js` exit code `0`.
+  - `curl -I http://localhost:8080/dashboard/index.html` returned `200 OK`.
+  - Playwright desktop check at `1280x720`: no horizontal overflow; no console errors/warnings.
+  - Playwright mobile check at `390x844`: no horizontal overflow; stock-selection entry visible after scroll.
+- Verification screenshots were saved locally under `output/playwright/` and are not intended as tracked project artifacts.
+- Safety boundary unchanged: simulation/research only; no broker API, no webhook, no real order placement, no position sizing, no live order signal.
+- Next stage: continue Dashboard information-density refinement only where it improves daily use, then reconnect to strategy/case evaluation and stock-assistant push card refinement.
+
 ## 2026-07-12 Update: UI Design Starter Ready
 
 - UI design can now start from the current Aegis product state.
