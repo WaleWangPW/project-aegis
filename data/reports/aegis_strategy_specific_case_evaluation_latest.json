@@ -1,7 +1,7 @@
 {
   "type": "aegis_strategy_specific_case_evaluation",
   "status": "PASS",
-  "generated_at": "2026-07-12T21:00:10+08:00",
+  "generated_at": "2026-07-12T21:23:53+08:00",
   "thresholds": {
     "min_case_count": 4,
     "min_win_rate": 0.5,
@@ -341,7 +341,7 @@
     "strategy_specific_historical_cases": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/aegis_strategy_specific_historical_cases_latest.json"
   },
   "source_hashes": {
-    "strategy_specific_historical_cases": "201a2b5d490de035d0b2fc792f7ec260b42d4219328ea4724307a5b691316b3b"
+    "strategy_specific_historical_cases": "b3d2eadcde54cb759da6f6508b336b6ea5d70a57811cbc3a1d76b124a3e6adc8"
   },
   "checks": {
     "source_pass": true,

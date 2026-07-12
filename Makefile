@@ -102,6 +102,9 @@ evaluate-a-share-tushare-source-hypotheses:
 build-a-share-tushare-source-feature-coverage:
 	.venv/bin/python scripts/build_a_share_tushare_source_feature_coverage.py
 
+evaluate-a-share-tushare-source-deep-sandbox:
+	.venv/bin/python scripts/evaluate_a_share_tushare_source_deep_sandbox.py
+
 prepare-stock-agent-strategy-simulation:
 	.venv/bin/python scripts/prepare_stock_agent_strategy_simulation_workspace.py
 
@@ -118,6 +121,7 @@ stock-agent-a-share-strategy-cycle:
 	.venv/bin/python scripts/evaluate_aegis_strategy_specific_cases.py
 	.venv/bin/python scripts/evaluate_a_share_tushare_source_hypotheses.py
 	.venv/bin/python scripts/build_a_share_tushare_source_feature_coverage.py
+	.venv/bin/python scripts/evaluate_a_share_tushare_source_deep_sandbox.py
 	.venv/bin/python scripts/prepare_stock_agent_strategy_simulation_workspace.py
 
 p22-6-full-pipeline:

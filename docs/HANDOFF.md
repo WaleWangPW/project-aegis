@@ -32,6 +32,20 @@ coverage: `top_list` and `top_inst` covered `0/8` current A-share cases. The
 report saves counts, columns, and hashes only; no raw Tushare payload, no
 secret, no broker API, no order placement, and no trading webhook.
 
+**A-share source deep sandbox:** Aegis now evaluates READY A-share Tushare
+source hypotheses with derived source features against the current A-share
+historical cases. Command:
+`make evaluate-a-share-tushare-source-deep-sandbox`. Latest report:
+`data/reports/a_share_tushare_source_deep_sandbox_latest.json`, status `PASS`,
+`5` ready hypotheses evaluated, `40` case-feature rows, `0`
+`DEEP_SANDBOX_PASS_CANDIDATE`, `5` `DEEP_SANDBOX_FAIL`, and `1` feature-gap
+blocked hypothesis. This is an honest negative strategy result: capital-flow
+has only `1` source-signal case, while institutional ownership, holder
+concentration, factor/liquidity/quality, and governance/reward-alignment fail
+win-rate or average-return thresholds. The PASS marker means the script and
+safety checks passed, not that any strategy is approved. No source hypothesis
+may enter ranking impact yet.
+
 **A-share strategy implementation update:** Aegis now has a real read-only
 Tushare strategy-source probe for the next A-share strategy layer. Command:
 `make probe-a-share-tushare-strategy-sources`. Latest report:
@@ -80,6 +94,11 @@ with mirrored evidence reports and safety rules. Codex should only review
 blocked sources, changed strategy ranking, or evidence-gate/contract/security
 boundaries.
 
+The latest full cycle exited `0` again at `2026-07-12 21:24 +08:00` after
+adding the deep sandbox step. It mirrored
+`a_share_tushare_source_deep_sandbox_latest.json/md` into the stock-agent
+workspace.
+
 **Dashboard strategy page update:** `http://localhost:8080/dashboard/index.html`
 now includes a `策略` page. It reads
 `a_share_tushare_strategy_source_probe_latest.json` and
@@ -88,8 +107,15 @@ now includes a `策略` page. It reads
 Tushare probe status, the six A-share source hypotheses, and their proxy
 evaluation states (`proxy_fail` for all six in the latest run). The selection
 page also has clearer card action bars and stronger expand controls. Verified
-with `node --check dashboard/v2.js`; Playwright package was not installed in
-this repo, so screenshot automation was not run in this pass.
+with `node --check dashboard/v2.js` and Playwright CLI smoke checks.
+
+Latest Dashboard strategy update: the `策略` page now also reads
+`a_share_tushare_source_deep_sandbox_latest.json` and shows `通过候选 0`,
+`深测失败 5`, `特征缺口 1`, and `源特征 case 40`. Browser QA via Playwright CLI
+verified desktop and 390px mobile strategy views: no console warnings/errors,
+no horizontal overflow, and `A股 source deep sandbox` visible. Viewport
+screenshots were saved under `output/playwright/` for local inspection only
+and are not part of the repo evidence set.
 
 **Dashboard navigation update:** the live page at
 `http://localhost:8080/dashboard/index.html` is no longer a single long report.

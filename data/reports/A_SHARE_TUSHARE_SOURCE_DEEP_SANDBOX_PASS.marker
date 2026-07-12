@@ -1,0 +1,17 @@
+status=PASS
+run_id=a_share_tushare_source_deep_sandbox_20260712T212404
+generated_at=2026-07-12T21:24:22+08:00
+report_json=/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/a_share_tushare_source_deep_sandbox_latest.json
+report_json_sha256=2666b1d5c0fa0ceff83667e3d0e06934f433bf6e1fbe1d9b9546692721da4813
+ready_hypothesis_count=5
+deep_sandbox_pass_candidate_count=0
+deep_sandbox_fail_count=5
+case_feature_count=40
+network_used=true
+raw_payload_saved=false
+ranking_impact_allowed=false
+user_facing_suggestion_allowed=false
+no_real_trade=true
+no_broker_api=true
+no_webhook=true
+no_order_placement=true

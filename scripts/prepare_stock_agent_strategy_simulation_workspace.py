@@ -25,6 +25,8 @@ FILES_TO_MIRROR = [
     REPORTS / "a_share_tushare_source_hypothesis_evaluation_latest.md",
     REPORTS / "a_share_tushare_source_feature_coverage_latest.json",
     REPORTS / "a_share_tushare_source_feature_coverage_latest.md",
+    REPORTS / "a_share_tushare_source_deep_sandbox_latest.json",
+    REPORTS / "a_share_tushare_source_deep_sandbox_latest.md",
     REPORTS / "aegis_strategy_specific_historical_cases_latest.json",
     REPORTS / "aegis_strategy_specific_case_evaluation_latest.json",
     REPORTS / "stock_selection_workbench_latest.json",
@@ -65,6 +67,7 @@ top10 holders/floatholders, holder number, daily_basic/stk_factor.
   - `make evaluate-strategy-specific-cases`
   - `make evaluate-a-share-tushare-source-hypotheses`
   - `make build-a-share-tushare-source-feature-coverage`
+  - `make evaluate-a-share-tushare-source-deep-sandbox`
   - `make prepare-stock-agent-strategy-simulation`
 - Output must be compact: command, exit code, report path, marker path, blockers.
 
@@ -83,6 +86,7 @@ top10 holders/floatholders, holder number, daily_basic/stk_factor.
 - `a_share_tushare_source_hypothesis_queue_latest.json`
 - `a_share_tushare_source_hypothesis_evaluation_latest.json`
 - `a_share_tushare_source_feature_coverage_latest.json`
+- `a_share_tushare_source_deep_sandbox_latest.json`
 - `aegis_strategy_specific_historical_cases_latest.json`
 - `aegis_strategy_specific_case_evaluation_latest.json`
 - Any blocking source must be reported as `EMPTY`, `PERMISSION_BLOCKED`, or `ERROR`, not hidden.
@@ -97,8 +101,9 @@ Return:
 4. Historical case counts and data gaps.
 5. Per-hypothesis proxy dispositions: `proxy_pass`, `needs_more_a_share_cases`, or `proxy_fail`.
 6. Source-specific feature coverage and gaps for moneyflow/top_list/top_inst/holders/factors.
-7. Whether any strategy can enter simulation research.
-8. Confirmation that no broker/order/webhook/secret path was touched.
+7. Deep sandbox dispositions: `DEEP_SANDBOX_PASS_CANDIDATE` or `DEEP_SANDBOX_FAIL`.
+8. Whether any strategy can enter simulation research.
+9. Confirmation that no broker/order/webhook/secret path was touched.
 """
 
 
