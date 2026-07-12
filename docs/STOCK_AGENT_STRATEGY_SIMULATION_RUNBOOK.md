@@ -30,6 +30,7 @@ make probe-a-share-tushare-strategy-sources
 make build-a-share-tushare-source-hypotheses
 make build-strategy-specific-historical-cases
 make evaluate-strategy-specific-cases
+make evaluate-a-share-tushare-source-hypotheses
 make prepare-stock-agent-strategy-simulation
 ```
 
@@ -37,6 +38,7 @@ Expected outputs:
 
 - `data/reports/a_share_tushare_strategy_source_probe_latest.json`
 - `data/reports/a_share_tushare_source_hypothesis_queue_latest.json`
+- `data/reports/a_share_tushare_source_hypothesis_evaluation_latest.json`
 - `data/reports/aegis_strategy_specific_historical_cases_latest.json`
 - `data/reports/aegis_strategy_specific_case_evaluation_latest.json`
 - `~/.openclaw/agents/stock-agent/workspace/project-aegis/AEGIS_STOCK_AGENT_STRATEGY_SIMULATION_TASK.md`
@@ -56,6 +58,7 @@ Stock agent reports must include:
 1. Commands and exit codes.
 2. PASS / EMPTY / PERMISSION_BLOCKED / ERROR modules.
 3. A-share source hypotheses created from PASS modules.
-4. Historical case count and data gaps.
-5. Which symbols remain simulation candidates, watch-only, or downgraded.
-6. Explicit safety statement: no broker, no order, no webhook, no secret output.
+4. Per-hypothesis proxy disposition and whether deeper source-specific sandbox is needed.
+5. Historical case count and data gaps.
+6. Which symbols remain simulation candidates, watch-only, or downgraded.
+7. Explicit safety statement: no broker, no order, no webhook, no secret output.

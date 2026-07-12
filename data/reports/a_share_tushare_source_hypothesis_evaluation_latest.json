@@ -1,0 +1,373 @@
+{
+  "type": "a_share_tushare_source_hypothesis_evaluation",
+  "status": "PASS",
+  "generated_at": "2026-07-12T20:42:36+08:00",
+  "run_id": "a_share_tushare_source_hypothesis_evaluation_20260712T204236",
+  "command": "scripts/evaluate_a_share_tushare_source_hypotheses.py",
+  "thresholds": {
+    "min_proxy_case_count": 4,
+    "min_proxy_win_rate": 0.5,
+    "min_proxy_average_return": 0.0,
+    "max_proxy_average_drawdown": -0.14,
+    "min_a_share_candidate_count_for_confident_eval": 5
+  },
+  "summary": {
+    "hypothesis_count": 6,
+    "proxy_pass_count": 0,
+    "needs_more_a_share_cases_count": 0,
+    "proxy_fail_count": 6,
+    "a_share_candidate_count": 2,
+    "a_share_proxy_case_count": 8,
+    "user_facing_suggestion_allowed": false,
+    "next_stage": "OpenClaw stock-agent should collect deeper source-specific historical features before any ranking impact."
+  },
+  "items": [
+    {
+      "hypothesis_id": "hyp_a_tushare_capital_flow_accumulation",
+      "title": "A-share capital-flow accumulation hypothesis",
+      "strategy_families": [
+        "capital_flow",
+        "momentum",
+        "risk_overlay"
+      ],
+      "source_research_ids": [
+        "tushare_a_share_strategy_source_probe:capital_flow:moneyflow:20260710"
+      ],
+      "proxy_strategy_hints": [
+        "a_share_short_momentum",
+        "growth_breakout",
+        "low_vol_momentum"
+      ],
+      "eligible_symbols": [
+        "603893",
+        "300059"
+      ],
+      "metrics": {
+        "candidate_count": 2,
+        "proxy_case_count": 8,
+        "proxy_win_rate": 0.25,
+        "proxy_average_return": -0.039362826047773775,
+        "proxy_average_drawdown": -0.10784215061353257,
+        "proxy_best_return": 0.08576998050682261,
+        "proxy_worst_return": -0.17124704491725773
+      },
+      "disposition": "proxy_fail",
+      "confidence": "LOW_SAMPLE_PROXY",
+      "reasons": [
+        "proxy_win_rate_below_threshold",
+        "proxy_average_return_below_threshold"
+      ],
+      "feature_history_status": "source_specific_feature_history_not_yet_assembled",
+      "allowed_next_step": "collect_more_cases_or_rework_hypothesis",
+      "simulation_only": true,
+      "user_facing_suggestion_allowed": false,
+      "real_trade_allowed": false
+    },
+    {
+      "hypothesis_id": "hyp_a_tushare_dragon_tiger_seat_confirmation",
+      "title": "A-share dragon-tiger hot-money seat confirmation hypothesis",
+      "strategy_families": [
+        "hot_money",
+        "momentum",
+        "risk_overlay"
+      ],
+      "source_research_ids": [
+        "tushare_a_share_strategy_source_probe:dragon_tiger_hot_money:top_list:20260710",
+        "tushare_a_share_strategy_source_probe:dragon_tiger_hot_money:top_inst:20260710"
+      ],
+      "proxy_strategy_hints": [
+        "a_share_short_momentum",
+        "growth_breakout",
+        "low_vol_momentum"
+      ],
+      "eligible_symbols": [
+        "603893",
+        "300059"
+      ],
+      "metrics": {
+        "candidate_count": 2,
+        "proxy_case_count": 8,
+        "proxy_win_rate": 0.25,
+        "proxy_average_return": -0.039362826047773775,
+        "proxy_average_drawdown": -0.10784215061353257,
+        "proxy_best_return": 0.08576998050682261,
+        "proxy_worst_return": -0.17124704491725773
+      },
+      "disposition": "proxy_fail",
+      "confidence": "LOW_SAMPLE_PROXY",
+      "reasons": [
+        "proxy_win_rate_below_threshold",
+        "proxy_average_return_below_threshold"
+      ],
+      "feature_history_status": "source_specific_feature_history_not_yet_assembled",
+      "allowed_next_step": "collect_more_cases_or_rework_hypothesis",
+      "simulation_only": true,
+      "user_facing_suggestion_allowed": false,
+      "real_trade_allowed": false
+    },
+    {
+      "hypothesis_id": "hyp_a_tushare_institutional_ownership_stability",
+      "title": "A-share institutional ownership stability hypothesis",
+      "strategy_families": [
+        "institutional_ownership",
+        "quality",
+        "risk_overlay"
+      ],
+      "source_research_ids": [
+        "tushare_a_share_strategy_source_probe:institutional_ownership:top10_holders:20260710",
+        "tushare_a_share_strategy_source_probe:institutional_ownership:top10_floatholders:20260710"
+      ],
+      "proxy_strategy_hints": [
+        "low_vol_momentum",
+        "qvm"
+      ],
+      "eligible_symbols": [
+        "603893",
+        "300059"
+      ],
+      "metrics": {
+        "candidate_count": 2,
+        "proxy_case_count": 8,
+        "proxy_win_rate": 0.25,
+        "proxy_average_return": -0.039362826047773775,
+        "proxy_average_drawdown": -0.10784215061353257,
+        "proxy_best_return": 0.08576998050682261,
+        "proxy_worst_return": -0.17124704491725773
+      },
+      "disposition": "proxy_fail",
+      "confidence": "LOW_SAMPLE_PROXY",
+      "reasons": [
+        "proxy_win_rate_below_threshold",
+        "proxy_average_return_below_threshold"
+      ],
+      "feature_history_status": "source_specific_feature_history_not_yet_assembled",
+      "allowed_next_step": "collect_more_cases_or_rework_hypothesis",
+      "simulation_only": true,
+      "user_facing_suggestion_allowed": false,
+      "real_trade_allowed": false
+    },
+    {
+      "hypothesis_id": "hyp_a_tushare_holder_concentration_improvement",
+      "title": "A-share holder concentration improvement hypothesis",
+      "strategy_families": [
+        "holder_concentration",
+        "quality",
+        "multi_factor"
+      ],
+      "source_research_ids": [
+        "tushare_a_share_strategy_source_probe:holder_concentration:stk_holdernumber:20260710"
+      ],
+      "proxy_strategy_hints": [
+        "a_share_short_momentum",
+        "low_vol_momentum",
+        "qvm"
+      ],
+      "eligible_symbols": [
+        "603893",
+        "300059"
+      ],
+      "metrics": {
+        "candidate_count": 2,
+        "proxy_case_count": 8,
+        "proxy_win_rate": 0.25,
+        "proxy_average_return": -0.039362826047773775,
+        "proxy_average_drawdown": -0.10784215061353257,
+        "proxy_best_return": 0.08576998050682261,
+        "proxy_worst_return": -0.17124704491725773
+      },
+      "disposition": "proxy_fail",
+      "confidence": "LOW_SAMPLE_PROXY",
+      "reasons": [
+        "proxy_win_rate_below_threshold",
+        "proxy_average_return_below_threshold"
+      ],
+      "feature_history_status": "source_specific_feature_history_not_yet_assembled",
+      "allowed_next_step": "collect_more_cases_or_rework_hypothesis",
+      "simulation_only": true,
+      "user_facing_suggestion_allowed": false,
+      "real_trade_allowed": false
+    },
+    {
+      "hypothesis_id": "hyp_a_tushare_factor_liquidity_quality_overlay",
+      "title": "A-share factor liquidity quality overlay hypothesis",
+      "strategy_families": [
+        "multi_factor",
+        "quality",
+        "momentum",
+        "risk_overlay"
+      ],
+      "source_research_ids": [
+        "tushare_a_share_strategy_source_probe:factor_base:stk_factor:20260710",
+        "tushare_a_share_strategy_source_probe:factor_base:daily_basic:20260710"
+      ],
+      "proxy_strategy_hints": [
+        "a_share_short_momentum",
+        "growth_breakout",
+        "low_vol_momentum",
+        "qvm"
+      ],
+      "eligible_symbols": [
+        "603893",
+        "300059"
+      ],
+      "metrics": {
+        "candidate_count": 2,
+        "proxy_case_count": 8,
+        "proxy_win_rate": 0.25,
+        "proxy_average_return": -0.039362826047773775,
+        "proxy_average_drawdown": -0.10784215061353257,
+        "proxy_best_return": 0.08576998050682261,
+        "proxy_worst_return": -0.17124704491725773
+      },
+      "disposition": "proxy_fail",
+      "confidence": "LOW_SAMPLE_PROXY",
+      "reasons": [
+        "proxy_win_rate_below_threshold",
+        "proxy_average_return_below_threshold"
+      ],
+      "feature_history_status": "source_specific_feature_history_not_yet_assembled",
+      "allowed_next_step": "collect_more_cases_or_rework_hypothesis",
+      "simulation_only": true,
+      "user_facing_suggestion_allowed": false,
+      "real_trade_allowed": false
+    },
+    {
+      "hypothesis_id": "hyp_a_tushare_governance_reward_alignment",
+      "title": "A-share governance and reward-alignment hypothesis",
+      "strategy_families": [
+        "governance",
+        "quality",
+        "risk_overlay"
+      ],
+      "source_research_ids": [
+        "tushare_a_share_strategy_source_probe:governance:stk_rewards:20260710"
+      ],
+      "proxy_strategy_hints": [
+        "low_vol_momentum",
+        "qvm"
+      ],
+      "eligible_symbols": [
+        "603893",
+        "300059"
+      ],
+      "metrics": {
+        "candidate_count": 2,
+        "proxy_case_count": 8,
+        "proxy_win_rate": 0.25,
+        "proxy_average_return": -0.039362826047773775,
+        "proxy_average_drawdown": -0.10784215061353257,
+        "proxy_best_return": 0.08576998050682261,
+        "proxy_worst_return": -0.17124704491725773
+      },
+      "disposition": "proxy_fail",
+      "confidence": "LOW_SAMPLE_PROXY",
+      "reasons": [
+        "proxy_win_rate_below_threshold",
+        "proxy_average_return_below_threshold"
+      ],
+      "feature_history_status": "source_specific_feature_history_not_yet_assembled",
+      "allowed_next_step": "collect_more_cases_or_rework_hypothesis",
+      "simulation_only": true,
+      "user_facing_suggestion_allowed": false,
+      "real_trade_allowed": false
+    }
+  ],
+  "source_reports": {
+    "source_hypothesis_queue": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/a_share_tushare_source_hypothesis_queue_latest.json",
+    "strategy_specific_historical_cases": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/aegis_strategy_specific_historical_cases_latest.json"
+  },
+  "source_hashes": {
+    "source_hypothesis_queue": "889c8527d2d38050257b4a0bcb27c38c022827041fd73b6812e0729fc6f4e1a6",
+    "strategy_specific_historical_cases": "d1be8ec0acdb1c7e9a68b43ab2898dfbbfc0f7bfd2fca0a8e779fa81f6e4450d"
+  },
+  "checks": {
+    "source_queue_present": true,
+    "strategy_specific_cases_pass": true,
+    "all_hypotheses_evaluated": true,
+    "a_share_cases_present": true,
+    "feature_history_limitation_explicit": true,
+    "production_records_unchanged": true,
+    "network_not_used": true,
+    "no_raw_tushare_payload": true,
+    "no_broker_api": true,
+    "no_webhook": true,
+    "no_order_placement": true,
+    "no_position_size": true
+  },
+  "safety": {
+    "simulation_only": true,
+    "research_only": true,
+    "proxy_sandbox_only": true,
+    "requires_deep_source_specific_sandbox_before_ranking": true,
+    "no_broker_api": true,
+    "no_order_placement": true,
+    "no_trading_webhook": true,
+    "no_position_size": true,
+    "no_live_order_signal": true,
+    "real_trade_allowed": false
+  },
+  "production_record_files_before": {
+    "recommendations_jsonl": {
+      "exists": true,
+      "size": 12284,
+      "sha256": "05b2e56c9b547cbe3ce4cb71b7cb776185e23ef2cc3bc9a46a918bce0cfb65dc"
+    },
+    "paper_trades_jsonl": {
+      "exists": false,
+      "size": null,
+      "sha256": null
+    },
+    "reviews_jsonl": {
+      "exists": false,
+      "size": null,
+      "sha256": null
+    },
+    "memory_jsonl": {
+      "exists": false,
+      "size": null,
+      "sha256": null
+    },
+    "investment_memory_jsonl": {
+      "exists": false,
+      "size": null,
+      "sha256": null
+    },
+    "feedback_events_jsonl": {
+      "exists": true,
+      "size": 1977,
+      "sha256": "c468fe43ec7097f129805fb71b6551c2db809213e2e13e9b2f1b2354f53ad65f"
+    }
+  },
+  "production_record_files_after": {
+    "recommendations_jsonl": {
+      "exists": true,
+      "size": 12284,
+      "sha256": "05b2e56c9b547cbe3ce4cb71b7cb776185e23ef2cc3bc9a46a918bce0cfb65dc"
+    },
+    "paper_trades_jsonl": {
+      "exists": false,
+      "size": null,
+      "sha256": null
+    },
+    "reviews_jsonl": {
+      "exists": false,
+      "size": null,
+      "sha256": null
+    },
+    "memory_jsonl": {
+      "exists": false,
+      "size": null,
+      "sha256": null
+    },
+    "investment_memory_jsonl": {
+      "exists": false,
+      "size": null,
+      "sha256": null
+    },
+    "feedback_events_jsonl": {
+      "exists": true,
+      "size": 1977,
+      "sha256": "c468fe43ec7097f129805fb71b6551c2db809213e2e13e9b2f1b2354f53ad65f"
+    }
+  }
+}

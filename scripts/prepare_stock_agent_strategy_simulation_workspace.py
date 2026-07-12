@@ -21,6 +21,8 @@ FILES_TO_MIRROR = [
     REPORTS / "a_share_tushare_strategy_source_probe_latest.md",
     REPORTS / "a_share_tushare_source_hypothesis_queue_latest.json",
     REPORTS / "a_share_tushare_source_hypothesis_queue_latest.md",
+    REPORTS / "a_share_tushare_source_hypothesis_evaluation_latest.json",
+    REPORTS / "a_share_tushare_source_hypothesis_evaluation_latest.md",
     REPORTS / "aegis_strategy_specific_historical_cases_latest.json",
     REPORTS / "aegis_strategy_specific_case_evaluation_latest.json",
     REPORTS / "stock_selection_workbench_latest.json",
@@ -59,6 +61,7 @@ top10 holders/floatholders, holder number, daily_basic/stk_factor.
   - `make build-a-share-tushare-source-hypotheses`
   - `make build-strategy-specific-historical-cases`
   - `make evaluate-strategy-specific-cases`
+  - `make evaluate-a-share-tushare-source-hypotheses`
   - `make prepare-stock-agent-strategy-simulation`
 - Output must be compact: command, exit code, report path, marker path, blockers.
 
@@ -75,6 +78,7 @@ top10 holders/floatholders, holder number, daily_basic/stk_factor.
 
 - `a_share_tushare_strategy_source_probe_latest.json`
 - `a_share_tushare_source_hypothesis_queue_latest.json`
+- `a_share_tushare_source_hypothesis_evaluation_latest.json`
 - `aegis_strategy_specific_historical_cases_latest.json`
 - `aegis_strategy_specific_case_evaluation_latest.json`
 - Any blocking source must be reported as `EMPTY`, `PERMISSION_BLOCKED`, or `ERROR`, not hidden.
@@ -87,8 +91,9 @@ Return:
 2. PASS/blocked modules.
 3. Candidate symbols affected.
 4. Historical case counts and data gaps.
-5. Whether any strategy can enter simulation research.
-6. Confirmation that no broker/order/webhook/secret path was touched.
+5. Per-hypothesis proxy dispositions: `proxy_pass`, `needs_more_a_share_cases`, or `proxy_fail`.
+6. Whether any strategy can enter simulation research.
+7. Confirmation that no broker/order/webhook/secret path was touched.
 """
 
 

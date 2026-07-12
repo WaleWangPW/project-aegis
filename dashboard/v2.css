@@ -2135,6 +2135,18 @@ details > summary::-webkit-details-marker { display: none; }
   box-shadow: 0 22px 58px rgba(17, 52, 45, .22), inset 0 1px 0 rgba(255,255,255,.18);
 }
 
+.source-hypothesis-card.source-watch {
+  background:
+    radial-gradient(circle at 12% 0%, rgba(255, 215, 135, .32), transparent 15rem),
+    linear-gradient(145deg, #241d12, #765a23 58%, #403013);
+}
+
+.source-hypothesis-card.source-fail {
+  background:
+    radial-gradient(circle at 12% 0%, rgba(255, 180, 160, .28), transparent 15rem),
+    linear-gradient(145deg, #241614, #6f3029 58%, #3a1916);
+}
+
 .source-hypothesis-card::after {
   content: "";
   position: absolute;

@@ -29,13 +29,26 @@ money seat confirmation, institutional ownership stability, holder
 concentration improvement, factor/liquidity/quality overlay, and governance
 reward-alignment. These are not recommendations and cannot affect ranking until
 historical sandbox validation passes. Latest SHA256:
-`999657cd138800a8d1c7cc99c9293386ac896bf8af501eac38217468946afbaf`.
+`889c8527d2d38050257b4a0bcb27c38c022827041fd73b6812e0729fc6f4e1a6`.
+
+**A-share source hypothesis proxy evaluation:** Aegis now evaluates each
+A-share source hypothesis against current strategy-specific historical cases.
+Command: `make evaluate-a-share-tushare-source-hypotheses`. Latest report:
+`data/reports/a_share_tushare_source_hypothesis_evaluation_latest.json`, status
+`PASS`, `6` hypotheses evaluated, `0` proxy pass, `0` needs-more-cases, and
+`6` proxy fail from the current A-share sample (`2` candidates / `8` proxy
+cases). This is an honest negative result: source-specific historical features
+such as historical moneyflow, dragon-tiger seats, holder concentration changes,
+and governance events are not assembled yet, so none of the new A-share
+strategy hypotheses may affect ranking or recommendations. Latest SHA256:
+`43e9e6d7d3ae091bf54ed10d6644aca49e6577000d469cb29ad2e912158293d2`.
 
 **OpenClaw stock-agent handoff:** daily A-share strategy maintenance should
 now be run by OpenClaw `stock-agent`, not Codex. Run `make
 stock-agent-a-share-strategy-cycle` from the repo to execute: Tushare source
 probe, source hypothesis queue build, strategy-specific historical case build,
-case evaluation, and stock-agent workspace preparation. The task packet is written to
+candidate case evaluation, A-share source hypothesis proxy evaluation, and
+stock-agent workspace preparation. The task packet is written to
 `~/.openclaw/agents/stock-agent/workspace/project-aegis/AEGIS_STOCK_AGENT_STRATEGY_SIMULATION_TASK.md`,
 with mirrored evidence reports and safety rules. Codex should only review
 blocked sources, changed strategy ranking, or evidence-gate/contract/security
@@ -44,12 +57,13 @@ boundaries.
 **Dashboard strategy page update:** `http://localhost:8080/dashboard/index.html`
 now includes a `策略` page. It reads
 `a_share_tushare_strategy_source_probe_latest.json` and
-`a_share_tushare_source_hypothesis_queue_latest.json`; it shows real Tushare
-probe status plus the six A-share source hypotheses as a visible strategy
-queue. The selection page also has clearer card action bars and stronger
-expand controls. Verified with `node --check dashboard/v2.js`; Playwright
-package was not installed in this repo, so screenshot automation was not run in
-this pass.
+`a_share_tushare_source_hypothesis_queue_latest.json` plus
+`a_share_tushare_source_hypothesis_evaluation_latest.json`; it shows real
+Tushare probe status, the six A-share source hypotheses, and their proxy
+evaluation states (`proxy_fail` for all six in the latest run). The selection
+page also has clearer card action bars and stronger expand controls. Verified
+with `node --check dashboard/v2.js`; Playwright package was not installed in
+this repo, so screenshot automation was not run in this pass.
 
 **Dashboard navigation update:** the live page at
 `http://localhost:8080/dashboard/index.html` is no longer a single long report.
