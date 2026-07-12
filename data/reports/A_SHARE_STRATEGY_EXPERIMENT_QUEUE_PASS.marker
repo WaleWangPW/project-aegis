@@ -1,8 +1,8 @@
 status=PASS
-run_id=a_share_strategy_experiment_queue_20260713T011337
-generated_at=2026-07-13T01:13:37+08:00
+run_id=a_share_strategy_experiment_queue_20260713T014701
+generated_at=2026-07-13T01:47:01+08:00
 report_json=/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/a_share_strategy_experiment_queue_latest.json
-report_json_sha256=a649f45e682ef5afccfeee82916095a92b53d282d3ef7d5d7699dde7bb45e6ad
+report_json_sha256=cadc443418066e566b26e85ccf1a770425337f5caab7b54ddbf850e9ce0dda53
 experiment_count=6
 ready_experiment_count=6
 blocked_experiment_count=0

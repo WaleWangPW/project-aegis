@@ -1,8 +1,8 @@
 status=PASS
-run_id=a_share_refined_strategy_ranking_gate_20260713T011337
-generated_at=2026-07-13T01:13:37+08:00
+run_id=a_share_refined_strategy_ranking_gate_20260713T014700
+generated_at=2026-07-13T01:47:00+08:00
 report_json=/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/a_share_refined_strategy_ranking_gate_latest.json
-report_json_sha256=72f7614eec3d132f9a79574d6f0067e9d6c68c6ac42bf12fc0969d85b64b17df
+report_json_sha256=6c1df1bb1c7104b992e0cb1f1a03d11eb8478bbd2a28de7f3057318aa217c085
 ranking_gate_reviewed_count=0
 ranking_gate_approved_count=0
 ranking_gate_blocked_count=0

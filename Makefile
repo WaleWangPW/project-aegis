@@ -126,6 +126,15 @@ plan-a-share-strategy-sample-expansion:
 analyze-a-share-tushare-strategy-diagnostics:
 	.venv/bin/python scripts/analyze_a_share_tushare_strategy_diagnostics.py
 
+build-a-share-full-year-coverage-plan:
+	.venv/bin/python scripts/build_a_share_full_year_coverage_plan.py
+
+START_DATE ?= 20240801
+END_DATE ?= 20260710
+
+build-p23-2-historical-market-cache:
+	.venv/bin/python scripts/build_p23_2_historical_market_cache.py --start-date $(START_DATE) --end-date $(END_DATE)
+
 build-a-share-strategy-experiment-queue:
 	.venv/bin/python scripts/build_a_share_strategy_experiment_queue.py
 

@@ -1,0 +1,82 @@
+{
+  "type": "a_share_full_year_coverage_plan",
+  "status": "PASS",
+  "coverage_status": "PARTIAL_STALE_FULL_CROSS_SECTION_CACHE",
+  "generated_at": "2026-07-13T01:47:01+08:00",
+  "run_id": "a_share_full_year_coverage_plan_20260713T014700",
+  "command": "scripts/build_a_share_full_year_coverage_plan.py --as-of 2026-07-13",
+  "question": "Do we currently have materialized past-year daily records for the full A-share universe?",
+  "answer": false,
+  "answer_label": "NO",
+  "target": {
+    "as_of_date": "2026-07-13",
+    "target_start": "2025-07-13",
+    "target_end": "2026-07-13",
+    "target_days": 365,
+    "estimated_trading_days": 244,
+    "expected_full_universe_row_floor": 1431060
+  },
+  "current_cache": {
+    "cache_dir": "data/cache/p23_2_historical_market",
+    "calendar_exists": true,
+    "stock_basic_exists": true,
+    "daily_dir_exists": true,
+    "open_date_count": 220,
+    "stock_basic_row_count": 5865,
+    "daily_file_count": 220,
+    "daily_start": "20230901",
+    "daily_end": "20240731",
+    "min_daily_row_count": 5265,
+    "max_daily_row_count": 5363,
+    "avg_daily_row_count": 5327,
+    "total_daily_rows": 1172054
+  },
+  "current_strategy_validation": {
+    "historical_case_count": 120,
+    "a_share_case_count": 76,
+    "candidate_count": 33,
+    "ranking_gate_approved_count": 0,
+    "user_facing_suggestion_allowed": false
+  },
+  "blockers": [
+    "daily_cache_ends_before_target_end",
+    "daily_cache_is_stale_for_current_past_year"
+  ],
+  "overnight_openclaw_plan": {
+    "owner": "stock-agent",
+    "mode": "bounded_read_or_simulation_only",
+    "phase_1": "verify current cache/report coverage and hashes",
+    "phase_2": "collect or validate target-year A-share daily_by_trade_date batches only after Tushare env is available",
+    "phase_3": "run strategy validation on collected batches and publish reports; do not change ranking unless gate approves",
+    "recommended_batch_size_trade_dates": 20,
+    "estimated_batch_count": 13,
+    "stop_conditions": [
+      "missing_tushare_token_or_client",
+      "daily_batch_exit_code_nonzero",
+      "daily_row_count_below_4000_for_any_open_day",
+      "hash_or_date_range_mismatch",
+      "attempt_to_read_or_print_secret",
+      "attempt_to_trade_or_call_broker_or_webhook"
+    ],
+    "expected_reports": [
+      "data/reports/a_share_full_year_coverage_plan_latest.json",
+      "data/reports/a_share_full_year_collection_manifest_latest.json",
+      "data/reports/a_share_full_year_strategy_validation_latest.json"
+    ]
+  },
+  "safety": {
+    "network_used": false,
+    "secret_read": false,
+    "raw_payload_saved": false,
+    "simulation_only": true,
+    "no_broker_api": true,
+    "no_order_placement": true,
+    "no_trading_webhook": true,
+    "ranking_impact_allowed": false,
+    "user_facing_suggestion_allowed": false
+  },
+  "source_hashes": {
+    "trade_calendar": "f34de1ab81b9b11999c0dd0f98a6d851df2aa3e15e63e5ea2bf5fd500d5f13cd",
+    "stock_basic_all": "0bbc2d38cc4cde25b19d947ab5bd85c1558835da35985f73e62ab16449e99ae8"
+  }
+}

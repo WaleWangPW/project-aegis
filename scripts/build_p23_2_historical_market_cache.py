@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import hashlib
+import argparse
 import json
 import os
 import sys
@@ -22,8 +23,8 @@ STOCK_BASIC_PATH = CACHE / "stock_basic_all.json"
 DAILY_DIR = CACHE / "daily_by_trade_date"
 MANIFEST_PATH = REPORTS / "p23_2_historical_market_cache_manifest.json"
 
-START_DATE = "20230901"
-END_DATE = "20240731"
+DEFAULT_START_DATE = "20230901"
+DEFAULT_END_DATE = "20240731"
 
 
 def now() -> str:
@@ -75,7 +76,23 @@ def fetch_with_retry(fn, description: str, attempts: int = 4):
     raise RuntimeError(f"{description} failed: {type(error).__name__}: {error}")
 
 
-def main() -> int:
+def valid_compact_date(value: str) -> str:
+    if len(value) != 8 or not value.isdigit():
+        raise argparse.ArgumentTypeError("date must use YYYYMMDD format")
+    datetime.strptime(value, "%Y%m%d")
+    return value
+
+
+def main(argv: list[str] | None = None) -> int:
+    parser = argparse.ArgumentParser(description="Build or extend the P23.2 A-share historical market cache.")
+    parser.add_argument("--start-date", type=valid_compact_date, default=DEFAULT_START_DATE)
+    parser.add_argument("--end-date", type=valid_compact_date, default=DEFAULT_END_DATE)
+    parser.add_argument("--sleep-seconds", type=float, default=0.14)
+    parser.add_argument("--min-daily-rows", type=int, default=100)
+    args = parser.parse_args(argv)
+    if args.end_date < args.start_date:
+        raise ValueError("--end-date must be on or after --start-date")
+
     CACHE.mkdir(parents=True, exist_ok=True)
     DAILY_DIR.mkdir(parents=True, exist_ok=True)
     REPORTS.mkdir(parents=True, exist_ok=True)
@@ -86,8 +103,8 @@ def main() -> int:
     cal = fetch_with_retry(
         lambda: pro.trade_cal(
             exchange="SSE",
-            start_date=START_DATE,
-            end_date=END_DATE,
+            start_date=args.start_date,
+            end_date=args.end_date,
             fields="exchange,cal_date,is_open,pretrade_date",
         ),
         "trade_cal",
@@ -110,8 +127,8 @@ def main() -> int:
         CALENDAR_PATH,
         {
             "source": "Tushare trade_cal",
-            "start_date": START_DATE,
-            "end_date": END_DATE,
+            "start_date": args.start_date,
+            "end_date": args.end_date,
             "generated_at": now(),
             "open_dates": open_dates,
             "rows": dataframe_records(cal),
@@ -186,7 +203,7 @@ def main() -> int:
                 f"daily:{trade_date}",
             )
 
-            if daily is None or len(daily) < 100:
+            if daily is None or len(daily) < args.min_daily_rows:
                 raise RuntimeError(
                     f"daily {trade_date} insufficient rows: "
                     f"{0 if daily is None else len(daily)}"
@@ -206,7 +223,7 @@ def main() -> int:
             )
 
             fetched += 1
-            time.sleep(0.14)
+            time.sleep(args.sleep_seconds)
 
         except Exception as exc:
             failed_dates.append(
@@ -230,8 +247,8 @@ def main() -> int:
         "project": "Project Aegis",
         "type": "p23_2_historical_market_cache_manifest",
         "generated_at": now(),
-        "start_date": START_DATE,
-        "end_date": END_DATE,
+        "start_date": args.start_date,
+        "end_date": args.end_date,
         "trade_calendar": {
             "path": str(CALENDAR_PATH.relative_to(REPO)),
             "sha256": sha256_file(CALENDAR_PATH),

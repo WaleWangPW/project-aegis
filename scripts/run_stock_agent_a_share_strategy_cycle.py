@@ -108,6 +108,12 @@ COMMANDS = [
         "marker": REPORTS / "A_SHARE_TUSHARE_STRATEGY_DIAGNOSTICS_PASS.marker",
     },
     {
+        "name": "build_a_share_full_year_coverage_plan",
+        "argv": ["scripts/build_a_share_full_year_coverage_plan.py"],
+        "report": REPORTS / "a_share_full_year_coverage_plan_latest.json",
+        "marker": REPORTS / "A_SHARE_FULL_YEAR_COVERAGE_PLAN_PASS.marker",
+    },
+    {
         "name": "build_a_share_strategy_experiment_queue",
         "argv": ["scripts/build_a_share_strategy_experiment_queue.py"],
         "report": REPORTS / "a_share_strategy_experiment_queue_latest.json",
@@ -285,6 +291,7 @@ def build_report(command_results: list[dict[str, Any]], *, prepare_manifest: dic
     ranking_gate = load_json(REPORTS / "a_share_refined_strategy_ranking_gate_latest.json")
     expansion_plan = load_json(REPORTS / "a_share_strategy_sample_expansion_plan_latest.json")
     diagnostics = load_json(REPORTS / "a_share_tushare_strategy_diagnostics_latest.json")
+    full_year = load_json(REPORTS / "a_share_full_year_coverage_plan_latest.json")
     experiment_queue = load_json(REPORTS / "a_share_strategy_experiment_queue_latest.json")
     dragon = load_json(REPORTS / "a_share_dragon_tiger_research_samples_latest.json")
     blockers = [
@@ -340,6 +347,11 @@ def build_report(command_results: list[dict[str, Any]], *, prepare_manifest: dic
             "sample_expansion_next_max_symbols": expansion_plan.get("summary", {}).get("next_max_symbols"),
             "rankable_strategy_count": diagnostics.get("summary", {}).get("rankable_strategy_count"),
             "strategy_priority_action_count": diagnostics.get("summary", {}).get("priority_action_count"),
+            "full_year_coverage_status": full_year.get("coverage_status"),
+            "full_year_coverage_answer": full_year.get("answer_label"),
+            "full_year_cache_daily_file_count": full_year.get("current_cache", {}).get("daily_file_count"),
+            "full_year_cache_daily_start": full_year.get("current_cache", {}).get("daily_start"),
+            "full_year_cache_daily_end": full_year.get("current_cache", {}).get("daily_end"),
             "strategy_experiment_count": experiment_queue.get("summary", {}).get("experiment_count"),
             "ready_strategy_experiment_count": experiment_queue.get("summary", {}).get("ready_experiment_count"),
             "blocked_strategy_experiment_count": experiment_queue.get("summary", {}).get("blocked_experiment_count"),
@@ -384,6 +396,8 @@ def write_report(report: dict[str, Any]) -> None:
                 f"refined_sandbox_pass_candidate_count={report['summary'].get('refined_sandbox_pass_candidate_count')}",
                 f"ranking_gate_approved_count={report['summary'].get('ranking_gate_approved_count')}",
                 f"sample_expansion_task_count={report['summary'].get('sample_expansion_task_count')}",
+                f"full_year_coverage_status={report['summary'].get('full_year_coverage_status')}",
+                f"full_year_coverage_answer={report['summary'].get('full_year_coverage_answer')}",
                 f"ranking_impact_allowed={str(report['summary']['ranking_impact_allowed']).lower()}",
                 "user_facing_suggestion_allowed=false",
                 "no_real_trade=true",

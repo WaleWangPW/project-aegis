@@ -8,6 +8,41 @@
 
 **Accepted engineering baseline:** `P25.6 PASS`
 
+**Latest update — overnight usable Dashboard + A-share full-year coverage gate:**
+Aegis now explicitly shows whether the current A-share strategy validation is
+candidate-level or full-market one-year validation. New command:
+`make build-a-share-full-year-coverage-plan`. Latest report:
+`data/reports/a_share_full_year_coverage_plan_latest.json`, status `PASS`,
+SHA256 `93f38321a54dfe147cbfcc3c3c153f3e7b1d2f56e77fae748dcaeb3988a23f51`,
+`coverage_status=PARTIAL_STALE_FULL_CROSS_SECTION_CACHE`, `answer_label=NO`,
+target window `2025-07-13..2026-07-13`, current local A-share cross-section
+cache `20230901..20240731`, `daily_file_count=220`,
+`stock_basic_row_count=5865`, and `total_daily_rows=1172054`.
+OpenClaw `stock-agent` independently reviewed the same question in read-only
+mode and also concluded that Aegis does **not** currently have past-year full
+A-share records materialized locally. The managed expanded cycle now includes
+this coverage gate and exits `0` with `command_count=15`,
+`failed_command_count=0`, `full_year_coverage_answer=NO`,
+`ranking_gate_approved_count=0`, `ranking_impact_allowed=false`, and
+`user_facing_suggestion_allowed=false`. Latest managed report SHA256:
+`d9915dafa6ba4b44a9d9b2c3e4f5c1d574ba6181e0de12d3a21c19b7131246f7`.
+Dashboard `策略` page now displays `全市场一年 NO`, the old cache date range,
+and the stop reason before any strategy evidence; Browser QA verified the
+strategy tab renders this state and has no console warnings/errors. Existing
+cache builder `scripts/build_p23_2_historical_market_cache.py` now accepts
+`--start-date/--end-date`; Make target:
+`make build-p23-2-historical-market-cache START_DATE=20240801 END_DATE=20260710`.
+Do not run the full cache extension without explicit user approval because it
+will perform many Tushare network calls and write a large cache.
+
+**Current next step:** if the user approves overnight data extension, delegate
+to OpenClaw `stock-agent` to run the bounded cache extension and then rerun
+`make stock-agent-a-share-strategy-cycle-managed-expanded`. Stop immediately if
+Tushare token/client is unavailable, any daily batch exits non-zero, row count
+is anomalously low, a secret would be exposed, or anything attempts broker /
+webhook / order placement. Until a separate ranking gate approves, no A-share
+strategy may affect Dashboard ranking or user-facing suggestions.
+
 **Latest update — A-share signal tuning layer + stock-agent review:** Aegis now
 has a separate signal-tuning experiment layer for OpenClaw `stock-agent`.
 New command: `make evaluate-a-share-signal-tuning-experiments`, and the

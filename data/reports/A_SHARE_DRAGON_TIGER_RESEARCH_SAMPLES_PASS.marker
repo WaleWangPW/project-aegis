@@ -1,7 +1,7 @@
 status=PASS
-generated_at=2026-07-13T01:09:57+08:00
+generated_at=2026-07-13T01:43:16+08:00
 report_json=/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/a_share_dragon_tiger_research_samples_latest.json
-report_json_sha256=055f06ff327a0a60b0a5709d9104da3a93462fd7805a98b59177b7359a6a5215
+report_json_sha256=384bc94c694c80d7d7361de0ae8117a9484b85758abafe225e6640ae3264d832
 sample_count=24
 event_count=72
 queried_trade_date_count=90

@@ -1,8 +1,8 @@
 {
   "type": "a_share_signal_tuning_experiments",
   "status": "PASS",
-  "generated_at": "2026-07-13T01:13:37+08:00",
-  "run_id": "a_share_signal_tuning_experiments_20260713T011337",
+  "generated_at": "2026-07-13T01:47:00+08:00",
+  "run_id": "a_share_signal_tuning_experiments_20260713T014700",
   "command": "scripts/evaluate_a_share_signal_tuning_experiments.py",
   "thresholds": {
     "min_signal_case_count": 2,
@@ -1192,7 +1192,7 @@
     "source_deep_sandbox": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/a_share_tushare_source_deep_sandbox_latest.json"
   },
   "source_hashes": {
-    "source_deep_sandbox": "12476824db6204f4ebe0c5268cc94861863155116f6e0bf157148c34963c59bb"
+    "source_deep_sandbox": "3abae027a9c19adeb3e66bef082ce6221dad9ea23d60d59f029dac46c60ab585"
   },
   "checks": {
     "source_deep_sandbox_pass": true,
