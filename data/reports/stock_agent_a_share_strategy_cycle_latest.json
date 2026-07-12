@@ -1,0 +1,232 @@
+{
+  "type": "stock_agent_a_share_strategy_cycle",
+  "status": "PASS",
+  "generated_at": "2026-07-12T21:52:30+08:00",
+  "overall_exit_code": 0,
+  "summary": {
+    "command_count": 7,
+    "failed_command_count": 0,
+    "base_candidate_count": 13,
+    "candidate_count": 21,
+    "a_share_research_sample_candidate_count": 8,
+    "historical_case_count": 84,
+    "a_share_case_count": 40,
+    "simulation_research_candidate_count": 10,
+    "proxy_pass_count": 0,
+    "proxy_fail_count": 6,
+    "ready_for_deep_sandbox_count": 5,
+    "feature_gap_count": 1,
+    "deep_sandbox_pass_candidate_count": 0,
+    "deep_sandbox_fail_count": 5,
+    "ranking_impact_allowed": false,
+    "user_facing_suggestion_allowed": false
+  },
+  "commands": [
+    {
+      "name": "probe_a_share_tushare_strategy_sources",
+      "command": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/.venv/bin/python scripts/probe_a_share_tushare_strategy_sources.py",
+      "exit_code": 0,
+      "duration_seconds": 3.036,
+      "stdout_tail": "{\n  \"status\": \"PASS\",\n  \"outputs\": {\n    \"run_json\": \"/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/a_share_tushare_strategy_source_probe/a_share_tushare_strategy_source_probe_20260712T215045/a_share_tushare_strategy_source_probe.json\",\n    \"latest_json\": \"/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/a_share_tushare_strategy_source_probe_latest.json\",\n    \"latest_md\": \"/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/a_share_tushare_strategy_source_probe_latest.md\",\n    \"marker\": \"/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/A_SHARE_TUSHARE_STRATEGY_SOURCE_PROBE_PASS.marker\"\n  }\n}",
+      "stderr_tail": "",
+      "report_path": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/a_share_tushare_strategy_source_probe_latest.json",
+      "report_exists": true,
+      "report_sha256": "9345ddef34726cf0d27926c4ec667f1374f302814f304c0f4c9e4b2c0ba8fdaa",
+      "marker_path": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/A_SHARE_TUSHARE_STRATEGY_SOURCE_PROBE_PASS.marker",
+      "marker_exists": true,
+      "marker_sha256": "52a8e718f68b87b2468946c37f2e8644f96abbb1c94fc19b59b3864e5c0797c2"
+    },
+    {
+      "name": "build_a_share_tushare_source_hypothesis_queue",
+      "command": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/.venv/bin/python scripts/build_a_share_tushare_source_hypothesis_queue.py",
+      "exit_code": 0,
+      "duration_seconds": 0.104,
+      "stdout_tail": "{\n  \"status\": \"PASS\",\n  \"hypothesis_count\": 6,\n  \"outputs\": {\n    \"run_json\": \"/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/a_share_tushare_source_hypothesis_queue/a_share_tushare_source_hypothesis_queue_20260712T215047/a_share_tushare_source_hypothesis_queue.json\",\n    \"run_md\": \"/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/a_share_tushare_source_hypothesis_queue/a_share_tushare_source_hypothesis_queue_20260712T215047/a_share_tushare_source_hypothesis_queue.md\",\n    \"latest_json\": \"/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/a_share_tushare_source_hypothesis_queue_latest.json\",\n    \"latest_md\": \"/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/a_share_tushare_source_hypothesis_queue_latest.md\",\n    \"marker\": \"/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/A_SHARE_TUSHARE_SOURCE_HYPOTHESIS_QUEUE_PASS.marker\"\n  }\n}",
+      "stderr_tail": "",
+      "report_path": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/a_share_tushare_source_hypothesis_queue_latest.json",
+      "report_exists": true,
+      "report_sha256": "460b82b27f9459cc7e01dce6bf52f638e30c0763720fdf42ff509adec1a18194",
+      "marker_path": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/A_SHARE_TUSHARE_SOURCE_HYPOTHESIS_QUEUE_PASS.marker",
+      "marker_exists": true,
+      "marker_sha256": "a5c699ac13de5b6409778b2f27ca613b9f7c7761cbd1d45286699ec04ced702a"
+    },
+    {
+      "name": "build_aegis_strategy_specific_historical_cases",
+      "command": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/.venv/bin/python scripts/build_aegis_strategy_specific_historical_cases.py",
+      "exit_code": 0,
+      "duration_seconds": 1.605,
+      "stdout_tail": "{\"status\": \"PASS\", \"base_candidate_count\": 13, \"candidate_count\": 21, \"a_share_research_sample_candidate_count\": 8, \"candidates_with_cases\": 21, \"historical_case_count\": 84, \"a_share_research_sample_case_count\": 32, \"data_gap_count\": 0, \"report_json\": \"/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/aegis_strategy_specific_historical_cases_latest.json\"}",
+      "stderr_tail": "",
+      "report_path": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/aegis_strategy_specific_historical_cases_latest.json",
+      "report_exists": true,
+      "report_sha256": "3bea698cfe824e6b4468a0bb0fa0dda1d009be55926f20083bc2be375e060296",
+      "marker_path": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/AEGIS_STRATEGY_SPECIFIC_HISTORICAL_CASES_PASS.marker",
+      "marker_exists": true,
+      "marker_sha256": "a5b9a560697936df719fc47622e6b975d8395a4312d4c48d8d5fca5b2315ecb8"
+    },
+    {
+      "name": "evaluate_aegis_strategy_specific_cases",
+      "command": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/.venv/bin/python scripts/evaluate_aegis_strategy_specific_cases.py",
+      "exit_code": 0,
+      "duration_seconds": 0.028,
+      "stdout_tail": "{\"status\": \"PASS\", \"candidate_count\": 21, \"simulation_research_candidate_count\": 10, \"watch_only_count\": 3, \"downgraded_count\": 8, \"report_json\": \"/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/aegis_strategy_specific_case_evaluation_latest.json\"}",
+      "stderr_tail": "",
+      "report_path": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/aegis_strategy_specific_case_evaluation_latest.json",
+      "report_exists": true,
+      "report_sha256": "fda5761def2327e0e2aec9cf7f8910b49760edfedf110f88ae6ab88124afc397",
+      "marker_path": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/AEGIS_STRATEGY_SPECIFIC_CASE_EVALUATION_PASS.marker",
+      "marker_exists": true,
+      "marker_sha256": "06409af2557f772a2afc99958c75d121e0b017600554c4ffe345fafc8195cd59"
+    },
+    {
+      "name": "evaluate_a_share_tushare_source_hypotheses",
+      "command": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/.venv/bin/python scripts/evaluate_a_share_tushare_source_hypotheses.py",
+      "exit_code": 0,
+      "duration_seconds": 0.041,
+      "stdout_tail": "{\n  \"status\": \"PASS\",\n  \"summary\": {\n    \"hypothesis_count\": 6,\n    \"proxy_pass_count\": 0,\n    \"needs_more_a_share_cases_count\": 0,\n    \"proxy_fail_count\": 6,\n    \"a_share_candidate_count\": 10,\n    \"a_share_proxy_case_count\": 40,\n    \"user_facing_suggestion_allowed\": false,\n    \"next_stage\": \"OpenClaw stock-agent should collect deeper source-specific historical features before any ranking impact.\"\n  },\n  \"outputs\": {\n    \"run_json\": \"/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/a_share_tushare_source_hypothesis_evaluation/a_share_tushare_source_hypothesis_evaluation_20260712T215049/a_share_tushare_source_hypothesis_evaluation.json\",\n    \"run_md\": \"/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/a_share_tushare_source_hypothesis_evaluation/a_share_tushare_source_hypothesis_evaluation_20260712T215049/a_share_tushare_source_hypothesis_evaluation.md\",\n    \"latest_json\": \"/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/a_share_tushare_source_hypothesis_evaluation_latest.json\",\n    \"latest_md\": \"/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/a_share_tushare_source_hypothesis_evaluation_latest.md\",\n    \"marker\": \"/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/A_SHARE_TUSHARE_SOURCE_HYPOTHESIS_EVALUATION_PASS.marker\"\n  }\n}",
+      "stderr_tail": "",
+      "report_path": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/a_share_tushare_source_hypothesis_evaluation_latest.json",
+      "report_exists": true,
+      "report_sha256": "1737c1d4ba89ece32a714a5b48f1520d4bf88baa16937982d135d039ef1d23ac",
+      "marker_path": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/A_SHARE_TUSHARE_SOURCE_HYPOTHESIS_EVALUATION_PASS.marker",
+      "marker_exists": true,
+      "marker_sha256": "45d76f3a73af867a8b7e545627b63ba79212e2dd74a1e18058254896d45e1e67"
+    },
+    {
+      "name": "build_a_share_tushare_source_feature_coverage",
+      "command": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/.venv/bin/python scripts/build_a_share_tushare_source_feature_coverage.py",
+      "exit_code": 0,
+      "duration_seconds": 24.887,
+      "stdout_tail": "{\n  \"status\": \"PASS\",\n  \"summary\": {\n    \"hypothesis_count\": 6,\n    \"ready_for_deep_sandbox_count\": 5,\n    \"feature_gap_count\": 1,\n    \"a_share_case_count\": 40,\n    \"observation_count\": 360,\n    \"network_used\": true,\n    \"user_facing_suggestion_allowed\": false,\n    \"next_stage\": \"Deep source-specific sandbox may run only for READY_FOR_DEEP_SANDBOX hypotheses.\"\n  },\n  \"outputs\": {\n    \"run_json\": \"/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/a_share_tushare_source_feature_coverage/a_share_tushare_source_feature_coverage_20260712T215049/a_share_tushare_source_feature_coverage.json\",\n    \"run_md\": \"/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/a_share_tushare_source_feature_coverage/a_share_tushare_source_feature_coverage_20260712T215049/a_share_tushare_source_feature_coverage.md\",\n    \"latest_json\": \"/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/a_share_tushare_source_feature_coverage_latest.json\",\n    \"latest_md\": \"/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/a_share_tushare_source_feature_coverage_latest.md\",\n    \"marker\": \"/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/A_SHARE_TUSHARE_SOURCE_FEATURE_COVERAGE_PASS.marker\"\n  }\n}",
+      "stderr_tail": "",
+      "report_path": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/a_share_tushare_source_feature_coverage_latest.json",
+      "report_exists": true,
+      "report_sha256": "83fd643775cc1e528f2ad880b412dbdb9678d1a618709c4177b9421bd4266186",
+      "marker_path": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/A_SHARE_TUSHARE_SOURCE_FEATURE_COVERAGE_PASS.marker",
+      "marker_exists": true,
+      "marker_sha256": "8a2bd4eeae576e37d939b4d6a963cc7c620f6aea4ff5ff8b384654ddca400cfc"
+    },
+    {
+      "name": "evaluate_a_share_tushare_source_deep_sandbox",
+      "command": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/.venv/bin/python scripts/evaluate_a_share_tushare_source_deep_sandbox.py",
+      "exit_code": 0,
+      "duration_seconds": 76.281,
+      "stdout_tail": "{\n  \"status\": \"PASS\",\n  \"summary\": {\n    \"ready_hypothesis_count\": 5,\n    \"evaluated_hypothesis_count\": 5,\n    \"deep_sandbox_pass_candidate_count\": 0,\n    \"deep_sandbox_fail_count\": 5,\n    \"blocked_feature_gap_count\": 1,\n    \"case_feature_count\": 200,\n    \"network_used\": true,\n    \"user_facing_suggestion_allowed\": false,\n    \"ranking_impact_allowed\": false,\n    \"next_stage\": \"Only DEEP_SANDBOX_PASS_CANDIDATE hypotheses may be reviewed by a separate ranking gate; no automatic ranking impact.\"\n  },\n  \"outputs\": {\n    \"run_json\": \"/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/a_share_tushare_source_deep_sandbox/a_share_tushare_source_deep_sandbox_20260712T215114/a_share_tushare_source_deep_sandbox.json\",\n    \"run_md\": \"/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/a_share_tushare_source_deep_sandbox/a_share_tushare_source_deep_sandbox_20260712T215114/a_share_tushare_source_deep_sandbox.md\",\n    \"latest_json\": \"/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/a_share_tushare_source_deep_sandbox_latest.json\",\n    \"latest_md\": \"/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/a_share_tushare_source_deep_sandbox_latest.md\",\n    \"marker\": \"/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/A_SHARE_TUSHARE_SOURCE_DEEP_SANDBOX_PASS.marker\"\n  }\n}",
+      "stderr_tail": "",
+      "report_path": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/a_share_tushare_source_deep_sandbox_latest.json",
+      "report_exists": true,
+      "report_sha256": "12bed0a38d153e95b7cbf307f3ac7e8fec9a3f3bd200c442c8343abe25cece49",
+      "marker_path": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/A_SHARE_TUSHARE_SOURCE_DEEP_SANDBOX_PASS.marker",
+      "marker_exists": true,
+      "marker_sha256": "c0e616d1857a0bedf5b22fbf05be8e0dc84b14b6d35ad1914349794e9a2948d3"
+    }
+  ],
+  "blockers": [],
+  "prepare_manifest": {
+    "generated_at": "2026-07-12T21:52:30+08:00",
+    "target_dir": "/Users/weihongwang/.openclaw/agents/stock-agent/workspace/project-aegis",
+    "task_path": "/Users/weihongwang/.openclaw/agents/stock-agent/workspace/project-aegis/AEGIS_STOCK_AGENT_STRATEGY_SIMULATION_TASK.md",
+    "copied": [
+      {
+        "source": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/docs/STOCK_AGENT_STRATEGY_SIMULATION_RUNBOOK.md",
+        "copied": true,
+        "dest": "/Users/weihongwang/.openclaw/agents/stock-agent/workspace/project-aegis/STOCK_AGENT_STRATEGY_SIMULATION_RUNBOOK.md"
+      },
+      {
+        "source": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/docs/STRATEGY_RESEARCH.md",
+        "copied": true,
+        "dest": "/Users/weihongwang/.openclaw/agents/stock-agent/workspace/project-aegis/STRATEGY_RESEARCH.md"
+      },
+      {
+        "source": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/a_share_tushare_strategy_source_probe_latest.json",
+        "copied": true,
+        "dest": "/Users/weihongwang/.openclaw/agents/stock-agent/workspace/project-aegis/a_share_tushare_strategy_source_probe_latest.json"
+      },
+      {
+        "source": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/a_share_tushare_strategy_source_probe_latest.md",
+        "copied": true,
+        "dest": "/Users/weihongwang/.openclaw/agents/stock-agent/workspace/project-aegis/a_share_tushare_strategy_source_probe_latest.md"
+      },
+      {
+        "source": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/a_share_tushare_source_hypothesis_queue_latest.json",
+        "copied": true,
+        "dest": "/Users/weihongwang/.openclaw/agents/stock-agent/workspace/project-aegis/a_share_tushare_source_hypothesis_queue_latest.json"
+      },
+      {
+        "source": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/a_share_tushare_source_hypothesis_queue_latest.md",
+        "copied": true,
+        "dest": "/Users/weihongwang/.openclaw/agents/stock-agent/workspace/project-aegis/a_share_tushare_source_hypothesis_queue_latest.md"
+      },
+      {
+        "source": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/a_share_tushare_source_hypothesis_evaluation_latest.json",
+        "copied": true,
+        "dest": "/Users/weihongwang/.openclaw/agents/stock-agent/workspace/project-aegis/a_share_tushare_source_hypothesis_evaluation_latest.json"
+      },
+      {
+        "source": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/a_share_tushare_source_hypothesis_evaluation_latest.md",
+        "copied": true,
+        "dest": "/Users/weihongwang/.openclaw/agents/stock-agent/workspace/project-aegis/a_share_tushare_source_hypothesis_evaluation_latest.md"
+      },
+      {
+        "source": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/a_share_tushare_source_feature_coverage_latest.json",
+        "copied": true,
+        "dest": "/Users/weihongwang/.openclaw/agents/stock-agent/workspace/project-aegis/a_share_tushare_source_feature_coverage_latest.json"
+      },
+      {
+        "source": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/a_share_tushare_source_feature_coverage_latest.md",
+        "copied": true,
+        "dest": "/Users/weihongwang/.openclaw/agents/stock-agent/workspace/project-aegis/a_share_tushare_source_feature_coverage_latest.md"
+      },
+      {
+        "source": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/a_share_tushare_source_deep_sandbox_latest.json",
+        "copied": true,
+        "dest": "/Users/weihongwang/.openclaw/agents/stock-agent/workspace/project-aegis/a_share_tushare_source_deep_sandbox_latest.json"
+      },
+      {
+        "source": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/a_share_tushare_source_deep_sandbox_latest.md",
+        "copied": true,
+        "dest": "/Users/weihongwang/.openclaw/agents/stock-agent/workspace/project-aegis/a_share_tushare_source_deep_sandbox_latest.md"
+      },
+      {
+        "source": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/aegis_strategy_specific_historical_cases_latest.json",
+        "copied": true,
+        "dest": "/Users/weihongwang/.openclaw/agents/stock-agent/workspace/project-aegis/aegis_strategy_specific_historical_cases_latest.json"
+      },
+      {
+        "source": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/aegis_strategy_specific_case_evaluation_latest.json",
+        "copied": true,
+        "dest": "/Users/weihongwang/.openclaw/agents/stock-agent/workspace/project-aegis/aegis_strategy_specific_case_evaluation_latest.json"
+      },
+      {
+        "source": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/stock_selection_workbench_latest.json",
+        "copied": true,
+        "dest": "/Users/weihongwang/.openclaw/agents/stock-agent/workspace/project-aegis/stock_selection_workbench_latest.json"
+      },
+      {
+        "source": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/stock_agent_a_share_strategy_cycle_latest.json",
+        "copied": true,
+        "dest": "/Users/weihongwang/.openclaw/agents/stock-agent/workspace/project-aegis/stock_agent_a_share_strategy_cycle_latest.json"
+      },
+      {
+        "source": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/stock_agent_a_share_strategy_cycle_latest.md",
+        "copied": true,
+        "dest": "/Users/weihongwang/.openclaw/agents/stock-agent/workspace/project-aegis/stock_agent_a_share_strategy_cycle_latest.md"
+      }
+    ],
+    "safety": {
+      "simulation_research_only": true,
+      "no_broker_api": true,
+      "no_order_placement": true,
+      "no_trading_webhook": true,
+      "no_secret_values": true
+    }
+  },
+  "safety": {
+    "simulation_research_only": true,
+    "no_broker_api": true,
+    "no_order_placement": true,
+    "no_trading_webhook": true,
+    "no_secret_values": true,
+    "ranking_requires_separate_gate": true
+  }
+}

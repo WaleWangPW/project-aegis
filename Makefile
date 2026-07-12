@@ -108,6 +108,9 @@ evaluate-a-share-tushare-source-deep-sandbox:
 prepare-stock-agent-strategy-simulation:
 	.venv/bin/python scripts/prepare_stock_agent_strategy_simulation_workspace.py
 
+stock-agent-a-share-strategy-cycle-managed:
+	.venv/bin/python scripts/run_stock_agent_a_share_strategy_cycle.py --prepare-stock-agent-workspace
+
 build-strategy-specific-historical-cases:
 	.venv/bin/python scripts/build_aegis_strategy_specific_historical_cases.py
 

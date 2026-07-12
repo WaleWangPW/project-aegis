@@ -1,8 +1,8 @@
 {
   "type": "a_share_tushare_source_hypothesis_evaluation",
   "status": "PASS",
-  "generated_at": "2026-07-12T21:23:53+08:00",
-  "run_id": "a_share_tushare_source_hypothesis_evaluation_20260712T212353",
+  "generated_at": "2026-07-12T21:50:49+08:00",
+  "run_id": "a_share_tushare_source_hypothesis_evaluation_20260712T215049",
   "command": "scripts/evaluate_a_share_tushare_source_hypotheses.py",
   "thresholds": {
     "min_proxy_case_count": 4,
@@ -16,8 +16,8 @@
     "proxy_pass_count": 0,
     "needs_more_a_share_cases_count": 0,
     "proxy_fail_count": 6,
-    "a_share_candidate_count": 2,
-    "a_share_proxy_case_count": 8,
+    "a_share_candidate_count": 10,
+    "a_share_proxy_case_count": 40,
     "user_facing_suggestion_allowed": false,
     "next_stage": "OpenClaw stock-agent should collect deeper source-specific historical features before any ranking impact."
   },
@@ -40,22 +40,31 @@
       ],
       "eligible_symbols": [
         "603893",
-        "300059"
+        "300059",
+        "600150",
+        "300475",
+        "300476",
+        "002709",
+        "688525",
+        "001309",
+        "000100",
+        "002407"
       ],
       "metrics": {
-        "candidate_count": 2,
-        "proxy_case_count": 8,
-        "proxy_win_rate": 0.25,
-        "proxy_average_return": -0.039362826047773775,
-        "proxy_average_drawdown": -0.10784215061353257,
-        "proxy_best_return": 0.08576998050682261,
-        "proxy_worst_return": -0.17124704491725773
+        "candidate_count": 10,
+        "proxy_case_count": 40,
+        "proxy_win_rate": 0.275,
+        "proxy_average_return": -0.06170014820472054,
+        "proxy_average_drawdown": -0.1455008660114764,
+        "proxy_best_return": 0.1466389054134445,
+        "proxy_worst_return": -0.47955345225094037
       },
       "disposition": "proxy_fail",
-      "confidence": "LOW_SAMPLE_PROXY",
+      "confidence": "PROXY",
       "reasons": [
         "proxy_win_rate_below_threshold",
-        "proxy_average_return_below_threshold"
+        "proxy_average_return_below_threshold",
+        "proxy_average_drawdown_too_deep"
       ],
       "feature_history_status": "source_specific_feature_history_not_yet_assembled",
       "allowed_next_step": "collect_more_cases_or_rework_hypothesis",
@@ -82,22 +91,31 @@
       ],
       "eligible_symbols": [
         "603893",
-        "300059"
+        "300059",
+        "600150",
+        "300475",
+        "300476",
+        "002709",
+        "688525",
+        "001309",
+        "000100",
+        "002407"
       ],
       "metrics": {
-        "candidate_count": 2,
-        "proxy_case_count": 8,
-        "proxy_win_rate": 0.25,
-        "proxy_average_return": -0.039362826047773775,
-        "proxy_average_drawdown": -0.10784215061353257,
-        "proxy_best_return": 0.08576998050682261,
-        "proxy_worst_return": -0.17124704491725773
+        "candidate_count": 10,
+        "proxy_case_count": 40,
+        "proxy_win_rate": 0.275,
+        "proxy_average_return": -0.06170014820472054,
+        "proxy_average_drawdown": -0.1455008660114764,
+        "proxy_best_return": 0.1466389054134445,
+        "proxy_worst_return": -0.47955345225094037
       },
       "disposition": "proxy_fail",
-      "confidence": "LOW_SAMPLE_PROXY",
+      "confidence": "PROXY",
       "reasons": [
         "proxy_win_rate_below_threshold",
-        "proxy_average_return_below_threshold"
+        "proxy_average_return_below_threshold",
+        "proxy_average_drawdown_too_deep"
       ],
       "feature_history_status": "source_specific_feature_history_not_yet_assembled",
       "allowed_next_step": "collect_more_cases_or_rework_hypothesis",
@@ -123,22 +141,31 @@
       ],
       "eligible_symbols": [
         "603893",
-        "300059"
+        "300059",
+        "600150",
+        "300475",
+        "300476",
+        "002709",
+        "688525",
+        "001309",
+        "000100",
+        "002407"
       ],
       "metrics": {
-        "candidate_count": 2,
-        "proxy_case_count": 8,
-        "proxy_win_rate": 0.25,
-        "proxy_average_return": -0.039362826047773775,
-        "proxy_average_drawdown": -0.10784215061353257,
-        "proxy_best_return": 0.08576998050682261,
-        "proxy_worst_return": -0.17124704491725773
+        "candidate_count": 10,
+        "proxy_case_count": 40,
+        "proxy_win_rate": 0.275,
+        "proxy_average_return": -0.06170014820472054,
+        "proxy_average_drawdown": -0.1455008660114764,
+        "proxy_best_return": 0.1466389054134445,
+        "proxy_worst_return": -0.47955345225094037
       },
       "disposition": "proxy_fail",
-      "confidence": "LOW_SAMPLE_PROXY",
+      "confidence": "PROXY",
       "reasons": [
         "proxy_win_rate_below_threshold",
-        "proxy_average_return_below_threshold"
+        "proxy_average_return_below_threshold",
+        "proxy_average_drawdown_too_deep"
       ],
       "feature_history_status": "source_specific_feature_history_not_yet_assembled",
       "allowed_next_step": "collect_more_cases_or_rework_hypothesis",
@@ -164,22 +191,31 @@
       ],
       "eligible_symbols": [
         "603893",
-        "300059"
+        "300059",
+        "600150",
+        "300475",
+        "300476",
+        "002709",
+        "688525",
+        "001309",
+        "000100",
+        "002407"
       ],
       "metrics": {
-        "candidate_count": 2,
-        "proxy_case_count": 8,
-        "proxy_win_rate": 0.25,
-        "proxy_average_return": -0.039362826047773775,
-        "proxy_average_drawdown": -0.10784215061353257,
-        "proxy_best_return": 0.08576998050682261,
-        "proxy_worst_return": -0.17124704491725773
+        "candidate_count": 10,
+        "proxy_case_count": 40,
+        "proxy_win_rate": 0.275,
+        "proxy_average_return": -0.06170014820472054,
+        "proxy_average_drawdown": -0.1455008660114764,
+        "proxy_best_return": 0.1466389054134445,
+        "proxy_worst_return": -0.47955345225094037
       },
       "disposition": "proxy_fail",
-      "confidence": "LOW_SAMPLE_PROXY",
+      "confidence": "PROXY",
       "reasons": [
         "proxy_win_rate_below_threshold",
-        "proxy_average_return_below_threshold"
+        "proxy_average_return_below_threshold",
+        "proxy_average_drawdown_too_deep"
       ],
       "feature_history_status": "source_specific_feature_history_not_yet_assembled",
       "allowed_next_step": "collect_more_cases_or_rework_hypothesis",
@@ -208,22 +244,31 @@
       ],
       "eligible_symbols": [
         "603893",
-        "300059"
+        "300059",
+        "600150",
+        "300475",
+        "300476",
+        "002709",
+        "688525",
+        "001309",
+        "000100",
+        "002407"
       ],
       "metrics": {
-        "candidate_count": 2,
-        "proxy_case_count": 8,
-        "proxy_win_rate": 0.25,
-        "proxy_average_return": -0.039362826047773775,
-        "proxy_average_drawdown": -0.10784215061353257,
-        "proxy_best_return": 0.08576998050682261,
-        "proxy_worst_return": -0.17124704491725773
+        "candidate_count": 10,
+        "proxy_case_count": 40,
+        "proxy_win_rate": 0.275,
+        "proxy_average_return": -0.06170014820472054,
+        "proxy_average_drawdown": -0.1455008660114764,
+        "proxy_best_return": 0.1466389054134445,
+        "proxy_worst_return": -0.47955345225094037
       },
       "disposition": "proxy_fail",
-      "confidence": "LOW_SAMPLE_PROXY",
+      "confidence": "PROXY",
       "reasons": [
         "proxy_win_rate_below_threshold",
-        "proxy_average_return_below_threshold"
+        "proxy_average_return_below_threshold",
+        "proxy_average_drawdown_too_deep"
       ],
       "feature_history_status": "source_specific_feature_history_not_yet_assembled",
       "allowed_next_step": "collect_more_cases_or_rework_hypothesis",
@@ -248,22 +293,31 @@
       ],
       "eligible_symbols": [
         "603893",
-        "300059"
+        "300059",
+        "600150",
+        "300475",
+        "300476",
+        "002709",
+        "688525",
+        "001309",
+        "000100",
+        "002407"
       ],
       "metrics": {
-        "candidate_count": 2,
-        "proxy_case_count": 8,
-        "proxy_win_rate": 0.25,
-        "proxy_average_return": -0.039362826047773775,
-        "proxy_average_drawdown": -0.10784215061353257,
-        "proxy_best_return": 0.08576998050682261,
-        "proxy_worst_return": -0.17124704491725773
+        "candidate_count": 10,
+        "proxy_case_count": 40,
+        "proxy_win_rate": 0.275,
+        "proxy_average_return": -0.06170014820472054,
+        "proxy_average_drawdown": -0.1455008660114764,
+        "proxy_best_return": 0.1466389054134445,
+        "proxy_worst_return": -0.47955345225094037
       },
       "disposition": "proxy_fail",
-      "confidence": "LOW_SAMPLE_PROXY",
+      "confidence": "PROXY",
       "reasons": [
         "proxy_win_rate_below_threshold",
-        "proxy_average_return_below_threshold"
+        "proxy_average_return_below_threshold",
+        "proxy_average_drawdown_too_deep"
       ],
       "feature_history_status": "source_specific_feature_history_not_yet_assembled",
       "allowed_next_step": "collect_more_cases_or_rework_hypothesis",
@@ -277,8 +331,8 @@
     "strategy_specific_historical_cases": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/aegis_strategy_specific_historical_cases_latest.json"
   },
   "source_hashes": {
-    "source_hypothesis_queue": "904f42f0a96585b2424c750de239be2dee35525679ae784251606907fc109189",
-    "strategy_specific_historical_cases": "b3d2eadcde54cb759da6f6508b336b6ea5d70a57811cbc3a1d76b124a3e6adc8"
+    "source_hypothesis_queue": "460b82b27f9459cc7e01dce6bf52f638e30c0763720fdf42ff509adec1a18194",
+    "strategy_specific_historical_cases": "3bea698cfe824e6b4468a0bb0fa0dda1d009be55926f20083bc2be375e060296"
   },
   "checks": {
     "source_queue_present": true,

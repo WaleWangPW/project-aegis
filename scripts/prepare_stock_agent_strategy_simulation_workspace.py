@@ -30,6 +30,8 @@ FILES_TO_MIRROR = [
     REPORTS / "aegis_strategy_specific_historical_cases_latest.json",
     REPORTS / "aegis_strategy_specific_case_evaluation_latest.json",
     REPORTS / "stock_selection_workbench_latest.json",
+    REPORTS / "stock_agent_a_share_strategy_cycle_latest.json",
+    REPORTS / "stock_agent_a_share_strategy_cycle_latest.md",
 ]
 
 
@@ -61,6 +63,7 @@ top10 holders/floatholders, holder number, daily_basic/stk_factor.
 - Repo: `{repo_root}`
 - Read the compact files in this directory first.
 - Allowed commands:
+  - `make stock-agent-a-share-strategy-cycle-managed`
   - `make probe-a-share-tushare-strategy-sources`
   - `make build-a-share-tushare-source-hypotheses`
   - `make build-strategy-specific-historical-cases`
@@ -89,6 +92,7 @@ top10 holders/floatholders, holder number, daily_basic/stk_factor.
 - `a_share_tushare_source_deep_sandbox_latest.json`
 - `aegis_strategy_specific_historical_cases_latest.json`
 - `aegis_strategy_specific_case_evaluation_latest.json`
+- `stock_agent_a_share_strategy_cycle_latest.json`
 - Any blocking source must be reported as `EMPTY`, `PERMISSION_BLOCKED`, or `ERROR`, not hidden.
 
 ## Report Format

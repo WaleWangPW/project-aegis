@@ -1,7 +1,7 @@
 {
   "type": "aegis_strategy_specific_case_evaluation",
   "status": "PASS",
-  "generated_at": "2026-07-12T21:23:53+08:00",
+  "generated_at": "2026-07-12T21:50:49+08:00",
   "thresholds": {
     "min_case_count": 4,
     "min_win_rate": 0.5,
@@ -11,10 +11,10 @@
     "watch_worst_return": -0.12
   },
   "summary": {
-    "candidate_count": 13,
-    "simulation_research_candidate_count": 8,
-    "watch_only_count": 2,
-    "downgraded_count": 3,
+    "candidate_count": 21,
+    "simulation_research_candidate_count": 10,
+    "watch_only_count": 3,
+    "downgraded_count": 8,
     "user_facing_suggestion_allowed": false,
     "next_stage": "surface dispositions in dashboard and stock assistant brief"
   },
@@ -335,13 +335,228 @@
       "simulation_only": true,
       "user_facing_suggestion_allowed": false,
       "real_trade_allowed": false
+    },
+    {
+      "symbol": "600150",
+      "name": "中国船舶",
+      "market": "A",
+      "matched_strategy_ids": [
+        "a_share_short_momentum",
+        "growth_breakout",
+        "low_vol_momentum",
+        "qvm"
+      ],
+      "disposition": "simulation_research_candidate",
+      "reasons": [
+        "historical_case_thresholds_passed"
+      ],
+      "summary": {
+        "case_count": 4,
+        "win_rate": 0.75,
+        "average_return": 0.01718225585372507,
+        "average_max_drawdown": -0.06264105730648717,
+        "best_return": 0.04428571428571426,
+        "worst_return": -0.0021134202183867856
+      },
+      "simulation_only": true,
+      "user_facing_suggestion_allowed": false,
+      "real_trade_allowed": false
+    },
+    {
+      "symbol": "300475",
+      "name": "香农芯创",
+      "market": "A",
+      "matched_strategy_ids": [
+        "a_share_short_momentum",
+        "growth_breakout",
+        "low_vol_momentum",
+        "qvm"
+      ],
+      "disposition": "downgraded",
+      "reasons": [
+        "win_rate_below_threshold",
+        "average_return_below_threshold",
+        "hard_worst_return_breached"
+      ],
+      "summary": {
+        "case_count": 4,
+        "win_rate": 0.0,
+        "average_return": -0.12714493109306604,
+        "average_max_drawdown": -0.20182771169874653,
+        "best_return": -0.006502395619438661,
+        "worst_return": -0.20974820974820974
+      },
+      "simulation_only": true,
+      "user_facing_suggestion_allowed": false,
+      "real_trade_allowed": false
+    },
+    {
+      "symbol": "300476",
+      "name": "胜宏科技",
+      "market": "A",
+      "matched_strategy_ids": [
+        "a_share_short_momentum",
+        "growth_breakout",
+        "low_vol_momentum",
+        "qvm"
+      ],
+      "disposition": "watch_only",
+      "reasons": [
+        "average_drawdown_watch",
+        "worst_return_watch"
+      ],
+      "summary": {
+        "case_count": 4,
+        "win_rate": 0.75,
+        "average_return": 0.004495591474208388,
+        "average_max_drawdown": -0.12070118474626812,
+        "best_return": 0.1466389054134445,
+        "worst_return": -0.14807197943444728
+      },
+      "simulation_only": true,
+      "user_facing_suggestion_allowed": false,
+      "real_trade_allowed": false
+    },
+    {
+      "symbol": "002709",
+      "name": "天赐材料",
+      "market": "A",
+      "matched_strategy_ids": [
+        "a_share_short_momentum",
+        "growth_breakout",
+        "low_vol_momentum",
+        "qvm"
+      ],
+      "disposition": "downgraded",
+      "reasons": [
+        "win_rate_below_threshold",
+        "average_return_below_threshold"
+      ],
+      "summary": {
+        "case_count": 4,
+        "win_rate": 0.0,
+        "average_return": -0.07759009450562437,
+        "average_max_drawdown": -0.16538103457302594,
+        "best_return": -0.004312410158121671,
+        "worst_return": -0.18198417528910527
+      },
+      "simulation_only": true,
+      "user_facing_suggestion_allowed": false,
+      "real_trade_allowed": false
+    },
+    {
+      "symbol": "688525",
+      "name": "佰维存储",
+      "market": "A",
+      "matched_strategy_ids": [
+        "a_share_short_momentum",
+        "growth_breakout",
+        "low_vol_momentum",
+        "qvm"
+      ],
+      "disposition": "downgraded",
+      "reasons": [
+        "win_rate_below_threshold",
+        "average_return_below_threshold",
+        "hard_worst_return_breached"
+      ],
+      "summary": {
+        "case_count": 4,
+        "win_rate": 0.0,
+        "average_return": -0.2217532480217104,
+        "average_max_drawdown": -0.29781119216804075,
+        "best_return": -0.06500872600349039,
+        "worst_return": -0.47955345225094037
+      },
+      "simulation_only": true,
+      "user_facing_suggestion_allowed": false,
+      "real_trade_allowed": false
+    },
+    {
+      "symbol": "001309",
+      "name": "德明利",
+      "market": "A",
+      "matched_strategy_ids": [
+        "a_share_short_momentum",
+        "growth_breakout",
+        "low_vol_momentum",
+        "qvm"
+      ],
+      "disposition": "downgraded",
+      "reasons": [
+        "win_rate_below_threshold",
+        "average_return_below_threshold"
+      ],
+      "summary": {
+        "case_count": 4,
+        "win_rate": 0.25,
+        "average_return": -0.07782971700417715,
+        "average_max_drawdown": -0.1915428355474283,
+        "best_return": 0.10820895522388052,
+        "worst_return": -0.1874999999999999
+      },
+      "simulation_only": true,
+      "user_facing_suggestion_allowed": false,
+      "real_trade_allowed": false
+    },
+    {
+      "symbol": "000100",
+      "name": "TCL科技",
+      "market": "A",
+      "matched_strategy_ids": [
+        "a_share_short_momentum",
+        "growth_breakout",
+        "qvm"
+      ],
+      "disposition": "simulation_research_candidate",
+      "reasons": [
+        "historical_case_thresholds_passed"
+      ],
+      "summary": {
+        "case_count": 4,
+        "win_rate": 0.5,
+        "average_return": 0.005447954177738551,
+        "average_max_drawdown": -0.07693072092856476,
+        "best_return": 0.06696428571428559,
+        "worst_return": -0.09048723897911826
+      },
+      "simulation_only": true,
+      "user_facing_suggestion_allowed": false,
+      "real_trade_allowed": false
+    },
+    {
+      "symbol": "002407",
+      "name": "多氟多",
+      "market": "A",
+      "matched_strategy_ids": [
+        "a_share_short_momentum",
+        "growth_breakout",
+        "low_vol_momentum",
+        "qvm"
+      ],
+      "disposition": "downgraded",
+      "reasons": [
+        "win_rate_below_threshold",
+        "average_return_below_threshold"
+      ],
+      "summary": {
+        "case_count": 4,
+        "win_rate": 0.0,
+        "average_return": -0.061083640832751834,
+        "average_max_drawdown": -0.12248862191913723,
+        "best_return": -0.019512195121951237,
+        "worst_return": -0.09271523178807939
+      },
+      "simulation_only": true,
+      "user_facing_suggestion_allowed": false,
+      "real_trade_allowed": false
     }
   ],
   "source_reports": {
     "strategy_specific_historical_cases": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/aegis_strategy_specific_historical_cases_latest.json"
   },
   "source_hashes": {
-    "strategy_specific_historical_cases": "b3d2eadcde54cb759da6f6508b336b6ea5d70a57811cbc3a1d76b124a3e6adc8"
+    "strategy_specific_historical_cases": "3bea698cfe824e6b4468a0bb0fa0dda1d009be55926f20083bc2be375e060296"
   },
   "checks": {
     "source_pass": true,

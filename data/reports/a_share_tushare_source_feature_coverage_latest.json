@@ -1,8 +1,8 @@
 {
   "type": "a_share_tushare_source_feature_coverage",
   "status": "PASS",
-  "generated_at": "2026-07-12T21:24:04+08:00",
-  "run_id": "a_share_tushare_source_feature_coverage_20260712T212353",
+  "generated_at": "2026-07-12T21:51:14+08:00",
+  "run_id": "a_share_tushare_source_feature_coverage_20260712T215049",
   "command": "scripts/build_a_share_tushare_source_feature_coverage.py",
   "thresholds": {
     "min_ready_coverage": 0.5
@@ -11,8 +11,8 @@
     "hypothesis_count": 6,
     "ready_for_deep_sandbox_count": 5,
     "feature_gap_count": 1,
-    "a_share_case_count": 8,
-    "observation_count": 72,
+    "a_share_case_count": 40,
+    "observation_count": 360,
     "network_used": true,
     "user_facing_suggestion_allowed": false,
     "next_stage": "Deep source-specific sandbox may run only for READY_FOR_DEEP_SANDBOX hypotheses."
@@ -25,17 +25,25 @@
         "moneyflow"
       ],
       "eligible_symbols": [
+        "000100",
+        "001309",
+        "002407",
+        "002709",
         "300059",
-        "603893"
+        "300475",
+        "300476",
+        "600150",
+        "603893",
+        "688525"
       ],
-      "eligible_case_count": 8,
+      "eligible_case_count": 40,
       "min_endpoint_coverage": 1.0,
       "feature_status": "READY_FOR_DEEP_SANDBOX",
       "endpoint_results": [
         {
           "endpoint": "moneyflow",
-          "eligible_case_count": 8,
-          "covered_case_count": 8,
+          "eligible_case_count": 40,
+          "covered_case_count": 40,
           "coverage_ratio": 1.0,
           "missing_case_count": 0,
           "blocked_or_error_count": 0
@@ -54,27 +62,35 @@
         "top_inst"
       ],
       "eligible_symbols": [
+        "000100",
+        "001309",
+        "002407",
+        "002709",
         "300059",
-        "603893"
+        "300475",
+        "300476",
+        "600150",
+        "603893",
+        "688525"
       ],
-      "eligible_case_count": 8,
+      "eligible_case_count": 40,
       "min_endpoint_coverage": 0.0,
       "feature_status": "FEATURE_GAPS",
       "endpoint_results": [
         {
           "endpoint": "top_list",
-          "eligible_case_count": 8,
+          "eligible_case_count": 40,
           "covered_case_count": 0,
           "coverage_ratio": 0.0,
-          "missing_case_count": 8,
+          "missing_case_count": 40,
           "blocked_or_error_count": 0
         },
         {
           "endpoint": "top_inst",
-          "eligible_case_count": 8,
+          "eligible_case_count": 40,
           "covered_case_count": 0,
           "coverage_ratio": 0.0,
-          "missing_case_count": 8,
+          "missing_case_count": 40,
           "blocked_or_error_count": 0
         }
       ],
@@ -91,25 +107,33 @@
         "top10_floatholders"
       ],
       "eligible_symbols": [
+        "000100",
+        "001309",
+        "002407",
+        "002709",
         "300059",
-        "603893"
+        "300475",
+        "300476",
+        "600150",
+        "603893",
+        "688525"
       ],
-      "eligible_case_count": 8,
+      "eligible_case_count": 40,
       "min_endpoint_coverage": 1.0,
       "feature_status": "READY_FOR_DEEP_SANDBOX",
       "endpoint_results": [
         {
           "endpoint": "top10_holders",
-          "eligible_case_count": 8,
-          "covered_case_count": 8,
+          "eligible_case_count": 40,
+          "covered_case_count": 40,
           "coverage_ratio": 1.0,
           "missing_case_count": 0,
           "blocked_or_error_count": 0
         },
         {
           "endpoint": "top10_floatholders",
-          "eligible_case_count": 8,
-          "covered_case_count": 8,
+          "eligible_case_count": 40,
+          "covered_case_count": 40,
           "coverage_ratio": 1.0,
           "missing_case_count": 0,
           "blocked_or_error_count": 0
@@ -127,19 +151,27 @@
         "stk_holdernumber"
       ],
       "eligible_symbols": [
+        "000100",
+        "001309",
+        "002407",
+        "002709",
         "300059",
-        "603893"
+        "300475",
+        "300476",
+        "600150",
+        "603893",
+        "688525"
       ],
-      "eligible_case_count": 8,
-      "min_endpoint_coverage": 1.0,
+      "eligible_case_count": 40,
+      "min_endpoint_coverage": 0.9,
       "feature_status": "READY_FOR_DEEP_SANDBOX",
       "endpoint_results": [
         {
           "endpoint": "stk_holdernumber",
-          "eligible_case_count": 8,
-          "covered_case_count": 8,
-          "coverage_ratio": 1.0,
-          "missing_case_count": 0,
+          "eligible_case_count": 40,
+          "covered_case_count": 36,
+          "coverage_ratio": 0.9,
+          "missing_case_count": 4,
           "blocked_or_error_count": 0
         }
       ],
@@ -156,25 +188,33 @@
         "daily_basic"
       ],
       "eligible_symbols": [
+        "000100",
+        "001309",
+        "002407",
+        "002709",
         "300059",
-        "603893"
+        "300475",
+        "300476",
+        "600150",
+        "603893",
+        "688525"
       ],
-      "eligible_case_count": 8,
+      "eligible_case_count": 40,
       "min_endpoint_coverage": 1.0,
       "feature_status": "READY_FOR_DEEP_SANDBOX",
       "endpoint_results": [
         {
           "endpoint": "stk_factor",
-          "eligible_case_count": 8,
-          "covered_case_count": 8,
+          "eligible_case_count": 40,
+          "covered_case_count": 40,
           "coverage_ratio": 1.0,
           "missing_case_count": 0,
           "blocked_or_error_count": 0
         },
         {
           "endpoint": "daily_basic",
-          "eligible_case_count": 8,
-          "covered_case_count": 8,
+          "eligible_case_count": 40,
+          "covered_case_count": 40,
           "coverage_ratio": 1.0,
           "missing_case_count": 0,
           "blocked_or_error_count": 0
@@ -192,17 +232,25 @@
         "stk_rewards"
       ],
       "eligible_symbols": [
+        "000100",
+        "001309",
+        "002407",
+        "002709",
         "300059",
-        "603893"
+        "300475",
+        "300476",
+        "600150",
+        "603893",
+        "688525"
       ],
-      "eligible_case_count": 8,
+      "eligible_case_count": 40,
       "min_endpoint_coverage": 1.0,
       "feature_status": "READY_FOR_DEEP_SANDBOX",
       "endpoint_results": [
         {
           "endpoint": "stk_rewards",
-          "eligible_case_count": 8,
-          "covered_case_count": 8,
+          "eligible_case_count": 40,
+          "covered_case_count": 40,
           "coverage_ratio": 1.0,
           "missing_case_count": 0,
           "blocked_or_error_count": 0
@@ -215,8 +263,8 @@
     }
   ],
   "observation_summary": {
-    "pass_count": 56,
-    "missing_count": 16,
+    "pass_count": 276,
+    "missing_count": 84,
     "error_count": 0,
     "permission_blocked_count": 0,
     "endpoints": [
@@ -237,9 +285,9 @@
     "source_hypothesis_evaluation": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/a_share_tushare_source_hypothesis_evaluation_latest.json"
   },
   "source_hashes": {
-    "source_hypothesis_queue": "904f42f0a96585b2424c750de239be2dee35525679ae784251606907fc109189",
-    "strategy_specific_historical_cases": "b3d2eadcde54cb759da6f6508b336b6ea5d70a57811cbc3a1d76b124a3e6adc8",
-    "source_hypothesis_evaluation": "f75485b6f274de14e5c09034a7d79090ab444934b10a66240e61d8008fb064da"
+    "source_hypothesis_queue": "460b82b27f9459cc7e01dce6bf52f638e30c0763720fdf42ff509adec1a18194",
+    "strategy_specific_historical_cases": "3bea698cfe824e6b4468a0bb0fa0dda1d009be55926f20083bc2be375e060296",
+    "source_hypothesis_evaluation": "1737c1d4ba89ece32a714a5b48f1520d4bf88baa16937982d135d039ef1d23ac"
   },
   "checks": {
     "source_queue_present": true,

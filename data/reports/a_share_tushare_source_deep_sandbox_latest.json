@@ -1,8 +1,8 @@
 {
   "type": "a_share_tushare_source_deep_sandbox",
   "status": "PASS",
-  "generated_at": "2026-07-12T21:24:22+08:00",
-  "run_id": "a_share_tushare_source_deep_sandbox_20260712T212404",
+  "generated_at": "2026-07-12T21:52:30+08:00",
+  "run_id": "a_share_tushare_source_deep_sandbox_20260712T215114",
   "command": "scripts/evaluate_a_share_tushare_source_deep_sandbox.py",
   "thresholds": {
     "min_feature_coverage": 0.5,
@@ -17,7 +17,7 @@
     "deep_sandbox_pass_candidate_count": 0,
     "deep_sandbox_fail_count": 5,
     "blocked_feature_gap_count": 1,
-    "case_feature_count": 40,
+    "case_feature_count": 200,
     "network_used": true,
     "user_facing_suggestion_allowed": false,
     "ranking_impact_allowed": false,
@@ -32,17 +32,19 @@
       ],
       "disposition": "DEEP_SANDBOX_FAIL",
       "reasons": [
-        "source_signal_case_count_below_threshold"
+        "source_signal_win_rate_below_threshold",
+        "source_signal_average_return_below_threshold",
+        "source_signal_drawdown_breached"
       ],
       "metrics": {
-        "eligible_case_count": 8,
-        "source_signal_case_count": 1,
-        "source_signal_rate": 0.125,
-        "source_signal_win_rate": 1.0,
-        "source_signal_average_return": 0.05810972483336174,
-        "source_signal_max_drawdown": -0.12317144528964308,
+        "eligible_case_count": 40,
+        "source_signal_case_count": 9,
+        "source_signal_rate": 0.225,
+        "source_signal_win_rate": 0.3333333333333333,
+        "source_signal_average_return": -0.11572489565405134,
+        "source_signal_max_drawdown": -0.49265865792986285,
         "source_signal_best_return": 0.05810972483336174,
-        "source_signal_worst_return": 0.05810972483336174
+        "source_signal_worst_return": -0.47955345225094037
       },
       "case_features": [
         {
@@ -173,6 +175,526 @@
           "raw_return": 0.08576998050682261,
           "max_drawdown": -0.05233644859813069,
           "case_result": "win"
+        },
+        {
+          "case_id": "aegis_case_600150_1",
+          "symbol": "600150",
+          "entry_date": "2023-09-01",
+          "source_signal_pass": false,
+          "feature_reasons": [
+            "moneyflow_not_confirmed"
+          ],
+          "covered_endpoints": [
+            "moneyflow"
+          ],
+          "feature_hash": "c0b7856e55f9d8fcb1a60b7630a097498382d8f8487ace0b234f80f9086b2c8c",
+          "raw_return": -0.0021134202183867856,
+          "max_drawdown": -0.06396957123098201,
+          "case_result": "loss"
+        },
+        {
+          "case_id": "aegis_case_600150_2",
+          "symbol": "600150",
+          "entry_date": "2023-12-12",
+          "source_signal_pass": true,
+          "feature_reasons": [
+            "net_moneyflow_positive",
+            "large_order_net_positive"
+          ],
+          "covered_endpoints": [
+            "moneyflow"
+          ],
+          "feature_hash": "fded475d8fabd0909738e006c99261fd1a29f27ad3bdffca97e5bcf12794d174",
+          "raw_return": 0.013203613620569765,
+          "max_drawdown": -0.0383471074380165,
+          "case_result": "win"
+        },
+        {
+          "case_id": "aegis_case_600150_3",
+          "symbol": "600150",
+          "entry_date": "2024-03-22",
+          "source_signal_pass": false,
+          "feature_reasons": [
+            "moneyflow_not_confirmed"
+          ],
+          "covered_endpoints": [
+            "moneyflow"
+          ],
+          "feature_hash": "c0b7856e55f9d8fcb1a60b7630a097498382d8f8487ace0b234f80f9086b2c8c",
+          "raw_return": 0.04428571428571426,
+          "max_drawdown": -0.07655381505811021,
+          "case_result": "win"
+        },
+        {
+          "case_id": "aegis_case_600150_4",
+          "symbol": "600150",
+          "entry_date": "2024-07-03",
+          "source_signal_pass": false,
+          "feature_reasons": [
+            "moneyflow_not_confirmed"
+          ],
+          "covered_endpoints": [
+            "moneyflow"
+          ],
+          "feature_hash": "c0b7856e55f9d8fcb1a60b7630a097498382d8f8487ace0b234f80f9086b2c8c",
+          "raw_return": 0.01335311572700304,
+          "max_drawdown": -0.07169373549883995,
+          "case_result": "win"
+        },
+        {
+          "case_id": "aegis_case_300475_1",
+          "symbol": "300475",
+          "entry_date": "2023-09-01",
+          "source_signal_pass": false,
+          "feature_reasons": [
+            "moneyflow_not_confirmed"
+          ],
+          "covered_endpoints": [
+            "moneyflow"
+          ],
+          "feature_hash": "bafaf9d51ae7a45b21a9bc86b55b081786f692975e8609654881c7cc62e621fa",
+          "raw_return": -0.08699578567128241,
+          "max_drawdown": -0.2320547945205479,
+          "case_result": "loss"
+        },
+        {
+          "case_id": "aegis_case_300475_2",
+          "symbol": "300475",
+          "entry_date": "2023-12-12",
+          "source_signal_pass": true,
+          "feature_reasons": [
+            "net_moneyflow_positive",
+            "large_order_net_positive"
+          ],
+          "covered_endpoints": [
+            "moneyflow"
+          ],
+          "feature_hash": "fded475d8fabd0909738e006c99261fd1a29f27ad3bdffca97e5bcf12794d174",
+          "raw_return": -0.20533333333333337,
+          "max_drawdown": -0.20533333333333337,
+          "case_result": "loss"
+        },
+        {
+          "case_id": "aegis_case_300475_3",
+          "symbol": "300475",
+          "entry_date": "2024-03-22",
+          "source_signal_pass": false,
+          "feature_reasons": [
+            "moneyflow_not_confirmed"
+          ],
+          "covered_endpoints": [
+            "moneyflow"
+          ],
+          "feature_hash": "8dcb83effc91c09d8308e83236d6daed30d3aa427b4718f4fa1f76bbb80b3be3",
+          "raw_return": -0.20974820974820974,
+          "max_drawdown": -0.20974820974820974,
+          "case_result": "loss"
+        },
+        {
+          "case_id": "aegis_case_300475_4",
+          "symbol": "300475",
+          "entry_date": "2024-07-03",
+          "source_signal_pass": false,
+          "feature_reasons": [
+            "moneyflow_not_confirmed"
+          ],
+          "covered_endpoints": [
+            "moneyflow"
+          ],
+          "feature_hash": "bafaf9d51ae7a45b21a9bc86b55b081786f692975e8609654881c7cc62e621fa",
+          "raw_return": -0.006502395619438661,
+          "max_drawdown": -0.1601745091928951,
+          "case_result": "loss"
+        },
+        {
+          "case_id": "aegis_case_300476_1",
+          "symbol": "300476",
+          "entry_date": "2023-09-01",
+          "source_signal_pass": true,
+          "feature_reasons": [
+            "net_moneyflow_positive",
+            "large_order_net_positive"
+          ],
+          "covered_endpoints": [
+            "moneyflow"
+          ],
+          "feature_hash": "fded475d8fabd0909738e006c99261fd1a29f27ad3bdffca97e5bcf12794d174",
+          "raw_return": 0.01902173913043481,
+          "max_drawdown": -0.13969050606440814,
+          "case_result": "win"
+        },
+        {
+          "case_id": "aegis_case_300476_2",
+          "symbol": "300476",
+          "entry_date": "2023-12-12",
+          "source_signal_pass": false,
+          "feature_reasons": [
+            "moneyflow_not_confirmed"
+          ],
+          "covered_endpoints": [
+            "moneyflow"
+          ],
+          "feature_hash": "c0b7856e55f9d8fcb1a60b7630a097498382d8f8487ace0b234f80f9086b2c8c",
+          "raw_return": -0.14807197943444728,
+          "max_drawdown": -0.15012853470437004,
+          "case_result": "loss"
+        },
+        {
+          "case_id": "aegis_case_300476_3",
+          "symbol": "300476",
+          "entry_date": "2024-03-22",
+          "source_signal_pass": false,
+          "feature_reasons": [
+            "moneyflow_not_confirmed"
+          ],
+          "covered_endpoints": [
+            "moneyflow"
+          ],
+          "feature_hash": "c0b7856e55f9d8fcb1a60b7630a097498382d8f8487ace0b234f80f9086b2c8c",
+          "raw_return": 0.0003937007874015297,
+          "max_drawdown": -0.09094488188976368,
+          "case_result": "win"
+        },
+        {
+          "case_id": "aegis_case_300476_4",
+          "symbol": "300476",
+          "entry_date": "2024-07-03",
+          "source_signal_pass": false,
+          "feature_reasons": [
+            "moneyflow_not_confirmed"
+          ],
+          "covered_endpoints": [
+            "moneyflow"
+          ],
+          "feature_hash": "bafaf9d51ae7a45b21a9bc86b55b081786f692975e8609654881c7cc62e621fa",
+          "raw_return": 0.1466389054134445,
+          "max_drawdown": -0.10204081632653061,
+          "case_result": "win"
+        },
+        {
+          "case_id": "aegis_case_002709_1",
+          "symbol": "002709",
+          "entry_date": "2023-09-01",
+          "source_signal_pass": false,
+          "feature_reasons": [
+            "moneyflow_not_confirmed"
+          ],
+          "covered_endpoints": [
+            "moneyflow"
+          ],
+          "feature_hash": "c0b7856e55f9d8fcb1a60b7630a097498382d8f8487ace0b234f80f9086b2c8c",
+          "raw_return": -0.18198417528910527,
+          "max_drawdown": -0.19424460431654678,
+          "case_result": "loss"
+        },
+        {
+          "case_id": "aegis_case_002709_2",
+          "symbol": "002709",
+          "entry_date": "2023-12-12",
+          "source_signal_pass": true,
+          "feature_reasons": [
+            "net_moneyflow_positive",
+            "large_order_net_positive"
+          ],
+          "covered_endpoints": [
+            "moneyflow"
+          ],
+          "feature_hash": "fded475d8fabd0909738e006c99261fd1a29f27ad3bdffca97e5bcf12794d174",
+          "raw_return": -0.022174840085287806,
+          "max_drawdown": -0.11004784688995206,
+          "case_result": "loss"
+        },
+        {
+          "case_id": "aegis_case_002709_3",
+          "symbol": "002709",
+          "entry_date": "2024-03-22",
+          "source_signal_pass": false,
+          "feature_reasons": [
+            "moneyflow_not_confirmed"
+          ],
+          "covered_endpoints": [
+            "moneyflow"
+          ],
+          "feature_hash": "c0b7856e55f9d8fcb1a60b7630a097498382d8f8487ace0b234f80f9086b2c8c",
+          "raw_return": -0.004312410158121671,
+          "max_drawdown": -0.20039138943248536,
+          "case_result": "loss"
+        },
+        {
+          "case_id": "aegis_case_002709_4",
+          "symbol": "002709",
+          "entry_date": "2024-07-03",
+          "source_signal_pass": true,
+          "feature_reasons": [
+            "net_moneyflow_positive",
+            "large_order_net_positive"
+          ],
+          "covered_endpoints": [
+            "moneyflow"
+          ],
+          "feature_hash": "fded475d8fabd0909738e006c99261fd1a29f27ad3bdffca97e5bcf12794d174",
+          "raw_return": -0.10188895248998275,
+          "max_drawdown": -0.15684029765311958,
+          "case_result": "loss"
+        },
+        {
+          "case_id": "aegis_case_688525_1",
+          "symbol": "688525",
+          "entry_date": "2023-09-01",
+          "source_signal_pass": false,
+          "feature_reasons": [
+            "moneyflow_not_confirmed"
+          ],
+          "covered_endpoints": [
+            "moneyflow"
+          ],
+          "feature_hash": "bafaf9d51ae7a45b21a9bc86b55b081786f692975e8609654881c7cc62e621fa",
+          "raw_return": -0.06500872600349039,
+          "max_drawdown": -0.13146640915988406,
+          "case_result": "loss"
+        },
+        {
+          "case_id": "aegis_case_688525_2",
+          "symbol": "688525",
+          "entry_date": "2023-12-12",
+          "source_signal_pass": true,
+          "feature_reasons": [
+            "net_moneyflow_positive",
+            "large_order_net_positive"
+          ],
+          "covered_endpoints": [
+            "moneyflow"
+          ],
+          "feature_hash": "fded475d8fabd0909738e006c99261fd1a29f27ad3bdffca97e5bcf12794d174",
+          "raw_return": -0.47955345225094037,
+          "max_drawdown": -0.49265865792986285,
+          "case_result": "loss"
+        },
+        {
+          "case_id": "aegis_case_688525_3",
+          "symbol": "688525",
+          "entry_date": "2024-03-22",
+          "source_signal_pass": false,
+          "feature_reasons": [
+            "moneyflow_not_confirmed"
+          ],
+          "covered_endpoints": [
+            "moneyflow"
+          ],
+          "feature_hash": "c0b7856e55f9d8fcb1a60b7630a097498382d8f8487ace0b234f80f9086b2c8c",
+          "raw_return": -0.2070422535211267,
+          "max_drawdown": -0.3410211267605634,
+          "case_result": "loss"
+        },
+        {
+          "case_id": "aegis_case_688525_4",
+          "symbol": "688525",
+          "entry_date": "2024-07-03",
+          "source_signal_pass": true,
+          "feature_reasons": [
+            "net_moneyflow_positive",
+            "large_order_net_positive"
+          ],
+          "covered_endpoints": [
+            "moneyflow"
+          ],
+          "feature_hash": "fded475d8fabd0909738e006c99261fd1a29f27ad3bdffca97e5bcf12794d174",
+          "raw_return": -0.13540856031128412,
+          "max_drawdown": -0.2260985748218527,
+          "case_result": "loss"
+        },
+        {
+          "case_id": "aegis_case_001309_1",
+          "symbol": "001309",
+          "entry_date": "2023-09-01",
+          "source_signal_pass": false,
+          "feature_reasons": [
+            "moneyflow_not_confirmed"
+          ],
+          "covered_endpoints": [
+            "moneyflow"
+          ],
+          "feature_hash": "bafaf9d51ae7a45b21a9bc86b55b081786f692975e8609654881c7cc62e621fa",
+          "raw_return": 0.10820895522388052,
+          "max_drawdown": -0.09999999999999998,
+          "case_result": "win"
+        },
+        {
+          "case_id": "aegis_case_001309_2",
+          "symbol": "001309",
+          "entry_date": "2023-12-12",
+          "source_signal_pass": true,
+          "feature_reasons": [
+            "net_moneyflow_positive",
+            "large_order_net_positive"
+          ],
+          "covered_endpoints": [
+            "moneyflow"
+          ],
+          "feature_hash": "fded475d8fabd0909738e006c99261fd1a29f27ad3bdffca97e5bcf12794d174",
+          "raw_return": -0.1874999999999999,
+          "max_drawdown": -0.20539572136157647,
+          "case_result": "loss"
+        },
+        {
+          "case_id": "aegis_case_001309_3",
+          "symbol": "001309",
+          "entry_date": "2024-03-22",
+          "source_signal_pass": false,
+          "feature_reasons": [
+            "moneyflow_not_confirmed"
+          ],
+          "covered_endpoints": [
+            "moneyflow"
+          ],
+          "feature_hash": "c0b7856e55f9d8fcb1a60b7630a097498382d8f8487ace0b234f80f9086b2c8c",
+          "raw_return": -0.07053846153846155,
+          "max_drawdown": -0.20902527075812272,
+          "case_result": "loss"
+        },
+        {
+          "case_id": "aegis_case_001309_4",
+          "symbol": "001309",
+          "entry_date": "2024-07-03",
+          "source_signal_pass": false,
+          "feature_reasons": [
+            "moneyflow_not_confirmed"
+          ],
+          "covered_endpoints": [
+            "moneyflow"
+          ],
+          "feature_hash": "bafaf9d51ae7a45b21a9bc86b55b081786f692975e8609654881c7cc62e621fa",
+          "raw_return": -0.1614893617021277,
+          "max_drawdown": -0.251750350070014,
+          "case_result": "loss"
+        },
+        {
+          "case_id": "aegis_case_000100_1",
+          "symbol": "000100",
+          "entry_date": "2023-09-01",
+          "source_signal_pass": false,
+          "feature_reasons": [
+            "moneyflow_not_confirmed"
+          ],
+          "covered_endpoints": [
+            "moneyflow"
+          ],
+          "feature_hash": "8dcb83effc91c09d8308e83236d6daed30d3aa427b4718f4fa1f76bbb80b3be3",
+          "raw_return": -0.009685230024213065,
+          "max_drawdown": -0.07311320754716977,
+          "case_result": "loss"
+        },
+        {
+          "case_id": "aegis_case_000100_2",
+          "symbol": "000100",
+          "entry_date": "2023-12-12",
+          "source_signal_pass": false,
+          "feature_reasons": [
+            "moneyflow_not_confirmed"
+          ],
+          "covered_endpoints": [
+            "moneyflow"
+          ],
+          "feature_hash": "c0b7856e55f9d8fcb1a60b7630a097498382d8f8487ace0b234f80f9086b2c8c",
+          "raw_return": 0.05499999999999994,
+          "max_drawdown": -0.030000000000000027,
+          "case_result": "win"
+        },
+        {
+          "case_id": "aegis_case_000100_3",
+          "symbol": "000100",
+          "entry_date": "2024-03-22",
+          "source_signal_pass": false,
+          "feature_reasons": [
+            "moneyflow_not_confirmed"
+          ],
+          "covered_endpoints": [
+            "moneyflow"
+          ],
+          "feature_hash": "bafaf9d51ae7a45b21a9bc86b55b081786f692975e8609654881c7cc62e621fa",
+          "raw_return": 0.06696428571428559,
+          "max_drawdown": -0.07003891050583644,
+          "case_result": "win"
+        },
+        {
+          "case_id": "aegis_case_000100_4",
+          "symbol": "000100",
+          "entry_date": "2024-07-03",
+          "source_signal_pass": false,
+          "feature_reasons": [
+            "moneyflow_not_confirmed"
+          ],
+          "covered_endpoints": [
+            "moneyflow"
+          ],
+          "feature_hash": "8dcb83effc91c09d8308e83236d6daed30d3aa427b4718f4fa1f76bbb80b3be3",
+          "raw_return": -0.09048723897911826,
+          "max_drawdown": -0.1345707656612528,
+          "case_result": "loss"
+        },
+        {
+          "case_id": "aegis_case_002407_1",
+          "symbol": "002407",
+          "entry_date": "2023-09-01",
+          "source_signal_pass": false,
+          "feature_reasons": [
+            "moneyflow_not_confirmed"
+          ],
+          "covered_endpoints": [
+            "moneyflow"
+          ],
+          "feature_hash": "c0b7856e55f9d8fcb1a60b7630a097498382d8f8487ace0b234f80f9086b2c8c",
+          "raw_return": -0.019512195121951237,
+          "max_drawdown": -0.08720930232558144,
+          "case_result": "loss"
+        },
+        {
+          "case_id": "aegis_case_002407_2",
+          "symbol": "002407",
+          "entry_date": "2023-12-12",
+          "source_signal_pass": false,
+          "feature_reasons": [
+            "moneyflow_not_confirmed"
+          ],
+          "covered_endpoints": [
+            "moneyflow"
+          ],
+          "feature_hash": "c0b7856e55f9d8fcb1a60b7630a097498382d8f8487ace0b234f80f9086b2c8c",
+          "raw_return": -0.050403225806451624,
+          "max_drawdown": -0.07621550591327197,
+          "case_result": "loss"
+        },
+        {
+          "case_id": "aegis_case_002407_3",
+          "symbol": "002407",
+          "entry_date": "2024-03-22",
+          "source_signal_pass": false,
+          "feature_reasons": [
+            "moneyflow_not_confirmed"
+          ],
+          "covered_endpoints": [
+            "moneyflow"
+          ],
+          "feature_hash": "c0b7856e55f9d8fcb1a60b7630a097498382d8f8487ace0b234f80f9086b2c8c",
+          "raw_return": -0.08170391061452509,
+          "max_drawdown": -0.19325153374233128,
+          "case_result": "loss"
+        },
+        {
+          "case_id": "aegis_case_002407_4",
+          "symbol": "002407",
+          "entry_date": "2024-07-03",
+          "source_signal_pass": false,
+          "feature_reasons": [
+            "moneyflow_not_confirmed"
+          ],
+          "covered_endpoints": [
+            "moneyflow"
+          ],
+          "feature_hash": "bafaf9d51ae7a45b21a9bc86b55b081786f692975e8609654881c7cc62e621fa",
+          "raw_return": -0.09271523178807939,
+          "max_drawdown": -0.13327814569536423,
+          "case_result": "loss"
         }
       ],
       "allowed_next_step": "do_not_rank_collect_more_cases_or_rework_signal",
@@ -190,17 +712,18 @@
       "disposition": "DEEP_SANDBOX_FAIL",
       "reasons": [
         "source_signal_win_rate_below_threshold",
-        "source_signal_average_return_below_threshold"
+        "source_signal_average_return_below_threshold",
+        "source_signal_drawdown_breached"
       ],
       "metrics": {
-        "eligible_case_count": 8,
-        "source_signal_case_count": 6,
+        "eligible_case_count": 40,
+        "source_signal_case_count": 30,
         "source_signal_rate": 0.75,
-        "source_signal_win_rate": 0.3333333333333333,
-        "source_signal_average_return": -0.022026885098561544,
-        "source_signal_max_drawdown": -0.12317144528964308,
+        "source_signal_win_rate": 0.2,
+        "source_signal_average_return": -0.08334767824181992,
+        "source_signal_max_drawdown": -0.49265865792986285,
         "source_signal_best_return": 0.08576998050682261,
-        "source_signal_worst_return": -0.10544452101998614
+        "source_signal_worst_return": -0.47955345225094037
       },
       "case_features": [
         {
@@ -338,6 +861,550 @@
           "raw_return": 0.08576998050682261,
           "max_drawdown": -0.05233644859813069,
           "case_result": "win"
+        },
+        {
+          "case_id": "aegis_case_600150_1",
+          "symbol": "600150",
+          "entry_date": "2023-09-01",
+          "source_signal_pass": true,
+          "feature_reasons": [
+            "ownership_stable_or_improving"
+          ],
+          "covered_endpoints": [
+            "top10_holders",
+            "top10_floatholders"
+          ],
+          "feature_hash": "040ef4fedf36055222997cab85ef84716be42e531785e5cd8cc689c6c7aefd9c",
+          "raw_return": -0.0021134202183867856,
+          "max_drawdown": -0.06396957123098201,
+          "case_result": "loss"
+        },
+        {
+          "case_id": "aegis_case_600150_2",
+          "symbol": "600150",
+          "entry_date": "2023-12-12",
+          "source_signal_pass": false,
+          "feature_reasons": [
+            "ownership_not_confirmed"
+          ],
+          "covered_endpoints": [
+            "top10_holders",
+            "top10_floatholders"
+          ],
+          "feature_hash": "7427cd9e1b7baa58780a015d777070982fd6b6577b1fc419c2593fcad13dac44",
+          "raw_return": 0.013203613620569765,
+          "max_drawdown": -0.0383471074380165,
+          "case_result": "win"
+        },
+        {
+          "case_id": "aegis_case_600150_3",
+          "symbol": "600150",
+          "entry_date": "2024-03-22",
+          "source_signal_pass": false,
+          "feature_reasons": [
+            "ownership_not_confirmed"
+          ],
+          "covered_endpoints": [
+            "top10_holders",
+            "top10_floatholders"
+          ],
+          "feature_hash": "7427cd9e1b7baa58780a015d777070982fd6b6577b1fc419c2593fcad13dac44",
+          "raw_return": 0.04428571428571426,
+          "max_drawdown": -0.07655381505811021,
+          "case_result": "win"
+        },
+        {
+          "case_id": "aegis_case_600150_4",
+          "symbol": "600150",
+          "entry_date": "2024-07-03",
+          "source_signal_pass": true,
+          "feature_reasons": [
+            "ownership_stable_or_improving"
+          ],
+          "covered_endpoints": [
+            "top10_holders",
+            "top10_floatholders"
+          ],
+          "feature_hash": "10552aad1493dfd6b3c7b242c248c4aaff6155f32a5aadddfd03590a5c3dbf71",
+          "raw_return": 0.01335311572700304,
+          "max_drawdown": -0.07169373549883995,
+          "case_result": "win"
+        },
+        {
+          "case_id": "aegis_case_300475_1",
+          "symbol": "300475",
+          "entry_date": "2023-09-01",
+          "source_signal_pass": false,
+          "feature_reasons": [
+            "ownership_not_confirmed"
+          ],
+          "covered_endpoints": [
+            "top10_holders",
+            "top10_floatholders"
+          ],
+          "feature_hash": "7427cd9e1b7baa58780a015d777070982fd6b6577b1fc419c2593fcad13dac44",
+          "raw_return": -0.08699578567128241,
+          "max_drawdown": -0.2320547945205479,
+          "case_result": "loss"
+        },
+        {
+          "case_id": "aegis_case_300475_2",
+          "symbol": "300475",
+          "entry_date": "2023-12-12",
+          "source_signal_pass": true,
+          "feature_reasons": [
+            "ownership_stable_or_improving"
+          ],
+          "covered_endpoints": [
+            "top10_holders",
+            "top10_floatholders"
+          ],
+          "feature_hash": "040ef4fedf36055222997cab85ef84716be42e531785e5cd8cc689c6c7aefd9c",
+          "raw_return": -0.20533333333333337,
+          "max_drawdown": -0.20533333333333337,
+          "case_result": "loss"
+        },
+        {
+          "case_id": "aegis_case_300475_3",
+          "symbol": "300475",
+          "entry_date": "2024-03-22",
+          "source_signal_pass": true,
+          "feature_reasons": [
+            "ownership_stable_or_improving"
+          ],
+          "covered_endpoints": [
+            "top10_holders",
+            "top10_floatholders"
+          ],
+          "feature_hash": "040ef4fedf36055222997cab85ef84716be42e531785e5cd8cc689c6c7aefd9c",
+          "raw_return": -0.20974820974820974,
+          "max_drawdown": -0.20974820974820974,
+          "case_result": "loss"
+        },
+        {
+          "case_id": "aegis_case_300475_4",
+          "symbol": "300475",
+          "entry_date": "2024-07-03",
+          "source_signal_pass": true,
+          "feature_reasons": [
+            "ownership_stable_or_improving"
+          ],
+          "covered_endpoints": [
+            "top10_holders",
+            "top10_floatholders"
+          ],
+          "feature_hash": "10552aad1493dfd6b3c7b242c248c4aaff6155f32a5aadddfd03590a5c3dbf71",
+          "raw_return": -0.006502395619438661,
+          "max_drawdown": -0.1601745091928951,
+          "case_result": "loss"
+        },
+        {
+          "case_id": "aegis_case_300476_1",
+          "symbol": "300476",
+          "entry_date": "2023-09-01",
+          "source_signal_pass": false,
+          "feature_reasons": [
+            "ownership_not_confirmed"
+          ],
+          "covered_endpoints": [
+            "top10_holders",
+            "top10_floatholders"
+          ],
+          "feature_hash": "7427cd9e1b7baa58780a015d777070982fd6b6577b1fc419c2593fcad13dac44",
+          "raw_return": 0.01902173913043481,
+          "max_drawdown": -0.13969050606440814,
+          "case_result": "win"
+        },
+        {
+          "case_id": "aegis_case_300476_2",
+          "symbol": "300476",
+          "entry_date": "2023-12-12",
+          "source_signal_pass": true,
+          "feature_reasons": [
+            "ownership_stable_or_improving"
+          ],
+          "covered_endpoints": [
+            "top10_holders",
+            "top10_floatholders"
+          ],
+          "feature_hash": "040ef4fedf36055222997cab85ef84716be42e531785e5cd8cc689c6c7aefd9c",
+          "raw_return": -0.14807197943444728,
+          "max_drawdown": -0.15012853470437004,
+          "case_result": "loss"
+        },
+        {
+          "case_id": "aegis_case_300476_3",
+          "symbol": "300476",
+          "entry_date": "2024-03-22",
+          "source_signal_pass": true,
+          "feature_reasons": [
+            "ownership_stable_or_improving"
+          ],
+          "covered_endpoints": [
+            "top10_holders",
+            "top10_floatholders"
+          ],
+          "feature_hash": "040ef4fedf36055222997cab85ef84716be42e531785e5cd8cc689c6c7aefd9c",
+          "raw_return": 0.0003937007874015297,
+          "max_drawdown": -0.09094488188976368,
+          "case_result": "win"
+        },
+        {
+          "case_id": "aegis_case_300476_4",
+          "symbol": "300476",
+          "entry_date": "2024-07-03",
+          "source_signal_pass": false,
+          "feature_reasons": [
+            "ownership_not_confirmed"
+          ],
+          "covered_endpoints": [
+            "top10_holders",
+            "top10_floatholders"
+          ],
+          "feature_hash": "7427cd9e1b7baa58780a015d777070982fd6b6577b1fc419c2593fcad13dac44",
+          "raw_return": 0.1466389054134445,
+          "max_drawdown": -0.10204081632653061,
+          "case_result": "win"
+        },
+        {
+          "case_id": "aegis_case_002709_1",
+          "symbol": "002709",
+          "entry_date": "2023-09-01",
+          "source_signal_pass": true,
+          "feature_reasons": [
+            "ownership_stable_or_improving"
+          ],
+          "covered_endpoints": [
+            "top10_holders",
+            "top10_floatholders"
+          ],
+          "feature_hash": "f3ad3328865a611da4f4520dca19528686d6cbd467bbc345af60152dfeb7680c",
+          "raw_return": -0.18198417528910527,
+          "max_drawdown": -0.19424460431654678,
+          "case_result": "loss"
+        },
+        {
+          "case_id": "aegis_case_002709_2",
+          "symbol": "002709",
+          "entry_date": "2023-12-12",
+          "source_signal_pass": true,
+          "feature_reasons": [
+            "ownership_stable_or_improving"
+          ],
+          "covered_endpoints": [
+            "top10_holders",
+            "top10_floatholders"
+          ],
+          "feature_hash": "040ef4fedf36055222997cab85ef84716be42e531785e5cd8cc689c6c7aefd9c",
+          "raw_return": -0.022174840085287806,
+          "max_drawdown": -0.11004784688995206,
+          "case_result": "loss"
+        },
+        {
+          "case_id": "aegis_case_002709_3",
+          "symbol": "002709",
+          "entry_date": "2024-03-22",
+          "source_signal_pass": true,
+          "feature_reasons": [
+            "ownership_stable_or_improving"
+          ],
+          "covered_endpoints": [
+            "top10_holders",
+            "top10_floatholders"
+          ],
+          "feature_hash": "040ef4fedf36055222997cab85ef84716be42e531785e5cd8cc689c6c7aefd9c",
+          "raw_return": -0.004312410158121671,
+          "max_drawdown": -0.20039138943248536,
+          "case_result": "loss"
+        },
+        {
+          "case_id": "aegis_case_002709_4",
+          "symbol": "002709",
+          "entry_date": "2024-07-03",
+          "source_signal_pass": true,
+          "feature_reasons": [
+            "ownership_stable_or_improving"
+          ],
+          "covered_endpoints": [
+            "top10_holders",
+            "top10_floatholders"
+          ],
+          "feature_hash": "040ef4fedf36055222997cab85ef84716be42e531785e5cd8cc689c6c7aefd9c",
+          "raw_return": -0.10188895248998275,
+          "max_drawdown": -0.15684029765311958,
+          "case_result": "loss"
+        },
+        {
+          "case_id": "aegis_case_688525_1",
+          "symbol": "688525",
+          "entry_date": "2023-09-01",
+          "source_signal_pass": true,
+          "feature_reasons": [
+            "ownership_stable_or_improving"
+          ],
+          "covered_endpoints": [
+            "top10_holders",
+            "top10_floatholders"
+          ],
+          "feature_hash": "4247f9c2af13497e87a8a006c045de0d47422c21bb14e66a46e9d0afaf9b8be4",
+          "raw_return": -0.06500872600349039,
+          "max_drawdown": -0.13146640915988406,
+          "case_result": "loss"
+        },
+        {
+          "case_id": "aegis_case_688525_2",
+          "symbol": "688525",
+          "entry_date": "2023-12-12",
+          "source_signal_pass": true,
+          "feature_reasons": [
+            "ownership_stable_or_improving"
+          ],
+          "covered_endpoints": [
+            "top10_holders",
+            "top10_floatholders"
+          ],
+          "feature_hash": "06df9f99a1e0db255aa8931e0d6583ccc023b78fc9014c0b3c34937f14e481c4",
+          "raw_return": -0.47955345225094037,
+          "max_drawdown": -0.49265865792986285,
+          "case_result": "loss"
+        },
+        {
+          "case_id": "aegis_case_688525_3",
+          "symbol": "688525",
+          "entry_date": "2024-03-22",
+          "source_signal_pass": true,
+          "feature_reasons": [
+            "ownership_stable_or_improving"
+          ],
+          "covered_endpoints": [
+            "top10_holders",
+            "top10_floatholders"
+          ],
+          "feature_hash": "040ef4fedf36055222997cab85ef84716be42e531785e5cd8cc689c6c7aefd9c",
+          "raw_return": -0.2070422535211267,
+          "max_drawdown": -0.3410211267605634,
+          "case_result": "loss"
+        },
+        {
+          "case_id": "aegis_case_688525_4",
+          "symbol": "688525",
+          "entry_date": "2024-07-03",
+          "source_signal_pass": true,
+          "feature_reasons": [
+            "ownership_stable_or_improving"
+          ],
+          "covered_endpoints": [
+            "top10_holders",
+            "top10_floatholders"
+          ],
+          "feature_hash": "10552aad1493dfd6b3c7b242c248c4aaff6155f32a5aadddfd03590a5c3dbf71",
+          "raw_return": -0.13540856031128412,
+          "max_drawdown": -0.2260985748218527,
+          "case_result": "loss"
+        },
+        {
+          "case_id": "aegis_case_001309_1",
+          "symbol": "001309",
+          "entry_date": "2023-09-01",
+          "source_signal_pass": false,
+          "feature_reasons": [
+            "ownership_not_confirmed"
+          ],
+          "covered_endpoints": [
+            "top10_holders",
+            "top10_floatholders"
+          ],
+          "feature_hash": "7427cd9e1b7baa58780a015d777070982fd6b6577b1fc419c2593fcad13dac44",
+          "raw_return": 0.10820895522388052,
+          "max_drawdown": -0.09999999999999998,
+          "case_result": "win"
+        },
+        {
+          "case_id": "aegis_case_001309_2",
+          "symbol": "001309",
+          "entry_date": "2023-12-12",
+          "source_signal_pass": true,
+          "feature_reasons": [
+            "ownership_stable_or_improving"
+          ],
+          "covered_endpoints": [
+            "top10_holders",
+            "top10_floatholders"
+          ],
+          "feature_hash": "040ef4fedf36055222997cab85ef84716be42e531785e5cd8cc689c6c7aefd9c",
+          "raw_return": -0.1874999999999999,
+          "max_drawdown": -0.20539572136157647,
+          "case_result": "loss"
+        },
+        {
+          "case_id": "aegis_case_001309_3",
+          "symbol": "001309",
+          "entry_date": "2024-03-22",
+          "source_signal_pass": true,
+          "feature_reasons": [
+            "ownership_stable_or_improving"
+          ],
+          "covered_endpoints": [
+            "top10_holders",
+            "top10_floatholders"
+          ],
+          "feature_hash": "040ef4fedf36055222997cab85ef84716be42e531785e5cd8cc689c6c7aefd9c",
+          "raw_return": -0.07053846153846155,
+          "max_drawdown": -0.20902527075812272,
+          "case_result": "loss"
+        },
+        {
+          "case_id": "aegis_case_001309_4",
+          "symbol": "001309",
+          "entry_date": "2024-07-03",
+          "source_signal_pass": true,
+          "feature_reasons": [
+            "ownership_stable_or_improving"
+          ],
+          "covered_endpoints": [
+            "top10_holders",
+            "top10_floatholders"
+          ],
+          "feature_hash": "040ef4fedf36055222997cab85ef84716be42e531785e5cd8cc689c6c7aefd9c",
+          "raw_return": -0.1614893617021277,
+          "max_drawdown": -0.251750350070014,
+          "case_result": "loss"
+        },
+        {
+          "case_id": "aegis_case_000100_1",
+          "symbol": "000100",
+          "entry_date": "2023-09-01",
+          "source_signal_pass": false,
+          "feature_reasons": [
+            "ownership_not_confirmed"
+          ],
+          "covered_endpoints": [
+            "top10_holders",
+            "top10_floatholders"
+          ],
+          "feature_hash": "7427cd9e1b7baa58780a015d777070982fd6b6577b1fc419c2593fcad13dac44",
+          "raw_return": -0.009685230024213065,
+          "max_drawdown": -0.07311320754716977,
+          "case_result": "loss"
+        },
+        {
+          "case_id": "aegis_case_000100_2",
+          "symbol": "000100",
+          "entry_date": "2023-12-12",
+          "source_signal_pass": true,
+          "feature_reasons": [
+            "ownership_stable_or_improving"
+          ],
+          "covered_endpoints": [
+            "top10_holders",
+            "top10_floatholders"
+          ],
+          "feature_hash": "4247f9c2af13497e87a8a006c045de0d47422c21bb14e66a46e9d0afaf9b8be4",
+          "raw_return": 0.05499999999999994,
+          "max_drawdown": -0.030000000000000027,
+          "case_result": "win"
+        },
+        {
+          "case_id": "aegis_case_000100_3",
+          "symbol": "000100",
+          "entry_date": "2024-03-22",
+          "source_signal_pass": true,
+          "feature_reasons": [
+            "ownership_stable_or_improving"
+          ],
+          "covered_endpoints": [
+            "top10_holders",
+            "top10_floatholders"
+          ],
+          "feature_hash": "4247f9c2af13497e87a8a006c045de0d47422c21bb14e66a46e9d0afaf9b8be4",
+          "raw_return": 0.06696428571428559,
+          "max_drawdown": -0.07003891050583644,
+          "case_result": "win"
+        },
+        {
+          "case_id": "aegis_case_000100_4",
+          "symbol": "000100",
+          "entry_date": "2024-07-03",
+          "source_signal_pass": true,
+          "feature_reasons": [
+            "ownership_stable_or_improving"
+          ],
+          "covered_endpoints": [
+            "top10_holders",
+            "top10_floatholders"
+          ],
+          "feature_hash": "040ef4fedf36055222997cab85ef84716be42e531785e5cd8cc689c6c7aefd9c",
+          "raw_return": -0.09048723897911826,
+          "max_drawdown": -0.1345707656612528,
+          "case_result": "loss"
+        },
+        {
+          "case_id": "aegis_case_002407_1",
+          "symbol": "002407",
+          "entry_date": "2023-09-01",
+          "source_signal_pass": false,
+          "feature_reasons": [
+            "ownership_not_confirmed"
+          ],
+          "covered_endpoints": [
+            "top10_holders",
+            "top10_floatholders"
+          ],
+          "feature_hash": "7427cd9e1b7baa58780a015d777070982fd6b6577b1fc419c2593fcad13dac44",
+          "raw_return": -0.019512195121951237,
+          "max_drawdown": -0.08720930232558144,
+          "case_result": "loss"
+        },
+        {
+          "case_id": "aegis_case_002407_2",
+          "symbol": "002407",
+          "entry_date": "2023-12-12",
+          "source_signal_pass": true,
+          "feature_reasons": [
+            "ownership_stable_or_improving"
+          ],
+          "covered_endpoints": [
+            "top10_holders",
+            "top10_floatholders"
+          ],
+          "feature_hash": "040ef4fedf36055222997cab85ef84716be42e531785e5cd8cc689c6c7aefd9c",
+          "raw_return": -0.050403225806451624,
+          "max_drawdown": -0.07621550591327197,
+          "case_result": "loss"
+        },
+        {
+          "case_id": "aegis_case_002407_3",
+          "symbol": "002407",
+          "entry_date": "2024-03-22",
+          "source_signal_pass": true,
+          "feature_reasons": [
+            "ownership_stable_or_improving"
+          ],
+          "covered_endpoints": [
+            "top10_holders",
+            "top10_floatholders"
+          ],
+          "feature_hash": "040ef4fedf36055222997cab85ef84716be42e531785e5cd8cc689c6c7aefd9c",
+          "raw_return": -0.08170391061452509,
+          "max_drawdown": -0.19325153374233128,
+          "case_result": "loss"
+        },
+        {
+          "case_id": "aegis_case_002407_4",
+          "symbol": "002407",
+          "entry_date": "2024-07-03",
+          "source_signal_pass": true,
+          "feature_reasons": [
+            "ownership_stable_or_improving"
+          ],
+          "covered_endpoints": [
+            "top10_holders",
+            "top10_floatholders"
+          ],
+          "feature_hash": "040ef4fedf36055222997cab85ef84716be42e531785e5cd8cc689c6c7aefd9c",
+          "raw_return": -0.09271523178807939,
+          "max_drawdown": -0.13327814569536423,
+          "case_result": "loss"
         }
       ],
       "allowed_next_step": "do_not_rank_collect_more_cases_or_rework_signal",
@@ -354,17 +1421,18 @@
       "disposition": "DEEP_SANDBOX_FAIL",
       "reasons": [
         "source_signal_win_rate_below_threshold",
-        "source_signal_average_return_below_threshold"
+        "source_signal_average_return_below_threshold",
+        "source_signal_drawdown_breached"
       ],
       "metrics": {
-        "eligible_case_count": 8,
-        "source_signal_case_count": 4,
-        "source_signal_rate": 0.5,
-        "source_signal_win_rate": 0.25,
-        "source_signal_average_return": -0.050603959575996116,
-        "source_signal_max_drawdown": -0.1770094562647755,
-        "source_signal_best_return": 0.08576998050682261,
-        "source_signal_worst_return": -0.17124704491725773
+        "eligible_case_count": 40,
+        "source_signal_case_count": 13,
+        "source_signal_rate": 0.325,
+        "source_signal_win_rate": 0.38461538461538464,
+        "source_signal_average_return": -0.02550274419081872,
+        "source_signal_max_drawdown": -0.19424460431654678,
+        "source_signal_best_return": 0.10820895522388052,
+        "source_signal_worst_return": -0.18198417528910527
       },
       "case_features": [
         {
@@ -494,6 +1562,510 @@
           "raw_return": 0.08576998050682261,
           "max_drawdown": -0.05233644859813069,
           "case_result": "win"
+        },
+        {
+          "case_id": "aegis_case_600150_1",
+          "symbol": "600150",
+          "entry_date": "2023-09-01",
+          "source_signal_pass": false,
+          "feature_reasons": [
+            "holder_count_expanding"
+          ],
+          "covered_endpoints": [
+            "stk_holdernumber"
+          ],
+          "feature_hash": "804a74c56d2e40686d804a6df7aab3302ce8b61e7c8452869e49d77fb1e3df1d",
+          "raw_return": -0.0021134202183867856,
+          "max_drawdown": -0.06396957123098201,
+          "case_result": "loss"
+        },
+        {
+          "case_id": "aegis_case_600150_2",
+          "symbol": "600150",
+          "entry_date": "2023-12-12",
+          "source_signal_pass": true,
+          "feature_reasons": [
+            "holder_count_decreasing_or_stable"
+          ],
+          "covered_endpoints": [
+            "stk_holdernumber"
+          ],
+          "feature_hash": "92cca9fdeee3ce85f3d15a6ef7210ea9075a08a3fbc215d70d44da4bc011c210",
+          "raw_return": 0.013203613620569765,
+          "max_drawdown": -0.0383471074380165,
+          "case_result": "win"
+        },
+        {
+          "case_id": "aegis_case_600150_3",
+          "symbol": "600150",
+          "entry_date": "2024-03-22",
+          "source_signal_pass": true,
+          "feature_reasons": [
+            "holder_count_decreasing_or_stable"
+          ],
+          "covered_endpoints": [
+            "stk_holdernumber"
+          ],
+          "feature_hash": "92cca9fdeee3ce85f3d15a6ef7210ea9075a08a3fbc215d70d44da4bc011c210",
+          "raw_return": 0.04428571428571426,
+          "max_drawdown": -0.07655381505811021,
+          "case_result": "win"
+        },
+        {
+          "case_id": "aegis_case_600150_4",
+          "symbol": "600150",
+          "entry_date": "2024-07-03",
+          "source_signal_pass": true,
+          "feature_reasons": [
+            "holder_count_decreasing_or_stable"
+          ],
+          "covered_endpoints": [
+            "stk_holdernumber"
+          ],
+          "feature_hash": "92cca9fdeee3ce85f3d15a6ef7210ea9075a08a3fbc215d70d44da4bc011c210",
+          "raw_return": 0.01335311572700304,
+          "max_drawdown": -0.07169373549883995,
+          "case_result": "win"
+        },
+        {
+          "case_id": "aegis_case_300475_1",
+          "symbol": "300475",
+          "entry_date": "2023-09-01",
+          "source_signal_pass": false,
+          "feature_reasons": [
+            "holder_count_expanding"
+          ],
+          "covered_endpoints": [
+            "stk_holdernumber"
+          ],
+          "feature_hash": "804a74c56d2e40686d804a6df7aab3302ce8b61e7c8452869e49d77fb1e3df1d",
+          "raw_return": -0.08699578567128241,
+          "max_drawdown": -0.2320547945205479,
+          "case_result": "loss"
+        },
+        {
+          "case_id": "aegis_case_300475_2",
+          "symbol": "300475",
+          "entry_date": "2023-12-12",
+          "source_signal_pass": false,
+          "feature_reasons": [
+            "holder_count_expanding"
+          ],
+          "covered_endpoints": [
+            "stk_holdernumber"
+          ],
+          "feature_hash": "804a74c56d2e40686d804a6df7aab3302ce8b61e7c8452869e49d77fb1e3df1d",
+          "raw_return": -0.20533333333333337,
+          "max_drawdown": -0.20533333333333337,
+          "case_result": "loss"
+        },
+        {
+          "case_id": "aegis_case_300475_3",
+          "symbol": "300475",
+          "entry_date": "2024-03-22",
+          "source_signal_pass": false,
+          "feature_reasons": [
+            "holder_count_expanding"
+          ],
+          "covered_endpoints": [
+            "stk_holdernumber"
+          ],
+          "feature_hash": "804a74c56d2e40686d804a6df7aab3302ce8b61e7c8452869e49d77fb1e3df1d",
+          "raw_return": -0.20974820974820974,
+          "max_drawdown": -0.20974820974820974,
+          "case_result": "loss"
+        },
+        {
+          "case_id": "aegis_case_300475_4",
+          "symbol": "300475",
+          "entry_date": "2024-07-03",
+          "source_signal_pass": true,
+          "feature_reasons": [
+            "holder_count_decreasing_or_stable"
+          ],
+          "covered_endpoints": [
+            "stk_holdernumber"
+          ],
+          "feature_hash": "92cca9fdeee3ce85f3d15a6ef7210ea9075a08a3fbc215d70d44da4bc011c210",
+          "raw_return": -0.006502395619438661,
+          "max_drawdown": -0.1601745091928951,
+          "case_result": "loss"
+        },
+        {
+          "case_id": "aegis_case_300476_1",
+          "symbol": "300476",
+          "entry_date": "2023-09-01",
+          "source_signal_pass": false,
+          "feature_reasons": [
+            "holder_count_expanding"
+          ],
+          "covered_endpoints": [
+            "stk_holdernumber"
+          ],
+          "feature_hash": "350f98310274e4f7ede02649f343ab1d18a18bb05e30c3dcf5401df55a8f8453",
+          "raw_return": 0.01902173913043481,
+          "max_drawdown": -0.13969050606440814,
+          "case_result": "win"
+        },
+        {
+          "case_id": "aegis_case_300476_2",
+          "symbol": "300476",
+          "entry_date": "2023-12-12",
+          "source_signal_pass": false,
+          "feature_reasons": [
+            "holder_count_expanding"
+          ],
+          "covered_endpoints": [
+            "stk_holdernumber"
+          ],
+          "feature_hash": "350f98310274e4f7ede02649f343ab1d18a18bb05e30c3dcf5401df55a8f8453",
+          "raw_return": -0.14807197943444728,
+          "max_drawdown": -0.15012853470437004,
+          "case_result": "loss"
+        },
+        {
+          "case_id": "aegis_case_300476_3",
+          "symbol": "300476",
+          "entry_date": "2024-03-22",
+          "source_signal_pass": false,
+          "feature_reasons": [
+            "holder_count_expanding"
+          ],
+          "covered_endpoints": [
+            "stk_holdernumber"
+          ],
+          "feature_hash": "350f98310274e4f7ede02649f343ab1d18a18bb05e30c3dcf5401df55a8f8453",
+          "raw_return": 0.0003937007874015297,
+          "max_drawdown": -0.09094488188976368,
+          "case_result": "win"
+        },
+        {
+          "case_id": "aegis_case_300476_4",
+          "symbol": "300476",
+          "entry_date": "2024-07-03",
+          "source_signal_pass": false,
+          "feature_reasons": [
+            "holder_count_expanding"
+          ],
+          "covered_endpoints": [
+            "stk_holdernumber"
+          ],
+          "feature_hash": "350f98310274e4f7ede02649f343ab1d18a18bb05e30c3dcf5401df55a8f8453",
+          "raw_return": 0.1466389054134445,
+          "max_drawdown": -0.10204081632653061,
+          "case_result": "win"
+        },
+        {
+          "case_id": "aegis_case_002709_1",
+          "symbol": "002709",
+          "entry_date": "2023-09-01",
+          "source_signal_pass": true,
+          "feature_reasons": [
+            "holder_count_decreasing_or_stable"
+          ],
+          "covered_endpoints": [
+            "stk_holdernumber"
+          ],
+          "feature_hash": "92cca9fdeee3ce85f3d15a6ef7210ea9075a08a3fbc215d70d44da4bc011c210",
+          "raw_return": -0.18198417528910527,
+          "max_drawdown": -0.19424460431654678,
+          "case_result": "loss"
+        },
+        {
+          "case_id": "aegis_case_002709_2",
+          "symbol": "002709",
+          "entry_date": "2023-12-12",
+          "source_signal_pass": false,
+          "feature_reasons": [
+            "holder_count_expanding"
+          ],
+          "covered_endpoints": [
+            "stk_holdernumber"
+          ],
+          "feature_hash": "804a74c56d2e40686d804a6df7aab3302ce8b61e7c8452869e49d77fb1e3df1d",
+          "raw_return": -0.022174840085287806,
+          "max_drawdown": -0.11004784688995206,
+          "case_result": "loss"
+        },
+        {
+          "case_id": "aegis_case_002709_3",
+          "symbol": "002709",
+          "entry_date": "2024-03-22",
+          "source_signal_pass": false,
+          "feature_reasons": [
+            "holder_count_expanding"
+          ],
+          "covered_endpoints": [
+            "stk_holdernumber"
+          ],
+          "feature_hash": "804a74c56d2e40686d804a6df7aab3302ce8b61e7c8452869e49d77fb1e3df1d",
+          "raw_return": -0.004312410158121671,
+          "max_drawdown": -0.20039138943248536,
+          "case_result": "loss"
+        },
+        {
+          "case_id": "aegis_case_002709_4",
+          "symbol": "002709",
+          "entry_date": "2024-07-03",
+          "source_signal_pass": false,
+          "feature_reasons": [
+            "holder_count_expanding"
+          ],
+          "covered_endpoints": [
+            "stk_holdernumber"
+          ],
+          "feature_hash": "804a74c56d2e40686d804a6df7aab3302ce8b61e7c8452869e49d77fb1e3df1d",
+          "raw_return": -0.10188895248998275,
+          "max_drawdown": -0.15684029765311958,
+          "case_result": "loss"
+        },
+        {
+          "case_id": "aegis_case_688525_1",
+          "symbol": "688525",
+          "entry_date": "2023-09-01",
+          "source_signal_pass": false,
+          "feature_reasons": [
+            "holdernumber_history_missing"
+          ],
+          "covered_endpoints": [],
+          "feature_hash": "b0e6d12bcfceea2ec8244322e6bb53cd7057d8223c18933fdc659f36992493d4",
+          "raw_return": -0.06500872600349039,
+          "max_drawdown": -0.13146640915988406,
+          "case_result": "loss"
+        },
+        {
+          "case_id": "aegis_case_688525_2",
+          "symbol": "688525",
+          "entry_date": "2023-12-12",
+          "source_signal_pass": false,
+          "feature_reasons": [
+            "holdernumber_history_missing"
+          ],
+          "covered_endpoints": [],
+          "feature_hash": "b0e6d12bcfceea2ec8244322e6bb53cd7057d8223c18933fdc659f36992493d4",
+          "raw_return": -0.47955345225094037,
+          "max_drawdown": -0.49265865792986285,
+          "case_result": "loss"
+        },
+        {
+          "case_id": "aegis_case_688525_3",
+          "symbol": "688525",
+          "entry_date": "2024-03-22",
+          "source_signal_pass": false,
+          "feature_reasons": [
+            "holdernumber_history_missing"
+          ],
+          "covered_endpoints": [],
+          "feature_hash": "b0e6d12bcfceea2ec8244322e6bb53cd7057d8223c18933fdc659f36992493d4",
+          "raw_return": -0.2070422535211267,
+          "max_drawdown": -0.3410211267605634,
+          "case_result": "loss"
+        },
+        {
+          "case_id": "aegis_case_688525_4",
+          "symbol": "688525",
+          "entry_date": "2024-07-03",
+          "source_signal_pass": false,
+          "feature_reasons": [
+            "holdernumber_history_missing"
+          ],
+          "covered_endpoints": [],
+          "feature_hash": "b0e6d12bcfceea2ec8244322e6bb53cd7057d8223c18933fdc659f36992493d4",
+          "raw_return": -0.13540856031128412,
+          "max_drawdown": -0.2260985748218527,
+          "case_result": "loss"
+        },
+        {
+          "case_id": "aegis_case_001309_1",
+          "symbol": "001309",
+          "entry_date": "2023-09-01",
+          "source_signal_pass": true,
+          "feature_reasons": [
+            "holder_count_decreasing_or_stable"
+          ],
+          "covered_endpoints": [
+            "stk_holdernumber"
+          ],
+          "feature_hash": "92cca9fdeee3ce85f3d15a6ef7210ea9075a08a3fbc215d70d44da4bc011c210",
+          "raw_return": 0.10820895522388052,
+          "max_drawdown": -0.09999999999999998,
+          "case_result": "win"
+        },
+        {
+          "case_id": "aegis_case_001309_2",
+          "symbol": "001309",
+          "entry_date": "2023-12-12",
+          "source_signal_pass": false,
+          "feature_reasons": [
+            "holder_count_expanding"
+          ],
+          "covered_endpoints": [
+            "stk_holdernumber"
+          ],
+          "feature_hash": "350f98310274e4f7ede02649f343ab1d18a18bb05e30c3dcf5401df55a8f8453",
+          "raw_return": -0.1874999999999999,
+          "max_drawdown": -0.20539572136157647,
+          "case_result": "loss"
+        },
+        {
+          "case_id": "aegis_case_001309_3",
+          "symbol": "001309",
+          "entry_date": "2024-03-22",
+          "source_signal_pass": false,
+          "feature_reasons": [
+            "holder_count_expanding"
+          ],
+          "covered_endpoints": [
+            "stk_holdernumber"
+          ],
+          "feature_hash": "350f98310274e4f7ede02649f343ab1d18a18bb05e30c3dcf5401df55a8f8453",
+          "raw_return": -0.07053846153846155,
+          "max_drawdown": -0.20902527075812272,
+          "case_result": "loss"
+        },
+        {
+          "case_id": "aegis_case_001309_4",
+          "symbol": "001309",
+          "entry_date": "2024-07-03",
+          "source_signal_pass": false,
+          "feature_reasons": [
+            "holder_count_expanding"
+          ],
+          "covered_endpoints": [
+            "stk_holdernumber"
+          ],
+          "feature_hash": "350f98310274e4f7ede02649f343ab1d18a18bb05e30c3dcf5401df55a8f8453",
+          "raw_return": -0.1614893617021277,
+          "max_drawdown": -0.251750350070014,
+          "case_result": "loss"
+        },
+        {
+          "case_id": "aegis_case_000100_1",
+          "symbol": "000100",
+          "entry_date": "2023-09-01",
+          "source_signal_pass": true,
+          "feature_reasons": [
+            "holder_count_decreasing_or_stable"
+          ],
+          "covered_endpoints": [
+            "stk_holdernumber"
+          ],
+          "feature_hash": "92cca9fdeee3ce85f3d15a6ef7210ea9075a08a3fbc215d70d44da4bc011c210",
+          "raw_return": -0.009685230024213065,
+          "max_drawdown": -0.07311320754716977,
+          "case_result": "loss"
+        },
+        {
+          "case_id": "aegis_case_000100_2",
+          "symbol": "000100",
+          "entry_date": "2023-12-12",
+          "source_signal_pass": false,
+          "feature_reasons": [
+            "holder_count_expanding"
+          ],
+          "covered_endpoints": [
+            "stk_holdernumber"
+          ],
+          "feature_hash": "350f98310274e4f7ede02649f343ab1d18a18bb05e30c3dcf5401df55a8f8453",
+          "raw_return": 0.05499999999999994,
+          "max_drawdown": -0.030000000000000027,
+          "case_result": "win"
+        },
+        {
+          "case_id": "aegis_case_000100_3",
+          "symbol": "000100",
+          "entry_date": "2024-03-22",
+          "source_signal_pass": false,
+          "feature_reasons": [
+            "holder_count_expanding"
+          ],
+          "covered_endpoints": [
+            "stk_holdernumber"
+          ],
+          "feature_hash": "350f98310274e4f7ede02649f343ab1d18a18bb05e30c3dcf5401df55a8f8453",
+          "raw_return": 0.06696428571428559,
+          "max_drawdown": -0.07003891050583644,
+          "case_result": "win"
+        },
+        {
+          "case_id": "aegis_case_000100_4",
+          "symbol": "000100",
+          "entry_date": "2024-07-03",
+          "source_signal_pass": true,
+          "feature_reasons": [
+            "holder_count_decreasing_or_stable"
+          ],
+          "covered_endpoints": [
+            "stk_holdernumber"
+          ],
+          "feature_hash": "92cca9fdeee3ce85f3d15a6ef7210ea9075a08a3fbc215d70d44da4bc011c210",
+          "raw_return": -0.09048723897911826,
+          "max_drawdown": -0.1345707656612528,
+          "case_result": "loss"
+        },
+        {
+          "case_id": "aegis_case_002407_1",
+          "symbol": "002407",
+          "entry_date": "2023-09-01",
+          "source_signal_pass": true,
+          "feature_reasons": [
+            "holder_count_decreasing_or_stable"
+          ],
+          "covered_endpoints": [
+            "stk_holdernumber"
+          ],
+          "feature_hash": "92cca9fdeee3ce85f3d15a6ef7210ea9075a08a3fbc215d70d44da4bc011c210",
+          "raw_return": -0.019512195121951237,
+          "max_drawdown": -0.08720930232558144,
+          "case_result": "loss"
+        },
+        {
+          "case_id": "aegis_case_002407_2",
+          "symbol": "002407",
+          "entry_date": "2023-12-12",
+          "source_signal_pass": false,
+          "feature_reasons": [
+            "holder_count_expanding"
+          ],
+          "covered_endpoints": [
+            "stk_holdernumber"
+          ],
+          "feature_hash": "804a74c56d2e40686d804a6df7aab3302ce8b61e7c8452869e49d77fb1e3df1d",
+          "raw_return": -0.050403225806451624,
+          "max_drawdown": -0.07621550591327197,
+          "case_result": "loss"
+        },
+        {
+          "case_id": "aegis_case_002407_3",
+          "symbol": "002407",
+          "entry_date": "2024-03-22",
+          "source_signal_pass": false,
+          "feature_reasons": [
+            "holder_count_expanding"
+          ],
+          "covered_endpoints": [
+            "stk_holdernumber"
+          ],
+          "feature_hash": "804a74c56d2e40686d804a6df7aab3302ce8b61e7c8452869e49d77fb1e3df1d",
+          "raw_return": -0.08170391061452509,
+          "max_drawdown": -0.19325153374233128,
+          "case_result": "loss"
+        },
+        {
+          "case_id": "aegis_case_002407_4",
+          "symbol": "002407",
+          "entry_date": "2024-07-03",
+          "source_signal_pass": false,
+          "feature_reasons": [
+            "holder_count_expanding"
+          ],
+          "covered_endpoints": [
+            "stk_holdernumber"
+          ],
+          "feature_hash": "804a74c56d2e40686d804a6df7aab3302ce8b61e7c8452869e49d77fb1e3df1d",
+          "raw_return": -0.09271523178807939,
+          "max_drawdown": -0.13327814569536423,
+          "case_result": "loss"
         }
       ],
       "allowed_next_step": "do_not_rank_collect_more_cases_or_rework_signal",
@@ -511,17 +2083,18 @@
       "disposition": "DEEP_SANDBOX_FAIL",
       "reasons": [
         "source_signal_win_rate_below_threshold",
-        "source_signal_average_return_below_threshold"
+        "source_signal_average_return_below_threshold",
+        "source_signal_drawdown_breached"
       ],
       "metrics": {
-        "eligible_case_count": 8,
-        "source_signal_case_count": 5,
-        "source_signal_rate": 0.625,
-        "source_signal_win_rate": 0.4,
-        "source_signal_average_return": -0.019460181291496136,
-        "source_signal_max_drawdown": -0.12317144528964308,
-        "source_signal_best_return": 0.08576998050682261,
-        "source_signal_worst_return": -0.10544452101998614
+        "eligible_case_count": 40,
+        "source_signal_case_count": 26,
+        "source_signal_rate": 0.65,
+        "source_signal_win_rate": 0.34615384615384615,
+        "source_signal_average_return": -0.04092556217756533,
+        "source_signal_max_drawdown": -0.251750350070014,
+        "source_signal_best_return": 0.1466389054134445,
+        "source_signal_worst_return": -0.20974820974820974
       },
       "case_features": [
         {
@@ -674,6 +2247,614 @@
           "raw_return": 0.08576998050682261,
           "max_drawdown": -0.05233644859813069,
           "case_result": "win"
+        },
+        {
+          "case_id": "aegis_case_600150_1",
+          "symbol": "600150",
+          "entry_date": "2023-09-01",
+          "source_signal_pass": false,
+          "feature_reasons": [
+            "liquidity_present",
+            "not_intraday_overheated",
+            "factor_overlay_not_confirmed"
+          ],
+          "covered_endpoints": [
+            "stk_factor",
+            "daily_basic"
+          ],
+          "feature_hash": "fa31dfaa5e19c80f637fdec095e4760cf2b94c0ee1c192d9d0621033723e42b8",
+          "raw_return": -0.0021134202183867856,
+          "max_drawdown": -0.06396957123098201,
+          "case_result": "loss"
+        },
+        {
+          "case_id": "aegis_case_600150_2",
+          "symbol": "600150",
+          "entry_date": "2023-12-12",
+          "source_signal_pass": true,
+          "feature_reasons": [
+            "liquidity_present",
+            "valuation_not_extreme",
+            "not_intraday_overheated"
+          ],
+          "covered_endpoints": [
+            "stk_factor",
+            "daily_basic"
+          ],
+          "feature_hash": "ab13df2383187239289efc677f79d6d76c94ca2ed9673fb22d795bc5f445d1ae",
+          "raw_return": 0.013203613620569765,
+          "max_drawdown": -0.0383471074380165,
+          "case_result": "win"
+        },
+        {
+          "case_id": "aegis_case_600150_3",
+          "symbol": "600150",
+          "entry_date": "2024-03-22",
+          "source_signal_pass": false,
+          "feature_reasons": [
+            "liquidity_present",
+            "not_intraday_overheated",
+            "factor_overlay_not_confirmed"
+          ],
+          "covered_endpoints": [
+            "stk_factor",
+            "daily_basic"
+          ],
+          "feature_hash": "fa31dfaa5e19c80f637fdec095e4760cf2b94c0ee1c192d9d0621033723e42b8",
+          "raw_return": 0.04428571428571426,
+          "max_drawdown": -0.07655381505811021,
+          "case_result": "win"
+        },
+        {
+          "case_id": "aegis_case_600150_4",
+          "symbol": "600150",
+          "entry_date": "2024-07-03",
+          "source_signal_pass": true,
+          "feature_reasons": [
+            "liquidity_present",
+            "valuation_not_extreme",
+            "not_intraday_overheated"
+          ],
+          "covered_endpoints": [
+            "stk_factor",
+            "daily_basic"
+          ],
+          "feature_hash": "ab13df2383187239289efc677f79d6d76c94ca2ed9673fb22d795bc5f445d1ae",
+          "raw_return": 0.01335311572700304,
+          "max_drawdown": -0.07169373549883995,
+          "case_result": "win"
+        },
+        {
+          "case_id": "aegis_case_300475_1",
+          "symbol": "300475",
+          "entry_date": "2023-09-01",
+          "source_signal_pass": true,
+          "feature_reasons": [
+            "liquidity_present",
+            "valuation_not_extreme",
+            "not_intraday_overheated"
+          ],
+          "covered_endpoints": [
+            "stk_factor",
+            "daily_basic"
+          ],
+          "feature_hash": "ab13df2383187239289efc677f79d6d76c94ca2ed9673fb22d795bc5f445d1ae",
+          "raw_return": -0.08699578567128241,
+          "max_drawdown": -0.2320547945205479,
+          "case_result": "loss"
+        },
+        {
+          "case_id": "aegis_case_300475_2",
+          "symbol": "300475",
+          "entry_date": "2023-12-12",
+          "source_signal_pass": true,
+          "feature_reasons": [
+            "liquidity_present",
+            "valuation_not_extreme",
+            "not_intraday_overheated"
+          ],
+          "covered_endpoints": [
+            "stk_factor",
+            "daily_basic"
+          ],
+          "feature_hash": "ab13df2383187239289efc677f79d6d76c94ca2ed9673fb22d795bc5f445d1ae",
+          "raw_return": -0.20533333333333337,
+          "max_drawdown": -0.20533333333333337,
+          "case_result": "loss"
+        },
+        {
+          "case_id": "aegis_case_300475_3",
+          "symbol": "300475",
+          "entry_date": "2024-03-22",
+          "source_signal_pass": true,
+          "feature_reasons": [
+            "liquidity_present",
+            "valuation_not_extreme",
+            "not_intraday_overheated"
+          ],
+          "covered_endpoints": [
+            "stk_factor",
+            "daily_basic"
+          ],
+          "feature_hash": "ab13df2383187239289efc677f79d6d76c94ca2ed9673fb22d795bc5f445d1ae",
+          "raw_return": -0.20974820974820974,
+          "max_drawdown": -0.20974820974820974,
+          "case_result": "loss"
+        },
+        {
+          "case_id": "aegis_case_300475_4",
+          "symbol": "300475",
+          "entry_date": "2024-07-03",
+          "source_signal_pass": true,
+          "feature_reasons": [
+            "liquidity_present",
+            "valuation_not_extreme",
+            "not_intraday_overheated"
+          ],
+          "covered_endpoints": [
+            "stk_factor",
+            "daily_basic"
+          ],
+          "feature_hash": "ab13df2383187239289efc677f79d6d76c94ca2ed9673fb22d795bc5f445d1ae",
+          "raw_return": -0.006502395619438661,
+          "max_drawdown": -0.1601745091928951,
+          "case_result": "loss"
+        },
+        {
+          "case_id": "aegis_case_300476_1",
+          "symbol": "300476",
+          "entry_date": "2023-09-01",
+          "source_signal_pass": true,
+          "feature_reasons": [
+            "liquidity_present",
+            "valuation_not_extreme",
+            "not_intraday_overheated"
+          ],
+          "covered_endpoints": [
+            "stk_factor",
+            "daily_basic"
+          ],
+          "feature_hash": "ab13df2383187239289efc677f79d6d76c94ca2ed9673fb22d795bc5f445d1ae",
+          "raw_return": 0.01902173913043481,
+          "max_drawdown": -0.13969050606440814,
+          "case_result": "win"
+        },
+        {
+          "case_id": "aegis_case_300476_2",
+          "symbol": "300476",
+          "entry_date": "2023-12-12",
+          "source_signal_pass": true,
+          "feature_reasons": [
+            "liquidity_present",
+            "valuation_not_extreme",
+            "not_intraday_overheated"
+          ],
+          "covered_endpoints": [
+            "stk_factor",
+            "daily_basic"
+          ],
+          "feature_hash": "ab13df2383187239289efc677f79d6d76c94ca2ed9673fb22d795bc5f445d1ae",
+          "raw_return": -0.14807197943444728,
+          "max_drawdown": -0.15012853470437004,
+          "case_result": "loss"
+        },
+        {
+          "case_id": "aegis_case_300476_3",
+          "symbol": "300476",
+          "entry_date": "2024-03-22",
+          "source_signal_pass": true,
+          "feature_reasons": [
+            "liquidity_present",
+            "valuation_not_extreme",
+            "not_intraday_overheated"
+          ],
+          "covered_endpoints": [
+            "stk_factor",
+            "daily_basic"
+          ],
+          "feature_hash": "ab13df2383187239289efc677f79d6d76c94ca2ed9673fb22d795bc5f445d1ae",
+          "raw_return": 0.0003937007874015297,
+          "max_drawdown": -0.09094488188976368,
+          "case_result": "win"
+        },
+        {
+          "case_id": "aegis_case_300476_4",
+          "symbol": "300476",
+          "entry_date": "2024-07-03",
+          "source_signal_pass": true,
+          "feature_reasons": [
+            "liquidity_present",
+            "valuation_not_extreme",
+            "not_intraday_overheated"
+          ],
+          "covered_endpoints": [
+            "stk_factor",
+            "daily_basic"
+          ],
+          "feature_hash": "ab13df2383187239289efc677f79d6d76c94ca2ed9673fb22d795bc5f445d1ae",
+          "raw_return": 0.1466389054134445,
+          "max_drawdown": -0.10204081632653061,
+          "case_result": "win"
+        },
+        {
+          "case_id": "aegis_case_002709_1",
+          "symbol": "002709",
+          "entry_date": "2023-09-01",
+          "source_signal_pass": false,
+          "feature_reasons": [
+            "valuation_not_extreme",
+            "not_intraday_overheated",
+            "factor_overlay_not_confirmed"
+          ],
+          "covered_endpoints": [
+            "stk_factor",
+            "daily_basic"
+          ],
+          "feature_hash": "d98577f956cc22a1118d45e5109f76b935ba3fbda2dd78f655002f934f8d12aa",
+          "raw_return": -0.18198417528910527,
+          "max_drawdown": -0.19424460431654678,
+          "case_result": "loss"
+        },
+        {
+          "case_id": "aegis_case_002709_2",
+          "symbol": "002709",
+          "entry_date": "2023-12-12",
+          "source_signal_pass": true,
+          "feature_reasons": [
+            "liquidity_present",
+            "valuation_not_extreme",
+            "not_intraday_overheated"
+          ],
+          "covered_endpoints": [
+            "stk_factor",
+            "daily_basic"
+          ],
+          "feature_hash": "ab13df2383187239289efc677f79d6d76c94ca2ed9673fb22d795bc5f445d1ae",
+          "raw_return": -0.022174840085287806,
+          "max_drawdown": -0.11004784688995206,
+          "case_result": "loss"
+        },
+        {
+          "case_id": "aegis_case_002709_3",
+          "symbol": "002709",
+          "entry_date": "2024-03-22",
+          "source_signal_pass": true,
+          "feature_reasons": [
+            "liquidity_present",
+            "valuation_not_extreme",
+            "not_intraday_overheated"
+          ],
+          "covered_endpoints": [
+            "stk_factor",
+            "daily_basic"
+          ],
+          "feature_hash": "ab13df2383187239289efc677f79d6d76c94ca2ed9673fb22d795bc5f445d1ae",
+          "raw_return": -0.004312410158121671,
+          "max_drawdown": -0.20039138943248536,
+          "case_result": "loss"
+        },
+        {
+          "case_id": "aegis_case_002709_4",
+          "symbol": "002709",
+          "entry_date": "2024-07-03",
+          "source_signal_pass": true,
+          "feature_reasons": [
+            "liquidity_present",
+            "valuation_not_extreme",
+            "not_intraday_overheated"
+          ],
+          "covered_endpoints": [
+            "stk_factor",
+            "daily_basic"
+          ],
+          "feature_hash": "ab13df2383187239289efc677f79d6d76c94ca2ed9673fb22d795bc5f445d1ae",
+          "raw_return": -0.10188895248998275,
+          "max_drawdown": -0.15684029765311958,
+          "case_result": "loss"
+        },
+        {
+          "case_id": "aegis_case_688525_1",
+          "symbol": "688525",
+          "entry_date": "2023-09-01",
+          "source_signal_pass": false,
+          "feature_reasons": [
+            "liquidity_present",
+            "not_intraday_overheated",
+            "factor_overlay_not_confirmed"
+          ],
+          "covered_endpoints": [
+            "stk_factor",
+            "daily_basic"
+          ],
+          "feature_hash": "fa31dfaa5e19c80f637fdec095e4760cf2b94c0ee1c192d9d0621033723e42b8",
+          "raw_return": -0.06500872600349039,
+          "max_drawdown": -0.13146640915988406,
+          "case_result": "loss"
+        },
+        {
+          "case_id": "aegis_case_688525_2",
+          "symbol": "688525",
+          "entry_date": "2023-12-12",
+          "source_signal_pass": false,
+          "feature_reasons": [
+            "liquidity_present",
+            "not_intraday_overheated",
+            "factor_overlay_not_confirmed"
+          ],
+          "covered_endpoints": [
+            "stk_factor",
+            "daily_basic"
+          ],
+          "feature_hash": "fa31dfaa5e19c80f637fdec095e4760cf2b94c0ee1c192d9d0621033723e42b8",
+          "raw_return": -0.47955345225094037,
+          "max_drawdown": -0.49265865792986285,
+          "case_result": "loss"
+        },
+        {
+          "case_id": "aegis_case_688525_3",
+          "symbol": "688525",
+          "entry_date": "2024-03-22",
+          "source_signal_pass": false,
+          "feature_reasons": [
+            "liquidity_present",
+            "not_intraday_overheated",
+            "factor_overlay_not_confirmed"
+          ],
+          "covered_endpoints": [
+            "stk_factor",
+            "daily_basic"
+          ],
+          "feature_hash": "fa31dfaa5e19c80f637fdec095e4760cf2b94c0ee1c192d9d0621033723e42b8",
+          "raw_return": -0.2070422535211267,
+          "max_drawdown": -0.3410211267605634,
+          "case_result": "loss"
+        },
+        {
+          "case_id": "aegis_case_688525_4",
+          "symbol": "688525",
+          "entry_date": "2024-07-03",
+          "source_signal_pass": false,
+          "feature_reasons": [
+            "liquidity_present",
+            "not_intraday_overheated",
+            "factor_overlay_not_confirmed"
+          ],
+          "covered_endpoints": [
+            "stk_factor",
+            "daily_basic"
+          ],
+          "feature_hash": "fa31dfaa5e19c80f637fdec095e4760cf2b94c0ee1c192d9d0621033723e42b8",
+          "raw_return": -0.13540856031128412,
+          "max_drawdown": -0.2260985748218527,
+          "case_result": "loss"
+        },
+        {
+          "case_id": "aegis_case_001309_1",
+          "symbol": "001309",
+          "entry_date": "2023-09-01",
+          "source_signal_pass": false,
+          "feature_reasons": [
+            "liquidity_present",
+            "not_intraday_overheated",
+            "factor_overlay_not_confirmed"
+          ],
+          "covered_endpoints": [
+            "stk_factor",
+            "daily_basic"
+          ],
+          "feature_hash": "fa31dfaa5e19c80f637fdec095e4760cf2b94c0ee1c192d9d0621033723e42b8",
+          "raw_return": 0.10820895522388052,
+          "max_drawdown": -0.09999999999999998,
+          "case_result": "win"
+        },
+        {
+          "case_id": "aegis_case_001309_2",
+          "symbol": "001309",
+          "entry_date": "2023-12-12",
+          "source_signal_pass": false,
+          "feature_reasons": [
+            "liquidity_present",
+            "not_intraday_overheated",
+            "factor_overlay_not_confirmed"
+          ],
+          "covered_endpoints": [
+            "stk_factor",
+            "daily_basic"
+          ],
+          "feature_hash": "fa31dfaa5e19c80f637fdec095e4760cf2b94c0ee1c192d9d0621033723e42b8",
+          "raw_return": -0.1874999999999999,
+          "max_drawdown": -0.20539572136157647,
+          "case_result": "loss"
+        },
+        {
+          "case_id": "aegis_case_001309_3",
+          "symbol": "001309",
+          "entry_date": "2024-03-22",
+          "source_signal_pass": false,
+          "feature_reasons": [
+            "liquidity_present",
+            "not_intraday_overheated",
+            "factor_overlay_not_confirmed"
+          ],
+          "covered_endpoints": [
+            "stk_factor",
+            "daily_basic"
+          ],
+          "feature_hash": "fa31dfaa5e19c80f637fdec095e4760cf2b94c0ee1c192d9d0621033723e42b8",
+          "raw_return": -0.07053846153846155,
+          "max_drawdown": -0.20902527075812272,
+          "case_result": "loss"
+        },
+        {
+          "case_id": "aegis_case_001309_4",
+          "symbol": "001309",
+          "entry_date": "2024-07-03",
+          "source_signal_pass": true,
+          "feature_reasons": [
+            "liquidity_present",
+            "valuation_not_extreme",
+            "not_intraday_overheated"
+          ],
+          "covered_endpoints": [
+            "stk_factor",
+            "daily_basic"
+          ],
+          "feature_hash": "ab13df2383187239289efc677f79d6d76c94ca2ed9673fb22d795bc5f445d1ae",
+          "raw_return": -0.1614893617021277,
+          "max_drawdown": -0.251750350070014,
+          "case_result": "loss"
+        },
+        {
+          "case_id": "aegis_case_000100_1",
+          "symbol": "000100",
+          "entry_date": "2023-09-01",
+          "source_signal_pass": false,
+          "feature_reasons": [
+            "liquidity_present",
+            "not_intraday_overheated",
+            "factor_overlay_not_confirmed"
+          ],
+          "covered_endpoints": [
+            "stk_factor",
+            "daily_basic"
+          ],
+          "feature_hash": "fa31dfaa5e19c80f637fdec095e4760cf2b94c0ee1c192d9d0621033723e42b8",
+          "raw_return": -0.009685230024213065,
+          "max_drawdown": -0.07311320754716977,
+          "case_result": "loss"
+        },
+        {
+          "case_id": "aegis_case_000100_2",
+          "symbol": "000100",
+          "entry_date": "2023-12-12",
+          "source_signal_pass": true,
+          "feature_reasons": [
+            "liquidity_present",
+            "valuation_not_extreme",
+            "not_intraday_overheated"
+          ],
+          "covered_endpoints": [
+            "stk_factor",
+            "daily_basic"
+          ],
+          "feature_hash": "ab13df2383187239289efc677f79d6d76c94ca2ed9673fb22d795bc5f445d1ae",
+          "raw_return": 0.05499999999999994,
+          "max_drawdown": -0.030000000000000027,
+          "case_result": "win"
+        },
+        {
+          "case_id": "aegis_case_000100_3",
+          "symbol": "000100",
+          "entry_date": "2024-03-22",
+          "source_signal_pass": true,
+          "feature_reasons": [
+            "liquidity_present",
+            "valuation_not_extreme",
+            "not_intraday_overheated"
+          ],
+          "covered_endpoints": [
+            "stk_factor",
+            "daily_basic"
+          ],
+          "feature_hash": "ab13df2383187239289efc677f79d6d76c94ca2ed9673fb22d795bc5f445d1ae",
+          "raw_return": 0.06696428571428559,
+          "max_drawdown": -0.07003891050583644,
+          "case_result": "win"
+        },
+        {
+          "case_id": "aegis_case_000100_4",
+          "symbol": "000100",
+          "entry_date": "2024-07-03",
+          "source_signal_pass": true,
+          "feature_reasons": [
+            "liquidity_present",
+            "valuation_not_extreme",
+            "not_intraday_overheated"
+          ],
+          "covered_endpoints": [
+            "stk_factor",
+            "daily_basic"
+          ],
+          "feature_hash": "ab13df2383187239289efc677f79d6d76c94ca2ed9673fb22d795bc5f445d1ae",
+          "raw_return": -0.09048723897911826,
+          "max_drawdown": -0.1345707656612528,
+          "case_result": "loss"
+        },
+        {
+          "case_id": "aegis_case_002407_1",
+          "symbol": "002407",
+          "entry_date": "2023-09-01",
+          "source_signal_pass": true,
+          "feature_reasons": [
+            "liquidity_present",
+            "valuation_not_extreme",
+            "not_intraday_overheated"
+          ],
+          "covered_endpoints": [
+            "stk_factor",
+            "daily_basic"
+          ],
+          "feature_hash": "ab13df2383187239289efc677f79d6d76c94ca2ed9673fb22d795bc5f445d1ae",
+          "raw_return": -0.019512195121951237,
+          "max_drawdown": -0.08720930232558144,
+          "case_result": "loss"
+        },
+        {
+          "case_id": "aegis_case_002407_2",
+          "symbol": "002407",
+          "entry_date": "2023-12-12",
+          "source_signal_pass": true,
+          "feature_reasons": [
+            "liquidity_present",
+            "valuation_not_extreme",
+            "not_intraday_overheated"
+          ],
+          "covered_endpoints": [
+            "stk_factor",
+            "daily_basic"
+          ],
+          "feature_hash": "ab13df2383187239289efc677f79d6d76c94ca2ed9673fb22d795bc5f445d1ae",
+          "raw_return": -0.050403225806451624,
+          "max_drawdown": -0.07621550591327197,
+          "case_result": "loss"
+        },
+        {
+          "case_id": "aegis_case_002407_3",
+          "symbol": "002407",
+          "entry_date": "2024-03-22",
+          "source_signal_pass": true,
+          "feature_reasons": [
+            "liquidity_present",
+            "valuation_not_extreme",
+            "not_intraday_overheated"
+          ],
+          "covered_endpoints": [
+            "stk_factor",
+            "daily_basic"
+          ],
+          "feature_hash": "ab13df2383187239289efc677f79d6d76c94ca2ed9673fb22d795bc5f445d1ae",
+          "raw_return": -0.08170391061452509,
+          "max_drawdown": -0.19325153374233128,
+          "case_result": "loss"
+        },
+        {
+          "case_id": "aegis_case_002407_4",
+          "symbol": "002407",
+          "entry_date": "2024-07-03",
+          "source_signal_pass": true,
+          "feature_reasons": [
+            "liquidity_present",
+            "valuation_not_extreme",
+            "not_intraday_overheated"
+          ],
+          "covered_endpoints": [
+            "stk_factor",
+            "daily_basic"
+          ],
+          "feature_hash": "ab13df2383187239289efc677f79d6d76c94ca2ed9673fb22d795bc5f445d1ae",
+          "raw_return": -0.09271523178807939,
+          "max_drawdown": -0.13327814569536423,
+          "case_result": "loss"
         }
       ],
       "allowed_next_step": "do_not_rank_collect_more_cases_or_rework_signal",
@@ -690,17 +2871,18 @@
       "disposition": "DEEP_SANDBOX_FAIL",
       "reasons": [
         "source_signal_win_rate_below_threshold",
-        "source_signal_average_return_below_threshold"
+        "source_signal_average_return_below_threshold",
+        "source_signal_drawdown_breached"
       ],
       "metrics": {
-        "eligible_case_count": 8,
-        "source_signal_case_count": 8,
+        "eligible_case_count": 40,
+        "source_signal_case_count": 40,
         "source_signal_rate": 1.0,
-        "source_signal_win_rate": 0.25,
-        "source_signal_average_return": -0.039362826047773775,
-        "source_signal_max_drawdown": -0.1770094562647755,
-        "source_signal_best_return": 0.08576998050682261,
-        "source_signal_worst_return": -0.17124704491725773
+        "source_signal_win_rate": 0.275,
+        "source_signal_average_return": -0.06170014820472054,
+        "source_signal_max_drawdown": -0.49265865792986285,
+        "source_signal_best_return": 0.1466389054134445,
+        "source_signal_worst_return": -0.47955345225094037
       },
       "case_features": [
         {
@@ -830,6 +3012,518 @@
           "raw_return": 0.08576998050682261,
           "max_drawdown": -0.05233644859813069,
           "case_result": "win"
+        },
+        {
+          "case_id": "aegis_case_600150_1",
+          "symbol": "600150",
+          "entry_date": "2023-09-01",
+          "source_signal_pass": true,
+          "feature_reasons": [
+            "management_reward_or_holding_present"
+          ],
+          "covered_endpoints": [
+            "stk_rewards"
+          ],
+          "feature_hash": "1407e147f35b89f7686f8dd5695995013a4e044dbd714fb0d2862ee4b352adfa",
+          "raw_return": -0.0021134202183867856,
+          "max_drawdown": -0.06396957123098201,
+          "case_result": "loss"
+        },
+        {
+          "case_id": "aegis_case_600150_2",
+          "symbol": "600150",
+          "entry_date": "2023-12-12",
+          "source_signal_pass": true,
+          "feature_reasons": [
+            "management_reward_or_holding_present"
+          ],
+          "covered_endpoints": [
+            "stk_rewards"
+          ],
+          "feature_hash": "1407e147f35b89f7686f8dd5695995013a4e044dbd714fb0d2862ee4b352adfa",
+          "raw_return": 0.013203613620569765,
+          "max_drawdown": -0.0383471074380165,
+          "case_result": "win"
+        },
+        {
+          "case_id": "aegis_case_600150_3",
+          "symbol": "600150",
+          "entry_date": "2024-03-22",
+          "source_signal_pass": true,
+          "feature_reasons": [
+            "management_reward_or_holding_present"
+          ],
+          "covered_endpoints": [
+            "stk_rewards"
+          ],
+          "feature_hash": "1407e147f35b89f7686f8dd5695995013a4e044dbd714fb0d2862ee4b352adfa",
+          "raw_return": 0.04428571428571426,
+          "max_drawdown": -0.07655381505811021,
+          "case_result": "win"
+        },
+        {
+          "case_id": "aegis_case_600150_4",
+          "symbol": "600150",
+          "entry_date": "2024-07-03",
+          "source_signal_pass": true,
+          "feature_reasons": [
+            "management_reward_or_holding_present"
+          ],
+          "covered_endpoints": [
+            "stk_rewards"
+          ],
+          "feature_hash": "13cbd93abb728e5c78186b84cbf165516ba1fc56b2875da5598ac8a011dc1a76",
+          "raw_return": 0.01335311572700304,
+          "max_drawdown": -0.07169373549883995,
+          "case_result": "win"
+        },
+        {
+          "case_id": "aegis_case_300475_1",
+          "symbol": "300475",
+          "entry_date": "2023-09-01",
+          "source_signal_pass": true,
+          "feature_reasons": [
+            "management_reward_or_holding_present"
+          ],
+          "covered_endpoints": [
+            "stk_rewards"
+          ],
+          "feature_hash": "83e5111b4db33e98a2b04d74ca444e5d60d6384006c5f840c6897a0f4a93f955",
+          "raw_return": -0.08699578567128241,
+          "max_drawdown": -0.2320547945205479,
+          "case_result": "loss"
+        },
+        {
+          "case_id": "aegis_case_300475_2",
+          "symbol": "300475",
+          "entry_date": "2023-12-12",
+          "source_signal_pass": true,
+          "feature_reasons": [
+            "management_reward_or_holding_present"
+          ],
+          "covered_endpoints": [
+            "stk_rewards"
+          ],
+          "feature_hash": "83e5111b4db33e98a2b04d74ca444e5d60d6384006c5f840c6897a0f4a93f955",
+          "raw_return": -0.20533333333333337,
+          "max_drawdown": -0.20533333333333337,
+          "case_result": "loss"
+        },
+        {
+          "case_id": "aegis_case_300475_3",
+          "symbol": "300475",
+          "entry_date": "2024-03-22",
+          "source_signal_pass": true,
+          "feature_reasons": [
+            "management_reward_or_holding_present"
+          ],
+          "covered_endpoints": [
+            "stk_rewards"
+          ],
+          "feature_hash": "83e5111b4db33e98a2b04d74ca444e5d60d6384006c5f840c6897a0f4a93f955",
+          "raw_return": -0.20974820974820974,
+          "max_drawdown": -0.20974820974820974,
+          "case_result": "loss"
+        },
+        {
+          "case_id": "aegis_case_300475_4",
+          "symbol": "300475",
+          "entry_date": "2024-07-03",
+          "source_signal_pass": true,
+          "feature_reasons": [
+            "management_reward_or_holding_present"
+          ],
+          "covered_endpoints": [
+            "stk_rewards"
+          ],
+          "feature_hash": "bcf3f5fd581369bac05d7e4a987430725cfe22da0e3e6a33bfba98e965e3eaca",
+          "raw_return": -0.006502395619438661,
+          "max_drawdown": -0.1601745091928951,
+          "case_result": "loss"
+        },
+        {
+          "case_id": "aegis_case_300476_1",
+          "symbol": "300476",
+          "entry_date": "2023-09-01",
+          "source_signal_pass": true,
+          "feature_reasons": [
+            "management_reward_or_holding_present"
+          ],
+          "covered_endpoints": [
+            "stk_rewards"
+          ],
+          "feature_hash": "f3dc26a41bf70fc331c85cf47425f3087e63f16dc5db16fe149db301c4e6118c",
+          "raw_return": 0.01902173913043481,
+          "max_drawdown": -0.13969050606440814,
+          "case_result": "win"
+        },
+        {
+          "case_id": "aegis_case_300476_2",
+          "symbol": "300476",
+          "entry_date": "2023-12-12",
+          "source_signal_pass": true,
+          "feature_reasons": [
+            "management_reward_or_holding_present"
+          ],
+          "covered_endpoints": [
+            "stk_rewards"
+          ],
+          "feature_hash": "f3dc26a41bf70fc331c85cf47425f3087e63f16dc5db16fe149db301c4e6118c",
+          "raw_return": -0.14807197943444728,
+          "max_drawdown": -0.15012853470437004,
+          "case_result": "loss"
+        },
+        {
+          "case_id": "aegis_case_300476_3",
+          "symbol": "300476",
+          "entry_date": "2024-03-22",
+          "source_signal_pass": true,
+          "feature_reasons": [
+            "management_reward_or_holding_present"
+          ],
+          "covered_endpoints": [
+            "stk_rewards"
+          ],
+          "feature_hash": "f3dc26a41bf70fc331c85cf47425f3087e63f16dc5db16fe149db301c4e6118c",
+          "raw_return": 0.0003937007874015297,
+          "max_drawdown": -0.09094488188976368,
+          "case_result": "win"
+        },
+        {
+          "case_id": "aegis_case_300476_4",
+          "symbol": "300476",
+          "entry_date": "2024-07-03",
+          "source_signal_pass": true,
+          "feature_reasons": [
+            "management_reward_or_holding_present"
+          ],
+          "covered_endpoints": [
+            "stk_rewards"
+          ],
+          "feature_hash": "fef6b4887588584e292e1da8a5f0ad0240447ccb6041580e49dce6f940fdbf63",
+          "raw_return": 0.1466389054134445,
+          "max_drawdown": -0.10204081632653061,
+          "case_result": "win"
+        },
+        {
+          "case_id": "aegis_case_002709_1",
+          "symbol": "002709",
+          "entry_date": "2023-09-01",
+          "source_signal_pass": true,
+          "feature_reasons": [
+            "management_reward_or_holding_present"
+          ],
+          "covered_endpoints": [
+            "stk_rewards"
+          ],
+          "feature_hash": "9f27cb8b7fa4f02ce3c8e3e257a40bd1b2aa07d2cdf3909d03e198f6bf39a036",
+          "raw_return": -0.18198417528910527,
+          "max_drawdown": -0.19424460431654678,
+          "case_result": "loss"
+        },
+        {
+          "case_id": "aegis_case_002709_2",
+          "symbol": "002709",
+          "entry_date": "2023-12-12",
+          "source_signal_pass": true,
+          "feature_reasons": [
+            "management_reward_or_holding_present"
+          ],
+          "covered_endpoints": [
+            "stk_rewards"
+          ],
+          "feature_hash": "9f27cb8b7fa4f02ce3c8e3e257a40bd1b2aa07d2cdf3909d03e198f6bf39a036",
+          "raw_return": -0.022174840085287806,
+          "max_drawdown": -0.11004784688995206,
+          "case_result": "loss"
+        },
+        {
+          "case_id": "aegis_case_002709_3",
+          "symbol": "002709",
+          "entry_date": "2024-03-22",
+          "source_signal_pass": true,
+          "feature_reasons": [
+            "management_reward_or_holding_present"
+          ],
+          "covered_endpoints": [
+            "stk_rewards"
+          ],
+          "feature_hash": "9f27cb8b7fa4f02ce3c8e3e257a40bd1b2aa07d2cdf3909d03e198f6bf39a036",
+          "raw_return": -0.004312410158121671,
+          "max_drawdown": -0.20039138943248536,
+          "case_result": "loss"
+        },
+        {
+          "case_id": "aegis_case_002709_4",
+          "symbol": "002709",
+          "entry_date": "2024-07-03",
+          "source_signal_pass": true,
+          "feature_reasons": [
+            "management_reward_or_holding_present"
+          ],
+          "covered_endpoints": [
+            "stk_rewards"
+          ],
+          "feature_hash": "dd7405bbb05fb1a763f32d16e7f7bc60b9c2b8f31a7f03a70af595e80dd5f3e0",
+          "raw_return": -0.10188895248998275,
+          "max_drawdown": -0.15684029765311958,
+          "case_result": "loss"
+        },
+        {
+          "case_id": "aegis_case_688525_1",
+          "symbol": "688525",
+          "entry_date": "2023-09-01",
+          "source_signal_pass": true,
+          "feature_reasons": [
+            "management_reward_or_holding_present"
+          ],
+          "covered_endpoints": [
+            "stk_rewards"
+          ],
+          "feature_hash": "65fbf0b009488e972089b805bd812808a40dc345f25d53bb6a78106b712660a6",
+          "raw_return": -0.06500872600349039,
+          "max_drawdown": -0.13146640915988406,
+          "case_result": "loss"
+        },
+        {
+          "case_id": "aegis_case_688525_2",
+          "symbol": "688525",
+          "entry_date": "2023-12-12",
+          "source_signal_pass": true,
+          "feature_reasons": [
+            "management_reward_or_holding_present"
+          ],
+          "covered_endpoints": [
+            "stk_rewards"
+          ],
+          "feature_hash": "65fbf0b009488e972089b805bd812808a40dc345f25d53bb6a78106b712660a6",
+          "raw_return": -0.47955345225094037,
+          "max_drawdown": -0.49265865792986285,
+          "case_result": "loss"
+        },
+        {
+          "case_id": "aegis_case_688525_3",
+          "symbol": "688525",
+          "entry_date": "2024-03-22",
+          "source_signal_pass": true,
+          "feature_reasons": [
+            "management_reward_or_holding_present"
+          ],
+          "covered_endpoints": [
+            "stk_rewards"
+          ],
+          "feature_hash": "65fbf0b009488e972089b805bd812808a40dc345f25d53bb6a78106b712660a6",
+          "raw_return": -0.2070422535211267,
+          "max_drawdown": -0.3410211267605634,
+          "case_result": "loss"
+        },
+        {
+          "case_id": "aegis_case_688525_4",
+          "symbol": "688525",
+          "entry_date": "2024-07-03",
+          "source_signal_pass": true,
+          "feature_reasons": [
+            "management_reward_or_holding_present"
+          ],
+          "covered_endpoints": [
+            "stk_rewards"
+          ],
+          "feature_hash": "d698b32aadadaa406d771dce49c60c04a2859303016c8e2ab4a5af4363aa7aa8",
+          "raw_return": -0.13540856031128412,
+          "max_drawdown": -0.2260985748218527,
+          "case_result": "loss"
+        },
+        {
+          "case_id": "aegis_case_001309_1",
+          "symbol": "001309",
+          "entry_date": "2023-09-01",
+          "source_signal_pass": true,
+          "feature_reasons": [
+            "management_reward_or_holding_present"
+          ],
+          "covered_endpoints": [
+            "stk_rewards"
+          ],
+          "feature_hash": "ac0d83f01c69f08104c15b8940402b873fc934a3546fe5efc43e4d7b725cd866",
+          "raw_return": 0.10820895522388052,
+          "max_drawdown": -0.09999999999999998,
+          "case_result": "win"
+        },
+        {
+          "case_id": "aegis_case_001309_2",
+          "symbol": "001309",
+          "entry_date": "2023-12-12",
+          "source_signal_pass": true,
+          "feature_reasons": [
+            "management_reward_or_holding_present"
+          ],
+          "covered_endpoints": [
+            "stk_rewards"
+          ],
+          "feature_hash": "ac0d83f01c69f08104c15b8940402b873fc934a3546fe5efc43e4d7b725cd866",
+          "raw_return": -0.1874999999999999,
+          "max_drawdown": -0.20539572136157647,
+          "case_result": "loss"
+        },
+        {
+          "case_id": "aegis_case_001309_3",
+          "symbol": "001309",
+          "entry_date": "2024-03-22",
+          "source_signal_pass": true,
+          "feature_reasons": [
+            "management_reward_or_holding_present"
+          ],
+          "covered_endpoints": [
+            "stk_rewards"
+          ],
+          "feature_hash": "d21322335d5fcf5f3cccfd6cd970ed73c23c5e764abf776ceb02173429abda09",
+          "raw_return": -0.07053846153846155,
+          "max_drawdown": -0.20902527075812272,
+          "case_result": "loss"
+        },
+        {
+          "case_id": "aegis_case_001309_4",
+          "symbol": "001309",
+          "entry_date": "2024-07-03",
+          "source_signal_pass": true,
+          "feature_reasons": [
+            "management_reward_or_holding_present"
+          ],
+          "covered_endpoints": [
+            "stk_rewards"
+          ],
+          "feature_hash": "d21322335d5fcf5f3cccfd6cd970ed73c23c5e764abf776ceb02173429abda09",
+          "raw_return": -0.1614893617021277,
+          "max_drawdown": -0.251750350070014,
+          "case_result": "loss"
+        },
+        {
+          "case_id": "aegis_case_000100_1",
+          "symbol": "000100",
+          "entry_date": "2023-09-01",
+          "source_signal_pass": true,
+          "feature_reasons": [
+            "management_reward_or_holding_present"
+          ],
+          "covered_endpoints": [
+            "stk_rewards"
+          ],
+          "feature_hash": "b9cce1f3f064225d54869a058948c55ed4ec2017041f2046e8e2a803d3b88973",
+          "raw_return": -0.009685230024213065,
+          "max_drawdown": -0.07311320754716977,
+          "case_result": "loss"
+        },
+        {
+          "case_id": "aegis_case_000100_2",
+          "symbol": "000100",
+          "entry_date": "2023-12-12",
+          "source_signal_pass": true,
+          "feature_reasons": [
+            "management_reward_or_holding_present"
+          ],
+          "covered_endpoints": [
+            "stk_rewards"
+          ],
+          "feature_hash": "b9cce1f3f064225d54869a058948c55ed4ec2017041f2046e8e2a803d3b88973",
+          "raw_return": 0.05499999999999994,
+          "max_drawdown": -0.030000000000000027,
+          "case_result": "win"
+        },
+        {
+          "case_id": "aegis_case_000100_3",
+          "symbol": "000100",
+          "entry_date": "2024-03-22",
+          "source_signal_pass": true,
+          "feature_reasons": [
+            "management_reward_or_holding_present"
+          ],
+          "covered_endpoints": [
+            "stk_rewards"
+          ],
+          "feature_hash": "b9cce1f3f064225d54869a058948c55ed4ec2017041f2046e8e2a803d3b88973",
+          "raw_return": 0.06696428571428559,
+          "max_drawdown": -0.07003891050583644,
+          "case_result": "win"
+        },
+        {
+          "case_id": "aegis_case_000100_4",
+          "symbol": "000100",
+          "entry_date": "2024-07-03",
+          "source_signal_pass": true,
+          "feature_reasons": [
+            "management_reward_or_holding_present"
+          ],
+          "covered_endpoints": [
+            "stk_rewards"
+          ],
+          "feature_hash": "85703e7235526eae7bdee1158642fde767d464c07e7e509263230a8bc73c7a57",
+          "raw_return": -0.09048723897911826,
+          "max_drawdown": -0.1345707656612528,
+          "case_result": "loss"
+        },
+        {
+          "case_id": "aegis_case_002407_1",
+          "symbol": "002407",
+          "entry_date": "2023-09-01",
+          "source_signal_pass": true,
+          "feature_reasons": [
+            "management_reward_or_holding_present"
+          ],
+          "covered_endpoints": [
+            "stk_rewards"
+          ],
+          "feature_hash": "7a9794bea4f9b1b41e86f1a07951c851f51cfef9b428184552d7ac3cb630bdba",
+          "raw_return": -0.019512195121951237,
+          "max_drawdown": -0.08720930232558144,
+          "case_result": "loss"
+        },
+        {
+          "case_id": "aegis_case_002407_2",
+          "symbol": "002407",
+          "entry_date": "2023-12-12",
+          "source_signal_pass": true,
+          "feature_reasons": [
+            "management_reward_or_holding_present"
+          ],
+          "covered_endpoints": [
+            "stk_rewards"
+          ],
+          "feature_hash": "7a9794bea4f9b1b41e86f1a07951c851f51cfef9b428184552d7ac3cb630bdba",
+          "raw_return": -0.050403225806451624,
+          "max_drawdown": -0.07621550591327197,
+          "case_result": "loss"
+        },
+        {
+          "case_id": "aegis_case_002407_3",
+          "symbol": "002407",
+          "entry_date": "2024-03-22",
+          "source_signal_pass": true,
+          "feature_reasons": [
+            "management_reward_or_holding_present"
+          ],
+          "covered_endpoints": [
+            "stk_rewards"
+          ],
+          "feature_hash": "7a9794bea4f9b1b41e86f1a07951c851f51cfef9b428184552d7ac3cb630bdba",
+          "raw_return": -0.08170391061452509,
+          "max_drawdown": -0.19325153374233128,
+          "case_result": "loss"
+        },
+        {
+          "case_id": "aegis_case_002407_4",
+          "symbol": "002407",
+          "entry_date": "2024-07-03",
+          "source_signal_pass": true,
+          "feature_reasons": [
+            "management_reward_or_holding_present"
+          ],
+          "covered_endpoints": [
+            "stk_rewards"
+          ],
+          "feature_hash": "d5a2183a93f549181f351df36e1d5f2e28da9cdbf1c9c623ea52e762e86f2fb7",
+          "raw_return": -0.09271523178807939,
+          "max_drawdown": -0.13327814569536423,
+          "case_result": "loss"
         }
       ],
       "allowed_next_step": "do_not_rank_collect_more_cases_or_rework_signal",
@@ -847,9 +3541,9 @@
     "source_feature_coverage": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/a_share_tushare_source_feature_coverage_latest.json"
   },
   "source_hashes": {
-    "source_hypothesis_queue": "904f42f0a96585b2424c750de239be2dee35525679ae784251606907fc109189",
-    "strategy_specific_historical_cases": "b3d2eadcde54cb759da6f6508b336b6ea5d70a57811cbc3a1d76b124a3e6adc8",
-    "source_feature_coverage": "9023c0814f76a7da80090d8beeb82665a43d5f63ded68a3655c36fd9e36ca3cc"
+    "source_hypothesis_queue": "460b82b27f9459cc7e01dce6bf52f638e30c0763720fdf42ff509adec1a18194",
+    "strategy_specific_historical_cases": "3bea698cfe824e6b4468a0bb0fa0dda1d009be55926f20083bc2be375e060296",
+    "source_feature_coverage": "83fd643775cc1e528f2ad880b412dbdb9678d1a618709c4177b9421bd4266186"
   },
   "checks": {
     "feature_coverage_pass": true,

@@ -1,7 +1,7 @@
 # A-share Tushare Source Hypothesis Evaluation
 
 - Status: `PASS`
-- Generated At: `2026-07-12T21:23:53+08:00`
+- Generated At: `2026-07-12T21:50:49+08:00`
 - Hypothesis Count: `6`
 - Proxy Pass: `0`
 - Needs More A-share Cases: `0`
@@ -12,12 +12,12 @@
 
 | Hypothesis | Disposition | Confidence | Cases | Avg Return | Reasons |
 | --- | --- | --- | ---: | ---: | --- |
-| `hyp_a_tushare_capital_flow_accumulation` | `proxy_fail` | `LOW_SAMPLE_PROXY` | 8 | -0.0394 | proxy_win_rate_below_threshold, proxy_average_return_below_threshold |
-| `hyp_a_tushare_dragon_tiger_seat_confirmation` | `proxy_fail` | `LOW_SAMPLE_PROXY` | 8 | -0.0394 | proxy_win_rate_below_threshold, proxy_average_return_below_threshold |
-| `hyp_a_tushare_institutional_ownership_stability` | `proxy_fail` | `LOW_SAMPLE_PROXY` | 8 | -0.0394 | proxy_win_rate_below_threshold, proxy_average_return_below_threshold |
-| `hyp_a_tushare_holder_concentration_improvement` | `proxy_fail` | `LOW_SAMPLE_PROXY` | 8 | -0.0394 | proxy_win_rate_below_threshold, proxy_average_return_below_threshold |
-| `hyp_a_tushare_factor_liquidity_quality_overlay` | `proxy_fail` | `LOW_SAMPLE_PROXY` | 8 | -0.0394 | proxy_win_rate_below_threshold, proxy_average_return_below_threshold |
-| `hyp_a_tushare_governance_reward_alignment` | `proxy_fail` | `LOW_SAMPLE_PROXY` | 8 | -0.0394 | proxy_win_rate_below_threshold, proxy_average_return_below_threshold |
+| `hyp_a_tushare_capital_flow_accumulation` | `proxy_fail` | `PROXY` | 40 | -0.0617 | proxy_win_rate_below_threshold, proxy_average_return_below_threshold, proxy_average_drawdown_too_deep |
+| `hyp_a_tushare_dragon_tiger_seat_confirmation` | `proxy_fail` | `PROXY` | 40 | -0.0617 | proxy_win_rate_below_threshold, proxy_average_return_below_threshold, proxy_average_drawdown_too_deep |
+| `hyp_a_tushare_institutional_ownership_stability` | `proxy_fail` | `PROXY` | 40 | -0.0617 | proxy_win_rate_below_threshold, proxy_average_return_below_threshold, proxy_average_drawdown_too_deep |
+| `hyp_a_tushare_holder_concentration_improvement` | `proxy_fail` | `PROXY` | 40 | -0.0617 | proxy_win_rate_below_threshold, proxy_average_return_below_threshold, proxy_average_drawdown_too_deep |
+| `hyp_a_tushare_factor_liquidity_quality_overlay` | `proxy_fail` | `PROXY` | 40 | -0.0617 | proxy_win_rate_below_threshold, proxy_average_return_below_threshold, proxy_average_drawdown_too_deep |
+| `hyp_a_tushare_governance_reward_alignment` | `proxy_fail` | `PROXY` | 40 | -0.0617 | proxy_win_rate_below_threshold, proxy_average_return_below_threshold, proxy_average_drawdown_too_deep |
 
 ## Limitation
 
