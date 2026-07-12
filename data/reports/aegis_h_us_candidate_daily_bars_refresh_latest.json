@@ -1,11 +1,11 @@
 {
   "type": "aegis_h_us_candidate_daily_bars_refresh",
   "status": "PASS",
-  "generated_at": "2026-07-12T14:30:11+08:00",
+  "generated_at": "2026-07-12T14:46:37+08:00",
   "summary": {
     "candidate_count": 11,
-    "refreshed_count": 9,
-    "blocked_count": 2,
+    "refreshed_count": 11,
+    "blocked_count": 0,
     "network_used": true,
     "fallback_provider_available": true,
     "user_facing_suggestion_allowed": false,
@@ -80,7 +80,7 @@
       "market": "HK",
       "provider": "eodhd",
       "provider_symbol": "0005.HK",
-      "status": "fetch_failed_or_empty",
+      "status": "refreshed",
       "request_window": {
         "from": "2024-01-01",
         "to": "2026-07-12"
@@ -89,15 +89,31 @@
       "token_stored": false,
       "real_trade_allowed": false,
       "http_status": 0,
-      "row_count": 0,
-      "error_type": "HTTPError",
+      "provider_used": "yahoo_chart",
+      "provider_symbol_used": "0005.HK",
+      "row_count": 618,
+      "first_date": "2024-01-02",
+      "last_date": "2026-07-10",
+      "csv_path": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/cache/aegis_h_us_candidate_daily_bars/HK/daily_bars/0005_hk.csv",
+      "csv_sha256": "7401f4f97a658d8e0ce176c6ca679bd5b2b69f03fb337ad5d50d1a8952b0b636",
       "fallback_status": {
         "provider": "twelve_data",
         "http_status": 0,
         "symbol": null,
         "row_count": 0,
         "error_type": "HTTPError",
-        "api_status": null
+        "api_status": null,
+        "next_fallback_status": {
+          "provider": "yahoo_chart",
+          "http_status": 200,
+          "symbol": "0005.HK",
+          "row_count": 618,
+          "error_type": null,
+          "api_status": null,
+          "request_url_stored": false,
+          "token_required": false,
+          "token_stored": false
+        }
       }
     },
     {
@@ -199,7 +215,7 @@
       "market": "US",
       "provider": "eodhd",
       "provider_symbol": "PANW.US",
-      "status": "fetch_failed_or_empty",
+      "status": "refreshed",
       "request_window": {
         "from": "2024-01-01",
         "to": "2026-07-12"
@@ -208,15 +224,20 @@
       "token_stored": false,
       "real_trade_allowed": false,
       "http_status": 0,
-      "row_count": 0,
-      "error_type": "HTTPError",
+      "provider_used": "twelve_data",
+      "provider_symbol_used": "PANW",
+      "row_count": 632,
+      "first_date": "2024-01-02",
+      "last_date": "2026-07-10",
+      "csv_path": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/cache/aegis_h_us_candidate_daily_bars/US/daily_bars/panw_us.csv",
+      "csv_sha256": "590d506f95c50aa123478903ca169ab54d16c9d8dea11e64cc458440ccb8a96f",
       "fallback_status": {
         "provider": "twelve_data",
-        "http_status": 0,
-        "symbol": null,
-        "row_count": 0,
-        "error_type": "HTTPError",
-        "api_status": null
+        "http_status": 200,
+        "symbol": "PANW",
+        "row_count": 632,
+        "error_type": null,
+        "api_status": "ok"
       }
     },
     {
@@ -327,20 +348,31 @@
       "token_stored": false,
       "real_trade_allowed": false,
       "http_status": 0,
-      "provider_used": "twelve_data",
+      "provider_used": "yahoo_chart",
       "provider_symbol_used": "NET",
       "row_count": 632,
       "first_date": "2024-01-02",
       "last_date": "2026-07-10",
       "csv_path": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/cache/aegis_h_us_candidate_daily_bars/US/daily_bars/net_us.csv",
-      "csv_sha256": "7847f6755d0ba74f54f68a168a51c57f2f7524d1250ff1e08cac2d61129af93b",
+      "csv_sha256": "14dbbf63c143cd9dee5b3e585f479ea9716a2e209e8fe9adec767c678caed76f",
       "fallback_status": {
         "provider": "twelve_data",
-        "http_status": 200,
-        "symbol": "NET",
-        "row_count": 632,
-        "error_type": null,
-        "api_status": "ok"
+        "http_status": 0,
+        "symbol": null,
+        "row_count": 0,
+        "error_type": "HTTPError",
+        "api_status": null,
+        "next_fallback_status": {
+          "provider": "yahoo_chart",
+          "http_status": 200,
+          "symbol": "NET",
+          "row_count": 632,
+          "error_type": null,
+          "api_status": null,
+          "request_url_stored": false,
+          "token_required": false,
+          "token_stored": false
+        }
       }
     }
   ],

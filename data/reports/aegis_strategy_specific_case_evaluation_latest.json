@@ -1,0 +1,430 @@
+{
+  "type": "aegis_strategy_specific_case_evaluation",
+  "status": "PASS",
+  "generated_at": "2026-07-12T14:47:51+08:00",
+  "thresholds": {
+    "min_case_count": 4,
+    "min_win_rate": 0.5,
+    "min_average_return": 0.0,
+    "hard_worst_return": -0.2,
+    "watch_average_drawdown": -0.12,
+    "watch_worst_return": -0.12
+  },
+  "summary": {
+    "candidate_count": 13,
+    "simulation_research_candidate_count": 8,
+    "watch_only_count": 2,
+    "downgraded_count": 3,
+    "user_facing_suggestion_allowed": false,
+    "next_stage": "surface dispositions in dashboard and stock assistant brief"
+  },
+  "items": [
+    {
+      "symbol": "603893",
+      "name": "瑞芯微",
+      "market": "A",
+      "matched_strategy_ids": [
+        "qvm",
+        "low_vol_momentum",
+        "a_share_short_momentum",
+        "growth_breakout"
+      ],
+      "disposition": "downgraded",
+      "reasons": [
+        "win_rate_below_threshold",
+        "average_return_below_threshold"
+      ],
+      "summary": {
+        "case_count": 4,
+        "win_rate": 0.25,
+        "average_return": -0.03987299427283694,
+        "average_max_drawdown": -0.13162914843771775,
+        "best_return": 0.05810972483336174,
+        "worst_return": -0.17124704491725773
+      },
+      "simulation_only": true,
+      "user_facing_suggestion_allowed": false,
+      "real_trade_allowed": false
+    },
+    {
+      "symbol": "300059",
+      "name": "东方财富",
+      "market": "A",
+      "matched_strategy_ids": [
+        "qvm",
+        "low_vol_momentum",
+        "a_share_short_momentum"
+      ],
+      "disposition": "downgraded",
+      "reasons": [
+        "win_rate_below_threshold",
+        "average_return_below_threshold"
+      ],
+      "summary": {
+        "case_count": 4,
+        "win_rate": 0.25,
+        "average_return": -0.03885265782271061,
+        "average_max_drawdown": -0.08405515278934739,
+        "best_return": 0.08576998050682261,
+        "worst_return": -0.10544452101998614
+      },
+      "simulation_only": true,
+      "user_facing_suggestion_allowed": false,
+      "real_trade_allowed": false
+    },
+    {
+      "symbol": "VRTX",
+      "name": "Vertex Pharmaceuticals Incorporated",
+      "market": "US",
+      "matched_strategy_ids": [
+        "low_vol_momentum",
+        "growth_breakout"
+      ],
+      "disposition": "simulation_research_candidate",
+      "reasons": [
+        "historical_case_thresholds_passed"
+      ],
+      "summary": {
+        "case_count": 4,
+        "win_rate": 0.75,
+        "average_return": 0.02828282052451242,
+        "average_max_drawdown": -0.0690076745404849,
+        "best_return": 0.11402084216613906,
+        "worst_return": -0.0566422901181276
+      },
+      "simulation_only": true,
+      "user_facing_suggestion_allowed": false,
+      "real_trade_allowed": false
+    },
+    {
+      "symbol": "AMAT",
+      "name": "Applied Materials, Inc.",
+      "market": "US",
+      "matched_strategy_ids": [
+        "low_vol_momentum",
+        "growth_breakout"
+      ],
+      "disposition": "simulation_research_candidate",
+      "reasons": [
+        "historical_case_thresholds_passed"
+      ],
+      "summary": {
+        "case_count": 4,
+        "win_rate": 0.75,
+        "average_return": 0.06461384459845404,
+        "average_max_drawdown": -0.11850712600494046,
+        "best_return": 0.21224922612725639,
+        "worst_return": -0.0748087431693989
+      },
+      "simulation_only": true,
+      "user_facing_suggestion_allowed": false,
+      "real_trade_allowed": false
+    },
+    {
+      "symbol": "00005",
+      "name": "汇丰控股",
+      "market": "HK",
+      "matched_strategy_ids": [
+        "low_vol_momentum"
+      ],
+      "disposition": "simulation_research_candidate",
+      "reasons": [
+        "historical_case_thresholds_passed"
+      ],
+      "summary": {
+        "case_count": 4,
+        "win_rate": 0.75,
+        "average_return": 0.0543184305522163,
+        "average_max_drawdown": -0.04086509252455217,
+        "best_return": 0.13451586502389024,
+        "worst_return": -0.025416990892767943
+      },
+      "simulation_only": true,
+      "user_facing_suggestion_allowed": false,
+      "real_trade_allowed": false
+    },
+    {
+      "symbol": "OKTA",
+      "name": "Okta, Inc.",
+      "market": "US",
+      "matched_strategy_ids": [
+        "low_vol_momentum",
+        "growth_breakout"
+      ],
+      "disposition": "simulation_research_candidate",
+      "reasons": [
+        "historical_case_thresholds_passed"
+      ],
+      "summary": {
+        "case_count": 4,
+        "win_rate": 0.5,
+        "average_return": 0.037684686707321335,
+        "average_max_drawdown": -0.06120496648646037,
+        "best_return": 0.20631743821789073,
+        "worst_return": -0.04999999999999993
+      },
+      "simulation_only": true,
+      "user_facing_suggestion_allowed": false,
+      "real_trade_allowed": false
+    },
+    {
+      "symbol": "MRNA",
+      "name": "Moderna, Inc.",
+      "market": "US",
+      "matched_strategy_ids": [
+        "low_vol_momentum",
+        "growth_breakout"
+      ],
+      "disposition": "downgraded",
+      "reasons": [
+        "win_rate_below_threshold",
+        "average_return_below_threshold",
+        "hard_worst_return_breached"
+      ],
+      "summary": {
+        "case_count": 4,
+        "win_rate": 0.25,
+        "average_return": -0.01669040209446676,
+        "average_max_drawdown": -0.20073134007698099,
+        "best_return": 0.4844531419873883,
+        "worst_return": -0.3016853932584269
+      },
+      "simulation_only": true,
+      "user_facing_suggestion_allowed": false,
+      "real_trade_allowed": false
+    },
+    {
+      "symbol": "HOOD",
+      "name": "Robinhood Markets, Inc.",
+      "market": "US",
+      "matched_strategy_ids": [
+        "low_vol_momentum"
+      ],
+      "disposition": "watch_only",
+      "reasons": [
+        "average_drawdown_watch",
+        "worst_return_watch"
+      ],
+      "summary": {
+        "case_count": 4,
+        "win_rate": 0.75,
+        "average_return": 0.11405548407776533,
+        "average_max_drawdown": -0.14225570018148043,
+        "best_return": 0.2965493283927745,
+        "worst_return": -0.13177041228779296
+      },
+      "simulation_only": true,
+      "user_facing_suggestion_allowed": false,
+      "real_trade_allowed": false
+    },
+    {
+      "symbol": "PANW",
+      "name": "Palo Alto Networks, Inc.",
+      "market": "US",
+      "matched_strategy_ids": [
+        "low_vol_momentum",
+        "growth_breakout"
+      ],
+      "disposition": "simulation_research_candidate",
+      "reasons": [
+        "historical_case_thresholds_passed"
+      ],
+      "summary": {
+        "case_count": 4,
+        "win_rate": 1.0,
+        "average_return": 0.14455054684580876,
+        "average_max_drawdown": -0.0456406454704025,
+        "best_return": 0.23816579287288198,
+        "worst_return": 0.031800031399095374
+      },
+      "simulation_only": true,
+      "user_facing_suggestion_allowed": false,
+      "real_trade_allowed": false
+    },
+    {
+      "symbol": "KLAC",
+      "name": "KLA Corporation",
+      "market": "US",
+      "matched_strategy_ids": [
+        "low_vol_momentum",
+        "growth_breakout"
+      ],
+      "disposition": "watch_only",
+      "reasons": [
+        "average_drawdown_watch"
+      ],
+      "summary": {
+        "case_count": 4,
+        "win_rate": 0.75,
+        "average_return": 0.048292855578327826,
+        "average_max_drawdown": -0.13256676447958732,
+        "best_return": 0.13026036071044889,
+        "worst_return": -0.08121422725815541
+      },
+      "simulation_only": true,
+      "user_facing_suggestion_allowed": false,
+      "real_trade_allowed": false
+    },
+    {
+      "symbol": "RBLX",
+      "name": "Roblox Corporation",
+      "market": "US",
+      "matched_strategy_ids": [
+        "low_vol_momentum",
+        "ai_photonics_supply_chain"
+      ],
+      "disposition": "simulation_research_candidate",
+      "reasons": [
+        "historical_case_thresholds_passed"
+      ],
+      "summary": {
+        "case_count": 4,
+        "win_rate": 0.75,
+        "average_return": 0.16784456723186222,
+        "average_max_drawdown": -0.07835888497646842,
+        "best_return": 0.3337349397590361,
+        "worst_return": -0.09723191439869738
+      },
+      "simulation_only": true,
+      "user_facing_suggestion_allowed": false,
+      "real_trade_allowed": false
+    },
+    {
+      "symbol": "BAC",
+      "name": "Bank of America Corporation",
+      "market": "US",
+      "matched_strategy_ids": [
+        "low_vol_momentum"
+      ],
+      "disposition": "simulation_research_candidate",
+      "reasons": [
+        "historical_case_thresholds_passed"
+      ],
+      "summary": {
+        "case_count": 4,
+        "win_rate": 1.0,
+        "average_return": 0.06805653879807522,
+        "average_max_drawdown": -0.04032685080252932,
+        "best_return": 0.09716312056737597,
+        "worst_return": 0.003244787610619415
+      },
+      "simulation_only": true,
+      "user_facing_suggestion_allowed": false,
+      "real_trade_allowed": false
+    },
+    {
+      "symbol": "NET",
+      "name": "Cloudflare, Inc.",
+      "market": "US",
+      "matched_strategy_ids": [
+        "low_vol_momentum",
+        "growth_breakout"
+      ],
+      "disposition": "simulation_research_candidate",
+      "reasons": [
+        "historical_case_thresholds_passed"
+      ],
+      "summary": {
+        "case_count": 4,
+        "win_rate": 0.75,
+        "average_return": 0.10810064327328092,
+        "average_max_drawdown": -0.06225455949464759,
+        "best_return": 0.2218327315233164,
+        "worst_return": -0.003780660720001383
+      },
+      "simulation_only": true,
+      "user_facing_suggestion_allowed": false,
+      "real_trade_allowed": false
+    }
+  ],
+  "source_reports": {
+    "strategy_specific_historical_cases": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/aegis_strategy_specific_historical_cases_latest.json"
+  },
+  "source_hashes": {
+    "strategy_specific_historical_cases": "ebe0c0eecaade26f2c8743a1f67f01e2b21174dec10139978de5b3359bb9411c"
+  },
+  "checks": {
+    "source_pass": true,
+    "all_candidates_evaluated": true,
+    "data_gap_count_zero": true,
+    "production_records_unchanged": true,
+    "no_broker_api": true,
+    "no_webhook": true,
+    "no_order_placement": true,
+    "no_position_size": true
+  },
+  "safety": {
+    "simulation_only": true,
+    "research_only": true,
+    "no_broker_api": true,
+    "no_order_placement": true,
+    "no_trading_webhook": true,
+    "no_position_size": true,
+    "no_live_order_signal": true,
+    "real_trade_allowed": false
+  },
+  "production_record_files_before": {
+    "recommendations_jsonl": {
+      "exists": true,
+      "size": 12284,
+      "sha256": "05b2e56c9b547cbe3ce4cb71b7cb776185e23ef2cc3bc9a46a918bce0cfb65dc"
+    },
+    "paper_trades_jsonl": {
+      "exists": false,
+      "size": null,
+      "sha256": null
+    },
+    "reviews_jsonl": {
+      "exists": false,
+      "size": null,
+      "sha256": null
+    },
+    "memory_jsonl": {
+      "exists": false,
+      "size": null,
+      "sha256": null
+    },
+    "investment_memory_jsonl": {
+      "exists": false,
+      "size": null,
+      "sha256": null
+    },
+    "feedback_events_jsonl": {
+      "exists": true,
+      "size": 1977,
+      "sha256": "c468fe43ec7097f129805fb71b6551c2db809213e2e13e9b2f1b2354f53ad65f"
+    }
+  },
+  "production_record_files_after": {
+    "recommendations_jsonl": {
+      "exists": true,
+      "size": 12284,
+      "sha256": "05b2e56c9b547cbe3ce4cb71b7cb776185e23ef2cc3bc9a46a918bce0cfb65dc"
+    },
+    "paper_trades_jsonl": {
+      "exists": false,
+      "size": null,
+      "sha256": null
+    },
+    "reviews_jsonl": {
+      "exists": false,
+      "size": null,
+      "sha256": null
+    },
+    "memory_jsonl": {
+      "exists": false,
+      "size": null,
+      "sha256": null
+    },
+    "investment_memory_jsonl": {
+      "exists": false,
+      "size": null,
+      "sha256": null
+    },
+    "feedback_events_jsonl": {
+      "exists": true,
+      "size": 1977,
+      "sha256": "c468fe43ec7097f129805fb71b6551c2db809213e2e13e9b2f1b2354f53ad65f"
+    }
+  }
+}

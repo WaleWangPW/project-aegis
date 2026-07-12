@@ -130,6 +130,15 @@ def twelve_symbols(symbol: str, market: str) -> list[str]:
     return [symbol]
 
 
+def yahoo_symbol(symbol: str, market: str) -> str:
+    if market == "US":
+        return symbol
+    if market == "HK":
+        stripped = symbol.lstrip("0") or symbol
+        return f"{stripped.zfill(4)}.HK"
+    return symbol
+
+
 def fetch_twelve_daily_bars(symbol: str, market: str, token: str, start: str, end: str) -> tuple[int, Any, str | None]:
     last_payload: Any = None
     last_status = 0
@@ -162,6 +171,30 @@ def fetch_twelve_daily_bars(symbol: str, market: str, token: str, start: str, en
             last_payload = {"error": exc.__class__.__name__, "message": str(exc)[:160]}
         time.sleep(8 if market == "HK" else 1)
     return last_status, last_payload or {}, None
+
+
+def fetch_yahoo_daily_bars(symbol: str, market: str, start: str, end: str) -> tuple[int, Any, str]:
+    provider_symbol = yahoo_symbol(symbol, market)
+    start_ts = int(datetime.fromisoformat(start).replace(tzinfo=timezone.utc).timestamp())
+    end_ts = int(datetime.fromisoformat(end).replace(tzinfo=timezone.utc).timestamp()) + 86400
+    query = urllib.parse.urlencode(
+        {
+            "period1": start_ts,
+            "period2": end_ts,
+            "interval": "1d",
+            "events": "history",
+            "includeAdjustedClose": "true",
+        }
+    )
+    url = f"https://query1.finance.yahoo.com/v8/finance/chart/{urllib.parse.quote(provider_symbol)}?{query}"
+    try:
+        with urllib.request.urlopen(
+            urllib.request.Request(url, headers={"User-Agent": "Project-Aegis/1.0"}),
+            timeout=30,
+        ) as response:
+            return response.status, json.loads(response.read().decode("utf-8")), provider_symbol
+    except Exception as exc:  # noqa: BLE001
+        return 0, {"error": exc.__class__.__name__, "message": str(exc)[:160]}, provider_symbol
 
 
 def normalize_rows(payload: Any) -> list[dict[str, Any]]:
@@ -207,6 +240,45 @@ def normalize_twelve_rows(payload: Any) -> list[dict[str, Any]]:
                 }
             )
         except (KeyError, TypeError, ValueError):
+            continue
+    return rows
+
+
+def normalize_yahoo_rows(payload: Any) -> list[dict[str, Any]]:
+    if not isinstance(payload, dict):
+        return []
+    chart = payload.get("chart") if isinstance(payload.get("chart"), dict) else {}
+    results = chart.get("result") if isinstance(chart.get("result"), list) else []
+    if not results:
+        return []
+    result = results[0] or {}
+    timestamps = result.get("timestamp") if isinstance(result.get("timestamp"), list) else []
+    quote_list = result.get("indicators", {}).get("quote", [])
+    adj_list = result.get("indicators", {}).get("adjclose", [])
+    quote = quote_list[0] if quote_list else {}
+    adjclose = adj_list[0].get("adjclose", []) if adj_list else []
+    rows = []
+    for idx, ts in enumerate(timestamps):
+        try:
+            open_value = quote.get("open", [])[idx]
+            high_value = quote.get("high", [])[idx]
+            low_value = quote.get("low", [])[idx]
+            close_value = quote.get("close", [])[idx]
+            if open_value is None or high_value is None or low_value is None or close_value is None:
+                continue
+            adjusted_close = adjclose[idx] if idx < len(adjclose) and adjclose[idx] is not None else close_value
+            rows.append(
+                {
+                    "date": datetime.fromtimestamp(int(ts), tz=timezone.utc).date().isoformat(),
+                    "open": float(open_value),
+                    "high": float(high_value),
+                    "low": float(low_value),
+                    "close": float(close_value),
+                    "adjusted_close": float(adjusted_close),
+                    "volume": float((quote.get("volume", [0]) or [0])[idx] or 0),
+                }
+            )
+        except (IndexError, TypeError, ValueError):
             continue
     return rows
 
@@ -296,6 +368,33 @@ def build_report() -> dict[str, Any]:
                 rows = twelve_rows
                 provider_used = "twelve_data"
                 provider_symbol_used = twelve_symbol or str(item["symbol"])
+        if not rows:
+            yahoo_status, yahoo_payload, yahoo_provider_symbol = fetch_yahoo_daily_bars(
+                str(item["symbol"]),
+                str(item["market"]),
+                start,
+                end,
+            )
+            yahoo_rows = normalize_yahoo_rows(yahoo_payload)
+            yahoo_status_report = {
+                "provider": "yahoo_chart",
+                "http_status": yahoo_status,
+                "symbol": yahoo_provider_symbol,
+                "row_count": len(yahoo_rows),
+                "error_type": yahoo_payload.get("error") if isinstance(yahoo_payload, dict) else None,
+                "api_status": yahoo_payload.get("chart", {}).get("error") if isinstance(yahoo_payload, dict) else None,
+                "request_url_stored": False,
+                "token_required": False,
+                "token_stored": False,
+            }
+            if fallback_status:
+                fallback_status["next_fallback_status"] = yahoo_status_report
+            else:
+                fallback_status = yahoo_status_report
+            if yahoo_rows:
+                rows = yahoo_rows
+                provider_used = "yahoo_chart"
+                provider_symbol_used = yahoo_provider_symbol
         if rows:
             safe_symbol = code.lower().replace(".", "_")
             csv_path = CACHE_ROOT / str(item["market"]) / "daily_bars" / f"{safe_symbol}.csv"

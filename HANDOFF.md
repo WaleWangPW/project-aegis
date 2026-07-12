@@ -7,22 +7,35 @@
 - Public GitHub repository created and pushed: `https://github.com/WaleWangPW/project-aegis`.
 - Current remote: `origin https://github.com/WaleWangPW/project-aegis.git`; default branch `main`; current public snapshot commit `eaacc8b Initial Project Aegis public snapshot`.
 - Public snapshot was pushed after secret/path checks: `.env`, `data/cache/`, `.venv/`, `.playwright-cli/`, and known API-token strings were not tracked.
+- Added Yahoo Chart as a final no-token daily-bar fallback after EODHD and Twelve Data for H/US historical research data.
+- H/US daily-bar refresh now covers all 11/11 H/US research candidates; `00005.HK` and `PANW` gaps are fixed.
 - Added `scripts/build_aegis_strategy_specific_historical_cases.py`.
+- Added `scripts/evaluate_aegis_strategy_specific_cases.py`.
 - New report generated: `data/reports/aegis_strategy_specific_historical_cases_latest.json`, status `PASS`.
-- Current strategy-specific historical cases: 13 research candidates, 11 candidates with cases, 44 historical cases total, 2 data gaps.
+- New evaluation report generated: `data/reports/aegis_strategy_specific_case_evaluation_latest.json`, status `PASS`.
+- Current strategy-specific historical cases: 13 research candidates, 13 candidates with cases, 52 historical cases total, 0 data gaps.
+- Case evaluation result: 8 simulation research candidates, 2 watch-only candidates, 3 downgraded candidates.
 - A-share cases assembled from existing point-in-time Tushare daily cache:
   - `603893 / 瑞芯微`: 4 cases, win rate `25%`, average return about `-3.99%`.
   - `300059 / 东方财富`: 4 cases, win rate `25%`, average return about `-3.89%`.
-- EODHD/Twelve daily-bar refresh now covers 9 of 11 H/US candidates; remaining gaps are 00005.HK and PANW.
-- Dashboard assets bumped through `v2.css?v=20260712g` and `v2.js?v=20260712g`.
-- Dashboard `历史回测` drawer now displays `策略族代理`, `逐标的 case`, and `数据缺口`.
+- Newly fixed H/US cases:
+  - `00005 / 汇丰控股`: 4 cases, win rate `75%`, average return about `+5.43%`.
+  - `PANW / Palo Alto Networks`: 4 cases, win rate `100%`, average return about `+14.46%`.
+- Downgraded by historical case evaluation: `603893`, `300059`, `MRNA`.
+- Watch-only by historical case evaluation: `HOOD`, `KLAC`.
+- Dashboard assets bumped through `v2.css?v=20260712h` and `v2.js?v=20260712h`.
+- Dashboard `历史回测` drawer now displays `策略族代理`, `逐标的 case`, `数据缺口`, and `case 结果评估`.
 - Validation run:
+  - `python3 -m py_compile scripts/refresh_aegis_h_us_candidate_daily_bars.py scripts/build_aegis_strategy_specific_historical_cases.py scripts/evaluate_aegis_strategy_specific_cases.py` exit code `0`.
+  - `python3 scripts/refresh_aegis_h_us_candidate_daily_bars.py` exit code `0`, refreshed `11/11`, blocked `0`.
   - `python3 -m py_compile scripts/build_aegis_strategy_specific_historical_cases.py` exit code `0`.
   - `node --check dashboard/v2.js` exit code `0`.
-  - `python3 scripts/build_aegis_strategy_specific_historical_cases.py` exit code `0`.
-  - Browser QA for `http://localhost:8080/dashboard/index.html?v=20260712g`: no console error/warn; strategy-specific case panel visible; 390px mobile width has no horizontal overflow.
+  - `python3 scripts/build_aegis_strategy_specific_historical_cases.py` exit code `0`, case count `52`, data gaps `0`.
+  - `python3 scripts/evaluate_aegis_strategy_specific_cases.py` exit code `0`.
+  - `curl -I http://localhost:8080/dashboard/index.html` returned `200 OK`.
+  - Playwright QA for `http://localhost:8080/dashboard/index.html`: no console error/warn after inline favicon fix; `历史回测` drawer shows case evaluation.
 - Safety boundary unchanged: case assembly only; no user-facing suggestion, no broker API, no webhook, no real order placement, no position sizing, no live order signal.
-- Next stage: fix remaining 00005.HK and PANW daily-bar gaps, then evaluate assembled candidate cases before any simulation suggestion upgrade.
+- Next stage: surface case-evaluation dispositions in the stock assistant card flow and use them to demote weak candidates before user-facing simulation briefs.
 
 ## 2026-07-12 Update: Strategy Sandbox Coverage Connected To Dashboard
 

@@ -1,16 +1,16 @@
 {
   "type": "aegis_strategy_specific_historical_cases",
   "status": "PASS",
-  "generated_at": "2026-07-12T14:30:19+08:00",
-  "run_id": "aegis_strategy_specific_historical_cases_20260712T063019Z",
+  "generated_at": "2026-07-12T14:46:44+08:00",
+  "run_id": "aegis_strategy_specific_historical_cases_20260712T064644Z",
   "summary": {
     "candidate_count": 13,
-    "candidates_with_cases": 11,
-    "historical_case_count": 44,
-    "data_gap_count": 2,
+    "candidates_with_cases": 13,
+    "historical_case_count": 52,
+    "data_gap_count": 0,
     "a_share_case_count": 8,
-    "h_us_case_count": 36,
-    "direct_candidate_backtest_count": 44,
+    "h_us_case_count": 44,
+    "direct_candidate_backtest_count": 52,
     "user_facing_suggestion_allowed": false,
     "next_stage": "evaluate assembled candidate cases and refresh US/HK historical bars"
   },
@@ -121,22 +121,22 @@
       "matched_strategy_ids": [
         "low_vol_momentum"
       ],
-      "status": "missing_h_us_daily_bars_for_current_candidate",
-      "case_count": 0,
+      "status": "case_assembled",
+      "case_count": 4,
       "summary": {
-        "case_count": 0,
-        "win_rate": null,
-        "average_return": null,
-        "average_max_drawdown": null,
-        "best_return": null,
-        "worst_return": null
+        "case_count": 4,
+        "win_rate": 0.75,
+        "average_return": 0.0543184305522163,
+        "average_max_drawdown": -0.04086509252455217,
+        "best_return": 0.13451586502389024,
+        "worst_return": -0.025416990892767943
       },
       "user_facing_suggestion_allowed": false,
       "real_trade_allowed": false,
       "provider_symbol": "0005.HK",
-      "available_trade_dates": 0,
-      "required_trade_dates": 22,
-      "cache_path": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/cache/aegis_h_us_candidate_daily_bars/HK/daily_bars/0005_hk.csv"
+      "available_trade_dates": 618,
+      "cache_path": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/cache/aegis_h_us_candidate_daily_bars/HK/daily_bars/0005_hk.csv",
+      "cache_sha256": "7401f4f97a658d8e0ce176c6ca679bd5b2b69f03fb337ad5d50d1a8952b0b636"
     },
     {
       "symbol": "OKTA",
@@ -220,22 +220,22 @@
         "low_vol_momentum",
         "growth_breakout"
       ],
-      "status": "missing_h_us_daily_bars_for_current_candidate",
-      "case_count": 0,
+      "status": "case_assembled",
+      "case_count": 4,
       "summary": {
-        "case_count": 0,
-        "win_rate": null,
-        "average_return": null,
-        "average_max_drawdown": null,
-        "best_return": null,
-        "worst_return": null
+        "case_count": 4,
+        "win_rate": 1.0,
+        "average_return": 0.14455054684580876,
+        "average_max_drawdown": -0.0456406454704025,
+        "best_return": 0.23816579287288198,
+        "worst_return": 0.031800031399095374
       },
       "user_facing_suggestion_allowed": false,
       "real_trade_allowed": false,
       "provider_symbol": "PANW.US",
-      "available_trade_dates": 0,
-      "required_trade_dates": 22,
-      "cache_path": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/cache/aegis_h_us_candidate_daily_bars/US/daily_bars/panw_us.csv"
+      "available_trade_dates": 632,
+      "cache_path": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/cache/aegis_h_us_candidate_daily_bars/US/daily_bars/panw_us.csv",
+      "cache_sha256": "590d506f95c50aa123478903ca169ab54d16c9d8dea11e64cc458440ccb8a96f"
     },
     {
       "symbol": "KLAC",
@@ -324,17 +324,17 @@
       "summary": {
         "case_count": 4,
         "win_rate": 0.75,
-        "average_return": 0.1081006258770558,
-        "average_max_drawdown": -0.06225456048380526,
-        "best_return": 0.22183270360085583,
-        "worst_return": -0.003780680529300473
+        "average_return": 0.10810064327328092,
+        "average_max_drawdown": -0.06225455949464759,
+        "best_return": 0.2218327315233164,
+        "worst_return": -0.003780660720001383
       },
       "user_facing_suggestion_allowed": false,
       "real_trade_allowed": false,
       "provider_symbol": "NET.US",
       "available_trade_dates": 632,
       "cache_path": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/cache/aegis_h_us_candidate_daily_bars/US/daily_bars/net_us.csv",
-      "cache_sha256": "7847f6755d0ba74f54f68a168a51c57f2f7524d1250ff1e08cac2d61129af93b"
+      "cache_sha256": "14dbbf63c143cd9dee5b3e585f479ea9716a2e209e8fe9adec767c678caed76f"
     }
   ],
   "historical_cases": [
@@ -719,6 +719,94 @@
       "evidence_ref": "aegis_strategy_specific_case:cf10319b47af18b687b3f36fa24890facfc93d44e34949a5a2922fdebe2c3bdc"
     },
     {
+      "case_id": "aegis_case_00005_1",
+      "symbol": "00005",
+      "provider_symbol": "0005.HK",
+      "name": "汇丰控股",
+      "market": "HK",
+      "matched_strategy_ids": [
+        "low_vol_momentum"
+      ],
+      "entry_date": "2024-01-02",
+      "exit_date": "2024-01-30",
+      "entry_close": 52.26844024658203,
+      "exit_close": 50.93993377685547,
+      "raw_return": -0.025416990892767943,
+      "max_drawdown": -0.0866822792114137,
+      "holding_trade_days": 20,
+      "point_in_time_case": true,
+      "data_cutoff_date": "2024-01-02",
+      "future_data_used_for_selection": false,
+      "case_result": "loss",
+      "evidence_ref": "aegis_strategy_specific_case:c531f19d899d854669de6126df79e1e238ef81f83a3e08b012fbc3337d0d99d7"
+    },
+    {
+      "case_id": "aegis_case_00005_2",
+      "symbol": "00005",
+      "provider_symbol": "0005.HK",
+      "name": "汇丰控股",
+      "market": "HK",
+      "matched_strategy_ids": [
+        "low_vol_momentum"
+      ],
+      "entry_date": "2024-10-24",
+      "exit_date": "2024-11-21",
+      "entry_close": 62.33687973022461,
+      "exit_close": 65.35113525390625,
+      "raw_return": 0.04835428941465203,
+      "max_drawdown": -0.04422948951707395,
+      "holding_trade_days": 20,
+      "point_in_time_case": true,
+      "data_cutoff_date": "2024-10-24",
+      "future_data_used_for_selection": false,
+      "case_result": "win",
+      "evidence_ref": "aegis_strategy_specific_case:b9d72108f4a51b30f7a7cc52eab7372fc3dd394cde9467930daa07b3ba7a2e31"
+    },
+    {
+      "case_id": "aegis_case_00005_3",
+      "symbol": "00005",
+      "provider_symbol": "0005.HK",
+      "name": "汇丰控股",
+      "market": "HK",
+      "matched_strategy_ids": [
+        "low_vol_momentum"
+      ],
+      "entry_date": "2025-08-15",
+      "exit_date": "2025-09-12",
+      "entry_close": 96.4032974243164,
+      "exit_close": 102.17019653320312,
+      "raw_return": 0.059820558663090884,
+      "max_drawdown": -0.023152669178550744,
+      "holding_trade_days": 20,
+      "point_in_time_case": true,
+      "data_cutoff_date": "2025-08-15",
+      "future_data_used_for_selection": false,
+      "case_result": "win",
+      "evidence_ref": "aegis_strategy_specific_case:5e19e78ebbb78514985f1a03baa6525687c9dafae3fe571b354eb6ed99031e69"
+    },
+    {
+      "case_id": "aegis_case_00005_4",
+      "symbol": "00005",
+      "provider_symbol": "0005.HK",
+      "name": "汇丰控股",
+      "market": "HK",
+      "matched_strategy_ids": [
+        "low_vol_momentum"
+      ],
+      "entry_date": "2026-06-10",
+      "exit_date": "2026-07-10",
+      "entry_close": 135.3000030517578,
+      "exit_close": 153.5,
+      "raw_return": 0.13451586502389024,
+      "max_drawdown": -0.009395932191170298,
+      "holding_trade_days": 20,
+      "point_in_time_case": true,
+      "data_cutoff_date": "2026-06-10",
+      "future_data_used_for_selection": false,
+      "case_result": "win",
+      "evidence_ref": "aegis_strategy_specific_case:c4918f7cf1eb3349c2ae1242d9ff9e8914a62fac5aed5cc351dc3cadf5e80d42"
+    },
+    {
       "case_id": "aegis_case_okta_1",
       "symbol": "OKTA",
       "provider_symbol": "OKTA.US",
@@ -989,6 +1077,98 @@
       "future_data_used_for_selection": false,
       "case_result": "win",
       "evidence_ref": "aegis_strategy_specific_case:da69f510b98b092a4dca8032b9a50ed94d461eb571abefd3a0fe51b88c2e43e3"
+    },
+    {
+      "case_id": "aegis_case_panw_1",
+      "symbol": "PANW",
+      "provider_symbol": "PANW.US",
+      "name": "Palo Alto Networks, Inc.",
+      "market": "US",
+      "matched_strategy_ids": [
+        "low_vol_momentum",
+        "growth_breakout"
+      ],
+      "entry_date": "2024-01-02",
+      "exit_date": "2024-01-31",
+      "entry_close": 144.46001,
+      "exit_close": 169.255,
+      "raw_return": 0.1716391269805393,
+      "max_drawdown": -0.021336319561923167,
+      "holding_trade_days": 20,
+      "point_in_time_case": true,
+      "data_cutoff_date": "2024-01-02",
+      "future_data_used_for_selection": false,
+      "case_result": "win",
+      "evidence_ref": "aegis_strategy_specific_case:0f97d07235c4793e97c448ef15c82b463f0720f225c566972682a0143eb88f73"
+    },
+    {
+      "case_id": "aegis_case_panw_2",
+      "symbol": "PANW",
+      "provider_symbol": "PANW.US",
+      "name": "Palo Alto Networks, Inc.",
+      "market": "US",
+      "matched_strategy_ids": [
+        "low_vol_momentum",
+        "growth_breakout"
+      ],
+      "entry_date": "2024-10-22",
+      "exit_date": "2024-11-19",
+      "entry_close": 188.050003,
+      "exit_close": 194.029999,
+      "raw_return": 0.031800031399095374,
+      "max_drawdown": -0.047620323622116656,
+      "holding_trade_days": 20,
+      "point_in_time_case": true,
+      "data_cutoff_date": "2024-10-22",
+      "future_data_used_for_selection": false,
+      "case_result": "win",
+      "evidence_ref": "aegis_strategy_specific_case:f8a8a0b09eb4c307b93f537f25731c7804e32ab9ea248a37918e03ba47c18ccf"
+    },
+    {
+      "case_id": "aegis_case_panw_3",
+      "symbol": "PANW",
+      "provider_symbol": "PANW.US",
+      "name": "Palo Alto Networks, Inc.",
+      "market": "US",
+      "matched_strategy_ids": [
+        "low_vol_momentum",
+        "growth_breakout"
+      ],
+      "entry_date": "2025-08-15",
+      "exit_date": "2025-09-15",
+      "entry_close": 177.089996,
+      "exit_close": 201.28,
+      "raw_return": 0.1365972361307184,
+      "max_drawdown": -0.010285937578782933,
+      "holding_trade_days": 20,
+      "point_in_time_case": true,
+      "data_cutoff_date": "2025-08-15",
+      "future_data_used_for_selection": false,
+      "case_result": "win",
+      "evidence_ref": "aegis_strategy_specific_case:4febe201f4501f0ce44e18d0dde47429fba8d019009d2e0c98d1f0605ab78e0e"
+    },
+    {
+      "case_id": "aegis_case_panw_4",
+      "symbol": "PANW",
+      "provider_symbol": "PANW.US",
+      "name": "Palo Alto Networks, Inc.",
+      "market": "US",
+      "matched_strategy_ids": [
+        "low_vol_momentum",
+        "growth_breakout"
+      ],
+      "entry_date": "2026-06-10",
+      "exit_date": "2026-07-10",
+      "entry_close": 263.22,
+      "exit_close": 325.91,
+      "raw_return": 0.23816579287288198,
+      "max_drawdown": -0.10332000111878725,
+      "holding_trade_days": 20,
+      "point_in_time_case": true,
+      "data_cutoff_date": "2026-06-10",
+      "future_data_used_for_selection": false,
+      "case_result": "win",
+      "evidence_ref": "aegis_strategy_specific_case:ef9af6f8efe111e60b3d604ca36a57b35c546cd4fb9eb24a2fc8159198c094ab"
     },
     {
       "case_id": "aegis_case_klac_1",
@@ -1274,16 +1454,16 @@
       ],
       "entry_date": "2024-01-02",
       "exit_date": "2024-01-31",
-      "entry_close": 79.35,
-      "exit_close": 79.050003,
-      "raw_return": -0.003780680529300473,
-      "max_drawdown": -0.06648555739253659,
+      "entry_close": 79.3499984741211,
+      "exit_close": 79.05000305175781,
+      "raw_return": -0.003780660720001383,
+      "max_drawdown": -0.0664855601455856,
       "holding_trade_days": 20,
       "point_in_time_case": true,
       "data_cutoff_date": "2024-01-02",
       "future_data_used_for_selection": false,
       "case_result": "loss",
-      "evidence_ref": "aegis_strategy_specific_case:ced28286604721afe02a68191f93f4857aadaa4a1836e254abf595acd0e96e4a"
+      "evidence_ref": "aegis_strategy_specific_case:58f1d31b4f99698e25c99e1af0596aef341e5fe12362d3bd4344ea295243e865"
     },
     {
       "case_id": "aegis_case_net_2",
@@ -1297,16 +1477,16 @@
       ],
       "entry_date": "2024-10-22",
       "exit_date": "2024-11-19",
-      "entry_close": 88.46,
-      "exit_close": 96.37,
-      "raw_return": 0.08941894641645964,
-      "max_drawdown": -0.06157223499895459,
+      "entry_close": 88.45999908447266,
+      "exit_close": 96.37000274658203,
+      "raw_return": 0.08941898874039,
+      "max_drawdown": -0.06157230601670971,
       "holding_trade_days": 20,
       "point_in_time_case": true,
       "data_cutoff_date": "2024-10-22",
       "future_data_used_for_selection": false,
       "case_result": "win",
-      "evidence_ref": "aegis_strategy_specific_case:c6635f6fe0957007d35449a895b72b6ed5848d432ea52392f703fd64a84edefe"
+      "evidence_ref": "aegis_strategy_specific_case:276d9615c545d2bc4a1ca835c57057dd51ef565acf8fbfb25de46fefbac296ca"
     },
     {
       "case_id": "aegis_case_net_3",
@@ -1320,16 +1500,16 @@
       ],
       "entry_date": "2025-08-15",
       "exit_date": "2025-09-15",
-      "entry_close": 200.91,
-      "exit_close": 226.0099945,
-      "raw_return": 0.12493153402020818,
-      "max_drawdown": -0.047437861343084475,
+      "entry_close": 200.91000366210938,
+      "exit_close": 226.00999450683594,
+      "raw_return": 0.12493151354941867,
+      "max_drawdown": -0.047437817247400926,
       "holding_trade_days": 20,
       "point_in_time_case": true,
       "data_cutoff_date": "2025-08-15",
       "future_data_used_for_selection": false,
       "case_result": "win",
-      "evidence_ref": "aegis_strategy_specific_case:90094e2497a60dc0a060f8d28ec542ffec08def5c858da1e08b6bafb459ac8a5"
+      "evidence_ref": "aegis_strategy_specific_case:e72c1cd3bb62a5e74786d4e324e0099a68d6b21b53b090213c451a7c27599f7f"
     },
     {
       "case_id": "aegis_case_net_4",
@@ -1343,73 +1523,19 @@
       ],
       "entry_date": "2026-06-10",
       "exit_date": "2026-07-10",
-      "entry_close": 219.67,
-      "exit_close": 268.39999,
-      "raw_return": 0.22183270360085583,
-      "max_drawdown": -0.07352258820064539,
+      "entry_close": 219.6699981689453,
+      "exit_close": 268.3999938964844,
+      "raw_return": 0.2218327315233164,
+      "max_drawdown": -0.07352255456889412,
       "holding_trade_days": 20,
       "point_in_time_case": true,
       "data_cutoff_date": "2026-06-10",
       "future_data_used_for_selection": false,
       "case_result": "win",
-      "evidence_ref": "aegis_strategy_specific_case:9aedaed8ca6d0bebca1a928e766a40e10ddd26e3d4d35ac63491e6fd5d1f86f7"
+      "evidence_ref": "aegis_strategy_specific_case:21dabc3a76d0778cbd67c50ec92a1905f9abb5b5992f0e4662a6dc1b936a3158"
     }
   ],
-  "data_gaps": [
-    {
-      "symbol": "00005",
-      "name": "汇丰控股",
-      "market": "HK",
-      "matched_strategy_ids": [
-        "low_vol_momentum"
-      ],
-      "status": "missing_h_us_daily_bars_for_current_candidate",
-      "case_count": 0,
-      "summary": {
-        "case_count": 0,
-        "win_rate": null,
-        "average_return": null,
-        "average_max_drawdown": null,
-        "best_return": null,
-        "worst_return": null
-      },
-      "user_facing_suggestion_allowed": false,
-      "real_trade_allowed": false,
-      "provider_symbol": "0005.HK",
-      "available_trade_dates": 0,
-      "required_trade_dates": 22,
-      "cache_path": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/cache/aegis_h_us_candidate_daily_bars/HK/daily_bars/0005_hk.csv",
-      "gap_reason": "current US/HK candidate historical daily bars not refreshed yet",
-      "required_next_step": "refresh EODHD/Twelve daily bars and rerun case assembly"
-    },
-    {
-      "symbol": "PANW",
-      "name": "Palo Alto Networks, Inc.",
-      "market": "US",
-      "matched_strategy_ids": [
-        "low_vol_momentum",
-        "growth_breakout"
-      ],
-      "status": "missing_h_us_daily_bars_for_current_candidate",
-      "case_count": 0,
-      "summary": {
-        "case_count": 0,
-        "win_rate": null,
-        "average_return": null,
-        "average_max_drawdown": null,
-        "best_return": null,
-        "worst_return": null
-      },
-      "user_facing_suggestion_allowed": false,
-      "real_trade_allowed": false,
-      "provider_symbol": "PANW.US",
-      "available_trade_dates": 0,
-      "required_trade_dates": 22,
-      "cache_path": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/cache/aegis_h_us_candidate_daily_bars/US/daily_bars/panw_us.csv",
-      "gap_reason": "current US/HK candidate historical daily bars not refreshed yet",
-      "required_next_step": "refresh EODHD/Twelve daily bars and rerun case assembly"
-    }
-  ],
+  "data_gaps": [],
   "source_reports": {
     "strategy_validation_input": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/aegis_strategy_validation_input_latest.json",
     "strategy_sandbox_coverage": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/aegis_strategy_sandbox_validation_latest.json",
@@ -1420,7 +1546,7 @@
   "source_hashes": {
     "strategy_validation_input": "5ffc14d085cf98a12e80a4ffa7463bc0aaf6ec15cde04d916268e61359e847c4",
     "strategy_sandbox_coverage": "ece45915bc7b20aa09fdda865ef9d4a94f2cb9f4107b72f6e9adab1011618028",
-    "h_us_daily_bars_refresh": "58a4400eabcd528d25405ab30e1d36bcbf8d37c76a432f991ae4ce6dad5c41c3",
+    "h_us_daily_bars_refresh": "bc723de302e617e100f5df07068df3cc088f10c6730383c5bbf1d0d7a07b22aa",
     "stock_basic": "0bbc2d38cc4cde25b19d947ab5bd85c1558835da35985f73e62ab16449e99ae8"
   },
   "checks": {
@@ -1511,5 +1637,5 @@
       "sha256": "c468fe43ec7097f129805fb71b6551c2db809213e2e13e9b2f1b2354f53ad65f"
     }
   },
-  "run_dir": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/aegis_strategy_specific_historical_cases/aegis_strategy_specific_historical_cases_20260712T063019Z"
+  "run_dir": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/aegis_strategy_specific_historical_cases/aegis_strategy_specific_historical_cases_20260712T064644Z"
 }

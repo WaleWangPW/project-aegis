@@ -1,10 +1,10 @@
-generated_at=2026-07-12T14:30:11+08:00
+generated_at=2026-07-12T14:46:37+08:00
 exit_code=0
 report_json=/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/aegis_h_us_candidate_daily_bars_refresh_latest.json
-report_json_sha256=58a4400eabcd528d25405ab30e1d36bcbf8d37c76a432f991ae4ce6dad5c41c3
+report_json_sha256=bc723de302e617e100f5df07068df3cc088f10c6730383c5bbf1d0d7a07b22aa
 candidate_count=11
-refreshed_count=9
-blocked_count=2
+refreshed_count=11
+blocked_count=0
 network_used=true
 user_facing_suggestion_allowed=false
 no_real_trade=true
