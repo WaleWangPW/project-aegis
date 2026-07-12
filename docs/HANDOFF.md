@@ -8,6 +8,20 @@
 
 **Accepted engineering baseline:** `P25.6 PASS`
 
+**A-share refined ranking gate update:** Aegis now has a separate ranking gate
+between refined strategy sandbox and any simulation-sort impact. Command:
+`make review-a-share-refined-strategy-ranking-gate`. Latest report:
+`data/reports/a_share_refined_strategy_ranking_gate_latest.json`, status
+`PASS`, `ranking_gate_reviewed_count=1`, `ranking_gate_approved_count=0`,
+`ranking_gate_blocked_count=1`, `ranking_impact_allowed=false`,
+`user_facing_suggestion_allowed=false`, and `network_used=false`. The current
+`主力资金 + 筹码集中` candidate is blocked from ranking because the evidence is
+still too narrow: `3` cases, `2` unique symbols, `2` entry months, and max
+single-symbol share `0.6667`. Required next evidence: more event months, more
+unique symbols, and another managed-cycle rerun before any ranking impact.
+Latest ranking-gate report SHA256:
+`21c51843c7ba07ae4e09a7ebcd8654f4d16d6c966657a23830b7dab457670587`.
+
 **A-share refined strategy sandbox update:** Aegis now retests failed
 single-source Tushare signals as conservative combinations, without additional
 network calls. Command:
@@ -21,19 +35,23 @@ The first pass candidate is `主力资金 + 筹码集中`: `3` signal cases, win
 eligible for a separate ranking-gate review; it is not a recommendation.
 
 **Current stock-agent managed cycle:** `make
-stock-agent-a-share-strategy-cycle-managed` exited `0` with `command_count=10`,
+stock-agent-a-share-strategy-cycle-managed` exited `0` with `command_count=11`,
 `failed_command_count=0`, `candidate_count=33`, `historical_case_count=106`,
 `a_share_case_count=62`, `a_share_dragon_tiger_research_sample_case_count=22`,
 `deep_sandbox_pass_candidate_count=0`,
-`refined_sandbox_pass_candidate_count=1`, `rankable_strategy_count=0`, and
-`ranking_impact_allowed=false`. Latest managed report SHA256:
-`ac13db02af1c7f874091b89a013c189f32fb6a5b4e0d720c3965bec36936c978`.
+`refined_sandbox_pass_candidate_count=1`, `ranking_gate_reviewed_count=1`,
+`ranking_gate_approved_count=0`, `ranking_gate_blocked_count=1`,
+`rankable_strategy_count=0`, and `ranking_impact_allowed=false`. Latest
+managed report SHA256:
+`17fe87bb2b7469375868f0b6f2393637c8602ba70953222a7e1019aed80f4c39`.
 
 **Dashboard refined strategy update:** Dashboard cache version is now
-`20260712t`. The `策略` page now explicitly shows: single-source strategies
-failed, refined strategy candidates `1`, recommendation ranking `0`, and the
-combination result board. Playwright CLI QA verified the strategy page text and
-390px mobile width with no horizontal overflow.
+`20260712u`. The `策略` page now explicitly shows: refined combination
+candidates `1`, ranking gate approved `0`, recommendation ranking `0`, and a
+`Ranking gate：为什么还不能推荐？` board. Playwright CLI QA verified the
+strategy page text includes `Ranking gate`, `为什么还不能推荐`, `Gate 放行 0`,
+the no-broker/no-order boundary, and no horizontal overflow at desktop or
+390px mobile width.
 
 **A-share dragon-tiger / hot-money sample update:** Aegis now collects
 research-only Tushare `top_list` / `top_inst` samples from dates already covered

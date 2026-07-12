@@ -3151,6 +3151,32 @@ details > summary {
     linear-gradient(135deg, rgba(236, 248, 240, .95), rgba(255, 255, 252, .84));
 }
 
+.ranking-gate-board {
+  background:
+    radial-gradient(circle at 92% 0%, rgba(196, 91, 55, .15), transparent 15rem),
+    linear-gradient(135deg, rgba(255, 246, 240, .96), rgba(255, 255, 252, .86));
+}
+
+.ranking-gate-detail {
+  margin-top: 14px;
+  padding: 16px;
+  border-radius: 22px;
+  border: 1px solid rgba(117, 74, 45, .13);
+  background: rgba(255, 255, 252, .72);
+}
+
+.ranking-gate-detail h4 {
+  margin: 0 0 8px;
+  font-size: 18px;
+  letter-spacing: -.03em;
+}
+
+.ranking-gate-detail p {
+  margin: 0 0 10px;
+  color: var(--muted);
+  font-weight: 720;
+}
+
 .diagnostics-head {
   display: grid;
   grid-template-columns: minmax(0, 1.1fr) minmax(280px, .9fr);

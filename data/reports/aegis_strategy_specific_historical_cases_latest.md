@@ -1,7 +1,7 @@
 # Aegis Strategy-Specific Historical Cases
 
 - Status: PASS
-- Generated At: 2026-07-12T23:07:56+08:00
+- Generated At: 2026-07-12T23:25:06+08:00
 - Candidate Count: 33
 - Base Candidate Count: 13
 - A-share Research Sample Candidates: 8

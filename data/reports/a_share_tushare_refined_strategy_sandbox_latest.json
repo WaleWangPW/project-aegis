@@ -1,8 +1,8 @@
 {
   "type": "a_share_tushare_refined_strategy_sandbox",
   "status": "PASS",
-  "generated_at": "2026-07-12T23:10:41+08:00",
-  "run_id": "a_share_tushare_refined_strategy_sandbox_20260712T231041",
+  "generated_at": "2026-07-12T23:27:49+08:00",
+  "run_id": "a_share_tushare_refined_strategy_sandbox_20260712T232749",
   "command": "scripts/evaluate_a_share_tushare_refined_strategy_sandbox.py",
   "thresholds": {
     "min_signal_case_count": 2,
@@ -900,7 +900,7 @@
     "source_deep_sandbox": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/a_share_tushare_source_deep_sandbox_latest.json"
   },
   "source_hashes": {
-    "source_deep_sandbox": "803059500d59186132d753ddc2cb3563b6c2ac799bc852648c90d619356fb23b"
+    "source_deep_sandbox": "77e25c7dc1bd7ae6e08c5cb153b599cb824fa3cf24978e1383b6b6bd149f4831"
   },
   "checks": {
     "source_deep_sandbox_pass": true,

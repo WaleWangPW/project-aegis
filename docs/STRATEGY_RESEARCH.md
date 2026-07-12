@@ -42,8 +42,11 @@ Implementation order:
 4. Run historical sandbox with point-in-time dates.
 5. If single-source strategies fail, run refined combinations such as
    `moneyflow + holder concentration` or `moneyflow + factor risk veto`.
-6. Only a separate ranking gate may allow the module to affect Dashboard
-   ranking; refined sandbox pass is not a recommendation.
+6. Run the refined ranking gate before any Dashboard ranking impact. The gate
+   must check case count, unique-symbol coverage, entry-month coverage,
+   single-symbol concentration, win rate, average return, and drawdown.
+7. Only ranking-gate approved strategies may affect simulation sort; refined
+   sandbox pass is not a recommendation.
 
 Current priority for the next implementation batch:
 
