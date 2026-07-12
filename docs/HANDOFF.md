@@ -8,6 +8,18 @@
 
 **Accepted engineering baseline:** `P25.6 PASS`
 
+**Dashboard navigation update:** the live page at
+`http://localhost:8080/dashboard/index.html` is no longer a single long report.
+It now uses a multi-page app shell with a left navigation rail and five
+focused views: `今日`, `选股`, `风险`, `持仓`, and `证据`. The default `今日`
+view presents the decision, four prominent action buttons, and only three
+candidate previews. The `选股` view now exposes Top candidate cards in the
+first viewport instead of burying them below explanations. Browser QA verified
+all five views switch correctly, desktop/mobile have no horizontal overflow,
+and there are no console warnings/errors. Safety copy remains visible:
+simulation research only, no broker API, no order placement, no trading
+webhook.
+
 **Dashboard usability update:** the live page at
 `http://localhost:8080/dashboard/index.html` now uses a plain-language daily
 workflow: "不用读完整报表：先看结论，再看 3 张卡", a one-minute brief, explicit

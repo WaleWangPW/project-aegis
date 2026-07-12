@@ -7,21 +7,61 @@
   <meta name="aegis-dashboard-contract" content="2.0">
   <title>Project Aegis · 每日决策</title>
   <link rel="icon" href="data:,">
-  <link rel="stylesheet" href="v2.css?v=20260712k">
+  <link rel="stylesheet" href="v2.css?v=20260712l">
 </head>
 <body>
-  <main class="shell">
-    <header class="statusbar" aria-label="数据与系统状态"><strong>Project Aegis</strong><span id="today-date">—</span><span>系统：<b id="system-status">数据不足</b></span><span id="data-time">数据更新时间：数据未提供</span><span>自动检查：<b id="daily-status">数据不足</b></span><button id="refresh" type="button">刷新数据</button></header>
-    <section id="decision" class="section hero" aria-labelledby="decision-title"><h1 id="decision-title">今日结论</h1><div id="decision-content"></div></section>
-    <section id="action" class="section command-section" aria-labelledby="action-title"><h2 id="action-title">今日选股</h2><div id="action-content"></div></section>
-    <details id="risk" class="section drawer-section" open><summary><span>风险阻塞</span><small id="risk-summary">加载中</small></summary><div id="risk-content" class="grid risk-grid details-content"></div></details>
-    <details id="holdings" class="section drawer-section"><summary><span>当前持仓</span><small id="holdings-summary">加载中</small></summary><div id="holdings-content" class="grid holdings-grid details-content"></div></details>
-    <details id="watchlist" class="section drawer-section"><summary><span>观察名单</span><small id="watchlist-summary-mini">加载中</small></summary><div id="watchlist-content" class="details-content"></div></details>
-    <details id="market" class="section drawer-section compact"><summary><span>市场状态</span><small id="market-summary-mini">加载中</small></summary><div id="market-content" class="details-content"></div></details>
-    <details id="next-check" class="section drawer-section compact"><summary><span>下次检查</span><small id="next-summary-mini">每日 08:00</small></summary><div id="next-content" class="details-content"></div><div id="daily-content" class="mini-check"></div></details>
-    <details id="research" class="section"><summary>历史回测</summary><div id="backtest-content" class="details-content"></div></details>
-    <details id="system-details" class="section"><summary>系统与证据详情</summary><div id="evidence-content" class="details-content"></div></details>
-  </main>
-  <script src="v2.js?v=20260712k"></script>
+  <div class="app-frame">
+    <aside class="side-rail" aria-label="Aegis 页面导航">
+      <div class="brand-lockup">
+        <span class="brand-mark">A</span>
+        <div>
+          <strong>Project Aegis</strong>
+          <small>模拟研究，不下单</small>
+        </div>
+      </div>
+      <nav class="page-nav">
+        <button class="nav-item active" type="button" data-page="today"><span>今日</span><small>结论和下一步</small></button>
+        <button class="nav-item" type="button" data-page="selection"><span>选股</span><small>Top 候选</small></button>
+        <button class="nav-item" type="button" data-page="risk"><span>风险</span><small>阻塞和退出</small></button>
+        <button class="nav-item" type="button" data-page="portfolio"><span>持仓</span><small>监控对象</small></button>
+        <button class="nav-item" type="button" data-page="evidence"><span>证据</span><small>回测和系统</small></button>
+      </nav>
+      <div class="rail-note">
+        <b>安全边界</b>
+        <span>只做模拟研究；你在外部软件手动决定和下单。</span>
+      </div>
+    </aside>
+
+    <main class="shell workspace">
+      <header class="statusbar" aria-label="数据与系统状态"><strong>Project Aegis</strong><span id="today-date">—</span><span>系统：<b id="system-status">数据不足</b></span><span id="data-time">数据更新时间：数据未提供</span><span>自动检查：<b id="daily-status">数据不足</b></span><button id="refresh" type="button">刷新数据</button></header>
+
+      <section id="page-today" class="page-view active" data-page-view="today">
+        <section id="decision" class="section hero" aria-labelledby="decision-title"><h1 id="decision-title">今日结论</h1><div id="decision-content"></div></section>
+        <section class="section action-hub" aria-labelledby="hub-title"><h2 id="hub-title">下一步只做一件事</h2><div id="overview-actions" class="overview-actions"></div></section>
+        <section class="section page-preview" aria-labelledby="preview-title"><h2 id="preview-title">先看 3 张候选卡</h2><div id="overview-candidates"></div></section>
+      </section>
+
+      <section id="page-selection" class="page-view" data-page-view="selection">
+        <section id="action" class="section command-section" aria-labelledby="action-title"><h2 id="action-title">今日选股</h2><div id="action-content"></div></section>
+      </section>
+
+      <section id="page-risk" class="page-view" data-page-view="risk">
+        <section id="risk" class="section drawer-section page-section"><header class="page-section-head"><div><h2>风险阻塞</h2><p id="risk-summary">加载中</p></div><button class="page-jump" type="button" data-page-jump="portfolio">查看持仓</button></header><div id="risk-content" class="grid risk-grid details-content"></div></section>
+      </section>
+
+      <section id="page-portfolio" class="page-view" data-page-view="portfolio">
+        <section id="holdings" class="section drawer-section page-section"><header class="page-section-head"><div><h2>当前持仓</h2><p id="holdings-summary">加载中</p></div><button class="page-jump" type="button" data-page-jump="risk">处理风险</button></header><div id="holdings-content" class="grid holdings-grid details-content"></div></section>
+        <section id="watchlist" class="section drawer-section page-section"><header class="page-section-head"><div><h2>观察名单</h2><p id="watchlist-summary-mini">加载中</p></div><button class="page-jump secondary" type="button" data-page-jump="selection">看今日选股</button></header><div id="watchlist-content" class="details-content"></div></section>
+      </section>
+
+      <section id="page-evidence" class="page-view" data-page-view="evidence">
+        <section id="market" class="section drawer-section compact page-section"><header class="page-section-head"><div><h2>市场状态</h2><p id="market-summary-mini">加载中</p></div></header><div id="market-content" class="details-content"></div></section>
+        <section id="next-check" class="section drawer-section compact page-section"><header class="page-section-head"><div><h2>下次检查</h2><p id="next-summary-mini">每日 08:00</p></div><button class="page-jump" type="button" data-page-jump="today">回到今日</button></header><div id="next-content" class="details-content"></div><div id="daily-content" class="mini-check"></div></section>
+        <section id="research" class="section page-section"><header class="page-section-head"><div><h2>历史回测</h2><p>只作为研究证据，不是买入结论</p></div></header><div id="backtest-content" class="details-content"></div></section>
+        <section id="system-details" class="section page-section"><header class="page-section-head"><div><h2>系统与证据详情</h2><p>报告、hash、证据入口</p></div></header><div id="evidence-content" class="details-content"></div></section>
+      </section>
+    </main>
+  </div>
+  <script src="v2.js?v=20260712l"></script>
 </body>
 </html>
