@@ -35,6 +35,7 @@ make evaluate-a-share-tushare-source-hypotheses
 make build-a-share-tushare-source-feature-coverage
 make evaluate-a-share-tushare-source-deep-sandbox
 make evaluate-a-share-tushare-refined-strategy-sandbox
+make evaluate-a-share-signal-tuning-experiments
 make review-a-share-refined-strategy-ranking-gate
 make plan-a-share-strategy-sample-expansion
 make prepare-stock-agent-strategy-simulation
@@ -50,6 +51,8 @@ make stock-agent-a-share-strategy-cycle-managed-expanded
 This passes the approved research-only collection parameters into the managed
 cycle:
 
+- source probe historical scan: `daily_core` (`moneyflow`, `stk_factor`,
+  `daily_basic`)
 - `lookback_dates=90`
 - `forward_days=20`
 - `max_symbols=24`
@@ -60,6 +63,14 @@ Do not treat a one-off expanded collector run as accepted unless the final
 `stock_agent_a_share_strategy_cycle_latest.json` still shows the expanded sample
 counts after the full cycle completes.
 
+Current status: the expanded managed cycle now removes the previous moneyflow /
+factor probe blocker. `ready_for_deep_sandbox_count=5`, but
+`deep_sandbox_pass_candidate_count=0`, `ranking_gate_approved_count=0`, and
+`ranking_impact_allowed=false`. The signal-tuning layer now has one pass
+candidate (`tuned_a_institutional_factor_trend_filter`), but it has only 4
+cases and 1 entry month, so it still requires Codex-reviewed refined sandbox
+and ranking gate before any simulation-sort impact.
+
 Expected outputs:
 
 - `data/reports/a_share_tushare_strategy_source_probe_latest.json`
@@ -69,8 +80,10 @@ Expected outputs:
 - `data/reports/a_share_tushare_source_feature_coverage_latest.json`
 - `data/reports/a_share_tushare_source_deep_sandbox_latest.json`
 - `data/reports/a_share_tushare_refined_strategy_sandbox_latest.json`
+- `data/reports/a_share_signal_tuning_experiments_latest.json`
 - `data/reports/a_share_refined_strategy_ranking_gate_latest.json`
 - `data/reports/a_share_strategy_sample_expansion_plan_latest.json`
+- `data/reports/a_share_strategy_experiment_queue_latest.json`
 - `data/reports/aegis_strategy_specific_historical_cases_latest.json`
 - `data/reports/aegis_strategy_specific_case_evaluation_latest.json`
 - `~/.openclaw/agents/stock-agent/workspace/project-aegis/AEGIS_STOCK_AGENT_STRATEGY_SIMULATION_TASK.md`
@@ -111,11 +124,17 @@ Stock agent reports must include:
 9. Refined strategy disposition: `REFINED_SANDBOX_PASS_CANDIDATE` or
    `REFINED_SANDBOX_FAIL`. A pass here only means "review by ranking gate",
    not a user-facing recommendation.
-10. Ranking gate disposition: approved for simulation sort or blocked by
+10. Signal-tuning disposition: `TUNED_EXPERIMENT_PASS_CANDIDATE` or
+   `TUNED_EXPERIMENT_FAIL`, including unique-symbol and entry-month coverage
+   warnings. A pass here still requires Codex-reviewed refined sandbox.
+11. Ranking gate disposition: approved for simulation sort or blocked by
    sample count, unique-symbol coverage, month coverage, symbol concentration,
    win rate, average return, or drawdown.
-11. Sample expansion plan: if ranking gate blocks a candidate, report exact
+12. Sample expansion plan: if ranking gate blocks a candidate, report exact
    next parameters such as lookback dates, max symbols, max events per symbol,
    and the recommended collect command.
-12. Which symbols remain simulation candidates, watch-only, or downgraded.
-13. Explicit safety statement: no broker, no order, no webhook, no secret output.
+13. Which symbols remain simulation candidates, watch-only, or downgraded.
+14. Experiment queue counts: ready experiments, blocked experiments, and the
+   next safe command. The queue must not be interpreted as recommendation
+   approval.
+15. Explicit safety statement: no broker, no order, no webhook, no secret output.

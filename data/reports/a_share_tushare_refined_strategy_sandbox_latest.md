@@ -1,7 +1,7 @@
 # A-share Tushare Refined Strategy Sandbox
 
 - Status: `PASS`
-- Generated At: `2026-07-13T00:19:30+08:00`
+- Generated At: `2026-07-13T01:13:36+08:00`
 - Refined Strategies: `5`
 - Pass Candidates: `0`
 - Ranking Impact Allowed: `False`
@@ -9,8 +9,8 @@
 
 | Strategy | Disposition | Cases | Win Rate | Avg Return | Max Drawdown | Reasons |
 | --- | --- | ---: | ---: | ---: | ---: | --- |
-| `refined_a_moneyflow_holder_concentration` 主力资金 + 筹码集中 | `REFINED_SANDBOX_BLOCKED` | 0 |  |  |  | missing_required_deep_sandbox_features |
-| `refined_a_moneyflow_factor_veto` 主力资金 + 因子风险否决 | `REFINED_SANDBOX_BLOCKED` | 0 |  |  |  | missing_required_deep_sandbox_features |
-| `refined_a_holder_factor_veto` 筹码集中 + 因子风险否决 | `REFINED_SANDBOX_BLOCKED` | 0 |  |  |  | missing_required_deep_sandbox_features |
-| `refined_a_institutional_factor_veto` 机构持仓 + 因子风险否决 | `REFINED_SANDBOX_BLOCKED` | 0 |  |  |  | missing_required_deep_sandbox_features |
-| `refined_a_moneyflow_holder_factor` 主力资金 + 筹码集中 + 因子 | `REFINED_SANDBOX_BLOCKED` | 0 |  |  |  | missing_required_deep_sandbox_features |
+| `refined_a_moneyflow_holder_concentration` 主力资金 + 筹码集中 | `REFINED_SANDBOX_FAIL` | 1 | 1.00 | 0.0132 | -0.0383 | refined_signal_case_count_below_threshold |
+| `refined_a_moneyflow_factor_veto` 主力资金 + 因子风险否决 | `REFINED_SANDBOX_FAIL` | 10 | 0.40 | -0.0847 | -0.3743 | refined_signal_win_rate_below_threshold, refined_signal_average_return_below_threshold, refined_signal_drawdown_breached |
+| `refined_a_holder_factor_veto` 筹码集中 + 因子风险否决 | `REFINED_SANDBOX_FAIL` | 9 | 0.33 | -0.0500 | -0.2035 | refined_signal_win_rate_below_threshold, refined_signal_average_return_below_threshold, refined_signal_drawdown_breached |
+| `refined_a_institutional_factor_veto` 机构持仓 + 因子风险否决 | `REFINED_SANDBOX_FAIL` | 21 | 0.29 | -0.0541 | -0.2518 | refined_signal_win_rate_below_threshold, refined_signal_average_return_below_threshold, refined_signal_drawdown_breached |
+| `refined_a_moneyflow_holder_factor` 主力资金 + 筹码集中 + 因子 | `REFINED_SANDBOX_FAIL` | 1 | 1.00 | 0.0132 | -0.0383 | refined_signal_case_count_below_threshold |

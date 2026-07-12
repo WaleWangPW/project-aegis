@@ -77,13 +77,20 @@ not only as a one-off collector run:
   `90` queried trade dates
 - Latest strategy-specific cases: `120` total historical cases, `76` A-share
   cases, `36` dragon-tiger event-aligned cases
+- Source probe historical scan: `daily_core`, which opened `moneyflow`,
+  `stk_factor`, and `daily_basic` on historical case dates after latest-date
+  probing returned empty rows
+- Deep sandbox coverage: `5` source strategies evaluated, `5` failed, `0`
+  pass candidates
+- Strategy experiment queue: `5` ready experiments, `0` blocked experiments
 - Ranking gate approved strategies: `0`
 - Rankable strategies: `0`
 - Ranking impact allowed: `false`
 
-Interpretation: the sample expansion is now technically wired into the managed
-cycle, but the current strategy evidence is still not strong enough to affect
-candidate sorting or user-facing recommendations.
+Interpretation: the sample expansion and historical source probing are now
+technically wired into the managed cycle. The remaining blocker is no longer
+data availability; it is signal quality. The current source signals are too
+broad or too weak and must be tightened before any ranking-gate review.
 
 ## Serenity / “白毛股神” Notes
 

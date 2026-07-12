@@ -138,6 +138,7 @@ def test_deep_sandbox_evaluates_only_ready_hypotheses_without_ranking():
     item = report["items"][0]
     assert item["hypothesis_id"] == "hyp_a_tushare_capital_flow_accumulation"
     assert item["case_features"][0]["source_signal_pass"] is True
+    assert item["case_features"][0]["feature_summary"]["net_flow_sign"] == 1
     assert "feature_hash" in item["case_features"][0]
     assert "net_mf_amount" not in json.dumps(item, ensure_ascii=False)
 

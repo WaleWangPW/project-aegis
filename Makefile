@@ -93,6 +93,9 @@ daily-real-scene-pilot-dry-run:
 probe-a-share-tushare-strategy-sources:
 	.venv/bin/python scripts/probe_a_share_tushare_strategy_sources.py
 
+probe-a-share-tushare-strategy-sources-daily-core:
+	.venv/bin/python scripts/probe_a_share_tushare_strategy_sources.py --historical-date-scan daily_core
+
 collect-a-share-dragon-tiger-research-samples:
 	.venv/bin/python scripts/collect_a_share_dragon_tiger_research_samples.py
 
@@ -111,6 +114,9 @@ evaluate-a-share-tushare-source-deep-sandbox:
 evaluate-a-share-tushare-refined-strategy-sandbox:
 	.venv/bin/python scripts/evaluate_a_share_tushare_refined_strategy_sandbox.py
 
+evaluate-a-share-signal-tuning-experiments:
+	.venv/bin/python scripts/evaluate_a_share_signal_tuning_experiments.py
+
 review-a-share-refined-strategy-ranking-gate:
 	.venv/bin/python scripts/review_a_share_refined_strategy_ranking_gate.py
 
@@ -120,6 +126,9 @@ plan-a-share-strategy-sample-expansion:
 analyze-a-share-tushare-strategy-diagnostics:
 	.venv/bin/python scripts/analyze_a_share_tushare_strategy_diagnostics.py
 
+build-a-share-strategy-experiment-queue:
+	.venv/bin/python scripts/build_a_share_strategy_experiment_queue.py
+
 prepare-stock-agent-strategy-simulation:
 	.venv/bin/python scripts/prepare_stock_agent_strategy_simulation_workspace.py
 
@@ -127,7 +136,7 @@ stock-agent-a-share-strategy-cycle-managed:
 	.venv/bin/python scripts/run_stock_agent_a_share_strategy_cycle.py --prepare-stock-agent-workspace
 
 stock-agent-a-share-strategy-cycle-managed-expanded:
-	.venv/bin/python scripts/run_stock_agent_a_share_strategy_cycle.py --prepare-stock-agent-workspace --dragon-tiger-lookback-dates 90 --dragon-tiger-forward-days 20 --dragon-tiger-max-symbols 24 --dragon-tiger-max-events-per-symbol 3
+	.venv/bin/python scripts/run_stock_agent_a_share_strategy_cycle.py --prepare-stock-agent-workspace --source-probe-historical-date-scan daily_core --dragon-tiger-lookback-dates 90 --dragon-tiger-forward-days 20 --dragon-tiger-max-symbols 24 --dragon-tiger-max-events-per-symbol 3
 
 build-strategy-specific-historical-cases:
 	.venv/bin/python scripts/build_aegis_strategy_specific_historical_cases.py
@@ -145,9 +154,11 @@ stock-agent-a-share-strategy-cycle:
 	.venv/bin/python scripts/build_a_share_tushare_source_feature_coverage.py
 	.venv/bin/python scripts/evaluate_a_share_tushare_source_deep_sandbox.py
 	.venv/bin/python scripts/evaluate_a_share_tushare_refined_strategy_sandbox.py
+	.venv/bin/python scripts/evaluate_a_share_signal_tuning_experiments.py
 	.venv/bin/python scripts/review_a_share_refined_strategy_ranking_gate.py
 	.venv/bin/python scripts/plan_a_share_strategy_sample_expansion.py
 	.venv/bin/python scripts/analyze_a_share_tushare_strategy_diagnostics.py
+	.venv/bin/python scripts/build_a_share_strategy_experiment_queue.py
 	.venv/bin/python scripts/prepare_stock_agent_strategy_simulation_workspace.py
 
 p22-6-full-pipeline:

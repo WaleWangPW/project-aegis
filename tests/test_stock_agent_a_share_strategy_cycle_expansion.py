@@ -20,6 +20,7 @@ def test_explicit_dragon_tiger_overrides_are_injected_into_collect_command():
             "argv": ["scripts/collect_a_share_dragon_tiger_research_samples.py"],
         },
         dragon_tiger_args=dynamic_args,
+        source_probe_historical_date_scan=None,
     )
 
     assert source == "explicit_override"
@@ -50,3 +51,21 @@ def test_partial_dragon_tiger_override_is_rejected():
         assert "positive integers" in str(exc)
     else:
         raise AssertionError("partial dragon-tiger override should fail")
+
+
+def test_source_probe_historical_scan_is_injected_into_probe_command():
+    argv, source = cycle.command_argv(
+        {
+            "name": "probe_a_share_tushare_strategy_sources",
+            "argv": ["scripts/probe_a_share_tushare_strategy_sources.py"],
+        },
+        dragon_tiger_args=[],
+        source_probe_historical_date_scan="daily_core",
+    )
+
+    assert source == "historical_date_scan"
+    assert argv == [
+        "scripts/probe_a_share_tushare_strategy_sources.py",
+        "--historical-date-scan",
+        "daily_core",
+    ]

@@ -164,7 +164,7 @@ def feature_for_moneyflow(rows: dict[str, pd.DataFrame]) -> dict[str, Any]:
     return {
         "signal_pass": net > 0 and large_net > 0,
         "reasons": ["net_moneyflow_positive", "large_order_net_positive"] if net > 0 and large_net > 0 else ["moneyflow_not_confirmed"],
-        "net_mf_amount_sign": 1 if net > 0 else -1 if net < 0 else 0,
+        "net_flow_sign": 1 if net > 0 else -1 if net < 0 else 0,
         "large_order_net_sign": 1 if large_net > 0 else -1 if large_net < 0 else 0,
     }
 
@@ -275,6 +275,12 @@ def derive_case_feature(pro: Any, case: dict[str, Any], hypothesis_id: str) -> d
     return feature
 
 
+def public_feature_summary(feature: dict[str, Any]) -> dict[str, Any]:
+    """Keep only derived, non-raw feature fields for downstream experiments."""
+    blocked = {"signal_pass", "reasons", "errors", "covered_endpoints", "feature_hash"}
+    return {key: value for key, value in feature.items() if key not in blocked}
+
+
 def aggregate_case_features(case_features: list[dict[str, Any]]) -> dict[str, Any]:
     signal_cases = [item for item in case_features if item["source_signal_pass"]]
     returns = [float(item["raw_return"]) for item in signal_cases]
@@ -336,6 +342,7 @@ def build_report(
                     "entry_date": case["entry_date"],
                     "source_signal_pass": bool(feature.get("signal_pass")),
                     "feature_reasons": feature.get("reasons") or [],
+                    "feature_summary": public_feature_summary(feature),
                     "covered_endpoints": feature.get("covered_endpoints") or [],
                     "feature_hash": feature["feature_hash"],
                     "raw_return": case["raw_return"],

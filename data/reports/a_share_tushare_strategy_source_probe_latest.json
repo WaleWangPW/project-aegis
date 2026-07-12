@@ -1,6 +1,6 @@
 {
   "overall_status": "PASS",
-  "generated_at": "2026-07-13T00:17:48+08:00",
+  "generated_at": "2026-07-13T01:09:27+08:00",
   "provider": "tushare",
   "market": "A",
   "network_used": true,
@@ -15,11 +15,17 @@
   },
   "summary": {
     "endpoint_count": 10,
-    "pass_count": 4,
-    "empty_count": 5,
+    "pass_count": 7,
+    "empty_count": 2,
     "blocked_count": 1,
-    "priority_ready_count": 3,
+    "priority_ready_count": 4,
+    "historical_scan_requested": true,
+    "historical_scan_target": "daily_core",
+    "historical_scan_date_count": 29,
+    "historical_scan_pass_count": 3,
     "modules_ready": [
+      "A 股因子与日线基础池",
+      "主力资金流向",
       "机构持仓与股东变化",
       "股东人数 / 筹码集中",
       "高管薪酬 / 治理"
@@ -32,8 +38,8 @@
       "endpoint": "moneyflow",
       "priority": 1,
       "description": "大单/中单/小单资金结构",
-      "status": "EMPTY",
-      "row_count": 0,
+      "status": "PASS",
+      "row_count": 5085,
       "columns": [
         "ts_code",
         "trade_date",
@@ -56,11 +62,17 @@
         "net_mf_vol",
         "net_mf_amount"
       ],
-      "sample_hash": null,
+      "sample_hash": "4988b102994b4b88342a02e4b2fe3c584dfa13d2ae66b340eaf2e68833edc104",
       "error_type": null,
       "error_message": null,
       "latest_trade_date": "20260713",
-      "sample_symbol": "000001.SZ"
+      "sample_symbol": "000001.SZ",
+      "historical_scan_used": true,
+      "historical_scan_target": "daily_core",
+      "historical_probe_dates_checked": 1,
+      "historical_matched_trade_date": "20240703",
+      "historical_scan_error_count": 0,
+      "historical_scan_last_error": null
     },
     {
       "module_id": "dragon_tiger_hot_money",
@@ -91,7 +103,13 @@
       "error_type": null,
       "error_message": null,
       "latest_trade_date": "20260713",
-      "sample_symbol": "000001.SZ"
+      "sample_symbol": "000001.SZ",
+      "historical_scan_used": false,
+      "historical_scan_target": "daily_core",
+      "historical_probe_dates_checked": 0,
+      "historical_matched_trade_date": null,
+      "historical_scan_error_count": 0,
+      "historical_scan_last_error": null
     },
     {
       "module_id": "dragon_tiger_hot_money",
@@ -117,7 +135,13 @@
       "error_type": null,
       "error_message": null,
       "latest_trade_date": "20260713",
-      "sample_symbol": "000001.SZ"
+      "sample_symbol": "000001.SZ",
+      "historical_scan_used": false,
+      "historical_scan_target": "daily_core",
+      "historical_probe_dates_checked": 0,
+      "historical_matched_trade_date": null,
+      "historical_scan_error_count": 0,
+      "historical_scan_last_error": null
     },
     {
       "module_id": "institutional_ownership",
@@ -142,7 +166,13 @@
       "error_type": null,
       "error_message": null,
       "latest_trade_date": "20260713",
-      "sample_symbol": "000001.SZ"
+      "sample_symbol": "000001.SZ",
+      "historical_scan_used": false,
+      "historical_scan_target": "daily_core",
+      "historical_probe_dates_checked": 0,
+      "historical_matched_trade_date": null,
+      "historical_scan_error_count": 0,
+      "historical_scan_last_error": null
     },
     {
       "module_id": "institutional_ownership",
@@ -167,7 +197,13 @@
       "error_type": null,
       "error_message": null,
       "latest_trade_date": "20260713",
-      "sample_symbol": "000001.SZ"
+      "sample_symbol": "000001.SZ",
+      "historical_scan_used": false,
+      "historical_scan_target": "daily_core",
+      "historical_probe_dates_checked": 0,
+      "historical_matched_trade_date": null,
+      "historical_scan_error_count": 0,
+      "historical_scan_last_error": null
     },
     {
       "module_id": "holder_concentration",
@@ -187,7 +223,13 @@
       "error_type": null,
       "error_message": null,
       "latest_trade_date": "20260713",
-      "sample_symbol": "000001.SZ"
+      "sample_symbol": "000001.SZ",
+      "historical_scan_used": false,
+      "historical_scan_target": "daily_core",
+      "historical_probe_dates_checked": 0,
+      "historical_matched_trade_date": null,
+      "historical_scan_error_count": 0,
+      "historical_scan_last_error": null
     },
     {
       "module_id": "factor_base",
@@ -195,8 +237,8 @@
       "endpoint": "stk_factor",
       "priority": 3,
       "description": "因子基础池，用于估值、动量、波动率输入",
-      "status": "EMPTY",
-      "row_count": 0,
+      "status": "PASS",
+      "row_count": 5583,
       "columns": [
         "ts_code",
         "trade_date",
@@ -229,11 +271,17 @@
         "rsi_6",
         "rsi_12"
       ],
-      "sample_hash": null,
+      "sample_hash": "7780aa6d906e8a5d0bd20bc9df808dbb5707d5efcacad266522dfd8d1c2ba4ff",
       "error_type": null,
       "error_message": null,
       "latest_trade_date": "20260713",
-      "sample_symbol": "000001.SZ"
+      "sample_symbol": "000001.SZ",
+      "historical_scan_used": true,
+      "historical_scan_target": "daily_core",
+      "historical_probe_dates_checked": 1,
+      "historical_matched_trade_date": "20240703",
+      "historical_scan_error_count": 0,
+      "historical_scan_last_error": null
     },
     {
       "module_id": "factor_base",
@@ -241,8 +289,8 @@
       "endpoint": "daily_basic",
       "priority": 3,
       "description": "日线基本面、换手率、市值、估值输入",
-      "status": "EMPTY",
-      "row_count": 0,
+      "status": "PASS",
+      "row_count": 5335,
       "columns": [
         "ts_code",
         "trade_date",
@@ -263,11 +311,17 @@
         "total_mv",
         "circ_mv"
       ],
-      "sample_hash": null,
+      "sample_hash": "aed6b5fc8b332381fb9da9221310dc1ed286cef3888c7f1d93229d2960401465",
       "error_type": null,
       "error_message": null,
       "latest_trade_date": "20260713",
-      "sample_symbol": "000001.SZ"
+      "sample_symbol": "000001.SZ",
+      "historical_scan_used": true,
+      "historical_scan_target": "daily_core",
+      "historical_probe_dates_checked": 1,
+      "historical_matched_trade_date": "20240703",
+      "historical_scan_error_count": 0,
+      "historical_scan_last_error": null
     },
     {
       "module_id": "governance",
@@ -290,7 +344,13 @@
       "error_type": null,
       "error_message": null,
       "latest_trade_date": "20260713",
-      "sample_symbol": "000001.SZ"
+      "sample_symbol": "000001.SZ",
+      "historical_scan_used": false,
+      "historical_scan_target": "daily_core",
+      "historical_probe_dates_checked": 0,
+      "historical_matched_trade_date": null,
+      "historical_scan_error_count": 0,
+      "historical_scan_last_error": null
     },
     {
       "module_id": "institutional_research",
@@ -305,7 +365,13 @@
       "error_type": "str",
       "error_message": "请指定正确的接口名",
       "latest_trade_date": "20260713",
-      "sample_symbol": "000001.SZ"
+      "sample_symbol": "000001.SZ",
+      "historical_scan_used": false,
+      "historical_scan_target": "daily_core",
+      "historical_probe_dates_checked": 0,
+      "historical_matched_trade_date": null,
+      "historical_scan_error_count": 0,
+      "historical_scan_last_error": null
     }
   ],
   "next_step": "OpenClaw stock-agent should run historical sandbox only for PASS modules, starting with priority 1-2 endpoints.",

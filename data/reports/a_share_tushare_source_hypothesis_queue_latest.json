@@ -1,19 +1,62 @@
 {
   "schema_version": "a_share_tushare_source_hypothesis_queue.v1",
-  "generated_at": "2026-07-13T00:17:54+08:00",
-  "hypothesis_count": 3,
+  "generated_at": "2026-07-13T01:09:31+08:00",
+  "hypothesis_count": 5,
   "market_coverage": {
-    "A": 3
+    "A": 5
   },
   "strategy_family_coverage": {
+    "capital_flow": 1,
     "governance": 1,
     "holder_concentration": 1,
     "institutional_ownership": 1,
-    "multi_factor": 1,
-    "quality": 3,
-    "risk_overlay": 2
+    "momentum": 2,
+    "multi_factor": 2,
+    "quality": 4,
+    "risk_overlay": 4
   },
   "hypotheses": [
+    {
+      "hypothesis_id": "hyp_a_tushare_capital_flow_accumulation",
+      "title": "A-share capital-flow accumulation hypothesis",
+      "market": "A",
+      "strategy_families": [
+        "capital_flow",
+        "momentum",
+        "risk_overlay"
+      ],
+      "thesis": "A-share candidates with persistent large-order inflow and non-extreme price extension may produce better short-cycle simulation results than price momentum alone.",
+      "source_research_ids": [
+        "tushare_a_share_strategy_source_probe:capital_flow:moneyflow:20260713"
+      ],
+      "proposed_universe": "A-share liquid names with Tushare moneyflow rows and daily price/factor context.",
+      "proposed_entry_logic": [
+        "require recent moneyflow PASS evidence",
+        "rank large-order and net inflow persistence",
+        "reject names where retail chase risk dominates the move"
+      ],
+      "proposed_exit_logic": [
+        "20 trading-day sandbox review",
+        "downgrade if capital flow reverses before price confirms"
+      ],
+      "proposed_risk_controls": [
+        "no_realtime_trade_claim",
+        "liquidity_filter",
+        "overheated_momentum_downgrade",
+        "risk_veto"
+      ],
+      "proposed_metrics": [
+        "sample_count",
+        "win_rate",
+        "average_return",
+        "max_drawdown",
+        "flow_reversal_rate"
+      ],
+      "requires_sandbox": true,
+      "auto_applied": false,
+      "user_facing_suggestion_allowed": false,
+      "created_at": "2026-07-13T01:09:31+08:00"
+    },
     {
       "hypothesis_id": "hyp_a_tushare_institutional_ownership_stability",
       "title": "A-share institutional ownership stability hypothesis",
@@ -54,7 +97,7 @@
       "requires_sandbox": true,
       "auto_applied": false,
       "user_facing_suggestion_allowed": false,
-      "created_at": "2026-07-13T00:17:54+08:00"
+      "created_at": "2026-07-13T01:09:31+08:00"
     },
     {
       "hypothesis_id": "hyp_a_tushare_holder_concentration_improvement",
@@ -95,7 +138,50 @@
       "requires_sandbox": true,
       "auto_applied": false,
       "user_facing_suggestion_allowed": false,
-      "created_at": "2026-07-13T00:17:54+08:00"
+      "created_at": "2026-07-13T01:09:31+08:00"
+    },
+    {
+      "hypothesis_id": "hyp_a_tushare_factor_liquidity_quality_overlay",
+      "title": "A-share factor liquidity quality overlay hypothesis",
+      "market": "A",
+      "strategy_families": [
+        "multi_factor",
+        "quality",
+        "momentum",
+        "risk_overlay"
+      ],
+      "thesis": "Tushare stk_factor and daily_basic should become the A-share base layer for liquidity, valuation heat, turnover, and short-cycle momentum guards.",
+      "source_research_ids": [
+        "tushare_a_share_strategy_source_probe:factor_base:stk_factor:20260713",
+        "tushare_a_share_strategy_source_probe:factor_base:daily_basic:20260713"
+      ],
+      "proposed_universe": "A-share daily_basic/stk_factor universe with sufficient liquidity and non-stale price evidence.",
+      "proposed_entry_logic": [
+        "require daily_basic and stk_factor PASS evidence",
+        "filter liquidity and turnover before any thematic ranking",
+        "use valuation heat and volatility as risk overlays"
+      ],
+      "proposed_exit_logic": [
+        "20 trading-day sandbox review",
+        "downgrade if factor evidence becomes stale or risk overlay fails"
+      ],
+      "proposed_risk_controls": [
+        "liquidity_filter",
+        "valuation_overheat_check",
+        "stale_price_check",
+        "risk_veto"
+      ],
+      "proposed_metrics": [
+        "liquidity_pass_rate",
+        "win_rate",
+        "average_return",
+        "max_drawdown",
+        "overheat_downgrade_count"
+      ],
+      "requires_sandbox": true,
+      "auto_applied": false,
+      "user_facing_suggestion_allowed": false,
+      "created_at": "2026-07-13T01:09:31+08:00"
     },
     {
       "hypothesis_id": "hyp_a_tushare_governance_reward_alignment",
@@ -136,7 +222,7 @@
       "requires_sandbox": true,
       "auto_applied": false,
       "user_facing_suggestion_allowed": false,
-      "created_at": "2026-07-13T00:17:54+08:00"
+      "created_at": "2026-07-13T01:09:31+08:00"
     }
   ],
   "safety": {
@@ -157,13 +243,6 @@
   "source_endpoint_count": 10,
   "blocked_or_skipped_sources": [
     {
-      "module_id": "capital_flow",
-      "module_name": "主力资金流向",
-      "endpoint": "moneyflow",
-      "status": "EMPTY",
-      "reason": null
-    },
-    {
       "module_id": "dragon_tiger_hot_money",
       "module_name": "龙虎榜 / 游资席位",
       "endpoint": "top_list",
@@ -178,20 +257,6 @@
       "reason": null
     },
     {
-      "module_id": "factor_base",
-      "module_name": "A 股因子与日线基础池",
-      "endpoint": "stk_factor",
-      "status": "EMPTY",
-      "reason": null
-    },
-    {
-      "module_id": "factor_base",
-      "module_name": "A 股因子与日线基础池",
-      "endpoint": "daily_basic",
-      "status": "EMPTY",
-      "reason": null
-    },
-    {
       "module_id": "institutional_research",
       "module_name": "机构调研热度",
       "endpoint": "stk_survey",
@@ -200,8 +265,10 @@
     }
   ],
   "hypothesis_hashes": {
+    "hyp_a_tushare_capital_flow_accumulation": "c781e822b1d5ed94bd60d0b36a07c2ef64215802bfddc4c522fae1a5089d6470",
     "hyp_a_tushare_institutional_ownership_stability": "f3eb4d0a55288f96468cd86ee6bfab05522b095db32d54c2da77c4d499ea9c10",
     "hyp_a_tushare_holder_concentration_improvement": "4b4febe645251ae58cd565d617285026168869e32a678f10c494966fdcbee9e2",
+    "hyp_a_tushare_factor_liquidity_quality_overlay": "430ebd99d8e56517a50859d4818c322c1fa1ddbeba2c2fa16c9216013de03e7c",
     "hyp_a_tushare_governance_reward_alignment": "aa403c6b36d1442e8aaf169a3929f1be2c2360771e302b982c714da386ceb827"
   },
   "next_step": "Run historical sandbox for these A-share source hypotheses before ranking or recommendation use."

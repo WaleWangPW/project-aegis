@@ -8,6 +8,32 @@
 
 **Accepted engineering baseline:** `P25.6 PASS`
 
+**Latest update — A-share signal tuning layer + stock-agent review:** Aegis now
+has a separate signal-tuning experiment layer for OpenClaw `stock-agent`.
+New command: `make evaluate-a-share-signal-tuning-experiments`, and the
+expanded managed cycle now has `command_count=14`. Latest expanded cycle exits
+`0`, with `failed_command_count=0`, `ready_for_deep_sandbox_count=5`,
+`deep_sandbox_pass_candidate_count=0`, `deep_sandbox_fail_count=5`,
+`refined_sandbox_pass_candidate_count=0`, `tuned_experiment_count=4`,
+`tuned_pass_candidate_count=1`, `tuned_fail_count=3`,
+`ranking_gate_approved_count=0`, `rankable_strategy_count=0`,
+`ranking_impact_allowed=false`, and `user_facing_suggestion_allowed=false`.
+The single tuned pass candidate is `tuned_a_institutional_factor_trend_filter`
+(`4` cases, win rate `0.75`, average return `0.0377`, max drawdown `-0.1602`),
+but all 4 cases are from one entry month (`2024-07`), so it is not approved for
+Dashboard ranking or user-facing suggestions. Latest hashes:
+`stock_agent_a_share_strategy_cycle_latest.json` =
+`f9542cb55c3b35228e4915bfb99599bf4e857e7395772de20ca169babb732ef8`;
+`a_share_signal_tuning_experiments_latest.json` =
+`d32b6227cc002554534a8690b4830c06050b569b97224403c6135dbc46ab4046`;
+`a_share_strategy_experiment_queue_latest.json` =
+`a649f45e682ef5afccfeee82916095a92b53d282d3ef7d5d7699dde7bb45e6ad`.
+OpenClaw `stock-agent` read-only review run
+`0110e985-8338-4f32-8ac1-851d0b8023c0` confirmed the evidence and flagged
+sample concentration / overfit risk. Next step: Codex-reviewed refined sandbox
+for the tuned institutional+factor candidate, with entry-month coverage checks,
+before any ranking gate review.
+
 **Latest update — stock-agent actually executed + expanded managed cycle fixed:**
 OpenClaw `stock-agent` did run a real local session
 `b01cbd23-8c4f-470d-89d0-6166469d7e62`, but it exposed an important bug:
@@ -30,6 +56,26 @@ The collector command is recorded with `dynamic_args_source=explicit_override`.
 hot-money / holder strategies through stock-agent, but do not let any of them
 affect Dashboard candidate ranking until the separate ranking gate approves
 them. Current approved strategy count remains `0`.
+
+**Latest update — historical source probe + experiment queue:** The expanded
+stock-agent cycle now runs source probing with `--historical-date-scan
+daily_core`, so `moneyflow`, `stk_factor`, and `daily_basic` are no longer
+blocked just because the latest trade date returned empty rows. Latest managed
+cycle exits `0` with `command_count=13`, `failed_command_count=0`,
+`proxy_fail_count=5`, `ready_for_deep_sandbox_count=5`,
+`deep_sandbox_pass_candidate_count=0`, `deep_sandbox_fail_count=5`,
+`refined_sandbox_fail_count=5`, `refined_sandbox_blocked_count=0`,
+`strategy_experiment_count=5`, `ready_strategy_experiment_count=5`,
+`blocked_strategy_experiment_count=0`, `ranking_gate_approved_count=0`, and
+`ranking_impact_allowed=false`. Managed report SHA256:
+`0e8ab1e645340242b6d3b738d9f589e2306577e184b905fd50fb90f467eace91`.
+Source probe SHA256:
+`a28e75fc4d4b041d5e2be1a680f17ed969a7c7996849decf08fdcb5277f9fd56`.
+Experiment queue SHA256:
+`cc3753617efaf15dc6be9375c4ef003f73d7b0a780a3d9d925750f5b49004a28`.
+This is progress from "missing data/probe implementation" to "all current
+source signals failed quality thresholds"; next work is signal tuning, not
+recommendation ranking.
 
 **Latest update — stock-agent sample expansion + UI readability:** Aegis now
 turns ranking-gate blockers into an explicit OpenClaw `stock-agent` sample

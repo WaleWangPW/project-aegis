@@ -84,6 +84,12 @@ COMMANDS = [
         "marker": REPORTS / "A_SHARE_TUSHARE_REFINED_STRATEGY_SANDBOX_PASS.marker",
     },
     {
+        "name": "evaluate_a_share_signal_tuning_experiments",
+        "argv": ["scripts/evaluate_a_share_signal_tuning_experiments.py"],
+        "report": REPORTS / "a_share_signal_tuning_experiments_latest.json",
+        "marker": REPORTS / "A_SHARE_SIGNAL_TUNING_EXPERIMENTS_PASS.marker",
+    },
+    {
         "name": "review_a_share_refined_strategy_ranking_gate",
         "argv": ["scripts/review_a_share_refined_strategy_ranking_gate.py"],
         "report": REPORTS / "a_share_refined_strategy_ranking_gate_latest.json",
@@ -100,6 +106,12 @@ COMMANDS = [
         "argv": ["scripts/analyze_a_share_tushare_strategy_diagnostics.py"],
         "report": REPORTS / "a_share_tushare_strategy_diagnostics_latest.json",
         "marker": REPORTS / "A_SHARE_TUSHARE_STRATEGY_DIAGNOSTICS_PASS.marker",
+    },
+    {
+        "name": "build_a_share_strategy_experiment_queue",
+        "argv": ["scripts/build_a_share_strategy_experiment_queue.py"],
+        "report": REPORTS / "a_share_strategy_experiment_queue_latest.json",
+        "marker": REPORTS / "A_SHARE_STRATEGY_EXPERIMENT_QUEUE_PASS.marker",
     },
 ]
 
@@ -177,9 +189,17 @@ def explicit_dragon_tiger_args(args: argparse.Namespace) -> list[str]:
     ]
 
 
-def command_argv(command: dict[str, Any], *, dragon_tiger_args: list[str]) -> tuple[list[str], str | None]:
+def command_argv(
+    command: dict[str, Any],
+    *,
+    dragon_tiger_args: list[str],
+    source_probe_historical_date_scan: str | None,
+) -> tuple[list[str], str | None]:
     argv = list(command["argv"])
     dynamic_source = None
+    if command["name"] == "probe_a_share_tushare_strategy_sources" and source_probe_historical_date_scan:
+        argv.extend(["--historical-date-scan", source_probe_historical_date_scan])
+        dynamic_source = "historical_date_scan"
     if command["name"] == "collect_a_share_dragon_tiger_research_samples":
         extra = dragon_tiger_args or expansion_plan_args()
         if extra:
@@ -188,9 +208,18 @@ def command_argv(command: dict[str, Any], *, dragon_tiger_args: list[str]) -> tu
     return argv, dynamic_source
 
 
-def run_command(command: dict[str, Any], *, dragon_tiger_args: list[str]) -> dict[str, Any]:
+def run_command(
+    command: dict[str, Any],
+    *,
+    dragon_tiger_args: list[str],
+    source_probe_historical_date_scan: str | None,
+) -> dict[str, Any]:
     started = time.monotonic()
-    resolved_argv, dynamic_source = command_argv(command, dragon_tiger_args=dragon_tiger_args)
+    resolved_argv, dynamic_source = command_argv(
+        command,
+        dragon_tiger_args=dragon_tiger_args,
+        source_probe_historical_date_scan=source_probe_historical_date_scan,
+    )
     argv = [sys.executable, *resolved_argv]
     proc = subprocess.run(argv, cwd=ROOT, text=True, capture_output=True, check=False)
     duration = round(time.monotonic() - started, 3)
@@ -252,9 +281,11 @@ def build_report(command_results: list[dict[str, Any]], *, prepare_manifest: dic
     feature = load_json(REPORTS / "a_share_tushare_source_feature_coverage_latest.json")
     deep = load_json(REPORTS / "a_share_tushare_source_deep_sandbox_latest.json")
     refined = load_json(REPORTS / "a_share_tushare_refined_strategy_sandbox_latest.json")
+    tuned = load_json(REPORTS / "a_share_signal_tuning_experiments_latest.json")
     ranking_gate = load_json(REPORTS / "a_share_refined_strategy_ranking_gate_latest.json")
     expansion_plan = load_json(REPORTS / "a_share_strategy_sample_expansion_plan_latest.json")
     diagnostics = load_json(REPORTS / "a_share_tushare_strategy_diagnostics_latest.json")
+    experiment_queue = load_json(REPORTS / "a_share_strategy_experiment_queue_latest.json")
     dragon = load_json(REPORTS / "a_share_dragon_tiger_research_samples_latest.json")
     blockers = [
         f"{item['name']} exit_code={item['exit_code']}"
@@ -298,6 +329,9 @@ def build_report(command_results: list[dict[str, Any]], *, prepare_manifest: dic
                 "refined_sandbox_pass_candidate_count"
             ),
             "refined_strategy_count": refined.get("summary", {}).get("refined_strategy_count"),
+            "tuned_experiment_count": tuned.get("summary", {}).get("tuned_experiment_count"),
+            "tuned_pass_candidate_count": tuned.get("summary", {}).get("tuned_pass_candidate_count"),
+            "tuned_fail_count": tuned.get("summary", {}).get("tuned_fail_count"),
             "ranking_gate_reviewed_count": ranking_gate.get("summary", {}).get("ranking_gate_reviewed_count"),
             "ranking_gate_approved_count": ranking_gate.get("summary", {}).get("ranking_gate_approved_count"),
             "ranking_gate_blocked_count": ranking_gate.get("summary", {}).get("ranking_gate_blocked_count"),
@@ -306,6 +340,9 @@ def build_report(command_results: list[dict[str, Any]], *, prepare_manifest: dic
             "sample_expansion_next_max_symbols": expansion_plan.get("summary", {}).get("next_max_symbols"),
             "rankable_strategy_count": diagnostics.get("summary", {}).get("rankable_strategy_count"),
             "strategy_priority_action_count": diagnostics.get("summary", {}).get("priority_action_count"),
+            "strategy_experiment_count": experiment_queue.get("summary", {}).get("experiment_count"),
+            "ready_strategy_experiment_count": experiment_queue.get("summary", {}).get("ready_experiment_count"),
+            "blocked_strategy_experiment_count": experiment_queue.get("summary", {}).get("blocked_experiment_count"),
             "ranking_impact_allowed": ranking_gate.get("summary", {}).get(
                 "ranking_impact_allowed",
                 deep.get("summary", {}).get("ranking_impact_allowed", False),
@@ -369,12 +406,21 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--dragon-tiger-forward-days", type=int)
     parser.add_argument("--dragon-tiger-max-symbols", type=int)
     parser.add_argument("--dragon-tiger-max-events-per-symbol", type=int)
+    parser.add_argument(
+        "--source-probe-historical-date-scan",
+        choices=["daily_core", "moneyflow", "factor_base"],
+        help="Pass historical date scan mode to the source probe step.",
+    )
     args = parser.parse_args(argv)
 
     dragon_tiger_args = explicit_dragon_tiger_args(args)
     command_results: list[dict[str, Any]] = []
     for command in COMMANDS:
-        result = run_command(command, dragon_tiger_args=dragon_tiger_args)
+        result = run_command(
+            command,
+            dragon_tiger_args=dragon_tiger_args,
+            source_probe_historical_date_scan=args.source_probe_historical_date_scan,
+        )
         command_results.append(result)
         if result["exit_code"] != 0 and not args.continue_on_error:
             break

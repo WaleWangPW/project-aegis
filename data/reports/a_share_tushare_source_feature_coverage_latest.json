@@ -1,15 +1,15 @@
 {
   "type": "a_share_tushare_source_feature_coverage",
   "status": "PASS",
-  "generated_at": "2026-07-13T00:19:00+08:00",
-  "run_id": "a_share_tushare_source_feature_coverage_20260713T001824",
+  "generated_at": "2026-07-13T01:11:23+08:00",
+  "run_id": "a_share_tushare_source_feature_coverage_20260713T011000",
   "command": "scripts/build_a_share_tushare_source_feature_coverage.py",
   "thresholds": {
     "min_ready_coverage": 0.5
   },
   "summary": {
-    "hypothesis_count": 3,
-    "ready_for_deep_sandbox_count": 3,
+    "hypothesis_count": 5,
+    "ready_for_deep_sandbox_count": 5,
     "feature_gap_count": 0,
     "a_share_case_count": 76,
     "observation_count": 684,
@@ -18,6 +18,54 @@
     "next_stage": "Deep source-specific sandbox may run only for READY_FOR_DEEP_SANDBOX hypotheses."
   },
   "items": [
+    {
+      "hypothesis_id": "hyp_a_tushare_capital_flow_accumulation",
+      "title": "A-share capital-flow accumulation hypothesis",
+      "required_endpoints": [
+        "moneyflow"
+      ],
+      "eligible_symbols": [
+        "000099",
+        "000100",
+        "000506",
+        "000628",
+        "001309",
+        "001376",
+        "002407",
+        "002709",
+        "300059",
+        "300475",
+        "300476",
+        "301049",
+        "301577",
+        "600101",
+        "600150",
+        "600715",
+        "603172",
+        "603261",
+        "603389",
+        "603879",
+        "603893",
+        "688525"
+      ],
+      "eligible_case_count": 76,
+      "min_endpoint_coverage": 1.0,
+      "feature_status": "READY_FOR_DEEP_SANDBOX",
+      "endpoint_results": [
+        {
+          "endpoint": "moneyflow",
+          "eligible_case_count": 76,
+          "covered_case_count": 76,
+          "coverage_ratio": 1.0,
+          "missing_case_count": 0,
+          "blocked_or_error_count": 0
+        }
+      ],
+      "allowed_next_step": "run_deep_source_specific_sandbox",
+      "simulation_only": true,
+      "user_facing_suggestion_allowed": false,
+      "real_trade_allowed": false
+    },
     {
       "hypothesis_id": "hyp_a_tushare_institutional_ownership_stability",
       "title": "A-share institutional ownership stability hypothesis",
@@ -94,16 +142,73 @@
         "688525"
       ],
       "eligible_case_count": 76,
-      "min_endpoint_coverage": 0.5526315789473685,
+      "min_endpoint_coverage": 0.9473684210526315,
       "feature_status": "READY_FOR_DEEP_SANDBOX",
       "endpoint_results": [
         {
           "endpoint": "stk_holdernumber",
           "eligible_case_count": 76,
-          "covered_case_count": 42,
-          "coverage_ratio": 0.5526315789473685,
-          "missing_case_count": 34,
-          "blocked_or_error_count": 30
+          "covered_case_count": 72,
+          "coverage_ratio": 0.9473684210526315,
+          "missing_case_count": 4,
+          "blocked_or_error_count": 0
+        }
+      ],
+      "allowed_next_step": "run_deep_source_specific_sandbox",
+      "simulation_only": true,
+      "user_facing_suggestion_allowed": false,
+      "real_trade_allowed": false
+    },
+    {
+      "hypothesis_id": "hyp_a_tushare_factor_liquidity_quality_overlay",
+      "title": "A-share factor liquidity quality overlay hypothesis",
+      "required_endpoints": [
+        "stk_factor",
+        "daily_basic"
+      ],
+      "eligible_symbols": [
+        "000099",
+        "000100",
+        "000506",
+        "000628",
+        "001309",
+        "001376",
+        "002407",
+        "002709",
+        "300059",
+        "300475",
+        "300476",
+        "301049",
+        "301577",
+        "600101",
+        "600150",
+        "600715",
+        "603172",
+        "603261",
+        "603389",
+        "603879",
+        "603893",
+        "688525"
+      ],
+      "eligible_case_count": 76,
+      "min_endpoint_coverage": 1.0,
+      "feature_status": "READY_FOR_DEEP_SANDBOX",
+      "endpoint_results": [
+        {
+          "endpoint": "stk_factor",
+          "eligible_case_count": 76,
+          "covered_case_count": 76,
+          "coverage_ratio": 1.0,
+          "missing_case_count": 0,
+          "blocked_or_error_count": 0
+        },
+        {
+          "endpoint": "daily_basic",
+          "eligible_case_count": 76,
+          "covered_case_count": 76,
+          "coverage_ratio": 1.0,
+          "missing_case_count": 0,
+          "blocked_or_error_count": 0
         }
       ],
       "allowed_next_step": "run_deep_source_specific_sandbox",
@@ -149,9 +254,9 @@
     }
   ],
   "observation_summary": {
-    "pass_count": 354,
+    "pass_count": 599,
     "missing_count": 85,
-    "error_count": 245,
+    "error_count": 0,
     "permission_blocked_count": 0,
     "endpoints": [
       "daily_basic",
@@ -171,9 +276,9 @@
     "source_hypothesis_evaluation": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/a_share_tushare_source_hypothesis_evaluation_latest.json"
   },
   "source_hashes": {
-    "source_hypothesis_queue": "9aa14f9ddb9a8bf70874a35b15a72bff5595c471003c7f0a1f85478faa236a38",
-    "strategy_specific_historical_cases": "2f5f60167d932efcda570b52d8bc54557f79df87a760f851c9f1cb791c694179",
-    "source_hypothesis_evaluation": "ac462bcc67a045c537a6730485a2955565f181a7022e2c7b03308a07582e6c38"
+    "source_hypothesis_queue": "7ee042329c706f6c17611c0197b16af1bef1e8b90b3f7a89e7e0ff3cac5ea60f",
+    "strategy_specific_historical_cases": "630bf4d9bca3f3cee5a16dcdfbde309a00bcb048e584272f23756b15f51796a8",
+    "source_hypothesis_evaluation": "e8e6dda537ca7d1a3728c7715d7f9cdddffc003fff5d8b0529f2d7bf3caf6310"
   },
   "checks": {
     "source_queue_present": true,

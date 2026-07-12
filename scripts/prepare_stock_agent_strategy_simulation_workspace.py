@@ -31,12 +31,16 @@ FILES_TO_MIRROR = [
     REPORTS / "a_share_tushare_source_deep_sandbox_latest.md",
     REPORTS / "a_share_tushare_refined_strategy_sandbox_latest.json",
     REPORTS / "a_share_tushare_refined_strategy_sandbox_latest.md",
+    REPORTS / "a_share_signal_tuning_experiments_latest.json",
+    REPORTS / "a_share_signal_tuning_experiments_latest.md",
     REPORTS / "a_share_refined_strategy_ranking_gate_latest.json",
     REPORTS / "a_share_refined_strategy_ranking_gate_latest.md",
     REPORTS / "a_share_strategy_sample_expansion_plan_latest.json",
     REPORTS / "a_share_strategy_sample_expansion_plan_latest.md",
     REPORTS / "a_share_tushare_strategy_diagnostics_latest.json",
     REPORTS / "a_share_tushare_strategy_diagnostics_latest.md",
+    REPORTS / "a_share_strategy_experiment_queue_latest.json",
+    REPORTS / "a_share_strategy_experiment_queue_latest.md",
     REPORTS / "aegis_strategy_specific_historical_cases_latest.json",
     REPORTS / "aegis_strategy_specific_case_evaluation_latest.json",
     REPORTS / "stock_selection_workbench_latest.json",
@@ -83,6 +87,7 @@ top10 holders/floatholders, holder number, daily_basic/stk_factor.
   - `make build-a-share-tushare-source-feature-coverage`
   - `make evaluate-a-share-tushare-source-deep-sandbox`
   - `make evaluate-a-share-tushare-refined-strategy-sandbox`
+  - `make evaluate-a-share-signal-tuning-experiments`
   - `make review-a-share-refined-strategy-ranking-gate`
   - `make plan-a-share-strategy-sample-expansion`
   - `make analyze-a-share-tushare-strategy-diagnostics`
@@ -107,9 +112,11 @@ top10 holders/floatholders, holder number, daily_basic/stk_factor.
 - `a_share_tushare_source_feature_coverage_latest.json`
 - `a_share_tushare_source_deep_sandbox_latest.json`
 - `a_share_tushare_refined_strategy_sandbox_latest.json`
+- `a_share_signal_tuning_experiments_latest.json`
 - `a_share_refined_strategy_ranking_gate_latest.json`
 - `a_share_strategy_sample_expansion_plan_latest.json`
 - `a_share_tushare_strategy_diagnostics_latest.json`
+- `a_share_strategy_experiment_queue_latest.json`
 - `aegis_strategy_specific_historical_cases_latest.json`
 - `aegis_strategy_specific_case_evaluation_latest.json`
 - `stock_agent_a_share_strategy_cycle_latest.json`
@@ -128,11 +135,13 @@ Return:
 7. Source-specific feature coverage and gaps for moneyflow/top_list/top_inst/holders/factors.
 8. Deep sandbox dispositions: `DEEP_SANDBOX_PASS_CANDIDATE` or `DEEP_SANDBOX_FAIL`.
 9. Refined strategy dispositions: `REFINED_SANDBOX_PASS_CANDIDATE` or `REFINED_SANDBOX_FAIL`.
-10. Ranking gate disposition: approved for simulation sort or blocked by sample concentration / case coverage.
-11. Sample expansion plan: next lookback window, max symbols, max events, and exact command to run.
-12. Diagnostics priority actions: feature gap collection, signal tightening, risk veto retest, or hypothesis rework.
-13. Whether any strategy can enter simulation research.
-14. Confirmation that no broker/order/webhook/secret path was touched.
+10. Signal tuning experiment dispositions: pass candidates or fail, with baseline comparison.
+11. Ranking gate disposition: approved for simulation sort or blocked by sample concentration / case coverage.
+12. Sample expansion plan: next lookback window, max symbols, max events, and exact command to run.
+13. Diagnostics priority actions: feature gap collection, signal tightening, risk veto retest, or hypothesis rework.
+14. Experiment queue: ready experiments, blocked experiments, exact next commands, and success metrics.
+15. Whether any strategy can enter simulation research.
+16. Confirmation that no broker/order/webhook/secret path was touched.
 """
 
 
