@@ -1,0 +1,332 @@
+{
+  "type": "a_share_tushare_source_feature_coverage",
+  "status": "PASS",
+  "generated_at": "2026-07-12T21:00:20+08:00",
+  "run_id": "a_share_tushare_source_feature_coverage_20260712T210010",
+  "command": "scripts/build_a_share_tushare_source_feature_coverage.py",
+  "thresholds": {
+    "min_ready_coverage": 0.5
+  },
+  "summary": {
+    "hypothesis_count": 6,
+    "ready_for_deep_sandbox_count": 5,
+    "feature_gap_count": 1,
+    "a_share_case_count": 8,
+    "observation_count": 72,
+    "network_used": true,
+    "user_facing_suggestion_allowed": false,
+    "next_stage": "Deep source-specific sandbox may run only for READY_FOR_DEEP_SANDBOX hypotheses."
+  },
+  "items": [
+    {
+      "hypothesis_id": "hyp_a_tushare_capital_flow_accumulation",
+      "title": "A-share capital-flow accumulation hypothesis",
+      "required_endpoints": [
+        "moneyflow"
+      ],
+      "eligible_symbols": [
+        "300059",
+        "603893"
+      ],
+      "eligible_case_count": 8,
+      "min_endpoint_coverage": 1.0,
+      "feature_status": "READY_FOR_DEEP_SANDBOX",
+      "endpoint_results": [
+        {
+          "endpoint": "moneyflow",
+          "eligible_case_count": 8,
+          "covered_case_count": 8,
+          "coverage_ratio": 1.0,
+          "missing_case_count": 0,
+          "blocked_or_error_count": 0
+        }
+      ],
+      "allowed_next_step": "run_deep_source_specific_sandbox",
+      "simulation_only": true,
+      "user_facing_suggestion_allowed": false,
+      "real_trade_allowed": false
+    },
+    {
+      "hypothesis_id": "hyp_a_tushare_dragon_tiger_seat_confirmation",
+      "title": "A-share dragon-tiger hot-money seat confirmation hypothesis",
+      "required_endpoints": [
+        "top_list",
+        "top_inst"
+      ],
+      "eligible_symbols": [
+        "300059",
+        "603893"
+      ],
+      "eligible_case_count": 8,
+      "min_endpoint_coverage": 0.0,
+      "feature_status": "FEATURE_GAPS",
+      "endpoint_results": [
+        {
+          "endpoint": "top_list",
+          "eligible_case_count": 8,
+          "covered_case_count": 0,
+          "coverage_ratio": 0.0,
+          "missing_case_count": 8,
+          "blocked_or_error_count": 0
+        },
+        {
+          "endpoint": "top_inst",
+          "eligible_case_count": 8,
+          "covered_case_count": 0,
+          "coverage_ratio": 0.0,
+          "missing_case_count": 8,
+          "blocked_or_error_count": 0
+        }
+      ],
+      "allowed_next_step": "collect_more_source_feature_history",
+      "simulation_only": true,
+      "user_facing_suggestion_allowed": false,
+      "real_trade_allowed": false
+    },
+    {
+      "hypothesis_id": "hyp_a_tushare_institutional_ownership_stability",
+      "title": "A-share institutional ownership stability hypothesis",
+      "required_endpoints": [
+        "top10_holders",
+        "top10_floatholders"
+      ],
+      "eligible_symbols": [
+        "300059",
+        "603893"
+      ],
+      "eligible_case_count": 8,
+      "min_endpoint_coverage": 1.0,
+      "feature_status": "READY_FOR_DEEP_SANDBOX",
+      "endpoint_results": [
+        {
+          "endpoint": "top10_holders",
+          "eligible_case_count": 8,
+          "covered_case_count": 8,
+          "coverage_ratio": 1.0,
+          "missing_case_count": 0,
+          "blocked_or_error_count": 0
+        },
+        {
+          "endpoint": "top10_floatholders",
+          "eligible_case_count": 8,
+          "covered_case_count": 8,
+          "coverage_ratio": 1.0,
+          "missing_case_count": 0,
+          "blocked_or_error_count": 0
+        }
+      ],
+      "allowed_next_step": "run_deep_source_specific_sandbox",
+      "simulation_only": true,
+      "user_facing_suggestion_allowed": false,
+      "real_trade_allowed": false
+    },
+    {
+      "hypothesis_id": "hyp_a_tushare_holder_concentration_improvement",
+      "title": "A-share holder concentration improvement hypothesis",
+      "required_endpoints": [
+        "stk_holdernumber"
+      ],
+      "eligible_symbols": [
+        "300059",
+        "603893"
+      ],
+      "eligible_case_count": 8,
+      "min_endpoint_coverage": 1.0,
+      "feature_status": "READY_FOR_DEEP_SANDBOX",
+      "endpoint_results": [
+        {
+          "endpoint": "stk_holdernumber",
+          "eligible_case_count": 8,
+          "covered_case_count": 8,
+          "coverage_ratio": 1.0,
+          "missing_case_count": 0,
+          "blocked_or_error_count": 0
+        }
+      ],
+      "allowed_next_step": "run_deep_source_specific_sandbox",
+      "simulation_only": true,
+      "user_facing_suggestion_allowed": false,
+      "real_trade_allowed": false
+    },
+    {
+      "hypothesis_id": "hyp_a_tushare_factor_liquidity_quality_overlay",
+      "title": "A-share factor liquidity quality overlay hypothesis",
+      "required_endpoints": [
+        "stk_factor",
+        "daily_basic"
+      ],
+      "eligible_symbols": [
+        "300059",
+        "603893"
+      ],
+      "eligible_case_count": 8,
+      "min_endpoint_coverage": 1.0,
+      "feature_status": "READY_FOR_DEEP_SANDBOX",
+      "endpoint_results": [
+        {
+          "endpoint": "stk_factor",
+          "eligible_case_count": 8,
+          "covered_case_count": 8,
+          "coverage_ratio": 1.0,
+          "missing_case_count": 0,
+          "blocked_or_error_count": 0
+        },
+        {
+          "endpoint": "daily_basic",
+          "eligible_case_count": 8,
+          "covered_case_count": 8,
+          "coverage_ratio": 1.0,
+          "missing_case_count": 0,
+          "blocked_or_error_count": 0
+        }
+      ],
+      "allowed_next_step": "run_deep_source_specific_sandbox",
+      "simulation_only": true,
+      "user_facing_suggestion_allowed": false,
+      "real_trade_allowed": false
+    },
+    {
+      "hypothesis_id": "hyp_a_tushare_governance_reward_alignment",
+      "title": "A-share governance and reward-alignment hypothesis",
+      "required_endpoints": [
+        "stk_rewards"
+      ],
+      "eligible_symbols": [
+        "300059",
+        "603893"
+      ],
+      "eligible_case_count": 8,
+      "min_endpoint_coverage": 1.0,
+      "feature_status": "READY_FOR_DEEP_SANDBOX",
+      "endpoint_results": [
+        {
+          "endpoint": "stk_rewards",
+          "eligible_case_count": 8,
+          "covered_case_count": 8,
+          "coverage_ratio": 1.0,
+          "missing_case_count": 0,
+          "blocked_or_error_count": 0
+        }
+      ],
+      "allowed_next_step": "run_deep_source_specific_sandbox",
+      "simulation_only": true,
+      "user_facing_suggestion_allowed": false,
+      "real_trade_allowed": false
+    }
+  ],
+  "observation_summary": {
+    "pass_count": 56,
+    "missing_count": 16,
+    "error_count": 0,
+    "permission_blocked_count": 0,
+    "endpoints": [
+      "daily_basic",
+      "moneyflow",
+      "stk_factor",
+      "stk_holdernumber",
+      "stk_rewards",
+      "top10_floatholders",
+      "top10_holders",
+      "top_inst",
+      "top_list"
+    ]
+  },
+  "source_reports": {
+    "source_hypothesis_queue": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/a_share_tushare_source_hypothesis_queue_latest.json",
+    "strategy_specific_historical_cases": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/aegis_strategy_specific_historical_cases_latest.json",
+    "source_hypothesis_evaluation": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/a_share_tushare_source_hypothesis_evaluation_latest.json"
+  },
+  "source_hashes": {
+    "source_hypothesis_queue": "d4410f996579437b5734ed2be122c40a00bfdea4a934bdd4c017d18f553de5b3",
+    "strategy_specific_historical_cases": "201a2b5d490de035d0b2fc792f7ec260b42d4219328ea4724307a5b691316b3b",
+    "source_hypothesis_evaluation": "cffbadea1cb06c51e0124e8a2ac675bb998d9a4fd44ca5b94282e7220dd53e00"
+  },
+  "checks": {
+    "source_queue_present": true,
+    "a_share_cases_present": true,
+    "observations_present": true,
+    "raw_payload_saved": false,
+    "production_records_unchanged": true,
+    "no_broker_api": true,
+    "no_webhook": true,
+    "no_order_placement": true,
+    "no_position_size": true
+  },
+  "safety": {
+    "simulation_only": true,
+    "research_only": true,
+    "metadata_only": true,
+    "raw_payload_saved": false,
+    "requires_deep_source_specific_sandbox_before_ranking": true,
+    "no_broker_api": true,
+    "no_order_placement": true,
+    "no_trading_webhook": true,
+    "no_position_size": true,
+    "no_live_order_signal": true,
+    "real_trade_allowed": false
+  },
+  "production_record_files_before": {
+    "recommendations_jsonl": {
+      "exists": true,
+      "size": 12284,
+      "sha256": "05b2e56c9b547cbe3ce4cb71b7cb776185e23ef2cc3bc9a46a918bce0cfb65dc"
+    },
+    "paper_trades_jsonl": {
+      "exists": false,
+      "size": null,
+      "sha256": null
+    },
+    "reviews_jsonl": {
+      "exists": false,
+      "size": null,
+      "sha256": null
+    },
+    "memory_jsonl": {
+      "exists": false,
+      "size": null,
+      "sha256": null
+    },
+    "investment_memory_jsonl": {
+      "exists": false,
+      "size": null,
+      "sha256": null
+    },
+    "feedback_events_jsonl": {
+      "exists": true,
+      "size": 1977,
+      "sha256": "c468fe43ec7097f129805fb71b6551c2db809213e2e13e9b2f1b2354f53ad65f"
+    }
+  },
+  "production_record_files_after": {
+    "recommendations_jsonl": {
+      "exists": true,
+      "size": 12284,
+      "sha256": "05b2e56c9b547cbe3ce4cb71b7cb776185e23ef2cc3bc9a46a918bce0cfb65dc"
+    },
+    "paper_trades_jsonl": {
+      "exists": false,
+      "size": null,
+      "sha256": null
+    },
+    "reviews_jsonl": {
+      "exists": false,
+      "size": null,
+      "sha256": null
+    },
+    "memory_jsonl": {
+      "exists": false,
+      "size": null,
+      "sha256": null
+    },
+    "investment_memory_jsonl": {
+      "exists": false,
+      "size": null,
+      "sha256": null
+    },
+    "feedback_events_jsonl": {
+      "exists": true,
+      "size": 1977,
+      "sha256": "c468fe43ec7097f129805fb71b6551c2db809213e2e13e9b2f1b2354f53ad65f"
+    }
+  }
+}

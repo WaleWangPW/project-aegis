@@ -8,6 +8,30 @@
 
 **Accepted engineering baseline:** `P25.6 PASS`
 
+**Dashboard usability update:** the selection page was tightened into a clearer
+workstation flow: Top 3 research cards first, stronger action bars, explicit
+local/Feishu feedback status, and a compact entry grid for more candidates,
+high-risk watch, blocked names, and strategy evidence. Browser QA verified
+`http://localhost:8080/dashboard/index.html` on desktop and 390px mobile:
+correct title, non-empty DOM, no console warnings/errors, no horizontal
+overflow, navigation to `选股`, local `加入模拟研究` feedback, and expandable
+candidate sections. This is UI/interaction only; it does not change strategy
+ranking, Dashboard Contract, Evidence Gate, broker/webhook boundaries, or any
+real-trade path.
+
+**A-share source feature coverage:** Aegis now assembles read-only,
+metadata-only Tushare feature coverage for current A-share historical cases.
+Command: `make build-a-share-tushare-source-feature-coverage`. Latest report:
+`data/reports/a_share_tushare_source_feature_coverage_latest.json`, status
+`PASS`, `6` hypotheses checked, `8` A-share cases, `72` observations,
+`network_used=true`, `5` hypotheses ready for deep source-specific sandbox and
+`1` with feature gaps. Ready modules are moneyflow, institutional ownership,
+holder concentration, factor/liquidity/quality, and governance/reward
+alignment. Dragon-tiger/hot-money seat confirmation remains blocked by case
+coverage: `top_list` and `top_inst` covered `0/8` current A-share cases. The
+report saves counts, columns, and hashes only; no raw Tushare payload, no
+secret, no broker API, no order placement, and no trading webhook.
+
 **A-share strategy implementation update:** Aegis now has a real read-only
 Tushare strategy-source probe for the next A-share strategy layer. Command:
 `make probe-a-share-tushare-strategy-sources`. Latest report:
@@ -47,8 +71,10 @@ strategy hypotheses may affect ranking or recommendations. Latest SHA256:
 now be run by OpenClaw `stock-agent`, not Codex. Run `make
 stock-agent-a-share-strategy-cycle` from the repo to execute: Tushare source
 probe, source hypothesis queue build, strategy-specific historical case build,
-candidate case evaluation, A-share source hypothesis proxy evaluation, and
-stock-agent workspace preparation. The task packet is written to
+candidate case evaluation, A-share source hypothesis proxy evaluation,
+source-specific feature coverage, and stock-agent workspace preparation. The
+latest full cycle exited `0` at `2026-07-12 21:00 +08:00`. The task packet is
+written to
 `~/.openclaw/agents/stock-agent/workspace/project-aegis/AEGIS_STOCK_AGENT_STRATEGY_SIMULATION_TASK.md`,
 with mirrored evidence reports and safety rules. Codex should only review
 blocked sources, changed strategy ranking, or evidence-gate/contract/security

@@ -1,7 +1,7 @@
 # Aegis Strategy-Specific Historical Cases
 
 - Status: PASS
-- Generated At: 2026-07-12T20:42:36+08:00
+- Generated At: 2026-07-12T21:00:09+08:00
 - Candidate Count: 13
 - Candidates With Cases: 13
 - Historical Case Count: 52
