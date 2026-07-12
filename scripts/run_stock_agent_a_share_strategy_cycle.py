@@ -88,6 +88,12 @@ COMMANDS = [
         "marker": REPORTS / "A_SHARE_REFINED_STRATEGY_RANKING_GATE_PASS.marker",
     },
     {
+        "name": "plan_a_share_strategy_sample_expansion",
+        "argv": ["scripts/plan_a_share_strategy_sample_expansion.py"],
+        "report": REPORTS / "a_share_strategy_sample_expansion_plan_latest.json",
+        "marker": REPORTS / "A_SHARE_STRATEGY_SAMPLE_EXPANSION_PLAN_PASS.marker",
+    },
+    {
         "name": "analyze_a_share_tushare_strategy_diagnostics",
         "argv": ["scripts/analyze_a_share_tushare_strategy_diagnostics.py"],
         "report": REPORTS / "a_share_tushare_strategy_diagnostics_latest.json",
@@ -187,6 +193,7 @@ def build_report(command_results: list[dict[str, Any]], *, prepare_manifest: dic
     deep = load_json(REPORTS / "a_share_tushare_source_deep_sandbox_latest.json")
     refined = load_json(REPORTS / "a_share_tushare_refined_strategy_sandbox_latest.json")
     ranking_gate = load_json(REPORTS / "a_share_refined_strategy_ranking_gate_latest.json")
+    expansion_plan = load_json(REPORTS / "a_share_strategy_sample_expansion_plan_latest.json")
     diagnostics = load_json(REPORTS / "a_share_tushare_strategy_diagnostics_latest.json")
     dragon = load_json(REPORTS / "a_share_dragon_tiger_research_samples_latest.json")
     blockers = [
@@ -234,6 +241,9 @@ def build_report(command_results: list[dict[str, Any]], *, prepare_manifest: dic
             "ranking_gate_reviewed_count": ranking_gate.get("summary", {}).get("ranking_gate_reviewed_count"),
             "ranking_gate_approved_count": ranking_gate.get("summary", {}).get("ranking_gate_approved_count"),
             "ranking_gate_blocked_count": ranking_gate.get("summary", {}).get("ranking_gate_blocked_count"),
+            "sample_expansion_task_count": expansion_plan.get("summary", {}).get("expansion_task_count"),
+            "sample_expansion_next_lookback_dates": expansion_plan.get("summary", {}).get("next_lookback_dates"),
+            "sample_expansion_next_max_symbols": expansion_plan.get("summary", {}).get("next_max_symbols"),
             "rankable_strategy_count": diagnostics.get("summary", {}).get("rankable_strategy_count"),
             "strategy_priority_action_count": diagnostics.get("summary", {}).get("priority_action_count"),
             "ranking_impact_allowed": ranking_gate.get("summary", {}).get(
@@ -276,6 +286,7 @@ def write_report(report: dict[str, Any]) -> None:
                 f"deep_sandbox_pass_candidate_count={report['summary']['deep_sandbox_pass_candidate_count']}",
                 f"refined_sandbox_pass_candidate_count={report['summary'].get('refined_sandbox_pass_candidate_count')}",
                 f"ranking_gate_approved_count={report['summary'].get('ranking_gate_approved_count')}",
+                f"sample_expansion_task_count={report['summary'].get('sample_expansion_task_count')}",
                 f"ranking_impact_allowed={str(report['summary']['ranking_impact_allowed']).lower()}",
                 "user_facing_suggestion_allowed=false",
                 "no_real_trade=true",

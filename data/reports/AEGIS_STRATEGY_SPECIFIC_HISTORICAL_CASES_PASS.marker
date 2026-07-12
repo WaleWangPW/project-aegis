@@ -1,7 +1,7 @@
-generated_at=2026-07-12T23:25:06+08:00
+generated_at=2026-07-12T23:42:19+08:00
 exit_code=0
 report_json=/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/aegis_strategy_specific_historical_cases_latest.json
-report_json_sha256=f272c9774a3f584e3dc4fecce9aced3212d66c5d9d5e18da6c9d16edb6b45717
+report_json_sha256=e12e3e1bef152013354a1d66c481cd919fb8f28d0147741fc04536690a967171
 base_candidate_count=13
 candidate_count=33
 a_share_research_sample_candidate_count=8

@@ -45,7 +45,9 @@ Implementation order:
 6. Run the refined ranking gate before any Dashboard ranking impact. The gate
    must check case count, unique-symbol coverage, entry-month coverage,
    single-symbol concentration, win rate, average return, and drawdown.
-7. Only ranking-gate approved strategies may affect simulation sort; refined
+7. If ranking gate blocks a refined strategy, generate a stock-agent sample
+   expansion plan instead of relying on Codex manual interpretation.
+8. Only ranking-gate approved strategies may affect simulation sort; refined
    sandbox pass is not a recommendation.
 
 Current priority for the next implementation batch:

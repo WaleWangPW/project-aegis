@@ -1,0 +1,16 @@
+status=PASS
+run_id=a_share_strategy_sample_expansion_plan_20260712T234507
+generated_at=2026-07-12T23:45:07+08:00
+report_json=/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/a_share_strategy_sample_expansion_plan_latest.json
+report_json_sha256=faf470c8bb74c2db5088fb75e2bd3d240cd193fd64903e3d072f52182a3be531
+expansion_task_count=1
+next_lookback_dates=90
+next_max_symbols=24
+network_used=false
+raw_payload_saved=false
+ranking_impact_allowed=false
+user_facing_suggestion_allowed=false
+no_real_trade=true
+no_broker_api=true
+no_webhook=true
+no_order_placement=true

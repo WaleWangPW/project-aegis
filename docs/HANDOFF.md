@@ -8,6 +8,38 @@
 
 **Accepted engineering baseline:** `P25.6 PASS`
 
+**Latest update — stock-agent sample expansion + UI readability:** Aegis now
+turns ranking-gate blockers into an explicit OpenClaw `stock-agent` sample
+expansion plan instead of manually guessing the next run. New command:
+`make plan-a-share-strategy-sample-expansion`. Latest report:
+`data/reports/a_share_strategy_sample_expansion_plan_latest.json`, status
+`PASS`, `expansion_task_count=1`, current `sample_count=12`,
+`event_count=24`, `event_aligned_case_count=22`, and next collection parameters
+`lookback_dates=90`, `max_symbols=24`, `max_events_per_symbol=3`. Report
+SHA256:
+`faf470c8bb74c2db5088fb75e2bd3d240cd193fd64903e3d072f52182a3be531`.
+
+**Current stock-agent managed cycle:** `make
+stock-agent-a-share-strategy-cycle-managed` exits `0` with `command_count=12`,
+`failed_command_count=0`, `a_share_case_count=62`,
+`refined_sandbox_pass_candidate_count=1`, `ranking_gate_approved_count=0`,
+`sample_expansion_task_count=1`, `sample_expansion_next_lookback_dates=90`,
+`sample_expansion_next_max_symbols=24`, `rankable_strategy_count=0`,
+`ranking_impact_allowed=false`, and `user_facing_suggestion_allowed=false`.
+Latest managed report SHA256:
+`65b3cae8339c5dfcd9f9fe67164fcc4947de1099089ec81ab2890a8bed11d007`.
+
+**Dashboard readability update:** Dashboard cache version is now `20260712w`.
+The `选股` page now groups secondary content into a clear `下一步行动区` instead
+of scattered bottom pills; it keeps Top 3 decision cards first, then exposes
+more candidates, high-risk watch, blocked names, and strategy evidence as
+deliberate modules. The `策略` page now includes a `你要看的主力 / 游资策略`
+matrix covering Tushare `moneyflow`, `top_list/top_inst`, institutional
+holders, holder count, and survey/governance signals. Playwright CLI verified
+desktop and 390px mobile: no horizontal overflow, matrix visible, `主力资金流向`
+and `龙虎榜 / 游资席位` visible, and no-broker/no-order/no-webhook safety copy
+still present.
+
 **A-share refined ranking gate update:** Aegis now has a separate ranking gate
 between refined strategy sandbox and any simulation-sort impact. Command:
 `make review-a-share-refined-strategy-ranking-gate`. Latest report:

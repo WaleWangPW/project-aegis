@@ -36,6 +36,7 @@ make build-a-share-tushare-source-feature-coverage
 make evaluate-a-share-tushare-source-deep-sandbox
 make evaluate-a-share-tushare-refined-strategy-sandbox
 make review-a-share-refined-strategy-ranking-gate
+make plan-a-share-strategy-sample-expansion
 make prepare-stock-agent-strategy-simulation
 ```
 
@@ -49,6 +50,7 @@ Expected outputs:
 - `data/reports/a_share_tushare_source_deep_sandbox_latest.json`
 - `data/reports/a_share_tushare_refined_strategy_sandbox_latest.json`
 - `data/reports/a_share_refined_strategy_ranking_gate_latest.json`
+- `data/reports/a_share_strategy_sample_expansion_plan_latest.json`
 - `data/reports/aegis_strategy_specific_historical_cases_latest.json`
 - `data/reports/aegis_strategy_specific_case_evaluation_latest.json`
 - `~/.openclaw/agents/stock-agent/workspace/project-aegis/AEGIS_STOCK_AGENT_STRATEGY_SIMULATION_TASK.md`
@@ -92,5 +94,8 @@ Stock agent reports must include:
 10. Ranking gate disposition: approved for simulation sort or blocked by
    sample count, unique-symbol coverage, month coverage, symbol concentration,
    win rate, average return, or drawdown.
-11. Which symbols remain simulation candidates, watch-only, or downgraded.
+11. Sample expansion plan: if ranking gate blocks a candidate, report exact
+   next parameters such as lookback dates, max symbols, max events per symbol,
+   and the recommended collect command.
+12. Which symbols remain simulation candidates, watch-only, or downgraded.
 11. Explicit safety statement: no broker, no order, no webhook, no secret output.

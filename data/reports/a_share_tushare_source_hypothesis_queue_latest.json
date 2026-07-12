@@ -1,6 +1,6 @@
 {
   "schema_version": "a_share_tushare_source_hypothesis_queue.v1",
-  "generated_at": "2026-07-12T23:24:51+08:00",
+  "generated_at": "2026-07-12T23:42:04+08:00",
   "hypothesis_count": 6,
   "market_coverage": {
     "A": 6
@@ -56,7 +56,7 @@
       "requires_sandbox": true,
       "auto_applied": false,
       "user_facing_suggestion_allowed": false,
-      "created_at": "2026-07-12T23:24:51+08:00"
+      "created_at": "2026-07-12T23:42:04+08:00"
     },
     {
       "hypothesis_id": "hyp_a_tushare_dragon_tiger_seat_confirmation",
@@ -98,7 +98,7 @@
       "requires_sandbox": true,
       "auto_applied": false,
       "user_facing_suggestion_allowed": false,
-      "created_at": "2026-07-12T23:24:51+08:00"
+      "created_at": "2026-07-12T23:42:04+08:00"
     },
     {
       "hypothesis_id": "hyp_a_tushare_institutional_ownership_stability",
@@ -140,7 +140,7 @@
       "requires_sandbox": true,
       "auto_applied": false,
       "user_facing_suggestion_allowed": false,
-      "created_at": "2026-07-12T23:24:51+08:00"
+      "created_at": "2026-07-12T23:42:04+08:00"
     },
     {
       "hypothesis_id": "hyp_a_tushare_holder_concentration_improvement",
@@ -181,7 +181,7 @@
       "requires_sandbox": true,
       "auto_applied": false,
       "user_facing_suggestion_allowed": false,
-      "created_at": "2026-07-12T23:24:51+08:00"
+      "created_at": "2026-07-12T23:42:04+08:00"
     },
     {
       "hypothesis_id": "hyp_a_tushare_factor_liquidity_quality_overlay",
@@ -224,7 +224,7 @@
       "requires_sandbox": true,
       "auto_applied": false,
       "user_facing_suggestion_allowed": false,
-      "created_at": "2026-07-12T23:24:51+08:00"
+      "created_at": "2026-07-12T23:42:04+08:00"
     },
     {
       "hypothesis_id": "hyp_a_tushare_governance_reward_alignment",
@@ -265,7 +265,7 @@
       "requires_sandbox": true,
       "auto_applied": false,
       "user_facing_suggestion_allowed": false,
-      "created_at": "2026-07-12T23:24:51+08:00"
+      "created_at": "2026-07-12T23:42:04+08:00"
     }
   ],
   "safety": {

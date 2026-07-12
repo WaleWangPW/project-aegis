@@ -1,8 +1,8 @@
 status=PASS
-run_id=a_share_tushare_refined_strategy_sandbox_20260712T232749
-generated_at=2026-07-12T23:27:49+08:00
+run_id=a_share_tushare_refined_strategy_sandbox_20260712T234507
+generated_at=2026-07-12T23:45:07+08:00
 report_json=/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/a_share_tushare_refined_strategy_sandbox_latest.json
-report_json_sha256=43e3a4583f3e8c7b259a4db66480445e93abeac0d1f91354b70658aabd3aac27
+report_json_sha256=386bc057c399dfbd411bae8665b0815831ab3b463954c5dab8c402051a23da66
 refined_strategy_count=5
 refined_sandbox_pass_candidate_count=1
 network_used=false

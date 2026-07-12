@@ -114,6 +114,9 @@ evaluate-a-share-tushare-refined-strategy-sandbox:
 review-a-share-refined-strategy-ranking-gate:
 	.venv/bin/python scripts/review_a_share_refined_strategy_ranking_gate.py
 
+plan-a-share-strategy-sample-expansion:
+	.venv/bin/python scripts/plan_a_share_strategy_sample_expansion.py
+
 analyze-a-share-tushare-strategy-diagnostics:
 	.venv/bin/python scripts/analyze_a_share_tushare_strategy_diagnostics.py
 
@@ -140,6 +143,7 @@ stock-agent-a-share-strategy-cycle:
 	.venv/bin/python scripts/evaluate_a_share_tushare_source_deep_sandbox.py
 	.venv/bin/python scripts/evaluate_a_share_tushare_refined_strategy_sandbox.py
 	.venv/bin/python scripts/review_a_share_refined_strategy_ranking_gate.py
+	.venv/bin/python scripts/plan_a_share_strategy_sample_expansion.py
 	.venv/bin/python scripts/analyze_a_share_tushare_strategy_diagnostics.py
 	.venv/bin/python scripts/prepare_stock_agent_strategy_simulation_workspace.py
 
