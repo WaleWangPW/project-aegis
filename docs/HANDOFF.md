@@ -4,9 +4,32 @@
 > handoff. `docs/context/` is now a historical ChatGPT snapshot, not the
 > default project entry.
 
-## Current status — 2026-07-12
+## Current status — 2026-07-13
 
 **Accepted engineering baseline:** `P25.6 PASS`
+
+**Latest update — stock-agent actually executed + expanded managed cycle fixed:**
+OpenClaw `stock-agent` did run a real local session
+`b01cbd23-8c4f-470d-89d0-6166469d7e62`, but it exposed an important bug:
+a one-off expanded collector run produced `24` samples / `72` events, then the
+managed cycle overwrote `latest` back to default `12` samples / `24` events.
+The managed cycle now supports explicit dragon-tiger expansion args and a new
+target: `make stock-agent-a-share-strategy-cycle-managed-expanded`. Latest
+expanded cycle exits `0`, with `command_count=12`, `failed_command_count=0`,
+`dragon_tiger_sample_count=24`, `dragon_tiger_event_count=72`,
+`a_share_dragon_tiger_research_sample_case_count=36`, `historical_case_count=120`,
+`a_share_case_count=76`, `ranking_gate_approved_count=0`,
+`rankable_strategy_count=0`, `ranking_impact_allowed=false`, and
+`user_facing_suggestion_allowed=false`. Managed report SHA256:
+`6a4f4c2e6e67effa8606d3c4cfbc22f3f748b4e6abc8585a65dd58b698aea415`.
+Dragon-tiger report SHA256:
+`ee90bb607017446ccc5f550702b917ef729aad122be6e248ae121190d571b032`.
+The collector command is recorded with `dynamic_args_source=explicit_override`.
+
+**Current next step:** keep expanding and evaluating A-share main-force /
+hot-money / holder strategies through stock-agent, but do not let any of them
+affect Dashboard candidate ranking until the separate ranking gate approves
+them. Current approved strategy count remains `0`.
 
 **Latest update — stock-agent sample expansion + UI readability:** Aegis now
 turns ranking-gate blockers into an explicit OpenClaw `stock-agent` sample

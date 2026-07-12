@@ -1,16 +1,17 @@
 {
   "type": "a_share_strategy_sample_expansion_plan",
   "status": "PASS",
-  "generated_at": "2026-07-12T23:45:07+08:00",
-  "run_id": "a_share_strategy_sample_expansion_plan_20260712T234507",
+  "generated_at": "2026-07-13T00:19:30+08:00",
+  "run_id": "a_share_strategy_sample_expansion_plan_20260713T001930",
   "command": "scripts/plan_a_share_strategy_sample_expansion.py",
   "summary": {
-    "blocked_ranking_gate_item_count": 1,
-    "expansion_task_count": 1,
-    "current_sample_count": 12,
-    "current_event_count": 24,
-    "current_event_aligned_case_count": 22,
+    "blocked_ranking_gate_item_count": 0,
+    "expansion_task_count": 0,
+    "current_sample_count": 24,
+    "current_event_count": 72,
+    "current_event_aligned_case_count": 36,
     "next_lookback_dates": 90,
+    "next_forward_days": 20,
     "next_max_symbols": 24,
     "next_max_events_per_symbol": 3,
     "network_used": false,
@@ -18,12 +19,12 @@
     "user_facing_suggestion_allowed": false
   },
   "current_window": {
-    "lookback_dates": 45,
-    "eligible_start": "2024-04-26",
+    "lookback_dates": 90,
+    "eligible_start": "2024-02-21",
     "eligible_end": "2024-07-03",
-    "sample_count": 12,
-    "event_count": 24,
-    "event_aligned_case_count": 22
+    "sample_count": 24,
+    "event_count": 72,
+    "event_aligned_case_count": 36
   },
   "next_window": {
     "eligible": true,
@@ -34,71 +35,16 @@
     "eligible_start": "2024-02-21",
     "eligible_end": "2024-07-03"
   },
-  "tasks": [
-    {
-      "refined_strategy_id": "refined_a_moneyflow_holder_concentration",
-      "label": "主力资金 + 筹码集中",
-      "current_observations": {
-        "case_count": 3,
-        "unique_symbol_count": 2,
-        "entry_month_count": 2,
-        "max_single_symbol_case_share": 0.6666666666666666,
-        "case_source_counts": {
-          "stock_selection_workbench_sample": 1,
-          "dragon_tiger_event_sample": 2
-        },
-        "symbol_case_counts": {
-          "600150": 1,
-          "603863": 2
-        },
-        "win_rate": 0.6666666666666666,
-        "average_return": 0.04300709781212808,
-        "max_drawdown": -0.14364364364364368
-      },
-      "shortfalls": [
-        {
-          "blocker": "ranking_gate_case_count_below_threshold",
-          "task": "increase_case_count",
-          "why": "当前 case=3，需要扩大事件日期和每股事件数。"
-        },
-        {
-          "blocker": "ranking_gate_unique_symbol_count_below_threshold",
-          "task": "increase_unique_symbol_coverage",
-          "why": "当前唯一股票=2，需要扩大 max_symbols 并避免重复同一股票。"
-        },
-        {
-          "blocker": "ranking_gate_single_symbol_concentration_too_high",
-          "task": "reduce_single_symbol_concentration",
-          "why": "当前最大单股占比=0.6666666666666666，需要更多不同股票的有效事件。"
-        },
-        {
-          "blocker": "ranking_gate_entry_month_coverage_below_threshold",
-          "task": "increase_entry_month_coverage",
-          "why": "当前月份=2，需要扩大 lookback_dates。"
-        }
-      ],
-      "recommended_collect_command": ".venv/bin/python scripts/collect_a_share_dragon_tiger_research_samples.py --lookback-dates 90 --forward-days 20 --max-symbols 24 --max-events-per-symbol 3",
-      "then_run": [
-        "make stock-agent-a-share-strategy-cycle-managed",
-        "inspect data/reports/a_share_refined_strategy_ranking_gate_latest.json"
-      ],
-      "done_when": [
-        "ranking_gate_approved_count increases above 0",
-        "or blocker evidence shows no improvement after expanded sample collection"
-      ],
-      "ranking_impact_allowed": false,
-      "user_facing_suggestion_allowed": false
-    }
-  ],
+  "tasks": [],
   "source_reports": {
     "ranking_gate": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/a_share_refined_strategy_ranking_gate_latest.json",
     "dragon_tiger": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/a_share_dragon_tiger_research_samples_latest.json",
     "historical_cases": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/aegis_strategy_specific_historical_cases_latest.json"
   },
   "source_hashes": {
-    "ranking_gate": "83be3339f0c3c86c7741360278b72a73c19d39e6af4d176a5912be474154d2d8",
-    "dragon_tiger": "87ff5eeb9696153de71afc7f6d817d8ea1a833028dd08d035bd0e54de7549a38",
-    "historical_cases": "e12e3e1bef152013354a1d66c481cd919fb8f28d0147741fc04536690a967171"
+    "ranking_gate": "fcfa2574915ad8638d4e443a88abbc4cf6eafce763e27ebcec4b528741f86d79",
+    "dragon_tiger": "ee90bb607017446ccc5f550702b917ef729aad122be6e248ae121190d571b032",
+    "historical_cases": "2f5f60167d932efcda570b52d8bc54557f79df87a760f851c9f1cb791c694179"
   },
   "checks": {
     "ranking_gate_loaded": true,

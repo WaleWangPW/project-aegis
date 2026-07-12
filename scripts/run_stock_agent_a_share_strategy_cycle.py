@@ -25,6 +25,8 @@ OUT_JSON = REPORTS / "stock_agent_a_share_strategy_cycle_latest.json"
 OUT_MD = REPORTS / "stock_agent_a_share_strategy_cycle_latest.md"
 PASS_MARKER = REPORTS / "STOCK_AGENT_A_SHARE_STRATEGY_CYCLE_PASS.marker"
 FAIL_MARKER = REPORTS / "STOCK_AGENT_A_SHARE_STRATEGY_CYCLE_FAIL.marker"
+EXPANSION_PLAN = REPORTS / "a_share_strategy_sample_expansion_plan_latest.json"
+DEFAULT_EXPANDED_FORWARD_DAYS = 20
 
 COMMANDS = [
     {
@@ -130,9 +132,66 @@ def tail(text: str, limit: int = 2800) -> str:
     return text[-limit:] if len(text) > limit else text
 
 
-def run_command(command: dict[str, Any]) -> dict[str, Any]:
+def expansion_plan_args() -> list[str]:
+    plan = load_json(EXPANSION_PLAN)
+    summary = plan.get("summary") or {}
+    if not summary.get("expansion_task_count"):
+        return []
+    lookback = summary.get("next_lookback_dates")
+    max_symbols = summary.get("next_max_symbols")
+    max_events = summary.get("next_max_events_per_symbol")
+    if not all(isinstance(value, int) and value > 0 for value in [lookback, max_symbols, max_events]):
+        return []
+    return [
+        "--lookback-dates",
+        str(lookback),
+        "--forward-days",
+        str(summary.get("next_forward_days") or DEFAULT_EXPANDED_FORWARD_DAYS),
+        "--max-symbols",
+        str(max_symbols),
+        "--max-events-per-symbol",
+        str(max_events),
+    ]
+
+
+def explicit_dragon_tiger_args(args: argparse.Namespace) -> list[str]:
+    values = [
+        args.dragon_tiger_lookback_dates,
+        args.dragon_tiger_forward_days,
+        args.dragon_tiger_max_symbols,
+        args.dragon_tiger_max_events_per_symbol,
+    ]
+    if not any(value is not None for value in values):
+        return []
+    if not all(isinstance(value, int) and value > 0 for value in values):
+        raise ValueError("All dragon-tiger override args must be positive integers when any override is set.")
+    return [
+        "--lookback-dates",
+        str(args.dragon_tiger_lookback_dates),
+        "--forward-days",
+        str(args.dragon_tiger_forward_days),
+        "--max-symbols",
+        str(args.dragon_tiger_max_symbols),
+        "--max-events-per-symbol",
+        str(args.dragon_tiger_max_events_per_symbol),
+    ]
+
+
+def command_argv(command: dict[str, Any], *, dragon_tiger_args: list[str]) -> tuple[list[str], str | None]:
+    argv = list(command["argv"])
+    dynamic_source = None
+    if command["name"] == "collect_a_share_dragon_tiger_research_samples":
+        extra = dragon_tiger_args or expansion_plan_args()
+        if extra:
+            argv.extend(extra)
+            dynamic_source = "explicit_override" if dragon_tiger_args else "sample_expansion_plan"
+    return argv, dynamic_source
+
+
+def run_command(command: dict[str, Any], *, dragon_tiger_args: list[str]) -> dict[str, Any]:
     started = time.monotonic()
-    argv = [sys.executable, *command["argv"]]
+    resolved_argv, dynamic_source = command_argv(command, dragon_tiger_args=dragon_tiger_args)
+    argv = [sys.executable, *resolved_argv]
     proc = subprocess.run(argv, cwd=ROOT, text=True, capture_output=True, check=False)
     duration = round(time.monotonic() - started, 3)
     report = Path(command["report"])
@@ -140,6 +199,7 @@ def run_command(command: dict[str, Any]) -> dict[str, Any]:
     return {
         "name": command["name"],
         "command": " ".join(argv),
+        "dynamic_args_source": dynamic_source,
         "exit_code": proc.returncode,
         "duration_seconds": duration,
         "stdout_tail": tail(proc.stdout),
@@ -305,11 +365,16 @@ def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description="Run stock-agent A-share strategy cycle.")
     parser.add_argument("--continue-on-error", action="store_true")
     parser.add_argument("--prepare-stock-agent-workspace", action="store_true")
+    parser.add_argument("--dragon-tiger-lookback-dates", type=int)
+    parser.add_argument("--dragon-tiger-forward-days", type=int)
+    parser.add_argument("--dragon-tiger-max-symbols", type=int)
+    parser.add_argument("--dragon-tiger-max-events-per-symbol", type=int)
     args = parser.parse_args(argv)
 
+    dragon_tiger_args = explicit_dragon_tiger_args(args)
     command_results: list[dict[str, Any]] = []
     for command in COMMANDS:
-        result = run_command(command)
+        result = run_command(command, dragon_tiger_args=dragon_tiger_args)
         command_results.append(result)
         if result["exit_code"] != 0 and not args.continue_on_error:
             break

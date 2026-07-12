@@ -1,128 +1,23 @@
 {
   "type": "a_share_tushare_source_feature_coverage",
   "status": "PASS",
-  "generated_at": "2026-07-12T23:43:19+08:00",
-  "run_id": "a_share_tushare_source_feature_coverage_20260712T234220",
+  "generated_at": "2026-07-13T00:19:00+08:00",
+  "run_id": "a_share_tushare_source_feature_coverage_20260713T001824",
   "command": "scripts/build_a_share_tushare_source_feature_coverage.py",
   "thresholds": {
     "min_ready_coverage": 0.5
   },
   "summary": {
-    "hypothesis_count": 6,
-    "ready_for_deep_sandbox_count": 5,
-    "feature_gap_count": 1,
-    "a_share_case_count": 62,
-    "observation_count": 558,
+    "hypothesis_count": 3,
+    "ready_for_deep_sandbox_count": 3,
+    "feature_gap_count": 0,
+    "a_share_case_count": 76,
+    "observation_count": 684,
     "network_used": true,
     "user_facing_suggestion_allowed": false,
     "next_stage": "Deep source-specific sandbox may run only for READY_FOR_DEEP_SANDBOX hypotheses."
   },
   "items": [
-    {
-      "hypothesis_id": "hyp_a_tushare_capital_flow_accumulation",
-      "title": "A-share capital-flow accumulation hypothesis",
-      "required_endpoints": [
-        "moneyflow"
-      ],
-      "eligible_symbols": [
-        "000100",
-        "001309",
-        "001376",
-        "002407",
-        "002425",
-        "002455",
-        "002709",
-        "002869",
-        "300059",
-        "300475",
-        "300476",
-        "300956",
-        "301361",
-        "600101",
-        "600150",
-        "603389",
-        "603863",
-        "603893",
-        "605258",
-        "688525",
-        "688693",
-        "920002"
-      ],
-      "eligible_case_count": 62,
-      "min_endpoint_coverage": 0.967741935483871,
-      "feature_status": "READY_FOR_DEEP_SANDBOX",
-      "endpoint_results": [
-        {
-          "endpoint": "moneyflow",
-          "eligible_case_count": 62,
-          "covered_case_count": 60,
-          "coverage_ratio": 0.967741935483871,
-          "missing_case_count": 2,
-          "blocked_or_error_count": 0
-        }
-      ],
-      "allowed_next_step": "run_deep_source_specific_sandbox",
-      "simulation_only": true,
-      "user_facing_suggestion_allowed": false,
-      "real_trade_allowed": false
-    },
-    {
-      "hypothesis_id": "hyp_a_tushare_dragon_tiger_seat_confirmation",
-      "title": "A-share dragon-tiger hot-money seat confirmation hypothesis",
-      "required_endpoints": [
-        "top_list",
-        "top_inst"
-      ],
-      "eligible_symbols": [
-        "000100",
-        "001309",
-        "001376",
-        "002407",
-        "002425",
-        "002455",
-        "002709",
-        "002869",
-        "300059",
-        "300475",
-        "300476",
-        "300956",
-        "301361",
-        "600101",
-        "600150",
-        "603389",
-        "603863",
-        "603893",
-        "605258",
-        "688525",
-        "688693",
-        "920002"
-      ],
-      "eligible_case_count": 62,
-      "min_endpoint_coverage": 0.3548387096774194,
-      "feature_status": "FEATURE_GAPS",
-      "endpoint_results": [
-        {
-          "endpoint": "top_list",
-          "eligible_case_count": 62,
-          "covered_case_count": 22,
-          "coverage_ratio": 0.3548387096774194,
-          "missing_case_count": 40,
-          "blocked_or_error_count": 0
-        },
-        {
-          "endpoint": "top_inst",
-          "eligible_case_count": 62,
-          "covered_case_count": 22,
-          "coverage_ratio": 0.3548387096774194,
-          "missing_case_count": 40,
-          "blocked_or_error_count": 0
-        }
-      ],
-      "allowed_next_step": "collect_more_source_feature_history",
-      "simulation_only": true,
-      "user_facing_suggestion_allowed": false,
-      "real_trade_allowed": false
-    },
     {
       "hypothesis_id": "hyp_a_tushare_institutional_ownership_stability",
       "title": "A-share institutional ownership stability hypothesis",
@@ -175,97 +70,40 @@
         "stk_holdernumber"
       ],
       "eligible_symbols": [
+        "000099",
         "000100",
+        "000506",
+        "000628",
         "001309",
         "001376",
         "002407",
-        "002425",
-        "002455",
         "002709",
-        "002869",
         "300059",
         "300475",
         "300476",
-        "300956",
-        "301361",
+        "301049",
+        "301577",
         "600101",
         "600150",
+        "600715",
+        "603172",
+        "603261",
         "603389",
-        "603863",
+        "603879",
         "603893",
-        "605258",
-        "688525",
-        "688693",
-        "920002"
+        "688525"
       ],
-      "eligible_case_count": 62,
-      "min_endpoint_coverage": 0.9193548387096774,
+      "eligible_case_count": 76,
+      "min_endpoint_coverage": 0.5526315789473685,
       "feature_status": "READY_FOR_DEEP_SANDBOX",
       "endpoint_results": [
         {
           "endpoint": "stk_holdernumber",
-          "eligible_case_count": 62,
-          "covered_case_count": 57,
-          "coverage_ratio": 0.9193548387096774,
-          "missing_case_count": 5,
-          "blocked_or_error_count": 0
-        }
-      ],
-      "allowed_next_step": "run_deep_source_specific_sandbox",
-      "simulation_only": true,
-      "user_facing_suggestion_allowed": false,
-      "real_trade_allowed": false
-    },
-    {
-      "hypothesis_id": "hyp_a_tushare_factor_liquidity_quality_overlay",
-      "title": "A-share factor liquidity quality overlay hypothesis",
-      "required_endpoints": [
-        "stk_factor",
-        "daily_basic"
-      ],
-      "eligible_symbols": [
-        "000100",
-        "001309",
-        "001376",
-        "002407",
-        "002425",
-        "002455",
-        "002709",
-        "002869",
-        "300059",
-        "300475",
-        "300476",
-        "300956",
-        "301361",
-        "600101",
-        "600150",
-        "603389",
-        "603863",
-        "603893",
-        "605258",
-        "688525",
-        "688693",
-        "920002"
-      ],
-      "eligible_case_count": 62,
-      "min_endpoint_coverage": 1.0,
-      "feature_status": "READY_FOR_DEEP_SANDBOX",
-      "endpoint_results": [
-        {
-          "endpoint": "stk_factor",
-          "eligible_case_count": 62,
-          "covered_case_count": 62,
-          "coverage_ratio": 1.0,
-          "missing_case_count": 0,
-          "blocked_or_error_count": 0
-        },
-        {
-          "endpoint": "daily_basic",
-          "eligible_case_count": 62,
-          "covered_case_count": 62,
-          "coverage_ratio": 1.0,
-          "missing_case_count": 0,
-          "blocked_or_error_count": 0
+          "eligible_case_count": 76,
+          "covered_case_count": 42,
+          "coverage_ratio": 0.5526315789473685,
+          "missing_case_count": 34,
+          "blocked_or_error_count": 30
         }
       ],
       "allowed_next_step": "run_deep_source_specific_sandbox",
@@ -311,9 +149,9 @@
     }
   ],
   "observation_summary": {
-    "pass_count": 469,
-    "missing_count": 89,
-    "error_count": 0,
+    "pass_count": 354,
+    "missing_count": 85,
+    "error_count": 245,
     "permission_blocked_count": 0,
     "endpoints": [
       "daily_basic",
@@ -333,9 +171,9 @@
     "source_hypothesis_evaluation": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/a_share_tushare_source_hypothesis_evaluation_latest.json"
   },
   "source_hashes": {
-    "source_hypothesis_queue": "a82aca1bfff36e0d4ab28e6eef806894cde712179133de813a84019b2d0069eb",
-    "strategy_specific_historical_cases": "e12e3e1bef152013354a1d66c481cd919fb8f28d0147741fc04536690a967171",
-    "source_hypothesis_evaluation": "605e0647e0f0a9e5c269b8b407e51ee7f9be371339130e8541b5c0d18eed2535"
+    "source_hypothesis_queue": "9aa14f9ddb9a8bf70874a35b15a72bff5595c471003c7f0a1f85478faa236a38",
+    "strategy_specific_historical_cases": "2f5f60167d932efcda570b52d8bc54557f79df87a760f851c9f1cb791c694179",
+    "source_hypothesis_evaluation": "ac462bcc67a045c537a6730485a2955565f181a7022e2c7b03308a07582e6c38"
   },
   "checks": {
     "source_queue_present": true,

@@ -1,7 +1,7 @@
 # Aegis Strategy-Specific Case Evaluation
 
 - Status: PASS
-- Generated At: 2026-07-12T23:42:19+08:00
+- Generated At: 2026-07-13T00:18:23+08:00
 - Candidate Count: 33
 - Simulation Research Candidates: 10
 - Watch Only: 3
@@ -32,15 +32,15 @@ Evaluation only. No real trade, no broker API, no webhook, no order placement.
 - 001309 德明利: downgraded cases=4 win_rate=0.25 avg_return=-0.07782971700417715 reasons=win_rate_below_threshold,average_return_below_threshold
 - 000100 TCL科技: simulation_research_candidate cases=4 win_rate=0.5 avg_return=0.005447954177738551 reasons=historical_case_thresholds_passed
 - 002407 多氟多: downgraded cases=4 win_rate=0.0 avg_return=-0.061083640832751834 reasons=win_rate_below_threshold,average_return_below_threshold
-- 600101 明星电力: downgraded cases=2 win_rate=0.0 avg_return=-0.3932932263814617 reasons=case_count_below_threshold,win_rate_below_threshold,average_return_below_threshold,hard_worst_return_breached
-- 300956 英力股份: downgraded cases=2 win_rate=0.0 avg_return=-0.29193318651605826 reasons=case_count_below_threshold,win_rate_below_threshold,average_return_below_threshold,hard_worst_return_breached
-- 002869 金溢科技: downgraded cases=2 win_rate=0.0 avg_return=-0.03565656565656572 reasons=case_count_below_threshold,win_rate_below_threshold,average_return_below_threshold
-- 688693 锴威特: downgraded cases=1 win_rate=0.0 avg_return=-0.1704 reasons=case_count_below_threshold,win_rate_below_threshold,average_return_below_threshold
-- 002455 百川股份: downgraded cases=2 win_rate=0.0 avg_return=-0.20387236962094274 reasons=case_count_below_threshold,win_rate_below_threshold,average_return_below_threshold,hard_worst_return_breached
-- 603389 亚振家居: downgraded cases=2 win_rate=0.0 avg_return=-0.14240386955463613 reasons=case_count_below_threshold,win_rate_below_threshold,average_return_below_threshold
-- 920002 万达轴承: downgraded cases=2 win_rate=0.0 avg_return=-0.03749565450982878 reasons=case_count_below_threshold,win_rate_below_threshold,average_return_below_threshold
-- 603863 松炀资源: downgraded cases=2 win_rate=0.5 avg_return=0.05790883990790724 reasons=case_count_below_threshold
-- 001376 百通能源: downgraded cases=2 win_rate=0.0 avg_return=-0.17033640635416153 reasons=case_count_below_threshold,win_rate_below_threshold,average_return_below_threshold,hard_worst_return_breached
-- 605258 协和电子: downgraded cases=2 win_rate=0.0 avg_return=-0.16447916326463963 reasons=case_count_below_threshold,win_rate_below_threshold,average_return_below_threshold
-- 301361 众智科技: downgraded cases=2 win_rate=0.0 avg_return=-0.16568957059618816 reasons=case_count_below_threshold,win_rate_below_threshold,average_return_below_threshold,hard_worst_return_breached
-- 002425 凯撒文化: downgraded cases=1 win_rate=0.0 avg_return=-0.11371237458193995 reasons=case_count_below_threshold,win_rate_below_threshold,average_return_below_threshold
+- 000506 招金黄金: downgraded cases=3 win_rate=0.3333333333333333 avg_return=0.027476097651536247 reasons=case_count_below_threshold,win_rate_below_threshold
+- 603879 永悦科技: downgraded cases=3 win_rate=1.0 avg_return=0.16826009586630053 reasons=case_count_below_threshold
+- 000628 高新发展: downgraded cases=3 win_rate=0.3333333333333333 avg_return=-0.0754339668210486 reasons=case_count_below_threshold,win_rate_below_threshold,average_return_below_threshold
+- 603261 立航科技: downgraded cases=3 win_rate=0.0 avg_return=-0.17018089070263284 reasons=case_count_below_threshold,win_rate_below_threshold,average_return_below_threshold,hard_worst_return_breached
+- 603389 亚振家居: downgraded cases=3 win_rate=0.3333333333333333 avg_return=-0.09028783866723418 reasons=case_count_below_threshold,win_rate_below_threshold,average_return_below_threshold
+- 600715 文投控股: downgraded cases=3 win_rate=0.3333333333333333 avg_return=-0.08497095010252902 reasons=case_count_below_threshold,win_rate_below_threshold,average_return_below_threshold,hard_worst_return_breached
+- 001376 百通能源: downgraded cases=3 win_rate=0.0 avg_return=-0.17420313904577625 reasons=case_count_below_threshold,win_rate_below_threshold,average_return_below_threshold,hard_worst_return_breached
+- 600101 明星电力: downgraded cases=3 win_rate=0.0 avg_return=-0.3773970870592163 reasons=case_count_below_threshold,win_rate_below_threshold,average_return_below_threshold,hard_worst_return_breached
+- 000099 中信海直: downgraded cases=3 win_rate=0.0 avg_return=-0.17551218447086023 reasons=case_count_below_threshold,win_rate_below_threshold,average_return_below_threshold
+- 603172 万丰股份: downgraded cases=3 win_rate=1.0 avg_return=0.10053575963930868 reasons=case_count_below_threshold
+- 301049 超越科技: downgraded cases=3 win_rate=0.0 avg_return=-0.1077301111570859 reasons=case_count_below_threshold,win_rate_below_threshold,average_return_below_threshold
+- 301577 美信科技: downgraded cases=3 win_rate=0.0 avg_return=-0.2331172826586493 reasons=case_count_below_threshold,win_rate_below_threshold,average_return_below_threshold,hard_worst_return_breached

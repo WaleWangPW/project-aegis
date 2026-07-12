@@ -1,8 +1,8 @@
 {
   "type": "a_share_refined_strategy_ranking_gate",
   "status": "PASS",
-  "generated_at": "2026-07-12T23:45:07+08:00",
-  "run_id": "a_share_refined_strategy_ranking_gate_20260712T234507",
+  "generated_at": "2026-07-13T00:19:30+08:00",
+  "run_id": "a_share_refined_strategy_ranking_gate_20260713T001930",
   "command": "scripts/review_a_share_refined_strategy_ranking_gate.py",
   "thresholds": {
     "min_case_count": 6,
@@ -14,60 +14,21 @@
     "max_drawdown_floor": -0.18
   },
   "summary": {
-    "refined_pass_candidate_count": 1,
-    "ranking_gate_reviewed_count": 1,
+    "refined_pass_candidate_count": 0,
+    "ranking_gate_reviewed_count": 0,
     "ranking_gate_approved_count": 0,
-    "ranking_gate_blocked_count": 1,
+    "ranking_gate_blocked_count": 0,
     "ranking_impact_allowed": false,
     "user_facing_suggestion_allowed": false,
     "network_used": false,
     "next_stage": "Only approved items may affect simulation sort; blocked items require more evidence."
   },
-  "items": [
-    {
-      "refined_strategy_id": "refined_a_moneyflow_holder_concentration",
-      "label": "主力资金 + 筹码集中",
-      "source_disposition": "REFINED_SANDBOX_PASS_CANDIDATE",
-      "ranking_gate_disposition": "RANKING_GATE_BLOCKED",
-      "ranking_gate_blockers": [
-        "ranking_gate_case_count_below_threshold",
-        "ranking_gate_unique_symbol_count_below_threshold",
-        "ranking_gate_single_symbol_concentration_too_high",
-        "ranking_gate_entry_month_coverage_below_threshold"
-      ],
-      "observations": {
-        "case_count": 3,
-        "unique_symbol_count": 2,
-        "entry_month_count": 2,
-        "max_single_symbol_case_share": 0.6666666666666666,
-        "case_source_counts": {
-          "stock_selection_workbench_sample": 1,
-          "dragon_tiger_event_sample": 2
-        },
-        "symbol_case_counts": {
-          "600150": 1,
-          "603863": 2
-        },
-        "win_rate": 0.6666666666666666,
-        "average_return": 0.04300709781212808,
-        "max_drawdown": -0.14364364364364368
-      },
-      "required_next_evidence": [
-        "collect_more_event_months",
-        "increase_unique_symbol_coverage",
-        "rerun_managed_cycle_before_ranking_impact"
-      ],
-      "ranking_impact_allowed": false,
-      "user_facing_suggestion_allowed": false,
-      "real_trade_allowed": false,
-      "simulation_only": true
-    }
-  ],
+  "items": [],
   "source_reports": {
     "refined_strategy_sandbox": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/a_share_tushare_refined_strategy_sandbox_latest.json"
   },
   "source_hashes": {
-    "refined_strategy_sandbox": "386bc057c399dfbd411bae8665b0815831ab3b463954c5dab8c402051a23da66"
+    "refined_strategy_sandbox": "d340d1bbe1ab7dcd50ba3d8d00d4e25b9fbcfa4c9253694605686a8abe622070"
   },
   "checks": {
     "refined_sandbox_pass": true,

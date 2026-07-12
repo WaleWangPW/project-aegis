@@ -1,35 +1,22 @@
 {
   "type": "a_share_tushare_strategy_diagnostics",
   "status": "PASS",
-  "generated_at": "2026-07-12T23:45:07+08:00",
+  "generated_at": "2026-07-13T00:19:30+08:00",
   "summary": {
-    "a_share_case_count": 62,
+    "a_share_case_count": 76,
     "proxy_pass_count": 0,
-    "proxy_fail_count": 6,
-    "ready_for_deep_sandbox_count": 5,
-    "feature_gap_count": 1,
+    "proxy_fail_count": 3,
+    "ready_for_deep_sandbox_count": 3,
+    "feature_gap_count": 0,
     "deep_sandbox_pass_candidate_count": 0,
-    "deep_sandbox_fail_count": 5,
+    "deep_sandbox_fail_count": 3,
     "rankable_strategy_count": 0,
-    "priority_action_count": 6,
+    "priority_action_count": 2,
     "ranking_impact_allowed": false,
     "user_facing_suggestion_allowed": false,
     "next_stage": "stock-agent should collect feature-gap samples first, then retest tightened signals before ranking gate."
   },
   "priority_actions": [
-    {
-      "hypothesis_id": "hyp_a_tushare_dragon_tiger_seat_confirmation",
-      "label": "龙虎榜/游资席位",
-      "status": "FEATURE_GAPS",
-      "required_endpoints": [
-        "top_list",
-        "top_inst"
-      ],
-      "eligible_symbol_count": 22,
-      "recommended_action": "collect_endpoint_history",
-      "why": "当前 historical cases 对这些 endpoint 没有足够覆盖，不能判断策略可行性。",
-      "stock_agent_task": "扩大含 top_list/top_inst 命中的 A股样本，优先收集最近上榜且有 20 日后验价格的 case。"
-    },
     {
       "hypothesis_id": "hyp_a_tushare_institutional_ownership_stability",
       "label": "机构持仓稳定",
@@ -92,149 +79,10 @@
       "why": "信号太宽，几乎什么都能命中但胜率低，应增加趋势/估值/回撤过滤。",
       "ranking_gate_allowed": false,
       "user_facing_suggestion_allowed": false
-    },
-    {
-      "hypothesis_id": "hyp_a_tushare_capital_flow_accumulation",
-      "label": "主力资金流向",
-      "disposition": "DEEP_SANDBOX_FAIL",
-      "plain_reasons": [
-        "源信号命中后的胜率低于门槛",
-        "源信号命中后的平均收益不达标",
-        "源信号命中后的最大回撤过深"
-      ],
-      "required_endpoints": [
-        "moneyflow"
-      ],
-      "metrics": {
-        "eligible_case_count": 62,
-        "source_signal_case_count": 15,
-        "source_signal_rate": 0.24193548387096775,
-        "source_signal_win_rate": 0.26666666666666666,
-        "source_signal_average_return": -0.106454625378842,
-        "source_signal_max_drawdown": -0.49265865792986285
-      },
-      "metric_gaps": {
-        "signal_case_gap": 0,
-        "win_rate_gap": 0.23333333333333334,
-        "average_return_gap": 0.106454625378842,
-        "drawdown_excess": 0.31265865792986286
-      },
-      "recommended_action": "add_risk_veto_before_retest",
-      "why": "信号命中后平均收益为负且回撤深，应先叠加风险否决再重测。",
-      "ranking_gate_allowed": false,
-      "user_facing_suggestion_allowed": false
-    },
-    {
-      "hypothesis_id": "hyp_a_tushare_factor_liquidity_quality_overlay",
-      "label": "因子+流动性质量",
-      "disposition": "DEEP_SANDBOX_FAIL",
-      "plain_reasons": [
-        "源信号命中后的胜率低于门槛",
-        "源信号命中后的平均收益不达标",
-        "源信号命中后的最大回撤过深"
-      ],
-      "required_endpoints": [
-        "stk_factor",
-        "daily_basic"
-      ],
-      "metrics": {
-        "eligible_case_count": 62,
-        "source_signal_case_count": 37,
-        "source_signal_rate": 0.5967741935483871,
-        "source_signal_win_rate": 0.24324324324324326,
-        "source_signal_average_return": -0.07037909178927015,
-        "source_signal_max_drawdown": -0.4088235294117648
-      },
-      "metric_gaps": {
-        "signal_case_gap": 0,
-        "win_rate_gap": 0.25675675675675674,
-        "average_return_gap": 0.07037909178927015,
-        "drawdown_excess": 0.22882352941176481
-      },
-      "recommended_action": "add_risk_veto_before_retest",
-      "why": "信号命中后平均收益为负且回撤深，应先叠加风险否决再重测。",
-      "ranking_gate_allowed": false,
-      "user_facing_suggestion_allowed": false
-    },
-    {
-      "hypothesis_id": "hyp_a_tushare_holder_concentration_improvement",
-      "label": "股东人数/筹码集中",
-      "disposition": "DEEP_SANDBOX_FAIL",
-      "plain_reasons": [
-        "源信号命中后的胜率低于门槛",
-        "源信号命中后的平均收益不达标",
-        "源信号命中后的最大回撤过深"
-      ],
-      "required_endpoints": [
-        "stk_holdernumber"
-      ],
-      "metrics": {
-        "eligible_case_count": 62,
-        "source_signal_case_count": 21,
-        "source_signal_rate": 0.3387096774193548,
-        "source_signal_win_rate": 0.2857142857142857,
-        "source_signal_average_return": -0.049482231220699766,
-        "source_signal_max_drawdown": -0.2504520795660037
-      },
-      "metric_gaps": {
-        "signal_case_gap": 0,
-        "win_rate_gap": 0.2142857142857143,
-        "average_return_gap": 0.049482231220699766,
-        "drawdown_excess": 0.07045207956600369
-      },
-      "recommended_action": "add_risk_veto_before_retest",
-      "why": "信号命中后平均收益为负且回撤深，应先叠加风险否决再重测。",
-      "ranking_gate_allowed": false,
-      "user_facing_suggestion_allowed": false
     }
   ],
-  "feature_gap_actions": [
-    {
-      "hypothesis_id": "hyp_a_tushare_dragon_tiger_seat_confirmation",
-      "label": "龙虎榜/游资席位",
-      "status": "FEATURE_GAPS",
-      "required_endpoints": [
-        "top_list",
-        "top_inst"
-      ],
-      "eligible_symbol_count": 22,
-      "recommended_action": "collect_endpoint_history",
-      "why": "当前 historical cases 对这些 endpoint 没有足够覆盖，不能判断策略可行性。",
-      "stock_agent_task": "扩大含 top_list/top_inst 命中的 A股样本，优先收集最近上榜且有 20 日后验价格的 case。"
-    }
-  ],
+  "feature_gap_actions": [],
   "deep_diagnostics": [
-    {
-      "hypothesis_id": "hyp_a_tushare_capital_flow_accumulation",
-      "label": "主力资金流向",
-      "disposition": "DEEP_SANDBOX_FAIL",
-      "plain_reasons": [
-        "源信号命中后的胜率低于门槛",
-        "源信号命中后的平均收益不达标",
-        "源信号命中后的最大回撤过深"
-      ],
-      "required_endpoints": [
-        "moneyflow"
-      ],
-      "metrics": {
-        "eligible_case_count": 62,
-        "source_signal_case_count": 15,
-        "source_signal_rate": 0.24193548387096775,
-        "source_signal_win_rate": 0.26666666666666666,
-        "source_signal_average_return": -0.106454625378842,
-        "source_signal_max_drawdown": -0.49265865792986285
-      },
-      "metric_gaps": {
-        "signal_case_gap": 0,
-        "win_rate_gap": 0.23333333333333334,
-        "average_return_gap": 0.106454625378842,
-        "drawdown_excess": 0.31265865792986286
-      },
-      "recommended_action": "add_risk_veto_before_retest",
-      "why": "信号命中后平均收益为负且回撤深，应先叠加风险否决再重测。",
-      "ranking_gate_allowed": false,
-      "user_facing_suggestion_allowed": false
-    },
     {
       "hypothesis_id": "hyp_a_tushare_institutional_ownership_stability",
       "label": "机构持仓稳定",
@@ -280,53 +128,21 @@
         "stk_holdernumber"
       ],
       "metrics": {
-        "eligible_case_count": 62,
-        "source_signal_case_count": 21,
-        "source_signal_rate": 0.3387096774193548,
-        "source_signal_win_rate": 0.2857142857142857,
-        "source_signal_average_return": -0.049482231220699766,
-        "source_signal_max_drawdown": -0.2504520795660037
+        "eligible_case_count": 76,
+        "source_signal_case_count": 16,
+        "source_signal_rate": 0.21052631578947367,
+        "source_signal_win_rate": 0.3125,
+        "source_signal_average_return": -0.05338406822612326,
+        "source_signal_max_drawdown": -0.20350877192982453
       },
       "metric_gaps": {
         "signal_case_gap": 0,
-        "win_rate_gap": 0.2142857142857143,
-        "average_return_gap": 0.049482231220699766,
-        "drawdown_excess": 0.07045207956600369
+        "win_rate_gap": 0.1875,
+        "average_return_gap": 0.05338406822612326,
+        "drawdown_excess": 0.023508771929824535
       },
-      "recommended_action": "add_risk_veto_before_retest",
-      "why": "信号命中后平均收益为负且回撤深，应先叠加风险否决再重测。",
-      "ranking_gate_allowed": false,
-      "user_facing_suggestion_allowed": false
-    },
-    {
-      "hypothesis_id": "hyp_a_tushare_factor_liquidity_quality_overlay",
-      "label": "因子+流动性质量",
-      "disposition": "DEEP_SANDBOX_FAIL",
-      "plain_reasons": [
-        "源信号命中后的胜率低于门槛",
-        "源信号命中后的平均收益不达标",
-        "源信号命中后的最大回撤过深"
-      ],
-      "required_endpoints": [
-        "stk_factor",
-        "daily_basic"
-      ],
-      "metrics": {
-        "eligible_case_count": 62,
-        "source_signal_case_count": 37,
-        "source_signal_rate": 0.5967741935483871,
-        "source_signal_win_rate": 0.24324324324324326,
-        "source_signal_average_return": -0.07037909178927015,
-        "source_signal_max_drawdown": -0.4088235294117648
-      },
-      "metric_gaps": {
-        "signal_case_gap": 0,
-        "win_rate_gap": 0.25675675675675674,
-        "average_return_gap": 0.07037909178927015,
-        "drawdown_excess": 0.22882352941176481
-      },
-      "recommended_action": "add_risk_veto_before_retest",
-      "why": "信号命中后平均收益为负且回撤深，应先叠加风险否决再重测。",
+      "recommended_action": "rework_hypothesis",
+      "why": "当前源特征没有证明增益，先重写假设，不进入 ranking gate。",
       "ranking_gate_allowed": false,
       "user_facing_suggestion_allowed": false
     },
@@ -369,10 +185,10 @@
     "historical_cases": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/aegis_strategy_specific_historical_cases_latest.json"
   },
   "source_hashes": {
-    "proxy_evaluation": "605e0647e0f0a9e5c269b8b407e51ee7f9be371339130e8541b5c0d18eed2535",
-    "feature_coverage": "d280a792988337522d39b98e9f6a019efb73de36110271c6e7dc0fec39b669d0",
-    "deep_sandbox": "7aec6d40f75d449406bc69c1a1feaf307e6c6ddaea7fb612a51042a857611693",
-    "historical_cases": "e12e3e1bef152013354a1d66c481cd919fb8f28d0147741fc04536690a967171"
+    "proxy_evaluation": "ac462bcc67a045c537a6730485a2955565f181a7022e2c7b03308a07582e6c38",
+    "feature_coverage": "67fe858cb11cc15c265329a3b1df5d22f7f0428d5c43c71795b2dc3f881b31df",
+    "deep_sandbox": "d810657f05fa41f95976e11c10539f00f25e7bae18f7256ae369685baed19f69",
+    "historical_cases": "2f5f60167d932efcda570b52d8bc54557f79df87a760f851c9f1cb791c694179"
   },
   "checks": {
     "proxy_report_pass": true,

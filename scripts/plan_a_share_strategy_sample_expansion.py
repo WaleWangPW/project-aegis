@@ -196,6 +196,7 @@ def build_report(
             "current_event_count": current_window.get("event_count"),
             "current_event_aligned_case_count": current_window.get("event_aligned_case_count"),
             "next_lookback_dates": DEFAULT_NEXT_PARAMS["lookback_dates"],
+            "next_forward_days": DEFAULT_NEXT_PARAMS["forward_days"],
             "next_max_symbols": DEFAULT_NEXT_PARAMS["max_symbols"],
             "next_max_events_per_symbol": DEFAULT_NEXT_PARAMS["max_events_per_symbol"],
             "network_used": False,

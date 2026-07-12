@@ -1,14 +1,14 @@
 {
   "type": "a_share_dragon_tiger_research_samples",
   "status": "PASS",
-  "generated_at": "2026-07-12T23:42:17+08:00",
-  "run_id": "a_share_dragon_tiger_research_samples_20260712T234204",
-  "command": "scripts/collect_a_share_dragon_tiger_research_samples.py",
+  "generated_at": "2026-07-13T00:18:21+08:00",
+  "run_id": "a_share_dragon_tiger_research_samples_20260713T001754",
+  "command": "scripts/collect_a_share_dragon_tiger_research_samples.py --lookback-dates 90 --forward-days 20 --max-symbols 24 --max-events-per-symbol 3",
   "summary": {
-    "sample_count": 12,
-    "event_count": 24,
-    "queried_trade_date_count": 45,
-    "eligible_cache_date_start": "2024-04-26",
+    "sample_count": 24,
+    "event_count": 72,
+    "queried_trade_date_count": 90,
+    "eligible_cache_date_start": "2024-02-21",
     "eligible_cache_date_end": "2024-07-03",
     "network_used": true,
     "raw_payload_saved": false,
@@ -16,6 +16,433 @@
     "next_stage": "historical case assembly should use event_trade_dates as entry dates for research-only samples."
   },
   "samples": [
+    {
+      "symbol": "000506",
+      "ts_code": "000506.SZ",
+      "name": "招金黄金",
+      "market": "A",
+      "matched_strategy_ids": [
+        "a_share_short_momentum",
+        "growth_breakout"
+      ],
+      "research_sample_only": true,
+      "sample_source": "tushare_dragon_tiger_hot_money",
+      "source_status": "feature_gap_sample",
+      "source_status_label": "龙虎榜/游资历史样本",
+      "source_score": 98,
+      "source_risk_flags": [
+        "龙虎榜/游资样本只用于沙盘验证，不用于推荐"
+      ],
+      "event_trade_dates": [
+        "2024-06-26",
+        "2024-06-21",
+        "2024-06-19"
+      ],
+      "events": [
+        {
+          "trade_date": "2024-06-26",
+          "reason_hash": "852e599e86d86f9ffdd08ef364afff976e9f8b9f37bd6d14970eded67e083876",
+          "top_list_net_amount": -6131473.63,
+          "top_list_pct_change": -5.2632,
+          "top_list_turnover_rate": 0.46,
+          "top_inst_row_count": 10,
+          "top_inst_net_buy_sum": -9287603.26,
+          "event_hash": "416a8e7eb9e6d8dd22918195a1f02983a137311e0f17d0e607dfc3f861be794f"
+        },
+        {
+          "trade_date": "2024-06-21",
+          "reason_hash": "82c618256833da161324a4a6a01853e49574368d6c07e0fb7313d7c8e0db316b",
+          "top_list_net_amount": 2546800.02,
+          "top_list_pct_change": 5.0,
+          "top_list_turnover_rate": 4.24,
+          "top_inst_row_count": 10,
+          "top_inst_net_buy_sum": 3674254.62,
+          "event_hash": "fb15d7f1eb557bd0caff25a6005690135c28cda1214a9a8b024de0e98d361b4e"
+        },
+        {
+          "trade_date": "2024-06-19",
+          "reason_hash": "8a26124903b84fb9ea6ca89373ad9afee0cfc3f375f0fccc1c4920e111e6115f",
+          "top_list_net_amount": -7097102.99,
+          "top_list_pct_change": 4.5872,
+          "top_list_turnover_rate": 9.33,
+          "top_inst_row_count": 10,
+          "top_inst_net_buy_sum": -5376047.760000001,
+          "event_hash": "eb41e606842147779df00b2fe83ca1ab10c11561f855342e6821e3785fad240f"
+        }
+      ],
+      "required_endpoints": [
+        "top_list",
+        "top_inst"
+      ],
+      "user_facing_suggestion_allowed": false,
+      "real_trade_allowed": false
+    },
+    {
+      "symbol": "603879",
+      "ts_code": "603879.SH",
+      "name": "永悦科技",
+      "market": "A",
+      "matched_strategy_ids": [
+        "a_share_short_momentum",
+        "growth_breakout"
+      ],
+      "research_sample_only": true,
+      "sample_source": "tushare_dragon_tiger_hot_money",
+      "source_status": "feature_gap_sample",
+      "source_status_label": "龙虎榜/游资历史样本",
+      "source_score": 78,
+      "source_risk_flags": [
+        "龙虎榜/游资样本只用于沙盘验证，不用于推荐"
+      ],
+      "event_trade_dates": [
+        "2024-07-03",
+        "2024-06-24",
+        "2024-06-06"
+      ],
+      "events": [
+        {
+          "trade_date": "2024-07-03",
+          "reason_hash": "ad4006da0e8d5bc03a970ae1c093cf8674afee16b2d392136b99bf8b4a31accf",
+          "top_list_net_amount": 3879097.2,
+          "top_list_pct_change": 5.0691,
+          "top_list_turnover_rate": 2.58,
+          "top_inst_row_count": 0,
+          "top_inst_net_buy_sum": null,
+          "event_hash": "c2f5c5488dc0e3b8a2ecc5b0db5521bf070ba5c0b8c6d34b9ac997046752a41b"
+        },
+        {
+          "trade_date": "2024-06-24",
+          "reason_hash": "e3ea2b775a48ea1fbcbd7212c9f581dc20065fb8b14ea3da44fab11e4d91413a",
+          "top_list_net_amount": 549468.51,
+          "top_list_pct_change": -5.0691,
+          "top_list_turnover_rate": 2.7,
+          "top_inst_row_count": 10,
+          "top_inst_net_buy_sum": 549468.5099999998,
+          "event_hash": "0b79f456d8478e224decace5463e5c1fee37a6abf05bc6f5e5ddbd3267d0aac1"
+        },
+        {
+          "trade_date": "2024-06-06",
+          "reason_hash": "e3ea2b775a48ea1fbcbd7212c9f581dc20065fb8b14ea3da44fab11e4d91413a",
+          "top_list_net_amount": -4588423.98,
+          "top_list_pct_change": -4.7826,
+          "top_list_turnover_rate": 4.22,
+          "top_inst_row_count": 10,
+          "top_inst_net_buy_sum": -4588423.9799999995,
+          "event_hash": "9bc8c11cba3c75bd87b18365e96a13198b706ea1d1ff73538fe4c18d3f244d57"
+        }
+      ],
+      "required_endpoints": [
+        "top_list",
+        "top_inst"
+      ],
+      "user_facing_suggestion_allowed": false,
+      "real_trade_allowed": false
+    },
+    {
+      "symbol": "000628",
+      "ts_code": "000628.SZ",
+      "name": "高新发展",
+      "market": "A",
+      "matched_strategy_ids": [
+        "a_share_short_momentum",
+        "growth_breakout"
+      ],
+      "research_sample_only": true,
+      "sample_source": "tushare_dragon_tiger_hot_money",
+      "source_status": "feature_gap_sample",
+      "source_status_label": "龙虎榜/游资历史样本",
+      "source_score": 70,
+      "source_risk_flags": [
+        "龙虎榜/游资样本只用于沙盘验证，不用于推荐"
+      ],
+      "event_trade_dates": [
+        "2024-06-28",
+        "2024-06-21",
+        "2024-05-23"
+      ],
+      "events": [
+        {
+          "trade_date": "2024-06-28",
+          "reason_hash": "3146a3d6f4e27ca424a891b18fbc8fb7af3bb21a7f724691a5aa93207388aaa6",
+          "top_list_net_amount": 98671927.44,
+          "top_list_pct_change": 5.1422,
+          "top_list_turnover_rate": 21.57,
+          "top_inst_row_count": 10,
+          "top_inst_net_buy_sum": 142136070.44,
+          "event_hash": "ffda0c1847a91c89aa12ea6ff39183cea694da61cb61733602cfc87826e9c5c6"
+        },
+        {
+          "trade_date": "2024-06-21",
+          "reason_hash": "e8025da1b6c1f83e99836278c7544f821e2d5672cd9daed1bd066ca7a3084042",
+          "top_list_net_amount": 70463074.6,
+          "top_list_pct_change": 9.9976,
+          "top_list_turnover_rate": 17.45,
+          "top_inst_row_count": 10,
+          "top_inst_net_buy_sum": 85709565.17,
+          "event_hash": "02648573fa257b340544c21967945c629327920ea97865eac027b04b128f4c2b"
+        },
+        {
+          "trade_date": "2024-05-23",
+          "reason_hash": "3146a3d6f4e27ca424a891b18fbc8fb7af3bb21a7f724691a5aa93207388aaa6",
+          "top_list_net_amount": 111345100.27,
+          "top_list_pct_change": 8.2948,
+          "top_list_turnover_rate": 33.69,
+          "top_inst_row_count": 10,
+          "top_inst_net_buy_sum": 210316409.54,
+          "event_hash": "1b4ab9baedd608368065d69a9931d42369f67cc4cc8c3cd4a8c6cb978576c98c"
+        }
+      ],
+      "required_endpoints": [
+        "top_list",
+        "top_inst"
+      ],
+      "user_facing_suggestion_allowed": false,
+      "real_trade_allowed": false
+    },
+    {
+      "symbol": "603261",
+      "ts_code": "603261.SH",
+      "name": "立航科技",
+      "market": "A",
+      "matched_strategy_ids": [
+        "a_share_short_momentum",
+        "growth_breakout"
+      ],
+      "research_sample_only": true,
+      "sample_source": "tushare_dragon_tiger_hot_money",
+      "source_status": "feature_gap_sample",
+      "source_status_label": "龙虎榜/游资历史样本",
+      "source_score": 61,
+      "source_risk_flags": [
+        "龙虎榜/游资样本只用于沙盘验证，不用于推荐"
+      ],
+      "event_trade_dates": [
+        "2024-06-18",
+        "2024-06-17",
+        "2024-05-24"
+      ],
+      "events": [
+        {
+          "trade_date": "2024-06-18",
+          "reason_hash": "28cb572c1b4856ef0518b95182fe03de2faee1545e84fd7a12b27356d6431ec8",
+          "top_list_net_amount": -21924074.0,
+          "top_list_pct_change": 4.1355,
+          "top_list_turnover_rate": 32.25,
+          "top_inst_row_count": 10,
+          "top_inst_net_buy_sum": -21924074.0,
+          "event_hash": "21400431c4529b739178db3b519588b22ce881235eb88871e2c9c8b39c32f8d3"
+        },
+        {
+          "trade_date": "2024-06-17",
+          "reason_hash": "0024327b4d644a6081819c4d5378838f4df23c8894089761c3370aab092886b1",
+          "top_list_net_amount": 18240646.0,
+          "top_list_pct_change": 9.9928,
+          "top_list_turnover_rate": 12.43,
+          "top_inst_row_count": 10,
+          "top_inst_net_buy_sum": 18240646.0,
+          "event_hash": "f0c401c20889f3e1b7112d3f2cf05dfff644646419154bc681a436bbd1ab2a49"
+        },
+        {
+          "trade_date": "2024-05-24",
+          "reason_hash": "28cb572c1b4856ef0518b95182fe03de2faee1545e84fd7a12b27356d6431ec8",
+          "top_list_net_amount": -4936985.0,
+          "top_list_pct_change": -9.9974,
+          "top_list_turnover_rate": 21.15,
+          "top_inst_row_count": 20,
+          "top_inst_net_buy_sum": -9873970.0,
+          "event_hash": "2d8eddb3f3f93e34bbf675704f2b457b6b3ed14136b4e9cff309a5962b1eb90f"
+        }
+      ],
+      "required_endpoints": [
+        "top_list",
+        "top_inst"
+      ],
+      "user_facing_suggestion_allowed": false,
+      "real_trade_allowed": false
+    },
+    {
+      "symbol": "603389",
+      "ts_code": "603389.SH",
+      "name": "亚振家居",
+      "market": "A",
+      "matched_strategy_ids": [
+        "a_share_short_momentum",
+        "growth_breakout"
+      ],
+      "research_sample_only": true,
+      "sample_source": "tushare_dragon_tiger_hot_money",
+      "source_status": "feature_gap_sample",
+      "source_status_label": "龙虎榜/游资历史样本",
+      "source_score": 55,
+      "source_risk_flags": [
+        "龙虎榜/游资样本只用于沙盘验证，不用于推荐"
+      ],
+      "event_trade_dates": [
+        "2024-06-24",
+        "2024-06-21",
+        "2024-06-17"
+      ],
+      "events": [
+        {
+          "trade_date": "2024-06-24",
+          "reason_hash": "061562f29320b46ce00d1f476a2ec41c383c3a838bc14cadb9e7c8770d534d1d",
+          "top_list_net_amount": -2058087.8,
+          "top_list_pct_change": -4.5997,
+          "top_list_turnover_rate": 12.34,
+          "top_inst_row_count": 10,
+          "top_inst_net_buy_sum": -2058087.7999999998,
+          "event_hash": "58bc2b64bbba8b50115ef0e130b014cfdd9e8083ad085c8bbc29b89488edf7f5"
+        },
+        {
+          "trade_date": "2024-06-21",
+          "reason_hash": "061562f29320b46ce00d1f476a2ec41c383c3a838bc14cadb9e7c8770d534d1d",
+          "top_list_net_amount": 2844863.0,
+          "top_list_pct_change": 5.0089,
+          "top_list_turnover_rate": 13.67,
+          "top_inst_row_count": 10,
+          "top_inst_net_buy_sum": 2844863.0,
+          "event_hash": "022189a822ce0daa39853016876c4a83cb177b61929a0cdee16eef7ccc7e1f18"
+        },
+        {
+          "trade_date": "2024-06-17",
+          "reason_hash": "858bfe0892fa255050ca5f5f08dba4c4367d8902991e30b92bc6e2793b2a3054",
+          "top_list_net_amount": -13675611.4,
+          "top_list_pct_change": -8.2267,
+          "top_list_turnover_rate": 13.04,
+          "top_inst_row_count": 10,
+          "top_inst_net_buy_sum": -13675611.4,
+          "event_hash": "2480a33c0629436161a8955ea9349af81532be1640a49347e359bdf93bdc25d8"
+        }
+      ],
+      "required_endpoints": [
+        "top_list",
+        "top_inst"
+      ],
+      "user_facing_suggestion_allowed": false,
+      "real_trade_allowed": false
+    },
+    {
+      "symbol": "600715",
+      "ts_code": "600715.SH",
+      "name": "文投控股",
+      "market": "A",
+      "matched_strategy_ids": [
+        "a_share_short_momentum",
+        "growth_breakout"
+      ],
+      "research_sample_only": true,
+      "sample_source": "tushare_dragon_tiger_hot_money",
+      "source_status": "feature_gap_sample",
+      "source_status_label": "龙虎榜/游资历史样本",
+      "source_score": 54,
+      "source_risk_flags": [
+        "龙虎榜/游资样本只用于沙盘验证，不用于推荐"
+      ],
+      "event_trade_dates": [
+        "2024-05-16",
+        "2024-05-13",
+        "2024-04-10"
+      ],
+      "events": [
+        {
+          "trade_date": "2024-05-16",
+          "reason_hash": "ad4006da0e8d5bc03a970ae1c093cf8674afee16b2d392136b99bf8b4a31accf",
+          "top_list_net_amount": 1683953.0,
+          "top_list_pct_change": 4.7619,
+          "top_list_turnover_rate": 3.64,
+          "top_inst_row_count": 10,
+          "top_inst_net_buy_sum": 1683953.0,
+          "event_hash": "e52b56e5474721f040e03897a26a849f01bb9982143f114de180582da231aa74"
+        },
+        {
+          "trade_date": "2024-05-13",
+          "reason_hash": "e3ea2b775a48ea1fbcbd7212c9f581dc20065fb8b14ea3da44fab11e4d91413a",
+          "top_list_net_amount": -1487822.07,
+          "top_list_pct_change": -5.0,
+          "top_list_turnover_rate": 3.92,
+          "top_inst_row_count": 10,
+          "top_inst_net_buy_sum": -1487822.0699999994,
+          "event_hash": "9e0092e2180e58792fd86266b4d2c386631a4554c84d90ab13fde507874310c7"
+        },
+        {
+          "trade_date": "2024-04-10",
+          "reason_hash": "858bfe0892fa255050ca5f5f08dba4c4367d8902991e30b92bc6e2793b2a3054",
+          "top_list_net_amount": -8058922.0,
+          "top_list_pct_change": -10.0402,
+          "top_list_turnover_rate": 8.85,
+          "top_inst_row_count": 10,
+          "top_inst_net_buy_sum": -8058922.0,
+          "event_hash": "502f7bb33b1965dd2700c68d1330e94fa04c3467a2931d5f338bb5fd1b7abb87"
+        }
+      ],
+      "required_endpoints": [
+        "top_list",
+        "top_inst"
+      ],
+      "user_facing_suggestion_allowed": false,
+      "real_trade_allowed": false
+    },
+    {
+      "symbol": "001376",
+      "ts_code": "001376.SZ",
+      "name": "百通能源",
+      "market": "A",
+      "matched_strategy_ids": [
+        "a_share_short_momentum",
+        "growth_breakout"
+      ],
+      "research_sample_only": true,
+      "sample_source": "tushare_dragon_tiger_hot_money",
+      "source_status": "feature_gap_sample",
+      "source_status_label": "龙虎榜/游资历史样本",
+      "source_score": 54,
+      "source_risk_flags": [
+        "龙虎榜/游资样本只用于沙盘验证，不用于推荐"
+      ],
+      "event_trade_dates": [
+        "2024-05-30",
+        "2024-05-29",
+        "2024-05-28"
+      ],
+      "events": [
+        {
+          "trade_date": "2024-05-30",
+          "reason_hash": "3146a3d6f4e27ca424a891b18fbc8fb7af3bb21a7f724691a5aa93207388aaa6",
+          "top_list_net_amount": 5924568.08,
+          "top_list_pct_change": -5.3509,
+          "top_list_turnover_rate": 26.34,
+          "top_inst_row_count": 10,
+          "top_inst_net_buy_sum": 11452836.16,
+          "event_hash": "0e2ac33949204ac4648c781b6507db838da9c680cd6cfeb19e2c576b16996a9a"
+        },
+        {
+          "trade_date": "2024-05-29",
+          "reason_hash": "3146a3d6f4e27ca424a891b18fbc8fb7af3bb21a7f724691a5aa93207388aaa6",
+          "top_list_net_amount": -5338892.41,
+          "top_list_pct_change": -0.9987,
+          "top_list_turnover_rate": 49.21,
+          "top_inst_row_count": 10,
+          "top_inst_net_buy_sum": -754085.75,
+          "event_hash": "399fa56d9e0d83c30e0c7db058bb56c7bde3bd2620d739309ffcfb0711d6c500"
+        },
+        {
+          "trade_date": "2024-05-28",
+          "reason_hash": "3146a3d6f4e27ca424a891b18fbc8fb7af3bb21a7f724691a5aa93207388aaa6",
+          "top_list_net_amount": 28352764.0,
+          "top_list_pct_change": 9.9809,
+          "top_list_turnover_rate": 31.63,
+          "top_inst_row_count": 20,
+          "top_inst_net_buy_sum": 63767970.0,
+          "event_hash": "ac9c17cb771662ca71389e14470bc4da32feb4892d75886eba41e1e2e6afd819"
+        }
+      ],
+      "required_endpoints": [
+        "top_list",
+        "top_inst"
+      ],
+      "user_facing_suggestion_allowed": false,
+      "real_trade_allowed": false
+    },
     {
       "symbol": "600101",
       "ts_code": "600101.SH",
@@ -35,7 +462,8 @@
       ],
       "event_trade_dates": [
         "2024-07-02",
-        "2024-07-01"
+        "2024-07-01",
+        "2024-06-24"
       ],
       "events": [
         {
@@ -57,6 +485,504 @@
           "top_inst_row_count": 20,
           "top_inst_net_buy_sum": 148231942.46,
           "event_hash": "c33c32852e7cc9b71cbe8024d13f5f99aecade656ad4c12ce238cff6856f4c2b"
+        },
+        {
+          "trade_date": "2024-06-24",
+          "reason_hash": "28cb572c1b4856ef0518b95182fe03de2faee1545e84fd7a12b27356d6431ec8",
+          "top_list_net_amount": 35311193.2,
+          "top_list_pct_change": 5.7188,
+          "top_list_turnover_rate": 21.82,
+          "top_inst_row_count": 10,
+          "top_inst_net_buy_sum": 35311193.2,
+          "event_hash": "c8541509ee6e7754b6e56f7eb1fc5497f0ebb3f1e508bac03a3282c270bf14c6"
+        }
+      ],
+      "required_endpoints": [
+        "top_list",
+        "top_inst"
+      ],
+      "user_facing_suggestion_allowed": false,
+      "real_trade_allowed": false
+    },
+    {
+      "symbol": "000099",
+      "ts_code": "000099.SZ",
+      "name": "中信海直",
+      "market": "A",
+      "matched_strategy_ids": [
+        "a_share_short_momentum",
+        "growth_breakout"
+      ],
+      "research_sample_only": true,
+      "sample_source": "tushare_dragon_tiger_hot_money",
+      "source_status": "feature_gap_sample",
+      "source_status_label": "龙虎榜/游资历史样本",
+      "source_score": 49,
+      "source_risk_flags": [
+        "龙虎榜/游资样本只用于沙盘验证，不用于推荐"
+      ],
+      "event_trade_dates": [
+        "2024-05-24",
+        "2024-05-07",
+        "2024-04-30"
+      ],
+      "events": [
+        {
+          "trade_date": "2024-05-24",
+          "reason_hash": "76a13caf7c37a746fb9ef345fda7b5aab75009a174e4bbe6e4f633124bdf162f",
+          "top_list_net_amount": 35509956.32,
+          "top_list_pct_change": -9.9103,
+          "top_list_turnover_rate": 18.02,
+          "top_inst_row_count": 10,
+          "top_inst_net_buy_sum": 55028947.96,
+          "event_hash": "afd4fab8ed84f79e11d7fb8b2fd6bd86058ac82aafc89e6b19db5945712f53f4"
+        },
+        {
+          "trade_date": "2024-05-07",
+          "reason_hash": "3146a3d6f4e27ca424a891b18fbc8fb7af3bb21a7f724691a5aa93207388aaa6",
+          "top_list_net_amount": -308192706.75,
+          "top_list_pct_change": 0.3986,
+          "top_list_turnover_rate": 25.04,
+          "top_inst_row_count": 10,
+          "top_inst_net_buy_sum": -408403304.31,
+          "event_hash": "17d1d6c7454d56d4c420a1087e25924fff28ce97b9f2c4f81de504e5c31b352c"
+        },
+        {
+          "trade_date": "2024-04-30",
+          "reason_hash": "76a13caf7c37a746fb9ef345fda7b5aab75009a174e4bbe6e4f633124bdf162f",
+          "top_list_net_amount": -330156583.63,
+          "top_list_pct_change": -9.9798,
+          "top_list_turnover_rate": 23.0,
+          "top_inst_row_count": 10,
+          "top_inst_net_buy_sum": -526132668.43,
+          "event_hash": "23cf5a7a7f1096cc6c1943335f21ce60d775c6352febc0ec107a98d6a26f1e66"
+        }
+      ],
+      "required_endpoints": [
+        "top_list",
+        "top_inst"
+      ],
+      "user_facing_suggestion_allowed": false,
+      "real_trade_allowed": false
+    },
+    {
+      "symbol": "603172",
+      "ts_code": "603172.SH",
+      "name": "万丰股份",
+      "market": "A",
+      "matched_strategy_ids": [
+        "a_share_short_momentum",
+        "growth_breakout"
+      ],
+      "research_sample_only": true,
+      "sample_source": "tushare_dragon_tiger_hot_money",
+      "source_status": "feature_gap_sample",
+      "source_status_label": "龙虎榜/游资历史样本",
+      "source_score": 45,
+      "source_risk_flags": [
+        "龙虎榜/游资样本只用于沙盘验证，不用于推荐"
+      ],
+      "event_trade_dates": [
+        "2024-06-20",
+        "2024-06-14",
+        "2024-06-13"
+      ],
+      "events": [
+        {
+          "trade_date": "2024-06-20",
+          "reason_hash": "28cb572c1b4856ef0518b95182fe03de2faee1545e84fd7a12b27356d6431ec8",
+          "top_list_net_amount": 76280.43,
+          "top_list_pct_change": 2.625,
+          "top_list_turnover_rate": 26.76,
+          "top_inst_row_count": 10,
+          "top_inst_net_buy_sum": 76280.4299999997,
+          "event_hash": "9c0c60942aeb418c88390a95923d5491d5e020a7e9ef34cd8935e89cc9c1120c"
+        },
+        {
+          "trade_date": "2024-06-14",
+          "reason_hash": "28cb572c1b4856ef0518b95182fe03de2faee1545e84fd7a12b27356d6431ec8",
+          "top_list_net_amount": -533679.89,
+          "top_list_pct_change": 0.8878,
+          "top_list_turnover_rate": 22.11,
+          "top_inst_row_count": 10,
+          "top_inst_net_buy_sum": -533679.8900000001,
+          "event_hash": "e1a790e3fdcf3a743219f65971f74a8fabe8462aa5c022fc564e8d694cb261e4"
+        },
+        {
+          "trade_date": "2024-06-13",
+          "reason_hash": "28cb572c1b4856ef0518b95182fe03de2faee1545e84fd7a12b27356d6431ec8",
+          "top_list_net_amount": -4784323.0,
+          "top_list_pct_change": -7.126,
+          "top_list_turnover_rate": 28.35,
+          "top_inst_row_count": 10,
+          "top_inst_net_buy_sum": -4784323.0,
+          "event_hash": "5bf27e4bcbaa8ff8a8aadbe29fd4f513c2f30f1b34affa302d9b72d5daf12b29"
+        }
+      ],
+      "required_endpoints": [
+        "top_list",
+        "top_inst"
+      ],
+      "user_facing_suggestion_allowed": false,
+      "real_trade_allowed": false
+    },
+    {
+      "symbol": "301049",
+      "ts_code": "301049.SZ",
+      "name": "超越科技",
+      "market": "A",
+      "matched_strategy_ids": [
+        "a_share_short_momentum",
+        "growth_breakout"
+      ],
+      "research_sample_only": true,
+      "sample_source": "tushare_dragon_tiger_hot_money",
+      "source_status": "feature_gap_sample",
+      "source_status_label": "龙虎榜/游资历史样本",
+      "source_score": 44,
+      "source_risk_flags": [
+        "龙虎榜/游资样本只用于沙盘验证，不用于推荐"
+      ],
+      "event_trade_dates": [
+        "2024-06-04",
+        "2024-05-06",
+        "2024-04-30"
+      ],
+      "events": [
+        {
+          "trade_date": "2024-06-04",
+          "reason_hash": "ff688f796d81f9dde8779a5da4fd4da5c40aefeb563e6fe901eed09016e43e77",
+          "top_list_net_amount": -9742296.17,
+          "top_list_pct_change": -20.0083,
+          "top_list_turnover_rate": 25.44,
+          "top_inst_row_count": 10,
+          "top_inst_net_buy_sum": -12756376.22,
+          "event_hash": "2da9199506c02d2699b53c832d7696cc132970effb776bf29429f58ca750c714"
+        },
+        {
+          "trade_date": "2024-05-06",
+          "reason_hash": "d2c9376616f89fcaaf77275a7ba50b8f72113c981955ee6cfd97b1f1ed1536cb",
+          "top_list_net_amount": -1396150.78,
+          "top_list_pct_change": 4.6809,
+          "top_list_turnover_rate": 40.32,
+          "top_inst_row_count": 10,
+          "top_inst_net_buy_sum": -2720870.61,
+          "event_hash": "3b889c32a4323971eb4e9dd239a5efe56b6d045c8fc4c8e2ae34aeec070381b1"
+        },
+        {
+          "trade_date": "2024-04-30",
+          "reason_hash": "d2c9376616f89fcaaf77275a7ba50b8f72113c981955ee6cfd97b1f1ed1536cb",
+          "top_list_net_amount": 1363227.0,
+          "top_list_pct_change": 1.4754,
+          "top_list_turnover_rate": 43.77,
+          "top_inst_row_count": 10,
+          "top_inst_net_buy_sum": 284710.0,
+          "event_hash": "617b6aad2aca31ccc6dfe080415896b1eb7c4c970616b9e4e238e7ecd74b4f93"
+        }
+      ],
+      "required_endpoints": [
+        "top_list",
+        "top_inst"
+      ],
+      "user_facing_suggestion_allowed": false,
+      "real_trade_allowed": false
+    },
+    {
+      "symbol": "301577",
+      "ts_code": "301577.SZ",
+      "name": "美信科技",
+      "market": "A",
+      "matched_strategy_ids": [
+        "a_share_short_momentum",
+        "growth_breakout"
+      ],
+      "research_sample_only": true,
+      "sample_source": "tushare_dragon_tiger_hot_money",
+      "source_status": "feature_gap_sample",
+      "source_status_label": "龙虎榜/游资历史样本",
+      "source_score": 43,
+      "source_risk_flags": [
+        "龙虎榜/游资样本只用于沙盘验证，不用于推荐"
+      ],
+      "event_trade_dates": [
+        "2024-07-03",
+        "2024-07-01",
+        "2024-06-28"
+      ],
+      "events": [
+        {
+          "trade_date": "2024-07-03",
+          "reason_hash": "d2c9376616f89fcaaf77275a7ba50b8f72113c981955ee6cfd97b1f1ed1536cb",
+          "top_list_net_amount": -14742237.96,
+          "top_list_pct_change": -11.5454,
+          "top_list_turnover_rate": 39.76,
+          "top_inst_row_count": 10,
+          "top_inst_net_buy_sum": -18834255.96,
+          "event_hash": "2893fa101062ce88d9f37e4f58f16b7a40675b8f6d77b26975d778ac240a9f63"
+        },
+        {
+          "trade_date": "2024-07-01",
+          "reason_hash": "d2c9376616f89fcaaf77275a7ba50b8f72113c981955ee6cfd97b1f1ed1536cb",
+          "top_list_net_amount": -1428785.32,
+          "top_list_pct_change": -4.0353,
+          "top_list_turnover_rate": 49.43,
+          "top_inst_row_count": 10,
+          "top_inst_net_buy_sum": 5488717.68,
+          "event_hash": "84af79190e31f417919fab249122b72710f5187c6c0fd444fc542059ab245a9a"
+        },
+        {
+          "trade_date": "2024-06-28",
+          "reason_hash": "d2c9376616f89fcaaf77275a7ba50b8f72113c981955ee6cfd97b1f1ed1536cb",
+          "top_list_net_amount": -27865047.76,
+          "top_list_pct_change": 14.8959,
+          "top_list_turnover_rate": 55.65,
+          "top_inst_row_count": 10,
+          "top_inst_net_buy_sum": -27865047.76,
+          "event_hash": "cd42282c9dc0080e3d9cf7d25025cad5a4d8cba33bb5fc6445e7221c877ac924"
+        }
+      ],
+      "required_endpoints": [
+        "top_list",
+        "top_inst"
+      ],
+      "user_facing_suggestion_allowed": false,
+      "real_trade_allowed": false
+    },
+    {
+      "symbol": "001696",
+      "ts_code": "001696.SZ",
+      "name": "宗申动力",
+      "market": "A",
+      "matched_strategy_ids": [
+        "a_share_short_momentum",
+        "growth_breakout"
+      ],
+      "research_sample_only": true,
+      "sample_source": "tushare_dragon_tiger_hot_money",
+      "source_status": "feature_gap_sample",
+      "source_status_label": "龙虎榜/游资历史样本",
+      "source_score": 43,
+      "source_risk_flags": [
+        "龙虎榜/游资样本只用于沙盘验证，不用于推荐"
+      ],
+      "event_trade_dates": [
+        "2024-06-11",
+        "2024-06-07",
+        "2024-05-27"
+      ],
+      "events": [
+        {
+          "trade_date": "2024-06-11",
+          "reason_hash": "3146a3d6f4e27ca424a891b18fbc8fb7af3bb21a7f724691a5aa93207388aaa6",
+          "top_list_net_amount": -69197160.13,
+          "top_list_pct_change": 0.3717,
+          "top_list_turnover_rate": 22.48,
+          "top_inst_row_count": 10,
+          "top_inst_net_buy_sum": -162040606.62,
+          "event_hash": "69e0cc79938c60a3ef752c92d66fcae8ba2842d4a2061c98e792ce9e699757d3"
+        },
+        {
+          "trade_date": "2024-06-07",
+          "reason_hash": "3146a3d6f4e27ca424a891b18fbc8fb7af3bb21a7f724691a5aa93207388aaa6",
+          "top_list_net_amount": 24682571.09,
+          "top_list_pct_change": 9.9755,
+          "top_list_turnover_rate": 23.16,
+          "top_inst_row_count": 20,
+          "top_inst_net_buy_sum": 7677857.37999998,
+          "event_hash": "9921e8d3861c86899a750d1bc4c7d636bf38a1ccf0825c6af3510eb990713c39"
+        },
+        {
+          "trade_date": "2024-05-27",
+          "reason_hash": "f9388fe0ce7df45a5d07ae7ef471b9de4687c025a457e2919db69ed159bb2146",
+          "top_list_net_amount": 59045239.26,
+          "top_list_pct_change": 5.5938,
+          "top_list_turnover_rate": 14.88,
+          "top_inst_row_count": 10,
+          "top_inst_net_buy_sum": 62743991.26,
+          "event_hash": "fc599762c73cf4921f6e1cd4f41f31e8d1841729afb5f4b7408461af9252b011"
+        }
+      ],
+      "required_endpoints": [
+        "top_list",
+        "top_inst"
+      ],
+      "user_facing_suggestion_allowed": false,
+      "real_trade_allowed": false
+    },
+    {
+      "symbol": "002869",
+      "ts_code": "002869.SZ",
+      "name": "金溢科技",
+      "market": "A",
+      "matched_strategy_ids": [
+        "a_share_short_momentum",
+        "growth_breakout"
+      ],
+      "research_sample_only": true,
+      "sample_source": "tushare_dragon_tiger_hot_money",
+      "source_status": "feature_gap_sample",
+      "source_status_label": "龙虎榜/游资历史样本",
+      "source_score": 42,
+      "source_risk_flags": [
+        "龙虎榜/游资样本只用于沙盘验证，不用于推荐"
+      ],
+      "event_trade_dates": [
+        "2024-07-03",
+        "2024-07-01",
+        "2024-06-28"
+      ],
+      "events": [
+        {
+          "trade_date": "2024-07-03",
+          "reason_hash": "3146a3d6f4e27ca424a891b18fbc8fb7af3bb21a7f724691a5aa93207388aaa6",
+          "top_list_net_amount": -47300403.07,
+          "top_list_pct_change": 2.0724,
+          "top_list_turnover_rate": 31.64,
+          "top_inst_row_count": 10,
+          "top_inst_net_buy_sum": -50253046.83,
+          "event_hash": "bcd43075766b0deaf1c7a886471cd2b5728141e351e9136089587bd0c97ec389"
+        },
+        {
+          "trade_date": "2024-07-01",
+          "reason_hash": "3146a3d6f4e27ca424a891b18fbc8fb7af3bb21a7f724691a5aa93207388aaa6",
+          "top_list_net_amount": -19641089.0,
+          "top_list_pct_change": 0.031,
+          "top_list_turnover_rate": 22.12,
+          "top_inst_row_count": 10,
+          "top_inst_net_buy_sum": -32927899.0,
+          "event_hash": "d4ffd9b55fe01ffa09fdf19d80af32314c129a80f3e678fe34f9e1546ef14bd9"
+        },
+        {
+          "trade_date": "2024-06-28",
+          "reason_hash": "3146a3d6f4e27ca424a891b18fbc8fb7af3bb21a7f724691a5aa93207388aaa6",
+          "top_list_net_amount": -24284412.0,
+          "top_list_pct_change": -5.2926,
+          "top_list_turnover_rate": 27.19,
+          "top_inst_row_count": 10,
+          "top_inst_net_buy_sum": -17136044.0,
+          "event_hash": "8a983f768a4eb6e6ebc33176fc8266f9e5552c523c028a339a9a66d663752f9e"
+        }
+      ],
+      "required_endpoints": [
+        "top_list",
+        "top_inst"
+      ],
+      "user_facing_suggestion_allowed": false,
+      "real_trade_allowed": false
+    },
+    {
+      "symbol": "002455",
+      "ts_code": "002455.SZ",
+      "name": "百川股份",
+      "market": "A",
+      "matched_strategy_ids": [
+        "a_share_short_momentum",
+        "growth_breakout"
+      ],
+      "research_sample_only": true,
+      "sample_source": "tushare_dragon_tiger_hot_money",
+      "source_status": "feature_gap_sample",
+      "source_status_label": "龙虎榜/游资历史样本",
+      "source_score": 42,
+      "source_risk_flags": [
+        "龙虎榜/游资样本只用于沙盘验证，不用于推荐"
+      ],
+      "event_trade_dates": [
+        "2024-06-18",
+        "2024-06-13",
+        "2024-05-30"
+      ],
+      "events": [
+        {
+          "trade_date": "2024-06-18",
+          "reason_hash": "3146a3d6f4e27ca424a891b18fbc8fb7af3bb21a7f724691a5aa93207388aaa6",
+          "top_list_net_amount": 125108929.3,
+          "top_list_pct_change": 7.9024,
+          "top_list_turnover_rate": 22.89,
+          "top_inst_row_count": 10,
+          "top_inst_net_buy_sum": 185831240.6,
+          "event_hash": "8e4fd3afb56738153c30eefeb9688a2f0cf930639464512355d207edace7193c"
+        },
+        {
+          "trade_date": "2024-06-13",
+          "reason_hash": "3146a3d6f4e27ca424a891b18fbc8fb7af3bb21a7f724691a5aa93207388aaa6",
+          "top_list_net_amount": -24814077.32,
+          "top_list_pct_change": -6.0036,
+          "top_list_turnover_rate": 22.73,
+          "top_inst_row_count": 10,
+          "top_inst_net_buy_sum": -56534350.86,
+          "event_hash": "3b80d99142b68a128f9b50ce6810b6a82f1199e78f25939e21fa6ee83c8b3a94"
+        },
+        {
+          "trade_date": "2024-05-30",
+          "reason_hash": "3146a3d6f4e27ca424a891b18fbc8fb7af3bb21a7f724691a5aa93207388aaa6",
+          "top_list_net_amount": -82361843.24,
+          "top_list_pct_change": -4.1497,
+          "top_list_turnover_rate": 24.36,
+          "top_inst_row_count": 10,
+          "top_inst_net_buy_sum": -151978495.62,
+          "event_hash": "41ebba32c9b819a1cdd6a0fe84f4d52da6b35eae59b9c983b4795dfd172db560"
+        }
+      ],
+      "required_endpoints": [
+        "top_list",
+        "top_inst"
+      ],
+      "user_facing_suggestion_allowed": false,
+      "real_trade_allowed": false
+    },
+    {
+      "symbol": "605180",
+      "ts_code": "605180.SH",
+      "name": "华生科技",
+      "market": "A",
+      "matched_strategy_ids": [
+        "a_share_short_momentum",
+        "growth_breakout"
+      ],
+      "research_sample_only": true,
+      "sample_source": "tushare_dragon_tiger_hot_money",
+      "source_status": "feature_gap_sample",
+      "source_status_label": "龙虎榜/游资历史样本",
+      "source_score": 40,
+      "source_risk_flags": [
+        "龙虎榜/游资样本只用于沙盘验证，不用于推荐"
+      ],
+      "event_trade_dates": [
+        "2024-05-09",
+        "2024-05-08",
+        "2024-04-29"
+      ],
+      "events": [
+        {
+          "trade_date": "2024-05-09",
+          "reason_hash": "858bfe0892fa255050ca5f5f08dba4c4367d8902991e30b92bc6e2793b2a3054",
+          "top_list_net_amount": -1280751.92,
+          "top_list_pct_change": -6.2097,
+          "top_list_turnover_rate": 9.82,
+          "top_inst_row_count": 10,
+          "top_inst_net_buy_sum": -1280751.92,
+          "event_hash": "d866a583b6b43c5863bf3e68236022aa27c71295432d320bab9b84c3f80cf95d"
+        },
+        {
+          "trade_date": "2024-05-08",
+          "reason_hash": "061562f29320b46ce00d1f476a2ec41c383c3a838bc14cadb9e7c8770d534d1d",
+          "top_list_net_amount": -25820149.38,
+          "top_list_pct_change": 3.3293,
+          "top_list_turnover_rate": 15.02,
+          "top_inst_row_count": 10,
+          "top_inst_net_buy_sum": -25820149.38,
+          "event_hash": "cf38fe4c8821cc7f9c75bddb1caf12f8c340d1ff3d5c5dc0931caf8bec41c731"
+        },
+        {
+          "trade_date": "2024-04-29",
+          "reason_hash": "28cb572c1b4856ef0518b95182fe03de2faee1545e84fd7a12b27356d6431ec8",
+          "top_list_net_amount": 8375223.46,
+          "top_list_pct_change": 0.6263,
+          "top_list_turnover_rate": 29.32,
+          "top_inst_row_count": 10,
+          "top_inst_net_buy_sum": 8375223.460000001,
+          "event_hash": "f3da5049b8bc4e7745ceabb83b8406fc5acd644ce2ed4d94115f450a11634695"
         }
       ],
       "required_endpoints": [
@@ -85,7 +1011,8 @@
       ],
       "event_trade_dates": [
         "2024-06-19",
-        "2024-06-17"
+        "2024-06-17",
+        "2024-06-13"
       ],
       "events": [
         {
@@ -107,6 +1034,16 @@
           "top_inst_row_count": 10,
           "top_inst_net_buy_sum": 59065030.9,
           "event_hash": "6fc8e14621c1994a1775e1f6f17b926aa655cce5a119174bce43c8c63be66c44"
+        },
+        {
+          "trade_date": "2024-06-13",
+          "reason_hash": "d2c9376616f89fcaaf77275a7ba50b8f72113c981955ee6cfd97b1f1ed1536cb",
+          "top_list_net_amount": 12439579.18,
+          "top_list_pct_change": 5.4118,
+          "top_list_turnover_rate": 62.22,
+          "top_inst_row_count": 10,
+          "top_inst_net_buy_sum": 16256327.499999998,
+          "event_hash": "a2d863ab2aa24fb6577e4c69ed51ebaca98c78604ceb01032ecaac6c12526df7"
         }
       ],
       "required_endpoints": [
@@ -117,9 +1054,131 @@
       "real_trade_allowed": false
     },
     {
-      "symbol": "002869",
-      "ts_code": "002869.SZ",
-      "name": "金溢科技",
+      "symbol": "000737",
+      "ts_code": "000737.SZ",
+      "name": "北方铜业",
+      "market": "A",
+      "matched_strategy_ids": [
+        "a_share_short_momentum",
+        "growth_breakout"
+      ],
+      "research_sample_only": true,
+      "sample_source": "tushare_dragon_tiger_hot_money",
+      "source_status": "feature_gap_sample",
+      "source_status_label": "龙虎榜/游资历史样本",
+      "source_score": 39,
+      "source_risk_flags": [
+        "龙虎榜/游资样本只用于沙盘验证，不用于推荐"
+      ],
+      "event_trade_dates": [
+        "2024-05-21",
+        "2024-05-20",
+        "2024-05-15"
+      ],
+      "events": [
+        {
+          "trade_date": "2024-05-21",
+          "reason_hash": "3146a3d6f4e27ca424a891b18fbc8fb7af3bb21a7f724691a5aa93207388aaa6",
+          "top_list_net_amount": -39125556.19,
+          "top_list_pct_change": -1.6179,
+          "top_list_turnover_rate": 31.52,
+          "top_inst_row_count": 10,
+          "top_inst_net_buy_sum": -11916011.94,
+          "event_hash": "b5dfa3119db3f3c3e577de2591faa82aa92a98dd89dce746bad515902014f349"
+        },
+        {
+          "trade_date": "2024-05-20",
+          "reason_hash": "e8025da1b6c1f83e99836278c7544f821e2d5672cd9daed1bd066ca7a3084042",
+          "top_list_net_amount": -20758832.37,
+          "top_list_pct_change": 10.0,
+          "top_list_turnover_rate": 21.66,
+          "top_inst_row_count": 10,
+          "top_inst_net_buy_sum": 5223069.629999999,
+          "event_hash": "ce0928542e050fcaee43f2d264d559c9eaecbcf49798250bb52e22587c712f3f"
+        },
+        {
+          "trade_date": "2024-05-15",
+          "reason_hash": "3146a3d6f4e27ca424a891b18fbc8fb7af3bb21a7f724691a5aa93207388aaa6",
+          "top_list_net_amount": -58568619.0,
+          "top_list_pct_change": 2.8369,
+          "top_list_turnover_rate": 29.45,
+          "top_inst_row_count": 10,
+          "top_inst_net_buy_sum": -74074492.0,
+          "event_hash": "69e3da04eb5293fcf5fe68cd1ef8b206d142a725aa8177baaa2b9967351ddb76"
+        }
+      ],
+      "required_endpoints": [
+        "top_list",
+        "top_inst"
+      ],
+      "user_facing_suggestion_allowed": false,
+      "real_trade_allowed": false
+    },
+    {
+      "symbol": "603375",
+      "ts_code": "603375.SH",
+      "name": "盛景微",
+      "market": "A",
+      "matched_strategy_ids": [
+        "a_share_short_momentum",
+        "growth_breakout"
+      ],
+      "research_sample_only": true,
+      "sample_source": "tushare_dragon_tiger_hot_money",
+      "source_status": "feature_gap_sample",
+      "source_status_label": "龙虎榜/游资历史样本",
+      "source_score": 38,
+      "source_risk_flags": [
+        "龙虎榜/游资样本只用于沙盘验证，不用于推荐"
+      ],
+      "event_trade_dates": [
+        "2024-05-21",
+        "2024-05-20",
+        "2024-05-17"
+      ],
+      "events": [
+        {
+          "trade_date": "2024-05-21",
+          "reason_hash": "28cb572c1b4856ef0518b95182fe03de2faee1545e84fd7a12b27356d6431ec8",
+          "top_list_net_amount": -2598457.36,
+          "top_list_pct_change": -5.0705,
+          "top_list_turnover_rate": 24.91,
+          "top_inst_row_count": 10,
+          "top_inst_net_buy_sum": -2598457.3600000003,
+          "event_hash": "a4a10dd42b7f90e7813afee903d023f6b0f6feee195c8777f082aec4af4dd891"
+        },
+        {
+          "trade_date": "2024-05-20",
+          "reason_hash": "28cb572c1b4856ef0518b95182fe03de2faee1545e84fd7a12b27356d6431ec8",
+          "top_list_net_amount": -5988426.36,
+          "top_list_pct_change": 4.0044,
+          "top_list_turnover_rate": 31.99,
+          "top_inst_row_count": 10,
+          "top_inst_net_buy_sum": -5988426.360000001,
+          "event_hash": "fa5fdb3df7b34995b97241230f7d027670869c21d5a8dfffd198636cba6972f6"
+        },
+        {
+          "trade_date": "2024-05-17",
+          "reason_hash": "28cb572c1b4856ef0518b95182fe03de2faee1545e84fd7a12b27356d6431ec8",
+          "top_list_net_amount": 41110582.51,
+          "top_list_pct_change": 6.131,
+          "top_list_turnover_rate": 34.09,
+          "top_inst_row_count": 10,
+          "top_inst_net_buy_sum": 41110582.51,
+          "event_hash": "7d0a6937533db1a68b5a6b273c14393307a0db5b13ab407c005ae49c84c6b20c"
+        }
+      ],
+      "required_endpoints": [
+        "top_list",
+        "top_inst"
+      ],
+      "user_facing_suggestion_allowed": false,
+      "real_trade_allowed": false
+    },
+    {
+      "symbol": "603580",
+      "ts_code": "603580.SH",
+      "name": "艾艾精工",
       "market": "A",
       "matched_strategy_ids": [
         "a_share_short_momentum",
@@ -134,29 +1193,223 @@
         "龙虎榜/游资样本只用于沙盘验证，不用于推荐"
       ],
       "event_trade_dates": [
-        "2024-07-03",
-        "2024-07-01"
+        "2024-05-10",
+        "2024-05-08",
+        "2024-05-06"
       ],
       "events": [
         {
-          "trade_date": "2024-07-03",
-          "reason_hash": "3146a3d6f4e27ca424a891b18fbc8fb7af3bb21a7f724691a5aa93207388aaa6",
-          "top_list_net_amount": -47300403.07,
-          "top_list_pct_change": 2.0724,
-          "top_list_turnover_rate": 31.64,
-          "top_inst_row_count": 10,
-          "top_inst_net_buy_sum": -50253046.83,
-          "event_hash": "bcd43075766b0deaf1c7a886471cd2b5728141e351e9136089587bd0c97ec389"
+          "trade_date": "2024-05-10",
+          "reason_hash": "0024327b4d644a6081819c4d5378838f4df23c8894089761c3370aab092886b1",
+          "top_list_net_amount": 29830235.42,
+          "top_list_pct_change": 10.0193,
+          "top_list_turnover_rate": 22.42,
+          "top_inst_row_count": 20,
+          "top_inst_net_buy_sum": 59660470.84,
+          "event_hash": "023ebe1c9530087b495f7a4984411f062a352b13df1780a968db9f1bf48bf0f0"
         },
         {
-          "trade_date": "2024-07-01",
-          "reason_hash": "3146a3d6f4e27ca424a891b18fbc8fb7af3bb21a7f724691a5aa93207388aaa6",
-          "top_list_net_amount": -19641089.0,
-          "top_list_pct_change": 0.031,
-          "top_list_turnover_rate": 22.12,
+          "trade_date": "2024-05-08",
+          "reason_hash": "061562f29320b46ce00d1f476a2ec41c383c3a838bc14cadb9e7c8770d534d1d",
+          "top_list_net_amount": -21864178.68,
+          "top_list_pct_change": -6.1447,
+          "top_list_turnover_rate": 25.64,
+          "top_inst_row_count": 20,
+          "top_inst_net_buy_sum": -43728357.36,
+          "event_hash": "0cc04eb17c76068e182a24c92927dc7fb16ffc6a84e8ff64bc4a68ace77269dc"
+        },
+        {
+          "trade_date": "2024-05-06",
+          "reason_hash": "0370e845c74bc4b1f9eb4ead034413a8bf0d40df9fa25cadd95f1afafca1d274",
+          "top_list_net_amount": -22417149.33,
+          "top_list_pct_change": 9.983,
+          "top_list_turnover_rate": 17.16,
           "top_inst_row_count": 10,
-          "top_inst_net_buy_sum": -32927899.0,
-          "event_hash": "d4ffd9b55fe01ffa09fdf19d80af32314c129a80f3e678fe34f9e1546ef14bd9"
+          "top_inst_net_buy_sum": -22417149.33,
+          "event_hash": "dfbbafcdf68336e083e2d8fcd249875fe5bb577fdd40ab35e1555acfdf68cd8d"
+        }
+      ],
+      "required_endpoints": [
+        "top_list",
+        "top_inst"
+      ],
+      "user_facing_suggestion_allowed": false,
+      "real_trade_allowed": false
+    },
+    {
+      "symbol": "301489",
+      "ts_code": "301489.SZ",
+      "name": "思泉新材",
+      "market": "A",
+      "matched_strategy_ids": [
+        "a_share_short_momentum",
+        "growth_breakout"
+      ],
+      "research_sample_only": true,
+      "sample_source": "tushare_dragon_tiger_hot_money",
+      "source_status": "feature_gap_sample",
+      "source_status_label": "龙虎榜/游资历史样本",
+      "source_score": 37,
+      "source_risk_flags": [
+        "龙虎榜/游资样本只用于沙盘验证，不用于推荐"
+      ],
+      "event_trade_dates": [
+        "2024-05-23",
+        "2024-05-22",
+        "2024-05-21"
+      ],
+      "events": [
+        {
+          "trade_date": "2024-05-23",
+          "reason_hash": "d2c9376616f89fcaaf77275a7ba50b8f72113c981955ee6cfd97b1f1ed1536cb",
+          "top_list_net_amount": -19549849.11,
+          "top_list_pct_change": -0.4121,
+          "top_list_turnover_rate": 52.89,
+          "top_inst_row_count": 10,
+          "top_inst_net_buy_sum": -23721448.53,
+          "event_hash": "bf6e0eea38687f2aaf67c60cb939a05c8e4f2a28ae7d7b0c8f5f09ab74ebc8dd"
+        },
+        {
+          "trade_date": "2024-05-22",
+          "reason_hash": "d2c9376616f89fcaaf77275a7ba50b8f72113c981955ee6cfd97b1f1ed1536cb",
+          "top_list_net_amount": 12188863.32,
+          "top_list_pct_change": 4.8586,
+          "top_list_turnover_rate": 50.12,
+          "top_inst_row_count": 10,
+          "top_inst_net_buy_sum": 13189952.77,
+          "event_hash": "a4b2df6418990207e12fa6a3f3f217e224b783734b551035407ce6ce3243e4c7"
+        },
+        {
+          "trade_date": "2024-05-21",
+          "reason_hash": "d2c9376616f89fcaaf77275a7ba50b8f72113c981955ee6cfd97b1f1ed1536cb",
+          "top_list_net_amount": -7080328.92,
+          "top_list_pct_change": 14.5171,
+          "top_list_turnover_rate": 49.22,
+          "top_inst_row_count": 10,
+          "top_inst_net_buy_sum": -9180763.600000001,
+          "event_hash": "be3839ee3f8e2b846bbf165b7c42fe268f2b3f870f420cf718b87ab2c5d39fc1"
+        }
+      ],
+      "required_endpoints": [
+        "top_list",
+        "top_inst"
+      ],
+      "user_facing_suggestion_allowed": false,
+      "real_trade_allowed": false
+    },
+    {
+      "symbol": "001387",
+      "ts_code": "001387.SZ",
+      "name": "雪祺电气",
+      "market": "A",
+      "matched_strategy_ids": [
+        "a_share_short_momentum",
+        "growth_breakout"
+      ],
+      "research_sample_only": true,
+      "sample_source": "tushare_dragon_tiger_hot_money",
+      "source_status": "feature_gap_sample",
+      "source_status_label": "龙虎榜/游资历史样本",
+      "source_score": 37,
+      "source_risk_flags": [
+        "龙虎榜/游资样本只用于沙盘验证，不用于推荐"
+      ],
+      "event_trade_dates": [
+        "2024-05-06",
+        "2024-04-26",
+        "2024-04-25"
+      ],
+      "events": [
+        {
+          "trade_date": "2024-05-06",
+          "reason_hash": "3146a3d6f4e27ca424a891b18fbc8fb7af3bb21a7f724691a5aa93207388aaa6",
+          "top_list_net_amount": 4482567.59,
+          "top_list_pct_change": 3.2554,
+          "top_list_turnover_rate": 29.02,
+          "top_inst_row_count": 10,
+          "top_inst_net_buy_sum": 4482567.59,
+          "event_hash": "aa2ccf4a10437838a3d9778a1d289c31ed417768f517f5e7ce260e9055cf559b"
+        },
+        {
+          "trade_date": "2024-04-26",
+          "reason_hash": "3146a3d6f4e27ca424a891b18fbc8fb7af3bb21a7f724691a5aa93207388aaa6",
+          "top_list_net_amount": -1900984.96,
+          "top_list_pct_change": -1.8036,
+          "top_list_turnover_rate": 29.77,
+          "top_inst_row_count": 10,
+          "top_inst_net_buy_sum": -3086805.96,
+          "event_hash": "046b66aadd6db6938b7858fe8cf1286429377518b19b48e77c3b9cbce244127b"
+        },
+        {
+          "trade_date": "2024-04-25",
+          "reason_hash": "3146a3d6f4e27ca424a891b18fbc8fb7af3bb21a7f724691a5aa93207388aaa6",
+          "top_list_net_amount": -7881425.4,
+          "top_list_pct_change": -0.7163,
+          "top_list_turnover_rate": 55.0,
+          "top_inst_row_count": 10,
+          "top_inst_net_buy_sum": -7881425.3999999985,
+          "event_hash": "c9b26958941d9e3204fa65bc4bd9818ff56f07bf955d4450605e4549617d25c1"
+        }
+      ],
+      "required_endpoints": [
+        "top_list",
+        "top_inst"
+      ],
+      "user_facing_suggestion_allowed": false,
+      "real_trade_allowed": false
+    },
+    {
+      "symbol": "001298",
+      "ts_code": "001298.SZ",
+      "name": "好上好",
+      "market": "A",
+      "matched_strategy_ids": [
+        "a_share_short_momentum",
+        "growth_breakout"
+      ],
+      "research_sample_only": true,
+      "sample_source": "tushare_dragon_tiger_hot_money",
+      "source_status": "feature_gap_sample",
+      "source_status_label": "龙虎榜/游资历史样本",
+      "source_score": 37,
+      "source_risk_flags": [
+        "龙虎榜/游资样本只用于沙盘验证，不用于推荐"
+      ],
+      "event_trade_dates": [
+        "2024-06-26",
+        "2024-06-25",
+        "2024-06-24"
+      ],
+      "events": [
+        {
+          "trade_date": "2024-06-26",
+          "reason_hash": "3146a3d6f4e27ca424a891b18fbc8fb7af3bb21a7f724691a5aa93207388aaa6",
+          "top_list_net_amount": 462193.16,
+          "top_list_pct_change": -1.3239,
+          "top_list_turnover_rate": 22.51,
+          "top_inst_row_count": 10,
+          "top_inst_net_buy_sum": -1709065.7999999996,
+          "event_hash": "a7e26ad99ee2559d7cf99718e74b36ac6db45f12c6adb6403f525724ae7d4890"
+        },
+        {
+          "trade_date": "2024-06-25",
+          "reason_hash": "3146a3d6f4e27ca424a891b18fbc8fb7af3bb21a7f724691a5aa93207388aaa6",
+          "top_list_net_amount": -20571145.36,
+          "top_list_pct_change": 1.3417,
+          "top_list_turnover_rate": 29.62,
+          "top_inst_row_count": 10,
+          "top_inst_net_buy_sum": -29911961.91,
+          "event_hash": "bcd142e41b7ef4068f5644c8d5b2f5b7dc15288ce617c564231483b34d5bc22c"
+        },
+        {
+          "trade_date": "2024-06-24",
+          "reason_hash": "f9388fe0ce7df45a5d07ae7ef471b9de4687c025a457e2919db69ed159bb2146",
+          "top_list_net_amount": 15051551.89,
+          "top_list_pct_change": 4.9273,
+          "top_list_turnover_rate": 29.24,
+          "top_inst_row_count": 20,
+          "top_inst_net_buy_sum": 23171585.44,
+          "event_hash": "e71becbafce516a9c1e173f3a9cd01d4335ce730bd6cb639e9cf2d7eaa0ca616"
         }
       ],
       "required_endpoints": [
@@ -185,7 +1438,8 @@
       ],
       "event_trade_dates": [
         "2024-06-27",
-        "2024-06-27"
+        "2024-06-27",
+        "2024-06-26"
       ],
       "events": [
         {
@@ -207,406 +1461,16 @@
           "top_inst_row_count": 20,
           "top_inst_net_buy_sum": -4817211.76,
           "event_hash": "995b09f0f87d77be4cc925125b7855acda103d10249caa2c3b13ed6c7979ac52"
-        }
-      ],
-      "required_endpoints": [
-        "top_list",
-        "top_inst"
-      ],
-      "user_facing_suggestion_allowed": false,
-      "real_trade_allowed": false
-    },
-    {
-      "symbol": "002455",
-      "ts_code": "002455.SZ",
-      "name": "百川股份",
-      "market": "A",
-      "matched_strategy_ids": [
-        "a_share_short_momentum",
-        "growth_breakout"
-      ],
-      "research_sample_only": true,
-      "sample_source": "tushare_dragon_tiger_hot_money",
-      "source_status": "feature_gap_sample",
-      "source_status_label": "龙虎榜/游资历史样本",
-      "source_score": 35,
-      "source_risk_flags": [
-        "龙虎榜/游资样本只用于沙盘验证，不用于推荐"
-      ],
-      "event_trade_dates": [
-        "2024-06-18",
-        "2024-06-13"
-      ],
-      "events": [
-        {
-          "trade_date": "2024-06-18",
-          "reason_hash": "3146a3d6f4e27ca424a891b18fbc8fb7af3bb21a7f724691a5aa93207388aaa6",
-          "top_list_net_amount": 125108929.3,
-          "top_list_pct_change": 7.9024,
-          "top_list_turnover_rate": 22.89,
-          "top_inst_row_count": 10,
-          "top_inst_net_buy_sum": 185831240.6,
-          "event_hash": "8e4fd3afb56738153c30eefeb9688a2f0cf930639464512355d207edace7193c"
         },
-        {
-          "trade_date": "2024-06-13",
-          "reason_hash": "3146a3d6f4e27ca424a891b18fbc8fb7af3bb21a7f724691a5aa93207388aaa6",
-          "top_list_net_amount": -24814077.32,
-          "top_list_pct_change": -6.0036,
-          "top_list_turnover_rate": 22.73,
-          "top_inst_row_count": 10,
-          "top_inst_net_buy_sum": -56534350.86,
-          "event_hash": "3b80d99142b68a128f9b50ce6810b6a82f1199e78f25939e21fa6ee83c8b3a94"
-        }
-      ],
-      "required_endpoints": [
-        "top_list",
-        "top_inst"
-      ],
-      "user_facing_suggestion_allowed": false,
-      "real_trade_allowed": false
-    },
-    {
-      "symbol": "603389",
-      "ts_code": "603389.SH",
-      "name": "亚振家居",
-      "market": "A",
-      "matched_strategy_ids": [
-        "a_share_short_momentum",
-        "growth_breakout"
-      ],
-      "research_sample_only": true,
-      "sample_source": "tushare_dragon_tiger_hot_money",
-      "source_status": "feature_gap_sample",
-      "source_status_label": "龙虎榜/游资历史样本",
-      "source_score": 33,
-      "source_risk_flags": [
-        "龙虎榜/游资样本只用于沙盘验证，不用于推荐"
-      ],
-      "event_trade_dates": [
-        "2024-06-24",
-        "2024-06-21"
-      ],
-      "events": [
-        {
-          "trade_date": "2024-06-24",
-          "reason_hash": "061562f29320b46ce00d1f476a2ec41c383c3a838bc14cadb9e7c8770d534d1d",
-          "top_list_net_amount": -2058087.8,
-          "top_list_pct_change": -4.5997,
-          "top_list_turnover_rate": 12.34,
-          "top_inst_row_count": 10,
-          "top_inst_net_buy_sum": -2058087.7999999998,
-          "event_hash": "58bc2b64bbba8b50115ef0e130b014cfdd9e8083ad085c8bbc29b89488edf7f5"
-        },
-        {
-          "trade_date": "2024-06-21",
-          "reason_hash": "061562f29320b46ce00d1f476a2ec41c383c3a838bc14cadb9e7c8770d534d1d",
-          "top_list_net_amount": 2844863.0,
-          "top_list_pct_change": 5.0089,
-          "top_list_turnover_rate": 13.67,
-          "top_inst_row_count": 10,
-          "top_inst_net_buy_sum": 2844863.0,
-          "event_hash": "022189a822ce0daa39853016876c4a83cb177b61929a0cdee16eef7ccc7e1f18"
-        }
-      ],
-      "required_endpoints": [
-        "top_list",
-        "top_inst"
-      ],
-      "user_facing_suggestion_allowed": false,
-      "real_trade_allowed": false
-    },
-    {
-      "symbol": "920002",
-      "ts_code": "920002.BJ",
-      "name": "万达轴承",
-      "market": "A",
-      "matched_strategy_ids": [
-        "a_share_short_momentum",
-        "growth_breakout"
-      ],
-      "research_sample_only": true,
-      "sample_source": "tushare_dragon_tiger_hot_money",
-      "source_status": "feature_gap_sample",
-      "source_status_label": "龙虎榜/游资历史样本",
-      "source_score": 32,
-      "source_risk_flags": [
-        "龙虎榜/游资样本只用于沙盘验证，不用于推荐"
-      ],
-      "event_trade_dates": [
-        "2024-06-27",
-        "2024-06-24"
-      ],
-      "events": [
-        {
-          "trade_date": "2024-06-27",
-          "reason_hash": "502f7fde82de1dcc2ad585a32b96076df4aa70f5a0c1351a42e44b2bdff3175b",
-          "top_list_net_amount": -2164268.8,
-          "top_list_pct_change": 1.8152,
-          "top_list_turnover_rate": 21.58,
-          "top_inst_row_count": 10,
-          "top_inst_net_buy_sum": -2164268.8000000003,
-          "event_hash": "7758f11a67f4cf652bf920c847af84a0115bc784510dd67ed470f0d4d3ad1446"
-        },
-        {
-          "trade_date": "2024-06-24",
-          "reason_hash": "502f7fde82de1dcc2ad585a32b96076df4aa70f5a0c1351a42e44b2bdff3175b",
-          "top_list_net_amount": 324806.11,
-          "top_list_pct_change": -6.4026,
-          "top_list_turnover_rate": 20.1,
-          "top_inst_row_count": 10,
-          "top_inst_net_buy_sum": 324806.1099999998,
-          "event_hash": "e748a1373cef7a12958ea1cbe1bf3d267c5efd2a5f40269af0da824f1e0cf21f"
-        }
-      ],
-      "required_endpoints": [
-        "top_list",
-        "top_inst"
-      ],
-      "user_facing_suggestion_allowed": false,
-      "real_trade_allowed": false
-    },
-    {
-      "symbol": "603863",
-      "ts_code": "603863.SH",
-      "name": "松炀资源",
-      "market": "A",
-      "matched_strategy_ids": [
-        "a_share_short_momentum",
-        "growth_breakout"
-      ],
-      "research_sample_only": true,
-      "sample_source": "tushare_dragon_tiger_hot_money",
-      "source_status": "feature_gap_sample",
-      "source_status_label": "龙虎榜/游资历史样本",
-      "source_score": 29,
-      "source_risk_flags": [
-        "龙虎榜/游资样本只用于沙盘验证，不用于推荐"
-      ],
-      "event_trade_dates": [
-        "2024-06-26",
-        "2024-06-24"
-      ],
-      "events": [
         {
           "trade_date": "2024-06-26",
-          "reason_hash": "0370e845c74bc4b1f9eb4ead034413a8bf0d40df9fa25cadd95f1afafca1d274",
-          "top_list_net_amount": -10094060.65,
-          "top_list_pct_change": 10.0,
-          "top_list_turnover_rate": 6.76,
-          "top_inst_row_count": 10,
-          "top_inst_net_buy_sum": -10094060.649999999,
-          "event_hash": "11686e4ef3928f9b11130f0b3950c8df0945b6dc045d1424d5e70daad6f1e9c1"
-        },
-        {
-          "trade_date": "2024-06-24",
-          "reason_hash": "0024327b4d644a6081819c4d5378838f4df23c8894089761c3370aab092886b1",
-          "top_list_net_amount": 4412172.0,
-          "top_list_pct_change": 10.0255,
-          "top_list_turnover_rate": 5.83,
-          "top_inst_row_count": 10,
-          "top_inst_net_buy_sum": 4412172.0,
-          "event_hash": "13847c3c6adf8dd1ecbe08ea5f93fcff4fb1bc8a0bbca14410d41d19047ceb2a"
-        }
-      ],
-      "required_endpoints": [
-        "top_list",
-        "top_inst"
-      ],
-      "user_facing_suggestion_allowed": false,
-      "real_trade_allowed": false
-    },
-    {
-      "symbol": "001376",
-      "ts_code": "001376.SZ",
-      "name": "百通能源",
-      "market": "A",
-      "matched_strategy_ids": [
-        "a_share_short_momentum",
-        "growth_breakout"
-      ],
-      "research_sample_only": true,
-      "sample_source": "tushare_dragon_tiger_hot_money",
-      "source_status": "feature_gap_sample",
-      "source_status_label": "龙虎榜/游资历史样本",
-      "source_score": 29,
-      "source_risk_flags": [
-        "龙虎榜/游资样本只用于沙盘验证，不用于推荐"
-      ],
-      "event_trade_dates": [
-        "2024-05-30",
-        "2024-05-29"
-      ],
-      "events": [
-        {
-          "trade_date": "2024-05-30",
-          "reason_hash": "3146a3d6f4e27ca424a891b18fbc8fb7af3bb21a7f724691a5aa93207388aaa6",
-          "top_list_net_amount": 5924568.08,
-          "top_list_pct_change": -5.3509,
-          "top_list_turnover_rate": 26.34,
-          "top_inst_row_count": 10,
-          "top_inst_net_buy_sum": 11452836.16,
-          "event_hash": "0e2ac33949204ac4648c781b6507db838da9c680cd6cfeb19e2c576b16996a9a"
-        },
-        {
-          "trade_date": "2024-05-29",
-          "reason_hash": "3146a3d6f4e27ca424a891b18fbc8fb7af3bb21a7f724691a5aa93207388aaa6",
-          "top_list_net_amount": -5338892.41,
-          "top_list_pct_change": -0.9987,
-          "top_list_turnover_rate": 49.21,
-          "top_inst_row_count": 10,
-          "top_inst_net_buy_sum": -754085.75,
-          "event_hash": "399fa56d9e0d83c30e0c7db058bb56c7bde3bd2620d739309ffcfb0711d6c500"
-        }
-      ],
-      "required_endpoints": [
-        "top_list",
-        "top_inst"
-      ],
-      "user_facing_suggestion_allowed": false,
-      "real_trade_allowed": false
-    },
-    {
-      "symbol": "605258",
-      "ts_code": "605258.SH",
-      "name": "协和电子",
-      "market": "A",
-      "matched_strategy_ids": [
-        "a_share_short_momentum",
-        "growth_breakout"
-      ],
-      "research_sample_only": true,
-      "sample_source": "tushare_dragon_tiger_hot_money",
-      "source_status": "feature_gap_sample",
-      "source_status_label": "龙虎榜/游资历史样本",
-      "source_score": 28,
-      "source_risk_flags": [
-        "龙虎榜/游资样本只用于沙盘验证，不用于推荐"
-      ],
-      "event_trade_dates": [
-        "2024-06-21",
-        "2024-06-17"
-      ],
-      "events": [
-        {
-          "trade_date": "2024-06-21",
-          "reason_hash": "858bfe0892fa255050ca5f5f08dba4c4367d8902991e30b92bc6e2793b2a3054",
-          "top_list_net_amount": -1447115.48,
-          "top_list_pct_change": -9.9946,
-          "top_list_turnover_rate": 15.0,
-          "top_inst_row_count": 10,
-          "top_inst_net_buy_sum": -1447115.4799999995,
-          "event_hash": "81bbb7fdaed78c539ce7b2cc248029fbb6dee9021b1c2a2995cfe28a40f873dc"
-        },
-        {
-          "trade_date": "2024-06-17",
-          "reason_hash": "28cb572c1b4856ef0518b95182fe03de2faee1545e84fd7a12b27356d6431ec8",
-          "top_list_net_amount": 6885331.4,
-          "top_list_pct_change": 4.1002,
-          "top_list_turnover_rate": 20.74,
-          "top_inst_row_count": 10,
-          "top_inst_net_buy_sum": 6885331.4,
-          "event_hash": "a281a2fd27f85c402e5a0da52b77163ece69bc75a6833969a196ae138165d2d8"
-        }
-      ],
-      "required_endpoints": [
-        "top_list",
-        "top_inst"
-      ],
-      "user_facing_suggestion_allowed": false,
-      "real_trade_allowed": false
-    },
-    {
-      "symbol": "301361",
-      "ts_code": "301361.SZ",
-      "name": "众智科技",
-      "market": "A",
-      "matched_strategy_ids": [
-        "a_share_short_momentum",
-        "growth_breakout"
-      ],
-      "research_sample_only": true,
-      "sample_source": "tushare_dragon_tiger_hot_money",
-      "source_status": "feature_gap_sample",
-      "source_status_label": "龙虎榜/游资历史样本",
-      "source_score": 28,
-      "source_risk_flags": [
-        "龙虎榜/游资样本只用于沙盘验证，不用于推荐"
-      ],
-      "event_trade_dates": [
-        "2024-06-17",
-        "2024-06-14"
-      ],
-      "events": [
-        {
-          "trade_date": "2024-06-17",
-          "reason_hash": "d2c9376616f89fcaaf77275a7ba50b8f72113c981955ee6cfd97b1f1ed1536cb",
-          "top_list_net_amount": 7216495.3,
-          "top_list_pct_change": 4.4025,
-          "top_list_turnover_rate": 50.07,
-          "top_inst_row_count": 10,
-          "top_inst_net_buy_sum": 7470544.3,
-          "event_hash": "10d8d4e5f6e36a4b2053c733ef084aa47e1b7430860fa2595b559e798f554c94"
-        },
-        {
-          "trade_date": "2024-06-14",
-          "reason_hash": "d2c9376616f89fcaaf77275a7ba50b8f72113c981955ee6cfd97b1f1ed1536cb",
-          "top_list_net_amount": -392788.7,
-          "top_list_pct_change": -1.9792,
-          "top_list_turnover_rate": 61.57,
-          "top_inst_row_count": 10,
-          "top_inst_net_buy_sum": -995351.7,
-          "event_hash": "e947c7b1480795be125d433345b28aa831f1aa544b32a6147dc47c33ef6a36e1"
-        }
-      ],
-      "required_endpoints": [
-        "top_list",
-        "top_inst"
-      ],
-      "user_facing_suggestion_allowed": false,
-      "real_trade_allowed": false
-    },
-    {
-      "symbol": "002425",
-      "ts_code": "002425.SZ",
-      "name": "凯撒文化",
-      "market": "A",
-      "matched_strategy_ids": [
-        "a_share_short_momentum",
-        "growth_breakout"
-      ],
-      "research_sample_only": true,
-      "sample_source": "tushare_dragon_tiger_hot_money",
-      "source_status": "feature_gap_sample",
-      "source_status_label": "龙虎榜/游资历史样本",
-      "source_score": 28,
-      "source_risk_flags": [
-        "龙虎榜/游资样本只用于沙盘验证，不用于推荐"
-      ],
-      "event_trade_dates": [
-        "2024-06-03",
-        "2024-06-03"
-      ],
-      "events": [
-        {
-          "trade_date": "2024-06-03",
-          "reason_hash": "76a13caf7c37a746fb9ef345fda7b5aab75009a174e4bbe6e4f633124bdf162f",
-          "top_list_net_amount": 5999849.02,
-          "top_list_pct_change": -9.9398,
-          "top_list_turnover_rate": 6.7,
-          "top_inst_row_count": 10,
-          "top_inst_net_buy_sum": 4840298.02,
-          "event_hash": "6f9d448122f0f549482010442722acfc7259427cec94d4eb09aee83369612452"
-        },
-        {
-          "trade_date": "2024-06-03",
-          "reason_hash": "76a13caf7c37a746fb9ef345fda7b5aab75009a174e4bbe6e4f633124bdf162f",
-          "top_list_net_amount": 5999849.02,
-          "top_list_pct_change": -9.9398,
-          "top_list_turnover_rate": 6.71,
-          "top_inst_row_count": 10,
-          "top_inst_net_buy_sum": 4840298.02,
-          "event_hash": "6f9d448122f0f549482010442722acfc7259427cec94d4eb09aee83369612452"
+          "reason_hash": "b257db540dfd89d3d62f8fc66f52d89cb4476be2d754db4e3ef9a93c938d8cad",
+          "top_list_net_amount": -14238742.77,
+          "top_list_pct_change": 0.1744,
+          "top_list_turnover_rate": 31.37,
+          "top_inst_row_count": 20,
+          "top_inst_net_buy_sum": -28477442.77,
+          "event_hash": "484f4855c448e8559158765e6f580faad3a1f81ec8f06aadaf8e297774eeaaf6"
         }
       ],
       "required_endpoints": [
@@ -622,6 +1486,51 @@
     "daily_cache_dir": "c662ba3ea7a0dc2fc607fa568f368b77a70b23a5a174dbcc29fc4672e2fa5e55",
     "stock_basic": "0bbc2d38cc4cde25b19d947ab5bd85c1558835da35985f73e62ab16449e99ae8",
     "top_list_samples_by_date": {
+      "20240221": "16b056104e64e3f25c41a65934c4a2e1bb422fdfcc4c6ac4eb3c700ffaa1f7bd",
+      "20240222": "68fb205d52578eb6ac06592d09871569db287fee47ffddd29f1b2d30abd01af5",
+      "20240223": "7f88d255cc6e5c346451e1dbbece783ac49c411745cb32c5eceddabf5086bb20",
+      "20240226": "2a1855b023b5bc4f30308beff8ccfdd2502c3d3231e095837e858079ab342a59",
+      "20240227": "6f14338fc81df7c8a2ad262a9ba448bcf50a8caf720b03088b297e6b5a7c67db",
+      "20240228": "80d8ea13d3572324aec4146134fd727a40c8bcc084676e42677dab3b6a6a164e",
+      "20240229": "aba696e158e13fee7f83fd35865365e0ccae2c32fdb6a2203195e0307616d5ab",
+      "20240301": "ef6e616f62a3675607f99e32f80bc3c765400c31e7150254997a327e022131c1",
+      "20240304": "3e7385436f07b19c4322e718fb902d1debc4f8bb9be64ba308393245d062c49f",
+      "20240305": "9b9056f09e812ffe75beb6b0bd6481875f9e7925e651c1c118b32483fb2d3835",
+      "20240306": "8d7540d20f0ed8a64de071b0a5a14122d6c0ff53b2f57a25e3f9959f27967e0b",
+      "20240307": "16b7b14c1f1d833cad4393a2f7ffbd293c9e808ecba33bbfc08bd26e04ba863b",
+      "20240308": "71832318c82d3b47b4cfd02214e61d8e1faa5e45e98600ad79e6e7bbb28bdbd2",
+      "20240311": "1da7e2a4fc7984ca67f52f7c1d255751c4a6228378ece11ee5e4d9595520ad46",
+      "20240312": "dbe9357294313dcf0d779511a0d1f24f741b8b3a8e186a2596215720115709f0",
+      "20240313": "b0f3b5986d9896ba1ddd426a5899c7fc8a939b2773dc18311057fda207eddcf7",
+      "20240314": "f6c64018d21cd38fc518da357145a516945d330f6c675d18b6eb2f91a71c81bc",
+      "20240315": "c7087da5963d774b6f311ac7b67a102aecb962af038c3cf10b7692537b76f563",
+      "20240318": "91d8e19f4ff00a622062d6510d5ac0868bdeb0b5e62247a0b131bb545e1cca5b",
+      "20240319": "2790c061279ccd914e532a7dd799f4c3eaec6d77810067aac3a939dfb02cd271",
+      "20240320": "4aaccf852c4c318c760c8048bde1cd692762de1fdf685f177f0ed7d6a1200dd4",
+      "20240321": "c50a482eb3c1c5273e15a4dc7f9b0ddab3fbfafb136000a23c71a3f60c06ad16",
+      "20240322": "086c8bf46ecdd6a916252dcd87ffd2f212e1c8ea8ce38c497648f25c26b1e56d",
+      "20240325": "ea9ff30dd5dc28771b4c360f425e26fffb0bf26e602e5cf89f2c29cafe06b0dd",
+      "20240326": "354634bc9467a252437d20f33c74801def0afcf47bb733b0c64ec7d15235c55a",
+      "20240327": "f977bc60fb797f2a53b4992587e47ae8775f9c3727955473324a9fdc07d50dfd",
+      "20240328": "238f436f9d633e8015a866d1032768d207e83cd41fa5195f2074dfa6454a5a08",
+      "20240329": "5d0f3e51dd0b7fa25504d16f238e5af0901ad47c6b430e2a473f74ea08e0f386",
+      "20240401": "295122f6ee8a2882d499260a67930ec0a32651a383e783cf5a040fa317cc4db8",
+      "20240402": "8da575ef27a3a3c9061445420567a11c6603d3270e0c40297aeac6cbff58095b",
+      "20240403": "c774f92cf7d6e10123461d774817799f478d53f8082aa254e6feb859d396c2b8",
+      "20240408": "fb807a45234d4f12bb71358d6cc27becec1e85c5998247579e31e57d41cbbe2c",
+      "20240409": "81c6ed782ba61d57a89fdfffcab5b1fb1626ecee6b268a54a5b18d2514ae75b9",
+      "20240410": "17dd66a79309847330eda7da57072cc17cea69676a184524cccb4c1a6b290821",
+      "20240411": "ae0e3940bac64df6f3fce8f614fdfe64b7544e9a3670f9ecc323b94f3c4c6728",
+      "20240412": "0943b8d982e468f54470d3a8cbf0cf1efe58ee66bf56d1dcec170a784d11839d",
+      "20240415": "548a28b2007ae584f51d8bc232fcd326a8377744e62f762f5e75a168a4ada2e0",
+      "20240416": "9a7dc70e20908a9b9be3f8793a7ba9bb105c9a7f1cc131149e8e8e97ef71d4ef",
+      "20240417": "447f8f992de7a0114e05959ffa925de8a362aa480617e182c76679eb7d4b51db",
+      "20240418": "ad487dd9f7cab2fa278f793b06a690bfdf18c1381af7f10c45492dd7f790c1ec",
+      "20240419": "240526fd39171fc83fb5b212cbd586b806507dffba6e1806fa610150c0eb8f53",
+      "20240422": "2567607c04fe9a347cd7420dfdf9889d96647e590d843fc805f93c6f228c395b",
+      "20240423": "20f3508d810d14bfcee122725bb4fd86200624a43b6e95bdbe1199a4e1b8693b",
+      "20240424": "0ecb38bed2c5ec9fcebaa0cac9d2b46a61c2226fe79860873817b2fb69ea1a74",
+      "20240425": "00dd68a9b8ebfddbd86517532cc1621367eff757fe5c44151e4e3b029ed5ff83",
       "20240426": "5a9c5d99d514f992f39d384c6c068324bf167e3f5a4a352824ff52e2e1cd3d73",
       "20240429": "5dc0caf334f0edcafffedda4ec32b66751d96231a070dbacddd7687130839f21",
       "20240430": "b6cf8bc9dd2e317ce46efce22c725180c7c1427e6b38efca6b3064bd23d31871",
@@ -669,6 +1578,51 @@
       "20240703": "291f5c9a4da59480155f57adba7c28e8c256ff670589056cfbf6b84a39980afe"
     },
     "top_inst_samples_by_date": {
+      "20240221": "08482370f703716bb74a7a1e55a2474f8da74f9ed18baeff72d827b35f453422",
+      "20240222": "f32bcda05e4796c37629e7f6c937059259c04af47364422854cf14644f810f50",
+      "20240223": "1dddbb1fecb3442883268d93af663e881d54eb359de2afd93f9f29783819fef3",
+      "20240226": "1b84a6379929941877a20b8ca5099043da2723df127772997962bce33d434280",
+      "20240227": "be3bcc74d631daf8cd6cc48694a30dbb20cefa9333e3bc558bd257725156eda0",
+      "20240228": "70e6e5bb9246753d6aeb9a965306c95616befa039a4a1dd8fde15c151853341e",
+      "20240229": "ea8039f29dff5bf499d81946e2d21cf747fc5184ccb6635456943f16faf8d99f",
+      "20240301": "7ee2c5626b91cfe306e6bd7b6c267aa820e4277722bfbf407409278e5915f6aa",
+      "20240304": "f5c5702fb0cc9858d3f293a72b87434cac679197efc2729bf1c030c16efca311",
+      "20240305": "e718378d58f02b944b322e2f7f47217611ac0cad392c5c93a5dfa70ae172932d",
+      "20240306": "59043cf0f28d2fab6ca77a272408579883c345a92667a757448a0c4be2454e1e",
+      "20240307": "e6fecb1d5ccd94fad5127d3e2c7eb13efc48b2e754c81a7fb5c7704331b3270f",
+      "20240308": "0d8fa5065aa21a06248ee41b9bc08e3c4310e2d0e9af2903b70f726f4c3ec785",
+      "20240311": "b529c5a4f8993959a46687565f7380463c8db81ac413477b277a4bf8c4796f92",
+      "20240312": "e76c350b0b960edbd0c26fc0a97f6896a180928dc0e129ef2ddea2fdf1dcb7a8",
+      "20240313": "ef2907bd11cd2c327f56ccfe7e561dc14f4e8feca2f0f48e6726e8ff94466f42",
+      "20240314": "455d24ade7fb225124f061630504c60640189410204ce4a28337830f2a9615b9",
+      "20240315": "1cc0ff79928d17081ad74daa9c87fd1d69ffd793e5afdba9eb6b580d83b341d5",
+      "20240318": "1680817911f88a81531c0286ef8a9d89e26ff749b1c628af61611eba03e723ae",
+      "20240319": "b24b9e9965a06ff22ed84eea266196460a76ebe83fa6946c961902882d4dc021",
+      "20240320": "0f55673ee5e494cd29be4cf1f6761bde1c5de1e4cf15474314c70d28ce4bb78c",
+      "20240321": "5fa845bc259a8826fd72a69c7567ba785c833eaf516438a00c492ba0d325afe7",
+      "20240322": "d52738d38722effdfaf575e91db912dcd376e0419cc1be74438715526f18f040",
+      "20240325": "f689d8abf8df476ac0d92aceef4cf1bef34e9fd1a0f6b6f97cfd7be81cbd20ff",
+      "20240326": "9b57da0ddc50439eebcb795dca35b25d7d5071720ff86bc7101badb8e54b2caf",
+      "20240327": "6d97959005f717783dc2c9f1870c60f5b1e654cecb058f860f130eb082fd7e88",
+      "20240328": "186009a63658c48c29a36bfdd7ab54e02076fb74cc27df156acae1bd47d86b95",
+      "20240329": "86a0b54464d1ed2ea312dbe09777032ff4ac67c6c3aa85d394f4e436132484f2",
+      "20240401": "1440495c167a37559e1268514e0739beaa5005db09c9442250ff8c0cad4a0f0a",
+      "20240402": "402be4e7b97c7d436246a56584a2f96dd52ae1395234da8d3ff4f97cb7b929d5",
+      "20240403": "fbe33adb12d646e99e72f265fac6a52d78c8684bb9edad47994ffa91d4fa0d6e",
+      "20240408": "211a8a2c87bf9466aa916e627178740dd731d611f606bcf797217020e3ff7275",
+      "20240409": "5b1a9ef30ef34ab423fc0209eda5fcf6f58bd258089c06a1d3b1bab01cb38944",
+      "20240410": "74c5a711e4088d84c02ab6dcfe4ec672dfe043bd95244e8f6e070d7f86722d12",
+      "20240411": "037a072f280ebe1dc6199c966b6ec8c17920b3788f54ef144ab338026ed74dd5",
+      "20240412": "9316ad7ad63f77bd7151aad33d207858c9b108c85045fb9349f165852cbcd39b",
+      "20240415": "3300ccc9acec08712aceaaecd83e4de6b60097c963ea6a8b593ed827db1f2857",
+      "20240416": "28d8b5ae4b6486453f2dd9d352b605081c98704d326b334dcd07a5c722daafae",
+      "20240417": "ef071c6937163296646e57ee2e3d0534316398cac6c65f7978f370eca3f123c3",
+      "20240418": "4308a1ae84107a1eb6bdd2641ef4153b2a262993f56d204decc9847a03ad7bb9",
+      "20240419": "812ea15c747a8e64bf0e0da9d05f0c9b39c9b01194ddf3e9a7d15ec7a0154558",
+      "20240422": "210353f6395ff9bb116060262c535505211bfae46c353070fa90509b19f981f0",
+      "20240423": "97c161c3ea6d0d68b95839f9c0c9a924fd68d7588a55ae1a1aedaf2bdac8bb69",
+      "20240424": "e42c579a749b1b8e9bad07500a8da6b6832d7d075c505eed05bb3298d7eaf0b8",
+      "20240425": "8c9bad6bb6ddc685271632e5688bc5799a0d1f5c10bfcec96f93ae8d0b1b79ff",
       "20240426": "2304ae5a7e0d4b61ffbdbe0747838b188407cec7dea56a2cf2e843264f929c00",
       "20240429": "ee956cfd6008de234a8e5c16a72c2626738b7928c91aace324a396088bff6ec4",
       "20240430": "772bb2c3bb2fbbc55cfd3e5e7e9aab3ebf9a20c38cc38ede60357b8d8ba7d2cc",

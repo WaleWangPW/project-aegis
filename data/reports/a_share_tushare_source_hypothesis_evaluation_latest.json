@@ -1,8 +1,8 @@
 {
   "type": "a_share_tushare_source_hypothesis_evaluation",
   "status": "PASS",
-  "generated_at": "2026-07-12T23:42:19+08:00",
-  "run_id": "a_share_tushare_source_hypothesis_evaluation_20260712T234219",
+  "generated_at": "2026-07-13T00:18:23+08:00",
+  "run_id": "a_share_tushare_source_hypothesis_evaluation_20260713T001823",
   "command": "scripts/evaluate_a_share_tushare_source_hypotheses.py",
   "thresholds": {
     "min_proxy_case_count": 4,
@@ -12,141 +12,16 @@
     "min_a_share_candidate_count_for_confident_eval": 5
   },
   "summary": {
-    "hypothesis_count": 6,
+    "hypothesis_count": 3,
     "proxy_pass_count": 0,
     "needs_more_a_share_cases_count": 0,
-    "proxy_fail_count": 6,
+    "proxy_fail_count": 3,
     "a_share_candidate_count": 22,
-    "a_share_proxy_case_count": 62,
+    "a_share_proxy_case_count": 76,
     "user_facing_suggestion_allowed": false,
     "next_stage": "OpenClaw stock-agent should collect deeper source-specific historical features before any ranking impact."
   },
   "items": [
-    {
-      "hypothesis_id": "hyp_a_tushare_capital_flow_accumulation",
-      "title": "A-share capital-flow accumulation hypothesis",
-      "strategy_families": [
-        "capital_flow",
-        "momentum",
-        "risk_overlay"
-      ],
-      "source_research_ids": [
-        "tushare_a_share_strategy_source_probe:capital_flow:moneyflow:20260710"
-      ],
-      "proxy_strategy_hints": [
-        "a_share_short_momentum",
-        "growth_breakout",
-        "low_vol_momentum"
-      ],
-      "eligible_symbols": [
-        "603893",
-        "300059",
-        "600150",
-        "300475",
-        "300476",
-        "002709",
-        "688525",
-        "001309",
-        "000100",
-        "002407",
-        "600101",
-        "300956",
-        "002869",
-        "688693",
-        "002455",
-        "603389",
-        "920002",
-        "603863",
-        "001376",
-        "605258",
-        "301361",
-        "002425"
-      ],
-      "metrics": {
-        "candidate_count": 22,
-        "proxy_case_count": 62,
-        "proxy_win_rate": 0.1935483870967742,
-        "proxy_average_return": -0.09430033303006312,
-        "proxy_average_drawdown": -0.17297711987125022,
-        "proxy_best_return": 0.1466389054134445,
-        "proxy_worst_return": -0.47955345225094037
-      },
-      "disposition": "proxy_fail",
-      "confidence": "PROXY",
-      "reasons": [
-        "proxy_win_rate_below_threshold",
-        "proxy_average_return_below_threshold",
-        "proxy_average_drawdown_too_deep"
-      ],
-      "feature_history_status": "source_specific_feature_history_not_yet_assembled",
-      "allowed_next_step": "collect_more_cases_or_rework_hypothesis",
-      "simulation_only": true,
-      "user_facing_suggestion_allowed": false,
-      "real_trade_allowed": false
-    },
-    {
-      "hypothesis_id": "hyp_a_tushare_dragon_tiger_seat_confirmation",
-      "title": "A-share dragon-tiger hot-money seat confirmation hypothesis",
-      "strategy_families": [
-        "hot_money",
-        "momentum",
-        "risk_overlay"
-      ],
-      "source_research_ids": [
-        "tushare_a_share_strategy_source_probe:dragon_tiger_hot_money:top_list:20260710",
-        "tushare_a_share_strategy_source_probe:dragon_tiger_hot_money:top_inst:20260710"
-      ],
-      "proxy_strategy_hints": [
-        "a_share_short_momentum",
-        "growth_breakout",
-        "low_vol_momentum"
-      ],
-      "eligible_symbols": [
-        "603893",
-        "300059",
-        "600150",
-        "300475",
-        "300476",
-        "002709",
-        "688525",
-        "001309",
-        "000100",
-        "002407",
-        "600101",
-        "300956",
-        "002869",
-        "688693",
-        "002455",
-        "603389",
-        "920002",
-        "603863",
-        "001376",
-        "605258",
-        "301361",
-        "002425"
-      ],
-      "metrics": {
-        "candidate_count": 22,
-        "proxy_case_count": 62,
-        "proxy_win_rate": 0.1935483870967742,
-        "proxy_average_return": -0.09430033303006312,
-        "proxy_average_drawdown": -0.17297711987125022,
-        "proxy_best_return": 0.1466389054134445,
-        "proxy_worst_return": -0.47955345225094037
-      },
-      "disposition": "proxy_fail",
-      "confidence": "PROXY",
-      "reasons": [
-        "proxy_win_rate_below_threshold",
-        "proxy_average_return_below_threshold",
-        "proxy_average_drawdown_too_deep"
-      ],
-      "feature_history_status": "source_specific_feature_history_not_yet_assembled",
-      "allowed_next_step": "collect_more_cases_or_rework_hypothesis",
-      "simulation_only": true,
-      "user_facing_suggestion_allowed": false,
-      "real_trade_allowed": false
-    },
     {
       "hypothesis_id": "hyp_a_tushare_institutional_ownership_stability",
       "title": "A-share institutional ownership stability hypothesis",
@@ -156,8 +31,8 @@
         "risk_overlay"
       ],
       "source_research_ids": [
-        "tushare_a_share_strategy_source_probe:institutional_ownership:top10_holders:20260710",
-        "tushare_a_share_strategy_source_probe:institutional_ownership:top10_floatholders:20260710"
+        "tushare_a_share_strategy_source_probe:institutional_ownership:top10_holders:20260713",
+        "tushare_a_share_strategy_source_probe:institutional_ownership:top10_floatholders:20260713"
       ],
       "proxy_strategy_hints": [
         "low_vol_momentum",
@@ -206,7 +81,7 @@
         "multi_factor"
       ],
       "source_research_ids": [
-        "tushare_a_share_strategy_source_probe:holder_concentration:stk_holdernumber:20260710"
+        "tushare_a_share_strategy_source_probe:holder_concentration:stk_holdernumber:20260713"
       ],
       "proxy_strategy_hints": [
         "a_share_short_momentum",
@@ -224,91 +99,26 @@
         "001309",
         "000100",
         "002407",
-        "600101",
-        "300956",
-        "002869",
-        "688693",
-        "002455",
+        "000506",
+        "603879",
+        "000628",
+        "603261",
         "603389",
-        "920002",
-        "603863",
+        "600715",
         "001376",
-        "605258",
-        "301361",
-        "002425"
+        "600101",
+        "000099",
+        "603172",
+        "301049",
+        "301577"
       ],
       "metrics": {
         "candidate_count": 22,
-        "proxy_case_count": 62,
-        "proxy_win_rate": 0.1935483870967742,
-        "proxy_average_return": -0.09430033303006312,
-        "proxy_average_drawdown": -0.17297711987125022,
-        "proxy_best_return": 0.1466389054134445,
-        "proxy_worst_return": -0.47955345225094037
-      },
-      "disposition": "proxy_fail",
-      "confidence": "PROXY",
-      "reasons": [
-        "proxy_win_rate_below_threshold",
-        "proxy_average_return_below_threshold",
-        "proxy_average_drawdown_too_deep"
-      ],
-      "feature_history_status": "source_specific_feature_history_not_yet_assembled",
-      "allowed_next_step": "collect_more_cases_or_rework_hypothesis",
-      "simulation_only": true,
-      "user_facing_suggestion_allowed": false,
-      "real_trade_allowed": false
-    },
-    {
-      "hypothesis_id": "hyp_a_tushare_factor_liquidity_quality_overlay",
-      "title": "A-share factor liquidity quality overlay hypothesis",
-      "strategy_families": [
-        "multi_factor",
-        "quality",
-        "momentum",
-        "risk_overlay"
-      ],
-      "source_research_ids": [
-        "tushare_a_share_strategy_source_probe:factor_base:stk_factor:20260710",
-        "tushare_a_share_strategy_source_probe:factor_base:daily_basic:20260710"
-      ],
-      "proxy_strategy_hints": [
-        "a_share_short_momentum",
-        "growth_breakout",
-        "low_vol_momentum",
-        "qvm"
-      ],
-      "eligible_symbols": [
-        "603893",
-        "300059",
-        "600150",
-        "300475",
-        "300476",
-        "002709",
-        "688525",
-        "001309",
-        "000100",
-        "002407",
-        "600101",
-        "300956",
-        "002869",
-        "688693",
-        "002455",
-        "603389",
-        "920002",
-        "603863",
-        "001376",
-        "605258",
-        "301361",
-        "002425"
-      ],
-      "metrics": {
-        "candidate_count": 22,
-        "proxy_case_count": 62,
-        "proxy_win_rate": 0.1935483870967742,
-        "proxy_average_return": -0.09430033303006312,
-        "proxy_average_drawdown": -0.17297711987125022,
-        "proxy_best_return": 0.1466389054134445,
+        "proxy_case_count": 76,
+        "proxy_win_rate": 0.27631578947368424,
+        "proxy_average_return": -0.079548558168059,
+        "proxy_average_drawdown": -0.17409942299015926,
+        "proxy_best_return": 0.2961165048543688,
         "proxy_worst_return": -0.47955345225094037
       },
       "disposition": "proxy_fail",
@@ -333,7 +143,7 @@
         "risk_overlay"
       ],
       "source_research_ids": [
-        "tushare_a_share_strategy_source_probe:governance:stk_rewards:20260710"
+        "tushare_a_share_strategy_source_probe:governance:stk_rewards:20260713"
       ],
       "proxy_strategy_hints": [
         "low_vol_momentum",
@@ -379,8 +189,8 @@
     "strategy_specific_historical_cases": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/aegis_strategy_specific_historical_cases_latest.json"
   },
   "source_hashes": {
-    "source_hypothesis_queue": "a82aca1bfff36e0d4ab28e6eef806894cde712179133de813a84019b2d0069eb",
-    "strategy_specific_historical_cases": "e12e3e1bef152013354a1d66c481cd919fb8f28d0147741fc04536690a967171"
+    "source_hypothesis_queue": "9aa14f9ddb9a8bf70874a35b15a72bff5595c471003c7f0a1f85478faa236a38",
+    "strategy_specific_historical_cases": "2f5f60167d932efcda570b52d8bc54557f79df87a760f851c9f1cb791c694179"
   },
   "checks": {
     "source_queue_present": true,

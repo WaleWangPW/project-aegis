@@ -1,6 +1,6 @@
 # Stock Agent Strategy Simulation Runbook
 
-Updated At: 2026-07-12
+Updated At: 2026-07-13
 
 Boundary: Project Aegis is simulation research only. No broker API, no real
 order placement, no trading webhook, no secrets, and no automatic strategy
@@ -39,6 +39,26 @@ make review-a-share-refined-strategy-ranking-gate
 make plan-a-share-strategy-sample-expansion
 make prepare-stock-agent-strategy-simulation
 ```
+
+For the current A-share dragon-tiger / hot-money expansion run, use the managed
+expanded entry instead of running the collector manually:
+
+```bash
+make stock-agent-a-share-strategy-cycle-managed-expanded
+```
+
+This passes the approved research-only collection parameters into the managed
+cycle:
+
+- `lookback_dates=90`
+- `forward_days=20`
+- `max_symbols=24`
+- `max_events_per_symbol=3`
+
+The managed cycle must record `dynamic_args_source` for the collector command.
+Do not treat a one-off expanded collector run as accepted unless the final
+`stock_agent_a_share_strategy_cycle_latest.json` still shows the expanded sample
+counts after the full cycle completes.
 
 Expected outputs:
 
@@ -98,4 +118,4 @@ Stock agent reports must include:
    next parameters such as lookback dates, max symbols, max events per symbol,
    and the recommended collect command.
 12. Which symbols remain simulation candidates, watch-only, or downgraded.
-11. Explicit safety statement: no broker, no order, no webhook, no secret output.
+13. Explicit safety statement: no broker, no order, no webhook, no secret output.

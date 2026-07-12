@@ -1,31 +1,28 @@
 {
   "overall_status": "PASS",
-  "generated_at": "2026-07-12T23:42:01+08:00",
+  "generated_at": "2026-07-13T00:17:48+08:00",
   "provider": "tushare",
   "market": "A",
   "network_used": true,
   "raw_payload_saved": false,
   "secret_values_saved": false,
   "sample_symbol": "000001.SZ",
-  "latest_trade_date": "20260710",
+  "latest_trade_date": "20260713",
   "date_window": {
-    "start_date": "20260314",
-    "end_date": "20260712",
+    "start_date": "20260315",
+    "end_date": "20260713",
     "window_days": 120
   },
   "summary": {
     "endpoint_count": 10,
-    "pass_count": 9,
-    "empty_count": 0,
+    "pass_count": 4,
+    "empty_count": 5,
     "blocked_count": 1,
-    "priority_ready_count": 6,
+    "priority_ready_count": 3,
     "modules_ready": [
-      "A 股因子与日线基础池",
-      "主力资金流向",
       "机构持仓与股东变化",
       "股东人数 / 筹码集中",
-      "高管薪酬 / 治理",
-      "龙虎榜 / 游资席位"
+      "高管薪酬 / 治理"
     ]
   },
   "modules": [
@@ -35,8 +32,8 @@
       "endpoint": "moneyflow",
       "priority": 1,
       "description": "大单/中单/小单资金结构",
-      "status": "PASS",
-      "row_count": 5194,
+      "status": "EMPTY",
+      "row_count": 0,
       "columns": [
         "ts_code",
         "trade_date",
@@ -59,10 +56,10 @@
         "net_mf_vol",
         "net_mf_amount"
       ],
-      "sample_hash": "815c7db62146b13b4c72a1babc13cbeafb81d9680042fa632ed7b4916534ea77",
+      "sample_hash": null,
       "error_type": null,
       "error_message": null,
-      "latest_trade_date": "20260710",
+      "latest_trade_date": "20260713",
       "sample_symbol": "000001.SZ"
     },
     {
@@ -71,8 +68,8 @@
       "endpoint": "top_list",
       "priority": 1,
       "description": "龙虎榜上榜原因和异动标的",
-      "status": "PASS",
-      "row_count": 98,
+      "status": "EMPTY",
+      "row_count": 0,
       "columns": [
         "trade_date",
         "ts_code",
@@ -90,10 +87,10 @@
         "float_values",
         "reason"
       ],
-      "sample_hash": "7c65c0e6cc4d8bbc4cd5485654948657472df3d5aa059f237e471f99b055bb2a",
+      "sample_hash": null,
       "error_type": null,
       "error_message": null,
-      "latest_trade_date": "20260710",
+      "latest_trade_date": "20260713",
       "sample_symbol": "000001.SZ"
     },
     {
@@ -102,8 +99,8 @@
       "endpoint": "top_inst",
       "priority": 1,
       "description": "龙虎榜席位买卖结构",
-      "status": "PASS",
-      "row_count": 1048,
+      "status": "EMPTY",
+      "row_count": 0,
       "columns": [
         "trade_date",
         "ts_code",
@@ -116,10 +113,10 @@
         "side",
         "reason"
       ],
-      "sample_hash": "10079ee49da72a7d5042854019113a1324440d97b95a3d9e1162973e0592aa5d",
+      "sample_hash": null,
       "error_type": null,
       "error_message": null,
-      "latest_trade_date": "20260710",
+      "latest_trade_date": "20260713",
       "sample_symbol": "000001.SZ"
     },
     {
@@ -144,7 +141,7 @@
       "sample_hash": "94fd1c0a98b0fe0923552f1ccb38d1327dcb90495003a366bdc238d9c54dc024",
       "error_type": null,
       "error_message": null,
-      "latest_trade_date": "20260710",
+      "latest_trade_date": "20260713",
       "sample_symbol": "000001.SZ"
     },
     {
@@ -169,7 +166,7 @@
       "sample_hash": "94fd1c0a98b0fe0923552f1ccb38d1327dcb90495003a366bdc238d9c54dc024",
       "error_type": null,
       "error_message": null,
-      "latest_trade_date": "20260710",
+      "latest_trade_date": "20260713",
       "sample_symbol": "000001.SZ"
     },
     {
@@ -189,7 +186,7 @@
       "sample_hash": "75bcefec14add060c594552fa299acbc4b45629baae7075fe7f5138cfeecb869",
       "error_type": null,
       "error_message": null,
-      "latest_trade_date": "20260710",
+      "latest_trade_date": "20260713",
       "sample_symbol": "000001.SZ"
     },
     {
@@ -198,8 +195,8 @@
       "endpoint": "stk_factor",
       "priority": 3,
       "description": "因子基础池，用于估值、动量、波动率输入",
-      "status": "PASS",
-      "row_count": 5519,
+      "status": "EMPTY",
+      "row_count": 0,
       "columns": [
         "ts_code",
         "trade_date",
@@ -232,10 +229,10 @@
         "rsi_6",
         "rsi_12"
       ],
-      "sample_hash": "6f6dc20a8ca651ce1c05fe3a55e6f2ff2e9921ed2dd02e23a4549e2ac8efdfd8",
+      "sample_hash": null,
       "error_type": null,
       "error_message": null,
-      "latest_trade_date": "20260710",
+      "latest_trade_date": "20260713",
       "sample_symbol": "000001.SZ"
     },
     {
@@ -244,8 +241,8 @@
       "endpoint": "daily_basic",
       "priority": 3,
       "description": "日线基本面、换手率、市值、估值输入",
-      "status": "PASS",
-      "row_count": 5599,
+      "status": "EMPTY",
+      "row_count": 0,
       "columns": [
         "ts_code",
         "trade_date",
@@ -266,10 +263,10 @@
         "total_mv",
         "circ_mv"
       ],
-      "sample_hash": "6f8f79751fc7de25a6192c116fe71db3add449c69df06da3f357e395e6f42626",
+      "sample_hash": null,
       "error_type": null,
       "error_message": null,
-      "latest_trade_date": "20260710",
+      "latest_trade_date": "20260713",
       "sample_symbol": "000001.SZ"
     },
     {
@@ -292,7 +289,7 @@
       "sample_hash": "1d04a003cbe86e16b01ad3fb2a535fa38a92d3812637c32c4c720b39a9f91da7",
       "error_type": null,
       "error_message": null,
-      "latest_trade_date": "20260710",
+      "latest_trade_date": "20260713",
       "sample_symbol": "000001.SZ"
     },
     {
@@ -307,7 +304,7 @@
       "sample_hash": null,
       "error_type": "str",
       "error_message": "请指定正确的接口名",
-      "latest_trade_date": "20260710",
+      "latest_trade_date": "20260713",
       "sample_symbol": "000001.SZ"
     }
   ],

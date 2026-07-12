@@ -1,5 +1,5 @@
 status=PASS
-run_id=a_share_tushare_source_hypothesis_queue_20260712T234204
-generated_at=2026-07-12T23:42:04+08:00
-hypothesis_count=6
-latest_json_sha256=a82aca1bfff36e0d4ab28e6eef806894cde712179133de813a84019b2d0069eb
+run_id=a_share_tushare_source_hypothesis_queue_20260713T001754
+generated_at=2026-07-13T00:17:54+08:00
+hypothesis_count=3
+latest_json_sha256=9aa14f9ddb9a8bf70874a35b15a72bff5595c471003c7f0a1f85478faa236a38

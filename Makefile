@@ -126,6 +126,9 @@ prepare-stock-agent-strategy-simulation:
 stock-agent-a-share-strategy-cycle-managed:
 	.venv/bin/python scripts/run_stock_agent_a_share_strategy_cycle.py --prepare-stock-agent-workspace
 
+stock-agent-a-share-strategy-cycle-managed-expanded:
+	.venv/bin/python scripts/run_stock_agent_a_share_strategy_cycle.py --prepare-stock-agent-workspace --dragon-tiger-lookback-dates 90 --dragon-tiger-forward-days 20 --dragon-tiger-max-symbols 24 --dragon-tiger-max-events-per-symbol 3
+
 build-strategy-specific-historical-cases:
 	.venv/bin/python scripts/build_aegis_strategy_specific_historical_cases.py
 

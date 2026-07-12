@@ -1,7 +1,7 @@
 {
   "type": "aegis_strategy_specific_case_evaluation",
   "status": "PASS",
-  "generated_at": "2026-07-12T23:42:19+08:00",
+  "generated_at": "2026-07-13T00:18:23+08:00",
   "thresholds": {
     "min_case_count": 4,
     "min_win_rate": 0.5,
@@ -552,8 +552,8 @@
       "real_trade_allowed": false
     },
     {
-      "symbol": "600101",
-      "name": "明星电力",
+      "symbol": "000506",
+      "name": "招金黄金",
       "market": "A",
       "matched_strategy_ids": [
         "a_share_short_momentum",
@@ -562,25 +562,23 @@
       "disposition": "downgraded",
       "reasons": [
         "case_count_below_threshold",
-        "win_rate_below_threshold",
-        "average_return_below_threshold",
-        "hard_worst_return_breached"
+        "win_rate_below_threshold"
       ],
       "summary": {
-        "case_count": 2,
-        "win_rate": 0.0,
-        "average_return": -0.3932932263814617,
-        "average_max_drawdown": -0.4088235294117648,
-        "best_return": -0.39264705882352946,
-        "worst_return": -0.3939393939393939
+        "case_count": 3,
+        "win_rate": 0.3333333333333333,
+        "average_return": 0.027476097651536247,
+        "average_max_drawdown": -0.2208994708994709,
+        "best_return": 0.2407407407407407,
+        "worst_return": -0.07936507936507942
       },
       "simulation_only": true,
       "user_facing_suggestion_allowed": false,
       "real_trade_allowed": false
     },
     {
-      "symbol": "300956",
-      "name": "英力股份",
+      "symbol": "603879",
+      "name": "永悦科技",
       "market": "A",
       "matched_strategy_ids": [
         "a_share_short_momentum",
@@ -588,26 +586,23 @@
       ],
       "disposition": "downgraded",
       "reasons": [
-        "case_count_below_threshold",
-        "win_rate_below_threshold",
-        "average_return_below_threshold",
-        "hard_worst_return_breached"
+        "case_count_below_threshold"
       ],
       "summary": {
-        "case_count": 2,
-        "win_rate": 0.0,
-        "average_return": -0.29193318651605826,
-        "average_max_drawdown": -0.32408382264973895,
-        "best_return": -0.2861220121298609,
-        "worst_return": -0.29774436090225564
+        "case_count": 3,
+        "win_rate": 1.0,
+        "average_return": 0.16826009586630053,
+        "average_max_drawdown": -0.13212121212121208,
+        "best_return": 0.2961165048543688,
+        "worst_return": 0.06392694063926951
       },
       "simulation_only": true,
       "user_facing_suggestion_allowed": false,
       "real_trade_allowed": false
     },
     {
-      "symbol": "002869",
-      "name": "金溢科技",
+      "symbol": "000628",
+      "name": "高新发展",
       "market": "A",
       "matched_strategy_ids": [
         "a_share_short_momentum",
@@ -620,46 +615,20 @@
         "average_return_below_threshold"
       ],
       "summary": {
-        "case_count": 2,
-        "win_rate": 0.0,
-        "average_return": -0.03565656565656572,
-        "average_max_drawdown": -0.16181818181818186,
-        "best_return": -0.01575757575757586,
-        "worst_return": -0.05555555555555558
+        "case_count": 3,
+        "win_rate": 0.3333333333333333,
+        "average_return": -0.0754339668210486,
+        "average_max_drawdown": -0.1667290745869635,
+        "best_return": 0.006986702727067806,
+        "worst_return": -0.19059494121838272
       },
       "simulation_only": true,
       "user_facing_suggestion_allowed": false,
       "real_trade_allowed": false
     },
     {
-      "symbol": "688693",
-      "name": "锴威特",
-      "market": "A",
-      "matched_strategy_ids": [
-        "a_share_short_momentum",
-        "growth_breakout"
-      ],
-      "disposition": "downgraded",
-      "reasons": [
-        "case_count_below_threshold",
-        "win_rate_below_threshold",
-        "average_return_below_threshold"
-      ],
-      "summary": {
-        "case_count": 1,
-        "win_rate": 0.0,
-        "average_return": -0.1704,
-        "average_max_drawdown": -0.21866666666666668,
-        "best_return": -0.1704,
-        "worst_return": -0.1704
-      },
-      "simulation_only": true,
-      "user_facing_suggestion_allowed": false,
-      "real_trade_allowed": false
-    },
-    {
-      "symbol": "002455",
-      "name": "百川股份",
+      "symbol": "603261",
+      "name": "立航科技",
       "market": "A",
       "matched_strategy_ids": [
         "a_share_short_momentum",
@@ -673,12 +642,12 @@
         "hard_worst_return_breached"
       ],
       "summary": {
-        "case_count": 2,
+        "case_count": 3,
         "win_rate": 0.0,
-        "average_return": -0.20387236962094274,
-        "average_max_drawdown": -0.23734177215189878,
-        "best_return": -0.1572926596758818,
-        "worst_return": -0.2504520795660037
+        "average_return": -0.17018089070263284,
+        "average_max_drawdown": -0.2093931297966004,
+        "best_return": -0.13122761315532405,
+        "worst_return": -0.21389917402449443
       },
       "simulation_only": true,
       "user_facing_suggestion_allowed": false,
@@ -699,11 +668,11 @@
         "average_return_below_threshold"
       ],
       "summary": {
-        "case_count": 2,
-        "win_rate": 0.0,
-        "average_return": -0.14240386955463613,
-        "average_max_drawdown": -0.21708486621218448,
-        "best_return": -0.11785714285714277,
+        "case_count": 3,
+        "win_rate": 0.3333333333333333,
+        "average_return": -0.09028783866723418,
+        "average_max_drawdown": -0.21797707719086004,
+        "best_return": 0.013944223107569709,
         "worst_return": -0.1669505962521295
       },
       "simulation_only": true,
@@ -711,8 +680,8 @@
       "real_trade_allowed": false
     },
     {
-      "symbol": "920002",
-      "name": "万达轴承",
+      "symbol": "600715",
+      "name": "文投控股",
       "market": "A",
       "matched_strategy_ids": [
         "a_share_short_momentum",
@@ -722,39 +691,16 @@
       "reasons": [
         "case_count_below_threshold",
         "win_rate_below_threshold",
-        "average_return_below_threshold"
+        "average_return_below_threshold",
+        "hard_worst_return_breached"
       ],
       "summary": {
-        "case_count": 2,
-        "win_rate": 0.0,
-        "average_return": -0.03749565450982878,
-        "average_max_drawdown": -0.1407555394115511,
-        "best_return": -0.002875924404272867,
-        "worst_return": -0.07211538461538469
-      },
-      "simulation_only": true,
-      "user_facing_suggestion_allowed": false,
-      "real_trade_allowed": false
-    },
-    {
-      "symbol": "603863",
-      "name": "松炀资源",
-      "market": "A",
-      "matched_strategy_ids": [
-        "a_share_short_momentum",
-        "growth_breakout"
-      ],
-      "disposition": "downgraded",
-      "reasons": [
-        "case_count_below_threshold"
-      ],
-      "summary": {
-        "case_count": 2,
-        "win_rate": 0.5,
-        "average_return": 0.05790883990790724,
-        "average_max_drawdown": -0.14364364364364368,
-        "best_return": 0.13000580383052807,
-        "worst_return": -0.014188124014713588
+        "case_count": 3,
+        "win_rate": 0.3333333333333333,
+        "average_return": -0.08497095010252902,
+        "average_max_drawdown": -0.24826937388544867,
+        "best_return": 0.0592105263157896,
+        "worst_return": -0.2857142857142857
       },
       "simulation_only": true,
       "user_facing_suggestion_allowed": false,
@@ -776,10 +722,10 @@
         "hard_worst_return_breached"
       ],
       "summary": {
-        "case_count": 2,
+        "case_count": 3,
         "win_rate": 0.0,
-        "average_return": -0.17033640635416153,
-        "average_max_drawdown": -0.19711980485974295,
+        "average_return": -0.17420313904577625,
+        "average_max_drawdown": -0.19828250415168278,
         "best_return": -0.13716404077849853,
         "worst_return": -0.20350877192982453
       },
@@ -788,34 +734,8 @@
       "real_trade_allowed": false
     },
     {
-      "symbol": "605258",
-      "name": "协和电子",
-      "market": "A",
-      "matched_strategy_ids": [
-        "a_share_short_momentum",
-        "growth_breakout"
-      ],
-      "disposition": "downgraded",
-      "reasons": [
-        "case_count_below_threshold",
-        "win_rate_below_threshold",
-        "average_return_below_threshold"
-      ],
-      "summary": {
-        "case_count": 2,
-        "win_rate": 0.0,
-        "average_return": -0.16447916326463963,
-        "average_max_drawdown": -0.21536589014830881,
-        "best_return": -0.14925373134328357,
-        "worst_return": -0.17970459518599569
-      },
-      "simulation_only": true,
-      "user_facing_suggestion_allowed": false,
-      "real_trade_allowed": false
-    },
-    {
-      "symbol": "301361",
-      "name": "众智科技",
+      "symbol": "600101",
+      "name": "明星电力",
       "market": "A",
       "matched_strategy_ids": [
         "a_share_short_momentum",
@@ -829,20 +749,20 @@
         "hard_worst_return_breached"
       ],
       "summary": {
-        "case_count": 2,
+        "case_count": 3,
         "win_rate": 0.0,
-        "average_return": -0.16568957059618816,
-        "average_max_drawdown": -0.2099464903997481,
-        "best_return": -0.12909632571996033,
-        "worst_return": -0.202282815472416
+        "average_return": -0.3773970870592163,
+        "average_max_drawdown": -0.39730392156862754,
+        "best_return": -0.34560480841472574,
+        "worst_return": -0.3939393939393939
       },
       "simulation_only": true,
       "user_facing_suggestion_allowed": false,
       "real_trade_allowed": false
     },
     {
-      "symbol": "002425",
-      "name": "凯撒文化",
+      "symbol": "000099",
+      "name": "中信海直",
       "market": "A",
       "matched_strategy_ids": [
         "a_share_short_momentum",
@@ -855,12 +775,89 @@
         "average_return_below_threshold"
       ],
       "summary": {
-        "case_count": 1,
+        "case_count": 3,
         "win_rate": 0.0,
-        "average_return": -0.11371237458193995,
-        "average_max_drawdown": -0.17391304347826086,
-        "best_return": -0.11371237458193995,
-        "worst_return": -0.11371237458193995
+        "average_return": -0.17551218447086023,
+        "average_max_drawdown": -0.19070855832759318,
+        "best_return": -0.14248297537977994,
+        "worst_return": -0.19614003590664275
+      },
+      "simulation_only": true,
+      "user_facing_suggestion_allowed": false,
+      "real_trade_allowed": false
+    },
+    {
+      "symbol": "603172",
+      "name": "万丰股份",
+      "market": "A",
+      "matched_strategy_ids": [
+        "a_share_short_momentum",
+        "growth_breakout"
+      ],
+      "disposition": "downgraded",
+      "reasons": [
+        "case_count_below_threshold"
+      ],
+      "summary": {
+        "case_count": 3,
+        "win_rate": 1.0,
+        "average_return": 0.10053575963930868,
+        "average_max_drawdown": -0.06285313426917893,
+        "best_return": 0.15218769816106548,
+        "worst_return": 0.024969549330084995
+      },
+      "simulation_only": true,
+      "user_facing_suggestion_allowed": false,
+      "real_trade_allowed": false
+    },
+    {
+      "symbol": "301049",
+      "name": "超越科技",
+      "market": "A",
+      "matched_strategy_ids": [
+        "a_share_short_momentum",
+        "growth_breakout"
+      ],
+      "disposition": "downgraded",
+      "reasons": [
+        "case_count_below_threshold",
+        "win_rate_below_threshold",
+        "average_return_below_threshold"
+      ],
+      "summary": {
+        "case_count": 3,
+        "win_rate": 0.0,
+        "average_return": -0.1077301111570859,
+        "average_max_drawdown": -0.17200449643731686,
+        "best_return": -0.0684397163120567,
+        "worst_return": -0.1822493224932249
+      },
+      "simulation_only": true,
+      "user_facing_suggestion_allowed": false,
+      "real_trade_allowed": false
+    },
+    {
+      "symbol": "301577",
+      "name": "美信科技",
+      "market": "A",
+      "matched_strategy_ids": [
+        "a_share_short_momentum",
+        "growth_breakout"
+      ],
+      "disposition": "downgraded",
+      "reasons": [
+        "case_count_below_threshold",
+        "win_rate_below_threshold",
+        "average_return_below_threshold",
+        "hard_worst_return_breached"
+      ],
+      "summary": {
+        "case_count": 3,
+        "win_rate": 0.0,
+        "average_return": -0.2331172826586493,
+        "average_max_drawdown": -0.2539652156960619,
+        "best_return": -0.1328488372093023,
+        "worst_return": -0.29164705882352937
       },
       "simulation_only": true,
       "user_facing_suggestion_allowed": false,
@@ -871,7 +868,7 @@
     "strategy_specific_historical_cases": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/aegis_strategy_specific_historical_cases_latest.json"
   },
   "source_hashes": {
-    "strategy_specific_historical_cases": "e12e3e1bef152013354a1d66c481cd919fb8f28d0147741fc04536690a967171"
+    "strategy_specific_historical_cases": "2f5f60167d932efcda570b52d8bc54557f79df87a760f851c9f1cb791c694179"
   },
   "checks": {
     "source_pass": true,

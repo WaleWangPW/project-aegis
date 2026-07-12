@@ -1,6 +1,6 @@
 # Project Aegis Strategy Research
 
-Updated At: 2026-07-12
+Updated At: 2026-07-13
 
 Boundary: simulation research only. No broker API, no webhook, no real order placement.
 
@@ -63,6 +63,27 @@ Current priority for the next implementation batch:
    build a point-in-time disclosure-date guardrail before using ownership data.
 4. Optional permission check for `stk_survey` and holder-change style data; if
    not available, keep those modules visible as blocked research sources.
+
+## Current A-Share Evidence Status
+
+The current OpenClaw `stock-agent` expanded managed cycle has consumed the
+dragon-tiger / hot-money expansion parameters inside the full strategy loop,
+not only as a one-off collector run:
+
+- Command: `make stock-agent-a-share-strategy-cycle-managed-expanded`
+- Collector parameters: `lookback_dates=90`, `forward_days=20`,
+  `max_symbols=24`, `max_events_per_symbol=3`
+- Latest dragon-tiger research samples: `24` samples, `72` events,
+  `90` queried trade dates
+- Latest strategy-specific cases: `120` total historical cases, `76` A-share
+  cases, `36` dragon-tiger event-aligned cases
+- Ranking gate approved strategies: `0`
+- Rankable strategies: `0`
+- Ranking impact allowed: `false`
+
+Interpretation: the sample expansion is now technically wired into the managed
+cycle, but the current strategy evidence is still not strong enough to affect
+candidate sorting or user-facing recommendations.
 
 ## Serenity / “白毛股神” Notes
 
