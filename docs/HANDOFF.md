@@ -54,6 +54,12 @@ of the newly resent stock-assistant cards and the listener records the event.
 This listener is simulation-feedback only: no broker API, no order placement,
 no holding mutation, and no trading webhook.
 
+Local LaunchAgent note: `ai.openclaw.stock-aegis-callback` now starts through
+`~/.openclaw/bin/aegis-stock-callback.sh`; launchd stdout/stderr are written to
+`/tmp/aegis_stock_feishu_callback_server.launchd*.log` to avoid iCloud path
+spawn failures, while the Aegis service health remains in
+`data/reports/aegis_stock_feishu_callback_server_latest.json`.
+
 **Product version:** `V2.12-J H-US Virtual PaperTrade Creation From Validated Evidence PASS`
 
 **Next target:** `V2.12-K H-US Virtual PaperTrade Review/Memory Bridge`
