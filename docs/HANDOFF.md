@@ -8,6 +8,23 @@
 
 **Accepted engineering baseline:** `P25.6 PASS`
 
+**Dashboard usability update:** the live page at
+`http://localhost:8080/dashboard/index.html` now uses a plain-language daily
+workflow: "不用读完整报表：先看结论，再看 3 张卡", a one-minute brief, explicit
+simulation-only boundary, and simplified candidate cards with company,
+selection reason, latest news, and risk first. Validated with `node --check
+dashboard/v2.js`, `curl -I` returning `200 OK`, and Browser DOM/console checks
+showing no console warnings/errors and no horizontal overflow on desktop or
+390px mobile width.
+
+**Feedback callback caveat:** the Dashboard currently shows the latest local
+Aegis feedback record honestly. As of this update the latest local record is
+still `HOOD · aegis_more_news · 2026-07-12T13:38:15+08:00`; the user's newer
+"added" click did not appear in
+`data/records/aegis_stock_feedback_events.jsonl`. Next work should verify the
+actual Feishu/OpenClaw callback process and ensure card interactions invoke
+`scripts/handle_aegis_stock_card_action.py` in this repo.
+
 **Product version:** `V2.12-J H-US Virtual PaperTrade Creation From Validated Evidence PASS`
 
 **Next target:** `V2.12-K H-US Virtual PaperTrade Review/Memory Bridge`
