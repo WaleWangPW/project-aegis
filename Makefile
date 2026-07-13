@@ -164,6 +164,12 @@ build-dashboard-daily-use-readiness:
 smoke-dashboard-daily-use:
 	.venv/bin/python scripts/smoke_dashboard_daily_use.py
 
+dashboard-daily-use-check:
+	$(MAKE) dashboard-status
+	$(MAKE) build-a-share-current-day-retry-readiness
+	$(MAKE) build-dashboard-daily-use-readiness
+	$(MAKE) smoke-dashboard-daily-use
+
 START_DATE ?= 20240801
 END_DATE ?= 20260710
 A_SHARE_RETRY_START_DATE ?= 20250713
