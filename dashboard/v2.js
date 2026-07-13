@@ -137,6 +137,13 @@ function setupNavigation() {
       navigator.clipboard?.writeText(text).then(()=>{ stockAgentButton.textContent='任务已复制'; setTimeout(()=>{ stockAgentButton.textContent='复制 stock-agent 任务'; },1800); }).catch(()=>{ stockAgentButton.textContent='复制失败'; setTimeout(()=>{ stockAgentButton.textContent='复制 stock-agent 任务'; },1800); });
       return;
     }
+    const copyTextButton = event.target.closest('[data-copy-text]');
+    if (copyTextButton) {
+      const text = copyTextButton.dataset.copyText || '';
+      const label = copyTextButton.dataset.copyLabel || copyTextButton.textContent || '复制';
+      navigator.clipboard?.writeText(text).then(()=>{ copyTextButton.textContent='已复制'; setTimeout(()=>{ copyTextButton.textContent=label; },1400); }).catch(()=>{ copyTextButton.textContent='复制失败'; setTimeout(()=>{ copyTextButton.textContent=label; },1400); });
+      return;
+    }
     const selectionTab = event.target.closest('[data-selection-tab]');
     if (selectionTab) {
       activateSelectionPane(selectionTab.dataset.selectionTab);
@@ -166,7 +173,7 @@ function actionHub(decision, feedback, dashboardIntent) {
     {title:'点按钮回传',body:'回到选股页点“加入模拟研究 / 要更多资讯 / 暂不关注”。'},
     {title:'看证据回执',body:'证据页确认后台已记录；交易副作用必须是 0。'}
   ];
-  return `${localIntentBoard(feedback,dashboardIntent,true)}<section class="daily-command-panel" aria-label="今日操作面板"><div class="daily-command-head"><span>今日操作面板</span><b>${riskFirst?'先止血，再研究':'先研究，不交易'}</b><p>${riskFirst?'风险页是今天的第一入口；选股只作为研究参考。':'选股页只负责模拟研究记录，真实下单只能在外部软件手动完成。'}</p></div><div class="manual-loop" aria-label="手动使用闭环"><b>今天真实怎么用</b>${manualSteps.map((item,index)=>`<p><span>${index+1}</span><strong>${esc(item.title)}</strong>${esc(item.body)}</p>`).join('')}</div><div class="daily-command-steps">${steps.map((item,index)=>`<article class="hub-card ${item.tone}"><div><em>${index+1}</em><b>${esc(item.title)}</b><p>${esc(item.body)}</p></div><button type="button" data-page-jump="${esc(item.page)}"><span>${esc(item.cta)}</span><i>↗</i></button></article>`).join('')}</div></section>`;
+  return `${localIntentBoard(feedback,dashboardIntent,true)}<section class="daily-command-panel" aria-label="今日操作面板"><div class="daily-command-head"><span>今日操作面板</span><b>${riskFirst?'先止血，再研究':'先研究，不交易'}</b><p>${riskFirst?'风险页是今天的第一入口；选股只作为研究参考。':'选股页只负责模拟研究记录，真实下单只能在外部软件手动完成。'}</p></div><div class="manual-loop" aria-label="手动使用闭环"><b>今天真实怎么用</b>${manualSteps.map((item,index)=>`<p><span>${index+1}</span><strong>${esc(item.title)}</strong>${esc(item.body)}</p>`).join('')}</div><div class="daily-command-steps">${steps.map((item,index)=>`<article class="hub-card ${item.tone}"><div><em>${index+1}</em><b>${esc(item.title)}</b><p>${esc(item.body)}</p></div><button type="button" data-page-jump="${esc(item.page)}"><span>${esc(item.cta)}</span><i>↗</i></button></article>`).join('')}</div></section>${accessPanel()}`;
 }
 function commandStrip(decision, stockSelection, fullYearCoverage, rankingGate, feedback) {
   const researchCount = stockSelection?.summary?.research_candidate_count ?? 0;
@@ -177,6 +184,11 @@ function commandStrip(decision, stockSelection, fullYearCoverage, rankingGate, f
   const firstPage = decision.risk_count > 0 ? 'risk' : 'selection';
   const firstLabel = decision.risk_count > 0 ? '先处理风险' : '看 Top 候选';
   return `<div class="command-copy"><span>今日路径</span><b>${esc(firstLabel)}</b><small>${decision.risk_count > 0 ? `风险 ${decision.risk_count} 项，今天不要新增仓位` : `可研究 ${researchCount} 只，资讯 ${newsCount} 只`}</small></div><div class="command-pills"><button class="command-pill primary" type="button" data-page-jump="${esc(firstPage)}"><span>1</span>${esc(firstLabel)}</button><button class="command-pill" type="button" data-page-jump="strategy"><span>2</span>策略状态：Gate ${esc(gateApproved)}</button><button class="command-pill" type="button" data-page-jump="evidence"><span>3</span>回传：${esc(latest)}</button><button class="command-pill ghost" type="button" data-page-jump="evidence"><span>安全</span>一年覆盖 ${esc(coverage)} · 只模拟</button></div>`;
+}
+function accessPanel() {
+  const localUrl = 'http://127.0.0.1:8080/dashboard/index.html';
+  const lanCommand = 'make dashboard-start-lan && make dashboard-status-lan';
+  return `<section class="access-panel" aria-label="访问方式"><div><span>访问方式</span><b>电脑本机稳定，手机需显式开启</b><p>默认只监听 127.0.0.1，所以外面的手机打不开是安全设计，不是数据坏了。</p></div><div class="access-grid"><article class="ok"><strong>电脑本机</strong><code>${esc(localUrl)}</code><button type="button" data-copy-text="${esc(localUrl)}" data-copy-label="复制本机链接">复制本机链接</button></article><article class="warn"><strong>同 Wi-Fi 手机</strong><code>${esc(lanCommand)}</code><button type="button" data-copy-text="${esc(lanCommand)}" data-copy-label="复制 LAN 命令">复制 LAN 命令</button></article><article><strong>人在外面</strong><p>用 Tailscale/私有隧道；不要直接把 8080 暴露公网。</p></article></div><small>LAN 模式仍只记录模拟研究按钮回传；不接券商、不下单、不调用交易 webhook。</small></section>`;
 }
 function isWaitingCurrentDayDaily(report) {
   return report?.coverage_status === 'WAITING_CURRENT_TRADING_DAY_DAILY'

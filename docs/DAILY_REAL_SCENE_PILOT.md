@@ -70,6 +70,18 @@ make dashboard-status
 make dashboard-stop
 ```
 
+For same-Wi-Fi phone testing, switch deliberately into LAN mode:
+
+```bash
+make dashboard-stop
+make dashboard-start-lan
+make dashboard-status-lan
+```
+
+Use one of the `lan_urls` printed by `make dashboard-status-lan` on the phone.
+Do not expose this helper directly to the public internet; use Tailscale or
+another approved private tunnel when outside the home network.
+
 2. Open `http://localhost:8080/dashboard/index.html`.
 3. Read `今日结论` and `风险阻塞` first.
 4. Review only the Top 3 candidates.

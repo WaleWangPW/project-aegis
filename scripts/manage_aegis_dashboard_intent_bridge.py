@@ -12,6 +12,7 @@ import argparse
 import json
 import os
 import signal
+import socket
 import subprocess
 import sys
 import time
@@ -24,20 +25,54 @@ from typing import Any
 REPO = Path(__file__).resolve().parents[1]
 RUNTIME = REPO / "data" / "runtime"
 PID_FILE = RUNTIME / "aegis_dashboard_intent_bridge.pid"
+META_FILE = RUNTIME / "aegis_dashboard_intent_bridge.meta.json"
 LOG_FILE = RUNTIME / "aegis_dashboard_intent_bridge.log"
 SERVER_SCRIPT = REPO / "scripts" / "run_aegis_dashboard_intent_bridge_server.py"
 DEFAULT_HOST = "127.0.0.1"
+LAN_HOST = "0.0.0.0"
 DEFAULT_PORT = 8080
 START_TIMEOUT_SECONDS = 8.0
 STOP_TIMEOUT_SECONDS = 5.0
 
 
+def probe_host(host: str) -> str:
+    if host in {LAN_HOST, "::"}:
+        return "127.0.0.1"
+    return host
+
+
 def dashboard_url(host: str, port: int) -> str:
-    return f"http://{host}:{port}/dashboard/index.html"
+    return f"http://{probe_host(host)}:{port}/dashboard/index.html"
 
 
 def health_url(host: str, port: int) -> str:
-    return f"http://{host}:{port}/api/dashboard-intents/health"
+    return f"http://{probe_host(host)}:{port}/api/dashboard-intents/health"
+
+
+def private_lan_hosts() -> list[str]:
+    hosts: set[str] = set()
+    try:
+        names = [socket.gethostname(), socket.getfqdn()]
+        for name in names:
+            for family, _type, _proto, _canon, sockaddr in socket.getaddrinfo(name, None):
+                if family == socket.AF_INET:
+                    ip = sockaddr[0]
+                    if ip.startswith(("10.", "192.168.", "172.16.", "172.17.", "172.18.", "172.19.", "172.20.", "172.21.", "172.22.", "172.23.", "172.24.", "172.25.", "172.26.", "172.27.", "172.28.", "172.29.", "172.30.", "172.31.")):
+                        hosts.add(ip)
+    except OSError:
+        return []
+    return sorted(hosts)
+
+
+def access_urls(host: str, port: int) -> dict[str, Any]:
+    lan_urls = [f"http://{ip}:{port}/dashboard/index.html" for ip in private_lan_hosts()] if host == LAN_HOST else []
+    return {
+        "bind_host": host,
+        "local_url": dashboard_url(host, port),
+        "lan_urls": lan_urls,
+        "lan_enabled": host == LAN_HOST,
+        "outside_home_network": "Use Tailscale or another approved private tunnel; do not expose this helper directly to the public internet.",
+    }
 
 
 def read_pid(pid_file: Path = PID_FILE) -> int | None:
@@ -46,6 +81,35 @@ def read_pid(pid_file: Path = PID_FILE) -> int | None:
         return int(text) if text else None
     except (FileNotFoundError, ValueError):
         return None
+
+
+def read_meta(meta_file: Path = META_FILE) -> dict[str, Any]:
+    try:
+        return json.loads(meta_file.read_text(encoding="utf-8"))
+    except (FileNotFoundError, json.JSONDecodeError):
+        return {}
+
+
+def write_meta(host: str, port: int, pid: int, meta_file: Path = META_FILE) -> None:
+    meta_file.write_text(
+        json.dumps(
+            {
+                "bind_host": host,
+                "port": port,
+                "pid": pid,
+                "safety": {
+                    "simulation_only": True,
+                    "no_broker_api": True,
+                    "no_order_placement": True,
+                    "no_trading_webhook": True,
+                },
+            },
+            ensure_ascii=False,
+            indent=2,
+        )
+        + "\n",
+        encoding="utf-8",
+    )
 
 
 def process_alive(pid: int | None) -> bool:
@@ -70,10 +134,14 @@ def probe_health(host: str, port: int, *, timeout: float = 1.0) -> dict[str, Any
         return None
 
 
-def current_status(host: str, port: int, *, pid_file: Path = PID_FILE) -> dict[str, Any]:
+def current_status(host: str, port: int, *, pid_file: Path = PID_FILE, meta_file: Path = META_FILE) -> dict[str, Any]:
     pid = read_pid(pid_file)
     alive = process_alive(pid)
     health = probe_health(host, port)
+    meta = read_meta(meta_file)
+    active_host = meta.get("bind_host") if alive or health else host
+    if active_host not in {DEFAULT_HOST, LAN_HOST, "::"}:
+        active_host = DEFAULT_HOST
     if health and alive:
         status = "RUNNING"
     elif health:
@@ -84,14 +152,21 @@ def current_status(host: str, port: int, *, pid_file: Path = PID_FILE) -> dict[s
         status = "STOPPED"
         if pid_file.exists():
             pid_file.unlink()
+        if meta_file.exists():
+            meta_file.unlink()
     return {
         "status": status,
         "pid": pid,
         "pid_alive": alive,
         "health_ready": health is not None,
+        "requested_bind_host": host,
+        "active_bind_host": active_host,
+        "bind_host_matches_request": active_host == host or status == "STOPPED",
         "dashboard_url": dashboard_url(host, port),
         "health_url": health_url(host, port),
+        "access": access_urls(active_host, port),
         "pid_file": str(pid_file),
+        "meta_file": str(meta_file),
         "log_file": str(LOG_FILE),
         "safety": {
             "simulation_only": True,
@@ -118,10 +193,23 @@ def python_executable() -> str:
     return sys.executable
 
 
-def start_bridge(host: str, port: int, *, pid_file: Path = PID_FILE, log_file: Path = LOG_FILE) -> dict[str, Any]:
-    status = current_status(host, port, pid_file=pid_file)
+def start_bridge(
+    host: str,
+    port: int,
+    *,
+    pid_file: Path = PID_FILE,
+    meta_file: Path = META_FILE,
+    log_file: Path = LOG_FILE,
+) -> dict[str, Any]:
+    status = current_status(host, port, pid_file=pid_file, meta_file=meta_file)
     if status["health_ready"]:
-        status["message"] = "Dashboard intent bridge is already serving."
+        if not status["bind_host_matches_request"]:
+            status["message"] = (
+                f"Dashboard intent bridge is already serving on {status['active_bind_host']}. "
+                "Run make dashboard-stop before switching bind mode."
+            )
+        else:
+            status["message"] = "Dashboard intent bridge is already serving."
         return status
 
     RUNTIME.mkdir(parents=True, exist_ok=True)
@@ -142,20 +230,23 @@ def start_bridge(host: str, port: int, *, pid_file: Path = PID_FILE, log_file: P
         start_new_session=True,
     )
     pid_file.write_text(f"{process.pid}\n", encoding="utf-8")
+    write_meta(host, port, process.pid, meta_file=meta_file)
 
     ready = wait_for_ready(host, port, START_TIMEOUT_SECONDS)
-    status = current_status(host, port, pid_file=pid_file)
+    status = current_status(host, port, pid_file=pid_file, meta_file=meta_file)
     status["started_pid"] = process.pid
     status["message"] = "Dashboard intent bridge started." if ready else "Dashboard intent bridge started but is not ready yet."
     return status
 
 
-def stop_bridge(host: str, port: int, *, pid_file: Path = PID_FILE) -> dict[str, Any]:
+def stop_bridge(host: str, port: int, *, pid_file: Path = PID_FILE, meta_file: Path = META_FILE) -> dict[str, Any]:
     pid = read_pid(pid_file)
     if not process_alive(pid):
         if pid_file.exists():
             pid_file.unlink()
-        status = current_status(host, port, pid_file=pid_file)
+        if meta_file.exists():
+            meta_file.unlink()
+        status = current_status(host, port, pid_file=pid_file, meta_file=meta_file)
         status["message"] = "Dashboard intent bridge was not running."
         return status
 
@@ -168,8 +259,10 @@ def stop_bridge(host: str, port: int, *, pid_file: Path = PID_FILE) -> dict[str,
         os.kill(pid, signal.SIGKILL)
     if pid_file.exists():
         pid_file.unlink()
+    if meta_file.exists():
+        meta_file.unlink()
 
-    status = current_status(host, port, pid_file=pid_file)
+    status = current_status(host, port, pid_file=pid_file, meta_file=meta_file)
     status["stopped_pid"] = pid
     status["message"] = "Dashboard intent bridge stopped."
     return status

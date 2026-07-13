@@ -90,11 +90,17 @@ serve-dashboard-intent-bridge:
 dashboard-start:
 	.venv/bin/python scripts/manage_aegis_dashboard_intent_bridge.py start
 
+dashboard-start-lan:
+	.venv/bin/python scripts/manage_aegis_dashboard_intent_bridge.py start --host 0.0.0.0
+
 dashboard-stop:
 	.venv/bin/python scripts/manage_aegis_dashboard_intent_bridge.py stop
 
 dashboard-status:
 	.venv/bin/python scripts/manage_aegis_dashboard_intent_bridge.py status
+
+dashboard-status-lan:
+	.venv/bin/python scripts/manage_aegis_dashboard_intent_bridge.py status --host 0.0.0.0
 
 dashboard-open:
 	.venv/bin/python scripts/manage_aegis_dashboard_intent_bridge.py open
