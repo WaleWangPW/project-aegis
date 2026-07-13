@@ -17,8 +17,8 @@
 - real_click_action: `aegis_more_news`
 - ranking_gate_approved_count: `0`
 - user_facing_suggestion_allowed: `False`
-- a_share_retry_status: `WAITING`
-- a_share_retry_ready_to_run: `False`
+- a_share_retry_status: `READY`
+- a_share_retry_ready_to_run: `True`
 
 ## Checks
 

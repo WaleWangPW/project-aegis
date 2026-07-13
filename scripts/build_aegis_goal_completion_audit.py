@@ -66,11 +66,34 @@ def build_audit(
     ranking_gate: dict[str, Any] | None,
     retry_readiness: dict[str, Any] | None,
     now: datetime,
+    retry_guard: dict[str, Any] | None = None,
 ) -> dict[str, Any]:
     selection_summary = (stock_selection or {}).get("summary", {})
     cycle_summary = (stock_agent_cycle or {}).get("summary", {})
     gate_summary = (ranking_gate or {}).get("summary", {})
     markets = selection_summary.get("markets_passed") or []
+
+    retry_status = (retry_readiness or {}).get("status")
+    retry_guard_status = (retry_guard or {}).get("status")
+    retry_guard_failure = (retry_guard or {}).get("retry_failure") or {}
+    if retry_status == "WAITING":
+        retry_requirement_status = "PENDING"
+        retry_pending = "Wait until the 15:30 Asia/Shanghai preflight returns READY before running make a-share-current-day-retry-guarded."
+    elif retry_status == "NOT_NEEDED":
+        retry_requirement_status = "ACHIEVED"
+        retry_pending = None
+    elif retry_status == "READY" and retry_guard_status == "PASS":
+        retry_requirement_status = "ACHIEVED"
+        retry_pending = None
+    elif retry_status == "READY" and retry_guard_status == "FAIL":
+        retry_requirement_status = "PENDING"
+        retry_pending = "Guarded retry ran after READY but the retry chain failed; inspect a_share_current_day_retry_guarded_latest.json and retry later."
+    elif retry_status == "READY":
+        retry_requirement_status = "PENDING"
+        retry_pending = "Preflight is READY; run make a-share-current-day-retry-guarded, not the raw retry chain."
+    else:
+        retry_requirement_status = "MISSING"
+        retry_pending = None
 
     requirements = [
         item(
@@ -169,20 +192,21 @@ def build_audit(
         ),
         item(
             "A-share current-day cache retry is only executed after the preflight becomes READY.",
-            "PENDING"
-            if (retry_readiness or {}).get("status") == "WAITING"
-            else "ACHIEVED"
-            if (retry_readiness or {}).get("status") in {"READY", "NOT_NEEDED"}
-            else "MISSING",
-            ["data/reports/a_share_current_day_retry_readiness_latest.json"],
+            retry_requirement_status,
+            [
+                "data/reports/a_share_current_day_retry_readiness_latest.json",
+                "data/reports/a_share_current_day_retry_guarded_latest.json",
+            ],
             detail={
-                "retry_status": (retry_readiness or {}).get("status"),
+                "retry_status": retry_status,
                 "ready_to_run": (retry_readiness or {}).get("ready_to_run"),
                 "recommended_command": (retry_readiness or {}).get("recommended_command"),
+                "guard_status": retry_guard_status,
+                "guard_retry_exit_code": (retry_guard or {}).get("retry_exit_code"),
+                "guard_audit_exit_code": (retry_guard or {}).get("audit_exit_code"),
+                "guard_failed_dates": retry_guard_failure.get("failed_dates"),
             },
-            pending="Wait until the 15:30 Asia/Shanghai preflight returns READY before running make a-share-current-day-retry."
-            if (retry_readiness or {}).get("status") == "WAITING"
-            else None,
+            pending=retry_pending,
         ),
     ]
 
@@ -204,8 +228,8 @@ def build_audit(
         "pending_count": len(pending),
         "next_actions": [
             "Use Dashboard for simulation research only.",
-            "After 15:30 Asia/Shanghai rerun make dashboard-daily-use-check.",
-            "Run make a-share-current-day-retry only if the retry preflight returns READY.",
+            "Run make a-share-current-day-retry-guarded for the A-share current-day retry; do not run the raw retry chain directly.",
+            "If the guarded retry fails because today's Tushare daily rows are still unavailable, retry later without relaxing the Gate.",
             "Do not allow A-share strategy into user-facing suggestions while ranking_gate_approved_count is 0.",
         ],
         "safety": {
@@ -257,6 +281,7 @@ def main() -> int:
         stock_agent_cycle=read_json("stock_agent_a_share_strategy_cycle_latest.json"),
         ranking_gate=read_json("a_share_refined_strategy_ranking_gate_latest.json"),
         retry_readiness=read_json("a_share_current_day_retry_readiness_latest.json"),
+        retry_guard=read_json("a_share_current_day_retry_guarded_latest.json"),
         now=now_local(),
     )
     OUT_JSON.write_text(json.dumps(report, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")

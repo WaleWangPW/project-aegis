@@ -1,7 +1,7 @@
 {
   "type": "aegis_goal_completion_audit",
   "status": "READY_FOR_DAILY_USE_WITH_PENDING_A_SHARE_RETRY",
-  "generated_at": "2026-07-13T14:17:07+08:00",
+  "generated_at": "2026-07-13T15:52:28+08:00",
   "objective_scope": "daily_simulation_use_dashboard_and_stock_agent_gate",
   "requirements": [
     {
@@ -33,7 +33,7 @@
           "feedback_type": "user_requests_more_news",
           "source": "dashboard_local_intent_export",
           "received_at": "2026-07-13T13:01:52.191431+08:00",
-          "age_hours": 1.254,
+          "age_hours": 2.843,
           "dashboard_recorded_at": "2026/7/13 13:01:52"
         },
         "dry_run_status": "PASS"
@@ -92,22 +92,33 @@
       "requirement": "A-share current-day cache retry is only executed after the preflight becomes READY.",
       "status": "PENDING",
       "evidence": [
-        "data/reports/a_share_current_day_retry_readiness_latest.json"
+        "data/reports/a_share_current_day_retry_readiness_latest.json",
+        "data/reports/a_share_current_day_retry_guarded_latest.json"
       ],
       "detail": {
-        "retry_status": "WAITING",
-        "ready_to_run": false,
-        "recommended_command": null
+        "retry_status": "READY",
+        "ready_to_run": true,
+        "recommended_command": "make a-share-current-day-retry",
+        "guard_status": "FAIL",
+        "guard_retry_exit_code": 2,
+        "guard_audit_exit_code": 0,
+        "guard_failed_dates": [
+          {
+            "trade_date": "20260713",
+            "error_type": "RuntimeError",
+            "error": "daily 20260713 insufficient rows: 0"
+          }
+        ]
       },
-      "pending": "Wait until the 15:30 Asia/Shanghai preflight returns READY before running make a-share-current-day-retry."
+      "pending": "Guarded retry ran after READY but the retry chain failed; inspect a_share_current_day_retry_guarded_latest.json and retry later."
     }
   ],
   "missing_count": 0,
   "pending_count": 1,
   "next_actions": [
     "Use Dashboard for simulation research only.",
-    "After 15:30 Asia/Shanghai rerun make dashboard-daily-use-check.",
-    "Run make a-share-current-day-retry only if the retry preflight returns READY.",
+    "Run make a-share-current-day-retry-guarded for the A-share current-day retry; do not run the raw retry chain directly.",
+    "If the guarded retry fails because today's Tushare daily rows are still unavailable, retry later without relaxing the Gate.",
     "Do not allow A-share strategy into user-facing suggestions while ranking_gate_approved_count is 0."
   ],
   "safety": {

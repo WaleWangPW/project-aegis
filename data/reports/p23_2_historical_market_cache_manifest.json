@@ -1,25 +1,25 @@
 {
   "project": "Project Aegis",
   "type": "p23_2_historical_market_cache_manifest",
-  "generated_at": "2026-07-13T03:35:34.157440+00:00",
+  "generated_at": "2026-07-13T07:48:48.808368+00:00",
   "start_date": "20250713",
   "end_date": "20260713",
   "trade_calendar": {
     "path": "data/cache/p23_2_historical_market/trade_calendar.json",
-    "sha256": "d6fea34861efc19886fe0ab592065889a62ac74ccc4c63476627f481cfaeec1a",
+    "sha256": "ac8fe6299c22d424d6afdd687b9e94ebdb7cd5aabbed6620de117947b5cf3964",
     "open_day_count": 242
   },
   "stock_basic": {
     "path": "data/cache/p23_2_historical_market/stock_basic_all.json",
-    "sha256": "c84e252d04ba4056632e0c953b7f1d9c1fa0aedf3f18b881d3e2b4d99ddf431a",
+    "sha256": "8f7bb6922aabf78c6698cca8b08bbfe07e58799105607964dac216455cfda24d",
     "row_count": 5865
   },
   "daily_cache": {
     "directory": "data/cache/p23_2_historical_market/daily_by_trade_date",
     "expected_count": 242,
     "actual_count": 689,
-    "fetched_this_run": 1,
-    "reused_this_run": 240,
+    "fetched_this_run": 0,
+    "reused_this_run": 241,
     "failed_dates": [
       {
         "trade_date": "20260713",

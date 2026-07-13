@@ -1,7 +1,7 @@
 {
   "type": "dashboard_real_click_acceptance",
   "status": "ACCEPTED",
-  "generated_at": "2026-07-13T14:08:46+08:00",
+  "generated_at": "2026-07-13T15:52:28+08:00",
   "checks": {
     "intent_report_recorded": true,
     "feedback_report_recorded": true,
@@ -19,7 +19,7 @@
     "feedback_type": "user_requests_more_news",
     "source": "dashboard_local_intent_export",
     "received_at": "2026-07-13T13:01:52.191431+08:00",
-    "age_hours": 1.115,
+    "age_hours": 2.843,
     "dashboard_recorded_at": "2026/7/13 13:01:52"
   },
   "evidence": {

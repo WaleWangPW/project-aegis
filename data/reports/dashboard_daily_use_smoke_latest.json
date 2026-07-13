@@ -1,7 +1,7 @@
 {
   "type": "dashboard_daily_use_smoke",
   "status": "PASS",
-  "generated_at": "2026-07-13T14:08:46+08:00",
+  "generated_at": "2026-07-13T15:52:28+08:00",
   "base_url": "http://127.0.0.1:8080",
   "checks": {
     "bridge_health_ready": true,
@@ -23,8 +23,8 @@
     "latest_feedback_action": "aegis_more_news",
     "real_click_acceptance_status": "ACCEPTED",
     "ranking_gate_approved_count": 0,
-    "a_share_retry_status": "WAITING",
-    "a_share_retry_ready_to_run": false
+    "a_share_retry_status": "READY",
+    "a_share_retry_ready_to_run": true
   },
   "safety": {
     "simulation_only": true,

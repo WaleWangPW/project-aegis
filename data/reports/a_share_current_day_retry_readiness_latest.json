@@ -1,12 +1,12 @@
 {
   "type": "a_share_current_day_retry_readiness",
-  "status": "WAITING",
-  "generated_at": "2026-07-13T13:30:00+08:00",
+  "status": "READY",
+  "generated_at": "2026-07-13T15:52:28+08:00",
   "coverage_status": "WAITING_CURRENT_TRADING_DAY_DAILY",
   "answer_label": "NO",
   "retry_not_before_local_time": "15:30 Asia/Shanghai",
-  "ready_to_run": false,
-  "recommended_command": null,
+  "ready_to_run": true,
+  "recommended_command": "make a-share-current-day-retry",
   "command_chain": [
     "make a-share-current-day-retry",
     "make build-p23-2-historical-market-cache START_DATE=20250713 END_DATE=20260713",

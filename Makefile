@@ -158,6 +158,12 @@ build-a-share-full-year-coverage-plan:
 build-a-share-current-day-retry-readiness:
 	.venv/bin/python scripts/build_a_share_current_day_retry_readiness.py
 
+a-share-current-day-retry-guarded:
+	.venv/bin/python scripts/run_a_share_current_day_retry_guarded.py
+
+a-share-current-day-retry-guarded-wait:
+	.venv/bin/python scripts/run_a_share_current_day_retry_guarded.py --wait
+
 build-dashboard-daily-use-readiness:
 	.venv/bin/python scripts/build_dashboard_daily_use_readiness.py
 

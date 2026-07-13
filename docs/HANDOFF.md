@@ -8,6 +8,27 @@
 
 **Accepted engineering baseline:** `P25.6 PASS`
 
+**Latest update — Guarded A-share retry runner added and verified:**
+Added `make a-share-current-day-retry-guarded`, backed by
+`scripts/run_a_share_current_day_retry_guarded.py` and
+`tests/test_a_share_current_day_retry_guarded.py`. The runner first refreshes
+the read-only preflight, runs the raw A-share retry chain only when preflight
+is `READY / ready_to_run=true`, then runs `make dashboard-daily-use-check`.
+It writes `data/reports/a_share_current_day_retry_guarded_latest.json/.md` and
+`data/runtime/a_share_current_day_retry_guarded.log`, and keeps the safety
+boundary explicit: simulation-only, no secret values printed, no broker API,
+no order placement, no trading webhook. At `2026-07-13 15:46 CST`, the
+preflight was `READY`, so the guarded runner correctly attempted the retry.
+The retry chain failed with `retry_exit_code=2` because Tushare still returned
+`0` daily rows for `trade_date=20260713` (`daily 20260713 insufficient rows:
+0`). The post-run dashboard audit still exited `0`, and the goal audit now
+keeps `status=READY_FOR_DAILY_USE_WITH_PENDING_A_SHARE_RETRY`,
+`missing_count=0`, `pending_count=1` instead of incorrectly treating READY as
+completion. Dashboard Today and Evidence pages now surface this as `数据未出 /
+受控重试失败`, and Evidence links `A股补数受控执行器`. Browser QA verified Today
+and Evidence pages show the guard failure reason, no horizontal overflow on
+desktop and 390px mobile, and console warnings/errors `0`.
+
 **Latest update — One-command daily-use check added:**
 Added `make dashboard-daily-use-check` and pushed commit
 `53993a0 Add dashboard daily use check target`. This command runs

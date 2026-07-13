@@ -17,8 +17,8 @@
 5. `ACHIEVED` No real trading, broker API, order placement, trading webhook, or secret exposure is allowed by the checked reports.
    - evidence: data/reports/dashboard_daily_use_readiness_latest.json, data/reports/dashboard_daily_use_smoke_latest.json, data/reports/dashboard_real_click_acceptance_latest.json, data/reports/a_share_refined_strategy_ranking_gate_latest.json, data/reports/a_share_current_day_retry_readiness_latest.json
 6. `PENDING` A-share current-day cache retry is only executed after the preflight becomes READY.
-   - pending: Wait until the 15:30 Asia/Shanghai preflight returns READY before running make a-share-current-day-retry.
-   - evidence: data/reports/a_share_current_day_retry_readiness_latest.json
+   - pending: Guarded retry ran after READY but the retry chain failed; inspect a_share_current_day_retry_guarded_latest.json and retry later.
+   - evidence: data/reports/a_share_current_day_retry_readiness_latest.json, data/reports/a_share_current_day_retry_guarded_latest.json
 
 ## Safety
 
