@@ -1,8 +1,8 @@
 {
   "type": "aegis_strategy_specific_historical_cases",
   "status": "PASS",
-  "generated_at": "2026-07-13T10:26:26+08:00",
-  "run_id": "aegis_strategy_specific_historical_cases_20260713T022626Z",
+  "generated_at": "2026-07-13T11:22:24+08:00",
+  "run_id": "aegis_strategy_specific_historical_cases_20260713T032224Z",
   "summary": {
     "base_candidate_count": 13,
     "candidate_count": 33,
@@ -4724,7 +4724,7 @@
     "stock_selection_workbench": "ddea037d923a116e60cfeb545c38a833311fd954d635f165f8ac5381a14e4420",
     "strategy_sandbox_coverage": "ece45915bc7b20aa09fdda865ef9d4a94f2cb9f4107b72f6e9adab1011618028",
     "h_us_daily_bars_refresh": "c9ceb1ead15de55b365e2a340cc363deaef52b6bc61b7314b67d759a265e8703",
-    "dragon_tiger_research_samples": "fb41e55e7aa56e21d013d2921b476b2a69e1bf204110f5b86848aa3bde67596d",
+    "dragon_tiger_research_samples": "126cd3d25869dc5ade7ae5423e92918b799e5b0156b10174664902079c3fd016",
     "stock_basic": "ba254e6efd76b8d2a90066dec583d32e3aaac94284f848124ef1cb968cdd9949"
   },
   "checks": {
@@ -4782,8 +4782,8 @@
     },
     "feedback_events_jsonl": {
       "exists": true,
-      "size": 4049,
-      "sha256": "05b1ce5fe8b2624fcd9e6769903ab35c3b5b66cd5316e8c4703eb7eb4b3ec50b"
+      "size": 4737,
+      "sha256": "e915f1476279a378e1125892165a78cba55587983e477d8a2996784135e0e384"
     }
   },
   "production_record_files_after": {
@@ -4814,9 +4814,9 @@
     },
     "feedback_events_jsonl": {
       "exists": true,
-      "size": 4049,
-      "sha256": "05b1ce5fe8b2624fcd9e6769903ab35c3b5b66cd5316e8c4703eb7eb4b3ec50b"
+      "size": 4737,
+      "sha256": "e915f1476279a378e1125892165a78cba55587983e477d8a2996784135e0e384"
     }
   },
-  "run_dir": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/aegis_strategy_specific_historical_cases/aegis_strategy_specific_historical_cases_20260713T022626Z"
+  "run_dir": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/aegis_strategy_specific_historical_cases/aegis_strategy_specific_historical_cases_20260713T032224Z"
 }

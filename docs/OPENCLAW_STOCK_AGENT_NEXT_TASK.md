@@ -1,6 +1,6 @@
 # Project Aegis OpenClaw Stock-Agent Next Task
 
-Updated At: 2026-07-13T10:29:55+08:00
+Updated At: 2026-07-13T11:25:54+08:00
 
 ## Objective
 
@@ -14,9 +14,9 @@ This task must not create user-facing recommendations while the gate is closed.
 
 Latest managed cycle evidence:
 
-- `generated_at=2026-07-13T10:29:55+08:00`
+- `generated_at=2026-07-13T11:25:54+08:00`
 - `overall_exit_code=0`
-- `report_sha256=1bee12a7ae7fb68cb287785bd819b936e1143164f1b4949cb01fd055c37fea90`
+- `report_sha256=f581dffbadf9b8bc8aa8edaecd8a82a9e1064f4a49976fcb5c88000563274f9c`
 - `refined_sandbox_pass_candidate_count=0`
 - `ranking_gate_reviewed_count=0`
 - `ranking_gate_approved_count=0`
@@ -25,6 +25,7 @@ Latest managed cycle evidence:
 - `tuned_fail_count=4`
 - `strategy_priority_action_count=1`
 - `full_year_coverage_answer=NO`
+- `strategy_experiment_queue_ready_count=6`
 
 Interpretation: Aegis can show strategy research status, but cannot promote any
 A-share strategy into Dashboard recommendation ranking.
@@ -40,6 +41,18 @@ make stock-agent-a-share-strategy-cycle-managed-expanded
 This is the approved bounded cycle for the current A-share strategy work. It
 keeps dragon-tiger and hot-money data as research-only samples and writes
 derived evidence reports.
+
+## Current Next Focus
+
+The latest managed-expanded cycle produced no ranking-gate candidate. The next
+useful work is not to relax the gate, but to improve upstream evidence:
+
+1. Review the six ready experiment-queue items in
+   `data/reports/a_share_strategy_experiment_queue_latest.json`.
+2. Refresh or complete the A-share full-year cross-section cache if explicitly
+   authorized for Tushare network usage and local cache writes.
+3. After cache freshness is no longer stale, rerun the approved managed-expanded
+   cycle and compare whether deep sandbox failures and tuned failures improve.
 
 ## Allowed
 

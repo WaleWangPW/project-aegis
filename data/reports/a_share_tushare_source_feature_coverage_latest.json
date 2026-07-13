@@ -1,8 +1,8 @@
 {
   "type": "a_share_tushare_source_feature_coverage",
   "status": "PASS",
-  "generated_at": "2026-07-13T10:27:41+08:00",
-  "run_id": "a_share_tushare_source_feature_coverage_20260713T102626",
+  "generated_at": "2026-07-13T11:23:41+08:00",
+  "run_id": "a_share_tushare_source_feature_coverage_20260713T112224",
   "command": "scripts/build_a_share_tushare_source_feature_coverage.py",
   "thresholds": {
     "min_ready_coverage": 0.5
@@ -276,9 +276,9 @@
     "source_hypothesis_evaluation": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/a_share_tushare_source_hypothesis_evaluation_latest.json"
   },
   "source_hashes": {
-    "source_hypothesis_queue": "285a167d905c8bc542d4b07b18fcdb71fcb49f7519c3f4ceb06ec9e6f11fbd99",
-    "strategy_specific_historical_cases": "848e226b4ad37a96dcd3a0590152541909a363adad48625858f5c9884187d3fd",
-    "source_hypothesis_evaluation": "7247ab631075633bc8db5d49f1d7125d175c70fb578e6883f72add24d069c6c3"
+    "source_hypothesis_queue": "664fb231b25075b66e415f070de9413055d93becc710e75b35f6a04313a858d8",
+    "strategy_specific_historical_cases": "b1f2d93ea6940ef10ba1d95f6a467fa1198bc47db60a0c14b905143ba2b9d520",
+    "source_hypothesis_evaluation": "800bf653b8d3c22871b84cd246c435d45247dbafc4953b8e1d8dbfcbc5ec4350"
   },
   "checks": {
     "source_queue_present": true,
@@ -332,8 +332,8 @@
     },
     "feedback_events_jsonl": {
       "exists": true,
-      "size": 4049,
-      "sha256": "05b1ce5fe8b2624fcd9e6769903ab35c3b5b66cd5316e8c4703eb7eb4b3ec50b"
+      "size": 4737,
+      "sha256": "e915f1476279a378e1125892165a78cba55587983e477d8a2996784135e0e384"
     }
   },
   "production_record_files_after": {
@@ -364,8 +364,8 @@
     },
     "feedback_events_jsonl": {
       "exists": true,
-      "size": 4049,
-      "sha256": "05b1ce5fe8b2624fcd9e6769903ab35c3b5b66cd5316e8c4703eb7eb4b3ec50b"
+      "size": 4737,
+      "sha256": "e915f1476279a378e1125892165a78cba55587983e477d8a2996784135e0e384"
     }
   }
 }

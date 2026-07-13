@@ -1,8 +1,8 @@
 {
   "type": "a_share_dragon_tiger_research_samples",
   "status": "PASS",
-  "generated_at": "2026-07-13T10:26:20+08:00",
-  "run_id": "a_share_dragon_tiger_research_samples_20260713T102554",
+  "generated_at": "2026-07-13T11:22:18+08:00",
+  "run_id": "a_share_dragon_tiger_research_samples_20260713T112151",
   "command": "scripts/collect_a_share_dragon_tiger_research_samples.py --lookback-dates 90 --forward-days 20 --max-symbols 24 --max-events-per-symbol 3",
   "summary": {
     "sample_count": 24,
@@ -1724,8 +1724,8 @@
     },
     "feedback_events_jsonl": {
       "exists": true,
-      "size": 4049,
-      "sha256": "05b1ce5fe8b2624fcd9e6769903ab35c3b5b66cd5316e8c4703eb7eb4b3ec50b"
+      "size": 4737,
+      "sha256": "e915f1476279a378e1125892165a78cba55587983e477d8a2996784135e0e384"
     }
   },
   "production_record_files_after": {
@@ -1756,8 +1756,8 @@
     },
     "feedback_events_jsonl": {
       "exists": true,
-      "size": 4049,
-      "sha256": "05b1ce5fe8b2624fcd9e6769903ab35c3b5b66cd5316e8c4703eb7eb4b3ec50b"
+      "size": 4737,
+      "sha256": "e915f1476279a378e1125892165a78cba55587983e477d8a2996784135e0e384"
     }
   }
 }

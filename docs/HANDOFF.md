@@ -8,6 +8,28 @@
 
 **Accepted engineering baseline:** `P25.6 PASS`
 
+**Latest update — stock-agent 11:25 managed-expanded rerun verified:**
+Codex delegated the approved A-share strategy cycle to OpenClaw `stock-agent`
+using only `make stock-agent-a-share-strategy-cycle-managed-expanded`, then
+independently verified the local reports. Latest cycle:
+`data/reports/stock_agent_a_share_strategy_cycle_latest.json`, generated
+`2026-07-13T11:25:54+08:00`, SHA256
+`f581dffbadf9b8bc8aa8edaecd8a82a9e1064f4a49976fcb5c88000563274f9c`,
+`status=PASS`, `overall_exit_code=0`, `command_count=15`,
+`failed_command_count=0`, `a_share_case_count=74`,
+`dragon_tiger_sample_count=24`, `dragon_tiger_event_count=72`,
+`refined_sandbox_pass_candidate_count=0`, `deep_sandbox_fail_count=5`,
+`tuned_fail_count=4`, `ranking_gate_reviewed_count=0`,
+`ranking_gate_approved_count=0`, `user_facing_suggestion_allowed=false`, and
+`full_year_coverage_answer=NO`. Safety fields remain true:
+`simulation_research_only`, `no_broker_api`, `no_order_placement`,
+`no_trading_webhook`, `no_secret_values`, and
+`ranking_requires_separate_gate`. The strategy experiment queue is now also
+fresh, with `6` ready experiment items and `0` blocked items; the highest
+priority item is `exp_a_dragon_tiger_event_signal_split`. Conclusion: this is
+valid research evidence, but A-share strategy still cannot enter Dashboard
+recommendation ranking.
+
 **Latest update — strategy page command center:**
 The strategy page now starts with a high-contrast `策略指挥台` instead of making
 the user interpret the full evidence stack first. It answers three questions in
