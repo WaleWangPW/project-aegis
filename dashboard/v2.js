@@ -240,14 +240,22 @@ function retryWindowStatus(report) {
   const mins = Math.max(0, Math.ceil((target - now) / 60000));
   return {label:'未到窗口', detail:`约 ${mins} 分钟后到 ${raw}`};
 }
+function retryReadinessFreshness(readiness) {
+  if (!readiness?.generated_at) return '预检时间未知';
+  const generated = parseIsoDate(readiness.generated_at);
+  if (!generated) return `预检 ${readiness.generated_at}`;
+  const mins = Math.max(0, Math.round((Date.now() - generated.getTime()) / 60000));
+  return `${mins} 分钟前预检`;
+}
 function retryReadinessLabel(readiness, fallbackReport) {
   if (!readiness) return retryWindowStatus(fallbackReport);
   const status = readiness.status || 'UNKNOWN';
-  if (status === 'READY') return {label:'可以重试', detail:'预检 READY，可执行补数链'};
-  if (status === 'WAITING') return {label:'未到窗口', detail:`预检 WAITING，等待 ${readiness.retry_not_before_local_time || '15:30'}`};
-  if (status === 'NOT_NEEDED') return {label:'无需重试', detail:'预检显示覆盖已满足'};
-  if (status === 'BLOCKED') return {label:'已阻塞', detail:(readiness.blockers || []).slice(0,2).join(' / ') || '预检阻塞'};
-  return {label:'待复核', detail:`预检状态 ${status}`};
+  const fresh = retryReadinessFreshness(readiness);
+  if (status === 'READY') return {label:'可以重试', detail:`${fresh}，READY，可执行补数链`};
+  if (status === 'WAITING') return {label:'未到窗口', detail:`${fresh}，等待 ${readiness.retry_not_before_local_time || '15:30'}`};
+  if (status === 'NOT_NEEDED') return {label:'无需重试', detail:`${fresh}，覆盖已满足`};
+  if (status === 'BLOCKED') return {label:'已阻塞', detail:`${fresh}，${(readiness.blockers || []).slice(0,2).join(' / ') || '预检阻塞'}`};
+  return {label:'待复核', detail:`${fresh}，状态 ${status}`};
 }
 function operationalModePanel(daily, dashboardIntent, fullYearCoverage, rankingGate, currentDayRetryReadiness) {
   const dailyVerdict = daily?.overall_verdict || 'UNKNOWN';
