@@ -1,6 +1,6 @@
 {
   "overall_status": "PASS",
-  "generated_at": "2026-07-13T11:21:48+08:00",
+  "generated_at": "2026-07-13T16:00:51+08:00",
   "provider": "tushare",
   "market": "A",
   "network_used": true,
@@ -22,7 +22,7 @@
     "historical_scan_requested": true,
     "historical_scan_target": "daily_core",
     "historical_scan_date_count": 24,
-    "historical_scan_pass_count": 3,
+    "historical_scan_pass_count": 2,
     "modules_ready": [
       "A 股因子与日线基础池",
       "主力资金流向",
@@ -271,7 +271,7 @@
         "rsi_6",
         "rsi_12"
       ],
-      "sample_hash": "4411f0104177c8ad2e43c3766e61edcefd639cc86f4ff232345260b6653797c9",
+      "sample_hash": "40ea0ae5698c93df3a11a719265ee86f42cb764fafca4d1ff4d55bd6daebbc92",
       "error_type": null,
       "error_message": null,
       "latest_trade_date": "20260713",
@@ -290,7 +290,7 @@
       "priority": 3,
       "description": "日线基本面、换手率、市值、估值输入",
       "status": "PASS",
-      "row_count": 5511,
+      "row_count": 5602,
       "columns": [
         "ts_code",
         "trade_date",
@@ -311,15 +311,15 @@
         "total_mv",
         "circ_mv"
       ],
-      "sample_hash": "8ae9962eb3d6a82c43e05832179f187e63f60c87a73528d32e3671928c890af5",
+      "sample_hash": "277b87375d9df54aa660142ed93a84c10b951ec148bfa8224b5f968bac1a9490",
       "error_type": null,
       "error_message": null,
       "latest_trade_date": "20260713",
       "sample_symbol": "000001.SZ",
-      "historical_scan_used": true,
+      "historical_scan_used": false,
       "historical_scan_target": "daily_core",
-      "historical_probe_dates_checked": 1,
-      "historical_matched_trade_date": "20260611",
+      "historical_probe_dates_checked": 0,
+      "historical_matched_trade_date": null,
       "historical_scan_error_count": 0,
       "historical_scan_last_error": null
     },

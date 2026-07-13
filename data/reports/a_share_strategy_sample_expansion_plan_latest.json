@@ -1,15 +1,15 @@
 {
   "type": "a_share_strategy_sample_expansion_plan",
   "status": "PASS",
-  "generated_at": "2026-07-13T11:25:50+08:00",
-  "run_id": "a_share_strategy_sample_expansion_plan_20260713T112550",
+  "generated_at": "2026-07-13T16:05:05+08:00",
+  "run_id": "a_share_strategy_sample_expansion_plan_20260713T160505",
   "command": "scripts/plan_a_share_strategy_sample_expansion.py",
   "summary": {
     "blocked_ranking_gate_item_count": 0,
     "expansion_task_count": 0,
     "current_sample_count": 24,
     "current_event_count": 72,
-    "current_event_aligned_case_count": 34,
+    "current_event_aligned_case_count": 35,
     "next_lookback_dates": 90,
     "next_forward_days": 20,
     "next_max_symbols": 24,
@@ -20,20 +20,20 @@
   },
   "current_window": {
     "lookback_dates": 90,
-    "eligible_start": "2026-01-22",
-    "eligible_end": "2026-06-11",
+    "eligible_start": "2026-01-26",
+    "eligible_end": "2026-06-12",
     "sample_count": 24,
     "event_count": 72,
-    "event_aligned_case_count": 34
+    "event_aligned_case_count": 35
   },
   "next_window": {
     "eligible": true,
-    "available_cache_date_count": 688,
+    "available_cache_date_count": 690,
     "lookback_dates": 90,
     "forward_days": 20,
     "eligible_date_count": 90,
-    "eligible_start": "2026-01-22",
-    "eligible_end": "2026-06-11"
+    "eligible_start": "2026-01-26",
+    "eligible_end": "2026-06-12"
   },
   "tasks": [],
   "source_reports": {
@@ -42,9 +42,9 @@
     "historical_cases": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/aegis_strategy_specific_historical_cases_latest.json"
   },
   "source_hashes": {
-    "ranking_gate": "5e4696e599fd6b7b6fc4d75aef91e14c140484227862ebafde4ab1c6f0cb592e",
-    "dragon_tiger": "126cd3d25869dc5ade7ae5423e92918b799e5b0156b10174664902079c3fd016",
-    "historical_cases": "b1f2d93ea6940ef10ba1d95f6a467fa1198bc47db60a0c14b905143ba2b9d520"
+    "ranking_gate": "c7fca9e17356735fbd52c613848a8ce6ea96d4d78b9572de3276914c18d73c21",
+    "dragon_tiger": "f209957b994e89ecdf66b2bef6530393204a33565cca20daeb388a194b20e113",
+    "historical_cases": "c3c332990d494dd16f75b4bd453d414f95bd5c08a06e18ce2ad0857f6ea5c024"
   },
   "checks": {
     "ranking_gate_loaded": true,
@@ -98,8 +98,8 @@
     },
     "feedback_events_jsonl": {
       "exists": true,
-      "size": 4737,
-      "sha256": "e915f1476279a378e1125892165a78cba55587983e477d8a2996784135e0e384"
+      "size": 6826,
+      "sha256": "352773fbf63c24607a7a4a5fea5fdbc46a261058334b2a7e9664867a32c5eff4"
     }
   },
   "production_record_files_after": {
@@ -130,8 +130,8 @@
     },
     "feedback_events_jsonl": {
       "exists": true,
-      "size": 4737,
-      "sha256": "e915f1476279a378e1125892165a78cba55587983e477d8a2996784135e0e384"
+      "size": 6826,
+      "sha256": "352773fbf63c24607a7a4a5fea5fdbc46a261058334b2a7e9664867a32c5eff4"
     }
   }
 }

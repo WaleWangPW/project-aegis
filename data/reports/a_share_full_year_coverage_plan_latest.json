@@ -1,13 +1,13 @@
 {
   "type": "a_share_full_year_coverage_plan",
   "status": "PASS",
-  "coverage_status": "WAITING_CURRENT_TRADING_DAY_DAILY",
-  "generated_at": "2026-07-13T12:19:06+08:00",
-  "run_id": "a_share_full_year_coverage_plan_20260713T121902",
+  "coverage_status": "MATERIALIZED_CURRENT_FULL_YEAR_CANDIDATE",
+  "generated_at": "2026-07-13T16:05:08+08:00",
+  "run_id": "a_share_full_year_coverage_plan_20260713T160505",
   "command": "scripts/build_a_share_full_year_coverage_plan.py --as-of 2026-07-13",
   "question": "Do we currently have materialized past-year daily records for the full A-share universe?",
-  "answer": false,
-  "answer_label": "NO",
+  "answer": true,
+  "answer_label": "YES",
   "target": {
     "as_of_date": "2026-07-13",
     "target_start": "2025-07-13",
@@ -23,35 +23,30 @@
     "daily_dir_exists": true,
     "open_date_count": 242,
     "stock_basic_row_count": 5865,
-    "daily_file_count": 689,
+    "daily_file_count": 690,
     "daily_start": "20230901",
-    "daily_end": "20260710",
+    "daily_end": "20260713",
     "latest_expected_trade_date": "20260713",
     "previous_open_date_before_as_of": "20260710",
     "min_daily_row_count": 5265,
-    "max_daily_row_count": 5521,
+    "max_daily_row_count": 5524,
     "avg_daily_row_count": 5387,
-    "total_daily_rows": 3712088
+    "total_daily_rows": 3717612
   },
   "current_strategy_validation": {
-    "historical_case_count": 118,
-    "a_share_case_count": 74,
+    "historical_case_count": 119,
+    "a_share_case_count": 75,
     "candidate_count": 33,
     "ranking_gate_approved_count": 0,
     "user_facing_suggestion_allowed": false
   },
-  "blockers": [
-    "current_trading_day_daily_not_yet_available"
-  ],
+  "blockers": [],
   "current_day_retry": {
-    "needed": true,
-    "retry_not_before_local_time": "15:30 Asia/Shanghai",
-    "reason": "Tushare daily cross-section for the current trading day is not available yet.",
-    "command": "make build-p23-2-historical-market-cache START_DATE=20250713 END_DATE=20260713",
-    "then_run": [
-      "make build-a-share-full-year-coverage-plan",
-      "make stock-agent-a-share-strategy-cycle-managed-expanded"
-    ]
+    "needed": false,
+    "retry_not_before_local_time": null,
+    "reason": null,
+    "command": null,
+    "then_run": []
   },
   "overnight_openclaw_plan": {
     "owner": "stock-agent",
@@ -87,7 +82,7 @@
     "user_facing_suggestion_allowed": false
   },
   "source_hashes": {
-    "trade_calendar": "d6fea34861efc19886fe0ab592065889a62ac74ccc4c63476627f481cfaeec1a",
-    "stock_basic_all": "c84e252d04ba4056632e0c953b7f1d9c1fa0aedf3f18b881d3e2b4d99ddf431a"
+    "trade_calendar": "b46f2d98b99ca96cf333869585420b2f3223cb73248a5cf7b5babd1d68d15ea6",
+    "stock_basic_all": "91114c9b05498af4b0960a682d0c6b3a9f0bf30c482d0bcbdceabab92acd6775"
   }
 }

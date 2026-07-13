@@ -1,8 +1,8 @@
 {
   "type": "a_share_tushare_source_hypothesis_evaluation",
   "status": "PASS",
-  "generated_at": "2026-07-13T11:22:24+08:00",
-  "run_id": "a_share_tushare_source_hypothesis_evaluation_20260713T112224",
+  "generated_at": "2026-07-13T16:01:27+08:00",
+  "run_id": "a_share_tushare_source_hypothesis_evaluation_20260713T160127",
   "command": "scripts/evaluate_a_share_tushare_source_hypotheses.py",
   "thresholds": {
     "min_proxy_case_count": 4,
@@ -17,7 +17,7 @@
     "needs_more_a_share_cases_count": 0,
     "proxy_fail_count": 5,
     "a_share_candidate_count": 22,
-    "a_share_proxy_case_count": 74,
+    "a_share_proxy_case_count": 75,
     "user_facing_suggestion_allowed": false,
     "next_stage": "OpenClaw stock-agent should collect deeper source-specific historical features before any ranking impact."
   },
@@ -54,21 +54,21 @@
         "920078",
         "603459",
         "600396",
-        "300164",
+        "920012",
+        "002297",
+        "002491",
         "001896",
         "000890",
-        "920012",
         "600726",
-        "002297",
-        "603778"
+        "301667"
       ],
       "metrics": {
         "candidate_count": 22,
-        "proxy_case_count": 74,
-        "proxy_win_rate": 0.3108108108108108,
-        "proxy_average_return": -0.0782459820101348,
-        "proxy_average_drawdown": -0.20009852915528778,
-        "proxy_best_return": 0.4877031181379008,
+        "proxy_case_count": 75,
+        "proxy_win_rate": 0.30666666666666664,
+        "proxy_average_return": -0.06589113348934209,
+        "proxy_average_drawdown": -0.20348983291416642,
+        "proxy_best_return": 0.45262189512419515,
         "proxy_worst_return": -0.3942408376963351
       },
       "disposition": "proxy_fail",
@@ -115,11 +115,11 @@
       "metrics": {
         "candidate_count": 10,
         "proxy_case_count": 40,
-        "proxy_win_rate": 0.475,
-        "proxy_average_return": 0.017170119015187862,
-        "proxy_average_drawdown": -0.11897536799551693,
-        "proxy_best_return": 0.4877031181379008,
-        "proxy_worst_return": -0.27581376184590034
+        "proxy_win_rate": 0.425,
+        "proxy_average_return": 0.008515312499879395,
+        "proxy_average_drawdown": -0.12358111240007941,
+        "proxy_best_return": 0.3644009719020622,
+        "proxy_worst_return": -0.2508058017727639
       },
       "disposition": "proxy_fail",
       "confidence": "PROXY",
@@ -164,21 +164,21 @@
         "920078",
         "603459",
         "600396",
-        "300164",
+        "920012",
+        "002297",
+        "002491",
         "001896",
         "000890",
-        "920012",
         "600726",
-        "002297",
-        "603778"
+        "301667"
       ],
       "metrics": {
         "candidate_count": 22,
-        "proxy_case_count": 74,
-        "proxy_win_rate": 0.3108108108108108,
-        "proxy_average_return": -0.0782459820101348,
-        "proxy_average_drawdown": -0.20009852915528778,
-        "proxy_best_return": 0.4877031181379008,
+        "proxy_case_count": 75,
+        "proxy_win_rate": 0.30666666666666664,
+        "proxy_average_return": -0.06589113348934209,
+        "proxy_average_drawdown": -0.20348983291416642,
+        "proxy_best_return": 0.45262189512419515,
         "proxy_worst_return": -0.3942408376963351
       },
       "disposition": "proxy_fail",
@@ -229,21 +229,21 @@
         "920078",
         "603459",
         "600396",
-        "300164",
+        "920012",
+        "002297",
+        "002491",
         "001896",
         "000890",
-        "920012",
         "600726",
-        "002297",
-        "603778"
+        "301667"
       ],
       "metrics": {
         "candidate_count": 22,
-        "proxy_case_count": 74,
-        "proxy_win_rate": 0.3108108108108108,
-        "proxy_average_return": -0.0782459820101348,
-        "proxy_average_drawdown": -0.20009852915528778,
-        "proxy_best_return": 0.4877031181379008,
+        "proxy_case_count": 75,
+        "proxy_win_rate": 0.30666666666666664,
+        "proxy_average_return": -0.06589113348934209,
+        "proxy_average_drawdown": -0.20348983291416642,
+        "proxy_best_return": 0.45262189512419515,
         "proxy_worst_return": -0.3942408376963351
       },
       "disposition": "proxy_fail",
@@ -289,11 +289,11 @@
       "metrics": {
         "candidate_count": 10,
         "proxy_case_count": 40,
-        "proxy_win_rate": 0.475,
-        "proxy_average_return": 0.017170119015187862,
-        "proxy_average_drawdown": -0.11897536799551693,
-        "proxy_best_return": 0.4877031181379008,
-        "proxy_worst_return": -0.27581376184590034
+        "proxy_win_rate": 0.425,
+        "proxy_average_return": 0.008515312499879395,
+        "proxy_average_drawdown": -0.12358111240007941,
+        "proxy_best_return": 0.3644009719020622,
+        "proxy_worst_return": -0.2508058017727639
       },
       "disposition": "proxy_fail",
       "confidence": "PROXY",
@@ -312,8 +312,8 @@
     "strategy_specific_historical_cases": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/aegis_strategy_specific_historical_cases_latest.json"
   },
   "source_hashes": {
-    "source_hypothesis_queue": "664fb231b25075b66e415f070de9413055d93becc710e75b35f6a04313a858d8",
-    "strategy_specific_historical_cases": "b1f2d93ea6940ef10ba1d95f6a467fa1198bc47db60a0c14b905143ba2b9d520"
+    "source_hypothesis_queue": "665bd87a8113e69597cf5c046f9d249e05451413148dbdf0e345bcd0ef723cf9",
+    "strategy_specific_historical_cases": "c3c332990d494dd16f75b4bd453d414f95bd5c08a06e18ce2ad0857f6ea5c024"
   },
   "checks": {
     "source_queue_present": true,
@@ -369,8 +369,8 @@
     },
     "feedback_events_jsonl": {
       "exists": true,
-      "size": 4737,
-      "sha256": "e915f1476279a378e1125892165a78cba55587983e477d8a2996784135e0e384"
+      "size": 6826,
+      "sha256": "352773fbf63c24607a7a4a5fea5fdbc46a261058334b2a7e9664867a32c5eff4"
     }
   },
   "production_record_files_after": {
@@ -401,8 +401,8 @@
     },
     "feedback_events_jsonl": {
       "exists": true,
-      "size": 4737,
-      "sha256": "e915f1476279a378e1125892165a78cba55587983e477d8a2996784135e0e384"
+      "size": 6826,
+      "sha256": "352773fbf63c24607a7a4a5fea5fdbc46a261058334b2a7e9664867a32c5eff4"
     }
   }
 }

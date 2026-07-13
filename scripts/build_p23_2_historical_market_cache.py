@@ -83,6 +83,18 @@ def valid_compact_date(value: str) -> str:
     return value
 
 
+def target_cache_completeness(open_dates: list[str], daily_files: list[Path]) -> dict[str, Any]:
+    available_dates = {path.stem for path in daily_files}
+    missing_dates = [trade_date for trade_date in open_dates if trade_date not in available_dates]
+    return {
+        "target_expected_count": len(open_dates),
+        "target_available_count": len(open_dates) - len(missing_dates),
+        "target_missing_count": len(missing_dates),
+        "target_missing_dates": missing_dates,
+        "target_complete": len(missing_dates) == 0,
+    }
+
+
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description="Build or extend the P23.2 A-share historical market cache.")
     parser.add_argument("--start-date", type=valid_compact_date, default=DEFAULT_START_DATE)
@@ -242,6 +254,7 @@ def main(argv: list[str] | None = None) -> int:
 
     print("[4/4] writing manifest")
     daily_files = sorted(DAILY_DIR.glob("*.json"))
+    target_completeness = target_cache_completeness(open_dates, daily_files)
 
     manifest = {
         "project": "Project Aegis",
@@ -266,6 +279,7 @@ def main(argv: list[str] | None = None) -> int:
             "fetched_this_run": fetched,
             "reused_this_run": reused,
             "failed_dates": failed_dates,
+            **target_completeness,
         },
         "dry_run": True,
         "sent": False,
@@ -274,7 +288,7 @@ def main(argv: list[str] | None = None) -> int:
 
     complete = (
         not failed_dates
-        and len(daily_files) == len(open_dates)
+        and target_completeness["target_complete"]
         and len(stocks) > 100
     )
 

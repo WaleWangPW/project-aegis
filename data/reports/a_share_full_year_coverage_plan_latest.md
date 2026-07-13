@@ -1,21 +1,18 @@
 # A-share Full-Year Coverage Plan
 
-- Status: `WAITING_CURRENT_TRADING_DAY_DAILY`
-- Answer: `NO` — current past-year full A-share records are not considered materialized unless status is `MATERIALIZED_CURRENT_FULL_YEAR_CANDIDATE`.
+- Status: `MATERIALIZED_CURRENT_FULL_YEAR_CANDIDATE`
+- Answer: `YES` — current past-year full A-share records are not considered materialized unless status is `MATERIALIZED_CURRENT_FULL_YEAR_CANDIDATE`.
 - Target: `2025-07-13` to `2026-07-13`
-- Current cache range: `20230901` to `20260710`
-- Current daily files: `689`
+- Current cache range: `20230901` to `20260713`
+- Current daily files: `690`
 - Stock basic rows: `5865`
-- Total cached daily rows: `3712088`
-- Current A-share strategy cases: `74`
+- Total cached daily rows: `3717612`
+- Current A-share strategy cases: `75`
 - Ranking gate approved: `0`
 
 ## Blockers
 
-- Note: cache is current through the previous open date; today's daily cross-section is not available yet.
-- Retry after: `15:30 Asia/Shanghai`
-- Retry command: `make build-p23-2-historical-market-cache START_DATE=20250713 END_DATE=20260713`
-- `current_trading_day_daily_not_yet_available`
+- None
 
 ## Overnight OpenClaw Plan
 

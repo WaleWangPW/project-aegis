@@ -1,7 +1,7 @@
 {
   "type": "aegis_strategy_specific_case_evaluation",
   "status": "PASS",
-  "generated_at": "2026-07-13T11:22:24+08:00",
+  "generated_at": "2026-07-13T16:01:27+08:00",
   "thresholds": {
     "min_case_count": 4,
     "min_win_rate": 0.5,
@@ -12,9 +12,9 @@
   },
   "summary": {
     "candidate_count": 33,
-    "simulation_research_candidate_count": 12,
-    "watch_only_count": 3,
-    "downgraded_count": 18,
+    "simulation_research_candidate_count": 11,
+    "watch_only_count": 5,
+    "downgraded_count": 17,
     "user_facing_suggestion_allowed": false,
     "next_stage": "surface dispositions in dashboard and stock assistant brief"
   },
@@ -36,10 +36,10 @@
       "summary": {
         "case_count": 4,
         "win_rate": 0.5,
-        "average_return": 0.057372115012818026,
+        "average_return": 0.07951458133813011,
         "average_max_drawdown": -0.08057527226187947,
-        "best_return": 0.30434782608695654,
-        "worst_return": -0.10508771929824567
+        "best_return": 0.3644009719020622,
+        "worst_return": -0.10492430833478339
       },
       "simulation_only": true,
       "user_facing_suggestion_allowed": false,
@@ -61,9 +61,9 @@
       "summary": {
         "case_count": 4,
         "win_rate": 0.5,
-        "average_return": 0.024795152504769546,
-        "average_max_drawdown": -0.058086560108343316,
-        "best_return": 0.16301843317972353,
+        "average_return": 0.009568714678626855,
+        "average_max_drawdown": -0.06146651348829668,
+        "best_return": 0.10222222222222221,
         "worst_return": -0.053817271589486904
       },
       "simulation_only": true,
@@ -344,17 +344,17 @@
         "low_vol_momentum",
         "qvm"
       ],
-      "disposition": "simulation_research_candidate",
+      "disposition": "downgraded",
       "reasons": [
-        "historical_case_thresholds_passed"
+        "win_rate_below_threshold"
       ],
       "summary": {
         "case_count": 4,
-        "win_rate": 0.5,
-        "average_return": 0.01843935684702011,
-        "average_max_drawdown": -0.07146116778450218,
-        "best_return": 0.07518142235123348,
-        "worst_return": -0.06118500604594923
+        "win_rate": 0.25,
+        "average_return": 0.024644451700323866,
+        "average_max_drawdown": -0.07118302484245251,
+        "best_return": 0.19209388511426795,
+        "worst_return": -0.07191283292978201
       },
       "simulation_only": true,
       "user_facing_suggestion_allowed": false,
@@ -370,16 +370,16 @@
         "low_vol_momentum",
         "qvm"
       ],
-      "disposition": "downgraded",
+      "disposition": "watch_only",
       "reasons": [
-        "win_rate_below_threshold"
+        "average_drawdown_watch"
       ],
       "summary": {
         "case_count": 4,
-        "win_rate": 0.25,
-        "average_return": 0.088520004596259,
-        "average_max_drawdown": -0.14130708669698816,
-        "best_return": 0.4877031181379008,
+        "win_rate": 0.5,
+        "average_return": 0.025040594872065836,
+        "average_max_drawdown": -0.1632509420300822,
+        "best_return": 0.15626666666666678,
         "worst_return": -0.08699578567128241
       },
       "simulation_only": true,
@@ -403,11 +403,11 @@
       ],
       "summary": {
         "case_count": 4,
-        "win_rate": 0.75,
-        "average_return": 0.02463184253506845,
-        "average_max_drawdown": -0.14611210178072653,
-        "best_return": 0.20527989821882953,
-        "worst_return": -0.1643111711933145
+        "win_rate": 0.5,
+        "average_return": 0.03313596817006212,
+        "average_max_drawdown": -0.1556276727149826,
+        "best_return": 0.32097574421168673,
+        "worst_return": -0.16564285932581524
       },
       "simulation_only": true,
       "user_facing_suggestion_allowed": false,
@@ -426,15 +426,16 @@
       "disposition": "downgraded",
       "reasons": [
         "win_rate_below_threshold",
-        "average_return_below_threshold"
+        "average_return_below_threshold",
+        "hard_worst_return_breached"
       ],
       "summary": {
         "case_count": 4,
         "win_rate": 0.25,
-        "average_return": -0.1012075047508793,
-        "average_max_drawdown": -0.16075720064446417,
-        "best_return": 0.019251336898395754,
-        "worst_return": -0.18198417528910527
+        "average_return": -0.11238110137490603,
+        "average_max_drawdown": -0.17349237991318978,
+        "best_return": 0.04177970699945743,
+        "worst_return": -0.2508058017727639
       },
       "simulation_only": true,
       "user_facing_suggestion_allowed": false,
@@ -458,10 +459,10 @@
       "summary": {
         "case_count": 4,
         "win_rate": 0.25,
-        "average_return": -0.004931497444686711,
-        "average_max_drawdown": -0.14514021862390397,
-        "best_return": 0.19807567767601086,
-        "worst_return": -0.11358024691358026
+        "average_return": -0.039393610692079,
+        "average_max_drawdown": -0.16930688529057064,
+        "best_return": 0.03534614211649911,
+        "worst_return": -0.11893301243481746
       },
       "simulation_only": true,
       "user_facing_suggestion_allowed": false,
@@ -477,17 +478,17 @@
         "low_vol_momentum",
         "qvm"
       ],
-      "disposition": "downgraded",
+      "disposition": "watch_only",
       "reasons": [
-        "hard_worst_return_breached"
+        "average_drawdown_watch"
       ],
       "summary": {
         "case_count": 4,
-        "win_rate": 0.5,
-        "average_return": 0.02137383025223369,
-        "average_max_drawdown": -0.17401947311128352,
-        "best_return": 0.2650905353048154,
-        "worst_return": -0.27581376184590034
+        "win_rate": 0.75,
+        "average_return": 0.07839580553121392,
+        "average_max_drawdown": -0.12062112461178762,
+        "best_return": 0.16609170270314055,
+        "worst_return": -0.0183588317107094
       },
       "simulation_only": true,
       "user_facing_suggestion_allowed": false,
@@ -508,10 +509,10 @@
       ],
       "summary": {
         "case_count": 4,
-        "win_rate": 0.75,
-        "average_return": 0.044812734560510964,
-        "average_max_drawdown": -0.08531880577405218,
-        "best_return": 0.1352549889135255,
+        "win_rate": 0.5,
+        "average_return": 0.020588942291977164,
+        "average_max_drawdown": -0.09471423061065351,
+        "best_return": 0.05714285714285716,
         "worst_return": -0.009685230024213065
       },
       "simulation_only": true,
@@ -530,15 +531,16 @@
       ],
       "disposition": "downgraded",
       "reasons": [
+        "win_rate_below_threshold",
         "average_return_below_threshold"
       ],
       "summary": {
         "case_count": 4,
-        "win_rate": 0.5,
-        "average_return": -0.002104843961235142,
-        "average_max_drawdown": -0.1269757931690259,
-        "best_return": 0.0761979575805185,
-        "worst_return": -0.07648725212464591
+        "win_rate": 0.25,
+        "average_return": -0.03396122151662087,
+        "average_max_drawdown": -0.14557307823689922,
+        "best_return": 0.02629416598192269,
+        "worst_return": -0.0750695088044484
       },
       "simulation_only": true,
       "user_facing_suggestion_allowed": false,
@@ -562,9 +564,9 @@
       "summary": {
         "case_count": 3,
         "win_rate": 0.0,
-        "average_return": -0.21855688350722194,
-        "average_max_drawdown": -0.3096998695084819,
-        "best_return": -0.12511091393078977,
+        "average_return": -0.17279198154474626,
+        "average_max_drawdown": -0.31600695954762936,
+        "best_return": -0.11048281861678988,
         "worst_return": -0.2827822120866591
       },
       "simulation_only": true,
@@ -589,8 +591,8 @@
       "summary": {
         "case_count": 3,
         "win_rate": 0.0,
-        "average_return": -0.34222995500090114,
-        "average_max_drawdown": -0.3878175600955415,
+        "average_return": -0.31249392765512374,
+        "average_max_drawdown": -0.35050241073264293,
         "best_return": -0.27132226674298787,
         "worst_return": -0.3942408376963351
       },
@@ -639,11 +641,11 @@
       ],
       "summary": {
         "case_count": 3,
-        "win_rate": 0.6666666666666666,
-        "average_return": 0.06287550904911676,
-        "average_max_drawdown": -0.2509820588650607,
-        "best_return": 0.15545685279187826,
-        "worst_return": -0.08496121132816137
+        "win_rate": 1.0,
+        "average_return": 0.14484993687697437,
+        "average_max_drawdown": -0.2301042687817485,
+        "best_return": 0.16096207215541147,
+        "worst_return": 0.11813088568363339
       },
       "simulation_only": true,
       "user_facing_suggestion_allowed": false,
@@ -677,8 +679,8 @@
       "real_trade_allowed": false
     },
     {
-      "symbol": "300164",
-      "name": "通源石油",
+      "symbol": "920012",
+      "name": "创达新材",
       "market": "A",
       "matched_strategy_ids": [
         "a_share_short_momentum",
@@ -688,15 +690,65 @@
       "reasons": [
         "case_count_below_threshold",
         "win_rate_below_threshold",
-        "average_return_below_threshold"
+        "average_return_below_threshold",
+        "hard_worst_return_breached"
       ],
       "summary": {
         "case_count": 3,
         "win_rate": 0.0,
-        "average_return": -0.13535777206678626,
-        "average_max_drawdown": -0.17318312348133422,
-        "best_return": -0.09285714285714286,
-        "worst_return": -0.18290258449304175
+        "average_return": -0.17402288117591383,
+        "average_max_drawdown": -0.2953817861961107,
+        "best_return": -0.15514206688458643,
+        "worst_return": -0.20498804236419543
+      },
+      "simulation_only": true,
+      "user_facing_suggestion_allowed": false,
+      "real_trade_allowed": false
+    },
+    {
+      "symbol": "002297",
+      "name": "博云新材",
+      "market": "A",
+      "matched_strategy_ids": [
+        "a_share_short_momentum",
+        "growth_breakout"
+      ],
+      "disposition": "downgraded",
+      "reasons": [
+        "case_count_below_threshold"
+      ],
+      "summary": {
+        "case_count": 2,
+        "win_rate": 1.0,
+        "average_return": 0.2361652284155148,
+        "average_max_drawdown": -0.21379048642084852,
+        "best_return": 0.34890829694323156,
+        "worst_return": 0.12342215988779803
+      },
+      "simulation_only": true,
+      "user_facing_suggestion_allowed": false,
+      "real_trade_allowed": false
+    },
+    {
+      "symbol": "002491",
+      "name": "通鼎互联",
+      "market": "A",
+      "matched_strategy_ids": [
+        "a_share_short_momentum",
+        "growth_breakout"
+      ],
+      "disposition": "downgraded",
+      "reasons": [
+        "case_count_below_threshold",
+        "win_rate_below_threshold"
+      ],
+      "summary": {
+        "case_count": 3,
+        "win_rate": 0.3333333333333333,
+        "average_return": 0.10821384394051181,
+        "average_max_drawdown": -0.296565710348789,
+        "best_return": 0.45262189512419515,
+        "worst_return": -0.07729083665338654
       },
       "simulation_only": true,
       "user_facing_suggestion_allowed": false,
@@ -747,37 +799,10 @@
       "summary": {
         "case_count": 3,
         "win_rate": 0.0,
-        "average_return": -0.3297459148210104,
-        "average_max_drawdown": -0.3350575649292415,
+        "average_return": -0.3161387047545537,
+        "average_max_drawdown": -0.3266345693918575,
         "best_return": -0.2902723735408561,
-        "worst_return": -0.3770883054892602
-      },
-      "simulation_only": true,
-      "user_facing_suggestion_allowed": false,
-      "real_trade_allowed": false
-    },
-    {
-      "symbol": "920012",
-      "name": "创达新材",
-      "market": "A",
-      "matched_strategy_ids": [
-        "a_share_short_momentum",
-        "growth_breakout"
-      ],
-      "disposition": "downgraded",
-      "reasons": [
-        "case_count_below_threshold",
-        "win_rate_below_threshold",
-        "average_return_below_threshold",
-        "hard_worst_return_breached"
-      ],
-      "summary": {
-        "case_count": 3,
-        "win_rate": 0.0,
-        "average_return": -0.17402288117591383,
-        "average_max_drawdown": -0.2953817861961107,
-        "best_return": -0.15514206688458643,
-        "worst_return": -0.20498804236419543
+        "worst_return": -0.363365155131265
       },
       "simulation_only": true,
       "user_facing_suggestion_allowed": false,
@@ -811,32 +836,8 @@
       "real_trade_allowed": false
     },
     {
-      "symbol": "002297",
-      "name": "博云新材",
-      "market": "A",
-      "matched_strategy_ids": [
-        "a_share_short_momentum",
-        "growth_breakout"
-      ],
-      "disposition": "downgraded",
-      "reasons": [
-        "case_count_below_threshold"
-      ],
-      "summary": {
-        "case_count": 2,
-        "win_rate": 1.0,
-        "average_return": 0.2361652284155148,
-        "average_max_drawdown": -0.21379048642084852,
-        "best_return": 0.34890829694323156,
-        "worst_return": 0.12342215988779803
-      },
-      "simulation_only": true,
-      "user_facing_suggestion_allowed": false,
-      "real_trade_allowed": false
-    },
-    {
-      "symbol": "603778",
-      "name": "国晟科技",
+      "symbol": "301667",
+      "name": "纳百川",
       "market": "A",
       "matched_strategy_ids": [
         "a_share_short_momentum",
@@ -850,12 +851,12 @@
         "hard_worst_return_breached"
       ],
       "summary": {
-        "case_count": 2,
+        "case_count": 3,
         "win_rate": 0.0,
-        "average_return": -0.3312403100775194,
-        "average_max_drawdown": -0.3491552667578659,
-        "best_return": -0.3038759689922481,
-        "worst_return": -0.3586046511627907
+        "average_return": -0.23729441737432597,
+        "average_max_drawdown": -0.25976861421179875,
+        "best_return": -0.1955237242614145,
+        "worst_return": -0.3082835183603757
       },
       "simulation_only": true,
       "user_facing_suggestion_allowed": false,
@@ -866,7 +867,7 @@
     "strategy_specific_historical_cases": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/aegis_strategy_specific_historical_cases_latest.json"
   },
   "source_hashes": {
-    "strategy_specific_historical_cases": "b1f2d93ea6940ef10ba1d95f6a467fa1198bc47db60a0c14b905143ba2b9d520"
+    "strategy_specific_historical_cases": "c3c332990d494dd16f75b4bd453d414f95bd5c08a06e18ce2ad0857f6ea5c024"
   },
   "checks": {
     "source_pass": true,
@@ -916,8 +917,8 @@
     },
     "feedback_events_jsonl": {
       "exists": true,
-      "size": 4737,
-      "sha256": "e915f1476279a378e1125892165a78cba55587983e477d8a2996784135e0e384"
+      "size": 6826,
+      "sha256": "352773fbf63c24607a7a4a5fea5fdbc46a261058334b2a7e9664867a32c5eff4"
     }
   },
   "production_record_files_after": {
@@ -948,8 +949,8 @@
     },
     "feedback_events_jsonl": {
       "exists": true,
-      "size": 4737,
-      "sha256": "e915f1476279a378e1125892165a78cba55587983e477d8a2996784135e0e384"
+      "size": 6826,
+      "sha256": "352773fbf63c24607a7a4a5fea5fdbc46a261058334b2a7e9664867a32c5eff4"
     }
   }
 }

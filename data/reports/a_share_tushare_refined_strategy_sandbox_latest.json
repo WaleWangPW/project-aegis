@@ -1,8 +1,8 @@
 {
   "type": "a_share_tushare_refined_strategy_sandbox",
   "status": "PASS",
-  "generated_at": "2026-07-13T11:25:50+08:00",
-  "run_id": "a_share_tushare_refined_strategy_sandbox_20260713T112550",
+  "generated_at": "2026-07-13T16:05:04+08:00",
+  "run_id": "a_share_tushare_refined_strategy_sandbox_20260713T160504",
   "command": "scripts/evaluate_a_share_tushare_refined_strategy_sandbox.py",
   "thresholds": {
     "min_signal_case_count": 2,
@@ -39,20 +39,20 @@
         "refined_signal_drawdown_breached"
       ],
       "metrics": {
-        "refined_signal_case_count": 4,
-        "refined_signal_win_rate": 0.75,
-        "refined_signal_average_return": -0.016256105874793036,
-        "refined_signal_max_drawdown": -0.28895988640397585,
-        "refined_signal_best_return": 0.0761979575805185,
-        "refined_signal_worst_return": -0.17333883615352863
+        "refined_signal_case_count": 8,
+        "refined_signal_win_rate": 0.5,
+        "refined_signal_average_return": -0.04978974534708941,
+        "refined_signal_max_drawdown": -0.3399006034788783,
+        "refined_signal_best_return": 0.10222222222222221,
+        "refined_signal_worst_return": -0.3082835183603757
       },
       "case_features": [
         {
-          "case_id": "aegis_case_002407_stock_selection_workbench_3",
-          "symbol": "002407",
-          "entry_date": "2025-07-08",
-          "raw_return": 0.011382113821138073,
-          "max_drawdown": -0.0431765612952969,
+          "case_id": "aegis_case_000100_stock_selection_workbench_2",
+          "symbol": "000100",
+          "entry_date": "2024-08-06",
+          "raw_return": 0.037135278514588865,
+          "max_drawdown": -0.03589743589743588,
           "case_result": "win",
           "required_signal_hypotheses": [
             "hyp_a_tushare_capital_flow_accumulation",
@@ -64,11 +64,27 @@
           }
         },
         {
-          "case_id": "aegis_case_002407_stock_selection_workbench_4",
+          "case_id": "aegis_case_000100_stock_selection_workbench_3",
+          "symbol": "000100",
+          "entry_date": "2025-07-10",
+          "raw_return": -0.0022371364653243075,
+          "max_drawdown": -0.05579399141630892,
+          "case_result": "loss",
+          "required_signal_hypotheses": [
+            "hyp_a_tushare_capital_flow_accumulation",
+            "hyp_a_tushare_holder_concentration_improvement"
+          ],
+          "feature_hashes": {
+            "hyp_a_tushare_capital_flow_accumulation": "fd56f56d9daa7d7c61c2608305ed5b9bc66a6bac5799da0d58b2778e48d82eec",
+            "hyp_a_tushare_holder_concentration_improvement": "92cca9fdeee3ce85f3d15a6ef7210ea9075a08a3fbc215d70d44da4bc011c210"
+          }
+        },
+        {
+          "case_id": "aegis_case_002407_stock_selection_workbench_3",
           "symbol": "002407",
-          "entry_date": "2026-06-11",
-          "raw_return": 0.0761979575805185,
-          "max_drawdown": -0.25610859728506785,
+          "entry_date": "2025-07-10",
+          "raw_return": 0.02629416598192269,
+          "max_drawdown": -0.0431765612952969,
           "case_result": "win",
           "required_signal_hypotheses": [
             "hyp_a_tushare_capital_flow_accumulation",
@@ -82,9 +98,9 @@
         {
           "case_id": "aegis_case_002709_stock_selection_workbench_4",
           "symbol": "002709",
-          "entry_date": "2026-06-11",
-          "raw_return": -0.17333883615352863,
-          "max_drawdown": -0.28895988640397585,
+          "entry_date": "2026-06-12",
+          "raw_return": -0.2508058017727639,
+          "max_drawdown": -0.3399006034788783,
           "case_result": "loss",
           "required_signal_hypotheses": [
             "hyp_a_tushare_capital_flow_accumulation",
@@ -98,10 +114,58 @@
         {
           "case_id": "aegis_case_300059_3",
           "symbol": "300059",
-          "entry_date": "2025-07-08",
-          "raw_return": 0.020734341252699906,
+          "entry_date": "2025-07-10",
+          "raw_return": 0.016846652267818563,
           "max_drawdown": -0.047286184210526216,
           "case_result": "win",
+          "required_signal_hypotheses": [
+            "hyp_a_tushare_capital_flow_accumulation",
+            "hyp_a_tushare_holder_concentration_improvement"
+          ],
+          "feature_hashes": {
+            "hyp_a_tushare_capital_flow_accumulation": "fd56f56d9daa7d7c61c2608305ed5b9bc66a6bac5799da0d58b2778e48d82eec",
+            "hyp_a_tushare_holder_concentration_improvement": "92cca9fdeee3ce85f3d15a6ef7210ea9075a08a3fbc215d70d44da4bc011c210"
+          }
+        },
+        {
+          "case_id": "aegis_case_300059_4",
+          "symbol": "300059",
+          "entry_date": "2026-06-12",
+          "raw_return": 0.10222222222222221,
+          "max_drawdown": -0.075058275058275,
+          "case_result": "win",
+          "required_signal_hypotheses": [
+            "hyp_a_tushare_capital_flow_accumulation",
+            "hyp_a_tushare_holder_concentration_improvement"
+          ],
+          "feature_hashes": {
+            "hyp_a_tushare_capital_flow_accumulation": "fd56f56d9daa7d7c61c2608305ed5b9bc66a6bac5799da0d58b2778e48d82eec",
+            "hyp_a_tushare_holder_concentration_improvement": "92cca9fdeee3ce85f3d15a6ef7210ea9075a08a3fbc215d70d44da4bc011c210"
+          }
+        },
+        {
+          "case_id": "aegis_case_301667_tushare_dragon_tiger_hot_money_3",
+          "symbol": "301667",
+          "entry_date": "2026-05-11",
+          "raw_return": -0.3082835183603757,
+          "max_drawdown": -0.3082835183603757,
+          "case_result": "loss",
+          "required_signal_hypotheses": [
+            "hyp_a_tushare_capital_flow_accumulation",
+            "hyp_a_tushare_holder_concentration_improvement"
+          ],
+          "feature_hashes": {
+            "hyp_a_tushare_capital_flow_accumulation": "fd56f56d9daa7d7c61c2608305ed5b9bc66a6bac5799da0d58b2778e48d82eec",
+            "hyp_a_tushare_holder_concentration_improvement": "92cca9fdeee3ce85f3d15a6ef7210ea9075a08a3fbc215d70d44da4bc011c210"
+          }
+        },
+        {
+          "case_id": "aegis_case_600150_stock_selection_workbench_4",
+          "symbol": "600150",
+          "entry_date": "2026-06-12",
+          "raw_return": -0.019489825164803687,
+          "max_drawdown": -0.10527725689793732,
+          "case_result": "loss",
           "required_signal_hypotheses": [
             "hyp_a_tushare_capital_flow_accumulation",
             "hyp_a_tushare_holder_concentration_improvement"
@@ -135,20 +199,52 @@
         "refined_signal_drawdown_breached"
       ],
       "metrics": {
-        "refined_signal_case_count": 8,
-        "refined_signal_win_rate": 0.875,
-        "refined_signal_average_return": 0.13884908642521845,
-        "refined_signal_max_drawdown": -0.28895988640397585,
-        "refined_signal_best_return": 0.4877031181379008,
-        "refined_signal_worst_return": -0.17333883615352863
+        "refined_signal_case_count": 12,
+        "refined_signal_win_rate": 0.75,
+        "refined_signal_average_return": 0.061060674754125716,
+        "refined_signal_max_drawdown": -0.3399006034788783,
+        "refined_signal_best_return": 0.34890829694323156,
+        "refined_signal_worst_return": -0.2508058017727639
       },
       "case_features": [
         {
+          "case_id": "aegis_case_000100_stock_selection_workbench_2",
+          "symbol": "000100",
+          "entry_date": "2024-08-06",
+          "raw_return": 0.037135278514588865,
+          "max_drawdown": -0.03589743589743588,
+          "case_result": "win",
+          "required_signal_hypotheses": [
+            "hyp_a_tushare_capital_flow_accumulation",
+            "hyp_a_tushare_factor_liquidity_quality_overlay"
+          ],
+          "feature_hashes": {
+            "hyp_a_tushare_capital_flow_accumulation": "fd56f56d9daa7d7c61c2608305ed5b9bc66a6bac5799da0d58b2778e48d82eec",
+            "hyp_a_tushare_factor_liquidity_quality_overlay": "ab13df2383187239289efc677f79d6d76c94ca2ed9673fb22d795bc5f445d1ae"
+          }
+        },
+        {
+          "case_id": "aegis_case_000100_stock_selection_workbench_3",
+          "symbol": "000100",
+          "entry_date": "2025-07-10",
+          "raw_return": -0.0022371364653243075,
+          "max_drawdown": -0.05579399141630892,
+          "case_result": "loss",
+          "required_signal_hypotheses": [
+            "hyp_a_tushare_capital_flow_accumulation",
+            "hyp_a_tushare_factor_liquidity_quality_overlay"
+          ],
+          "feature_hashes": {
+            "hyp_a_tushare_capital_flow_accumulation": "fd56f56d9daa7d7c61c2608305ed5b9bc66a6bac5799da0d58b2778e48d82eec",
+            "hyp_a_tushare_factor_liquidity_quality_overlay": "ab13df2383187239289efc677f79d6d76c94ca2ed9673fb22d795bc5f445d1ae"
+          }
+        },
+        {
           "case_id": "aegis_case_001309_stock_selection_workbench_4",
           "symbol": "001309",
-          "entry_date": "2026-06-11",
-          "raw_return": 0.2650905353048154,
-          "max_drawdown": -0.17527835051546392,
+          "entry_date": "2026-06-12",
+          "raw_return": 0.16609170270314055,
+          "max_drawdown": -0.25775257731958756,
           "case_result": "win",
           "required_signal_hypotheses": [
             "hyp_a_tushare_capital_flow_accumulation",
@@ -192,27 +288,11 @@
           }
         },
         {
-          "case_id": "aegis_case_002709_stock_selection_workbench_3",
-          "symbol": "002709",
-          "entry_date": "2025-07-08",
-          "raw_return": 0.019251336898395754,
-          "max_drawdown": -0.0526579739217653,
-          "case_result": "win",
-          "required_signal_hypotheses": [
-            "hyp_a_tushare_capital_flow_accumulation",
-            "hyp_a_tushare_factor_liquidity_quality_overlay"
-          ],
-          "feature_hashes": {
-            "hyp_a_tushare_capital_flow_accumulation": "fd56f56d9daa7d7c61c2608305ed5b9bc66a6bac5799da0d58b2778e48d82eec",
-            "hyp_a_tushare_factor_liquidity_quality_overlay": "ab13df2383187239289efc677f79d6d76c94ca2ed9673fb22d795bc5f445d1ae"
-          }
-        },
-        {
           "case_id": "aegis_case_002709_stock_selection_workbench_4",
           "symbol": "002709",
-          "entry_date": "2026-06-11",
-          "raw_return": -0.17333883615352863,
-          "max_drawdown": -0.28895988640397585,
+          "entry_date": "2026-06-12",
+          "raw_return": -0.2508058017727639,
+          "max_drawdown": -0.3399006034788783,
           "case_result": "loss",
           "required_signal_hypotheses": [
             "hyp_a_tushare_capital_flow_accumulation",
@@ -226,9 +306,25 @@
         {
           "case_id": "aegis_case_300059_3",
           "symbol": "300059",
-          "entry_date": "2025-07-08",
-          "raw_return": 0.020734341252699906,
+          "entry_date": "2025-07-10",
+          "raw_return": 0.016846652267818563,
           "max_drawdown": -0.047286184210526216,
+          "case_result": "win",
+          "required_signal_hypotheses": [
+            "hyp_a_tushare_capital_flow_accumulation",
+            "hyp_a_tushare_factor_liquidity_quality_overlay"
+          ],
+          "feature_hashes": {
+            "hyp_a_tushare_capital_flow_accumulation": "fd56f56d9daa7d7c61c2608305ed5b9bc66a6bac5799da0d58b2778e48d82eec",
+            "hyp_a_tushare_factor_liquidity_quality_overlay": "ab13df2383187239289efc677f79d6d76c94ca2ed9673fb22d795bc5f445d1ae"
+          }
+        },
+        {
+          "case_id": "aegis_case_300059_4",
+          "symbol": "300059",
+          "entry_date": "2026-06-12",
+          "raw_return": 0.10222222222222221,
+          "max_drawdown": -0.075058275058275,
           "case_result": "win",
           "required_signal_hypotheses": [
             "hyp_a_tushare_capital_flow_accumulation",
@@ -242,9 +338,9 @@
         {
           "case_id": "aegis_case_300475_stock_selection_workbench_4",
           "symbol": "300475",
-          "entry_date": "2026-06-11",
-          "raw_return": 0.4877031181379008,
-          "max_drawdown": -0.20297142857142858,
+          "entry_date": "2026-06-12",
+          "raw_return": 0.15626666666666678,
+          "max_drawdown": -0.2920816326530612,
           "case_result": "win",
           "required_signal_hypotheses": [
             "hyp_a_tushare_capital_flow_accumulation",
@@ -261,6 +357,38 @@
           "entry_date": "2023-09-01",
           "raw_return": 0.01902173913043481,
           "max_drawdown": -0.13969050606440814,
+          "case_result": "win",
+          "required_signal_hypotheses": [
+            "hyp_a_tushare_capital_flow_accumulation",
+            "hyp_a_tushare_factor_liquidity_quality_overlay"
+          ],
+          "feature_hashes": {
+            "hyp_a_tushare_capital_flow_accumulation": "fd56f56d9daa7d7c61c2608305ed5b9bc66a6bac5799da0d58b2778e48d82eec",
+            "hyp_a_tushare_factor_liquidity_quality_overlay": "ab13df2383187239289efc677f79d6d76c94ca2ed9673fb22d795bc5f445d1ae"
+          }
+        },
+        {
+          "case_id": "aegis_case_600150_stock_selection_workbench_4",
+          "symbol": "600150",
+          "entry_date": "2026-06-12",
+          "raw_return": -0.019489825164803687,
+          "max_drawdown": -0.10527725689793732,
+          "case_result": "loss",
+          "required_signal_hypotheses": [
+            "hyp_a_tushare_capital_flow_accumulation",
+            "hyp_a_tushare_factor_liquidity_quality_overlay"
+          ],
+          "feature_hashes": {
+            "hyp_a_tushare_capital_flow_accumulation": "fd56f56d9daa7d7c61c2608305ed5b9bc66a6bac5799da0d58b2778e48d82eec",
+            "hyp_a_tushare_factor_liquidity_quality_overlay": "ab13df2383187239289efc677f79d6d76c94ca2ed9673fb22d795bc5f445d1ae"
+          }
+        },
+        {
+          "case_id": "aegis_case_688525_stock_selection_workbench_4",
+          "symbol": "688525",
+          "entry_date": "2026-06-12",
+          "raw_return": 0.03534614211649911,
+          "max_drawdown": -0.3303944773175542,
           "case_result": "win",
           "required_signal_hypotheses": [
             "hyp_a_tushare_capital_flow_accumulation",
@@ -292,22 +420,23 @@
       ],
       "disposition": "REFINED_SANDBOX_FAIL",
       "reasons": [
+        "refined_signal_win_rate_below_threshold",
         "refined_signal_drawdown_breached"
       ],
       "metrics": {
-        "refined_signal_case_count": 11,
-        "refined_signal_win_rate": 0.5454545454545454,
-        "refined_signal_average_return": 0.028050574693894433,
-        "refined_signal_max_drawdown": -0.28895988640397585,
-        "refined_signal_best_return": 0.30434782608695654,
-        "refined_signal_worst_return": -0.17333883615352863
+        "refined_signal_case_count": 12,
+        "refined_signal_win_rate": 0.3333333333333333,
+        "refined_signal_average_return": 0.0011087909597159995,
+        "refined_signal_max_drawdown": -0.3399006034788783,
+        "refined_signal_best_return": 0.3644009719020622,
+        "refined_signal_worst_return": -0.2508058017727639
       },
       "case_features": [
         {
           "case_id": "aegis_case_000100_stock_selection_workbench_2",
           "symbol": "000100",
-          "entry_date": "2024-08-05",
-          "raw_return": 0.037735849056603765,
+          "entry_date": "2024-08-06",
+          "raw_return": 0.037135278514588865,
           "max_drawdown": -0.03589743589743588,
           "case_result": "win",
           "required_signal_hypotheses": [
@@ -322,10 +451,10 @@
         {
           "case_id": "aegis_case_000100_stock_selection_workbench_3",
           "symbol": "000100",
-          "entry_date": "2025-07-08",
-          "raw_return": 0.015945330296127658,
+          "entry_date": "2025-07-10",
+          "raw_return": -0.0022371364653243075,
           "max_drawdown": -0.05579399141630892,
-          "case_result": "win",
+          "case_result": "loss",
           "required_signal_hypotheses": [
             "hyp_a_tushare_holder_concentration_improvement",
             "hyp_a_tushare_factor_liquidity_quality_overlay"
@@ -352,11 +481,27 @@
           }
         },
         {
+          "case_id": "aegis_case_002407_stock_selection_workbench_4",
+          "symbol": "002407",
+          "entry_date": "2026-06-12",
+          "raw_return": -0.06755734812200653,
+          "max_drawdown": -0.3304977375565611,
+          "case_result": "loss",
+          "required_signal_hypotheses": [
+            "hyp_a_tushare_holder_concentration_improvement",
+            "hyp_a_tushare_factor_liquidity_quality_overlay"
+          ],
+          "feature_hashes": {
+            "hyp_a_tushare_holder_concentration_improvement": "92cca9fdeee3ce85f3d15a6ef7210ea9075a08a3fbc215d70d44da4bc011c210",
+            "hyp_a_tushare_factor_liquidity_quality_overlay": "ab13df2383187239289efc677f79d6d76c94ca2ed9673fb22d795bc5f445d1ae"
+          }
+        },
+        {
           "case_id": "aegis_case_002709_stock_selection_workbench_4",
           "symbol": "002709",
-          "entry_date": "2026-06-11",
-          "raw_return": -0.17333883615352863,
-          "max_drawdown": -0.28895988640397585,
+          "entry_date": "2026-06-12",
+          "raw_return": -0.2508058017727639,
+          "max_drawdown": -0.3399006034788783,
           "case_result": "loss",
           "required_signal_hypotheses": [
             "hyp_a_tushare_holder_concentration_improvement",
@@ -370,8 +515,8 @@
         {
           "case_id": "aegis_case_300059_2",
           "symbol": "300059",
-          "entry_date": "2024-08-05",
-          "raw_return": -0.03075489282385835,
+          "entry_date": "2024-08-06",
+          "raw_return": -0.026976744186046453,
           "max_drawdown": -0.052093023255814,
           "case_result": "loss",
           "required_signal_hypotheses": [
@@ -386,8 +531,8 @@
         {
           "case_id": "aegis_case_300059_3",
           "symbol": "300059",
-          "entry_date": "2025-07-08",
-          "raw_return": 0.020734341252699906,
+          "entry_date": "2025-07-10",
+          "raw_return": 0.016846652267818563,
           "max_drawdown": -0.047286184210526216,
           "case_result": "win",
           "required_signal_hypotheses": [
@@ -402,9 +547,9 @@
         {
           "case_id": "aegis_case_300059_4",
           "symbol": "300059",
-          "entry_date": "2026-06-11",
-          "raw_return": 0.16301843317972353,
-          "max_drawdown": -0.06153846153846154,
+          "entry_date": "2026-06-12",
+          "raw_return": 0.10222222222222221,
+          "max_drawdown": -0.075058275058275,
           "case_result": "win",
           "required_signal_hypotheses": [
             "hyp_a_tushare_holder_concentration_improvement",
@@ -418,8 +563,8 @@
         {
           "case_id": "aegis_case_300475_stock_selection_workbench_2",
           "symbol": "300475",
-          "entry_date": "2024-08-05",
-          "raw_return": -0.023615950445218692,
+          "entry_date": "2024-08-06",
+          "raw_return": -0.04880774962742174,
           "max_drawdown": -0.0685543964232489,
           "case_result": "loss",
           "required_signal_hypotheses": [
@@ -434,9 +579,9 @@
         {
           "case_id": "aegis_case_600150_stock_selection_workbench_2",
           "symbol": "600150",
-          "entry_date": "2024-07-29",
-          "raw_return": -0.06118500604594923,
-          "max_drawdown": -0.08101571946795649,
+          "entry_date": "2024-07-30",
+          "raw_return": -0.07191283292978201,
+          "max_drawdown": -0.07990314769975781,
           "case_result": "loss",
           "required_signal_hypotheses": [
             "hyp_a_tushare_holder_concentration_improvement",
@@ -450,10 +595,10 @@
         {
           "case_id": "aegis_case_600150_stock_selection_workbench_4",
           "symbol": "600150",
-          "entry_date": "2026-06-11",
-          "raw_return": 0.07518142235123348,
+          "entry_date": "2026-06-12",
+          "raw_return": -0.019489825164803687,
           "max_drawdown": -0.10527725689793732,
-          "case_result": "win",
+          "case_result": "loss",
           "required_signal_hypotheses": [
             "hyp_a_tushare_holder_concentration_improvement",
             "hyp_a_tushare_factor_liquidity_quality_overlay"
@@ -466,8 +611,8 @@
         {
           "case_id": "aegis_case_603893_4",
           "symbol": "603893",
-          "entry_date": "2026-06-11",
-          "raw_return": 0.30434782608695654,
+          "entry_date": "2026-06-12",
+          "raw_return": 0.3644009719020622,
           "max_drawdown": -0.06562682370417527,
           "case_result": "win",
           "required_signal_hypotheses": [
@@ -504,19 +649,19 @@
         "refined_signal_drawdown_breached"
       ],
       "metrics": {
-        "refined_signal_case_count": 12,
-        "refined_signal_win_rate": 0.3333333333333333,
-        "refined_signal_average_return": 0.012032219994009904,
-        "refined_signal_max_drawdown": -0.23372781065088755,
-        "refined_signal_best_return": 0.2650905353048154,
-        "refined_signal_worst_return": -0.10508771929824567
+        "refined_signal_case_count": 14,
+        "refined_signal_win_rate": 0.2857142857142857,
+        "refined_signal_average_return": 0.0010085936885153104,
+        "refined_signal_max_drawdown": -0.3304977375565611,
+        "refined_signal_best_return": 0.32097574421168673,
+        "refined_signal_worst_return": -0.10492430833478339
       },
       "case_features": [
         {
           "case_id": "aegis_case_000100_stock_selection_workbench_2",
           "symbol": "000100",
-          "entry_date": "2024-08-05",
-          "raw_return": 0.037735849056603765,
+          "entry_date": "2024-08-06",
+          "raw_return": 0.037135278514588865,
           "max_drawdown": -0.03589743589743588,
           "case_result": "win",
           "required_signal_hypotheses": [
@@ -531,8 +676,8 @@
         {
           "case_id": "aegis_case_001309_stock_selection_workbench_2",
           "symbol": "001309",
-          "entry_date": "2024-08-05",
-          "raw_return": -0.011990407673860837,
+          "entry_date": "2024-08-06",
+          "raw_return": -0.0183588317107094,
           "max_drawdown": -0.07047113470471122,
           "case_result": "loss",
           "required_signal_hypotheses": [
@@ -547,9 +692,9 @@
         {
           "case_id": "aegis_case_001309_stock_selection_workbench_4",
           "symbol": "001309",
-          "entry_date": "2026-06-11",
-          "raw_return": 0.2650905353048154,
-          "max_drawdown": -0.17527835051546392,
+          "entry_date": "2026-06-12",
+          "raw_return": 0.16609170270314055,
+          "max_drawdown": -0.25775257731958756,
           "case_result": "win",
           "required_signal_hypotheses": [
             "hyp_a_tushare_institutional_ownership_stability",
@@ -563,8 +708,8 @@
         {
           "case_id": "aegis_case_002407_stock_selection_workbench_2",
           "symbol": "002407",
-          "entry_date": "2024-08-05",
-          "raw_return": -0.07648725212464591,
+          "entry_date": "2024-08-06",
+          "raw_return": -0.0750695088044484,
           "max_drawdown": -0.12140871177015744,
           "case_result": "loss",
           "required_signal_hypotheses": [
@@ -577,10 +722,26 @@
           }
         },
         {
+          "case_id": "aegis_case_002407_stock_selection_workbench_4",
+          "symbol": "002407",
+          "entry_date": "2026-06-12",
+          "raw_return": -0.06755734812200653,
+          "max_drawdown": -0.3304977375565611,
+          "case_result": "loss",
+          "required_signal_hypotheses": [
+            "hyp_a_tushare_institutional_ownership_stability",
+            "hyp_a_tushare_factor_liquidity_quality_overlay"
+          ],
+          "feature_hashes": {
+            "hyp_a_tushare_institutional_ownership_stability": "10552aad1493dfd6b3c7b242c248c4aaff6155f32a5aadddfd03590a5c3dbf71",
+            "hyp_a_tushare_factor_liquidity_quality_overlay": "ab13df2383187239289efc677f79d6d76c94ca2ed9673fb22d795bc5f445d1ae"
+          }
+        },
+        {
           "case_id": "aegis_case_002709_stock_selection_workbench_2",
           "symbol": "002709",
-          "entry_date": "2024-08-05",
-          "raw_return": -0.06875834445927909,
+          "entry_date": "2024-08-06",
+          "raw_return": -0.0585141354372124,
           "max_drawdown": -0.10716633793556873,
           "case_result": "loss",
           "required_signal_hypotheses": [
@@ -611,8 +772,8 @@
         {
           "case_id": "aegis_case_300059_2",
           "symbol": "300059",
-          "entry_date": "2024-08-05",
-          "raw_return": -0.03075489282385835,
+          "entry_date": "2024-08-06",
+          "raw_return": -0.026976744186046453,
           "max_drawdown": -0.052093023255814,
           "case_result": "loss",
           "required_signal_hypotheses": [
@@ -627,8 +788,8 @@
         {
           "case_id": "aegis_case_300475_stock_selection_workbench_2",
           "symbol": "300475",
-          "entry_date": "2024-08-05",
-          "raw_return": -0.023615950445218692,
+          "entry_date": "2024-08-06",
+          "raw_return": -0.04880774962742174,
           "max_drawdown": -0.0685543964232489,
           "case_result": "loss",
           "required_signal_hypotheses": [
@@ -641,11 +802,27 @@
           }
         },
         {
+          "case_id": "aegis_case_300476_stock_selection_workbench_3",
+          "symbol": "300476",
+          "entry_date": "2025-07-10",
+          "raw_return": 0.32097574421168673,
+          "max_drawdown": -0.09884028963324887,
+          "case_result": "win",
+          "required_signal_hypotheses": [
+            "hyp_a_tushare_institutional_ownership_stability",
+            "hyp_a_tushare_factor_liquidity_quality_overlay"
+          ],
+          "feature_hashes": {
+            "hyp_a_tushare_institutional_ownership_stability": "10552aad1493dfd6b3c7b242c248c4aaff6155f32a5aadddfd03590a5c3dbf71",
+            "hyp_a_tushare_factor_liquidity_quality_overlay": "ab13df2383187239289efc677f79d6d76c94ca2ed9673fb22d795bc5f445d1ae"
+          }
+        },
+        {
           "case_id": "aegis_case_600150_stock_selection_workbench_2",
           "symbol": "600150",
-          "entry_date": "2024-07-29",
-          "raw_return": -0.06118500604594923,
-          "max_drawdown": -0.08101571946795649,
+          "entry_date": "2024-07-30",
+          "raw_return": -0.07191283292978201,
+          "max_drawdown": -0.07990314769975781,
           "case_result": "loss",
           "required_signal_hypotheses": [
             "hyp_a_tushare_institutional_ownership_stability",
@@ -659,10 +836,10 @@
         {
           "case_id": "aegis_case_600150_stock_selection_workbench_4",
           "symbol": "600150",
-          "entry_date": "2026-06-11",
-          "raw_return": 0.07518142235123348,
+          "entry_date": "2026-06-12",
+          "raw_return": -0.019489825164803687,
           "max_drawdown": -0.10527725689793732,
-          "case_result": "win",
+          "case_result": "loss",
           "required_signal_hypotheses": [
             "hyp_a_tushare_institutional_ownership_stability",
             "hyp_a_tushare_factor_liquidity_quality_overlay"
@@ -675,8 +852,8 @@
         {
           "case_id": "aegis_case_603893_2",
           "symbol": "603893",
-          "entry_date": "2024-08-05",
-          "raw_return": -0.10508771929824567,
+          "entry_date": "2024-08-06",
+          "raw_return": -0.10492430833478339,
           "max_drawdown": -0.1124064729424048,
           "case_result": "loss",
           "required_signal_hypotheses": [
@@ -691,9 +868,9 @@
         {
           "case_id": "aegis_case_688525_stock_selection_workbench_4",
           "symbol": "688525",
-          "entry_date": "2026-06-11",
-          "raw_return": 0.19807567767601086,
-          "max_drawdown": -0.23372781065088755,
+          "entry_date": "2026-06-12",
+          "raw_return": 0.03534614211649911,
+          "max_drawdown": -0.3303944773175542,
           "case_result": "win",
           "required_signal_hypotheses": [
             "hyp_a_tushare_institutional_ownership_stability",
@@ -731,20 +908,56 @@
         "refined_signal_drawdown_breached"
       ],
       "metrics": {
-        "refined_signal_case_count": 2,
+        "refined_signal_case_count": 6,
         "refined_signal_win_rate": 0.5,
-        "refined_signal_average_return": -0.07630224745041436,
-        "refined_signal_max_drawdown": -0.28895988640397585,
-        "refined_signal_best_return": 0.020734341252699906,
-        "refined_signal_worst_return": -0.17333883615352863
+        "refined_signal_average_return": -0.01938810173304371,
+        "refined_signal_max_drawdown": -0.3399006034788783,
+        "refined_signal_best_return": 0.10222222222222221,
+        "refined_signal_worst_return": -0.2508058017727639
       },
       "case_features": [
         {
+          "case_id": "aegis_case_000100_stock_selection_workbench_2",
+          "symbol": "000100",
+          "entry_date": "2024-08-06",
+          "raw_return": 0.037135278514588865,
+          "max_drawdown": -0.03589743589743588,
+          "case_result": "win",
+          "required_signal_hypotheses": [
+            "hyp_a_tushare_capital_flow_accumulation",
+            "hyp_a_tushare_holder_concentration_improvement",
+            "hyp_a_tushare_factor_liquidity_quality_overlay"
+          ],
+          "feature_hashes": {
+            "hyp_a_tushare_capital_flow_accumulation": "fd56f56d9daa7d7c61c2608305ed5b9bc66a6bac5799da0d58b2778e48d82eec",
+            "hyp_a_tushare_holder_concentration_improvement": "92cca9fdeee3ce85f3d15a6ef7210ea9075a08a3fbc215d70d44da4bc011c210",
+            "hyp_a_tushare_factor_liquidity_quality_overlay": "ab13df2383187239289efc677f79d6d76c94ca2ed9673fb22d795bc5f445d1ae"
+          }
+        },
+        {
+          "case_id": "aegis_case_000100_stock_selection_workbench_3",
+          "symbol": "000100",
+          "entry_date": "2025-07-10",
+          "raw_return": -0.0022371364653243075,
+          "max_drawdown": -0.05579399141630892,
+          "case_result": "loss",
+          "required_signal_hypotheses": [
+            "hyp_a_tushare_capital_flow_accumulation",
+            "hyp_a_tushare_holder_concentration_improvement",
+            "hyp_a_tushare_factor_liquidity_quality_overlay"
+          ],
+          "feature_hashes": {
+            "hyp_a_tushare_capital_flow_accumulation": "fd56f56d9daa7d7c61c2608305ed5b9bc66a6bac5799da0d58b2778e48d82eec",
+            "hyp_a_tushare_holder_concentration_improvement": "92cca9fdeee3ce85f3d15a6ef7210ea9075a08a3fbc215d70d44da4bc011c210",
+            "hyp_a_tushare_factor_liquidity_quality_overlay": "ab13df2383187239289efc677f79d6d76c94ca2ed9673fb22d795bc5f445d1ae"
+          }
+        },
+        {
           "case_id": "aegis_case_002709_stock_selection_workbench_4",
           "symbol": "002709",
-          "entry_date": "2026-06-11",
-          "raw_return": -0.17333883615352863,
-          "max_drawdown": -0.28895988640397585,
+          "entry_date": "2026-06-12",
+          "raw_return": -0.2508058017727639,
+          "max_drawdown": -0.3399006034788783,
           "case_result": "loss",
           "required_signal_hypotheses": [
             "hyp_a_tushare_capital_flow_accumulation",
@@ -760,10 +973,46 @@
         {
           "case_id": "aegis_case_300059_3",
           "symbol": "300059",
-          "entry_date": "2025-07-08",
-          "raw_return": 0.020734341252699906,
+          "entry_date": "2025-07-10",
+          "raw_return": 0.016846652267818563,
           "max_drawdown": -0.047286184210526216,
           "case_result": "win",
+          "required_signal_hypotheses": [
+            "hyp_a_tushare_capital_flow_accumulation",
+            "hyp_a_tushare_holder_concentration_improvement",
+            "hyp_a_tushare_factor_liquidity_quality_overlay"
+          ],
+          "feature_hashes": {
+            "hyp_a_tushare_capital_flow_accumulation": "fd56f56d9daa7d7c61c2608305ed5b9bc66a6bac5799da0d58b2778e48d82eec",
+            "hyp_a_tushare_holder_concentration_improvement": "92cca9fdeee3ce85f3d15a6ef7210ea9075a08a3fbc215d70d44da4bc011c210",
+            "hyp_a_tushare_factor_liquidity_quality_overlay": "ab13df2383187239289efc677f79d6d76c94ca2ed9673fb22d795bc5f445d1ae"
+          }
+        },
+        {
+          "case_id": "aegis_case_300059_4",
+          "symbol": "300059",
+          "entry_date": "2026-06-12",
+          "raw_return": 0.10222222222222221,
+          "max_drawdown": -0.075058275058275,
+          "case_result": "win",
+          "required_signal_hypotheses": [
+            "hyp_a_tushare_capital_flow_accumulation",
+            "hyp_a_tushare_holder_concentration_improvement",
+            "hyp_a_tushare_factor_liquidity_quality_overlay"
+          ],
+          "feature_hashes": {
+            "hyp_a_tushare_capital_flow_accumulation": "fd56f56d9daa7d7c61c2608305ed5b9bc66a6bac5799da0d58b2778e48d82eec",
+            "hyp_a_tushare_holder_concentration_improvement": "92cca9fdeee3ce85f3d15a6ef7210ea9075a08a3fbc215d70d44da4bc011c210",
+            "hyp_a_tushare_factor_liquidity_quality_overlay": "ab13df2383187239289efc677f79d6d76c94ca2ed9673fb22d795bc5f445d1ae"
+          }
+        },
+        {
+          "case_id": "aegis_case_600150_stock_selection_workbench_4",
+          "symbol": "600150",
+          "entry_date": "2026-06-12",
+          "raw_return": -0.019489825164803687,
+          "max_drawdown": -0.10527725689793732,
+          "case_result": "loss",
           "required_signal_hypotheses": [
             "hyp_a_tushare_capital_flow_accumulation",
             "hyp_a_tushare_holder_concentration_improvement",
@@ -787,7 +1036,7 @@
     "source_deep_sandbox": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/a_share_tushare_source_deep_sandbox_latest.json"
   },
   "source_hashes": {
-    "source_deep_sandbox": "c9a205806f87090d1d97a256ca82842942e811fde64b4fc181432baf9893899e"
+    "source_deep_sandbox": "3cec837e2419ce51b4a7ddc53dc7be3d8ea4f50be90a5181c5a67e4797ffbece"
   },
   "checks": {
     "source_deep_sandbox_pass": true,
@@ -846,8 +1095,8 @@
     },
     "feedback_events_jsonl": {
       "exists": true,
-      "size": 4737,
-      "sha256": "e915f1476279a378e1125892165a78cba55587983e477d8a2996784135e0e384"
+      "size": 6826,
+      "sha256": "352773fbf63c24607a7a4a5fea5fdbc46a261058334b2a7e9664867a32c5eff4"
     }
   },
   "production_record_files_after": {
@@ -878,8 +1127,8 @@
     },
     "feedback_events_jsonl": {
       "exists": true,
-      "size": 4737,
-      "sha256": "e915f1476279a378e1125892165a78cba55587983e477d8a2996784135e0e384"
+      "size": 6826,
+      "sha256": "352773fbf63c24607a7a4a5fea5fdbc46a261058334b2a7e9664867a32c5eff4"
     }
   }
 }

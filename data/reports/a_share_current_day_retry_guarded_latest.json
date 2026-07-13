@@ -1,26 +1,17 @@
 {
   "type": "a_share_current_day_retry_guarded",
-  "status": "FAIL",
-  "started_at": "2026-07-13T15:48:46+08:00",
-  "finished_at": "2026-07-13T15:48:49+08:00",
+  "status": "PASS",
+  "started_at": "2026-07-13T16:00:45+08:00",
+  "finished_at": "2026-07-13T16:05:08+08:00",
   "wait_mode": false,
   "preflight_status": "READY",
   "preflight_ready_to_run": true,
   "preflight_exit_code": 0,
-  "retry_exit_code": 2,
+  "retry_exit_code": 0,
   "audit_exit_code": 0,
   "recommended_command": "make a-share-current-day-retry",
   "blockers": [],
-  "retry_failure": {
-    "failed_dates": [
-      {
-        "trade_date": "20260713",
-        "error_type": "RuntimeError",
-        "error": "daily 20260713 insufficient rows: 0"
-      }
-    ],
-    "manifest_path": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/p23_2_historical_market_cache_manifest.json"
-  },
+  "retry_failure": null,
   "log_file": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/runtime/a_share_current_day_retry_guarded.log",
   "safety": {
     "simulation_only": true,

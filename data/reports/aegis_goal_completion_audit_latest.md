@@ -1,8 +1,8 @@
 # Aegis Goal Completion Audit
 
-- status: `READY_FOR_DAILY_USE_WITH_PENDING_A_SHARE_RETRY`
+- status: `READY_FOR_DAILY_SIMULATION_USE`
 - missing_count: `0`
-- pending_count: `1`
+- pending_count: `0`
 
 ## Requirements
 
@@ -16,8 +16,7 @@
    - evidence: data/reports/stock_agent_a_share_strategy_cycle_latest.json, data/reports/a_share_refined_strategy_ranking_gate_latest.json
 5. `ACHIEVED` No real trading, broker API, order placement, trading webhook, or secret exposure is allowed by the checked reports.
    - evidence: data/reports/dashboard_daily_use_readiness_latest.json, data/reports/dashboard_daily_use_smoke_latest.json, data/reports/dashboard_real_click_acceptance_latest.json, data/reports/a_share_refined_strategy_ranking_gate_latest.json, data/reports/a_share_current_day_retry_readiness_latest.json
-6. `PENDING` A-share current-day cache retry is only executed after the preflight becomes READY.
-   - pending: Guarded retry ran after READY but the retry chain failed; inspect a_share_current_day_retry_guarded_latest.json and retry later.
+6. `ACHIEVED` A-share current-day cache retry is only executed after the preflight becomes READY.
    - evidence: data/reports/a_share_current_day_retry_readiness_latest.json, data/reports/a_share_current_day_retry_guarded_latest.json
 
 ## Safety

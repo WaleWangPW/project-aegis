@@ -1,12 +1,12 @@
 {
   "type": "a_share_current_day_retry_readiness",
-  "status": "READY",
-  "generated_at": "2026-07-13T15:52:28+08:00",
-  "coverage_status": "WAITING_CURRENT_TRADING_DAY_DAILY",
-  "answer_label": "NO",
-  "retry_not_before_local_time": "15:30 Asia/Shanghai",
-  "ready_to_run": true,
-  "recommended_command": "make a-share-current-day-retry",
+  "status": "NOT_NEEDED",
+  "generated_at": "2026-07-13T16:05:08+08:00",
+  "coverage_status": "MATERIALIZED_CURRENT_FULL_YEAR_CANDIDATE",
+  "answer_label": "YES",
+  "retry_not_before_local_time": null,
+  "ready_to_run": false,
+  "recommended_command": null,
   "command_chain": [
     "make a-share-current-day-retry",
     "make build-p23-2-historical-market-cache START_DATE=20250713 END_DATE=20260713",
@@ -15,7 +15,7 @@
   ],
   "blockers": [],
   "source_report": "data/reports/a_share_full_year_coverage_plan_latest.json",
-  "source_generated_at": "2026-07-13T12:19:06+08:00",
+  "source_generated_at": "2026-07-13T16:05:08+08:00",
   "safety": {
     "network_used": false,
     "secret_values_read": false,

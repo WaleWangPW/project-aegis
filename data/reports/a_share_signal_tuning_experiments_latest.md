@@ -1,7 +1,7 @@
 # A-share Signal Tuning Experiments
 
 - Status: `PASS`
-- Generated At: `2026-07-13T11:25:50+08:00`
+- Generated At: `2026-07-13T16:05:04+08:00`
 - Experiments: `4`
 - Pass Candidates: `0`
 - Fail: `4`
@@ -11,7 +11,7 @@
 
 | Experiment | Disposition | Cases | Win Rate | Avg Return | Max Drawdown | Reasons |
 | --- | --- | ---: | ---: | ---: | ---: | --- |
-| `tuned_a_moneyflow_factor_veto` | `TUNED_EXPERIMENT_FAIL` | 8 | 0.88 | 0.1388 | -0.2890 | tuned_signal_drawdown_breached |
-| `tuned_a_holder_concentration_strict` | `TUNED_EXPERIMENT_FAIL` | 16 | 0.56 | 0.0195 | -0.2890 | tuned_signal_drawdown_breached |
-| `tuned_a_institutional_factor_trend_filter` | `TUNED_EXPERIMENT_FAIL` | 6 | 0.33 | 0.0404 | -0.2337 | tuned_signal_win_rate_below_threshold, tuned_signal_drawdown_breached |
-| `tuned_a_governance_veto_only` | `TUNED_EXPERIMENT_FAIL` | 40 | 0.47 | 0.0172 | -0.3503 | tuned_signal_win_rate_below_threshold, tuned_signal_drawdown_breached, veto_or_diagnostic_only_not_rankable |
+| `tuned_a_moneyflow_factor_veto` | `TUNED_EXPERIMENT_FAIL` | 12 | 0.75 | 0.0611 | -0.3399 | tuned_signal_drawdown_breached |
+| `tuned_a_holder_concentration_strict` | `TUNED_EXPERIMENT_FAIL` | 17 | 0.35 | -0.0207 | -0.3399 | tuned_signal_win_rate_below_threshold, tuned_signal_average_return_below_threshold, tuned_signal_drawdown_breached |
+| `tuned_a_institutional_factor_trend_filter` | `TUNED_EXPERIMENT_FAIL` | 8 | 0.38 | 0.0253 | -0.3305 | tuned_signal_win_rate_below_threshold, tuned_signal_drawdown_breached |
+| `tuned_a_governance_veto_only` | `TUNED_EXPERIMENT_FAIL` | 40 | 0.42 | 0.0085 | -0.3399 | tuned_signal_win_rate_below_threshold, tuned_signal_drawdown_breached, veto_or_diagnostic_only_not_rankable |

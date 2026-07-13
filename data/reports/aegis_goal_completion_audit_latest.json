@@ -1,7 +1,7 @@
 {
   "type": "aegis_goal_completion_audit",
-  "status": "READY_FOR_DAILY_USE_WITH_PENDING_A_SHARE_RETRY",
-  "generated_at": "2026-07-13T15:52:28+08:00",
+  "status": "READY_FOR_DAILY_SIMULATION_USE",
+  "generated_at": "2026-07-13T16:07:28+08:00",
   "objective_scope": "daily_simulation_use_dashboard_and_stock_agent_gate",
   "requirements": [
     {
@@ -33,7 +33,7 @@
           "feedback_type": "user_requests_more_news",
           "source": "dashboard_local_intent_export",
           "received_at": "2026-07-13T13:01:52.191431+08:00",
-          "age_hours": 2.843,
+          "age_hours": 3.055,
           "dashboard_recorded_at": "2026/7/13 13:01:52"
         },
         "dry_run_status": "PASS"
@@ -90,31 +90,25 @@
     },
     {
       "requirement": "A-share current-day cache retry is only executed after the preflight becomes READY.",
-      "status": "PENDING",
+      "status": "ACHIEVED",
       "evidence": [
         "data/reports/a_share_current_day_retry_readiness_latest.json",
         "data/reports/a_share_current_day_retry_guarded_latest.json"
       ],
       "detail": {
-        "retry_status": "READY",
-        "ready_to_run": true,
-        "recommended_command": "make a-share-current-day-retry",
-        "guard_status": "FAIL",
-        "guard_retry_exit_code": 2,
+        "retry_status": "NOT_NEEDED",
+        "ready_to_run": false,
+        "recommended_command": null,
+        "guard_status": "PASS",
+        "guard_retry_exit_code": 0,
         "guard_audit_exit_code": 0,
-        "guard_failed_dates": [
-          {
-            "trade_date": "20260713",
-            "error_type": "RuntimeError",
-            "error": "daily 20260713 insufficient rows: 0"
-          }
-        ]
+        "guard_failed_dates": null
       },
-      "pending": "Guarded retry ran after READY but the retry chain failed; inspect a_share_current_day_retry_guarded_latest.json and retry later."
+      "pending": null
     }
   ],
   "missing_count": 0,
-  "pending_count": 1,
+  "pending_count": 0,
   "next_actions": [
     "Use Dashboard for simulation research only.",
     "Run make a-share-current-day-retry-guarded for the A-share current-day retry; do not run the raw retry chain directly.",

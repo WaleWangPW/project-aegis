@@ -8,6 +8,30 @@
 
 **Accepted engineering baseline:** `P25.6 PASS`
 
+**Latest update — Daily simulation-use goal audit is complete:**
+The guarded A-share current-day retry was rerun after fixing the historical
+cache completion check to tolerate extra cached dates outside the requested
+target window. The target window `20250713..20260713` is now complete:
+`p23_2_historical_market_cache_manifest.json` reports
+`target_expected_count=242`, `target_available_count=242`,
+`target_missing_count=0`, `target_complete=true`, and `overall_verdict=PASS`.
+`a_share_full_year_coverage_plan_latest.json` is now
+`coverage_status=MATERIALIZED_CURRENT_FULL_YEAR_CANDIDATE`,
+`answer_label=YES`. The guarded runner report is `status=PASS`,
+`preflight_status=READY`, `retry_exit_code=0`, `audit_exit_code=0`. The latest
+stock-agent managed-expanded cycle also passed: `command_count=15`,
+`failed_command_count=0`, `a_share_case_count=75`,
+`ranking_gate_approved_count=0`, `user_facing_suggestion_allowed=false`, and
+full-year coverage `YES`. Latest goal audit:
+`data/reports/aegis_goal_completion_audit_latest.json`,
+`status=READY_FOR_DAILY_SIMULATION_USE`, `missing_count=0`,
+`pending_count=0`; all six explicit requirements are `ACHIEVED`. Verification:
+Python compile PASS, targeted pytest `23 passed`, `make dashboard-daily-use-check`
+exit `0`, `node --check dashboard/v2.js` PASS, and Playwright desktop/mobile
+checks confirmed Today/Evidence pages show the completed retry state, daily
+readiness, no-trade boundary, no horizontal overflow, and console warnings/errors
+`0`.
+
 **Latest update — Guarded A-share retry runner added and verified:**
 Added `make a-share-current-day-retry-guarded`, backed by
 `scripts/run_a_share_current_day_retry_guarded.py` and

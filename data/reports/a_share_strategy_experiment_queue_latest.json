@@ -1,8 +1,8 @@
 {
   "type": "a_share_strategy_experiment_queue",
   "status": "PASS",
-  "generated_at": "2026-07-13T11:25:54+08:00",
-  "run_id": "a_share_strategy_experiment_queue_20260713T112554",
+  "generated_at": "2026-07-13T16:05:08+08:00",
+  "run_id": "a_share_strategy_experiment_queue_20260713T160508",
   "command": "scripts/build_a_share_strategy_experiment_queue.py",
   "summary": {
     "experiment_count": 6,
@@ -10,7 +10,7 @@
     "blocked_experiment_count": 0,
     "dragon_tiger_sample_count": 24,
     "dragon_tiger_event_count": 72,
-    "a_share_case_count": 74,
+    "a_share_case_count": 75,
     "ranking_gate_approved_count": 0,
     "rankable_strategy_count": 0,
     "tuned_experiment_count": 4,
@@ -31,7 +31,7 @@
       "evidence": {
         "dragon_tiger_sample_count": 24,
         "dragon_tiger_event_count": 72,
-        "event_aligned_case_count": 34
+        "event_aligned_case_count": 35
       },
       "next_command": "make stock-agent-a-share-strategy-cycle-managed-expanded",
       "proposed_command_if_implemented": null,
@@ -49,14 +49,14 @@
       "trigger": "股东人数覆盖率刚过 ready 门槛，但缺口仍大，组合策略缺稳定 guardrail。",
       "target": "提高 stk_holdernumber 在 A股 historical cases 上的覆盖率，减少 missing/blocked cases。",
       "evidence": {
-        "eligible_case_count": 74,
-        "min_endpoint_coverage": 0.9459459459459459,
+        "eligible_case_count": 75,
+        "min_endpoint_coverage": 0.9466666666666667,
         "endpoint_results": [
           {
             "endpoint": "stk_holdernumber",
-            "eligible_case_count": 74,
-            "covered_case_count": 70,
-            "coverage_ratio": 0.9459459459459459,
+            "eligible_case_count": 75,
+            "covered_case_count": 71,
+            "coverage_ratio": 0.9466666666666667,
             "missing_case_count": 4,
             "blocked_or_error_count": 0
           }
@@ -84,9 +84,9 @@
           "source_signal_drawdown_breached"
         ],
         "signal_cases": 40,
-        "signal_win_rate": 0.475,
-        "signal_average_return": 0.017170119015187862,
-        "signal_max_drawdown": -0.35032840722495895
+        "signal_win_rate": 0.425,
+        "signal_average_return": 0.008515312499879395,
+        "signal_max_drawdown": -0.3399006034788783
       },
       "next_command": "make stock-agent-a-share-strategy-cycle-managed-expanded",
       "proposed_command_if_implemented": null,
@@ -111,9 +111,9 @@
           "source_signal_drawdown_breached"
         ],
         "signal_cases": 20,
-        "signal_win_rate": 0.3,
-        "signal_average_return": -0.0005447585684335732,
-        "signal_max_drawdown": -0.25610859728506785
+        "signal_win_rate": 0.2,
+        "signal_average_return": -0.01988791364434907,
+        "signal_max_drawdown": -0.3304977375565611
       },
       "next_command": "make stock-agent-a-share-strategy-cycle-managed-expanded",
       "proposed_command_if_implemented": null,
@@ -152,8 +152,38 @@
       "trigger": "已有 diagnostics priority_actions，需要下一轮确认动作数量是否下降。",
       "target": "每次 managed cycle 后比较 priority_action_count、deep fail 和 blocked refined count。",
       "evidence": {
-        "priority_action_count": 1,
+        "priority_action_count": 3,
         "priority_actions": [
+          {
+            "hypothesis_id": "hyp_a_tushare_capital_flow_accumulation",
+            "label": "主力资金流向",
+            "disposition": "DEEP_SANDBOX_FAIL",
+            "plain_reasons": [
+              "源信号命中后的平均收益不达标",
+              "源信号命中后的最大回撤过深"
+            ],
+            "required_endpoints": [
+              "moneyflow"
+            ],
+            "metrics": {
+              "eligible_case_count": 75,
+              "source_signal_case_count": 18,
+              "source_signal_rate": 0.24,
+              "source_signal_win_rate": 0.5555555555555556,
+              "source_signal_average_return": -0.030813822964094406,
+              "source_signal_max_drawdown": -0.40628272251308906
+            },
+            "metric_gaps": {
+              "signal_case_gap": 0,
+              "win_rate_gap": 0.0,
+              "average_return_gap": 0.030813822964094406,
+              "drawdown_excess": 0.22628272251308906
+            },
+            "recommended_action": "add_risk_veto_before_retest",
+            "why": "信号命中后平均收益为负且回撤深，应先叠加风险否决再重测。",
+            "ranking_gate_allowed": false,
+            "user_facing_suggestion_allowed": false
+          },
           {
             "hypothesis_id": "hyp_a_tushare_institutional_ownership_stability",
             "label": "机构持仓稳定",
@@ -171,15 +201,46 @@
               "eligible_case_count": 40,
               "source_signal_case_count": 20,
               "source_signal_rate": 0.5,
-              "source_signal_win_rate": 0.3,
-              "source_signal_average_return": -0.0005447585684335732,
-              "source_signal_max_drawdown": -0.25610859728506785
+              "source_signal_win_rate": 0.2,
+              "source_signal_average_return": -0.01988791364434907,
+              "source_signal_max_drawdown": -0.3304977375565611
             },
             "metric_gaps": {
               "signal_case_gap": 0,
-              "win_rate_gap": 0.2,
-              "average_return_gap": 0.0005447585684335732,
-              "drawdown_excess": 0.07610859728506786
+              "win_rate_gap": 0.3,
+              "average_return_gap": 0.01988791364434907,
+              "drawdown_excess": 0.1504977375565611
+            },
+            "recommended_action": "add_risk_veto_before_retest",
+            "why": "信号命中后平均收益为负且回撤深，应先叠加风险否决再重测。",
+            "ranking_gate_allowed": false,
+            "user_facing_suggestion_allowed": false
+          },
+          {
+            "hypothesis_id": "hyp_a_tushare_holder_concentration_improvement",
+            "label": "股东人数/筹码集中",
+            "disposition": "DEEP_SANDBOX_FAIL",
+            "plain_reasons": [
+              "源信号命中后的胜率低于门槛",
+              "源信号命中后的平均收益不达标",
+              "源信号命中后的最大回撤过深"
+            ],
+            "required_endpoints": [
+              "stk_holdernumber"
+            ],
+            "metrics": {
+              "eligible_case_count": 75,
+              "source_signal_case_count": 17,
+              "source_signal_rate": 0.22666666666666666,
+              "source_signal_win_rate": 0.35294117647058826,
+              "source_signal_average_return": -0.020714371232429342,
+              "source_signal_max_drawdown": -0.3399006034788783
+            },
+            "metric_gaps": {
+              "signal_case_gap": 0,
+              "win_rate_gap": 0.14705882352941174,
+              "average_return_gap": 0.020714371232429342,
+              "drawdown_excess": 0.1599006034788783
             },
             "recommended_action": "add_risk_veto_before_retest",
             "why": "信号命中后平均收益为负且回撤深，应先叠加风险否决再重测。",
@@ -208,15 +269,15 @@
     "diagnostics": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/a_share_tushare_strategy_diagnostics_latest.json"
   },
   "source_hashes": {
-    "source_probe": "00f8e4cdb4ea7baf559adbde4a807b99f31433650cbd8d151fad806ddcf7bd52",
-    "dragon_tiger": "126cd3d25869dc5ade7ae5423e92918b799e5b0156b10174664902079c3fd016",
-    "historical_cases": "b1f2d93ea6940ef10ba1d95f6a467fa1198bc47db60a0c14b905143ba2b9d520",
-    "feature_coverage": "b369e2bd08db3dd98857599ab1c92e8a65c1d0434b9664f180e4a76cdbc78ba4",
-    "deep_sandbox": "c9a205806f87090d1d97a256ca82842942e811fde64b4fc181432baf9893899e",
-    "refined_sandbox": "2f19fb7acf516a30a6db00a5263c3d249096b9a5859576f803fab549ea4d734f",
-    "signal_tuning": "963573499f35b2ad9c86af60a3ee1be8e3ddd16933bc6ccd778180db93042208",
-    "ranking_gate": "5e4696e599fd6b7b6fc4d75aef91e14c140484227862ebafde4ab1c6f0cb592e",
-    "diagnostics": "51c2c568ca41ab0c88079368252bf063748088ad910bc669dc881edde5abbe7c"
+    "source_probe": "46d702f1c9edcb652729a1e8883f2054c9136db37801e07b7e17df6873cbddf3",
+    "dragon_tiger": "f209957b994e89ecdf66b2bef6530393204a33565cca20daeb388a194b20e113",
+    "historical_cases": "c3c332990d494dd16f75b4bd453d414f95bd5c08a06e18ce2ad0857f6ea5c024",
+    "feature_coverage": "4187690169210cb3665193e1e14f6ba24f0ddaa19040250838d7b222043d5e04",
+    "deep_sandbox": "3cec837e2419ce51b4a7ddc53dc7be3d8ea4f50be90a5181c5a67e4797ffbece",
+    "refined_sandbox": "10d0aff95f17c095bbb9c2b6810e75ee01c6d6fa8182150a3563e9bbab8e4320",
+    "signal_tuning": "01d53aecdd114dcf4419266ddb602b77a62bfd5d2516340215b038ffe450e5e1",
+    "ranking_gate": "c7fca9e17356735fbd52c613848a8ce6ea96d4d78b9572de3276914c18d73c21",
+    "diagnostics": "b77529885b2f52feb2705b54689fddf2ac0b9cb2eb59b4ff1eb5d46cafa5bbce"
   },
   "checks": {
     "has_experiments": true,

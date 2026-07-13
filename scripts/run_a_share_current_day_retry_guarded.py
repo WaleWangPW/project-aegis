@@ -175,6 +175,10 @@ def main() -> int:
         wait_mode=args.wait,
     )
     write_report(report)
+    if report["status"] == "PASS":
+        final_audit_exit_code = run_logged(["make", "build-aegis-goal-completion-audit"])
+        report["final_audit_exit_code"] = final_audit_exit_code
+        write_report(report)
     print(f"status={report['status']}")
     print(f"preflight_status={report.get('preflight_status')}")
     print(f"retry_exit_code={report.get('retry_exit_code')}")

@@ -1,9 +1,9 @@
 # A-share Current-Day Retry Readiness
 
-- status: `READY`
-- ready_to_run: `True`
-- retry_not_before_local_time: `15:30 Asia/Shanghai`
-- recommended_command: `make a-share-current-day-retry`
+- status: `NOT_NEEDED`
+- ready_to_run: `False`
+- retry_not_before_local_time: `None`
+- recommended_command: `None`
 - blockers: `none`
 
 ## Command Chain
