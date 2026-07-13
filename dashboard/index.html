@@ -7,7 +7,7 @@
   <meta name="aegis-dashboard-contract" content="2.0">
   <title>Project Aegis · 每日决策</title>
   <link rel="icon" href="data:,">
-  <link rel="stylesheet" href="v2.css?v=20260713e">
+  <link rel="stylesheet" href="v2.css?v=20260713f">
 </head>
 <body>
   <div class="app-frame">
@@ -35,6 +35,7 @@
 
     <main class="shell workspace">
       <header class="statusbar" aria-label="数据与系统状态"><strong>Project Aegis</strong><span id="today-date">—</span><span>系统：<b id="system-status">数据不足</b></span><span id="data-time">数据更新时间：数据未提供</span><span>自动检查：<b id="daily-status">数据不足</b></span><button id="refresh" type="button">刷新数据</button></header>
+      <section id="command-strip" class="command-strip" aria-label="今日指挥条"></section>
 
       <section id="page-today" class="page-view active" data-page-view="today">
         <section id="decision" class="section hero" aria-labelledby="decision-title"><h1 id="decision-title">今日结论</h1><div id="decision-content"></div></section>
@@ -68,6 +69,6 @@
       </section>
     </main>
   </div>
-  <script src="v2.js?v=20260713e"></script>
+  <script src="v2.js?v=20260713f"></script>
 </body>
 </html>

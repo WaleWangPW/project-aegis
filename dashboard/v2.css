@@ -3164,6 +3164,248 @@ details > summary {
   }
 }
 
+/* V2.18 daily-use command layer: make the app feel navigable, not like one long report. */
+.command-strip {
+  display: grid;
+  grid-template-columns: minmax(220px, .38fr) minmax(0, 1fr);
+  gap: 12px;
+  margin: -4px 0 18px;
+  padding: 7px;
+  border-radius: 32px;
+  background:
+    linear-gradient(135deg, rgba(18,23,21,.075), rgba(255,255,252,.46)),
+    radial-gradient(circle at 96% 0%, rgba(27,111,91,.12), transparent 16rem);
+  outline: 1px solid rgba(18,23,21,.09);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.76), 0 18px 54px rgba(35,44,40,.08);
+}
+
+.command-copy,
+.command-pills {
+  min-width: 0;
+}
+
+.command-copy {
+  padding: 15px 17px;
+  border-radius: 26px;
+  background: rgba(255,255,252,.88);
+  outline: 1px solid rgba(18,23,21,.08);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.9);
+}
+
+.command-copy span,
+.command-copy small {
+  display: block;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 780;
+}
+
+.command-copy b {
+  display: block;
+  margin: 3px 0;
+  color: var(--ink);
+  font-size: clamp(22px, 2vw, 34px);
+  line-height: 1;
+  letter-spacing: -.065em;
+}
+
+.command-pills {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.command-pill {
+  justify-content: flex-start;
+  min-height: 82px;
+  padding: 12px;
+  border-radius: 25px;
+  color: var(--ink);
+  background:
+    linear-gradient(145deg, rgba(255,255,252,.96), rgba(238,246,241,.82));
+  outline: 1px solid rgba(18,23,21,.1);
+  box-shadow: 0 12px 32px rgba(35,44,40,.08), inset 0 1px 0 rgba(255,255,255,.9);
+  text-align: left;
+  font-size: 13px;
+  font-weight: 920;
+  line-height: 1.25;
+}
+
+.command-pill span {
+  display: inline-grid;
+  place-items: center;
+  min-width: 28px;
+  height: 28px;
+  margin-right: 7px;
+  border-radius: 999px;
+  color: #fbfffc;
+  background: rgba(18,23,21,.78);
+  font-size: 10px;
+  letter-spacing: .03em;
+}
+
+.command-pill.primary {
+  color: #fbfffc;
+  background:
+    radial-gradient(circle at 90% 0%, rgba(255,255,255,.18), transparent 7rem),
+    linear-gradient(135deg, #143f36, #1f8068);
+  outline-color: rgba(27,111,91,.2);
+  box-shadow: 0 18px 44px rgba(27,111,91,.22), inset 0 1px 0 rgba(255,255,255,.18);
+}
+
+.command-pill.primary span {
+  color: #155241;
+  background: rgba(255,255,252,.9);
+}
+
+.command-pill.ghost {
+  color: var(--muted);
+  background: rgba(255,255,252,.62);
+}
+
+.selection-wayfinder {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) auto;
+  gap: 10px;
+  margin: 16px 0 18px;
+  padding: 10px;
+  border-radius: 31px;
+  background:
+    linear-gradient(135deg, rgba(18,23,21,.055), rgba(255,255,252,.54));
+  outline: 1px solid rgba(18,23,21,.09);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.72);
+}
+
+.selection-wayfinder > div,
+.selection-wayfinder > button {
+  border-radius: 23px;
+}
+
+.selection-wayfinder > div {
+  padding: 15px;
+  background: rgba(255,255,252,.88);
+  outline: 1px solid rgba(18,23,21,.075);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.9);
+}
+
+.selection-wayfinder span {
+  display: inline-flex;
+  min-height: 24px;
+  align-items: center;
+  padding: 0 9px;
+  border-radius: 999px;
+  color: #155241;
+  background: rgba(224,244,234,.86);
+  font-size: 10px;
+  font-weight: 950;
+  letter-spacing: .06em;
+}
+
+.selection-wayfinder b {
+  display: block;
+  margin: 9px 0 4px;
+  color: var(--ink);
+  font-size: 18px;
+  letter-spacing: -.045em;
+}
+
+.selection-wayfinder p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.45;
+}
+
+.selection-wayfinder > button {
+  min-width: 150px;
+  color: #fbfffc;
+  background: linear-gradient(135deg, #111715, #2b3632);
+  font-weight: 950;
+}
+
+.side-rail {
+  counter-reset: nav-step;
+}
+
+.nav-item {
+  grid-template-columns: 32px minmax(0, 1fr);
+  align-items: center;
+}
+
+.nav-item::before {
+  counter-increment: nav-step;
+  content: "0" counter(nav-step);
+  display: grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 999px;
+  color: var(--muted);
+  background: rgba(18,23,21,.045);
+  font-size: 10px;
+  font-weight: 950;
+  letter-spacing: .04em;
+  grid-row: 1 / span 2;
+}
+
+.nav-item.active::before {
+  color: #fbfffc;
+  background: linear-gradient(135deg, #174f42, #1e8068);
+  box-shadow: 0 10px 24px rgba(27,111,91,.18);
+}
+
+.candidate-section-head {
+  padding: 14px 16px;
+  border-radius: 26px;
+  background: rgba(255,255,252,.74);
+  outline: 1px solid rgba(18,23,21,.075);
+}
+
+.action-dock-head span,
+.secondary-boundary,
+.snapshot-boundary,
+.diagnostics-boundary {
+  font-weight: 780;
+}
+
+@media (max-width: 1180px) {
+  .command-strip {
+    grid-template-columns: 1fr;
+  }
+
+  .command-pills {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .selection-wayfinder {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .selection-wayfinder > button {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 760px) {
+  .command-strip {
+    margin-top: 0;
+    border-radius: 25px;
+  }
+
+  .command-pills,
+  .selection-wayfinder {
+    grid-template-columns: 1fr;
+  }
+
+  .command-pill {
+    min-height: 58px;
+  }
+
+  .selection-wayfinder {
+    border-radius: 25px;
+  }
+}
+
 /* V2.17 readable workbench: group secondary actions into clear page modules. */
 #page-selection .selection-workbench {
   overflow: hidden;

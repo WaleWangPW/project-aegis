@@ -8,6 +8,24 @@
 
 **Accepted engineering baseline:** `P25.6 PASS`
 
+**Latest update — Dashboard daily-use UI clarity pass:** Dashboard now has a
+persistent `今日指挥条` directly under the status bar. It shows the first action
+(`先处理风险` or `看 Top 候选`), strategy gate count, latest feedback, full-year
+coverage status, and explicit `只模拟` boundary. The selection page now adds a
+`selection-wayfinder` that tells the user to read only Top 3, click one clear
+button, then inspect strategy evidence if needed. Page switching now writes
+`#today/#selection/#strategy/...` into the URL and restores the page from hash.
+Visual QA with the in-app browser verified: desktop loads
+`Project Aegis · 每日决策`, `command-strip` exists, 6 page nav buttons exist, no
+framework overlay text, no console warnings/errors, and no horizontal overflow.
+Selection page QA verified the wayfinder exists, `#selection` URL works, and no
+horizontal overflow. Button QA clicked the first Top candidate `加入模拟研究`;
+the card showed `后台已记录`, and backend evidence recorded `603893 /
+aegis_watch` with all trading side effects false. Mobile QA at `390x844`
+verified `command-strip`, `selection-wayfinder`, candidate actions, recorded
+state, no console warnings/errors, and no horizontal overflow. Verification:
+`node --check dashboard/v2.js`, targeted pytest `17 passed`, `git diff --check`.
+
 **Latest update — one-command daily Dashboard launcher:** Dashboard intent
 bridge no longer has to run as a foreground-only command. New manager
 `scripts/manage_aegis_dashboard_intent_bridge.py` adds `make dashboard-start`,
