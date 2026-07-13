@@ -1,0 +1,35 @@
+{
+  "type": "dashboard_daily_use_smoke",
+  "status": "PASS",
+  "generated_at": "2026-07-13T13:43:27+08:00",
+  "base_url": "http://127.0.0.1:8080",
+  "checks": {
+    "bridge_health_ready": true,
+    "bridge_safety_no_trading": true,
+    "dashboard_html_available": true,
+    "daily_readiness_ready": true,
+    "daily_readiness_safety": true,
+    "button_feedback_recorded": true,
+    "button_feedback_no_trading_side_effects": true,
+    "ranking_gate_blocks_suggestions": true,
+    "retry_preflight_safe": true
+  },
+  "blockers": [],
+  "summary": {
+    "daily_use_status": "READY_FOR_SIMULATION_USE",
+    "latest_feedback_symbol": "VRTX",
+    "latest_feedback_action": "aegis_more_news",
+    "ranking_gate_approved_count": 0,
+    "a_share_retry_status": "WAITING",
+    "a_share_retry_ready_to_run": false
+  },
+  "safety": {
+    "simulation_only": true,
+    "network_scope": "local_dashboard_only",
+    "market_data_fetch": false,
+    "secret_values_read": false,
+    "no_broker_api": true,
+    "no_order_placement": true,
+    "no_trading_webhook": true
+  }
+}

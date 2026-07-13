@@ -161,6 +161,9 @@ build-a-share-current-day-retry-readiness:
 build-dashboard-daily-use-readiness:
 	.venv/bin/python scripts/build_dashboard_daily_use_readiness.py
 
+smoke-dashboard-daily-use:
+	.venv/bin/python scripts/smoke_dashboard_daily_use.py
+
 START_DATE ?= 20240801
 END_DATE ?= 20260710
 A_SHARE_RETRY_START_DATE ?= 20250713
