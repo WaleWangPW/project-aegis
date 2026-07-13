@@ -158,6 +158,9 @@ build-a-share-full-year-coverage-plan:
 build-a-share-current-day-retry-readiness:
 	.venv/bin/python scripts/build_a_share_current_day_retry_readiness.py
 
+build-dashboard-daily-use-readiness:
+	.venv/bin/python scripts/build_dashboard_daily_use_readiness.py
+
 START_DATE ?= 20240801
 END_DATE ?= 20260710
 A_SHARE_RETRY_START_DATE ?= 20250713

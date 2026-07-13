@@ -1,0 +1,54 @@
+{
+  "type": "dashboard_daily_use_readiness",
+  "status": "READY_FOR_SIMULATION_USE",
+  "generated_at": "2026-07-13T13:35:49+08:00",
+  "usable_for": "simulation_research_only",
+  "not_usable_for": [
+    "real_trading",
+    "broker_execution",
+    "order_placement",
+    "trading_webhook"
+  ],
+  "summary": {
+    "total_candidates": 30,
+    "research_candidate_count": 13,
+    "news_enriched_count": 9,
+    "markets_passed": [
+      "A",
+      "HK",
+      "US"
+    ],
+    "latest_feedback_symbol": "VRTX",
+    "latest_feedback_action": "aegis_more_news",
+    "ranking_gate_approved_count": 0,
+    "user_facing_suggestion_allowed": false,
+    "a_share_retry_status": "WAITING",
+    "a_share_retry_ready_to_run": false
+  },
+  "checks": {
+    "dashboard_health_normal": true,
+    "candidate_pool_available": true,
+    "news_summary_available": true,
+    "multi_market_available": true,
+    "button_feedback_recorded": true,
+    "button_feedback_has_no_trading_side_effects": true,
+    "ranking_gate_blocks_unapproved_strategy": true,
+    "ranking_gate_has_no_trading_side_effects": true,
+    "a_share_retry_preflight_available": true,
+    "a_share_retry_preflight_safe": true
+  },
+  "blockers": [],
+  "next_actions": [
+    "Use Dashboard Top 3 candidate cards for simulation research only.",
+    "Use candidate buttons to record research intent; verify backend evidence after clicking.",
+    "Do not let A-share strategy affect recommendations while ranking_gate_approved_count is 0.",
+    "After 15:30 Asia/Shanghai rerun the A-share retry preflight before any retry chain."
+  ],
+  "safety": {
+    "simulation_only": true,
+    "no_broker_api": true,
+    "no_order_placement": true,
+    "no_trading_webhook": true,
+    "no_secret_values_read": true
+  }
+}
