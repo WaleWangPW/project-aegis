@@ -161,7 +161,12 @@ function actionHub(decision, feedback, dashboardIntent) {
     {page:'strategy',title:'确认策略 Gate',body:`A股 ranking gate 仍需放行；Gate=0 时不进入用户推荐。`,tone:'secondary',cta:'看策略'},
     {page:'evidence',title:'确认回传记录',body:`最近记录：${latest}。点击候选卡后会进入本机记录和后台 evidence。`,tone:'secondary',cta:'看回执'}
   ];
-  return `${localIntentBoard(feedback,dashboardIntent,true)}<section class="daily-command-panel" aria-label="今日操作面板"><div class="daily-command-head"><span>今日操作面板</span><b>${riskFirst?'先止血，再研究':'先研究，不交易'}</b><p>${riskFirst?'风险页是今天的第一入口；选股只作为研究参考。':'选股页只负责模拟研究记录，真实下单只能在外部软件手动完成。'}</p></div><div class="daily-command-steps">${steps.map((item,index)=>`<article class="hub-card ${item.tone}"><div><em>${index+1}</em><b>${esc(item.title)}</b><p>${esc(item.body)}</p></div><button type="button" data-page-jump="${esc(item.page)}"><span>${esc(item.cta)}</span><i>↗</i></button></article>`).join('')}</div></section>`;
+  const manualSteps = [
+    {title:'外部核对',body:'在券商/行情软件核对实时价格、公告、新闻和持仓冲突。'},
+    {title:'点按钮回传',body:'回到选股页点“加入模拟研究 / 要更多资讯 / 暂不关注”。'},
+    {title:'看证据回执',body:'证据页确认后台已记录；交易副作用必须是 0。'}
+  ];
+  return `${localIntentBoard(feedback,dashboardIntent,true)}<section class="daily-command-panel" aria-label="今日操作面板"><div class="daily-command-head"><span>今日操作面板</span><b>${riskFirst?'先止血，再研究':'先研究，不交易'}</b><p>${riskFirst?'风险页是今天的第一入口；选股只作为研究参考。':'选股页只负责模拟研究记录，真实下单只能在外部软件手动完成。'}</p></div><div class="manual-loop" aria-label="手动使用闭环"><b>今天真实怎么用</b>${manualSteps.map((item,index)=>`<p><span>${index+1}</span><strong>${esc(item.title)}</strong>${esc(item.body)}</p>`).join('')}</div><div class="daily-command-steps">${steps.map((item,index)=>`<article class="hub-card ${item.tone}"><div><em>${index+1}</em><b>${esc(item.title)}</b><p>${esc(item.body)}</p></div><button type="button" data-page-jump="${esc(item.page)}"><span>${esc(item.cta)}</span><i>↗</i></button></article>`).join('')}</div></section>`;
 }
 function commandStrip(decision, stockSelection, fullYearCoverage, rankingGate, feedback) {
   const researchCount = stockSelection?.summary?.research_candidate_count ?? 0;
