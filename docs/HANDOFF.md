@@ -8,6 +8,27 @@
 
 **Accepted engineering baseline:** `P25.6 PASS`
 
+**Latest update — stock-agent 10:29 managed-expanded evidence refresh:**
+Codex delegated the bounded A-share strategy cycle to OpenClaw `stock-agent`
+with the single approved command
+`make stock-agent-a-share-strategy-cycle-managed-expanded`. OpenClaw returned a
+compact evidence packet, and Codex independently verified the generated report.
+Latest cycle: `data/reports/stock_agent_a_share_strategy_cycle_latest.json`,
+generated `2026-07-13T10:29:55+08:00`, SHA256
+`1bee12a7ae7fb68cb287785bd819b936e1143164f1b4949cb01fd055c37fea90`,
+`status=PASS`, `overall_exit_code=0`, `command_count=15`,
+`failed_command_count=0`, `a_share_case_count=74`,
+`dragon_tiger_sample_count=24`, `refined_sandbox_pass_candidate_count=0`,
+`ranking_gate_reviewed_count=0`, `ranking_gate_approved_count=0`,
+`user_facing_suggestion_allowed=false`, and `ranking_impact_allowed=false`.
+Safety fields verified: `simulation_research_only=true`, `no_broker_api=true`,
+`no_order_placement=true`, `no_trading_webhook=true`, `no_secret_values=true`.
+Dashboard strategy Gate now surfaces this latest run timestamp and exit code in
+the first Gate panel and in the copied stock-agent task payload. Verification:
+`node --check dashboard/v2.js`, targeted pytest `17 passed`, Playwright
+desktop DOM check confirmed timestamp/exit display and copy payload update,
+with no console warnings/errors and no horizontal overflow.
+
 **Latest update — strategy page stock-agent task package:** The strategy page
 now converts the closed A-share ranking gate into a copyable OpenClaw
 `stock-agent` task package. The `Gate 摘要` panel still says

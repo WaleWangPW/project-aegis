@@ -1,8 +1,8 @@
 {
   "type": "a_share_signal_tuning_experiments",
   "status": "PASS",
-  "generated_at": "2026-07-13T09:15:26+08:00",
-  "run_id": "a_share_signal_tuning_experiments_20260713T091526",
+  "generated_at": "2026-07-13T10:29:51+08:00",
+  "run_id": "a_share_signal_tuning_experiments_20260713T102951",
   "command": "scripts/evaluate_a_share_signal_tuning_experiments.py",
   "thresholds": {
     "min_signal_case_count": 2,
@@ -1186,7 +1186,7 @@
     "source_deep_sandbox": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/a_share_tushare_source_deep_sandbox_latest.json"
   },
   "source_hashes": {
-    "source_deep_sandbox": "26670aa8799d809341566b1bb30e5d3c49ccaf3613a4ca3361d3d662c9faaa43"
+    "source_deep_sandbox": "5b2302495716aaf75956e791c0796762307fd682692bb1712bc4f76eb7b572c5"
   },
   "checks": {
     "source_deep_sandbox_pass": true,
@@ -1245,8 +1245,8 @@
     },
     "feedback_events_jsonl": {
       "exists": true,
-      "size": 1977,
-      "sha256": "c468fe43ec7097f129805fb71b6551c2db809213e2e13e9b2f1b2354f53ad65f"
+      "size": 4049,
+      "sha256": "05b1ce5fe8b2624fcd9e6769903ab35c3b5b66cd5316e8c4703eb7eb4b3ec50b"
     }
   },
   "production_record_files_after": {
@@ -1277,8 +1277,8 @@
     },
     "feedback_events_jsonl": {
       "exists": true,
-      "size": 1977,
-      "sha256": "c468fe43ec7097f129805fb71b6551c2db809213e2e13e9b2f1b2354f53ad65f"
+      "size": 4049,
+      "sha256": "05b1ce5fe8b2624fcd9e6769903ab35c3b5b66cd5316e8c4703eb7eb4b3ec50b"
     }
   }
 }

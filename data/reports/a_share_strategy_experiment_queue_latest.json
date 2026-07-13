@@ -1,8 +1,8 @@
 {
   "type": "a_share_strategy_experiment_queue",
   "status": "PASS",
-  "generated_at": "2026-07-13T09:15:29+08:00",
-  "run_id": "a_share_strategy_experiment_queue_20260713T091529",
+  "generated_at": "2026-07-13T10:29:55+08:00",
+  "run_id": "a_share_strategy_experiment_queue_20260713T102955",
   "command": "scripts/build_a_share_strategy_experiment_queue.py",
   "summary": {
     "experiment_count": 6,
@@ -208,15 +208,15 @@
     "diagnostics": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/a_share_tushare_strategy_diagnostics_latest.json"
   },
   "source_hashes": {
-    "source_probe": "fc5bc8843f9774bded35d5fe5dcbb9989292ccb394119c202e1e72487f87df5e",
-    "dragon_tiger": "92e4f7a679d13c7120627f82de4c925616d927b42ce827dfb0419a6bf61ab091",
-    "historical_cases": "1adb0b3fa937815f7acb41664d9ef371c5bb8d0fa5d4b20c02e8600cf1900ac9",
-    "feature_coverage": "29d45a795f025b91d38d541c762884657f845041bb7f08e832a1cd0cd4660fa4",
-    "deep_sandbox": "26670aa8799d809341566b1bb30e5d3c49ccaf3613a4ca3361d3d662c9faaa43",
-    "refined_sandbox": "e487d1200c1af79f5a9fcd615e221d76199d039a1b0b14efb9ccae2a5b2b354d",
-    "signal_tuning": "2d237a68aa1370b6e8d400802f639dbcecc05bd318da2b917dcd988a7e4dcd7a",
-    "ranking_gate": "13d158a5517e174a716af295a704b21f824ad8f303f6f50a3e1cd5f9f9b82a61",
-    "diagnostics": "274bda55a5ede267cf14c12713983350137e3d69ed165dfd350fdeed0dbd9492"
+    "source_probe": "8310572c63d3e52e1b1b3b05937e369b0b14a3d3de6c94f2d92e086127d6cdc2",
+    "dragon_tiger": "fb41e55e7aa56e21d013d2921b476b2a69e1bf204110f5b86848aa3bde67596d",
+    "historical_cases": "848e226b4ad37a96dcd3a0590152541909a363adad48625858f5c9884187d3fd",
+    "feature_coverage": "7f0631cdfd1a42d924b2780da42f491e0d96f2f36087a2a9f2f242a0fe9817c0",
+    "deep_sandbox": "5b2302495716aaf75956e791c0796762307fd682692bb1712bc4f76eb7b572c5",
+    "refined_sandbox": "cb3cee5ef206d7c2eb5d0e52765c406421634da8b4a88512bba72b30c0062f91",
+    "signal_tuning": "a17a6cb15a05a35767d6853e25cc3401069537115f426857a4a4c95f30b9d393",
+    "ranking_gate": "39250d98ee64f84f6921a48b72addeaf400c773f51ab0124313ef97f44cb6053",
+    "diagnostics": "c39cfd0546bb35140e77db31b3d3f235f1d1a3db6dd074d3e027cf52698746e9"
   },
   "checks": {
     "has_experiments": true,

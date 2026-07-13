@@ -1,7 +1,7 @@
 {
   "type": "aegis_strategy_specific_case_evaluation",
   "status": "PASS",
-  "generated_at": "2026-07-13T09:11:44+08:00",
+  "generated_at": "2026-07-13T10:26:26+08:00",
   "thresholds": {
     "min_case_count": 4,
     "min_win_rate": 0.5,
@@ -866,7 +866,7 @@
     "strategy_specific_historical_cases": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/aegis_strategy_specific_historical_cases_latest.json"
   },
   "source_hashes": {
-    "strategy_specific_historical_cases": "1adb0b3fa937815f7acb41664d9ef371c5bb8d0fa5d4b20c02e8600cf1900ac9"
+    "strategy_specific_historical_cases": "848e226b4ad37a96dcd3a0590152541909a363adad48625858f5c9884187d3fd"
   },
   "checks": {
     "source_pass": true,
@@ -916,8 +916,8 @@
     },
     "feedback_events_jsonl": {
       "exists": true,
-      "size": 1977,
-      "sha256": "c468fe43ec7097f129805fb71b6551c2db809213e2e13e9b2f1b2354f53ad65f"
+      "size": 4049,
+      "sha256": "05b1ce5fe8b2624fcd9e6769903ab35c3b5b66cd5316e8c4703eb7eb4b3ec50b"
     }
   },
   "production_record_files_after": {
@@ -948,8 +948,8 @@
     },
     "feedback_events_jsonl": {
       "exists": true,
-      "size": 1977,
-      "sha256": "c468fe43ec7097f129805fb71b6551c2db809213e2e13e9b2f1b2354f53ad65f"
+      "size": 4049,
+      "sha256": "05b1ce5fe8b2624fcd9e6769903ab35c3b5b66cd5316e8c4703eb7eb4b3ec50b"
     }
   }
 }
