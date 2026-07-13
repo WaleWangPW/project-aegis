@@ -95,3 +95,6 @@ def test_full_year_plan_distinguishes_waiting_for_current_trading_day_daily(tmp_
     assert report["blockers"] == ["current_trading_day_daily_not_yet_available"]
     assert report["current_cache"]["latest_expected_trade_date"] == "20260713"
     assert report["current_cache"]["previous_open_date_before_as_of"] == "20260712"
+    assert report["current_day_retry"]["needed"] is True
+    assert report["current_day_retry"]["retry_not_before_local_time"] == "15:30 Asia/Shanghai"
+    assert "build-p23-2-historical-market-cache" in report["current_day_retry"]["command"]

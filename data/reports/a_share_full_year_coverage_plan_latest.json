@@ -2,8 +2,8 @@
   "type": "a_share_full_year_coverage_plan",
   "status": "PASS",
   "coverage_status": "WAITING_CURRENT_TRADING_DAY_DAILY",
-  "generated_at": "2026-07-13T12:00:42+08:00",
-  "run_id": "a_share_full_year_coverage_plan_20260713T120037",
+  "generated_at": "2026-07-13T12:19:06+08:00",
+  "run_id": "a_share_full_year_coverage_plan_20260713T121902",
   "command": "scripts/build_a_share_full_year_coverage_plan.py --as-of 2026-07-13",
   "question": "Do we currently have materialized past-year daily records for the full A-share universe?",
   "answer": false,
@@ -43,6 +43,16 @@
   "blockers": [
     "current_trading_day_daily_not_yet_available"
   ],
+  "current_day_retry": {
+    "needed": true,
+    "retry_not_before_local_time": "15:30 Asia/Shanghai",
+    "reason": "Tushare daily cross-section for the current trading day is not available yet.",
+    "command": "make build-p23-2-historical-market-cache START_DATE=20250713 END_DATE=20260713",
+    "then_run": [
+      "make build-a-share-full-year-coverage-plan",
+      "make stock-agent-a-share-strategy-cycle-managed-expanded"
+    ]
+  },
   "overnight_openclaw_plan": {
     "owner": "stock-agent",
     "mode": "bounded_read_or_simulation_only",

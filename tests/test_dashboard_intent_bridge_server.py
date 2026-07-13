@@ -39,6 +39,9 @@ def test_process_payload_records_feedback_evidence(monkeypatch, tmp_path):
 
     assert report["status"] == "RECORDED"
     assert report["event_count"] == 1
+    assert report["latest_symbol"] == "PANW"
+    assert report["latest_action"] == "aegis_more_news"
+    assert report["latest_feedback_type"] == "user_requests_more_news"
     assert report["safety"]["trading_webhook_called"] is False
     latest = json.loads(feedback_handler.LATEST.read_text(encoding="utf-8"))
     assert latest["event"]["symbol"] == "PANW"

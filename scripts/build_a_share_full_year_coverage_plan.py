@@ -180,6 +180,10 @@ def build_plan(*, cache_dir: Path, as_of: date, run_id: str, command: str) -> di
     batch_count = (estimated_trading_days + batch_size - 1) // batch_size
     current_case_report = read_json(REPORTS / "aegis_strategy_specific_historical_cases_latest.json", {})
     stock_agent_cycle = read_json(REPORTS / "stock_agent_a_share_strategy_cycle_latest.json", {})
+    waiting_for_current_trade_day = status == "WAITING_CURRENT_TRADING_DAY_DAILY"
+    retry_cache_command = (
+        f"make build-p23-2-historical-market-cache START_DATE={compact(target_start)} END_DATE={compact(target_end)}"
+    )
     return {
         "type": "a_share_full_year_coverage_plan",
         "status": "PASS",
@@ -223,6 +227,16 @@ def build_plan(*, cache_dir: Path, as_of: date, run_id: str, command: str) -> di
             "user_facing_suggestion_allowed": False,
         },
         "blockers": blockers,
+        "current_day_retry": {
+            "needed": waiting_for_current_trade_day,
+            "retry_not_before_local_time": "15:30 Asia/Shanghai" if waiting_for_current_trade_day else None,
+            "reason": "Tushare daily cross-section for the current trading day is not available yet." if waiting_for_current_trade_day else None,
+            "command": retry_cache_command if waiting_for_current_trade_day else None,
+            "then_run": [
+                "make build-a-share-full-year-coverage-plan",
+                "make stock-agent-a-share-strategy-cycle-managed-expanded",
+            ] if waiting_for_current_trade_day else [],
+        },
         "overnight_openclaw_plan": {
             "owner": "stock-agent",
             "mode": "bounded_read_or_simulation_only",
@@ -280,7 +294,10 @@ def markdown(report: dict[str, Any]) -> str:
         "",
     ]
     if report["coverage_status"] == "WAITING_CURRENT_TRADING_DAY_DAILY":
+        retry = report.get("current_day_retry") or {}
         lines.append("- Note: cache is current through the previous open date; today's daily cross-section is not available yet.")
+        lines.append(f"- Retry after: `{retry.get('retry_not_before_local_time')}`")
+        lines.append(f"- Retry command: `{retry.get('command')}`")
     lines.extend(f"- `{item}`" for item in report["blockers"]) if report["blockers"] else lines.append("- None")
     lines.extend(
         [

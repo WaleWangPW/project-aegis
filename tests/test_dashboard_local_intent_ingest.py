@@ -39,6 +39,9 @@ def test_dashboard_local_intent_ingest_records_evidence_only(monkeypatch, tmp_pa
 
     assert report["status"] == "RECORDED"
     assert report["intent_count"] == 1
+    assert report["latest_symbol"] == "603893"
+    assert report["latest_action"] == "aegis_watch"
+    assert report["latest_feedback_type"] == "user_wants_simulation_watch"
     assert report["safety"]["broker_called"] is False
     latest = json.loads(feedback_handler.LATEST.read_text(encoding="utf-8"))
     event = latest["event"]

@@ -13,6 +13,8 @@
 ## Blockers
 
 - Note: cache is current through the previous open date; today's daily cross-section is not available yet.
+- Retry after: `15:30 Asia/Shanghai`
+- Retry command: `make build-p23-2-historical-market-cache START_DATE=20250713 END_DATE=20260713`
 - `current_trading_day_daily_not_yet_available`
 
 ## Overnight OpenClaw Plan

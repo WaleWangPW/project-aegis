@@ -88,6 +88,7 @@ def ingest(intents: list[dict[str, Any]], *, dry_run: bool = False) -> dict[str,
         events.append(event)
         if not dry_run:
             feedback_handler.append_event(event)
+    latest_event = events[-1] if events else None
     report = {
         "type": "aegis_dashboard_local_intent_ingest",
         "generated_at": _now(),
@@ -97,6 +98,10 @@ def ingest(intents: list[dict[str, Any]], *, dry_run: bool = False) -> dict[str,
         "source": "dashboard_local_intent_export",
         "intent_payload_sha256": _sha256_text(json.dumps(intents, ensure_ascii=False, sort_keys=True)),
         "events": events,
+        "latest_event": latest_event,
+        "latest_symbol": latest_event.get("symbol") if latest_event else None,
+        "latest_action": latest_event.get("action") if latest_event else None,
+        "latest_feedback_type": latest_event.get("feedback_type") if latest_event else None,
         "latest_feedback": str(feedback_handler.LATEST),
         "event_log": str(feedback_handler.EVENT_LOG),
         "safety": {
