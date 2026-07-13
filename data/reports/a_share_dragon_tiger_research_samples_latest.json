@@ -1,8 +1,8 @@
 {
   "type": "a_share_dragon_tiger_research_samples",
   "status": "PASS",
-  "generated_at": "2026-07-13T08:29:18+08:00",
-  "run_id": "a_share_dragon_tiger_research_samples_20260713T082832",
+  "generated_at": "2026-07-13T09:11:37+08:00",
+  "run_id": "a_share_dragon_tiger_research_samples_20260713T091111",
   "command": "scripts/collect_a_share_dragon_tiger_research_samples.py --lookback-dates 90 --forward-days 20 --max-symbols 24 --max-events-per-symbol 3",
   "summary": {
     "sample_count": 24,

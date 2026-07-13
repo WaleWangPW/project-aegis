@@ -1808,6 +1808,20 @@ details > summary::-webkit-details-marker { display: none; }
   white-space: nowrap;
 }
 
+.intent-buttons {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.copy-intents.machine {
+  color: var(--accent);
+  background: rgba(255,255,252,.92);
+  outline: 1px solid rgba(27,111,91,.18);
+}
+
 .intent-board-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -2592,6 +2606,10 @@ details > summary {
   .intent-board-grid,
   .intent-log li {
     grid-template-columns: 1fr;
+  }
+
+  .intent-buttons {
+    justify-content: stretch;
   }
 
   .intent-board-head .copy-intents {

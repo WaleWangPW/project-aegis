@@ -1,8 +1,8 @@
 status=PASS
-run_id=a_share_signal_tuning_experiments_20260713T083606
-generated_at=2026-07-13T08:36:06+08:00
+run_id=a_share_signal_tuning_experiments_20260713T091526
+generated_at=2026-07-13T09:15:26+08:00
 report_json=/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/a_share_signal_tuning_experiments_latest.json
-report_json_sha256=83a50c5ab89959261ba023d4a432912bd127056c75973ce2e187a1145abe0afb
+report_json_sha256=2d237a68aa1370b6e8d400802f639dbcecc05bd318da2b917dcd988a7e4dcd7a
 tuned_experiment_count=4
 tuned_pass_candidate_count=0
 tuned_fail_count=4

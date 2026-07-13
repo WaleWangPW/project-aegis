@@ -90,6 +90,11 @@ daily-real-scene-pilot:
 daily-real-scene-pilot-dry-run:
 	.venv/bin/python scripts/run_aegis_daily_real_scene_pilot.py --send-dry-run
 
+INTENTS_FILE ?= data/local/dashboard_local_intents.json
+
+ingest-dashboard-local-intents:
+	.venv/bin/python scripts/ingest_dashboard_local_intents.py --file $(INTENTS_FILE)
+
 probe-a-share-tushare-strategy-sources:
 	.venv/bin/python scripts/probe_a_share_tushare_strategy_sources.py
 

@@ -8,6 +8,57 @@
 
 **Accepted engineering baseline:** `P25.6 PASS`
 
+**Latest update — Dashboard intent export can now be ingested as backend
+evidence:** Dashboard local clicks are no longer trapped in browser-only state.
+`dashboard/v2.js` now exports a machine-readable
+`aegis_dashboard_local_intents` JSON payload through the new `复制后台JSON`
+button, including `symbol`, `action`, `time`, `name`, `market`, `status`, and
+`score`. New script `scripts/ingest_dashboard_local_intents.py` validates that
+payload and reuses `scripts/handle_aegis_stock_card_action.py` to append
+simulation-only feedback evidence. The stock feedback handler now labels
+Dashboard-originated records as `dashboard_local_intent_export` while preserving
+the original Feishu stock-assistant path. The bridge is explicit and bounded:
+it only writes `aegis_stock_feedback_events.jsonl`,
+`aegis_stock_feedback_latest.json`, and
+`aegis_dashboard_local_intent_ingest_latest.json` when deliberately run; it
+does not create PaperTrade, mutate holdings, call brokers, place orders, or
+use trading webhooks. Verification: `node --check dashboard/v2.js` PASS,
+`pytest tests/test_dashboard_local_intent_ingest.py
+tests/test_dashboard_schema.py tests/test_dashboard_paper_review_fields.py -q`
+PASS with `11 passed`, Playwright confirmed the JSON button appears after a
+candidate click, JSON payload parses with one intent, desktop/mobile have no
+horizontal overflow, and a dry-run ingest exited `0`.
+
+**Latest update — OpenClaw stock-agent 09:15 strategy gate rerun:** Codex
+delegated the A-share strategy continuation to OpenClaw `stock-agent` with one
+allowed command: `make stock-agent-a-share-strategy-cycle-managed-expanded`.
+OpenClaw ran the command and Codex independently verified the current report
+hashes. Latest cycle:
+`data/reports/stock_agent_a_share_strategy_cycle_latest.json`, status `PASS`,
+generated `2026-07-13T09:15:29+08:00`, SHA256
+`7d3b243765dbe4ab5a2a0262d1759c284208797e03326b4769131d43315527d9`,
+`overall_exit_code=0`, `command_count=15`, `failed_command_count=0`,
+`historical_case_count=118`, `a_share_case_count=74`,
+`refined_sandbox_pass_candidate_count=0`,
+`ranking_gate_approved_count=0`, `ranking_impact_allowed=false`, and
+`user_facing_suggestion_allowed=false`. Ranking gate report SHA256:
+`13d158a5517e174a716af295a704b21f824ad8f303f6f50a3e1cd5f9f9b82a61`.
+Diagnostics report SHA256:
+`274bda55a5ede267cf14c12713983350137e3d69ed165dfd350fdeed0dbd9492`.
+Codex correction to the OpenClaw prose: the cycle JSON has `safety` fields
+confirming simulation/no broker/no order/no webhook/no secret values, but it
+does not currently include production record before/after hashes, so do not use
+that prose claim as evidence. Current gate root cause: refined sandbox produced
+zero pass candidates; gate itself has no candidate to review. Therefore no
+A-share strategy may affect Dashboard ranking or user-facing suggestions.
+
+**Current next step:** implement a backend UX for the Dashboard intent bridge
+(for example a local `INTENTS_FILE` handoff or stock-assistant callback
+automation) so the user does not need to paste JSON manually, and continue
+stock-agent strategy improvement upstream of ranking gate: stale/full-year
+coverage, risk-veto-before-retest, and sample expansion. Do not weaken the
+gate or turn `ranking_gate_approved_count=0` into a recommendation.
+
 **Latest update — Dashboard local interaction receipts:** Dashboard now has a
 first usable interaction receipt loop. Candidate card buttons
 `加入模拟研究 / 要更多资讯 / 暂不关注` write browser-local intent records to

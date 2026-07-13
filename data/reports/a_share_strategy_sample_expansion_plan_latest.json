@@ -1,8 +1,8 @@
 {
   "type": "a_share_strategy_sample_expansion_plan",
   "status": "PASS",
-  "generated_at": "2026-07-13T08:36:07+08:00",
-  "run_id": "a_share_strategy_sample_expansion_plan_20260713T083607",
+  "generated_at": "2026-07-13T09:15:26+08:00",
+  "run_id": "a_share_strategy_sample_expansion_plan_20260713T091526",
   "command": "scripts/plan_a_share_strategy_sample_expansion.py",
   "summary": {
     "blocked_ranking_gate_item_count": 0,
@@ -42,9 +42,9 @@
     "historical_cases": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/aegis_strategy_specific_historical_cases_latest.json"
   },
   "source_hashes": {
-    "ranking_gate": "0062fb22bb93d663b6f7c36564b737030ba5d0b602c4dbd062a2f8aefe85276c",
-    "dragon_tiger": "f17cc763d2a68f07665478473436d661d706a17da767811ad74debd192065e21",
-    "historical_cases": "7474dd2e1563e96fa595f2b0d6d876c041c13d7b158ad9939efaa96814ac1761"
+    "ranking_gate": "13d158a5517e174a716af295a704b21f824ad8f303f6f50a3e1cd5f9f9b82a61",
+    "dragon_tiger": "92e4f7a679d13c7120627f82de4c925616d927b42ce827dfb0419a6bf61ab091",
+    "historical_cases": "1adb0b3fa937815f7acb41664d9ef371c5bb8d0fa5d4b20c02e8600cf1900ac9"
   },
   "checks": {
     "ranking_gate_loaded": true,

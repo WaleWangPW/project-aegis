@@ -1,6 +1,6 @@
 {
   "overall_status": "PASS",
-  "generated_at": "2026-07-13T08:28:27+08:00",
+  "generated_at": "2026-07-13T09:11:07+08:00",
   "provider": "tushare",
   "market": "A",
   "network_used": true,
@@ -21,7 +21,7 @@
     "priority_ready_count": 4,
     "historical_scan_requested": true,
     "historical_scan_target": "daily_core",
-    "historical_scan_date_count": 29,
+    "historical_scan_date_count": 24,
     "historical_scan_pass_count": 3,
     "modules_ready": [
       "A 股因子与日线基础池",
@@ -39,7 +39,7 @@
       "priority": 1,
       "description": "大单/中单/小单资金结构",
       "status": "PASS",
-      "row_count": 5085,
+      "row_count": 5193,
       "columns": [
         "ts_code",
         "trade_date",
@@ -62,7 +62,7 @@
         "net_mf_vol",
         "net_mf_amount"
       ],
-      "sample_hash": "4988b102994b4b88342a02e4b2fe3c584dfa13d2ae66b340eaf2e68833edc104",
+      "sample_hash": "4c42449fed294490d0480fe01cde2936015923082f58d0d0cd89c164ddd3ac77",
       "error_type": null,
       "error_message": null,
       "latest_trade_date": "20260713",
@@ -70,7 +70,7 @@
       "historical_scan_used": true,
       "historical_scan_target": "daily_core",
       "historical_probe_dates_checked": 1,
-      "historical_matched_trade_date": "20240703",
+      "historical_matched_trade_date": "20260611",
       "historical_scan_error_count": 0,
       "historical_scan_last_error": null
     },
@@ -238,7 +238,7 @@
       "priority": 3,
       "description": "因子基础池，用于估值、动量、波动率输入",
       "status": "PASS",
-      "row_count": 5583,
+      "row_count": 5511,
       "columns": [
         "ts_code",
         "trade_date",
@@ -271,7 +271,7 @@
         "rsi_6",
         "rsi_12"
       ],
-      "sample_hash": "7780aa6d906e8a5d0bd20bc9df808dbb5707d5efcacad266522dfd8d1c2ba4ff",
+      "sample_hash": "40ea0ae5698c93df3a11a719265ee86f42cb764fafca4d1ff4d55bd6daebbc92",
       "error_type": null,
       "error_message": null,
       "latest_trade_date": "20260713",
@@ -279,7 +279,7 @@
       "historical_scan_used": true,
       "historical_scan_target": "daily_core",
       "historical_probe_dates_checked": 1,
-      "historical_matched_trade_date": "20240703",
+      "historical_matched_trade_date": "20260611",
       "historical_scan_error_count": 0,
       "historical_scan_last_error": null
     },
@@ -290,7 +290,7 @@
       "priority": 3,
       "description": "日线基本面、换手率、市值、估值输入",
       "status": "PASS",
-      "row_count": 5335,
+      "row_count": 5511,
       "columns": [
         "ts_code",
         "trade_date",
@@ -311,7 +311,7 @@
         "total_mv",
         "circ_mv"
       ],
-      "sample_hash": "aed6b5fc8b332381fb9da9221310dc1ed286cef3888c7f1d93229d2960401465",
+      "sample_hash": "8ae9962eb3d6a82c43e05832179f187e63f60c87a73528d32e3671928c890af5",
       "error_type": null,
       "error_message": null,
       "latest_trade_date": "20260713",
@@ -319,7 +319,7 @@
       "historical_scan_used": true,
       "historical_scan_target": "daily_core",
       "historical_probe_dates_checked": 1,
-      "historical_matched_trade_date": "20240703",
+      "historical_matched_trade_date": "20260611",
       "historical_scan_error_count": 0,
       "historical_scan_last_error": null
     },

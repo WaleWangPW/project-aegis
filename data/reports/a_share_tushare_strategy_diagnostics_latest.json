@@ -1,7 +1,7 @@
 {
   "type": "a_share_tushare_strategy_diagnostics",
   "status": "PASS",
-  "generated_at": "2026-07-13T08:36:07+08:00",
+  "generated_at": "2026-07-13T09:15:26+08:00",
   "summary": {
     "a_share_case_count": 74,
     "proxy_pass_count": 0,
@@ -210,10 +210,10 @@
     "historical_cases": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/aegis_strategy_specific_historical_cases_latest.json"
   },
   "source_hashes": {
-    "proxy_evaluation": "e725fdf5f63494a956adc195f30439e33057ee36e4eaec66c1a3c07010af0680",
-    "feature_coverage": "5b193071c6694103c4575cd21934ca21f15257214e9c3ead89a91028d31f0db0",
-    "deep_sandbox": "968f025840e7891948ad1a8ac7f1860f33896c9648058cdf48cdfc016607fae3",
-    "historical_cases": "7474dd2e1563e96fa595f2b0d6d876c041c13d7b158ad9939efaa96814ac1761"
+    "proxy_evaluation": "4e424a742f4a8871fefed13f5e017969309e99b5f09c5cecbb241c55d05d3e1b",
+    "feature_coverage": "29d45a795f025b91d38d541c762884657f845041bb7f08e832a1cd0cd4660fa4",
+    "deep_sandbox": "26670aa8799d809341566b1bb30e5d3c49ccaf3613a4ca3361d3d662c9faaa43",
+    "historical_cases": "1adb0b3fa937815f7acb41664d9ef371c5bb8d0fa5d4b20c02e8600cf1900ac9"
   },
   "checks": {
     "proxy_report_pass": true,

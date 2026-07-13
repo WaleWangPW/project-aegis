@@ -29,6 +29,12 @@ ALLOWED_ACTIONS = {
     "aegis_manual_external": "user_reports_external_manual_action_intent",
 }
 
+SOURCE_LABELS = {
+    "dashboard-local": "dashboard_local_intent_export",
+    "dashboard_local_intent_export": "dashboard_local_intent_export",
+    "openclaw_stock_assistant_feishu_card": "openclaw_stock_assistant_feishu_card",
+}
+
 SECRET_PATTERNS = [
     re.compile(r"(?i)(api[_-]?key|secret|token|password|cookie|bearer)\s*[:=]"),
     re.compile(r"(?i)xox[baprs]-[a-z0-9-]+"),
@@ -62,10 +68,11 @@ def build_event(value: dict[str, Any]) -> dict[str, Any]:
     action = str(value.get("action") or "")
     if action not in ALLOWED_ACTIONS:
         raise ValueError(f"unsupported action: {action}")
+    source = SOURCE_LABELS.get(str(value.get("source") or ""), "openclaw_stock_assistant_feishu_card")
     event = {
         "event_id": "aegis_stock_feedback_" + dt.datetime.now(dt.timezone.utc).strftime("%Y%m%dT%H%M%S%fZ"),
         "received_at": dt.datetime.now(dt.timezone.utc).astimezone().isoformat(),
-        "source": "openclaw_stock_assistant_feishu_card",
+        "source": source,
         "action": action,
         "feedback_type": ALLOWED_ACTIONS[action],
         "symbol": value.get("symbol"),
@@ -73,6 +80,7 @@ def build_event(value: dict[str, Any]) -> dict[str, Any]:
         "market": value.get("market"),
         "status": value.get("status"),
         "score": value.get("score"),
+        "dashboard_recorded_at": value.get("dashboard_recorded_at") or value.get("time"),
         "raw_value_sha256": _sha256_text(json.dumps(value, ensure_ascii=False, sort_keys=True)),
         "record_mode": "feedback_evidence_only",
         "effects": {
