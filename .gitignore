@@ -35,6 +35,7 @@ output/
 
 # Local logs that may include terminal-specific state
 *.log
+data/runtime/
 
 # OS/editor noise
 .DS_Store

@@ -87,6 +87,18 @@ serve-dashboard:
 serve-dashboard-intent-bridge:
 	.venv/bin/python scripts/run_aegis_dashboard_intent_bridge_server.py --port 8080
 
+dashboard-start:
+	.venv/bin/python scripts/manage_aegis_dashboard_intent_bridge.py start
+
+dashboard-stop:
+	.venv/bin/python scripts/manage_aegis_dashboard_intent_bridge.py stop
+
+dashboard-status:
+	.venv/bin/python scripts/manage_aegis_dashboard_intent_bridge.py status
+
+dashboard-open:
+	.venv/bin/python scripts/manage_aegis_dashboard_intent_bridge.py open
+
 daily-real-scene-pilot:
 	.venv/bin/python scripts/run_aegis_daily_real_scene_pilot.py
 

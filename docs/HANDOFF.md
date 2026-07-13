@@ -8,6 +8,25 @@
 
 **Accepted engineering baseline:** `P25.6 PASS`
 
+**Latest update — one-command daily Dashboard launcher:** Dashboard intent
+bridge no longer has to run as a foreground-only command. New manager
+`scripts/manage_aegis_dashboard_intent_bridge.py` adds `make dashboard-start`,
+`make dashboard-status`, `make dashboard-stop`, and `make dashboard-open`.
+It writes runtime state under `data/runtime/`, starts
+`scripts/run_aegis_dashboard_intent_bridge_server.py` in the background, checks
+`/api/dashboard-intents/health`, and prints the same safety boundary:
+simulation-only, no broker API, no order placement, no trading webhook. Latest
+manual bridge check: `make dashboard-start` returned `RUNNING`, PID `30194`,
+health `READY`, and URL `http://127.0.0.1:8080/dashboard/index.html`. A backend
+POST probe recorded `PANW / aegis_more_news` with
+`source=dashboard_local_intent_export`; `paper_trade_created=false`,
+`holding_mutated=false`, `broker_called=false`, `order_placed=false`, and
+`trading_webhook_called=false`. Verification: Python compile PASS, targeted
+pytest `8 passed`, health/POST evidence PASS. Browser-click automation was not
+rerun in this step because local Node could not import `playwright`
+(`MODULE_NOT_FOUND`); the previous bridge commit already had browser-click
+evidence for `603893 / aegis_more_news`.
+
 **Latest update — Dashboard click now auto-ingests through a local bridge:**
 The Dashboard no longer requires manual copy/paste for local feedback when run
 with `make serve-dashboard-intent-bridge`. New server
@@ -29,9 +48,11 @@ clicked `603893 / aegis_more_news`; `/api/dashboard-intents` returned `200`,
 pytest `13 passed`, and Playwright desktop/mobile no overflow/no console
 issues.
 
-**Current usage:** use `make serve-dashboard-intent-bridge` instead of the plain
-static server for real daily Dashboard use. Plain `make serve-dashboard` remains
-a read-only/static fallback but will not auto-ingest button feedback.
+**Current usage:** use `make dashboard-open` or `make dashboard-start` instead
+of the plain static server for real daily Dashboard use. Plain
+`make serve-dashboard` remains a read-only/static fallback but will not
+auto-ingest button feedback. `make serve-dashboard-intent-bridge` remains useful
+for foreground debugging.
 
 **Latest update — Dashboard intent export can now be ingested as backend
 evidence:** Dashboard local clicks are no longer trapped in browser-only state.
@@ -77,11 +98,10 @@ that prose claim as evidence. Current gate root cause: refined sandbox produced
 zero pass candidates; gate itself has no candidate to review. Therefore no
 A-share strategy may affect Dashboard ranking or user-facing suggestions.
 
-**Current next step:** implement a backend UX for the Dashboard intent bridge
-(for example a local `INTENTS_FILE` handoff or stock-assistant callback
-automation) so the user does not need to paste JSON manually, and continue
-stock-agent strategy improvement upstream of ranking gate: stale/full-year
-coverage, risk-veto-before-retest, and sample expansion. Do not weaken the
+**Current next step:** continue stock-agent strategy improvement upstream of
+ranking gate: stale/full-year coverage, risk-veto-before-retest, and sample
+expansion. Separately, improve Dashboard IA/visual clarity and mobile/external
+access only after the localhost daily path remains stable. Do not weaken the
 gate or turn `ranking_gate_approved_count=0` into a recommendation.
 
 **Latest update — Dashboard local interaction receipts:** Dashboard now has a

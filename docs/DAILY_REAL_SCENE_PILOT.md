@@ -56,10 +56,18 @@ Stock assistant buttons record feedback evidence only:
 
 ## How To Use The Result
 
-1. Start the local Dashboard intent bridge:
+1. Start or open the local Dashboard intent bridge:
 
 ```bash
-make serve-dashboard-intent-bridge
+make dashboard-open
+```
+
+If you want to keep the browser untouched, use:
+
+```bash
+make dashboard-start
+make dashboard-status
+make dashboard-stop
 ```
 
 2. Open `http://localhost:8080/dashboard/index.html`.
@@ -75,12 +83,18 @@ backend evidence.
 
 ## Dashboard Button Feedback
 
-`make serve-dashboard-intent-bridge` keeps the normal Dashboard URL while adding
-a local-only endpoint:
+`make dashboard-open` / `make dashboard-start` keep the normal Dashboard URL
+while adding a local-only endpoint:
 
 ```text
 POST /api/dashboard-intents
 ```
+
+The service is managed by:
+
+- PID: `data/runtime/aegis_dashboard_intent_bridge.pid`
+- Log: `data/runtime/aegis_dashboard_intent_bridge.log`
+- Health: `http://127.0.0.1:8080/api/dashboard-intents/health`
 
 The endpoint accepts Dashboard research intents and writes feedback evidence via
 `scripts/ingest_dashboard_local_intents.py`. It does not create PaperTrade
