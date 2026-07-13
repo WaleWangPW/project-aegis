@@ -1,29 +1,35 @@
 {
   "project": "Project Aegis",
   "type": "p23_2_historical_market_cache_manifest",
-  "generated_at": "2026-07-10T13:13:42.242001+00:00",
-  "start_date": "20230901",
-  "end_date": "20240731",
+  "generated_at": "2026-07-13T00:18:44.134990+00:00",
+  "start_date": "20240801",
+  "end_date": "20260710",
   "trade_calendar": {
     "path": "data/cache/p23_2_historical_market/trade_calendar.json",
-    "sha256": "f34de1ab81b9b11999c0dd0f98a6d851df2aa3e15e63e5ea2bf5fd500d5f13cd",
-    "open_day_count": 220
+    "sha256": "fa7de2ae4cd0732c2044ddf10cdfd58bf76093352d66cb6e1a413f58db12deef",
+    "open_day_count": 469
   },
   "stock_basic": {
     "path": "data/cache/p23_2_historical_market/stock_basic_all.json",
-    "sha256": "0bbc2d38cc4cde25b19d947ab5bd85c1558835da35985f73e62ab16449e99ae8",
+    "sha256": "ba254e6efd76b8d2a90066dec583d32e3aaac94284f848124ef1cb968cdd9949",
     "row_count": 5865
   },
   "daily_cache": {
     "directory": "data/cache/p23_2_historical_market/daily_by_trade_date",
-    "expected_count": 220,
-    "actual_count": 220,
-    "fetched_this_run": 37,
-    "reused_this_run": 183,
-    "failed_dates": []
+    "expected_count": 469,
+    "actual_count": 688,
+    "fetched_this_run": 468,
+    "reused_this_run": 0,
+    "failed_dates": [
+      {
+        "trade_date": "20260508",
+        "error_type": "RuntimeError",
+        "error": "daily 20260508 insufficient rows: 0"
+      }
+    ]
   },
   "dry_run": true,
   "sent": false,
   "trading_called": false,
-  "overall_verdict": "PASS"
+  "overall_verdict": "FAIL"
 }

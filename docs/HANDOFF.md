@@ -8,6 +8,40 @@
 
 **Accepted engineering baseline:** `P25.6 PASS`
 
+**Latest update — post-partial-cache A-share managed-expanded rerun:** User
+selected option A after the bounded Tushare cache extension reached `468/469`
+target-window trading days and preserved `20260508` as an explicit missing
+date. Codex delegated the continuation to OpenClaw `stock-agent` with only one
+allowed command: `make stock-agent-a-share-strategy-cycle-managed-expanded`.
+Although the OpenClaw prose summary mentioned a possible SIGKILL, the on-disk
+latest reports prove the full managed cycle was regenerated at
+`2026-07-13T08:36:11+08:00`. Latest managed report:
+`data/reports/stock_agent_a_share_strategy_cycle_latest.json`, status `PASS`,
+SHA256 `69d0a9b51785dcccd965b09518037fbbdc3d91b212a9c9ca99d2f5762086e516`,
+`command_count=15`, `failed_command_count=0`, `candidate_count=33`,
+`historical_case_count=118`, `a_share_case_count=74`,
+`deep_sandbox_pass_candidate_count=0`,
+`refined_sandbox_pass_candidate_count=0`, `tuned_pass_candidate_count=0`,
+`ranking_gate_approved_count=0`, `ranking_impact_allowed=false`, and
+`user_facing_suggestion_allowed=false`. Current A-share coverage is still not
+full-year PASS: `full_year_coverage_status=PARTIAL_STALE_FULL_CROSS_SECTION_CACHE`
+and `full_year_coverage_answer=NO`. Current cache range is
+`20230901..20260710`, `daily_file_count=688`; the approved target-window
+partial cache has `468` files from `20240801..20260710` and is still missing
+`20260508`. Verification: `node --check dashboard/v2.js` PASS, targeted pytest
+`5 passed`, and `git diff --check` PASS. Safety boundary held: no broker API,
+no order placement, no trading webhook, no real trading, and no secret values
+were read or printed.
+
+**Current next step:** do not promote any A-share strategy into Dashboard
+ranking or user-facing suggestions. The next useful work is strategy
+diagnostics and refinement over the failed deep/refined/tuning results
+(`5` deep sandbox fails and `4` tuning fails), especially main-force moneyflow,
+dragon-tiger/hot-money, institutional holdings, holder-count concentration,
+and low-volatility combinations. If strict cache completeness is required,
+handle `20260508` as a separate one-day gap diagnosis/retry; do not rerun the
+full cache extension unless explicitly approved.
+
 **Latest update — overnight usable Dashboard + A-share full-year coverage gate:**
 Aegis now explicitly shows whether the current A-share strategy validation is
 candidate-level or full-market one-year validation. New command:

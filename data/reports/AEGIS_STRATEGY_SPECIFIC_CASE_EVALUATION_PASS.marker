@@ -1,11 +1,11 @@
-generated_at=2026-07-13T01:59:00+08:00
+generated_at=2026-07-13T08:29:25+08:00
 exit_code=0
 report_json=/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/aegis_strategy_specific_case_evaluation_latest.json
-report_json_sha256=a002ed883a040a4907b198dfb288cc7474c08791fac9c3f60c6d0edade0fbd06
+report_json_sha256=ec84e19b35f5da86dd9492018d0418bf4f838753a525759e33546f5ab5af46ad
 candidate_count=33
-simulation_research_candidate_count=10
+simulation_research_candidate_count=12
 watch_only_count=3
-downgraded_count=20
+downgraded_count=18
 user_facing_suggestion_allowed=false
 no_real_trade=true
 no_broker_api=true

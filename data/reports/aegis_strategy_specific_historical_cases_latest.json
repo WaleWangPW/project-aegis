@@ -1,21 +1,21 @@
 {
   "type": "aegis_strategy_specific_historical_cases",
   "status": "PASS",
-  "generated_at": "2026-07-13T01:59:00+08:00",
-  "run_id": "aegis_strategy_specific_historical_cases_20260712T175900Z",
+  "generated_at": "2026-07-13T08:29:24+08:00",
+  "run_id": "aegis_strategy_specific_historical_cases_20260713T002924Z",
   "summary": {
     "base_candidate_count": 13,
     "candidate_count": 33,
     "a_share_research_sample_candidate_count": 8,
     "a_share_dragon_tiger_research_sample_candidate_count": 12,
     "candidates_with_cases": 33,
-    "historical_case_count": 120,
+    "historical_case_count": 118,
     "data_gap_count": 0,
-    "a_share_case_count": 76,
-    "a_share_research_sample_case_count": 68,
-    "a_share_dragon_tiger_research_sample_case_count": 36,
+    "a_share_case_count": 74,
+    "a_share_research_sample_case_count": 66,
+    "a_share_dragon_tiger_research_sample_case_count": 34,
     "h_us_case_count": 44,
-    "direct_candidate_backtest_count": 120,
+    "direct_candidate_backtest_count": 118,
     "user_facing_suggestion_allowed": false,
     "next_stage": "evaluate expanded A-share research samples before any source strategy can influence ranking"
   },
@@ -46,18 +46,18 @@
     "source_status": "PASS",
     "added_candidate_count": 12,
     "added_symbols": [
-      "000506",
-      "603879",
-      "000628",
-      "603261",
-      "603389",
-      "600715",
-      "001376",
-      "600101",
-      "000099",
-      "603172",
-      "301049",
-      "301577"
+      "920088",
+      "002361",
+      "920078",
+      "603459",
+      "600396",
+      "300164",
+      "001896",
+      "000890",
+      "920012",
+      "600726",
+      "002297",
+      "603778"
     ],
     "event_count": 36,
     "research_sample_only": true,
@@ -84,16 +84,16 @@
       "case_count": 4,
       "summary": {
         "case_count": 4,
-        "win_rate": 0.25,
-        "average_return": -0.03987299427283694,
-        "average_max_drawdown": -0.13162914843771775,
-        "best_return": 0.05810972483336174,
-        "worst_return": -0.17124704491725773
+        "win_rate": 0.5,
+        "average_return": 0.057372115012818026,
+        "average_max_drawdown": -0.08057527226187947,
+        "best_return": 0.30434782608695654,
+        "worst_return": -0.10508771929824567
       },
       "user_facing_suggestion_allowed": false,
       "real_trade_allowed": false,
       "ts_code": "603893.SH",
-      "available_trade_dates": 220
+      "available_trade_dates": 688
     },
     {
       "symbol": "300059",
@@ -114,16 +114,16 @@
       "case_count": 4,
       "summary": {
         "case_count": 4,
-        "win_rate": 0.25,
-        "average_return": -0.03885265782271061,
-        "average_max_drawdown": -0.08405515278934739,
-        "best_return": 0.08576998050682261,
-        "worst_return": -0.10544452101998614
+        "win_rate": 0.5,
+        "average_return": 0.024795152504769546,
+        "average_max_drawdown": -0.058086560108343316,
+        "best_return": 0.16301843317972353,
+        "worst_return": -0.053817271589486904
       },
       "user_facing_suggestion_allowed": false,
       "real_trade_allowed": false,
       "ts_code": "300059.SZ",
-      "available_trade_dates": 220
+      "available_trade_dates": 688
     },
     {
       "symbol": "VRTX",
@@ -485,16 +485,16 @@
       "case_count": 4,
       "summary": {
         "case_count": 4,
-        "win_rate": 0.75,
-        "average_return": 0.01718225585372507,
-        "average_max_drawdown": -0.06264105730648717,
-        "best_return": 0.04428571428571426,
-        "worst_return": -0.0021134202183867856
+        "win_rate": 0.5,
+        "average_return": 0.01843935684702011,
+        "average_max_drawdown": -0.07146116778450218,
+        "best_return": 0.07518142235123348,
+        "worst_return": -0.06118500604594923
       },
       "user_facing_suggestion_allowed": false,
       "real_trade_allowed": false,
       "ts_code": "600150.SH",
-      "available_trade_dates": 220
+      "available_trade_dates": 674
     },
     {
       "symbol": "300475",
@@ -519,16 +519,16 @@
       "case_count": 4,
       "summary": {
         "case_count": 4,
-        "win_rate": 0.0,
-        "average_return": -0.12714493109306604,
-        "average_max_drawdown": -0.20182771169874653,
-        "best_return": -0.006502395619438661,
-        "worst_return": -0.20974820974820974
+        "win_rate": 0.25,
+        "average_return": 0.088520004596259,
+        "average_max_drawdown": -0.14130708669698816,
+        "best_return": 0.4877031181379008,
+        "worst_return": -0.08699578567128241
       },
       "user_facing_suggestion_allowed": false,
       "real_trade_allowed": false,
       "ts_code": "300475.SZ",
-      "available_trade_dates": 220
+      "available_trade_dates": 688
     },
     {
       "symbol": "300476",
@@ -555,15 +555,15 @@
       "summary": {
         "case_count": 4,
         "win_rate": 0.75,
-        "average_return": 0.004495591474208388,
-        "average_max_drawdown": -0.12070118474626812,
-        "best_return": 0.1466389054134445,
-        "worst_return": -0.14807197943444728
+        "average_return": 0.02463184253506845,
+        "average_max_drawdown": -0.14611210178072653,
+        "best_return": 0.20527989821882953,
+        "worst_return": -0.1643111711933145
       },
       "user_facing_suggestion_allowed": false,
       "real_trade_allowed": false,
       "ts_code": "300476.SZ",
-      "available_trade_dates": 220
+      "available_trade_dates": 688
     },
     {
       "symbol": "002709",
@@ -591,16 +591,16 @@
       "case_count": 4,
       "summary": {
         "case_count": 4,
-        "win_rate": 0.0,
-        "average_return": -0.07759009450562437,
-        "average_max_drawdown": -0.16538103457302594,
-        "best_return": -0.004312410158121671,
+        "win_rate": 0.25,
+        "average_return": -0.1012075047508793,
+        "average_max_drawdown": -0.16075720064446417,
+        "best_return": 0.019251336898395754,
         "worst_return": -0.18198417528910527
       },
       "user_facing_suggestion_allowed": false,
       "real_trade_allowed": false,
       "ts_code": "002709.SZ",
-      "available_trade_dates": 220
+      "available_trade_dates": 688
     },
     {
       "symbol": "688525",
@@ -629,16 +629,16 @@
       "case_count": 4,
       "summary": {
         "case_count": 4,
-        "win_rate": 0.0,
-        "average_return": -0.2217532480217104,
-        "average_max_drawdown": -0.29781119216804075,
-        "best_return": -0.06500872600349039,
-        "worst_return": -0.47955345225094037
+        "win_rate": 0.25,
+        "average_return": -0.004931497444686711,
+        "average_max_drawdown": -0.14514021862390397,
+        "best_return": 0.19807567767601086,
+        "worst_return": -0.11358024691358026
       },
       "user_facing_suggestion_allowed": false,
       "real_trade_allowed": false,
       "ts_code": "688525.SH",
-      "available_trade_dates": 220
+      "available_trade_dates": 688
     },
     {
       "symbol": "001309",
@@ -667,16 +667,16 @@
       "case_count": 4,
       "summary": {
         "case_count": 4,
-        "win_rate": 0.25,
-        "average_return": -0.07782971700417715,
-        "average_max_drawdown": -0.1915428355474283,
-        "best_return": 0.10820895522388052,
-        "worst_return": -0.1874999999999999
+        "win_rate": 0.5,
+        "average_return": 0.02137383025223369,
+        "average_max_drawdown": -0.17401947311128352,
+        "best_return": 0.2650905353048154,
+        "worst_return": -0.27581376184590034
       },
       "user_facing_suggestion_allowed": false,
       "real_trade_allowed": false,
       "ts_code": "001309.SZ",
-      "available_trade_dates": 220
+      "available_trade_dates": 688
     },
     {
       "symbol": "000100",
@@ -699,16 +699,16 @@
       "case_count": 4,
       "summary": {
         "case_count": 4,
-        "win_rate": 0.5,
-        "average_return": 0.005447954177738551,
-        "average_max_drawdown": -0.07693072092856476,
-        "best_return": 0.06696428571428559,
-        "worst_return": -0.09048723897911826
+        "win_rate": 0.75,
+        "average_return": 0.044812734560510964,
+        "average_max_drawdown": -0.08531880577405218,
+        "best_return": 0.1352549889135255,
+        "worst_return": -0.009685230024213065
       },
       "user_facing_suggestion_allowed": false,
       "real_trade_allowed": false,
       "ts_code": "000100.SZ",
-      "available_trade_dates": 220
+      "available_trade_dates": 688
     },
     {
       "symbol": "002407",
@@ -735,20 +735,20 @@
       "case_count": 4,
       "summary": {
         "case_count": 4,
-        "win_rate": 0.0,
-        "average_return": -0.061083640832751834,
-        "average_max_drawdown": -0.12248862191913723,
-        "best_return": -0.019512195121951237,
-        "worst_return": -0.09271523178807939
+        "win_rate": 0.5,
+        "average_return": -0.002104843961235142,
+        "average_max_drawdown": -0.1269757931690259,
+        "best_return": 0.0761979575805185,
+        "worst_return": -0.07648725212464591
       },
       "user_facing_suggestion_allowed": false,
       "real_trade_allowed": false,
       "ts_code": "002407.SZ",
-      "available_trade_dates": 220
+      "available_trade_dates": 688
     },
     {
-      "symbol": "000506",
-      "name": "招金黄金",
+      "symbol": "920088",
+      "name": "科力股份",
       "market": "A",
       "matched_strategy_ids": [
         "a_share_short_momentum",
@@ -758,100 +758,7 @@
       "sample_source": "tushare_dragon_tiger_hot_money",
       "source_status": "feature_gap_sample",
       "source_status_label": "龙虎榜/游资历史样本",
-      "source_score": 98,
-      "source_risk_flags": [
-        "龙虎榜/游资样本只用于沙盘验证，不用于推荐"
-      ],
-      "status": "case_assembled",
-      "case_count": 3,
-      "summary": {
-        "case_count": 3,
-        "win_rate": 0.3333333333333333,
-        "average_return": 0.027476097651536247,
-        "average_max_drawdown": -0.2208994708994709,
-        "best_return": 0.2407407407407407,
-        "worst_return": -0.07936507936507942
-      },
-      "user_facing_suggestion_allowed": false,
-      "real_trade_allowed": false,
-      "ts_code": "000506.SZ",
-      "available_trade_dates": 219
-    },
-    {
-      "symbol": "603879",
-      "name": "永悦科技",
-      "market": "A",
-      "matched_strategy_ids": [
-        "a_share_short_momentum",
-        "growth_breakout"
-      ],
-      "research_sample_only": true,
-      "sample_source": "tushare_dragon_tiger_hot_money",
-      "source_status": "feature_gap_sample",
-      "source_status_label": "龙虎榜/游资历史样本",
-      "source_score": 78,
-      "source_risk_flags": [
-        "龙虎榜/游资样本只用于沙盘验证，不用于推荐"
-      ],
-      "status": "case_assembled",
-      "case_count": 3,
-      "summary": {
-        "case_count": 3,
-        "win_rate": 1.0,
-        "average_return": 0.16826009586630053,
-        "average_max_drawdown": -0.13212121212121208,
-        "best_return": 0.2961165048543688,
-        "worst_return": 0.06392694063926951
-      },
-      "user_facing_suggestion_allowed": false,
-      "real_trade_allowed": false,
-      "ts_code": "603879.SH",
-      "available_trade_dates": 219
-    },
-    {
-      "symbol": "000628",
-      "name": "高新发展",
-      "market": "A",
-      "matched_strategy_ids": [
-        "a_share_short_momentum",
-        "growth_breakout"
-      ],
-      "research_sample_only": true,
-      "sample_source": "tushare_dragon_tiger_hot_money",
-      "source_status": "feature_gap_sample",
-      "source_status_label": "龙虎榜/游资历史样本",
-      "source_score": 70,
-      "source_risk_flags": [
-        "龙虎榜/游资样本只用于沙盘验证，不用于推荐"
-      ],
-      "status": "case_assembled",
-      "case_count": 3,
-      "summary": {
-        "case_count": 3,
-        "win_rate": 0.3333333333333333,
-        "average_return": -0.0754339668210486,
-        "average_max_drawdown": -0.1667290745869635,
-        "best_return": 0.006986702727067806,
-        "worst_return": -0.19059494121838272
-      },
-      "user_facing_suggestion_allowed": false,
-      "real_trade_allowed": false,
-      "ts_code": "000628.SZ",
-      "available_trade_dates": 210
-    },
-    {
-      "symbol": "603261",
-      "name": "立航科技",
-      "market": "A",
-      "matched_strategy_ids": [
-        "a_share_short_momentum",
-        "growth_breakout"
-      ],
-      "research_sample_only": true,
-      "sample_source": "tushare_dragon_tiger_hot_money",
-      "source_status": "feature_gap_sample",
-      "source_status_label": "龙虎榜/游资历史样本",
-      "source_score": 61,
+      "source_score": 92,
       "source_risk_flags": [
         "龙虎榜/游资样本只用于沙盘验证，不用于推荐"
       ],
@@ -860,19 +767,19 @@
       "summary": {
         "case_count": 3,
         "win_rate": 0.0,
-        "average_return": -0.17018089070263284,
-        "average_max_drawdown": -0.2093931297966004,
-        "best_return": -0.13122761315532405,
-        "worst_return": -0.21389917402449443
+        "average_return": -0.21855688350722194,
+        "average_max_drawdown": -0.3096998695084819,
+        "best_return": -0.12511091393078977,
+        "worst_return": -0.2827822120866591
       },
       "user_facing_suggestion_allowed": false,
       "real_trade_allowed": false,
-      "ts_code": "603261.SH",
-      "available_trade_dates": 220
+      "ts_code": "920088.BJ",
+      "available_trade_dates": 412
     },
     {
-      "symbol": "603389",
-      "name": "亚振家居",
+      "symbol": "002361",
+      "name": "神剑股份",
       "market": "A",
       "matched_strategy_ids": [
         "a_share_short_momentum",
@@ -882,69 +789,7 @@
       "sample_source": "tushare_dragon_tiger_hot_money",
       "source_status": "feature_gap_sample",
       "source_status_label": "龙虎榜/游资历史样本",
-      "source_score": 55,
-      "source_risk_flags": [
-        "龙虎榜/游资样本只用于沙盘验证，不用于推荐"
-      ],
-      "status": "case_assembled",
-      "case_count": 3,
-      "summary": {
-        "case_count": 3,
-        "win_rate": 0.3333333333333333,
-        "average_return": -0.09028783866723418,
-        "average_max_drawdown": -0.21797707719086004,
-        "best_return": 0.013944223107569709,
-        "worst_return": -0.1669505962521295
-      },
-      "user_facing_suggestion_allowed": false,
-      "real_trade_allowed": false,
-      "ts_code": "603389.SH",
-      "available_trade_dates": 220
-    },
-    {
-      "symbol": "600715",
-      "name": "文投控股",
-      "market": "A",
-      "matched_strategy_ids": [
-        "a_share_short_momentum",
-        "growth_breakout"
-      ],
-      "research_sample_only": true,
-      "sample_source": "tushare_dragon_tiger_hot_money",
-      "source_status": "feature_gap_sample",
-      "source_status_label": "龙虎榜/游资历史样本",
-      "source_score": 54,
-      "source_risk_flags": [
-        "龙虎榜/游资样本只用于沙盘验证，不用于推荐"
-      ],
-      "status": "case_assembled",
-      "case_count": 3,
-      "summary": {
-        "case_count": 3,
-        "win_rate": 0.3333333333333333,
-        "average_return": -0.08497095010252902,
-        "average_max_drawdown": -0.24826937388544867,
-        "best_return": 0.0592105263157896,
-        "worst_return": -0.2857142857142857
-      },
-      "user_facing_suggestion_allowed": false,
-      "real_trade_allowed": false,
-      "ts_code": "600715.SH",
-      "available_trade_dates": 219
-    },
-    {
-      "symbol": "001376",
-      "name": "百通能源",
-      "market": "A",
-      "matched_strategy_ids": [
-        "a_share_short_momentum",
-        "growth_breakout"
-      ],
-      "research_sample_only": true,
-      "sample_source": "tushare_dragon_tiger_hot_money",
-      "source_status": "feature_gap_sample",
-      "source_status_label": "龙虎榜/游资历史样本",
-      "source_score": 54,
+      "source_score": 81,
       "source_risk_flags": [
         "龙虎榜/游资样本只用于沙盘验证，不用于推荐"
       ],
@@ -953,19 +798,205 @@
       "summary": {
         "case_count": 3,
         "win_rate": 0.0,
-        "average_return": -0.17420313904577625,
-        "average_max_drawdown": -0.19828250415168278,
-        "best_return": -0.13716404077849853,
-        "worst_return": -0.20350877192982453
+        "average_return": -0.34222995500090114,
+        "average_max_drawdown": -0.3878175600955415,
+        "best_return": -0.27132226674298787,
+        "worst_return": -0.3942408376963351
       },
       "user_facing_suggestion_allowed": false,
       "real_trade_allowed": false,
-      "ts_code": "001376.SZ",
-      "available_trade_dates": 181
+      "ts_code": "002361.SZ",
+      "available_trade_dates": 688
     },
     {
-      "symbol": "600101",
-      "name": "明星电力",
+      "symbol": "920078",
+      "name": "族兴新材",
+      "market": "A",
+      "matched_strategy_ids": [
+        "a_share_short_momentum",
+        "growth_breakout"
+      ],
+      "research_sample_only": true,
+      "sample_source": "tushare_dragon_tiger_hot_money",
+      "source_status": "feature_gap_sample",
+      "source_status_label": "龙虎榜/游资历史样本",
+      "source_score": 71,
+      "source_risk_flags": [
+        "龙虎榜/游资样本只用于沙盘验证，不用于推荐"
+      ],
+      "status": "case_assembled",
+      "case_count": 3,
+      "summary": {
+        "case_count": 3,
+        "win_rate": 0.0,
+        "average_return": -0.17968913962784247,
+        "average_max_drawdown": -0.2378079077013769,
+        "best_return": -0.1384309266628767,
+        "worst_return": -0.22206506364922207
+      },
+      "user_facing_suggestion_allowed": false,
+      "real_trade_allowed": false,
+      "ts_code": "920078.BJ",
+      "available_trade_dates": 77
+    },
+    {
+      "symbol": "603459",
+      "name": "红板科技",
+      "market": "A",
+      "matched_strategy_ids": [
+        "a_share_short_momentum",
+        "growth_breakout"
+      ],
+      "research_sample_only": true,
+      "sample_source": "tushare_dragon_tiger_hot_money",
+      "source_status": "feature_gap_sample",
+      "source_status_label": "龙虎榜/游资历史样本",
+      "source_score": 64,
+      "source_risk_flags": [
+        "龙虎榜/游资样本只用于沙盘验证，不用于推荐"
+      ],
+      "status": "case_assembled",
+      "case_count": 3,
+      "summary": {
+        "case_count": 3,
+        "win_rate": 0.6666666666666666,
+        "average_return": 0.06287550904911676,
+        "average_max_drawdown": -0.2509820588650607,
+        "best_return": 0.15545685279187826,
+        "worst_return": -0.08496121132816137
+      },
+      "user_facing_suggestion_allowed": false,
+      "real_trade_allowed": false,
+      "ts_code": "603459.SH",
+      "available_trade_dates": 63
+    },
+    {
+      "symbol": "600396",
+      "name": "华电辽能",
+      "market": "A",
+      "matched_strategy_ids": [
+        "a_share_short_momentum",
+        "growth_breakout"
+      ],
+      "research_sample_only": true,
+      "sample_source": "tushare_dragon_tiger_hot_money",
+      "source_status": "feature_gap_sample",
+      "source_status_label": "龙虎榜/游资历史样本",
+      "source_score": 63,
+      "source_risk_flags": [
+        "龙虎榜/游资样本只用于沙盘验证，不用于推荐"
+      ],
+      "status": "case_assembled",
+      "case_count": 3,
+      "summary": {
+        "case_count": 3,
+        "win_rate": 0.0,
+        "average_return": -0.19088194621931584,
+        "average_max_drawdown": -0.3105750265513579,
+        "best_return": -0.17932148626817446,
+        "worst_return": -0.20197300103842175
+      },
+      "user_facing_suggestion_allowed": false,
+      "real_trade_allowed": false,
+      "ts_code": "600396.SH",
+      "available_trade_dates": 687
+    },
+    {
+      "symbol": "300164",
+      "name": "通源石油",
+      "market": "A",
+      "matched_strategy_ids": [
+        "a_share_short_momentum",
+        "growth_breakout"
+      ],
+      "research_sample_only": true,
+      "sample_source": "tushare_dragon_tiger_hot_money",
+      "source_status": "feature_gap_sample",
+      "source_status_label": "龙虎榜/游资历史样本",
+      "source_score": 52,
+      "source_risk_flags": [
+        "龙虎榜/游资样本只用于沙盘验证，不用于推荐"
+      ],
+      "status": "case_assembled",
+      "case_count": 3,
+      "summary": {
+        "case_count": 3,
+        "win_rate": 0.0,
+        "average_return": -0.13535777206678626,
+        "average_max_drawdown": -0.17318312348133422,
+        "best_return": -0.09285714285714286,
+        "worst_return": -0.18290258449304175
+      },
+      "user_facing_suggestion_allowed": false,
+      "real_trade_allowed": false,
+      "ts_code": "300164.SZ",
+      "available_trade_dates": 688
+    },
+    {
+      "symbol": "001896",
+      "name": "豫能控股",
+      "market": "A",
+      "matched_strategy_ids": [
+        "a_share_short_momentum",
+        "growth_breakout"
+      ],
+      "research_sample_only": true,
+      "sample_source": "tushare_dragon_tiger_hot_money",
+      "source_status": "feature_gap_sample",
+      "source_status_label": "龙虎榜/游资历史样本",
+      "source_score": 52,
+      "source_risk_flags": [
+        "龙虎榜/游资样本只用于沙盘验证，不用于推荐"
+      ],
+      "status": "case_assembled",
+      "case_count": 3,
+      "summary": {
+        "case_count": 3,
+        "win_rate": 0.0,
+        "average_return": -0.27014771967785656,
+        "average_max_drawdown": -0.33436123348017616,
+        "best_return": -0.16951710261569408,
+        "worst_return": -0.35482374768089053
+      },
+      "user_facing_suggestion_allowed": false,
+      "real_trade_allowed": false,
+      "ts_code": "001896.SZ",
+      "available_trade_dates": 688
+    },
+    {
+      "symbol": "000890",
+      "name": "法尔胜",
+      "market": "A",
+      "matched_strategy_ids": [
+        "a_share_short_momentum",
+        "growth_breakout"
+      ],
+      "research_sample_only": true,
+      "sample_source": "tushare_dragon_tiger_hot_money",
+      "source_status": "feature_gap_sample",
+      "source_status_label": "龙虎榜/游资历史样本",
+      "source_score": 52,
+      "source_risk_flags": [
+        "龙虎榜/游资样本只用于沙盘验证，不用于推荐"
+      ],
+      "status": "case_assembled",
+      "case_count": 3,
+      "summary": {
+        "case_count": 3,
+        "win_rate": 0.0,
+        "average_return": -0.3297459148210104,
+        "average_max_drawdown": -0.3350575649292415,
+        "best_return": -0.2902723735408561,
+        "worst_return": -0.3770883054892602
+      },
+      "user_facing_suggestion_allowed": false,
+      "real_trade_allowed": false,
+      "ts_code": "000890.SZ",
+      "available_trade_dates": 688
+    },
+    {
+      "symbol": "920012",
+      "name": "创达新材",
       "market": "A",
       "matched_strategy_ids": [
         "a_share_short_momentum",
@@ -984,19 +1015,81 @@
       "summary": {
         "case_count": 3,
         "win_rate": 0.0,
-        "average_return": -0.3773970870592163,
-        "average_max_drawdown": -0.39730392156862754,
-        "best_return": -0.34560480841472574,
-        "worst_return": -0.3939393939393939
+        "average_return": -0.17402288117591383,
+        "average_max_drawdown": -0.2953817861961107,
+        "best_return": -0.15514206688458643,
+        "worst_return": -0.20498804236419543
       },
       "user_facing_suggestion_allowed": false,
       "real_trade_allowed": false,
-      "ts_code": "600101.SH",
-      "available_trade_dates": 220
+      "ts_code": "920012.BJ",
+      "available_trade_dates": 60
     },
     {
-      "symbol": "000099",
-      "name": "中信海直",
+      "symbol": "600726",
+      "name": "华电能源",
+      "market": "A",
+      "matched_strategy_ids": [
+        "a_share_short_momentum",
+        "growth_breakout"
+      ],
+      "research_sample_only": true,
+      "sample_source": "tushare_dragon_tiger_hot_money",
+      "source_status": "feature_gap_sample",
+      "source_status_label": "龙虎榜/游资历史样本",
+      "source_score": 50,
+      "source_risk_flags": [
+        "龙虎榜/游资样本只用于沙盘验证，不用于推荐"
+      ],
+      "status": "case_assembled",
+      "case_count": 3,
+      "summary": {
+        "case_count": 3,
+        "win_rate": 0.0,
+        "average_return": -0.3178623856300951,
+        "average_max_drawdown": -0.33926217962904825,
+        "best_return": -0.2505263157894737,
+        "worst_return": -0.38113570741097214
+      },
+      "user_facing_suggestion_allowed": false,
+      "real_trade_allowed": false,
+      "ts_code": "600726.SH",
+      "available_trade_dates": 688
+    },
+    {
+      "symbol": "002297",
+      "name": "博云新材",
+      "market": "A",
+      "matched_strategy_ids": [
+        "a_share_short_momentum",
+        "growth_breakout"
+      ],
+      "research_sample_only": true,
+      "sample_source": "tushare_dragon_tiger_hot_money",
+      "source_status": "feature_gap_sample",
+      "source_status_label": "龙虎榜/游资历史样本",
+      "source_score": 50,
+      "source_risk_flags": [
+        "龙虎榜/游资样本只用于沙盘验证，不用于推荐"
+      ],
+      "status": "case_assembled",
+      "case_count": 2,
+      "summary": {
+        "case_count": 2,
+        "win_rate": 1.0,
+        "average_return": 0.2361652284155148,
+        "average_max_drawdown": -0.21379048642084852,
+        "best_return": 0.34890829694323156,
+        "worst_return": 0.12342215988779803
+      },
+      "user_facing_suggestion_allowed": false,
+      "real_trade_allowed": false,
+      "ts_code": "002297.SZ",
+      "available_trade_dates": 688
+    },
+    {
+      "symbol": "603778",
+      "name": "国晟科技",
       "market": "A",
       "matched_strategy_ids": [
         "a_share_short_momentum",
@@ -1011,112 +1104,19 @@
         "龙虎榜/游资样本只用于沙盘验证，不用于推荐"
       ],
       "status": "case_assembled",
-      "case_count": 3,
+      "case_count": 2,
       "summary": {
-        "case_count": 3,
+        "case_count": 2,
         "win_rate": 0.0,
-        "average_return": -0.17551218447086023,
-        "average_max_drawdown": -0.19070855832759318,
-        "best_return": -0.14248297537977994,
-        "worst_return": -0.19614003590664275
+        "average_return": -0.3312403100775194,
+        "average_max_drawdown": -0.3491552667578659,
+        "best_return": -0.3038759689922481,
+        "worst_return": -0.3586046511627907
       },
       "user_facing_suggestion_allowed": false,
       "real_trade_allowed": false,
-      "ts_code": "000099.SZ",
-      "available_trade_dates": 220
-    },
-    {
-      "symbol": "603172",
-      "name": "万丰股份",
-      "market": "A",
-      "matched_strategy_ids": [
-        "a_share_short_momentum",
-        "growth_breakout"
-      ],
-      "research_sample_only": true,
-      "sample_source": "tushare_dragon_tiger_hot_money",
-      "source_status": "feature_gap_sample",
-      "source_status_label": "龙虎榜/游资历史样本",
-      "source_score": 45,
-      "source_risk_flags": [
-        "龙虎榜/游资样本只用于沙盘验证，不用于推荐"
-      ],
-      "status": "case_assembled",
-      "case_count": 3,
-      "summary": {
-        "case_count": 3,
-        "win_rate": 1.0,
-        "average_return": 0.10053575963930868,
-        "average_max_drawdown": -0.06285313426917893,
-        "best_return": 0.15218769816106548,
-        "worst_return": 0.024969549330084995
-      },
-      "user_facing_suggestion_allowed": false,
-      "real_trade_allowed": false,
-      "ts_code": "603172.SH",
-      "available_trade_dates": 220
-    },
-    {
-      "symbol": "301049",
-      "name": "超越科技",
-      "market": "A",
-      "matched_strategy_ids": [
-        "a_share_short_momentum",
-        "growth_breakout"
-      ],
-      "research_sample_only": true,
-      "sample_source": "tushare_dragon_tiger_hot_money",
-      "source_status": "feature_gap_sample",
-      "source_status_label": "龙虎榜/游资历史样本",
-      "source_score": 44,
-      "source_risk_flags": [
-        "龙虎榜/游资样本只用于沙盘验证，不用于推荐"
-      ],
-      "status": "case_assembled",
-      "case_count": 3,
-      "summary": {
-        "case_count": 3,
-        "win_rate": 0.0,
-        "average_return": -0.1077301111570859,
-        "average_max_drawdown": -0.17200449643731686,
-        "best_return": -0.0684397163120567,
-        "worst_return": -0.1822493224932249
-      },
-      "user_facing_suggestion_allowed": false,
-      "real_trade_allowed": false,
-      "ts_code": "301049.SZ",
-      "available_trade_dates": 220
-    },
-    {
-      "symbol": "301577",
-      "name": "美信科技",
-      "market": "A",
-      "matched_strategy_ids": [
-        "a_share_short_momentum",
-        "growth_breakout"
-      ],
-      "research_sample_only": true,
-      "sample_source": "tushare_dragon_tiger_hot_money",
-      "source_status": "feature_gap_sample",
-      "source_status_label": "龙虎榜/游资历史样本",
-      "source_score": 43,
-      "source_risk_flags": [
-        "龙虎榜/游资样本只用于沙盘验证，不用于推荐"
-      ],
-      "status": "case_assembled",
-      "case_count": 3,
-      "summary": {
-        "case_count": 3,
-        "win_rate": 0.0,
-        "average_return": -0.2331172826586493,
-        "average_max_drawdown": -0.2539652156960619,
-        "best_return": -0.1328488372093023,
-        "worst_return": -0.29164705882352937
-      },
-      "user_facing_suggestion_allowed": false,
-      "real_trade_allowed": false,
-      "ts_code": "301577.SZ",
-      "available_trade_dates": 124
+      "ts_code": "603778.SH",
+      "available_trade_dates": 685
     }
   ],
   "historical_cases": [
@@ -1169,18 +1169,18 @@
       "event_aligned_case": false,
       "event_trade_dates": [],
       "required_endpoints": [],
-      "entry_date": "2023-12-12",
-      "exit_date": "2024-01-10",
-      "entry_close": 67.68,
-      "exit_close": 56.09,
-      "raw_return": -0.17124704491725773,
-      "max_drawdown": -0.1770094562647755,
+      "entry_date": "2024-08-05",
+      "exit_date": "2024-09-02",
+      "entry_close": 57.0,
+      "exit_close": 51.01,
+      "raw_return": -0.10508771929824567,
+      "max_drawdown": -0.1124064729424048,
       "holding_trade_days": 20,
       "point_in_time_case": true,
-      "data_cutoff_date": "2023-12-12",
+      "data_cutoff_date": "2024-08-05",
       "future_data_used_for_selection": false,
       "case_result": "loss",
-      "evidence_ref": "aegis_strategy_specific_case:a968877b0f6f6d0126eb94482aea650a5f217ce83cc2ab543f77cf0bf43dbfce"
+      "evidence_ref": "aegis_strategy_specific_case:4bf86e3d8f0d815ccf9d1d041522da3c2c4f514b53c9b226a58c0feb3c444bd2"
     },
     {
       "case_id": "aegis_case_603893_3",
@@ -1200,18 +1200,18 @@
       "event_aligned_case": false,
       "event_trade_dates": [],
       "required_endpoints": [],
-      "entry_date": "2024-03-22",
-      "exit_date": "2024-04-23",
-      "entry_close": 53.94,
-      "exit_close": 53.32,
-      "raw_return": -0.011494252873563204,
-      "max_drawdown": -0.1245828698553949,
+      "entry_date": "2025-07-08",
+      "exit_date": "2025-08-05",
+      "entry_close": 152.1,
+      "exit_close": 162.0,
+      "raw_return": 0.06508875739644981,
+      "max_drawdown": -0.04251497005988025,
       "holding_trade_days": 20,
       "point_in_time_case": true,
-      "data_cutoff_date": "2024-03-22",
+      "data_cutoff_date": "2025-07-08",
       "future_data_used_for_selection": false,
-      "case_result": "loss",
-      "evidence_ref": "aegis_strategy_specific_case:28aee076cd98948c320e1dbc961a66a564437359ff040f96ac42e6ad226b80c1"
+      "case_result": "win",
+      "evidence_ref": "aegis_strategy_specific_case:5c5965afa37c4c7b7686c457f5eeb46720651c0a8ce71082cefad68586842629"
     },
     {
       "case_id": "aegis_case_603893_4",
@@ -1231,18 +1231,18 @@
       "event_aligned_case": false,
       "event_trade_dates": [],
       "required_endpoints": [],
-      "entry_date": "2024-07-03",
-      "exit_date": "2024-07-31",
-      "entry_close": 58.51,
-      "exit_close": 61.91,
-      "raw_return": 0.05810972483336174,
-      "max_drawdown": -0.12317144528964308,
+      "entry_date": "2026-06-11",
+      "exit_date": "2026-07-10",
+      "entry_close": 160.08,
+      "exit_close": 208.8,
+      "raw_return": 0.30434782608695654,
+      "max_drawdown": -0.06562682370417527,
       "holding_trade_days": 20,
       "point_in_time_case": true,
-      "data_cutoff_date": "2024-07-03",
+      "data_cutoff_date": "2026-06-11",
       "future_data_used_for_selection": false,
       "case_result": "win",
-      "evidence_ref": "aegis_strategy_specific_case:5ba5fa413e39f59a80e90c8802bc8cb50b88d7cdcac1de6b9e9edd34c488b80b"
+      "evidence_ref": "aegis_strategy_specific_case:3b5caf0bbc4c5cb951d6d1f529d30934b536679fbc24e32c7b6ee88a0e86459d"
     },
     {
       "case_id": "aegis_case_300059_1",
@@ -1291,18 +1291,18 @@
       "event_aligned_case": false,
       "event_trade_dates": [],
       "required_endpoints": [],
-      "entry_date": "2023-12-12",
-      "exit_date": "2024-01-10",
-      "entry_close": 14.51,
-      "exit_close": 12.98,
-      "raw_return": -0.10544452101998614,
-      "max_drawdown": -0.10544452101998614,
+      "entry_date": "2024-08-05",
+      "exit_date": "2024-09-02",
+      "entry_close": 10.73,
+      "exit_close": 10.4,
+      "raw_return": -0.03075489282385835,
+      "max_drawdown": -0.052093023255814,
       "holding_trade_days": 20,
       "point_in_time_case": true,
-      "data_cutoff_date": "2023-12-12",
+      "data_cutoff_date": "2024-08-05",
       "future_data_used_for_selection": false,
       "case_result": "loss",
-      "evidence_ref": "aegis_strategy_specific_case:56594b702fbec2e13bff58adace5417cd781094253ad503cc4094dc8ef3d7458"
+      "evidence_ref": "aegis_strategy_specific_case:eaabef4eaf2f4fb50731e2736d243810f853bc3b20cdbe557e1412dc09b01238"
     },
     {
       "case_id": "aegis_case_300059_3",
@@ -1321,18 +1321,18 @@
       "event_aligned_case": false,
       "event_trade_dates": [],
       "required_endpoints": [],
-      "entry_date": "2024-03-22",
-      "exit_date": "2024-04-23",
-      "entry_close": 13.55,
-      "exit_close": 12.44,
-      "raw_return": -0.081918819188192,
-      "max_drawdown": -0.10701107011070121,
+      "entry_date": "2025-07-08",
+      "exit_date": "2025-08-05",
+      "entry_close": 23.15,
+      "exit_close": 23.63,
+      "raw_return": 0.020734341252699906,
+      "max_drawdown": -0.047286184210526216,
       "holding_trade_days": 20,
       "point_in_time_case": true,
-      "data_cutoff_date": "2024-03-22",
+      "data_cutoff_date": "2025-07-08",
       "future_data_used_for_selection": false,
-      "case_result": "loss",
-      "evidence_ref": "aegis_strategy_specific_case:da2421c429e17a2894082e9c7d7282be7e33e76f14b50fc381a39baf2aefda50"
+      "case_result": "win",
+      "evidence_ref": "aegis_strategy_specific_case:19b376093be5184d4630216f545bec48052e7b672623805519e7b952be741fe7"
     },
     {
       "case_id": "aegis_case_300059_4",
@@ -1351,18 +1351,18 @@
       "event_aligned_case": false,
       "event_trade_dates": [],
       "required_endpoints": [],
-      "entry_date": "2024-07-03",
-      "exit_date": "2024-07-31",
-      "entry_close": 10.26,
-      "exit_close": 11.14,
-      "raw_return": 0.08576998050682261,
-      "max_drawdown": -0.05233644859813069,
+      "entry_date": "2026-06-11",
+      "exit_date": "2026-07-10",
+      "entry_close": 17.36,
+      "exit_close": 20.19,
+      "raw_return": 0.16301843317972353,
+      "max_drawdown": -0.06153846153846154,
       "holding_trade_days": 20,
       "point_in_time_case": true,
-      "data_cutoff_date": "2024-07-03",
+      "data_cutoff_date": "2026-06-11",
       "future_data_used_for_selection": false,
       "case_result": "win",
-      "evidence_ref": "aegis_strategy_specific_case:2e57f95f5674d4e2986ae4254a90c54f01739bc4bfb0bc5556ab8855d2c8b11c"
+      "evidence_ref": "aegis_strategy_specific_case:b460d09945dc4072093b13d48c10f1a43a5e12f9fa68b653b6468c1eb90d598d"
     },
     {
       "case_id": "aegis_case_vrtx_1",
@@ -2545,18 +2545,18 @@
       "event_aligned_case": false,
       "event_trade_dates": [],
       "required_endpoints": [],
-      "entry_date": "2023-12-12",
-      "exit_date": "2024-01-10",
-      "entry_close": 28.78,
-      "exit_close": 29.16,
-      "raw_return": 0.013203613620569765,
-      "max_drawdown": -0.0383471074380165,
+      "entry_date": "2024-07-29",
+      "exit_date": "2024-08-26",
+      "entry_close": 41.35,
+      "exit_close": 38.82,
+      "raw_return": -0.06118500604594923,
+      "max_drawdown": -0.08101571946795649,
       "holding_trade_days": 20,
       "point_in_time_case": true,
-      "data_cutoff_date": "2023-12-12",
+      "data_cutoff_date": "2024-07-29",
       "future_data_used_for_selection": false,
-      "case_result": "win",
-      "evidence_ref": "aegis_strategy_specific_case:f7e58ad9cab3cbf1be108547274f376e9e74f5b71a73d8bc892c0bfa6b6289a1"
+      "case_result": "loss",
+      "evidence_ref": "aegis_strategy_specific_case:5fa8a46ab5053dd8bac57d5b66c352cc360f7404be3aa72cc38537d9cb647f9a"
     },
     {
       "case_id": "aegis_case_600150_stock_selection_workbench_3",
@@ -2576,18 +2576,18 @@
       "event_aligned_case": false,
       "event_trade_dates": [],
       "required_endpoints": [],
-      "entry_date": "2024-03-22",
-      "exit_date": "2024-04-23",
-      "entry_close": 35.0,
-      "exit_close": 36.55,
-      "raw_return": 0.04428571428571426,
-      "max_drawdown": -0.07655381505811021,
+      "entry_date": "2025-07-08",
+      "exit_date": "2025-08-05",
+      "entry_close": 32.97,
+      "exit_close": 35.01,
+      "raw_return": 0.061874431301182975,
+      "max_drawdown": -0.03558212354113288,
       "holding_trade_days": 20,
       "point_in_time_case": true,
-      "data_cutoff_date": "2024-03-22",
+      "data_cutoff_date": "2025-07-08",
       "future_data_used_for_selection": false,
       "case_result": "win",
-      "evidence_ref": "aegis_strategy_specific_case:58d4d479eddcf2c9675e9ef6b302997d6b4f21db607c591d2febcc931c1fe6d9"
+      "evidence_ref": "aegis_strategy_specific_case:56671f3ce5b54e3af9b82bc92fa020aaafa71886934ee93c215bc5e97491fb73"
     },
     {
       "case_id": "aegis_case_600150_stock_selection_workbench_4",
@@ -2607,18 +2607,18 @@
       "event_aligned_case": false,
       "event_trade_dates": [],
       "required_endpoints": [],
-      "entry_date": "2024-07-03",
-      "exit_date": "2024-07-31",
-      "entry_close": 40.44,
-      "exit_close": 40.98,
-      "raw_return": 0.01335311572700304,
-      "max_drawdown": -0.07169373549883995,
+      "entry_date": "2026-06-11",
+      "exit_date": "2026-07-10",
+      "entry_close": 34.45,
+      "exit_close": 37.04,
+      "raw_return": 0.07518142235123348,
+      "max_drawdown": -0.10527725689793732,
       "holding_trade_days": 20,
       "point_in_time_case": true,
-      "data_cutoff_date": "2024-07-03",
+      "data_cutoff_date": "2026-06-11",
       "future_data_used_for_selection": false,
       "case_result": "win",
-      "evidence_ref": "aegis_strategy_specific_case:fc2a6ee6824d3c0a7ecfecfa04e6a9dbeb747cf26ccae67b09476c1b4a72f6cf"
+      "evidence_ref": "aegis_strategy_specific_case:c2a2d4eebbbcf6b718f73f73e075c6e1b67ba31bd2f8f6d1477ee63d3b676b57"
     },
     {
       "case_id": "aegis_case_300475_stock_selection_workbench_1",
@@ -2669,18 +2669,18 @@
       "event_aligned_case": false,
       "event_trade_dates": [],
       "required_endpoints": [],
-      "entry_date": "2023-12-12",
-      "exit_date": "2024-01-10",
-      "entry_close": 37.5,
-      "exit_close": 29.8,
-      "raw_return": -0.20533333333333337,
-      "max_drawdown": -0.20533333333333337,
+      "entry_date": "2024-08-05",
+      "exit_date": "2024-09-02",
+      "entry_close": 25.83,
+      "exit_close": 25.22,
+      "raw_return": -0.023615950445218692,
+      "max_drawdown": -0.0685543964232489,
       "holding_trade_days": 20,
       "point_in_time_case": true,
-      "data_cutoff_date": "2023-12-12",
+      "data_cutoff_date": "2024-08-05",
       "future_data_used_for_selection": false,
       "case_result": "loss",
-      "evidence_ref": "aegis_strategy_specific_case:dc41a612a04d63c15d7be821917a6ae0ed349044ee8522a73c83815e78b6c4a2"
+      "evidence_ref": "aegis_strategy_specific_case:e574177dfe1bf1c3e98d5ef6c59fc6dec76c6f5e5d7fcc4ac2443236fba3979b"
     },
     {
       "case_id": "aegis_case_300475_stock_selection_workbench_3",
@@ -2700,18 +2700,18 @@
       "event_aligned_case": false,
       "event_trade_dates": [],
       "required_endpoints": [],
-      "entry_date": "2024-03-22",
-      "exit_date": "2024-04-23",
-      "entry_close": 43.29,
-      "exit_close": 34.21,
-      "raw_return": -0.20974820974820974,
-      "max_drawdown": -0.20974820974820974,
+      "entry_date": "2025-07-08",
+      "exit_date": "2025-08-05",
+      "entry_close": 35.2,
+      "exit_close": 34.39,
+      "raw_return": -0.02301136363636369,
+      "max_drawdown": -0.06164772727272727,
       "holding_trade_days": 20,
       "point_in_time_case": true,
-      "data_cutoff_date": "2024-03-22",
+      "data_cutoff_date": "2025-07-08",
       "future_data_used_for_selection": false,
       "case_result": "loss",
-      "evidence_ref": "aegis_strategy_specific_case:5b2bf558d27091b0bf36d8501a80ec2232fdcb29f854bffdd4ddd76a3bfc39fa"
+      "evidence_ref": "aegis_strategy_specific_case:e5998af66f7eff78c6d596674603e7f0372aa14336d3873afeb36143435799b9"
     },
     {
       "case_id": "aegis_case_300475_stock_selection_workbench_4",
@@ -2731,18 +2731,18 @@
       "event_aligned_case": false,
       "event_trade_dates": [],
       "required_endpoints": [],
-      "entry_date": "2024-07-03",
-      "exit_date": "2024-07-31",
-      "entry_close": 29.22,
-      "exit_close": 29.03,
-      "raw_return": -0.006502395619438661,
-      "max_drawdown": -0.1601745091928951,
+      "entry_date": "2026-06-11",
+      "exit_date": "2026-07-10",
+      "entry_close": 182.16,
+      "exit_close": 271.0,
+      "raw_return": 0.4877031181379008,
+      "max_drawdown": -0.20297142857142858,
       "holding_trade_days": 20,
       "point_in_time_case": true,
-      "data_cutoff_date": "2024-07-03",
+      "data_cutoff_date": "2026-06-11",
       "future_data_used_for_selection": false,
-      "case_result": "loss",
-      "evidence_ref": "aegis_strategy_specific_case:0cbec018324f98b3ddc8ec626767552040c179dac5a6b638a90c1dde25ef95ed"
+      "case_result": "win",
+      "evidence_ref": "aegis_strategy_specific_case:47cc00a6783d54d87043a92feb642a828f465c816ec47c6a2b73662f0bee0fc1"
     },
     {
       "case_id": "aegis_case_300476_stock_selection_workbench_1",
@@ -2793,18 +2793,18 @@
       "event_aligned_case": false,
       "event_trade_dates": [],
       "required_endpoints": [],
-      "entry_date": "2023-12-12",
-      "exit_date": "2024-01-10",
-      "entry_close": 19.45,
-      "exit_close": 16.57,
-      "raw_return": -0.14807197943444728,
-      "max_drawdown": -0.15012853470437004,
+      "entry_date": "2024-08-05",
+      "exit_date": "2024-09-02",
+      "entry_close": 30.62,
+      "exit_close": 31.8,
+      "raw_return": 0.03853690398432397,
+      "max_drawdown": -0.08304498269896188,
       "holding_trade_days": 20,
       "point_in_time_case": true,
-      "data_cutoff_date": "2023-12-12",
+      "data_cutoff_date": "2024-08-05",
       "future_data_used_for_selection": false,
-      "case_result": "loss",
-      "evidence_ref": "aegis_strategy_specific_case:bbefc6cd803749dc3ca2579a5bf34ac647f9004516966c9963cddc17d519f53c"
+      "case_result": "win",
+      "evidence_ref": "aegis_strategy_specific_case:05938dd84fbfd2a85f99d899d3fff6e534ab11beed2aeaa9a68e52b23dce13f2"
     },
     {
       "case_id": "aegis_case_300476_stock_selection_workbench_3",
@@ -2824,18 +2824,18 @@
       "event_aligned_case": false,
       "event_trade_dates": [],
       "required_endpoints": [],
-      "entry_date": "2024-03-22",
-      "exit_date": "2024-04-23",
-      "entry_close": 25.4,
-      "exit_close": 25.41,
-      "raw_return": 0.0003937007874015297,
-      "max_drawdown": -0.09094488188976368,
+      "entry_date": "2025-07-08",
+      "exit_date": "2025-08-05",
+      "entry_close": 157.2,
+      "exit_close": 189.47,
+      "raw_return": 0.20527989821882953,
+      "max_drawdown": -0.09884028963324887,
       "holding_trade_days": 20,
       "point_in_time_case": true,
-      "data_cutoff_date": "2024-03-22",
+      "data_cutoff_date": "2025-07-08",
       "future_data_used_for_selection": false,
       "case_result": "win",
-      "evidence_ref": "aegis_strategy_specific_case:64b268c76dc31be0ff9365f8fa028cf0de503c842400794a9e2b4f9f6b8f0008"
+      "evidence_ref": "aegis_strategy_specific_case:83dfedb0bd7345d24ac6537cd5a99ea41f5e384da5c05b23c8e6235be9ce8c7e"
     },
     {
       "case_id": "aegis_case_300476_stock_selection_workbench_4",
@@ -2855,18 +2855,18 @@
       "event_aligned_case": false,
       "event_trade_dates": [],
       "required_endpoints": [],
-      "entry_date": "2024-07-03",
-      "exit_date": "2024-07-31",
-      "entry_close": 33.62,
-      "exit_close": 38.55,
-      "raw_return": 0.1466389054134445,
-      "max_drawdown": -0.10204081632653061,
+      "entry_date": "2026-06-11",
+      "exit_date": "2026-07-10",
+      "entry_close": 325.48,
+      "exit_close": 272.0,
+      "raw_return": -0.1643111711933145,
+      "max_drawdown": -0.26287262872628725,
       "holding_trade_days": 20,
       "point_in_time_case": true,
-      "data_cutoff_date": "2024-07-03",
+      "data_cutoff_date": "2026-06-11",
       "future_data_used_for_selection": false,
-      "case_result": "win",
-      "evidence_ref": "aegis_strategy_specific_case:1eb5d7a005bff4f67422a3336eca0b7b47552deed8d09e489f1afa301f9bdbf8"
+      "case_result": "loss",
+      "evidence_ref": "aegis_strategy_specific_case:c9c219d552d11a55a0d4bc444a8f8cf42d467f62387000bc8b1d4bd73b83bb2d"
     },
     {
       "case_id": "aegis_case_002709_stock_selection_workbench_1",
@@ -2917,18 +2917,18 @@
       "event_aligned_case": false,
       "event_trade_dates": [],
       "required_endpoints": [],
-      "entry_date": "2023-12-12",
-      "exit_date": "2024-01-10",
-      "entry_close": 23.45,
-      "exit_close": 22.93,
-      "raw_return": -0.022174840085287806,
-      "max_drawdown": -0.11004784688995206,
+      "entry_date": "2024-08-05",
+      "exit_date": "2024-09-02",
+      "entry_close": 14.98,
+      "exit_close": 13.95,
+      "raw_return": -0.06875834445927909,
+      "max_drawdown": -0.10716633793556873,
       "holding_trade_days": 20,
       "point_in_time_case": true,
-      "data_cutoff_date": "2023-12-12",
+      "data_cutoff_date": "2024-08-05",
       "future_data_used_for_selection": false,
       "case_result": "loss",
-      "evidence_ref": "aegis_strategy_specific_case:a2807e4baa0b3556278b5ac87d9c409779debcfc78695c346efbd6238e31f33b"
+      "evidence_ref": "aegis_strategy_specific_case:67e8bdfd0baf295c096c9d7fdfc59c891564e94f4d795da4f864a8719004b9ce"
     },
     {
       "case_id": "aegis_case_002709_stock_selection_workbench_3",
@@ -2948,18 +2948,18 @@
       "event_aligned_case": false,
       "event_trade_dates": [],
       "required_endpoints": [],
-      "entry_date": "2024-03-22",
-      "exit_date": "2024-04-23",
-      "entry_close": 20.87,
-      "exit_close": 20.78,
-      "raw_return": -0.004312410158121671,
-      "max_drawdown": -0.20039138943248536,
+      "entry_date": "2025-07-08",
+      "exit_date": "2025-08-05",
+      "entry_close": 18.7,
+      "exit_close": 19.06,
+      "raw_return": 0.019251336898395754,
+      "max_drawdown": -0.0526579739217653,
       "holding_trade_days": 20,
       "point_in_time_case": true,
-      "data_cutoff_date": "2024-03-22",
+      "data_cutoff_date": "2025-07-08",
       "future_data_used_for_selection": false,
-      "case_result": "loss",
-      "evidence_ref": "aegis_strategy_specific_case:141f78bf874fea2c7fe62af206ed5762f2a1d184e8b74dc59848e2d54417f14e"
+      "case_result": "win",
+      "evidence_ref": "aegis_strategy_specific_case:e330f024d29fb3e2d74833fc78e64e0fb12de3729e7c7053efb0f14d10d78851"
     },
     {
       "case_id": "aegis_case_002709_stock_selection_workbench_4",
@@ -2979,18 +2979,18 @@
       "event_aligned_case": false,
       "event_trade_dates": [],
       "required_endpoints": [],
-      "entry_date": "2024-07-03",
-      "exit_date": "2024-07-31",
-      "entry_close": 17.47,
-      "exit_close": 15.69,
-      "raw_return": -0.10188895248998275,
-      "max_drawdown": -0.15684029765311958,
+      "entry_date": "2026-06-11",
+      "exit_date": "2026-07-10",
+      "entry_close": 48.46,
+      "exit_close": 40.06,
+      "raw_return": -0.17333883615352863,
+      "max_drawdown": -0.28895988640397585,
       "holding_trade_days": 20,
       "point_in_time_case": true,
-      "data_cutoff_date": "2024-07-03",
+      "data_cutoff_date": "2026-06-11",
       "future_data_used_for_selection": false,
       "case_result": "loss",
-      "evidence_ref": "aegis_strategy_specific_case:2aa019a7050d6d4f4c7da7e4efd387612a5a8a1af66409bf7d855d6f01310313"
+      "evidence_ref": "aegis_strategy_specific_case:8adbd5379789637b909dd8c7b8a851afdb334d56b27015ebb0ef8a991cc74a53"
     },
     {
       "case_id": "aegis_case_688525_stock_selection_workbench_1",
@@ -3041,18 +3041,18 @@
       "event_aligned_case": false,
       "event_trade_dates": [],
       "required_endpoints": [],
-      "entry_date": "2023-12-12",
-      "exit_date": "2024-01-10",
-      "entry_close": 82.41,
-      "exit_close": 42.89,
-      "raw_return": -0.47955345225094037,
-      "max_drawdown": -0.49265865792986285,
+      "entry_date": "2024-08-05",
+      "exit_date": "2024-09-02",
+      "entry_close": 48.6,
+      "exit_close": 43.08,
+      "raw_return": -0.11358024691358026,
+      "max_drawdown": -0.15845486795427666,
       "holding_trade_days": 20,
       "point_in_time_case": true,
-      "data_cutoff_date": "2023-12-12",
+      "data_cutoff_date": "2024-08-05",
       "future_data_used_for_selection": false,
       "case_result": "loss",
-      "evidence_ref": "aegis_strategy_specific_case:5004bc88cefcd0467cf796ab87a0ace941954fb29a1735f7764c114db147c562"
+      "evidence_ref": "aegis_strategy_specific_case:477aa2044a3ccd12f267685d992d287126161697c1a2478239211c50cab3aebc"
     },
     {
       "case_id": "aegis_case_688525_stock_selection_workbench_3",
@@ -3072,18 +3072,18 @@
       "event_aligned_case": false,
       "event_trade_dates": [],
       "required_endpoints": [],
-      "entry_date": "2024-03-22",
-      "exit_date": "2024-04-23",
-      "entry_close": 56.8,
-      "exit_close": 45.04,
-      "raw_return": -0.2070422535211267,
-      "max_drawdown": -0.3410211267605634,
+      "entry_date": "2025-07-08",
+      "exit_date": "2025-08-05",
+      "entry_close": 65.54,
+      "exit_close": 62.97,
+      "raw_return": -0.039212694537687054,
+      "max_drawdown": -0.056911786730567626,
       "holding_trade_days": 20,
       "point_in_time_case": true,
-      "data_cutoff_date": "2024-03-22",
+      "data_cutoff_date": "2025-07-08",
       "future_data_used_for_selection": false,
       "case_result": "loss",
-      "evidence_ref": "aegis_strategy_specific_case:fbe344004f485e9baf60c655bb1da456bb489da42c15a9760d4b64ac2b3ea60d"
+      "evidence_ref": "aegis_strategy_specific_case:312b9f18502b8d4f2ac11a5f48d7ab9b3293b4df02f838eb3d86589bed975dbc"
     },
     {
       "case_id": "aegis_case_688525_stock_selection_workbench_4",
@@ -3103,18 +3103,18 @@
       "event_aligned_case": false,
       "event_trade_dates": [],
       "required_endpoints": [],
-      "entry_date": "2024-07-03",
-      "exit_date": "2024-07-31",
-      "entry_close": 64.25,
-      "exit_close": 55.55,
-      "raw_return": -0.13540856031128412,
-      "max_drawdown": -0.2260985748218527,
+      "entry_date": "2026-06-11",
+      "exit_date": "2026-07-10",
+      "entry_close": 324.27,
+      "exit_close": 388.5,
+      "raw_return": 0.19807567767601086,
+      "max_drawdown": -0.23372781065088755,
       "holding_trade_days": 20,
       "point_in_time_case": true,
-      "data_cutoff_date": "2024-07-03",
+      "data_cutoff_date": "2026-06-11",
       "future_data_used_for_selection": false,
-      "case_result": "loss",
-      "evidence_ref": "aegis_strategy_specific_case:bc98a420730f72188e4361ccc88827f7a2f7870a9032536a3d0d66837179863b"
+      "case_result": "win",
+      "evidence_ref": "aegis_strategy_specific_case:ab7bfe1c463218a756a1cda11254fb30e5c1196e6d6963745972251f6736fb85"
     },
     {
       "case_id": "aegis_case_001309_stock_selection_workbench_1",
@@ -3165,18 +3165,18 @@
       "event_aligned_case": false,
       "event_trade_dates": [],
       "required_endpoints": [],
-      "entry_date": "2023-12-12",
-      "exit_date": "2024-01-10",
-      "entry_close": 92.8,
-      "exit_close": 75.4,
-      "raw_return": -0.1874999999999999,
-      "max_drawdown": -0.20539572136157647,
+      "entry_date": "2024-08-05",
+      "exit_date": "2024-09-02",
+      "entry_close": 70.89,
+      "exit_close": 70.04,
+      "raw_return": -0.011990407673860837,
+      "max_drawdown": -0.07047113470471122,
       "holding_trade_days": 20,
       "point_in_time_case": true,
-      "data_cutoff_date": "2023-12-12",
+      "data_cutoff_date": "2024-08-05",
       "future_data_used_for_selection": false,
       "case_result": "loss",
-      "evidence_ref": "aegis_strategy_specific_case:04be410233f51cd20eda0b4711c25aa91d24e254192c4ca0cd2fe100225bb06d"
+      "evidence_ref": "aegis_strategy_specific_case:6f820b8c54d999a1d68ada9f7ba8642c4d65b9c30d0630c3e5f1c6cf0a692cae"
     },
     {
       "case_id": "aegis_case_001309_stock_selection_workbench_3",
@@ -3196,18 +3196,18 @@
       "event_aligned_case": false,
       "event_trade_dates": [],
       "required_endpoints": [],
-      "entry_date": "2024-03-22",
-      "exit_date": "2024-04-23",
-      "entry_close": 130.0,
-      "exit_close": 120.83,
-      "raw_return": -0.07053846153846155,
-      "max_drawdown": -0.20902527075812272,
+      "entry_date": "2025-07-08",
+      "exit_date": "2025-08-05",
+      "entry_close": 121.35,
+      "exit_close": 87.88,
+      "raw_return": -0.27581376184590034,
+      "max_drawdown": -0.35032840722495895,
       "holding_trade_days": 20,
       "point_in_time_case": true,
-      "data_cutoff_date": "2024-03-22",
+      "data_cutoff_date": "2025-07-08",
       "future_data_used_for_selection": false,
       "case_result": "loss",
-      "evidence_ref": "aegis_strategy_specific_case:4b90eba6235b6b276c9c6e933de5d3a63499203ddc9b18597d05ec842491b258"
+      "evidence_ref": "aegis_strategy_specific_case:4954b7103168df41c786b5fe804286ea9d005db2ff75d1531e741960995f5663"
     },
     {
       "case_id": "aegis_case_001309_stock_selection_workbench_4",
@@ -3227,18 +3227,18 @@
       "event_aligned_case": false,
       "event_trade_dates": [],
       "required_endpoints": [],
-      "entry_date": "2024-07-03",
-      "exit_date": "2024-07-31",
-      "entry_close": 94.0,
-      "exit_close": 78.82,
-      "raw_return": -0.1614893617021277,
-      "max_drawdown": -0.251750350070014,
+      "entry_date": "2026-06-11",
+      "exit_date": "2026-07-10",
+      "entry_close": 632.35,
+      "exit_close": 799.98,
+      "raw_return": 0.2650905353048154,
+      "max_drawdown": -0.17527835051546392,
       "holding_trade_days": 20,
       "point_in_time_case": true,
-      "data_cutoff_date": "2024-07-03",
+      "data_cutoff_date": "2026-06-11",
       "future_data_used_for_selection": false,
-      "case_result": "loss",
-      "evidence_ref": "aegis_strategy_specific_case:9c561192b382a8ab145c43effeef089a16eb8c2b2baa038d3a4161d90ea0dadc"
+      "case_result": "win",
+      "evidence_ref": "aegis_strategy_specific_case:74a2d96f0337f0ace1b969740db490d959a026dafc38d01a0bf04e6a9ec617b2"
     },
     {
       "case_id": "aegis_case_000100_stock_selection_workbench_1",
@@ -3287,18 +3287,18 @@
       "event_aligned_case": false,
       "event_trade_dates": [],
       "required_endpoints": [],
-      "entry_date": "2023-12-12",
-      "exit_date": "2024-01-10",
-      "entry_close": 4.0,
-      "exit_close": 4.22,
-      "raw_return": 0.05499999999999994,
-      "max_drawdown": -0.030000000000000027,
+      "entry_date": "2024-08-05",
+      "exit_date": "2024-09-02",
+      "entry_close": 3.71,
+      "exit_close": 3.85,
+      "raw_return": 0.037735849056603765,
+      "max_drawdown": -0.03589743589743588,
       "holding_trade_days": 20,
       "point_in_time_case": true,
-      "data_cutoff_date": "2023-12-12",
+      "data_cutoff_date": "2024-08-05",
       "future_data_used_for_selection": false,
       "case_result": "win",
-      "evidence_ref": "aegis_strategy_specific_case:ba27c90fa381434c0e9464a97992b7a861481d83071bde534a12d31dd26f31bf"
+      "evidence_ref": "aegis_strategy_specific_case:42ac99ec7a75429c864faf6651a5be2c7fcf047b4603965686e99a2e42f8c321"
     },
     {
       "case_id": "aegis_case_000100_stock_selection_workbench_3",
@@ -3317,18 +3317,18 @@
       "event_aligned_case": false,
       "event_trade_dates": [],
       "required_endpoints": [],
-      "entry_date": "2024-03-22",
-      "exit_date": "2024-04-23",
-      "entry_close": 4.48,
-      "exit_close": 4.78,
-      "raw_return": 0.06696428571428559,
-      "max_drawdown": -0.07003891050583644,
+      "entry_date": "2025-07-08",
+      "exit_date": "2025-08-05",
+      "entry_close": 4.39,
+      "exit_close": 4.46,
+      "raw_return": 0.015945330296127658,
+      "max_drawdown": -0.05579399141630892,
       "holding_trade_days": 20,
       "point_in_time_case": true,
-      "data_cutoff_date": "2024-03-22",
+      "data_cutoff_date": "2025-07-08",
       "future_data_used_for_selection": false,
       "case_result": "win",
-      "evidence_ref": "aegis_strategy_specific_case:ed22de0a0740f762e76accb3d5bc05915e3d8773ba6d0e5c42a67671c3c12bb7"
+      "evidence_ref": "aegis_strategy_specific_case:da9666ae0dc97e48bab69455f44c0cf123a756f81cee726a1c935b61fbea0a62"
     },
     {
       "case_id": "aegis_case_000100_stock_selection_workbench_4",
@@ -3347,18 +3347,18 @@
       "event_aligned_case": false,
       "event_trade_dates": [],
       "required_endpoints": [],
-      "entry_date": "2024-07-03",
-      "exit_date": "2024-07-31",
-      "entry_close": 4.31,
-      "exit_close": 3.92,
-      "raw_return": -0.09048723897911826,
-      "max_drawdown": -0.1345707656612528,
+      "entry_date": "2026-06-11",
+      "exit_date": "2026-07-10",
+      "entry_close": 4.51,
+      "exit_close": 5.12,
+      "raw_return": 0.1352549889135255,
+      "max_drawdown": -0.17647058823529416,
       "holding_trade_days": 20,
       "point_in_time_case": true,
-      "data_cutoff_date": "2024-07-03",
+      "data_cutoff_date": "2026-06-11",
       "future_data_used_for_selection": false,
-      "case_result": "loss",
-      "evidence_ref": "aegis_strategy_specific_case:09f81df28d079310bb8cb68cf9eb9a4fa1854b2ffd69dd6a6220641cae05ed2d"
+      "case_result": "win",
+      "evidence_ref": "aegis_strategy_specific_case:0606bb2cfa81c37470566ab8180e7c4fb746cfae526e2f64d10e73df3dc3eecf"
     },
     {
       "case_id": "aegis_case_002407_stock_selection_workbench_1",
@@ -3409,18 +3409,18 @@
       "event_aligned_case": false,
       "event_trade_dates": [],
       "required_endpoints": [],
-      "entry_date": "2023-12-12",
-      "exit_date": "2024-01-10",
-      "entry_close": 14.88,
-      "exit_close": 14.13,
-      "raw_return": -0.050403225806451624,
-      "max_drawdown": -0.07621550591327197,
+      "entry_date": "2024-08-05",
+      "exit_date": "2024-09-02",
+      "entry_close": 10.59,
+      "exit_close": 9.78,
+      "raw_return": -0.07648725212464591,
+      "max_drawdown": -0.12140871177015744,
       "holding_trade_days": 20,
       "point_in_time_case": true,
-      "data_cutoff_date": "2023-12-12",
+      "data_cutoff_date": "2024-08-05",
       "future_data_used_for_selection": false,
       "case_result": "loss",
-      "evidence_ref": "aegis_strategy_specific_case:8cd33736d1d18eeeb47cba14bdd77cb4a3acdeeb2d3b62a5c1c756268fb12228"
+      "evidence_ref": "aegis_strategy_specific_case:9735602900b2033fb8b523ff45de2dcea62bac1f667dd0e2d19fbf5fc6e6fdc0"
     },
     {
       "case_id": "aegis_case_002407_stock_selection_workbench_3",
@@ -3440,18 +3440,18 @@
       "event_aligned_case": false,
       "event_trade_dates": [],
       "required_endpoints": [],
-      "entry_date": "2024-03-22",
-      "exit_date": "2024-04-23",
-      "entry_close": 14.32,
-      "exit_close": 13.15,
-      "raw_return": -0.08170391061452509,
-      "max_drawdown": -0.19325153374233128,
+      "entry_date": "2025-07-08",
+      "exit_date": "2025-08-05",
+      "entry_close": 12.3,
+      "exit_close": 12.44,
+      "raw_return": 0.011382113821138073,
+      "max_drawdown": -0.0431765612952969,
       "holding_trade_days": 20,
       "point_in_time_case": true,
-      "data_cutoff_date": "2024-03-22",
+      "data_cutoff_date": "2025-07-08",
       "future_data_used_for_selection": false,
-      "case_result": "loss",
-      "evidence_ref": "aegis_strategy_specific_case:d202f28649898c497f9329fa935a24f0f4a0f6a74a65d56fafbb2366b07e87b7"
+      "case_result": "win",
+      "evidence_ref": "aegis_strategy_specific_case:95f141d147d0574edf1f3bd96c5f3db5c7fc84e88795279c906e901d4c55939a"
     },
     {
       "case_id": "aegis_case_002407_stock_selection_workbench_4",
@@ -3471,132 +3471,24 @@
       "event_aligned_case": false,
       "event_trade_dates": [],
       "required_endpoints": [],
-      "entry_date": "2024-07-03",
-      "exit_date": "2024-07-31",
-      "entry_close": 12.08,
-      "exit_close": 10.96,
-      "raw_return": -0.09271523178807939,
-      "max_drawdown": -0.13327814569536423,
+      "entry_date": "2026-06-11",
+      "exit_date": "2026-07-10",
+      "entry_close": 38.19,
+      "exit_close": 41.1,
+      "raw_return": 0.0761979575805185,
+      "max_drawdown": -0.25610859728506785,
       "holding_trade_days": 20,
       "point_in_time_case": true,
-      "data_cutoff_date": "2024-07-03",
-      "future_data_used_for_selection": false,
-      "case_result": "loss",
-      "evidence_ref": "aegis_strategy_specific_case:8d308e5bdfa39b56ef99888fb2da9d43cc544f35c3bbf58d870a83a905368941"
-    },
-    {
-      "case_id": "aegis_case_000506_tushare_dragon_tiger_hot_money_1",
-      "symbol": "000506",
-      "ts_code": "000506.SZ",
-      "name": "招金黄金",
-      "market": "A",
-      "matched_strategy_ids": [
-        "a_share_short_momentum",
-        "growth_breakout"
-      ],
-      "research_sample_only": true,
-      "sample_source": "tushare_dragon_tiger_hot_money",
-      "source_status": "feature_gap_sample",
-      "event_aligned_case": true,
-      "event_trade_dates": [
-        "2024-06-26",
-        "2024-06-21",
-        "2024-06-19"
-      ],
-      "required_endpoints": [
-        "top_list",
-        "top_inst"
-      ],
-      "entry_date": "2024-06-19",
-      "exit_date": "2024-07-17",
-      "entry_close": 1.14,
-      "exit_close": 1.05,
-      "raw_return": -0.07894736842105254,
-      "max_drawdown": -0.26190476190476186,
-      "holding_trade_days": 20,
-      "point_in_time_case": true,
-      "data_cutoff_date": "2024-06-19",
-      "future_data_used_for_selection": false,
-      "case_result": "loss",
-      "evidence_ref": "aegis_strategy_specific_case:d444d099a59888d17e862c8e25357f065458ebc62ed38f3d02fd42e8398956c6"
-    },
-    {
-      "case_id": "aegis_case_000506_tushare_dragon_tiger_hot_money_2",
-      "symbol": "000506",
-      "ts_code": "000506.SZ",
-      "name": "招金黄金",
-      "market": "A",
-      "matched_strategy_ids": [
-        "a_share_short_momentum",
-        "growth_breakout"
-      ],
-      "research_sample_only": true,
-      "sample_source": "tushare_dragon_tiger_hot_money",
-      "source_status": "feature_gap_sample",
-      "event_aligned_case": true,
-      "event_trade_dates": [
-        "2024-06-26",
-        "2024-06-21",
-        "2024-06-19"
-      ],
-      "required_endpoints": [
-        "top_list",
-        "top_inst"
-      ],
-      "entry_date": "2024-06-21",
-      "exit_date": "2024-07-19",
-      "entry_close": 1.26,
-      "exit_close": 1.16,
-      "raw_return": -0.07936507936507942,
-      "max_drawdown": -0.26190476190476186,
-      "holding_trade_days": 20,
-      "point_in_time_case": true,
-      "data_cutoff_date": "2024-06-21",
-      "future_data_used_for_selection": false,
-      "case_result": "loss",
-      "evidence_ref": "aegis_strategy_specific_case:0314db3f0eab5da011fe9a1a9eb589e1a39dd10ea12549feb14810f949079f5a"
-    },
-    {
-      "case_id": "aegis_case_000506_tushare_dragon_tiger_hot_money_3",
-      "symbol": "000506",
-      "ts_code": "000506.SZ",
-      "name": "招金黄金",
-      "market": "A",
-      "matched_strategy_ids": [
-        "a_share_short_momentum",
-        "growth_breakout"
-      ],
-      "research_sample_only": true,
-      "sample_source": "tushare_dragon_tiger_hot_money",
-      "source_status": "feature_gap_sample",
-      "event_aligned_case": true,
-      "event_trade_dates": [
-        "2024-06-26",
-        "2024-06-21",
-        "2024-06-19"
-      ],
-      "required_endpoints": [
-        "top_list",
-        "top_inst"
-      ],
-      "entry_date": "2024-06-26",
-      "exit_date": "2024-07-24",
-      "entry_close": 1.08,
-      "exit_close": 1.34,
-      "raw_return": 0.2407407407407407,
-      "max_drawdown": -0.13888888888888895,
-      "holding_trade_days": 20,
-      "point_in_time_case": true,
-      "data_cutoff_date": "2024-06-26",
+      "data_cutoff_date": "2026-06-11",
       "future_data_used_for_selection": false,
       "case_result": "win",
-      "evidence_ref": "aegis_strategy_specific_case:ad398e4a2628573251351aa85c5315b719ac2f609ddfca1abcbf24f71c6c0e2b"
+      "evidence_ref": "aegis_strategy_specific_case:21e98091448b5b33acdd86ba32a8bbea24dd99fa44d35b616e5959975edcf6c8"
     },
     {
-      "case_id": "aegis_case_603879_tushare_dragon_tiger_hot_money_1",
-      "symbol": "603879",
-      "ts_code": "603879.SH",
-      "name": "永悦科技",
+      "case_id": "aegis_case_920088_tushare_dragon_tiger_hot_money_1",
+      "symbol": "920088",
+      "ts_code": "920088.BJ",
+      "name": "科力股份",
       "market": "A",
       "matched_strategy_ids": [
         "a_share_short_momentum",
@@ -3607,32 +3499,392 @@
       "source_status": "feature_gap_sample",
       "event_aligned_case": true,
       "event_trade_dates": [
-        "2024-07-03",
-        "2024-06-24",
-        "2024-06-06"
+        "2026-06-11",
+        "2026-06-08",
+        "2026-06-03"
       ],
       "required_endpoints": [
         "top_list",
         "top_inst"
       ],
-      "entry_date": "2024-06-06",
-      "exit_date": "2024-07-05",
-      "entry_close": 2.19,
-      "exit_close": 2.33,
-      "raw_return": 0.06392694063926951,
-      "max_drawdown": -0.19999999999999996,
+      "entry_date": "2026-06-03",
+      "exit_date": "2026-07-02",
+      "entry_close": 43.87,
+      "exit_close": 33.0,
+      "raw_return": -0.24777752450421697,
+      "max_drawdown": -0.297085689430187,
       "holding_trade_days": 20,
       "point_in_time_case": true,
-      "data_cutoff_date": "2024-06-06",
+      "data_cutoff_date": "2026-06-03",
+      "future_data_used_for_selection": false,
+      "case_result": "loss",
+      "evidence_ref": "aegis_strategy_specific_case:89cb0217ca917438362c7ed5a7567c12dbeb6199e4d378b89706a560152e4c15"
+    },
+    {
+      "case_id": "aegis_case_920088_tushare_dragon_tiger_hot_money_2",
+      "symbol": "920088",
+      "ts_code": "920088.BJ",
+      "name": "科力股份",
+      "market": "A",
+      "matched_strategy_ids": [
+        "a_share_short_momentum",
+        "growth_breakout"
+      ],
+      "research_sample_only": true,
+      "sample_source": "tushare_dragon_tiger_hot_money",
+      "source_status": "feature_gap_sample",
+      "event_aligned_case": true,
+      "event_trade_dates": [
+        "2026-06-11",
+        "2026-06-08",
+        "2026-06-03"
+      ],
+      "required_endpoints": [
+        "top_list",
+        "top_inst"
+      ],
+      "entry_date": "2026-06-08",
+      "exit_date": "2026-07-07",
+      "entry_close": 43.85,
+      "exit_close": 31.45,
+      "raw_return": -0.2827822120866591,
+      "max_drawdown": -0.31600695954762936,
+      "holding_trade_days": 20,
+      "point_in_time_case": true,
+      "data_cutoff_date": "2026-06-08",
+      "future_data_used_for_selection": false,
+      "case_result": "loss",
+      "evidence_ref": "aegis_strategy_specific_case:37ac5f70f0a9fa4ae875f82f91c93d492c874803acc6b6551f6f9c53490eb473"
+    },
+    {
+      "case_id": "aegis_case_920088_tushare_dragon_tiger_hot_money_3",
+      "symbol": "920088",
+      "ts_code": "920088.BJ",
+      "name": "科力股份",
+      "market": "A",
+      "matched_strategy_ids": [
+        "a_share_short_momentum",
+        "growth_breakout"
+      ],
+      "research_sample_only": true,
+      "sample_source": "tushare_dragon_tiger_hot_money",
+      "source_status": "feature_gap_sample",
+      "event_aligned_case": true,
+      "event_trade_dates": [
+        "2026-06-11",
+        "2026-06-08",
+        "2026-06-03"
+      ],
+      "required_endpoints": [
+        "top_list",
+        "top_inst"
+      ],
+      "entry_date": "2026-06-11",
+      "exit_date": "2026-07-10",
+      "entry_close": 45.08,
+      "exit_close": 39.44,
+      "raw_return": -0.12511091393078977,
+      "max_drawdown": -0.31600695954762936,
+      "holding_trade_days": 20,
+      "point_in_time_case": true,
+      "data_cutoff_date": "2026-06-11",
+      "future_data_used_for_selection": false,
+      "case_result": "loss",
+      "evidence_ref": "aegis_strategy_specific_case:5aafedbfaffe9ea7cd1becdc3d38f1e81b93739efe5cdb0c07e4709168cfe577"
+    },
+    {
+      "case_id": "aegis_case_002361_tushare_dragon_tiger_hot_money_1",
+      "symbol": "002361",
+      "ts_code": "002361.SZ",
+      "name": "神剑股份",
+      "market": "A",
+      "matched_strategy_ids": [
+        "a_share_short_momentum",
+        "growth_breakout"
+      ],
+      "research_sample_only": true,
+      "sample_source": "tushare_dragon_tiger_hot_money",
+      "source_status": "feature_gap_sample",
+      "event_aligned_case": true,
+      "event_trade_dates": [
+        "2026-06-11",
+        "2026-06-10",
+        "2026-06-09"
+      ],
+      "required_endpoints": [
+        "top_list",
+        "top_inst"
+      ],
+      "entry_date": "2026-06-09",
+      "exit_date": "2026-07-08",
+      "entry_close": 17.75,
+      "exit_close": 11.34,
+      "raw_return": -0.36112676056338033,
+      "max_drawdown": -0.40628272251308906,
+      "holding_trade_days": 20,
+      "point_in_time_case": true,
+      "data_cutoff_date": "2026-06-09",
+      "future_data_used_for_selection": false,
+      "case_result": "loss",
+      "evidence_ref": "aegis_strategy_specific_case:86cb3a80c0873158f9429ee230a70eef05921d3351af4b0572837a8bd84b54e9"
+    },
+    {
+      "case_id": "aegis_case_002361_tushare_dragon_tiger_hot_money_2",
+      "symbol": "002361",
+      "ts_code": "002361.SZ",
+      "name": "神剑股份",
+      "market": "A",
+      "matched_strategy_ids": [
+        "a_share_short_momentum",
+        "growth_breakout"
+      ],
+      "research_sample_only": true,
+      "sample_source": "tushare_dragon_tiger_hot_money",
+      "source_status": "feature_gap_sample",
+      "event_aligned_case": true,
+      "event_trade_dates": [
+        "2026-06-11",
+        "2026-06-10",
+        "2026-06-09"
+      ],
+      "required_endpoints": [
+        "top_list",
+        "top_inst"
+      ],
+      "entry_date": "2026-06-10",
+      "exit_date": "2026-07-09",
+      "entry_close": 19.1,
+      "exit_close": 11.57,
+      "raw_return": -0.3942408376963351,
+      "max_drawdown": -0.40628272251308906,
+      "holding_trade_days": 20,
+      "point_in_time_case": true,
+      "data_cutoff_date": "2026-06-10",
+      "future_data_used_for_selection": false,
+      "case_result": "loss",
+      "evidence_ref": "aegis_strategy_specific_case:6ec4824bbba0cc63f2355a2c04c3b9fdd9f99a53a4005a7fab0e199c602eb886"
+    },
+    {
+      "case_id": "aegis_case_002361_tushare_dragon_tiger_hot_money_3",
+      "symbol": "002361",
+      "ts_code": "002361.SZ",
+      "name": "神剑股份",
+      "market": "A",
+      "matched_strategy_ids": [
+        "a_share_short_momentum",
+        "growth_breakout"
+      ],
+      "research_sample_only": true,
+      "sample_source": "tushare_dragon_tiger_hot_money",
+      "source_status": "feature_gap_sample",
+      "event_aligned_case": true,
+      "event_trade_dates": [
+        "2026-06-11",
+        "2026-06-10",
+        "2026-06-09"
+      ],
+      "required_endpoints": [
+        "top_list",
+        "top_inst"
+      ],
+      "entry_date": "2026-06-11",
+      "exit_date": "2026-07-10",
+      "entry_close": 17.47,
+      "exit_close": 12.73,
+      "raw_return": -0.27132226674298787,
+      "max_drawdown": -0.3508872352604464,
+      "holding_trade_days": 20,
+      "point_in_time_case": true,
+      "data_cutoff_date": "2026-06-11",
+      "future_data_used_for_selection": false,
+      "case_result": "loss",
+      "evidence_ref": "aegis_strategy_specific_case:ed6d0b018e936fb561f646516992533847f708a59a2fed00e8e4c2c53c807728"
+    },
+    {
+      "case_id": "aegis_case_920078_tushare_dragon_tiger_hot_money_1",
+      "symbol": "920078",
+      "ts_code": "920078.BJ",
+      "name": "族兴新材",
+      "market": "A",
+      "matched_strategy_ids": [
+        "a_share_short_momentum",
+        "growth_breakout"
+      ],
+      "research_sample_only": true,
+      "sample_source": "tushare_dragon_tiger_hot_money",
+      "source_status": "feature_gap_sample",
+      "event_aligned_case": true,
+      "event_trade_dates": [
+        "2026-06-05",
+        "2026-06-04",
+        "2026-06-02"
+      ],
+      "required_endpoints": [
+        "top_list",
+        "top_inst"
+      ],
+      "entry_date": "2026-06-02",
+      "exit_date": "2026-07-01",
+      "entry_close": 35.18,
+      "exit_close": 30.31,
+      "raw_return": -0.1384309266628767,
+      "max_drawdown": -0.21850393700787407,
+      "holding_trade_days": 20,
+      "point_in_time_case": true,
+      "data_cutoff_date": "2026-06-02",
+      "future_data_used_for_selection": false,
+      "case_result": "loss",
+      "evidence_ref": "aegis_strategy_specific_case:3871a61809b70c29bea4cd4b509f85f188e1c9c58e555fe10c2de367a170cf9f"
+    },
+    {
+      "case_id": "aegis_case_920078_tushare_dragon_tiger_hot_money_2",
+      "symbol": "920078",
+      "ts_code": "920078.BJ",
+      "name": "族兴新材",
+      "market": "A",
+      "matched_strategy_ids": [
+        "a_share_short_momentum",
+        "growth_breakout"
+      ],
+      "research_sample_only": true,
+      "sample_source": "tushare_dragon_tiger_hot_money",
+      "source_status": "feature_gap_sample",
+      "event_aligned_case": true,
+      "event_trade_dates": [
+        "2026-06-05",
+        "2026-06-04",
+        "2026-06-02"
+      ],
+      "required_endpoints": [
+        "top_list",
+        "top_inst"
+      ],
+      "entry_date": "2026-06-04",
+      "exit_date": "2026-07-03",
+      "entry_close": 35.56,
+      "exit_close": 29.21,
+      "raw_return": -0.1785714285714286,
+      "max_drawdown": -0.23021390374331552,
+      "holding_trade_days": 20,
+      "point_in_time_case": true,
+      "data_cutoff_date": "2026-06-04",
+      "future_data_used_for_selection": false,
+      "case_result": "loss",
+      "evidence_ref": "aegis_strategy_specific_case:38e0d44f32fa3723a6f09c045c2f66e486798b63cd6789718b28d77963d725d2"
+    },
+    {
+      "case_id": "aegis_case_920078_tushare_dragon_tiger_hot_money_3",
+      "symbol": "920078",
+      "ts_code": "920078.BJ",
+      "name": "族兴新材",
+      "market": "A",
+      "matched_strategy_ids": [
+        "a_share_short_momentum",
+        "growth_breakout"
+      ],
+      "research_sample_only": true,
+      "sample_source": "tushare_dragon_tiger_hot_money",
+      "source_status": "feature_gap_sample",
+      "event_aligned_case": true,
+      "event_trade_dates": [
+        "2026-06-05",
+        "2026-06-04",
+        "2026-06-02"
+      ],
+      "required_endpoints": [
+        "top_list",
+        "top_inst"
+      ],
+      "entry_date": "2026-06-05",
+      "exit_date": "2026-07-06",
+      "entry_close": 35.35,
+      "exit_close": 27.5,
+      "raw_return": -0.22206506364922207,
+      "max_drawdown": -0.2647058823529411,
+      "holding_trade_days": 20,
+      "point_in_time_case": true,
+      "data_cutoff_date": "2026-06-05",
+      "future_data_used_for_selection": false,
+      "case_result": "loss",
+      "evidence_ref": "aegis_strategy_specific_case:0530b2f10ef438e7be29c6774b1ea615ee70e3649701c81854b865a34d1d87aa"
+    },
+    {
+      "case_id": "aegis_case_603459_tushare_dragon_tiger_hot_money_1",
+      "symbol": "603459",
+      "ts_code": "603459.SH",
+      "name": "红板科技",
+      "market": "A",
+      "matched_strategy_ids": [
+        "a_share_short_momentum",
+        "growth_breakout"
+      ],
+      "research_sample_only": true,
+      "sample_source": "tushare_dragon_tiger_hot_money",
+      "source_status": "feature_gap_sample",
+      "event_aligned_case": true,
+      "event_trade_dates": [
+        "2026-06-11",
+        "2026-06-10",
+        "2026-06-04"
+      ],
+      "required_endpoints": [
+        "top_list",
+        "top_inst"
+      ],
+      "entry_date": "2026-06-04",
+      "exit_date": "2026-07-03",
+      "entry_close": 106.99,
+      "exit_close": 97.9,
+      "raw_return": -0.08496121132816137,
+      "max_drawdown": -0.29273763903168515,
+      "holding_trade_days": 20,
+      "point_in_time_case": true,
+      "data_cutoff_date": "2026-06-04",
+      "future_data_used_for_selection": false,
+      "case_result": "loss",
+      "evidence_ref": "aegis_strategy_specific_case:1ac91a9b3a9ada845da27894f53c6c027bebff99ed80383feee1e8f068e81121"
+    },
+    {
+      "case_id": "aegis_case_603459_tushare_dragon_tiger_hot_money_2",
+      "symbol": "603459",
+      "ts_code": "603459.SH",
+      "name": "红板科技",
+      "market": "A",
+      "matched_strategy_ids": [
+        "a_share_short_momentum",
+        "growth_breakout"
+      ],
+      "research_sample_only": true,
+      "sample_source": "tushare_dragon_tiger_hot_money",
+      "source_status": "feature_gap_sample",
+      "event_aligned_case": true,
+      "event_trade_dates": [
+        "2026-06-11",
+        "2026-06-10",
+        "2026-06-04"
+      ],
+      "required_endpoints": [
+        "top_list",
+        "top_inst"
+      ],
+      "entry_date": "2026-06-10",
+      "exit_date": "2026-07-09",
+      "entry_close": 83.89,
+      "exit_close": 93.8,
+      "raw_return": 0.11813088568363339,
+      "max_drawdown": -0.2301042687817485,
+      "holding_trade_days": 20,
+      "point_in_time_case": true,
+      "data_cutoff_date": "2026-06-10",
       "future_data_used_for_selection": false,
       "case_result": "win",
-      "evidence_ref": "aegis_strategy_specific_case:aedad8feaf9bd53088ca7844338660581f1936fa98b3c4459eda904e07a7b496"
+      "evidence_ref": "aegis_strategy_specific_case:a4e3e8b944078cc040dd6d64c4255ea0000f6abdf8fcb2e1a91515759ef8be02"
     },
     {
-      "case_id": "aegis_case_603879_tushare_dragon_tiger_hot_money_2",
-      "symbol": "603879",
-      "ts_code": "603879.SH",
-      "name": "永悦科技",
+      "case_id": "aegis_case_603459_tushare_dragon_tiger_hot_money_3",
+      "symbol": "603459",
+      "ts_code": "603459.SH",
+      "name": "红板科技",
       "market": "A",
       "matched_strategy_ids": [
         "a_share_short_momentum",
@@ -3643,32 +3895,32 @@
       "source_status": "feature_gap_sample",
       "event_aligned_case": true,
       "event_trade_dates": [
-        "2024-07-03",
-        "2024-06-24",
-        "2024-06-06"
+        "2026-06-11",
+        "2026-06-10",
+        "2026-06-04"
       ],
       "required_endpoints": [
         "top_list",
         "top_inst"
       ],
-      "entry_date": "2024-06-24",
-      "exit_date": "2024-07-22",
-      "entry_close": 2.06,
-      "exit_close": 2.67,
-      "raw_return": 0.2961165048543688,
-      "max_drawdown": -0.0763636363636363,
+      "entry_date": "2026-06-11",
+      "exit_date": "2026-07-10",
+      "entry_close": 78.8,
+      "exit_close": 91.05,
+      "raw_return": 0.15545685279187826,
+      "max_drawdown": -0.2301042687817485,
       "holding_trade_days": 20,
       "point_in_time_case": true,
-      "data_cutoff_date": "2024-06-24",
+      "data_cutoff_date": "2026-06-11",
       "future_data_used_for_selection": false,
       "case_result": "win",
-      "evidence_ref": "aegis_strategy_specific_case:ec27b4db991028d690ea5ab246196b58d2da582b11555b284791b35a8188cbe1"
+      "evidence_ref": "aegis_strategy_specific_case:fe5d80c483b817023a7cd4aaad4bcc92e9b2a50d7307887db3f5d0e42c9bfb0a"
     },
     {
-      "case_id": "aegis_case_603879_tushare_dragon_tiger_hot_money_3",
-      "symbol": "603879",
-      "ts_code": "603879.SH",
-      "name": "永悦科技",
+      "case_id": "aegis_case_600396_tushare_dragon_tiger_hot_money_1",
+      "symbol": "600396",
+      "ts_code": "600396.SH",
+      "name": "华电辽能",
       "market": "A",
       "matched_strategy_ids": [
         "a_share_short_momentum",
@@ -3679,32 +3931,680 @@
       "source_status": "feature_gap_sample",
       "event_aligned_case": true,
       "event_trade_dates": [
-        "2024-07-03",
-        "2024-06-24",
-        "2024-06-06"
+        "2026-06-01",
+        "2026-05-28",
+        "2026-05-27"
       ],
       "required_endpoints": [
         "top_list",
         "top_inst"
       ],
-      "entry_date": "2024-07-03",
-      "exit_date": "2024-07-31",
-      "entry_close": 2.28,
-      "exit_close": 2.61,
-      "raw_return": 0.14473684210526327,
-      "max_drawdown": -0.12,
+      "entry_date": "2026-05-27",
+      "exit_date": "2026-06-25",
+      "entry_close": 18.57,
+      "exit_close": 15.24,
+      "raw_return": -0.17932148626817446,
+      "max_drawdown": -0.30632680928538913,
       "holding_trade_days": 20,
       "point_in_time_case": true,
-      "data_cutoff_date": "2024-07-03",
+      "data_cutoff_date": "2026-05-27",
+      "future_data_used_for_selection": false,
+      "case_result": "loss",
+      "evidence_ref": "aegis_strategy_specific_case:f418bdf6bb173317076f5ece286770ffe0c2a2a04df2f6afa8cacc0cd68f5c66"
+    },
+    {
+      "case_id": "aegis_case_600396_tushare_dragon_tiger_hot_money_2",
+      "symbol": "600396",
+      "ts_code": "600396.SH",
+      "name": "华电辽能",
+      "market": "A",
+      "matched_strategy_ids": [
+        "a_share_short_momentum",
+        "growth_breakout"
+      ],
+      "research_sample_only": true,
+      "sample_source": "tushare_dragon_tiger_hot_money",
+      "source_status": "feature_gap_sample",
+      "event_aligned_case": true,
+      "event_trade_dates": [
+        "2026-06-01",
+        "2026-05-28",
+        "2026-05-27"
+      ],
+      "required_endpoints": [
+        "top_list",
+        "top_inst"
+      ],
+      "entry_date": "2026-05-28",
+      "exit_date": "2026-06-26",
+      "entry_close": 19.26,
+      "exit_close": 15.37,
+      "raw_return": -0.20197300103842175,
+      "max_drawdown": -0.30632680928538913,
+      "holding_trade_days": 20,
+      "point_in_time_case": true,
+      "data_cutoff_date": "2026-05-28",
+      "future_data_used_for_selection": false,
+      "case_result": "loss",
+      "evidence_ref": "aegis_strategy_specific_case:42bf71630008334a0f306bc1846c3cd214bf647bead4af2629a341a8e2fc7f73"
+    },
+    {
+      "case_id": "aegis_case_600396_tushare_dragon_tiger_hot_money_3",
+      "symbol": "600396",
+      "ts_code": "600396.SH",
+      "name": "华电辽能",
+      "market": "A",
+      "matched_strategy_ids": [
+        "a_share_short_momentum",
+        "growth_breakout"
+      ],
+      "research_sample_only": true,
+      "sample_source": "tushare_dragon_tiger_hot_money",
+      "source_status": "feature_gap_sample",
+      "event_aligned_case": true,
+      "event_trade_dates": [
+        "2026-06-01",
+        "2026-05-28",
+        "2026-05-27"
+      ],
+      "required_endpoints": [
+        "top_list",
+        "top_inst"
+      ],
+      "entry_date": "2026-06-01",
+      "exit_date": "2026-06-30",
+      "entry_close": 18.5,
+      "exit_close": 14.96,
+      "raw_return": -0.19135135135135128,
+      "max_drawdown": -0.3190714610832953,
+      "holding_trade_days": 20,
+      "point_in_time_case": true,
+      "data_cutoff_date": "2026-06-01",
+      "future_data_used_for_selection": false,
+      "case_result": "loss",
+      "evidence_ref": "aegis_strategy_specific_case:fe27e6490e305536537b24ba8c4fcf058aa87c8631474074f1cf35225564b1e3"
+    },
+    {
+      "case_id": "aegis_case_300164_tushare_dragon_tiger_hot_money_1",
+      "symbol": "300164",
+      "ts_code": "300164.SZ",
+      "name": "通源石油",
+      "market": "A",
+      "matched_strategy_ids": [
+        "a_share_short_momentum",
+        "growth_breakout"
+      ],
+      "research_sample_only": true,
+      "sample_source": "tushare_dragon_tiger_hot_money",
+      "source_status": "feature_gap_sample",
+      "event_aligned_case": true,
+      "event_trade_dates": [
+        "2026-04-13",
+        "2026-04-09",
+        "2026-04-08"
+      ],
+      "required_endpoints": [
+        "top_list",
+        "top_inst"
+      ],
+      "entry_date": "2026-04-08",
+      "exit_date": "2026-05-12",
+      "entry_close": 14.0,
+      "exit_close": 12.7,
+      "raw_return": -0.09285714285714286,
+      "max_drawdown": -0.15838303512259777,
+      "holding_trade_days": 20,
+      "point_in_time_case": true,
+      "data_cutoff_date": "2026-04-08",
+      "future_data_used_for_selection": false,
+      "case_result": "loss",
+      "evidence_ref": "aegis_strategy_specific_case:6f6fb89b349f99e7e0c564b8ac0e456e44a6c28b2cd844be48499ba82a96514d"
+    },
+    {
+      "case_id": "aegis_case_300164_tushare_dragon_tiger_hot_money_2",
+      "symbol": "300164",
+      "ts_code": "300164.SZ",
+      "name": "通源石油",
+      "market": "A",
+      "matched_strategy_ids": [
+        "a_share_short_momentum",
+        "growth_breakout"
+      ],
+      "research_sample_only": true,
+      "sample_source": "tushare_dragon_tiger_hot_money",
+      "source_status": "feature_gap_sample",
+      "event_aligned_case": true,
+      "event_trade_dates": [
+        "2026-04-13",
+        "2026-04-09",
+        "2026-04-08"
+      ],
+      "required_endpoints": [
+        "top_list",
+        "top_inst"
+      ],
+      "entry_date": "2026-04-09",
+      "exit_date": "2026-05-13",
+      "entry_close": 14.35,
+      "exit_close": 12.48,
+      "raw_return": -0.1303135888501742,
+      "max_drawdown": -0.17296222664015903,
+      "holding_trade_days": 20,
+      "point_in_time_case": true,
+      "data_cutoff_date": "2026-04-09",
+      "future_data_used_for_selection": false,
+      "case_result": "loss",
+      "evidence_ref": "aegis_strategy_specific_case:c5185f83bf0dd9c2913e9bad1680bb2a7195c114bd396e41e6ad11789287a045"
+    },
+    {
+      "case_id": "aegis_case_300164_tushare_dragon_tiger_hot_money_3",
+      "symbol": "300164",
+      "ts_code": "300164.SZ",
+      "name": "通源石油",
+      "market": "A",
+      "matched_strategy_ids": [
+        "a_share_short_momentum",
+        "growth_breakout"
+      ],
+      "research_sample_only": true,
+      "sample_source": "tushare_dragon_tiger_hot_money",
+      "source_status": "feature_gap_sample",
+      "event_aligned_case": true,
+      "event_trade_dates": [
+        "2026-04-13",
+        "2026-04-09",
+        "2026-04-08"
+      ],
+      "required_endpoints": [
+        "top_list",
+        "top_inst"
+      ],
+      "entry_date": "2026-04-13",
+      "exit_date": "2026-05-15",
+      "entry_close": 15.09,
+      "exit_close": 12.33,
+      "raw_return": -0.18290258449304175,
+      "max_drawdown": -0.18820410868124582,
+      "holding_trade_days": 20,
+      "point_in_time_case": true,
+      "data_cutoff_date": "2026-04-13",
+      "future_data_used_for_selection": false,
+      "case_result": "loss",
+      "evidence_ref": "aegis_strategy_specific_case:b6b7f72a6e101f4d2cfe0dfae42c7b7e7e92773682bd7a7b619b99c743ae9531"
+    },
+    {
+      "case_id": "aegis_case_001896_tushare_dragon_tiger_hot_money_1",
+      "symbol": "001896",
+      "ts_code": "001896.SZ",
+      "name": "豫能控股",
+      "market": "A",
+      "matched_strategy_ids": [
+        "a_share_short_momentum",
+        "growth_breakout"
+      ],
+      "research_sample_only": true,
+      "sample_source": "tushare_dragon_tiger_hot_money",
+      "source_status": "feature_gap_sample",
+      "event_aligned_case": true,
+      "event_trade_dates": [
+        "2026-06-09",
+        "2026-06-05",
+        "2026-06-04"
+      ],
+      "required_endpoints": [
+        "top_list",
+        "top_inst"
+      ],
+      "entry_date": "2026-06-04",
+      "exit_date": "2026-07-03",
+      "entry_close": 22.09,
+      "exit_close": 15.77,
+      "raw_return": -0.28610230873698506,
+      "max_drawdown": -0.3079295154185021,
+      "holding_trade_days": 20,
+      "point_in_time_case": true,
+      "data_cutoff_date": "2026-06-04",
+      "future_data_used_for_selection": false,
+      "case_result": "loss",
+      "evidence_ref": "aegis_strategy_specific_case:e39df9e7ada63d3b4781d7d468a2661f7778b8b7ff1059891e4a886816fc11e7"
+    },
+    {
+      "case_id": "aegis_case_001896_tushare_dragon_tiger_hot_money_2",
+      "symbol": "001896",
+      "ts_code": "001896.SZ",
+      "name": "豫能控股",
+      "market": "A",
+      "matched_strategy_ids": [
+        "a_share_short_momentum",
+        "growth_breakout"
+      ],
+      "research_sample_only": true,
+      "sample_source": "tushare_dragon_tiger_hot_money",
+      "source_status": "feature_gap_sample",
+      "event_aligned_case": true,
+      "event_trade_dates": [
+        "2026-06-09",
+        "2026-06-05",
+        "2026-06-04"
+      ],
+      "required_endpoints": [
+        "top_list",
+        "top_inst"
+      ],
+      "entry_date": "2026-06-05",
+      "exit_date": "2026-07-06",
+      "entry_close": 19.88,
+      "exit_close": 16.51,
+      "raw_return": -0.16951710261569408,
+      "max_drawdown": -0.3079295154185021,
+      "holding_trade_days": 20,
+      "point_in_time_case": true,
+      "data_cutoff_date": "2026-06-05",
+      "future_data_used_for_selection": false,
+      "case_result": "loss",
+      "evidence_ref": "aegis_strategy_specific_case:feaac2023c6b83165633868a29eecd4ea2e1ce9a4ecab9e00a3935f2084b1e47"
+    },
+    {
+      "case_id": "aegis_case_001896_tushare_dragon_tiger_hot_money_3",
+      "symbol": "001896",
+      "ts_code": "001896.SZ",
+      "name": "豫能控股",
+      "market": "A",
+      "matched_strategy_ids": [
+        "a_share_short_momentum",
+        "growth_breakout"
+      ],
+      "research_sample_only": true,
+      "sample_source": "tushare_dragon_tiger_hot_money",
+      "source_status": "feature_gap_sample",
+      "event_aligned_case": true,
+      "event_trade_dates": [
+        "2026-06-09",
+        "2026-06-05",
+        "2026-06-04"
+      ],
+      "required_endpoints": [
+        "top_list",
+        "top_inst"
+      ],
+      "entry_date": "2026-06-09",
+      "exit_date": "2026-07-08",
+      "entry_close": 21.56,
+      "exit_close": 13.91,
+      "raw_return": -0.35482374768089053,
+      "max_drawdown": -0.3872246696035242,
+      "holding_trade_days": 20,
+      "point_in_time_case": true,
+      "data_cutoff_date": "2026-06-09",
+      "future_data_used_for_selection": false,
+      "case_result": "loss",
+      "evidence_ref": "aegis_strategy_specific_case:a6f02334c452b88712ea8b157ed0652ff7adb020981e0e104b911e60c6d91ff5"
+    },
+    {
+      "case_id": "aegis_case_000890_tushare_dragon_tiger_hot_money_1",
+      "symbol": "000890",
+      "ts_code": "000890.SZ",
+      "name": "法尔胜",
+      "market": "A",
+      "matched_strategy_ids": [
+        "a_share_short_momentum",
+        "growth_breakout"
+      ],
+      "research_sample_only": true,
+      "sample_source": "tushare_dragon_tiger_hot_money",
+      "source_status": "feature_gap_sample",
+      "event_aligned_case": true,
+      "event_trade_dates": [
+        "2026-05-20",
+        "2026-05-07",
+        "2026-04-23"
+      ],
+      "required_endpoints": [
+        "top_list",
+        "top_inst"
+      ],
+      "entry_date": "2026-04-23",
+      "exit_date": "2026-05-27",
+      "entry_close": 16.76,
+      "exit_close": 10.44,
+      "raw_return": -0.3770883054892602,
+      "max_drawdown": -0.3930232558139535,
+      "holding_trade_days": 20,
+      "point_in_time_case": true,
+      "data_cutoff_date": "2026-04-23",
+      "future_data_used_for_selection": false,
+      "case_result": "loss",
+      "evidence_ref": "aegis_strategy_specific_case:8072c50e04b7d0bd21d35b7c864df3fc20ae96300abf6d7ad76e2149bcabe3e5"
+    },
+    {
+      "case_id": "aegis_case_000890_tushare_dragon_tiger_hot_money_2",
+      "symbol": "000890",
+      "ts_code": "000890.SZ",
+      "name": "法尔胜",
+      "market": "A",
+      "matched_strategy_ids": [
+        "a_share_short_momentum",
+        "growth_breakout"
+      ],
+      "research_sample_only": true,
+      "sample_source": "tushare_dragon_tiger_hot_money",
+      "source_status": "feature_gap_sample",
+      "event_aligned_case": true,
+      "event_trade_dates": [
+        "2026-05-20",
+        "2026-05-07",
+        "2026-04-23"
+      ],
+      "required_endpoints": [
+        "top_list",
+        "top_inst"
+      ],
+      "entry_date": "2026-05-07",
+      "exit_date": "2026-06-05",
+      "entry_close": 15.13,
+      "exit_close": 10.26,
+      "raw_return": -0.32187706543291483,
+      "max_drawdown": -0.32187706543291483,
+      "holding_trade_days": 20,
+      "point_in_time_case": true,
+      "data_cutoff_date": "2026-05-07",
+      "future_data_used_for_selection": false,
+      "case_result": "loss",
+      "evidence_ref": "aegis_strategy_specific_case:ebd12a10e54f7fe53c889b0f8bc315a15585c457e4aaa5e2a8557ce175dc5952"
+    },
+    {
+      "case_id": "aegis_case_000890_tushare_dragon_tiger_hot_money_3",
+      "symbol": "000890",
+      "ts_code": "000890.SZ",
+      "name": "法尔胜",
+      "market": "A",
+      "matched_strategy_ids": [
+        "a_share_short_momentum",
+        "growth_breakout"
+      ],
+      "research_sample_only": true,
+      "sample_source": "tushare_dragon_tiger_hot_money",
+      "source_status": "feature_gap_sample",
+      "event_aligned_case": true,
+      "event_trade_dates": [
+        "2026-05-20",
+        "2026-05-07",
+        "2026-04-23"
+      ],
+      "required_endpoints": [
+        "top_list",
+        "top_inst"
+      ],
+      "entry_date": "2026-05-20",
+      "exit_date": "2026-06-17",
+      "entry_close": 12.85,
+      "exit_close": 9.12,
+      "raw_return": -0.2902723735408561,
+      "max_drawdown": -0.2902723735408561,
+      "holding_trade_days": 20,
+      "point_in_time_case": true,
+      "data_cutoff_date": "2026-05-20",
+      "future_data_used_for_selection": false,
+      "case_result": "loss",
+      "evidence_ref": "aegis_strategy_specific_case:181fe77bd4ba725a7ce6ab1d9a417e306e2683914b99962615d3ee5a616cb845"
+    },
+    {
+      "case_id": "aegis_case_920012_tushare_dragon_tiger_hot_money_1",
+      "symbol": "920012",
+      "ts_code": "920012.BJ",
+      "name": "创达新材",
+      "market": "A",
+      "matched_strategy_ids": [
+        "a_share_short_momentum",
+        "growth_breakout"
+      ],
+      "research_sample_only": true,
+      "sample_source": "tushare_dragon_tiger_hot_money",
+      "source_status": "feature_gap_sample",
+      "event_aligned_case": true,
+      "event_trade_dates": [
+        "2026-05-29",
+        "2026-05-28",
+        "2026-05-27"
+      ],
+      "required_endpoints": [
+        "top_list",
+        "top_inst"
+      ],
+      "entry_date": "2026-05-27",
+      "exit_date": "2026-06-25",
+      "entry_close": 84.6,
+      "exit_close": 70.9,
+      "raw_return": -0.16193853427895966,
+      "max_drawdown": -0.31898417036783966,
+      "holding_trade_days": 20,
+      "point_in_time_case": true,
+      "data_cutoff_date": "2026-05-27",
+      "future_data_used_for_selection": false,
+      "case_result": "loss",
+      "evidence_ref": "aegis_strategy_specific_case:fb0d5e2ae2566aafdfcfda9795c80006b7e1a068df0581b679373fd020bb35d6"
+    },
+    {
+      "case_id": "aegis_case_920012_tushare_dragon_tiger_hot_money_2",
+      "symbol": "920012",
+      "ts_code": "920012.BJ",
+      "name": "创达新材",
+      "market": "A",
+      "matched_strategy_ids": [
+        "a_share_short_momentum",
+        "growth_breakout"
+      ],
+      "research_sample_only": true,
+      "sample_source": "tushare_dragon_tiger_hot_money",
+      "source_status": "feature_gap_sample",
+      "event_aligned_case": true,
+      "event_trade_dates": [
+        "2026-05-29",
+        "2026-05-28",
+        "2026-05-27"
+      ],
+      "required_endpoints": [
+        "top_list",
+        "top_inst"
+      ],
+      "entry_date": "2026-05-28",
+      "exit_date": "2026-06-26",
+      "entry_close": 87.81,
+      "exit_close": 69.81,
+      "raw_return": -0.20498804236419543,
+      "max_drawdown": -0.31898417036783966,
+      "holding_trade_days": 20,
+      "point_in_time_case": true,
+      "data_cutoff_date": "2026-05-28",
+      "future_data_used_for_selection": false,
+      "case_result": "loss",
+      "evidence_ref": "aegis_strategy_specific_case:39d1ea873c35edcbd82fd897105ca799906f7abcfa19c3e3cca9e04a8e7bb0f3"
+    },
+    {
+      "case_id": "aegis_case_920012_tushare_dragon_tiger_hot_money_3",
+      "symbol": "920012",
+      "ts_code": "920012.BJ",
+      "name": "创达新材",
+      "market": "A",
+      "matched_strategy_ids": [
+        "a_share_short_momentum",
+        "growth_breakout"
+      ],
+      "research_sample_only": true,
+      "sample_source": "tushare_dragon_tiger_hot_money",
+      "source_status": "feature_gap_sample",
+      "event_aligned_case": true,
+      "event_trade_dates": [
+        "2026-05-29",
+        "2026-05-28",
+        "2026-05-27"
+      ],
+      "required_endpoints": [
+        "top_list",
+        "top_inst"
+      ],
+      "entry_date": "2026-05-29",
+      "exit_date": "2026-06-29",
+      "entry_close": 79.54,
+      "exit_close": 67.2,
+      "raw_return": -0.15514206688458643,
+      "max_drawdown": -0.2481770178526529,
+      "holding_trade_days": 20,
+      "point_in_time_case": true,
+      "data_cutoff_date": "2026-05-29",
+      "future_data_used_for_selection": false,
+      "case_result": "loss",
+      "evidence_ref": "aegis_strategy_specific_case:43f558fa21b74f6924500d1111aa4336251d7fe88d49aff4720a59a35866112a"
+    },
+    {
+      "case_id": "aegis_case_600726_tushare_dragon_tiger_hot_money_1",
+      "symbol": "600726",
+      "ts_code": "600726.SH",
+      "name": "华电能源",
+      "market": "A",
+      "matched_strategy_ids": [
+        "a_share_short_momentum",
+        "growth_breakout"
+      ],
+      "research_sample_only": true,
+      "sample_source": "tushare_dragon_tiger_hot_money",
+      "source_status": "feature_gap_sample",
+      "event_aligned_case": true,
+      "event_trade_dates": [
+        "2026-06-05",
+        "2026-06-04",
+        "2026-06-01"
+      ],
+      "required_endpoints": [
+        "top_list",
+        "top_inst"
+      ],
+      "entry_date": "2026-06-01",
+      "exit_date": "2026-06-30",
+      "entry_close": 9.5,
+      "exit_close": 7.12,
+      "raw_return": -0.2505263157894737,
+      "max_drawdown": -0.3147256977863331,
+      "holding_trade_days": 20,
+      "point_in_time_case": true,
+      "data_cutoff_date": "2026-06-01",
+      "future_data_used_for_selection": false,
+      "case_result": "loss",
+      "evidence_ref": "aegis_strategy_specific_case:1fba7d7a666cea3c2077dcfdea500a8db654fc3d6507c5ac3d723917e5ad2f5f"
+    },
+    {
+      "case_id": "aegis_case_600726_tushare_dragon_tiger_hot_money_2",
+      "symbol": "600726",
+      "ts_code": "600726.SH",
+      "name": "华电能源",
+      "market": "A",
+      "matched_strategy_ids": [
+        "a_share_short_momentum",
+        "growth_breakout"
+      ],
+      "research_sample_only": true,
+      "sample_source": "tushare_dragon_tiger_hot_money",
+      "source_status": "feature_gap_sample",
+      "event_aligned_case": true,
+      "event_trade_dates": [
+        "2026-06-05",
+        "2026-06-04",
+        "2026-06-01"
+      ],
+      "required_endpoints": [
+        "top_list",
+        "top_inst"
+      ],
+      "entry_date": "2026-06-04",
+      "exit_date": "2026-07-03",
+      "entry_close": 10.39,
+      "exit_close": 6.43,
+      "raw_return": -0.38113570741097214,
+      "max_drawdown": -0.38113570741097214,
+      "holding_trade_days": 20,
+      "point_in_time_case": true,
+      "data_cutoff_date": "2026-06-04",
+      "future_data_used_for_selection": false,
+      "case_result": "loss",
+      "evidence_ref": "aegis_strategy_specific_case:7b2b92acf905589c7f5ac30d0b6eeda2751832ed393dcd17c3b0848e15abd4be"
+    },
+    {
+      "case_id": "aegis_case_600726_tushare_dragon_tiger_hot_money_3",
+      "symbol": "600726",
+      "ts_code": "600726.SH",
+      "name": "华电能源",
+      "market": "A",
+      "matched_strategy_ids": [
+        "a_share_short_momentum",
+        "growth_breakout"
+      ],
+      "research_sample_only": true,
+      "sample_source": "tushare_dragon_tiger_hot_money",
+      "source_status": "feature_gap_sample",
+      "event_aligned_case": true,
+      "event_trade_dates": [
+        "2026-06-05",
+        "2026-06-04",
+        "2026-06-01"
+      ],
+      "required_endpoints": [
+        "top_list",
+        "top_inst"
+      ],
+      "entry_date": "2026-06-05",
+      "exit_date": "2026-07-06",
+      "entry_close": 9.35,
+      "exit_close": 6.34,
+      "raw_return": -0.32192513368983955,
+      "max_drawdown": -0.32192513368983955,
+      "holding_trade_days": 20,
+      "point_in_time_case": true,
+      "data_cutoff_date": "2026-06-05",
+      "future_data_used_for_selection": false,
+      "case_result": "loss",
+      "evidence_ref": "aegis_strategy_specific_case:56f17bfabc8bc09699c8e4bb4a72874ccb1470aee04d7f0a6fd67f087fe7bd31"
+    },
+    {
+      "case_id": "aegis_case_002297_tushare_dragon_tiger_hot_money_1",
+      "symbol": "002297",
+      "ts_code": "002297.SZ",
+      "name": "博云新材",
+      "market": "A",
+      "matched_strategy_ids": [
+        "a_share_short_momentum",
+        "growth_breakout"
+      ],
+      "research_sample_only": true,
+      "sample_source": "tushare_dragon_tiger_hot_money",
+      "source_status": "feature_gap_sample",
+      "event_aligned_case": true,
+      "event_trade_dates": [
+        "2026-06-11",
+        "2026-05-28",
+        "2026-05-28"
+      ],
+      "required_endpoints": [
+        "top_list",
+        "top_inst"
+      ],
+      "entry_date": "2026-05-28",
+      "exit_date": "2026-06-26",
+      "entry_close": 22.9,
+      "exit_close": 30.89,
+      "raw_return": 0.34890829694323156,
+      "max_drawdown": -0.14148471615720515,
+      "holding_trade_days": 20,
+      "point_in_time_case": true,
+      "data_cutoff_date": "2026-05-28",
       "future_data_used_for_selection": false,
       "case_result": "win",
-      "evidence_ref": "aegis_strategy_specific_case:aaa641c7965606bd9d4d48cb2e5001dd91d11b5e12c111d603c56ebf109f3e06"
+      "evidence_ref": "aegis_strategy_specific_case:4944fc25c34acc977e2854bb91f705990e091b397c042b06f465a0541c4da2e0"
     },
     {
-      "case_id": "aegis_case_000628_tushare_dragon_tiger_hot_money_1",
-      "symbol": "000628",
-      "ts_code": "000628.SZ",
-      "name": "高新发展",
+      "case_id": "aegis_case_002297_tushare_dragon_tiger_hot_money_2",
+      "symbol": "002297",
+      "ts_code": "002297.SZ",
+      "name": "博云新材",
       "market": "A",
       "matched_strategy_ids": [
         "a_share_short_momentum",
@@ -3715,104 +4615,32 @@
       "source_status": "feature_gap_sample",
       "event_aligned_case": true,
       "event_trade_dates": [
-        "2024-06-28",
-        "2024-06-21",
-        "2024-05-23"
+        "2026-06-11",
+        "2026-05-28",
+        "2026-05-28"
       ],
       "required_endpoints": [
         "top_list",
         "top_inst"
       ],
-      "entry_date": "2024-05-23",
-      "exit_date": "2024-06-21",
-      "entry_close": 56.14,
-      "exit_close": 45.44,
-      "raw_return": -0.19059494121838272,
-      "max_drawdown": -0.26416102600641256,
+      "entry_date": "2026-06-11",
+      "exit_date": "2026-07-10",
+      "entry_close": 21.39,
+      "exit_close": 24.03,
+      "raw_return": 0.12342215988779803,
+      "max_drawdown": -0.2860962566844919,
       "holding_trade_days": 20,
       "point_in_time_case": true,
-      "data_cutoff_date": "2024-05-23",
-      "future_data_used_for_selection": false,
-      "case_result": "loss",
-      "evidence_ref": "aegis_strategy_specific_case:1dad36da39f6f8d65dacabd3f273d013a0e00cc4c53d058849d91a85bc172126"
-    },
-    {
-      "case_id": "aegis_case_000628_tushare_dragon_tiger_hot_money_2",
-      "symbol": "000628",
-      "ts_code": "000628.SZ",
-      "name": "高新发展",
-      "market": "A",
-      "matched_strategy_ids": [
-        "a_share_short_momentum",
-        "growth_breakout"
-      ],
-      "research_sample_only": true,
-      "sample_source": "tushare_dragon_tiger_hot_money",
-      "source_status": "feature_gap_sample",
-      "event_aligned_case": true,
-      "event_trade_dates": [
-        "2024-06-28",
-        "2024-06-21",
-        "2024-05-23"
-      ],
-      "required_endpoints": [
-        "top_list",
-        "top_inst"
-      ],
-      "entry_date": "2024-06-21",
-      "exit_date": "2024-07-19",
-      "entry_close": 45.44,
-      "exit_close": 43.5,
-      "raw_return": -0.04269366197183089,
-      "max_drawdown": -0.12852112676056326,
-      "holding_trade_days": 20,
-      "point_in_time_case": true,
-      "data_cutoff_date": "2024-06-21",
-      "future_data_used_for_selection": false,
-      "case_result": "loss",
-      "evidence_ref": "aegis_strategy_specific_case:a9ca35c840b011a3395f0e483ef79a266cf69252b5a5e4d6f41c336da8741e5c"
-    },
-    {
-      "case_id": "aegis_case_000628_tushare_dragon_tiger_hot_money_3",
-      "symbol": "000628",
-      "ts_code": "000628.SZ",
-      "name": "高新发展",
-      "market": "A",
-      "matched_strategy_ids": [
-        "a_share_short_momentum",
-        "growth_breakout"
-      ],
-      "research_sample_only": true,
-      "sample_source": "tushare_dragon_tiger_hot_money",
-      "source_status": "feature_gap_sample",
-      "event_aligned_case": true,
-      "event_trade_dates": [
-        "2024-06-28",
-        "2024-06-21",
-        "2024-05-23"
-      ],
-      "required_endpoints": [
-        "top_list",
-        "top_inst"
-      ],
-      "entry_date": "2024-06-28",
-      "exit_date": "2024-07-26",
-      "entry_close": 44.37,
-      "exit_close": 44.68,
-      "raw_return": 0.006986702727067806,
-      "max_drawdown": -0.10750507099391471,
-      "holding_trade_days": 20,
-      "point_in_time_case": true,
-      "data_cutoff_date": "2024-06-28",
+      "data_cutoff_date": "2026-06-11",
       "future_data_used_for_selection": false,
       "case_result": "win",
-      "evidence_ref": "aegis_strategy_specific_case:c36888a8000a81d1e377210b2fde3124e5c24e94ebb6d261c0a9f57774a032dc"
+      "evidence_ref": "aegis_strategy_specific_case:a8eecab987f6164ba3ed6b640e1d7dbd4eef54783d529d0df612ed1bbda75165"
     },
     {
-      "case_id": "aegis_case_603261_tushare_dragon_tiger_hot_money_1",
-      "symbol": "603261",
-      "ts_code": "603261.SH",
-      "name": "立航科技",
+      "case_id": "aegis_case_603778_tushare_dragon_tiger_hot_money_1",
+      "symbol": "603778",
+      "ts_code": "603778.SH",
+      "name": "国晟科技",
       "market": "A",
       "matched_strategy_ids": [
         "a_share_short_momentum",
@@ -3823,32 +4651,32 @@
       "source_status": "feature_gap_sample",
       "event_aligned_case": true,
       "event_trade_dates": [
-        "2024-06-18",
-        "2024-06-17",
-        "2024-05-24"
+        "2026-05-26",
+        "2026-05-26",
+        "2026-05-25"
       ],
       "required_endpoints": [
         "top_list",
         "top_inst"
       ],
-      "entry_date": "2024-05-24",
-      "exit_date": "2024-06-24",
-      "entry_close": 35.11,
-      "exit_close": 27.6,
-      "raw_return": -0.21389917402449443,
-      "max_drawdown": -0.2366847052121902,
+      "entry_date": "2026-05-25",
+      "exit_date": "2026-06-23",
+      "entry_close": 21.5,
+      "exit_close": 13.79,
+      "raw_return": -0.3586046511627907,
+      "max_drawdown": -0.3586046511627907,
       "holding_trade_days": 20,
       "point_in_time_case": true,
-      "data_cutoff_date": "2024-05-24",
+      "data_cutoff_date": "2026-05-25",
       "future_data_used_for_selection": false,
       "case_result": "loss",
-      "evidence_ref": "aegis_strategy_specific_case:f7c89d0959d29db70bddacaebd0206c5e07d31be9ff9b6fa959dbd224889be91"
+      "evidence_ref": "aegis_strategy_specific_case:458302b494eef38fac306136c890111b1374f3b9249daceb94ef36352197fa98"
     },
     {
-      "case_id": "aegis_case_603261_tushare_dragon_tiger_hot_money_2",
-      "symbol": "603261",
-      "ts_code": "603261.SH",
-      "name": "立航科技",
+      "case_id": "aegis_case_603778_tushare_dragon_tiger_hot_money_2",
+      "symbol": "603778",
+      "ts_code": "603778.SH",
+      "name": "国晟科技",
       "market": "A",
       "matched_strategy_ids": [
         "a_share_short_momentum",
@@ -3859,926 +4687,26 @@
       "source_status": "feature_gap_sample",
       "event_aligned_case": true,
       "event_trade_dates": [
-        "2024-06-18",
-        "2024-06-17",
-        "2024-05-24"
+        "2026-05-26",
+        "2026-05-26",
+        "2026-05-25"
       ],
       "required_endpoints": [
         "top_list",
         "top_inst"
       ],
-      "entry_date": "2024-06-17",
-      "exit_date": "2024-07-15",
-      "entry_close": 30.71,
-      "exit_close": 26.68,
-      "raw_return": -0.13122761315532405,
-      "max_drawdown": -0.1957473420888055,
+      "entry_date": "2026-05-26",
+      "exit_date": "2026-06-24",
+      "entry_close": 19.35,
+      "exit_close": 13.47,
+      "raw_return": -0.3038759689922481,
+      "max_drawdown": -0.3397058823529411,
       "holding_trade_days": 20,
       "point_in_time_case": true,
-      "data_cutoff_date": "2024-06-17",
+      "data_cutoff_date": "2026-05-26",
       "future_data_used_for_selection": false,
       "case_result": "loss",
-      "evidence_ref": "aegis_strategy_specific_case:b8e977ab7f3428e060af2fefeeda1d8638b3a421dd8aa93a4867bd7c834c1768"
-    },
-    {
-      "case_id": "aegis_case_603261_tushare_dragon_tiger_hot_money_3",
-      "symbol": "603261",
-      "ts_code": "603261.SH",
-      "name": "立航科技",
-      "market": "A",
-      "matched_strategy_ids": [
-        "a_share_short_momentum",
-        "growth_breakout"
-      ],
-      "research_sample_only": true,
-      "sample_source": "tushare_dragon_tiger_hot_money",
-      "source_status": "feature_gap_sample",
-      "event_aligned_case": true,
-      "event_trade_dates": [
-        "2024-06-18",
-        "2024-06-17",
-        "2024-05-24"
-      ],
-      "required_endpoints": [
-        "top_list",
-        "top_inst"
-      ],
-      "entry_date": "2024-06-18",
-      "exit_date": "2024-07-16",
-      "entry_close": 31.98,
-      "exit_close": 26.69,
-      "raw_return": -0.16541588492808001,
-      "max_drawdown": -0.1957473420888055,
-      "holding_trade_days": 20,
-      "point_in_time_case": true,
-      "data_cutoff_date": "2024-06-18",
-      "future_data_used_for_selection": false,
-      "case_result": "loss",
-      "evidence_ref": "aegis_strategy_specific_case:ad29e9c953aa319f3bdf52df762887a4d4702710254705755fc929bec2c82249"
-    },
-    {
-      "case_id": "aegis_case_603389_tushare_dragon_tiger_hot_money_1",
-      "symbol": "603389",
-      "ts_code": "603389.SH",
-      "name": "亚振家居",
-      "market": "A",
-      "matched_strategy_ids": [
-        "a_share_short_momentum",
-        "growth_breakout"
-      ],
-      "research_sample_only": true,
-      "sample_source": "tushare_dragon_tiger_hot_money",
-      "source_status": "feature_gap_sample",
-      "event_aligned_case": true,
-      "event_trade_dates": [
-        "2024-06-24",
-        "2024-06-21",
-        "2024-06-17"
-      ],
-      "required_endpoints": [
-        "top_list",
-        "top_inst"
-      ],
-      "entry_date": "2024-06-17",
-      "exit_date": "2024-07-15",
-      "entry_close": 5.02,
-      "exit_close": 5.09,
-      "raw_return": 0.013944223107569709,
-      "max_drawdown": -0.2197614991482112,
-      "holding_trade_days": 20,
-      "point_in_time_case": true,
-      "data_cutoff_date": "2024-06-17",
-      "future_data_used_for_selection": false,
-      "case_result": "win",
-      "evidence_ref": "aegis_strategy_specific_case:c607115d91ec81367d02d16631b39705ab686f7187411ea92397d462a77791e8"
-    },
-    {
-      "case_id": "aegis_case_603389_tushare_dragon_tiger_hot_money_2",
-      "symbol": "603389",
-      "ts_code": "603389.SH",
-      "name": "亚振家居",
-      "market": "A",
-      "matched_strategy_ids": [
-        "a_share_short_momentum",
-        "growth_breakout"
-      ],
-      "research_sample_only": true,
-      "sample_source": "tushare_dragon_tiger_hot_money",
-      "source_status": "feature_gap_sample",
-      "event_aligned_case": true,
-      "event_trade_dates": [
-        "2024-06-24",
-        "2024-06-21",
-        "2024-06-17"
-      ],
-      "required_endpoints": [
-        "top_list",
-        "top_inst"
-      ],
-      "entry_date": "2024-06-21",
-      "exit_date": "2024-07-19",
-      "entry_close": 5.87,
-      "exit_close": 4.89,
-      "raw_return": -0.1669505962521295,
-      "max_drawdown": -0.2197614991482112,
-      "holding_trade_days": 20,
-      "point_in_time_case": true,
-      "data_cutoff_date": "2024-06-21",
-      "future_data_used_for_selection": false,
-      "case_result": "loss",
-      "evidence_ref": "aegis_strategy_specific_case:07cabb7ddbe349bc42555d939b9f2ecd0a413dee4570c56165f2f508244fc42e"
-    },
-    {
-      "case_id": "aegis_case_603389_tushare_dragon_tiger_hot_money_3",
-      "symbol": "603389",
-      "ts_code": "603389.SH",
-      "name": "亚振家居",
-      "market": "A",
-      "matched_strategy_ids": [
-        "a_share_short_momentum",
-        "growth_breakout"
-      ],
-      "research_sample_only": true,
-      "sample_source": "tushare_dragon_tiger_hot_money",
-      "source_status": "feature_gap_sample",
-      "event_aligned_case": true,
-      "event_trade_dates": [
-        "2024-06-24",
-        "2024-06-21",
-        "2024-06-17"
-      ],
-      "required_endpoints": [
-        "top_list",
-        "top_inst"
-      ],
-      "entry_date": "2024-06-24",
-      "exit_date": "2024-07-22",
-      "entry_close": 5.6,
-      "exit_close": 4.94,
-      "raw_return": -0.11785714285714277,
-      "max_drawdown": -0.21440823327615777,
-      "holding_trade_days": 20,
-      "point_in_time_case": true,
-      "data_cutoff_date": "2024-06-24",
-      "future_data_used_for_selection": false,
-      "case_result": "loss",
-      "evidence_ref": "aegis_strategy_specific_case:56550f5296ff0b6897b0400fdb1a1f010639c48359ba00179fb8eeec94121339"
-    },
-    {
-      "case_id": "aegis_case_600715_tushare_dragon_tiger_hot_money_1",
-      "symbol": "600715",
-      "ts_code": "600715.SH",
-      "name": "文投控股",
-      "market": "A",
-      "matched_strategy_ids": [
-        "a_share_short_momentum",
-        "growth_breakout"
-      ],
-      "research_sample_only": true,
-      "sample_source": "tushare_dragon_tiger_hot_money",
-      "source_status": "feature_gap_sample",
-      "event_aligned_case": true,
-      "event_trade_dates": [
-        "2024-05-16",
-        "2024-05-13",
-        "2024-04-10"
-      ],
-      "required_endpoints": [
-        "top_list",
-        "top_inst"
-      ],
-      "entry_date": "2024-04-10",
-      "exit_date": "2024-05-14",
-      "entry_close": 2.24,
-      "exit_close": 1.6,
-      "raw_return": -0.2857142857142857,
-      "max_drawdown": -0.38211382113821135,
-      "holding_trade_days": 20,
-      "point_in_time_case": true,
-      "data_cutoff_date": "2024-04-10",
-      "future_data_used_for_selection": false,
-      "case_result": "loss",
-      "evidence_ref": "aegis_strategy_specific_case:68e71b608b9dfca7dde00f60ad90b21a9d705fc6680bb47d4b15a84693fd078f"
-    },
-    {
-      "case_id": "aegis_case_600715_tushare_dragon_tiger_hot_money_2",
-      "symbol": "600715",
-      "ts_code": "600715.SH",
-      "name": "文投控股",
-      "market": "A",
-      "matched_strategy_ids": [
-        "a_share_short_momentum",
-        "growth_breakout"
-      ],
-      "research_sample_only": true,
-      "sample_source": "tushare_dragon_tiger_hot_money",
-      "source_status": "feature_gap_sample",
-      "event_aligned_case": true,
-      "event_trade_dates": [
-        "2024-05-16",
-        "2024-05-13",
-        "2024-04-10"
-      ],
-      "required_endpoints": [
-        "top_list",
-        "top_inst"
-      ],
-      "entry_date": "2024-05-13",
-      "exit_date": "2024-06-11",
-      "entry_close": 1.52,
-      "exit_close": 1.61,
-      "raw_return": 0.0592105263157896,
-      "max_drawdown": -0.18134715025906734,
-      "holding_trade_days": 20,
-      "point_in_time_case": true,
-      "data_cutoff_date": "2024-05-13",
-      "future_data_used_for_selection": false,
-      "case_result": "win",
-      "evidence_ref": "aegis_strategy_specific_case:70673639a797b08bc2d4950c1d5a115ec776821701ce3f5b3203dbdf672fa7dd"
-    },
-    {
-      "case_id": "aegis_case_600715_tushare_dragon_tiger_hot_money_3",
-      "symbol": "600715",
-      "ts_code": "600715.SH",
-      "name": "文投控股",
-      "market": "A",
-      "matched_strategy_ids": [
-        "a_share_short_momentum",
-        "growth_breakout"
-      ],
-      "research_sample_only": true,
-      "sample_source": "tushare_dragon_tiger_hot_money",
-      "source_status": "feature_gap_sample",
-      "event_aligned_case": true,
-      "event_trade_dates": [
-        "2024-05-16",
-        "2024-05-13",
-        "2024-04-10"
-      ],
-      "required_endpoints": [
-        "top_list",
-        "top_inst"
-      ],
-      "entry_date": "2024-05-16",
-      "exit_date": "2024-06-14",
-      "entry_close": 1.76,
-      "exit_close": 1.71,
-      "raw_return": -0.02840909090909094,
-      "max_drawdown": -0.18134715025906734,
-      "holding_trade_days": 20,
-      "point_in_time_case": true,
-      "data_cutoff_date": "2024-05-16",
-      "future_data_used_for_selection": false,
-      "case_result": "loss",
-      "evidence_ref": "aegis_strategy_specific_case:201c1b201f99c91d34ffc67f6cba1edaf1679cdb6427c82b3c159b234a7e1daa"
-    },
-    {
-      "case_id": "aegis_case_001376_tushare_dragon_tiger_hot_money_1",
-      "symbol": "001376",
-      "ts_code": "001376.SZ",
-      "name": "百通能源",
-      "market": "A",
-      "matched_strategy_ids": [
-        "a_share_short_momentum",
-        "growth_breakout"
-      ],
-      "research_sample_only": true,
-      "sample_source": "tushare_dragon_tiger_hot_money",
-      "source_status": "feature_gap_sample",
-      "event_aligned_case": true,
-      "event_trade_dates": [
-        "2024-05-30",
-        "2024-05-29",
-        "2024-05-28"
-      ],
-      "required_endpoints": [
-        "top_list",
-        "top_inst"
-      ],
-      "entry_date": "2024-05-28",
-      "exit_date": "2024-06-26",
-      "entry_close": 23.03,
-      "exit_close": 18.84,
-      "raw_return": -0.18193660442900572,
-      "max_drawdown": -0.2006079027355624,
-      "holding_trade_days": 20,
-      "point_in_time_case": true,
-      "data_cutoff_date": "2024-05-28",
-      "future_data_used_for_selection": false,
-      "case_result": "loss",
-      "evidence_ref": "aegis_strategy_specific_case:274576d98584eded288d4f64b0d6bfddeb24754e7545c4e22c0309785deca5e5"
-    },
-    {
-      "case_id": "aegis_case_001376_tushare_dragon_tiger_hot_money_2",
-      "symbol": "001376",
-      "ts_code": "001376.SZ",
-      "name": "百通能源",
-      "market": "A",
-      "matched_strategy_ids": [
-        "a_share_short_momentum",
-        "growth_breakout"
-      ],
-      "research_sample_only": true,
-      "sample_source": "tushare_dragon_tiger_hot_money",
-      "source_status": "feature_gap_sample",
-      "event_aligned_case": true,
-      "event_trade_dates": [
-        "2024-05-30",
-        "2024-05-29",
-        "2024-05-28"
-      ],
-      "required_endpoints": [
-        "top_list",
-        "top_inst"
-      ],
-      "entry_date": "2024-05-29",
-      "exit_date": "2024-06-27",
-      "entry_close": 22.8,
-      "exit_close": 18.16,
-      "raw_return": -0.20350877192982453,
-      "max_drawdown": -0.20350877192982453,
-      "holding_trade_days": 20,
-      "point_in_time_case": true,
-      "data_cutoff_date": "2024-05-29",
-      "future_data_used_for_selection": false,
-      "case_result": "loss",
-      "evidence_ref": "aegis_strategy_specific_case:e3a32d3abd4785b064c948e7f2cde6912d7427c3ba651067201f52100e76313f"
-    },
-    {
-      "case_id": "aegis_case_001376_tushare_dragon_tiger_hot_money_3",
-      "symbol": "001376",
-      "ts_code": "001376.SZ",
-      "name": "百通能源",
-      "market": "A",
-      "matched_strategy_ids": [
-        "a_share_short_momentum",
-        "growth_breakout"
-      ],
-      "research_sample_only": true,
-      "sample_source": "tushare_dragon_tiger_hot_money",
-      "source_status": "feature_gap_sample",
-      "event_aligned_case": true,
-      "event_trade_dates": [
-        "2024-05-30",
-        "2024-05-29",
-        "2024-05-28"
-      ],
-      "required_endpoints": [
-        "top_list",
-        "top_inst"
-      ],
-      "entry_date": "2024-05-30",
-      "exit_date": "2024-06-28",
-      "entry_close": 21.58,
-      "exit_close": 18.62,
-      "raw_return": -0.13716404077849853,
-      "max_drawdown": -0.19073083778966138,
-      "holding_trade_days": 20,
-      "point_in_time_case": true,
-      "data_cutoff_date": "2024-05-30",
-      "future_data_used_for_selection": false,
-      "case_result": "loss",
-      "evidence_ref": "aegis_strategy_specific_case:71dae966d2c3dc6356d4e6a38d3d9cbd29b9cf862325b3e5114f9e196c61d0e9"
-    },
-    {
-      "case_id": "aegis_case_600101_tushare_dragon_tiger_hot_money_1",
-      "symbol": "600101",
-      "ts_code": "600101.SH",
-      "name": "明星电力",
-      "market": "A",
-      "matched_strategy_ids": [
-        "a_share_short_momentum",
-        "growth_breakout"
-      ],
-      "research_sample_only": true,
-      "sample_source": "tushare_dragon_tiger_hot_money",
-      "source_status": "feature_gap_sample",
-      "event_aligned_case": true,
-      "event_trade_dates": [
-        "2024-07-02",
-        "2024-07-01",
-        "2024-06-24"
-      ],
-      "required_endpoints": [
-        "top_list",
-        "top_inst"
-      ],
-      "entry_date": "2024-06-24",
-      "exit_date": "2024-07-22",
-      "entry_close": 13.31,
-      "exit_close": 8.71,
-      "raw_return": -0.34560480841472574,
-      "max_drawdown": -0.37426470588235294,
-      "holding_trade_days": 20,
-      "point_in_time_case": true,
-      "data_cutoff_date": "2024-06-24",
-      "future_data_used_for_selection": false,
-      "case_result": "loss",
-      "evidence_ref": "aegis_strategy_specific_case:46263d475ced8b70beee5417c4bc30c6bac46fd67a97c68e6d9778e8ee1508ea"
-    },
-    {
-      "case_id": "aegis_case_600101_tushare_dragon_tiger_hot_money_2",
-      "symbol": "600101",
-      "ts_code": "600101.SH",
-      "name": "明星电力",
-      "market": "A",
-      "matched_strategy_ids": [
-        "a_share_short_momentum",
-        "growth_breakout"
-      ],
-      "research_sample_only": true,
-      "sample_source": "tushare_dragon_tiger_hot_money",
-      "source_status": "feature_gap_sample",
-      "event_aligned_case": true,
-      "event_trade_dates": [
-        "2024-07-02",
-        "2024-07-01",
-        "2024-06-24"
-      ],
-      "required_endpoints": [
-        "top_list",
-        "top_inst"
-      ],
-      "entry_date": "2024-07-01",
-      "exit_date": "2024-07-29",
-      "entry_close": 13.53,
-      "exit_close": 8.2,
-      "raw_return": -0.3939393939393939,
-      "max_drawdown": -0.4088235294117648,
-      "holding_trade_days": 20,
-      "point_in_time_case": true,
-      "data_cutoff_date": "2024-07-01",
-      "future_data_used_for_selection": false,
-      "case_result": "loss",
-      "evidence_ref": "aegis_strategy_specific_case:5b16ad429bbefd2a021540ecda0c2b3721c2d1a29ab9c49e1a0e90753f1a408a"
-    },
-    {
-      "case_id": "aegis_case_600101_tushare_dragon_tiger_hot_money_3",
-      "symbol": "600101",
-      "ts_code": "600101.SH",
-      "name": "明星电力",
-      "market": "A",
-      "matched_strategy_ids": [
-        "a_share_short_momentum",
-        "growth_breakout"
-      ],
-      "research_sample_only": true,
-      "sample_source": "tushare_dragon_tiger_hot_money",
-      "source_status": "feature_gap_sample",
-      "event_aligned_case": true,
-      "event_trade_dates": [
-        "2024-07-02",
-        "2024-07-01",
-        "2024-06-24"
-      ],
-      "required_endpoints": [
-        "top_list",
-        "top_inst"
-      ],
-      "entry_date": "2024-07-02",
-      "exit_date": "2024-07-30",
-      "entry_close": 13.6,
-      "exit_close": 8.26,
-      "raw_return": -0.39264705882352946,
-      "max_drawdown": -0.4088235294117648,
-      "holding_trade_days": 20,
-      "point_in_time_case": true,
-      "data_cutoff_date": "2024-07-02",
-      "future_data_used_for_selection": false,
-      "case_result": "loss",
-      "evidence_ref": "aegis_strategy_specific_case:6292c1289df46524b8afd9f584fbc09aa601309ff1a91e6023fa0cd65349dc70"
-    },
-    {
-      "case_id": "aegis_case_000099_tushare_dragon_tiger_hot_money_1",
-      "symbol": "000099",
-      "ts_code": "000099.SZ",
-      "name": "中信海直",
-      "market": "A",
-      "matched_strategy_ids": [
-        "a_share_short_momentum",
-        "growth_breakout"
-      ],
-      "research_sample_only": true,
-      "sample_source": "tushare_dragon_tiger_hot_money",
-      "source_status": "feature_gap_sample",
-      "event_aligned_case": true,
-      "event_trade_dates": [
-        "2024-05-24",
-        "2024-05-07",
-        "2024-04-30"
-      ],
-      "required_endpoints": [
-        "top_list",
-        "top_inst"
-      ],
-      "entry_date": "2024-04-30",
-      "exit_date": "2024-05-31",
-      "entry_close": 22.28,
-      "exit_close": 17.91,
-      "raw_return": -0.19614003590664275,
-      "max_drawdown": -0.2148213498014998,
-      "holding_trade_days": 20,
-      "point_in_time_case": true,
-      "data_cutoff_date": "2024-04-30",
-      "future_data_used_for_selection": false,
-      "case_result": "loss",
-      "evidence_ref": "aegis_strategy_specific_case:dc94683a7f736cf0c785e2bf1e5cba2e87fec3373aa2f79f925e98cb06155c8f"
-    },
-    {
-      "case_id": "aegis_case_000099_tushare_dragon_tiger_hot_money_2",
-      "symbol": "000099",
-      "ts_code": "000099.SZ",
-      "name": "中信海直",
-      "market": "A",
-      "matched_strategy_ids": [
-        "a_share_short_momentum",
-        "growth_breakout"
-      ],
-      "research_sample_only": true,
-      "sample_source": "tushare_dragon_tiger_hot_money",
-      "source_status": "feature_gap_sample",
-      "event_aligned_case": true,
-      "event_trade_dates": [
-        "2024-05-24",
-        "2024-05-07",
-        "2024-04-30"
-      ],
-      "required_endpoints": [
-        "top_list",
-        "top_inst"
-      ],
-      "entry_date": "2024-05-07",
-      "exit_date": "2024-06-04",
-      "entry_close": 22.67,
-      "exit_close": 18.41,
-      "raw_return": -0.18791354212615796,
-      "max_drawdown": -0.2148213498014998,
-      "holding_trade_days": 20,
-      "point_in_time_case": true,
-      "data_cutoff_date": "2024-05-07",
-      "future_data_used_for_selection": false,
-      "case_result": "loss",
-      "evidence_ref": "aegis_strategy_specific_case:69d5c60ffa1734bc3f2c9019f76ef6206d73d3c6de7e68e8ef41d6d7f6393a21"
-    },
-    {
-      "case_id": "aegis_case_000099_tushare_dragon_tiger_hot_money_3",
-      "symbol": "000099",
-      "ts_code": "000099.SZ",
-      "name": "中信海直",
-      "market": "A",
-      "matched_strategy_ids": [
-        "a_share_short_momentum",
-        "growth_breakout"
-      ],
-      "research_sample_only": true,
-      "sample_source": "tushare_dragon_tiger_hot_money",
-      "source_status": "feature_gap_sample",
-      "event_aligned_case": true,
-      "event_trade_dates": [
-        "2024-05-24",
-        "2024-05-07",
-        "2024-04-30"
-      ],
-      "required_endpoints": [
-        "top_list",
-        "top_inst"
-      ],
-      "entry_date": "2024-05-24",
-      "exit_date": "2024-06-24",
-      "entry_close": 19.09,
-      "exit_close": 16.37,
-      "raw_return": -0.14248297537977994,
-      "max_drawdown": -0.14248297537977994,
-      "holding_trade_days": 20,
-      "point_in_time_case": true,
-      "data_cutoff_date": "2024-05-24",
-      "future_data_used_for_selection": false,
-      "case_result": "loss",
-      "evidence_ref": "aegis_strategy_specific_case:2bb435efd3301d75e46914fb4e164f3b2d3e9d429d2333573499973051ea5a86"
-    },
-    {
-      "case_id": "aegis_case_603172_tushare_dragon_tiger_hot_money_1",
-      "symbol": "603172",
-      "ts_code": "603172.SH",
-      "name": "万丰股份",
-      "market": "A",
-      "matched_strategy_ids": [
-        "a_share_short_momentum",
-        "growth_breakout"
-      ],
-      "research_sample_only": true,
-      "sample_source": "tushare_dragon_tiger_hot_money",
-      "source_status": "feature_gap_sample",
-      "event_aligned_case": true,
-      "event_trade_dates": [
-        "2024-06-20",
-        "2024-06-14",
-        "2024-06-13"
-      ],
-      "required_endpoints": [
-        "top_list",
-        "top_inst"
-      ],
-      "entry_date": "2024-06-13",
-      "exit_date": "2024-07-11",
-      "entry_close": 15.77,
-      "exit_close": 18.17,
-      "raw_return": 0.15218769816106548,
-      "max_drawdown": -0.04236276849642007,
-      "holding_trade_days": 20,
-      "point_in_time_case": true,
-      "data_cutoff_date": "2024-06-13",
-      "future_data_used_for_selection": false,
-      "case_result": "win",
-      "evidence_ref": "aegis_strategy_specific_case:333d5dd3c65eaf6bff1776fc06ea3bbaa8470e7bcd3acfb3e4f20591194a9554"
-    },
-    {
-      "case_id": "aegis_case_603172_tushare_dragon_tiger_hot_money_2",
-      "symbol": "603172",
-      "ts_code": "603172.SH",
-      "name": "万丰股份",
-      "market": "A",
-      "matched_strategy_ids": [
-        "a_share_short_momentum",
-        "growth_breakout"
-      ],
-      "research_sample_only": true,
-      "sample_source": "tushare_dragon_tiger_hot_money",
-      "source_status": "feature_gap_sample",
-      "event_aligned_case": true,
-      "event_trade_dates": [
-        "2024-06-20",
-        "2024-06-14",
-        "2024-06-13"
-      ],
-      "required_endpoints": [
-        "top_list",
-        "top_inst"
-      ],
-      "entry_date": "2024-06-14",
-      "exit_date": "2024-07-12",
-      "entry_close": 15.91,
-      "exit_close": 17.89,
-      "raw_return": 0.12445003142677558,
-      "max_drawdown": -0.04236276849642007,
-      "holding_trade_days": 20,
-      "point_in_time_case": true,
-      "data_cutoff_date": "2024-06-14",
-      "future_data_used_for_selection": false,
-      "case_result": "win",
-      "evidence_ref": "aegis_strategy_specific_case:26e9edca45e207f3d3e4796fe1f77b0774cbe55c1a985ca8e66136d8b7d2111c"
-    },
-    {
-      "case_id": "aegis_case_603172_tushare_dragon_tiger_hot_money_3",
-      "symbol": "603172",
-      "ts_code": "603172.SH",
-      "name": "万丰股份",
-      "market": "A",
-      "matched_strategy_ids": [
-        "a_share_short_momentum",
-        "growth_breakout"
-      ],
-      "research_sample_only": true,
-      "sample_source": "tushare_dragon_tiger_hot_money",
-      "source_status": "feature_gap_sample",
-      "event_aligned_case": true,
-      "event_trade_dates": [
-        "2024-06-20",
-        "2024-06-14",
-        "2024-06-13"
-      ],
-      "required_endpoints": [
-        "top_list",
-        "top_inst"
-      ],
-      "entry_date": "2024-06-20",
-      "exit_date": "2024-07-18",
-      "entry_close": 16.42,
-      "exit_close": 16.83,
-      "raw_return": 0.024969549330084995,
-      "max_drawdown": -0.10383386581469667,
-      "holding_trade_days": 20,
-      "point_in_time_case": true,
-      "data_cutoff_date": "2024-06-20",
-      "future_data_used_for_selection": false,
-      "case_result": "win",
-      "evidence_ref": "aegis_strategy_specific_case:b89af67f55cfbbafee1dd680a7822adc74ab285943bf1e35836a51988e880873"
-    },
-    {
-      "case_id": "aegis_case_301049_tushare_dragon_tiger_hot_money_1",
-      "symbol": "301049",
-      "ts_code": "301049.SZ",
-      "name": "超越科技",
-      "market": "A",
-      "matched_strategy_ids": [
-        "a_share_short_momentum",
-        "growth_breakout"
-      ],
-      "research_sample_only": true,
-      "sample_source": "tushare_dragon_tiger_hot_money",
-      "source_status": "feature_gap_sample",
-      "event_aligned_case": true,
-      "event_trade_dates": [
-        "2024-06-04",
-        "2024-05-06",
-        "2024-04-30"
-      ],
-      "required_endpoints": [
-        "top_list",
-        "top_inst"
-      ],
-      "entry_date": "2024-04-30",
-      "exit_date": "2024-05-31",
-      "entry_close": 28.2,
-      "exit_close": 26.27,
-      "raw_return": -0.0684397163120567,
-      "max_drawdown": -0.20189701897018975,
-      "holding_trade_days": 20,
-      "point_in_time_case": true,
-      "data_cutoff_date": "2024-04-30",
-      "future_data_used_for_selection": false,
-      "case_result": "loss",
-      "evidence_ref": "aegis_strategy_specific_case:fb0f0b77ba05d45cedbe21e0ad973eadf32c253459e244ff2580eb852e5ab7e1"
-    },
-    {
-      "case_id": "aegis_case_301049_tushare_dragon_tiger_hot_money_2",
-      "symbol": "301049",
-      "ts_code": "301049.SZ",
-      "name": "超越科技",
-      "market": "A",
-      "matched_strategy_ids": [
-        "a_share_short_momentum",
-        "growth_breakout"
-      ],
-      "research_sample_only": true,
-      "sample_source": "tushare_dragon_tiger_hot_money",
-      "source_status": "feature_gap_sample",
-      "event_aligned_case": true,
-      "event_trade_dates": [
-        "2024-06-04",
-        "2024-05-06",
-        "2024-04-30"
-      ],
-      "required_endpoints": [
-        "top_list",
-        "top_inst"
-      ],
-      "entry_date": "2024-05-06",
-      "exit_date": "2024-06-03",
-      "entry_close": 29.52,
-      "exit_close": 24.14,
-      "raw_return": -0.1822493224932249,
-      "max_drawdown": -0.20189701897018975,
-      "holding_trade_days": 20,
-      "point_in_time_case": true,
-      "data_cutoff_date": "2024-05-06",
-      "future_data_used_for_selection": false,
-      "case_result": "loss",
-      "evidence_ref": "aegis_strategy_specific_case:03e85d8dc24c2caa3b631a590dcfd00fb9568ea2937a603c872723ea8f25b29d"
-    },
-    {
-      "case_id": "aegis_case_301049_tushare_dragon_tiger_hot_money_3",
-      "symbol": "301049",
-      "ts_code": "301049.SZ",
-      "name": "超越科技",
-      "market": "A",
-      "matched_strategy_ids": [
-        "a_share_short_momentum",
-        "growth_breakout"
-      ],
-      "research_sample_only": true,
-      "sample_source": "tushare_dragon_tiger_hot_money",
-      "source_status": "feature_gap_sample",
-      "event_aligned_case": true,
-      "event_trade_dates": [
-        "2024-06-04",
-        "2024-05-06",
-        "2024-04-30"
-      ],
-      "required_endpoints": [
-        "top_list",
-        "top_inst"
-      ],
-      "entry_date": "2024-06-04",
-      "exit_date": "2024-07-03",
-      "entry_close": 19.31,
-      "exit_close": 17.91,
-      "raw_return": -0.0725012946659761,
-      "max_drawdown": -0.11221945137157108,
-      "holding_trade_days": 20,
-      "point_in_time_case": true,
-      "data_cutoff_date": "2024-06-04",
-      "future_data_used_for_selection": false,
-      "case_result": "loss",
-      "evidence_ref": "aegis_strategy_specific_case:cbb59cada0f7c7cb82f52915a98c34d1e83c04c7ae853032b310a41080537e66"
-    },
-    {
-      "case_id": "aegis_case_301577_tushare_dragon_tiger_hot_money_1",
-      "symbol": "301577",
-      "ts_code": "301577.SZ",
-      "name": "美信科技",
-      "market": "A",
-      "matched_strategy_ids": [
-        "a_share_short_momentum",
-        "growth_breakout"
-      ],
-      "research_sample_only": true,
-      "sample_source": "tushare_dragon_tiger_hot_money",
-      "source_status": "feature_gap_sample",
-      "event_aligned_case": true,
-      "event_trade_dates": [
-        "2024-07-03",
-        "2024-07-01",
-        "2024-06-28"
-      ],
-      "required_endpoints": [
-        "top_list",
-        "top_inst"
-      ],
-      "entry_date": "2024-06-28",
-      "exit_date": "2024-07-26",
-      "entry_close": 85.0,
-      "exit_close": 60.21,
-      "raw_return": -0.29164705882352937,
-      "max_drawdown": -0.3109411764705883,
-      "holding_trade_days": 20,
-      "point_in_time_case": true,
-      "data_cutoff_date": "2024-06-28",
-      "future_data_used_for_selection": false,
-      "case_result": "loss",
-      "evidence_ref": "aegis_strategy_specific_case:657a740ce53660ada578b2589a9586a301d40c1b3c8a863c5d5aa19c802b2ed3"
-    },
-    {
-      "case_id": "aegis_case_301577_tushare_dragon_tiger_hot_money_2",
-      "symbol": "301577",
-      "ts_code": "301577.SZ",
-      "name": "美信科技",
-      "market": "A",
-      "matched_strategy_ids": [
-        "a_share_short_momentum",
-        "growth_breakout"
-      ],
-      "research_sample_only": true,
-      "sample_source": "tushare_dragon_tiger_hot_money",
-      "source_status": "feature_gap_sample",
-      "event_aligned_case": true,
-      "event_trade_dates": [
-        "2024-07-03",
-        "2024-07-01",
-        "2024-06-28"
-      ],
-      "required_endpoints": [
-        "top_list",
-        "top_inst"
-      ],
-      "entry_date": "2024-07-01",
-      "exit_date": "2024-07-29",
-      "entry_close": 81.57,
-      "exit_close": 59.15,
-      "raw_return": -0.2748559519431163,
-      "max_drawdown": -0.28196640921907556,
-      "holding_trade_days": 20,
-      "point_in_time_case": true,
-      "data_cutoff_date": "2024-07-01",
-      "future_data_used_for_selection": false,
-      "case_result": "loss",
-      "evidence_ref": "aegis_strategy_specific_case:7d6c8dc7fa1cc5d4be31fe48c64ed1261468d36bef23b37b8be7b618550db22d"
-    },
-    {
-      "case_id": "aegis_case_301577_tushare_dragon_tiger_hot_money_3",
-      "symbol": "301577",
-      "ts_code": "301577.SZ",
-      "name": "美信科技",
-      "market": "A",
-      "matched_strategy_ids": [
-        "a_share_short_momentum",
-        "growth_breakout"
-      ],
-      "research_sample_only": true,
-      "sample_source": "tushare_dragon_tiger_hot_money",
-      "source_status": "feature_gap_sample",
-      "event_aligned_case": true,
-      "event_trade_dates": [
-        "2024-07-03",
-        "2024-07-01",
-        "2024-06-28"
-      ],
-      "required_endpoints": [
-        "top_list",
-        "top_inst"
-      ],
-      "entry_date": "2024-07-03",
-      "exit_date": "2024-07-31",
-      "entry_close": 68.8,
-      "exit_close": 59.66,
-      "raw_return": -0.1328488372093023,
-      "max_drawdown": -0.16898806139852185,
-      "holding_trade_days": 20,
-      "point_in_time_case": true,
-      "data_cutoff_date": "2024-07-03",
-      "future_data_used_for_selection": false,
-      "case_result": "loss",
-      "evidence_ref": "aegis_strategy_specific_case:e8762d4831214910d24a6c64c9bfb3abac52a13d420d17eff1c37ca7458c84f5"
+      "evidence_ref": "aegis_strategy_specific_case:f621956d09a134419105aab1683d45503ae7c3ec3a5ebf71cfb0116c0e37d9ef"
     }
   ],
   "data_gaps": [],
@@ -4796,8 +4724,8 @@
     "stock_selection_workbench": "ddea037d923a116e60cfeb545c38a833311fd954d635f165f8ac5381a14e4420",
     "strategy_sandbox_coverage": "ece45915bc7b20aa09fdda865ef9d4a94f2cb9f4107b72f6e9adab1011618028",
     "h_us_daily_bars_refresh": "c9ceb1ead15de55b365e2a340cc363deaef52b6bc61b7314b67d759a265e8703",
-    "dragon_tiger_research_samples": "41dc11b32fe7d757f220c2e9c5db88ef49d43da1b35a21f8711bf749b24ac433",
-    "stock_basic": "0bbc2d38cc4cde25b19d947ab5bd85c1558835da35985f73e62ab16449e99ae8"
+    "dragon_tiger_research_samples": "f17cc763d2a68f07665478473436d661d706a17da767811ad74debd192065e21",
+    "stock_basic": "ba254e6efd76b8d2a90066dec583d32e3aaac94284f848124ef1cb968cdd9949"
   },
   "checks": {
     "strategy_validation_input_ready": true,
@@ -4890,5 +4818,5 @@
       "sha256": "c468fe43ec7097f129805fb71b6551c2db809213e2e13e9b2f1b2354f53ad65f"
     }
   },
-  "run_dir": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/aegis_strategy_specific_historical_cases/aegis_strategy_specific_historical_cases_20260712T175900Z"
+  "run_dir": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/processed/aegis_strategy_specific_historical_cases/aegis_strategy_specific_historical_cases_20260713T002924Z"
 }

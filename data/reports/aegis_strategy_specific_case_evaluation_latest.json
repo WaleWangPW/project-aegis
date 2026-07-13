@@ -1,7 +1,7 @@
 {
   "type": "aegis_strategy_specific_case_evaluation",
   "status": "PASS",
-  "generated_at": "2026-07-13T01:59:00+08:00",
+  "generated_at": "2026-07-13T08:29:25+08:00",
   "thresholds": {
     "min_case_count": 4,
     "min_win_rate": 0.5,
@@ -12,9 +12,9 @@
   },
   "summary": {
     "candidate_count": 33,
-    "simulation_research_candidate_count": 10,
+    "simulation_research_candidate_count": 12,
     "watch_only_count": 3,
-    "downgraded_count": 20,
+    "downgraded_count": 18,
     "user_facing_suggestion_allowed": false,
     "next_stage": "surface dispositions in dashboard and stock assistant brief"
   },
@@ -29,18 +29,17 @@
         "a_share_short_momentum",
         "growth_breakout"
       ],
-      "disposition": "downgraded",
+      "disposition": "simulation_research_candidate",
       "reasons": [
-        "win_rate_below_threshold",
-        "average_return_below_threshold"
+        "historical_case_thresholds_passed"
       ],
       "summary": {
         "case_count": 4,
-        "win_rate": 0.25,
-        "average_return": -0.03987299427283694,
-        "average_max_drawdown": -0.13162914843771775,
-        "best_return": 0.05810972483336174,
-        "worst_return": -0.17124704491725773
+        "win_rate": 0.5,
+        "average_return": 0.057372115012818026,
+        "average_max_drawdown": -0.08057527226187947,
+        "best_return": 0.30434782608695654,
+        "worst_return": -0.10508771929824567
       },
       "simulation_only": true,
       "user_facing_suggestion_allowed": false,
@@ -55,18 +54,17 @@
         "low_vol_momentum",
         "a_share_short_momentum"
       ],
-      "disposition": "downgraded",
+      "disposition": "simulation_research_candidate",
       "reasons": [
-        "win_rate_below_threshold",
-        "average_return_below_threshold"
+        "historical_case_thresholds_passed"
       ],
       "summary": {
         "case_count": 4,
-        "win_rate": 0.25,
-        "average_return": -0.03885265782271061,
-        "average_max_drawdown": -0.08405515278934739,
-        "best_return": 0.08576998050682261,
-        "worst_return": -0.10544452101998614
+        "win_rate": 0.5,
+        "average_return": 0.024795152504769546,
+        "average_max_drawdown": -0.058086560108343316,
+        "best_return": 0.16301843317972353,
+        "worst_return": -0.053817271589486904
       },
       "simulation_only": true,
       "user_facing_suggestion_allowed": false,
@@ -352,11 +350,11 @@
       ],
       "summary": {
         "case_count": 4,
-        "win_rate": 0.75,
-        "average_return": 0.01718225585372507,
-        "average_max_drawdown": -0.06264105730648717,
-        "best_return": 0.04428571428571426,
-        "worst_return": -0.0021134202183867856
+        "win_rate": 0.5,
+        "average_return": 0.01843935684702011,
+        "average_max_drawdown": -0.07146116778450218,
+        "best_return": 0.07518142235123348,
+        "worst_return": -0.06118500604594923
       },
       "simulation_only": true,
       "user_facing_suggestion_allowed": false,
@@ -374,17 +372,15 @@
       ],
       "disposition": "downgraded",
       "reasons": [
-        "win_rate_below_threshold",
-        "average_return_below_threshold",
-        "hard_worst_return_breached"
+        "win_rate_below_threshold"
       ],
       "summary": {
         "case_count": 4,
-        "win_rate": 0.0,
-        "average_return": -0.12714493109306604,
-        "average_max_drawdown": -0.20182771169874653,
-        "best_return": -0.006502395619438661,
-        "worst_return": -0.20974820974820974
+        "win_rate": 0.25,
+        "average_return": 0.088520004596259,
+        "average_max_drawdown": -0.14130708669698816,
+        "best_return": 0.4877031181379008,
+        "worst_return": -0.08699578567128241
       },
       "simulation_only": true,
       "user_facing_suggestion_allowed": false,
@@ -408,10 +404,10 @@
       "summary": {
         "case_count": 4,
         "win_rate": 0.75,
-        "average_return": 0.004495591474208388,
-        "average_max_drawdown": -0.12070118474626812,
-        "best_return": 0.1466389054134445,
-        "worst_return": -0.14807197943444728
+        "average_return": 0.02463184253506845,
+        "average_max_drawdown": -0.14611210178072653,
+        "best_return": 0.20527989821882953,
+        "worst_return": -0.1643111711933145
       },
       "simulation_only": true,
       "user_facing_suggestion_allowed": false,
@@ -434,10 +430,10 @@
       ],
       "summary": {
         "case_count": 4,
-        "win_rate": 0.0,
-        "average_return": -0.07759009450562437,
-        "average_max_drawdown": -0.16538103457302594,
-        "best_return": -0.004312410158121671,
+        "win_rate": 0.25,
+        "average_return": -0.1012075047508793,
+        "average_max_drawdown": -0.16075720064446417,
+        "best_return": 0.019251336898395754,
         "worst_return": -0.18198417528910527
       },
       "simulation_only": true,
@@ -457,16 +453,15 @@
       "disposition": "downgraded",
       "reasons": [
         "win_rate_below_threshold",
-        "average_return_below_threshold",
-        "hard_worst_return_breached"
+        "average_return_below_threshold"
       ],
       "summary": {
         "case_count": 4,
-        "win_rate": 0.0,
-        "average_return": -0.2217532480217104,
-        "average_max_drawdown": -0.29781119216804075,
-        "best_return": -0.06500872600349039,
-        "worst_return": -0.47955345225094037
+        "win_rate": 0.25,
+        "average_return": -0.004931497444686711,
+        "average_max_drawdown": -0.14514021862390397,
+        "best_return": 0.19807567767601086,
+        "worst_return": -0.11358024691358026
       },
       "simulation_only": true,
       "user_facing_suggestion_allowed": false,
@@ -484,16 +479,15 @@
       ],
       "disposition": "downgraded",
       "reasons": [
-        "win_rate_below_threshold",
-        "average_return_below_threshold"
+        "hard_worst_return_breached"
       ],
       "summary": {
         "case_count": 4,
-        "win_rate": 0.25,
-        "average_return": -0.07782971700417715,
-        "average_max_drawdown": -0.1915428355474283,
-        "best_return": 0.10820895522388052,
-        "worst_return": -0.1874999999999999
+        "win_rate": 0.5,
+        "average_return": 0.02137383025223369,
+        "average_max_drawdown": -0.17401947311128352,
+        "best_return": 0.2650905353048154,
+        "worst_return": -0.27581376184590034
       },
       "simulation_only": true,
       "user_facing_suggestion_allowed": false,
@@ -514,11 +508,11 @@
       ],
       "summary": {
         "case_count": 4,
-        "win_rate": 0.5,
-        "average_return": 0.005447954177738551,
-        "average_max_drawdown": -0.07693072092856476,
-        "best_return": 0.06696428571428559,
-        "worst_return": -0.09048723897911826
+        "win_rate": 0.75,
+        "average_return": 0.044812734560510964,
+        "average_max_drawdown": -0.08531880577405218,
+        "best_return": 0.1352549889135255,
+        "worst_return": -0.009685230024213065
       },
       "simulation_only": true,
       "user_facing_suggestion_allowed": false,
@@ -536,24 +530,23 @@
       ],
       "disposition": "downgraded",
       "reasons": [
-        "win_rate_below_threshold",
         "average_return_below_threshold"
       ],
       "summary": {
         "case_count": 4,
-        "win_rate": 0.0,
-        "average_return": -0.061083640832751834,
-        "average_max_drawdown": -0.12248862191913723,
-        "best_return": -0.019512195121951237,
-        "worst_return": -0.09271523178807939
+        "win_rate": 0.5,
+        "average_return": -0.002104843961235142,
+        "average_max_drawdown": -0.1269757931690259,
+        "best_return": 0.0761979575805185,
+        "worst_return": -0.07648725212464591
       },
       "simulation_only": true,
       "user_facing_suggestion_allowed": false,
       "real_trade_allowed": false
     },
     {
-      "symbol": "000506",
-      "name": "招金黄金",
+      "symbol": "920088",
+      "name": "科力股份",
       "market": "A",
       "matched_strategy_ids": [
         "a_share_short_momentum",
@@ -562,23 +555,79 @@
       "disposition": "downgraded",
       "reasons": [
         "case_count_below_threshold",
-        "win_rate_below_threshold"
+        "win_rate_below_threshold",
+        "average_return_below_threshold",
+        "hard_worst_return_breached"
       ],
       "summary": {
         "case_count": 3,
-        "win_rate": 0.3333333333333333,
-        "average_return": 0.027476097651536247,
-        "average_max_drawdown": -0.2208994708994709,
-        "best_return": 0.2407407407407407,
-        "worst_return": -0.07936507936507942
+        "win_rate": 0.0,
+        "average_return": -0.21855688350722194,
+        "average_max_drawdown": -0.3096998695084819,
+        "best_return": -0.12511091393078977,
+        "worst_return": -0.2827822120866591
       },
       "simulation_only": true,
       "user_facing_suggestion_allowed": false,
       "real_trade_allowed": false
     },
     {
-      "symbol": "603879",
-      "name": "永悦科技",
+      "symbol": "002361",
+      "name": "神剑股份",
+      "market": "A",
+      "matched_strategy_ids": [
+        "a_share_short_momentum",
+        "growth_breakout"
+      ],
+      "disposition": "downgraded",
+      "reasons": [
+        "case_count_below_threshold",
+        "win_rate_below_threshold",
+        "average_return_below_threshold",
+        "hard_worst_return_breached"
+      ],
+      "summary": {
+        "case_count": 3,
+        "win_rate": 0.0,
+        "average_return": -0.34222995500090114,
+        "average_max_drawdown": -0.3878175600955415,
+        "best_return": -0.27132226674298787,
+        "worst_return": -0.3942408376963351
+      },
+      "simulation_only": true,
+      "user_facing_suggestion_allowed": false,
+      "real_trade_allowed": false
+    },
+    {
+      "symbol": "920078",
+      "name": "族兴新材",
+      "market": "A",
+      "matched_strategy_ids": [
+        "a_share_short_momentum",
+        "growth_breakout"
+      ],
+      "disposition": "downgraded",
+      "reasons": [
+        "case_count_below_threshold",
+        "win_rate_below_threshold",
+        "average_return_below_threshold",
+        "hard_worst_return_breached"
+      ],
+      "summary": {
+        "case_count": 3,
+        "win_rate": 0.0,
+        "average_return": -0.17968913962784247,
+        "average_max_drawdown": -0.2378079077013769,
+        "best_return": -0.1384309266628767,
+        "worst_return": -0.22206506364922207
+      },
+      "simulation_only": true,
+      "user_facing_suggestion_allowed": false,
+      "real_trade_allowed": false
+    },
+    {
+      "symbol": "603459",
+      "name": "红板科技",
       "market": "A",
       "matched_strategy_ids": [
         "a_share_short_momentum",
@@ -590,45 +639,19 @@
       ],
       "summary": {
         "case_count": 3,
-        "win_rate": 1.0,
-        "average_return": 0.16826009586630053,
-        "average_max_drawdown": -0.13212121212121208,
-        "best_return": 0.2961165048543688,
-        "worst_return": 0.06392694063926951
+        "win_rate": 0.6666666666666666,
+        "average_return": 0.06287550904911676,
+        "average_max_drawdown": -0.2509820588650607,
+        "best_return": 0.15545685279187826,
+        "worst_return": -0.08496121132816137
       },
       "simulation_only": true,
       "user_facing_suggestion_allowed": false,
       "real_trade_allowed": false
     },
     {
-      "symbol": "000628",
-      "name": "高新发展",
-      "market": "A",
-      "matched_strategy_ids": [
-        "a_share_short_momentum",
-        "growth_breakout"
-      ],
-      "disposition": "downgraded",
-      "reasons": [
-        "case_count_below_threshold",
-        "win_rate_below_threshold",
-        "average_return_below_threshold"
-      ],
-      "summary": {
-        "case_count": 3,
-        "win_rate": 0.3333333333333333,
-        "average_return": -0.0754339668210486,
-        "average_max_drawdown": -0.1667290745869635,
-        "best_return": 0.006986702727067806,
-        "worst_return": -0.19059494121838272
-      },
-      "simulation_only": true,
-      "user_facing_suggestion_allowed": false,
-      "real_trade_allowed": false
-    },
-    {
-      "symbol": "603261",
-      "name": "立航科技",
+      "symbol": "600396",
+      "name": "华电辽能",
       "market": "A",
       "matched_strategy_ids": [
         "a_share_short_momentum",
@@ -644,125 +667,18 @@
       "summary": {
         "case_count": 3,
         "win_rate": 0.0,
-        "average_return": -0.17018089070263284,
-        "average_max_drawdown": -0.2093931297966004,
-        "best_return": -0.13122761315532405,
-        "worst_return": -0.21389917402449443
+        "average_return": -0.19088194621931584,
+        "average_max_drawdown": -0.3105750265513579,
+        "best_return": -0.17932148626817446,
+        "worst_return": -0.20197300103842175
       },
       "simulation_only": true,
       "user_facing_suggestion_allowed": false,
       "real_trade_allowed": false
     },
     {
-      "symbol": "603389",
-      "name": "亚振家居",
-      "market": "A",
-      "matched_strategy_ids": [
-        "a_share_short_momentum",
-        "growth_breakout"
-      ],
-      "disposition": "downgraded",
-      "reasons": [
-        "case_count_below_threshold",
-        "win_rate_below_threshold",
-        "average_return_below_threshold"
-      ],
-      "summary": {
-        "case_count": 3,
-        "win_rate": 0.3333333333333333,
-        "average_return": -0.09028783866723418,
-        "average_max_drawdown": -0.21797707719086004,
-        "best_return": 0.013944223107569709,
-        "worst_return": -0.1669505962521295
-      },
-      "simulation_only": true,
-      "user_facing_suggestion_allowed": false,
-      "real_trade_allowed": false
-    },
-    {
-      "symbol": "600715",
-      "name": "文投控股",
-      "market": "A",
-      "matched_strategy_ids": [
-        "a_share_short_momentum",
-        "growth_breakout"
-      ],
-      "disposition": "downgraded",
-      "reasons": [
-        "case_count_below_threshold",
-        "win_rate_below_threshold",
-        "average_return_below_threshold",
-        "hard_worst_return_breached"
-      ],
-      "summary": {
-        "case_count": 3,
-        "win_rate": 0.3333333333333333,
-        "average_return": -0.08497095010252902,
-        "average_max_drawdown": -0.24826937388544867,
-        "best_return": 0.0592105263157896,
-        "worst_return": -0.2857142857142857
-      },
-      "simulation_only": true,
-      "user_facing_suggestion_allowed": false,
-      "real_trade_allowed": false
-    },
-    {
-      "symbol": "001376",
-      "name": "百通能源",
-      "market": "A",
-      "matched_strategy_ids": [
-        "a_share_short_momentum",
-        "growth_breakout"
-      ],
-      "disposition": "downgraded",
-      "reasons": [
-        "case_count_below_threshold",
-        "win_rate_below_threshold",
-        "average_return_below_threshold",
-        "hard_worst_return_breached"
-      ],
-      "summary": {
-        "case_count": 3,
-        "win_rate": 0.0,
-        "average_return": -0.17420313904577625,
-        "average_max_drawdown": -0.19828250415168278,
-        "best_return": -0.13716404077849853,
-        "worst_return": -0.20350877192982453
-      },
-      "simulation_only": true,
-      "user_facing_suggestion_allowed": false,
-      "real_trade_allowed": false
-    },
-    {
-      "symbol": "600101",
-      "name": "明星电力",
-      "market": "A",
-      "matched_strategy_ids": [
-        "a_share_short_momentum",
-        "growth_breakout"
-      ],
-      "disposition": "downgraded",
-      "reasons": [
-        "case_count_below_threshold",
-        "win_rate_below_threshold",
-        "average_return_below_threshold",
-        "hard_worst_return_breached"
-      ],
-      "summary": {
-        "case_count": 3,
-        "win_rate": 0.0,
-        "average_return": -0.3773970870592163,
-        "average_max_drawdown": -0.39730392156862754,
-        "best_return": -0.34560480841472574,
-        "worst_return": -0.3939393939393939
-      },
-      "simulation_only": true,
-      "user_facing_suggestion_allowed": false,
-      "real_trade_allowed": false
-    },
-    {
-      "symbol": "000099",
-      "name": "中信海直",
+      "symbol": "300164",
+      "name": "通源石油",
       "market": "A",
       "matched_strategy_ids": [
         "a_share_short_momentum",
@@ -777,18 +693,126 @@
       "summary": {
         "case_count": 3,
         "win_rate": 0.0,
-        "average_return": -0.17551218447086023,
-        "average_max_drawdown": -0.19070855832759318,
-        "best_return": -0.14248297537977994,
-        "worst_return": -0.19614003590664275
+        "average_return": -0.13535777206678626,
+        "average_max_drawdown": -0.17318312348133422,
+        "best_return": -0.09285714285714286,
+        "worst_return": -0.18290258449304175
       },
       "simulation_only": true,
       "user_facing_suggestion_allowed": false,
       "real_trade_allowed": false
     },
     {
-      "symbol": "603172",
-      "name": "万丰股份",
+      "symbol": "001896",
+      "name": "豫能控股",
+      "market": "A",
+      "matched_strategy_ids": [
+        "a_share_short_momentum",
+        "growth_breakout"
+      ],
+      "disposition": "downgraded",
+      "reasons": [
+        "case_count_below_threshold",
+        "win_rate_below_threshold",
+        "average_return_below_threshold",
+        "hard_worst_return_breached"
+      ],
+      "summary": {
+        "case_count": 3,
+        "win_rate": 0.0,
+        "average_return": -0.27014771967785656,
+        "average_max_drawdown": -0.33436123348017616,
+        "best_return": -0.16951710261569408,
+        "worst_return": -0.35482374768089053
+      },
+      "simulation_only": true,
+      "user_facing_suggestion_allowed": false,
+      "real_trade_allowed": false
+    },
+    {
+      "symbol": "000890",
+      "name": "法尔胜",
+      "market": "A",
+      "matched_strategy_ids": [
+        "a_share_short_momentum",
+        "growth_breakout"
+      ],
+      "disposition": "downgraded",
+      "reasons": [
+        "case_count_below_threshold",
+        "win_rate_below_threshold",
+        "average_return_below_threshold",
+        "hard_worst_return_breached"
+      ],
+      "summary": {
+        "case_count": 3,
+        "win_rate": 0.0,
+        "average_return": -0.3297459148210104,
+        "average_max_drawdown": -0.3350575649292415,
+        "best_return": -0.2902723735408561,
+        "worst_return": -0.3770883054892602
+      },
+      "simulation_only": true,
+      "user_facing_suggestion_allowed": false,
+      "real_trade_allowed": false
+    },
+    {
+      "symbol": "920012",
+      "name": "创达新材",
+      "market": "A",
+      "matched_strategy_ids": [
+        "a_share_short_momentum",
+        "growth_breakout"
+      ],
+      "disposition": "downgraded",
+      "reasons": [
+        "case_count_below_threshold",
+        "win_rate_below_threshold",
+        "average_return_below_threshold",
+        "hard_worst_return_breached"
+      ],
+      "summary": {
+        "case_count": 3,
+        "win_rate": 0.0,
+        "average_return": -0.17402288117591383,
+        "average_max_drawdown": -0.2953817861961107,
+        "best_return": -0.15514206688458643,
+        "worst_return": -0.20498804236419543
+      },
+      "simulation_only": true,
+      "user_facing_suggestion_allowed": false,
+      "real_trade_allowed": false
+    },
+    {
+      "symbol": "600726",
+      "name": "华电能源",
+      "market": "A",
+      "matched_strategy_ids": [
+        "a_share_short_momentum",
+        "growth_breakout"
+      ],
+      "disposition": "downgraded",
+      "reasons": [
+        "case_count_below_threshold",
+        "win_rate_below_threshold",
+        "average_return_below_threshold",
+        "hard_worst_return_breached"
+      ],
+      "summary": {
+        "case_count": 3,
+        "win_rate": 0.0,
+        "average_return": -0.3178623856300951,
+        "average_max_drawdown": -0.33926217962904825,
+        "best_return": -0.2505263157894737,
+        "worst_return": -0.38113570741097214
+      },
+      "simulation_only": true,
+      "user_facing_suggestion_allowed": false,
+      "real_trade_allowed": false
+    },
+    {
+      "symbol": "002297",
+      "name": "博云新材",
       "market": "A",
       "matched_strategy_ids": [
         "a_share_short_momentum",
@@ -799,46 +823,20 @@
         "case_count_below_threshold"
       ],
       "summary": {
-        "case_count": 3,
+        "case_count": 2,
         "win_rate": 1.0,
-        "average_return": 0.10053575963930868,
-        "average_max_drawdown": -0.06285313426917893,
-        "best_return": 0.15218769816106548,
-        "worst_return": 0.024969549330084995
+        "average_return": 0.2361652284155148,
+        "average_max_drawdown": -0.21379048642084852,
+        "best_return": 0.34890829694323156,
+        "worst_return": 0.12342215988779803
       },
       "simulation_only": true,
       "user_facing_suggestion_allowed": false,
       "real_trade_allowed": false
     },
     {
-      "symbol": "301049",
-      "name": "超越科技",
-      "market": "A",
-      "matched_strategy_ids": [
-        "a_share_short_momentum",
-        "growth_breakout"
-      ],
-      "disposition": "downgraded",
-      "reasons": [
-        "case_count_below_threshold",
-        "win_rate_below_threshold",
-        "average_return_below_threshold"
-      ],
-      "summary": {
-        "case_count": 3,
-        "win_rate": 0.0,
-        "average_return": -0.1077301111570859,
-        "average_max_drawdown": -0.17200449643731686,
-        "best_return": -0.0684397163120567,
-        "worst_return": -0.1822493224932249
-      },
-      "simulation_only": true,
-      "user_facing_suggestion_allowed": false,
-      "real_trade_allowed": false
-    },
-    {
-      "symbol": "301577",
-      "name": "美信科技",
+      "symbol": "603778",
+      "name": "国晟科技",
       "market": "A",
       "matched_strategy_ids": [
         "a_share_short_momentum",
@@ -852,12 +850,12 @@
         "hard_worst_return_breached"
       ],
       "summary": {
-        "case_count": 3,
+        "case_count": 2,
         "win_rate": 0.0,
-        "average_return": -0.2331172826586493,
-        "average_max_drawdown": -0.2539652156960619,
-        "best_return": -0.1328488372093023,
-        "worst_return": -0.29164705882352937
+        "average_return": -0.3312403100775194,
+        "average_max_drawdown": -0.3491552667578659,
+        "best_return": -0.3038759689922481,
+        "worst_return": -0.3586046511627907
       },
       "simulation_only": true,
       "user_facing_suggestion_allowed": false,
@@ -868,7 +866,7 @@
     "strategy_specific_historical_cases": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/aegis_strategy_specific_historical_cases_latest.json"
   },
   "source_hashes": {
-    "strategy_specific_historical_cases": "b661cd143c55937943fb474a0042117e1586c7eae0407056409055d7a16f064d"
+    "strategy_specific_historical_cases": "7474dd2e1563e96fa595f2b0d6d876c041c13d7b158ad9939efaa96814ac1761"
   },
   "checks": {
     "source_pass": true,

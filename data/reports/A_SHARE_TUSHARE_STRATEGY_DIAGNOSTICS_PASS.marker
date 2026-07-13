@@ -1,9 +1,9 @@
 status=PASS
-generated_at=2026-07-13T02:02:50+08:00
+generated_at=2026-07-13T08:36:07+08:00
 report_json=/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/a_share_tushare_strategy_diagnostics_latest.json
-report_json_sha256=f3515a1d5dfbb5b53dd1b562ae8c97057c6b9ecd11dfc86561bb7fcba76a1bb1
+report_json_sha256=a8c9250569f16b6e503e78c4a4db77b8857605349b954a99be04129e1bf93bb1
 rankable_strategy_count=0
-priority_action_count=4
+priority_action_count=1
 ranking_impact_allowed=false
 user_facing_suggestion_allowed=false
 no_network_used=true

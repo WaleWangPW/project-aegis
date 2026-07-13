@@ -2,8 +2,8 @@
   "type": "a_share_full_year_coverage_plan",
   "status": "PASS",
   "coverage_status": "PARTIAL_STALE_FULL_CROSS_SECTION_CACHE",
-  "generated_at": "2026-07-13T02:02:51+08:00",
-  "run_id": "a_share_full_year_coverage_plan_20260713T020250",
+  "generated_at": "2026-07-13T08:36:11+08:00",
+  "run_id": "a_share_full_year_coverage_plan_20260713T083607",
   "command": "scripts/build_a_share_full_year_coverage_plan.py --as-of 2026-07-13",
   "question": "Do we currently have materialized past-year daily records for the full A-share universe?",
   "answer": false,
@@ -21,26 +21,25 @@
     "calendar_exists": true,
     "stock_basic_exists": true,
     "daily_dir_exists": true,
-    "open_date_count": 220,
+    "open_date_count": 469,
     "stock_basic_row_count": 5865,
-    "daily_file_count": 220,
+    "daily_file_count": 688,
     "daily_start": "20230901",
-    "daily_end": "20240731",
+    "daily_end": "20260710",
     "min_daily_row_count": 5265,
-    "max_daily_row_count": 5363,
-    "avg_daily_row_count": 5327,
-    "total_daily_rows": 1172054
+    "max_daily_row_count": 5521,
+    "avg_daily_row_count": 5387,
+    "total_daily_rows": 3706597
   },
   "current_strategy_validation": {
-    "historical_case_count": 120,
-    "a_share_case_count": 76,
+    "historical_case_count": 118,
+    "a_share_case_count": 74,
     "candidate_count": 33,
     "ranking_gate_approved_count": 0,
     "user_facing_suggestion_allowed": false
   },
   "blockers": [
-    "daily_cache_ends_before_target_end",
-    "daily_cache_is_stale_for_current_past_year"
+    "daily_cache_ends_before_target_end"
   ],
   "overnight_openclaw_plan": {
     "owner": "stock-agent",
@@ -76,7 +75,7 @@
     "user_facing_suggestion_allowed": false
   },
   "source_hashes": {
-    "trade_calendar": "f34de1ab81b9b11999c0dd0f98a6d851df2aa3e15e63e5ea2bf5fd500d5f13cd",
-    "stock_basic_all": "0bbc2d38cc4cde25b19d947ab5bd85c1558835da35985f73e62ab16449e99ae8"
+    "trade_calendar": "fa7de2ae4cd0732c2044ddf10cdfd58bf76093352d66cb6e1a413f58db12deef",
+    "stock_basic_all": "ba254e6efd76b8d2a90066dec583d32e3aaac94284f848124ef1cb968cdd9949"
   }
 }
