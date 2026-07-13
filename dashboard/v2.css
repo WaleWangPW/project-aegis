@@ -1964,6 +1964,16 @@ details > summary::-webkit-details-marker { display: none; }
   grid-template-columns: minmax(0, 1fr);
 }
 
+.intent-safe-line {
+  margin: 10px 0 0;
+  padding: 9px 12px;
+  border-radius: 999px;
+  color: #15624f;
+  background: rgba(221, 244, 235, .84);
+  font-size: 12px;
+  font-weight: 850;
+}
+
 .intent-board.compact .copy-intents {
   justify-self: start;
   min-height: 40px;
