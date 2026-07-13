@@ -8,6 +8,23 @@
 
 **Accepted engineering baseline:** `P25.6 PASS`
 
+**Latest update — strategy page command center:**
+The strategy page now starts with a high-contrast `策略指挥台` instead of making
+the user interpret the full evidence stack first. It answers three questions in
+the first screen: `OpenClaw 最近运行` (`PASS`, latest run timestamp, exit code,
+command/failure counts), `Gate 原因` (`未放行`, because `refined sandbox` has
+no pass candidate / ranking gate approved count is still `0`), and `下一步命令`
+(`make stock-agent-a-share-strategy-cycle-managed-expanded`). The command center
+includes a `复制给 stock-agent` button using the same task payload as the lower
+Gate card, including command, Gate rule, and forbidden items such as not reading
+or printing secrets, no broker API, no webhook, and no orders. Browser QA at
+`#strategy` verified asset version `20260713l`, headline `A股策略还不能推荐`,
+cards `PASS / 未放行 / 继续验证`, boundary text
+`只做模拟研究；不接券商、不下单、不调用交易 webhook；Gate=0 时不进入用户建议。`,
+desktop and `390x900` mobile no horizontal overflow, and console
+warnings/errors `0`. Verification: `node --check dashboard/v2.js`, targeted
+pytest `17 passed`, and `git diff --check`.
+
 **Latest update — selection page secondary research views:**
 The selection page no longer leaves the user with long stacked secondary
 content after the Top 3 cards. The old `details`-based `更多候选 / 高风险观察 /
