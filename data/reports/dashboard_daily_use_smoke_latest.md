@@ -13,6 +13,8 @@
 - daily_readiness_safety: `True`
 - button_feedback_recorded: `True`
 - button_feedback_no_trading_side_effects: `True`
+- real_dashboard_click_accepted: `True`
+- real_dashboard_click_safe: `True`
 - ranking_gate_blocks_suggestions: `True`
 - retry_preflight_safe: `True`
 

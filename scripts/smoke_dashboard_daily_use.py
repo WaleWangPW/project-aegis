@@ -58,6 +58,7 @@ def build_smoke(
     dashboard_html: str | None,
     daily_use_readiness: dict[str, Any] | None,
     intent_ingest: dict[str, Any] | None,
+    real_click_acceptance: dict[str, Any] | None,
     ranking_gate: dict[str, Any] | None,
     retry_readiness: dict[str, Any] | None,
     now: datetime,
@@ -66,6 +67,7 @@ def build_smoke(
     health_safety = (health_response or {}).get("safety", {})
     daily_safety = (daily_use_readiness or {}).get("safety", {})
     intent_safety = (intent_ingest or {}).get("safety", {})
+    real_click_safety = (real_click_acceptance or {}).get("safety", {})
     gate_summary = (ranking_gate or {}).get("summary", {})
     retry_safety = (retry_readiness or {}).get("safety", {})
 
@@ -91,6 +93,11 @@ def build_smoke(
         and intent_safety.get("broker_called") is False
         and intent_safety.get("order_placed") is False
         and intent_safety.get("trading_webhook_called") is False,
+        "real_dashboard_click_accepted": (real_click_acceptance or {}).get("status") == "ACCEPTED",
+        "real_dashboard_click_safe": real_click_safety.get("feedback_evidence_only") is True
+        and real_click_safety.get("no_broker_api") is True
+        and real_click_safety.get("no_order_placement") is True
+        and real_click_safety.get("no_trading_webhook") is True,
         "ranking_gate_blocks_suggestions": gate_summary.get("ranking_gate_approved_count", 0) == 0
         and gate_summary.get("user_facing_suggestion_allowed") is False,
         "retry_preflight_safe": retry_safety.get("secret_values_read") is False
@@ -111,6 +118,7 @@ def build_smoke(
             "daily_use_status": (daily_use_readiness or {}).get("status"),
             "latest_feedback_symbol": (intent_ingest or {}).get("latest_symbol"),
             "latest_feedback_action": (intent_ingest or {}).get("latest_action"),
+            "real_click_acceptance_status": (real_click_acceptance or {}).get("status"),
             "ranking_gate_approved_count": gate_summary.get("ranking_gate_approved_count", 0),
             "a_share_retry_status": (retry_readiness or {}).get("status"),
             "a_share_retry_ready_to_run": (retry_readiness or {}).get("ready_to_run"),
@@ -156,6 +164,7 @@ def main() -> int:
         dashboard_html=fetch_text(f"{base_url}/dashboard/index.html"),
         daily_use_readiness=read_json(REPORTS / "dashboard_daily_use_readiness_latest.json"),
         intent_ingest=read_json(REPORTS / "aegis_dashboard_local_intent_ingest_latest.json"),
+        real_click_acceptance=read_json(REPORTS / "dashboard_real_click_acceptance_latest.json"),
         ranking_gate=read_json(REPORTS / "a_share_refined_strategy_ranking_gate_latest.json"),
         retry_readiness=read_json(REPORTS / "a_share_current_day_retry_readiness_latest.json"),
         now=now_local(),

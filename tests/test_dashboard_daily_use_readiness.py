@@ -32,6 +32,22 @@ def _intent() -> dict:
     }
 
 
+def _real_click() -> dict:
+    return {
+        "status": "ACCEPTED",
+        "latest_click": {
+            "symbol": "VRTX",
+            "action": "aegis_more_news",
+        },
+        "safety": {
+            "feedback_evidence_only": True,
+            "no_broker_api": True,
+            "no_order_placement": True,
+            "no_trading_webhook": True,
+        },
+    }
+
+
 def _gate() -> dict:
     return {
         "summary": {
@@ -64,6 +80,7 @@ def test_daily_use_readiness_allows_simulation_use_with_gate_closed():
     report = build_readiness(
         stock_selection=_stock_selection(),
         intent_ingest=_intent(),
+        real_click_acceptance=_real_click(),
         ranking_gate=_gate(),
         retry_readiness=_retry(),
         health={"health_status": "NORMAL"},
@@ -73,6 +90,7 @@ def test_daily_use_readiness_allows_simulation_use_with_gate_closed():
     assert report["status"] == "READY_FOR_SIMULATION_USE"
     assert report["blockers"] == []
     assert report["summary"]["user_facing_suggestion_allowed"] is False
+    assert report["summary"]["real_click_acceptance_status"] == "ACCEPTED"
     assert report["safety"]["no_order_placement"] is True
 
 
@@ -83,6 +101,7 @@ def test_daily_use_readiness_blocks_when_button_feedback_has_trading_effect():
     report = build_readiness(
         stock_selection=_stock_selection(),
         intent_ingest=intent,
+        real_click_acceptance=_real_click(),
         ranking_gate=_gate(),
         retry_readiness=_retry(),
         health={"health_status": "NORMAL"},
@@ -100,6 +119,7 @@ def test_daily_use_readiness_blocks_missing_news():
     report = build_readiness(
         stock_selection=stock_selection,
         intent_ingest=_intent(),
+        real_click_acceptance=_real_click(),
         ranking_gate=_gate(),
         retry_readiness=_retry(),
         health={"health_status": "NORMAL"},
@@ -108,3 +128,18 @@ def test_daily_use_readiness_blocks_missing_news():
 
     assert report["status"] == "NOT_READY"
     assert "news_summary_available" in report["blockers"]
+
+
+def test_daily_use_readiness_blocks_without_real_click_acceptance():
+    report = build_readiness(
+        stock_selection=_stock_selection(),
+        intent_ingest=_intent(),
+        real_click_acceptance={"status": "WAITING_FOR_USER_CLICK", "safety": {}},
+        ranking_gate=_gate(),
+        retry_readiness=_retry(),
+        health={"health_status": "NORMAL"},
+        now=datetime.fromisoformat("2026-07-13T13:35:00+08:00"),
+    )
+
+    assert report["status"] == "NOT_READY"
+    assert "real_dashboard_click_accepted" in report["blockers"]

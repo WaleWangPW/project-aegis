@@ -1,0 +1,39 @@
+{
+  "type": "dashboard_real_click_acceptance",
+  "status": "ACCEPTED",
+  "generated_at": "2026-07-13T14:08:46+08:00",
+  "checks": {
+    "intent_report_recorded": true,
+    "feedback_report_recorded": true,
+    "source_is_dashboard_local": true,
+    "event_has_symbol_and_action": true,
+    "intent_and_feedback_match": true,
+    "event_is_recent": true,
+    "feedback_evidence_only": true,
+    "no_trading_side_effects": true
+  },
+  "blockers": [],
+  "latest_click": {
+    "symbol": "VRTX",
+    "action": "aegis_more_news",
+    "feedback_type": "user_requests_more_news",
+    "source": "dashboard_local_intent_export",
+    "received_at": "2026-07-13T13:01:52.191431+08:00",
+    "age_hours": 1.115,
+    "dashboard_recorded_at": "2026/7/13 13:01:52"
+  },
+  "evidence": {
+    "intent_report": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/aegis_dashboard_local_intent_ingest_latest.json",
+    "intent_report_sha256": "7c81ca42dff4ccfb818536bb1f5455388a045fb32c43df7f89f94d3fdbc42eef",
+    "feedback_report": "/Users/weihongwang/Library/Mobile Documents/iCloud~md~obsidian/Documents/LLM-Wiki-Vault/workstations/stock-trading/projects/project-aegis/repo/data/reports/aegis_stock_feedback_latest.json",
+    "feedback_report_sha256": "dee8a46fcf4be7cbc68952296a407134621d4c8ae2c4eeda1bc803442487b7e7"
+  },
+  "safety": {
+    "simulation_only": true,
+    "feedback_evidence_only": true,
+    "no_broker_api": true,
+    "no_order_placement": true,
+    "no_trading_webhook": true,
+    "no_secret_values_read": true
+  }
+}

@@ -161,6 +161,9 @@ build-a-share-current-day-retry-readiness:
 build-dashboard-daily-use-readiness:
 	.venv/bin/python scripts/build_dashboard_daily_use_readiness.py
 
+build-dashboard-real-click-acceptance:
+	.venv/bin/python scripts/build_dashboard_real_click_acceptance.py
+
 smoke-dashboard-daily-use:
 	.venv/bin/python scripts/smoke_dashboard_daily_use.py
 
@@ -171,6 +174,7 @@ dashboard-daily-use-check:
 	$(MAKE) dashboard-status
 	$(MAKE) build-a-share-current-day-retry-readiness
 	$(MAKE) smoke-dashboard-intent-bridge-dry-run
+	$(MAKE) build-dashboard-real-click-acceptance
 	$(MAKE) build-dashboard-daily-use-readiness
 	$(MAKE) smoke-dashboard-daily-use
 

@@ -1,7 +1,7 @@
 {
   "type": "dashboard_daily_use_readiness",
   "status": "READY_FOR_SIMULATION_USE",
-  "generated_at": "2026-07-13T13:43:27+08:00",
+  "generated_at": "2026-07-13T14:08:46+08:00",
   "usable_for": "simulation_research_only",
   "not_usable_for": [
     "real_trading",
@@ -20,6 +20,9 @@
     ],
     "latest_feedback_symbol": "VRTX",
     "latest_feedback_action": "aegis_more_news",
+    "real_click_acceptance_status": "ACCEPTED",
+    "real_click_symbol": "VRTX",
+    "real_click_action": "aegis_more_news",
     "ranking_gate_approved_count": 0,
     "user_facing_suggestion_allowed": false,
     "a_share_retry_status": "WAITING",
@@ -32,6 +35,8 @@
     "multi_market_available": true,
     "button_feedback_recorded": true,
     "button_feedback_has_no_trading_side_effects": true,
+    "real_dashboard_click_accepted": true,
+    "real_dashboard_click_safe": true,
     "ranking_gate_blocks_unapproved_strategy": true,
     "ranking_gate_has_no_trading_side_effects": true,
     "a_share_retry_preflight_available": true,

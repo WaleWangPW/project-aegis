@@ -39,6 +39,22 @@ side effects. Verification: Python compile PASS, targeted pytest `15 passed`,
 and Playwright Evidence page confirmed `Dashboard 按钮 dry-run smoke` with no
 horizontal overflow or console warnings.
 
+**Latest update — Real Dashboard click acceptance is evidence-backed:**
+Added `make build-dashboard-real-click-acceptance` and included it in
+`make dashboard-daily-use-check`. This report verifies that the latest
+persisted feedback came from the Dashboard local intent bridge, that the
+Dashboard ingest report and latest stock feedback report refer to the same
+event, and that all trading side effects remain false. Latest report:
+`data/reports/dashboard_real_click_acceptance_latest.json`, status `ACCEPTED`,
+blockers `[]`, SHA256
+`b10aca9c9e373b327883155740ce15ed5660a9a571bcfd8f545d3f1052f1977d`.
+Latest accepted click: `VRTX / aegis_more_news`, received
+`2026-07-13T13:01:52.191431+08:00`, source
+`dashboard_local_intent_export`. Verification: Python compile PASS, targeted
+pytest `20 passed`, `make dashboard-daily-use-check` exit `0`,
+`node --check dashboard/v2.js` PASS, and Playwright Evidence page confirmed
+`Dashboard 真实点击验收` with no horizontal overflow or console warnings.
+
 **Latest update — Daily-use smoke check added:**
 Added `make smoke-dashboard-daily-use`, a low-cost local dashboard smoke check
 for daily startup. It verifies the dashboard bridge health endpoint, dashboard

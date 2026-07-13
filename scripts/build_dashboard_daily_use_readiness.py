@@ -37,6 +37,7 @@ def build_readiness(
     *,
     stock_selection: dict[str, Any] | None,
     intent_ingest: dict[str, Any] | None,
+    real_click_acceptance: dict[str, Any] | None,
     ranking_gate: dict[str, Any] | None,
     retry_readiness: dict[str, Any] | None,
     health: dict[str, Any] | None,
@@ -44,6 +45,7 @@ def build_readiness(
 ) -> dict[str, Any]:
     selection_summary = (stock_selection or {}).get("summary", {})
     intent_safety = (intent_ingest or {}).get("safety", {})
+    real_click_safety = (real_click_acceptance or {}).get("safety", {})
     gate_summary = (ranking_gate or {}).get("summary", {})
     gate_safety = (ranking_gate or {}).get("safety", {})
     retry_safety = (retry_readiness or {}).get("safety", {})
@@ -66,6 +68,11 @@ def build_readiness(
                 "trading_webhook_called",
             ],
         ),
+        "real_dashboard_click_accepted": (real_click_acceptance or {}).get("status") == "ACCEPTED",
+        "real_dashboard_click_safe": real_click_safety.get("feedback_evidence_only") is True
+        and real_click_safety.get("no_broker_api") is True
+        and real_click_safety.get("no_order_placement") is True
+        and real_click_safety.get("no_trading_webhook") is True,
         "ranking_gate_blocks_unapproved_strategy": gate_summary.get("user_facing_suggestion_allowed") is False
         and gate_summary.get("ranking_gate_approved_count", 0) == 0,
         "ranking_gate_has_no_trading_side_effects": gate_safety.get("no_broker_api") is True
@@ -86,6 +93,8 @@ def build_readiness(
         "multi_market_available",
         "button_feedback_recorded",
         "button_feedback_has_no_trading_side_effects",
+        "real_dashboard_click_accepted",
+        "real_dashboard_click_safe",
         "ranking_gate_blocks_unapproved_strategy",
         "ranking_gate_has_no_trading_side_effects",
         "a_share_retry_preflight_available",
@@ -109,6 +118,9 @@ def build_readiness(
             "markets_passed": markets,
             "latest_feedback_symbol": (intent_ingest or {}).get("latest_symbol"),
             "latest_feedback_action": (intent_ingest or {}).get("latest_action"),
+            "real_click_acceptance_status": (real_click_acceptance or {}).get("status"),
+            "real_click_symbol": ((real_click_acceptance or {}).get("latest_click") or {}).get("symbol"),
+            "real_click_action": ((real_click_acceptance or {}).get("latest_click") or {}).get("action"),
             "ranking_gate_approved_count": gate_summary.get("ranking_gate_approved_count", 0),
             "user_facing_suggestion_allowed": gate_summary.get("user_facing_suggestion_allowed"),
             "a_share_retry_status": (retry_readiness or {}).get("status"),
@@ -163,6 +175,7 @@ def main() -> int:
     report = build_readiness(
         stock_selection=read_json(REPORTS / "stock_selection_workbench_latest.json"),
         intent_ingest=read_json(REPORTS / "aegis_dashboard_local_intent_ingest_latest.json"),
+        real_click_acceptance=read_json(REPORTS / "dashboard_real_click_acceptance_latest.json"),
         ranking_gate=read_json(REPORTS / "a_share_refined_strategy_ranking_gate_latest.json"),
         retry_readiness=read_json(REPORTS / "a_share_current_day_retry_readiness_latest.json"),
         health=read_json(REPORTS / "aegis_health_status_latest.json"),

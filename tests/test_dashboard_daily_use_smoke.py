@@ -45,6 +45,22 @@ def _intent() -> dict:
     }
 
 
+def _real_click() -> dict:
+    return {
+        "status": "ACCEPTED",
+        "latest_click": {
+            "symbol": "VRTX",
+            "action": "aegis_more_news",
+        },
+        "safety": {
+            "feedback_evidence_only": True,
+            "no_broker_api": True,
+            "no_order_placement": True,
+            "no_trading_webhook": True,
+        },
+    }
+
+
 def _gate() -> dict:
     return {
         "summary": {
@@ -74,6 +90,7 @@ def test_dashboard_daily_use_smoke_passes_for_simulation_ready_dashboard():
         dashboard_html="<title>Project Aegis</title>",
         daily_use_readiness=_readiness(),
         intent_ingest=_intent(),
+        real_click_acceptance=_real_click(),
         ranking_gate=_gate(),
         retry_readiness=_retry(),
         now=datetime.fromisoformat("2026-07-13T13:45:00+08:00"),
@@ -90,6 +107,7 @@ def test_dashboard_daily_use_smoke_fails_without_bridge_health():
         dashboard_html="<title>Project Aegis</title>",
         daily_use_readiness=_readiness(),
         intent_ingest=_intent(),
+        real_click_acceptance=_real_click(),
         ranking_gate=_gate(),
         retry_readiness=_retry(),
         now=datetime.fromisoformat("2026-07-13T13:45:00+08:00"),
@@ -109,6 +127,7 @@ def test_dashboard_daily_use_smoke_fails_if_gate_allows_unapproved_suggestions()
         dashboard_html="<title>Project Aegis</title>",
         daily_use_readiness=_readiness(),
         intent_ingest=_intent(),
+        real_click_acceptance=_real_click(),
         ranking_gate=gate,
         retry_readiness=_retry(),
         now=datetime.fromisoformat("2026-07-13T13:45:00+08:00"),
@@ -116,3 +135,19 @@ def test_dashboard_daily_use_smoke_fails_if_gate_allows_unapproved_suggestions()
 
     assert report["status"] == "FAIL"
     assert "ranking_gate_blocks_suggestions" in report["blockers"]
+
+
+def test_dashboard_daily_use_smoke_fails_without_real_click_acceptance():
+    report = build_smoke(
+        health_response=_health(),
+        dashboard_html="<title>Project Aegis</title>",
+        daily_use_readiness=_readiness(),
+        intent_ingest=_intent(),
+        real_click_acceptance={"status": "WAITING_FOR_USER_CLICK", "safety": {}},
+        ranking_gate=_gate(),
+        retry_readiness=_retry(),
+        now=datetime.fromisoformat("2026-07-13T13:45:00+08:00"),
+    )
+
+    assert report["status"] == "FAIL"
+    assert "real_dashboard_click_accepted" in report["blockers"]
