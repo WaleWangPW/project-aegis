@@ -240,6 +240,18 @@ function retryWindowStatus(report) {
   const mins = Math.max(0, Math.ceil((target - now) / 60000));
   return {label:'未到窗口', detail:`约 ${mins} 分钟后到 ${raw}`};
 }
+function operationalModePanel(daily, dashboardIntent, fullYearCoverage, rankingGate) {
+  const dailyVerdict = daily?.overall_verdict || 'UNKNOWN';
+  const dailyFailed = dailyVerdict === 'FAIL';
+  const hasBridgeEvidence = dashboardIntent?.status === 'RECORDED';
+  const coverageWaiting = isWaitingCurrentDayDaily(fullYearCoverage);
+  const gateApproved = Number(rankingGate?.summary?.ranking_gate_approved_count || 0);
+  const mode = dailyFailed ? '可试用，但需看证据' : '可试用';
+  const modeText = dailyFailed
+    ? 'Dashboard 和按钮回传可用；自动检查失败表示证据链仍需复核，不能把它当成实盘信号。'
+    : 'Dashboard、候选卡和按钮回传可用于今天的模拟研究。';
+  return `<section class="operational-mode ${dailyFailed?'warn':'ok'}" aria-label="当前可用性解释"><div><span>当前使用模式</span><b>${esc(mode)}</b><p>${esc(modeText)}</p></div><div class="mode-grid"><article class="ok"><span>页面操作</span><b>可用</b><small>多页面工作流</small></article><article class="${hasBridgeEvidence?'ok':'hold'}"><span>按钮回传</span><b>${hasBridgeEvidence?'已验证':'待点击'}</b><small>${hasBridgeEvidence?'后台 evidence 有记录':'点击后看回执'}</small></article><article class="${dailyFailed?'hold':'ok'}"><span>自动检查</span><b>${esc(stateLabel(dailyVerdict))}</b><small>${dailyFailed?'不等于页面不可用':'每日 08:00'}</small></article><article class="hold"><span>策略 Gate</span><b>${esc(gateApproved)}</b><small>放行前不排序推荐</small></article><article class="${coverageWaiting?'hold':'ok'}"><span>A股补数</span><b>${coverageWaiting?'等15:30':'看报告'}</b><small>${esc(coverageShortLabel(fullYearCoverage))}</small></article><article class="deny"><span>真实交易</span><b>禁止</b><small>不接券商/不下单</small></article></div></section>`;
+}
 function selectionWayfinder(summary) {
   return `<section class="selection-wayfinder" aria-label="选股页阅读顺序"><div><span>01</span><b>只看 Top 3</b><p>先不展开更多候选，避免被列表淹没。</p></div><div><span>02</span><b>点一个明确按钮</b><p>加入模拟研究、要资讯、暂不关注，都会记录意图。</p></div><div><span>03</span><b>再看策略证据</b><p>扫描 ${esc(summary.total_candidates ?? 'N/A')} 只；可研究 ${esc(summary.research_candidate_count ?? 0)} 只。</p></div><button type="button" data-page-jump="strategy">打开策略页</button></section>`;
 }
@@ -445,7 +457,7 @@ function render() { const invalid=[]; return Promise.all(Object.entries(sources)
   byId('command-strip').innerHTML=commandStrip(decision,d.stockSelection,d.fullYearCoverage,d.rankingGate,d.feedback);
   const hero=byId('decision'); hero.className=`section hero ${decision.state==='Risk / Exit'?'risk-state':decision.state==='BLOCKED'?'blocked-state':decision.state==='Watch / Review'||decision.state==='Ready'?'warn-state':''}`;
   byId('decision-content').innerHTML=`${tag(decision.state)}<h2 class="decision-title">${esc(decision.title)}</h2><p class="decision-summary">${esc(decision.summary)}</p><div class="decision-actions"><div class="directive"><b>今天允许做什么</b>${esc(decision.allowed)}</div><div class="directive forbid"><b>今天禁止做什么</b>${esc(decision.forbidden)}</div></div><div class="metrics"><div class="metric"><span>风险数量</span><strong>${decision.risk_count}</strong></div><div class="metric"><span>可执行候选</span><strong>${decision.action_count}</strong></div><div class="metric"><span>下次检查</span><strong>${esc(decision.next_check)}</strong></div></div>${decision.blocking_reasons.length?`<p class="muted">${esc(decision.blocking_reasons.join('；'))}</p>`:''}`;
-  byId('overview-actions').innerHTML=morningReadinessPanel(decision,d.stockSelection,d.fullYearCoverage,d.stockAgentCycle,d.rankingGate)+actionHub(decision,d.feedback,d.dashboardIntent);
+  byId('overview-actions').innerHTML=operationalModePanel(d.daily,d.dashboardIntent,d.fullYearCoverage,d.rankingGate)+morningReadinessPanel(decision,d.stockSelection,d.fullYearCoverage,d.stockAgentCycle,d.rankingGate)+actionHub(decision,d.feedback,d.dashboardIntent);
   byId('overview-candidates').innerHTML=overviewCandidates(d.stockSelection);
   const risks=positions.filter(p=>p.status==='Exit'||p.riskVeto).slice(0,3); byId('risk-summary').textContent=risks.length?`${risks.length} 项需复核`:'无紧急风险'; byId('risk-content').innerHTML=risks.length?risks.map(riskCard).join(''):'<p class="empty">当前没有紧急风险。</p>';
   byId('holdings-summary').textContent=`${positions.length} 个持仓/监控对象`; byId('holdings-content').innerHTML=positions.map(holdingCard).join('');
