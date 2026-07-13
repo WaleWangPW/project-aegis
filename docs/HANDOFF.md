@@ -8,6 +8,22 @@
 
 **Accepted engineering baseline:** `P25.6 PASS`
 
+**Latest update — strategy page stock-agent task package:** The strategy page
+now converts the closed A-share ranking gate into a copyable OpenClaw
+`stock-agent` task package. The `Gate 摘要` panel still says
+`今天没有任何 A 股策略可推荐` with `Refined 通过 0`, `Gate 审查 0`,
+`Gate 放行 0`, and `推荐权限 禁止`, but it now also shows a dark action card
+with `make stock-agent-a-share-strategy-cycle-managed-expanded` and a
+`复制 stock-agent 任务` button. The copied task text includes the command, current
+gate counts, explicit forbiddens (`secrets`, broker API, webhook, real order),
+and the rule that Gate=0 cannot affect Dashboard ranking. New document:
+`docs/OPENCLAW_STOCK_AGENT_NEXT_TASK.md`; `docs/OPENCLAW_RUNBOOK.md` now points
+stock-agent strategy validation to it. QA: `node --check dashboard/v2.js`,
+targeted pytest `17 passed`, `git diff --check`, Playwright desktop DOM check
+confirmed command/forbidden/Gate text in the copy payload, and mobile `390x844`
+confirmed `scrollWidth=390`, no horizontal overflow, and console
+warnings/errors `0`.
+
 **Latest update — mobile nav compressed and strategy gate explainer added:**
 Dashboard mobile navigation is now a compact horizontal pill rail instead of a
 large 3x2 card block. Mobile QA at `390x844` verified viewport width `390`,

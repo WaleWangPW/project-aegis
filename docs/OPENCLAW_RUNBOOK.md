@@ -9,7 +9,8 @@ Read these files in order:
 1. `docs/ROADMAP.md`
 2. `docs/HANDOFF.md`
 3. `docs/OPENCLAW_RUNBOOK.md`
-4. `docs/context/00_CHATGPT_CONTEXT.md` only if a historical P25.6 snapshot is needed
+4. `docs/OPENCLAW_STOCK_AGENT_NEXT_TASK.md` when the task is A-share strategy validation
+5. `docs/context/00_CHATGPT_CONTEXT.md` only if a historical P25.6 snapshot is needed
 
 Current baseline:
 
@@ -19,6 +20,17 @@ Current baseline:
 - Next target: `V2.6-A Usable Suggestion Brief`
 - Dashboard Contract: `2.0`
 - Production Dashboard SHA256: `e777047e93fc13705df2e6c0dd58728c12ed97ee3f338b512d26ae84b1897a41`
+
+Current stock-agent strategy task:
+
+- Use `docs/OPENCLAW_STOCK_AGENT_NEXT_TASK.md` for the next bounded A-share
+  strategy validation cycle.
+- Current ranking gate state is closed:
+  `ranking_gate_approved_count=0` and
+  `user_facing_suggestion_allowed=false`.
+- Dashboard may show strategy research status, but no A-share strategy can be
+  promoted into user-facing recommendation ranking until Codex accepts a new
+  gate-passing evidence packet.
 
 ## Allowed Work
 
