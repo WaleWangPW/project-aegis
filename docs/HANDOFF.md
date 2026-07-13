@@ -8,6 +8,21 @@
 
 **Accepted engineering baseline:** `P25.6 PASS`
 
+**Latest update — One-command daily-use check added:**
+Added `make dashboard-daily-use-check` and pushed commit
+`53993a0 Add dashboard daily use check target`. This command runs
+`dashboard-status`, `build-a-share-current-day-retry-readiness`,
+`build-dashboard-daily-use-readiness`, and `smoke-dashboard-daily-use` in one
+daily startup check. Latest run exited `0`: dashboard bridge `RUNNING`,
+A-share retry preflight `WAITING / ready_to_run=false` because local time was
+before `15:30 Asia/Shanghai`, daily-use readiness `READY_FOR_SIMULATION_USE`,
+and smoke status `PASS`. Safety remains explicit: simulation only, no broker
+API, no order placement, no trading webhook, no secret values read, and the
+A-share retry preflight used no network and did not execute the retry chain.
+Next action after `15:30 Asia/Shanghai`: rerun the one-command check or the
+retry preflight; execute `make a-share-current-day-retry` only if the preflight
+is `READY` and `ready_to_run=true`.
+
 **Latest update — Daily-use smoke check added:**
 Added `make smoke-dashboard-daily-use`, a low-cost local dashboard smoke check
 for daily startup. It verifies the dashboard bridge health endpoint, dashboard
