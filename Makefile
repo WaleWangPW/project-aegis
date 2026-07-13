@@ -164,6 +164,9 @@ build-dashboard-daily-use-readiness:
 build-dashboard-real-click-acceptance:
 	.venv/bin/python scripts/build_dashboard_real_click_acceptance.py
 
+build-aegis-goal-completion-audit:
+	.venv/bin/python scripts/build_aegis_goal_completion_audit.py
+
 smoke-dashboard-daily-use:
 	.venv/bin/python scripts/smoke_dashboard_daily_use.py
 
@@ -177,6 +180,7 @@ dashboard-daily-use-check:
 	$(MAKE) build-dashboard-real-click-acceptance
 	$(MAKE) build-dashboard-daily-use-readiness
 	$(MAKE) smoke-dashboard-daily-use
+	$(MAKE) build-aegis-goal-completion-audit
 
 START_DATE ?= 20240801
 END_DATE ?= 20260710

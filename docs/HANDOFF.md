@@ -55,6 +55,21 @@ pytest `20 passed`, `make dashboard-daily-use-check` exit `0`,
 `node --check dashboard/v2.js` PASS, and Playwright Evidence page confirmed
 `Dashboard 真实点击验收` with no horizontal overflow or console warnings.
 
+**Latest update — Goal completion audit added:**
+Added `make build-aegis-goal-completion-audit` and included it in
+`make dashboard-daily-use-check`. Latest report:
+`data/reports/aegis_goal_completion_audit_latest.json`, status
+`READY_FOR_DAILY_USE_WITH_PENDING_A_SHARE_RETRY`, `missing_count=0`,
+`pending_count=1`. The audit proves daily simulation use is ready across
+Dashboard readiness/smoke, real click acceptance, A/H/US candidate + news
+coverage, stock-agent strategy cycle, ranking gate blocking user-facing A-share
+suggestions, and no-trading safety. The only pending item is the A-share
+current-day retry, which remains `WAITING / ready_to_run=false` until the
+15:30 Asia/Shanghai preflight becomes READY. Verification: Python compile PASS,
+targeted pytest `22 passed`, `make dashboard-daily-use-check` exit `0`,
+`node --check dashboard/v2.js` PASS, and Playwright Evidence page confirmed
+`目标完成审计` with no horizontal overflow or console warnings.
+
 **Latest update — Daily-use smoke check added:**
 Added `make smoke-dashboard-daily-use`, a low-cost local dashboard smoke check
 for daily startup. It verifies the dashboard bridge health endpoint, dashboard

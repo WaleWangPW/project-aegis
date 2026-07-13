@@ -1,0 +1,120 @@
+{
+  "type": "aegis_goal_completion_audit",
+  "status": "READY_FOR_DAILY_USE_WITH_PENDING_A_SHARE_RETRY",
+  "generated_at": "2026-07-13T14:17:07+08:00",
+  "objective_scope": "daily_simulation_use_dashboard_and_stock_agent_gate",
+  "requirements": [
+    {
+      "requirement": "Dashboard daily-use check passes and homepage is usable for simulation research.",
+      "status": "ACHIEVED",
+      "evidence": [
+        "data/reports/dashboard_daily_use_readiness_latest.json",
+        "data/reports/dashboard_daily_use_smoke_latest.json"
+      ],
+      "detail": {
+        "readiness_status": "READY_FOR_SIMULATION_USE",
+        "smoke_status": "PASS",
+        "blockers": []
+      },
+      "pending": null
+    },
+    {
+      "requirement": "Dashboard candidate buttons can record user research intent to backend evidence.",
+      "status": "ACHIEVED",
+      "evidence": [
+        "data/reports/dashboard_real_click_acceptance_latest.json",
+        "data/reports/dashboard_intent_bridge_dry_run_smoke_latest.json"
+      ],
+      "detail": {
+        "real_click_status": "ACCEPTED",
+        "latest_click": {
+          "symbol": "VRTX",
+          "action": "aegis_more_news",
+          "feedback_type": "user_requests_more_news",
+          "source": "dashboard_local_intent_export",
+          "received_at": "2026-07-13T13:01:52.191431+08:00",
+          "age_hours": 1.254,
+          "dashboard_recorded_at": "2026/7/13 13:01:52"
+        },
+        "dry_run_status": "PASS"
+      },
+      "pending": null
+    },
+    {
+      "requirement": "A/H/US candidates and news summaries are available for simulation research.",
+      "status": "ACHIEVED",
+      "evidence": [
+        "data/reports/stock_selection_workbench_latest.json"
+      ],
+      "detail": {
+        "total_candidates": 30,
+        "research_candidate_count": 13,
+        "news_enriched_count": 9,
+        "markets_passed": [
+          "A",
+          "HK",
+          "US"
+        ]
+      },
+      "pending": null
+    },
+    {
+      "requirement": "A-share strategy work has been run through stock-agent and remains blocked from suggestions until Gate approves.",
+      "status": "ACHIEVED",
+      "evidence": [
+        "data/reports/stock_agent_a_share_strategy_cycle_latest.json",
+        "data/reports/a_share_refined_strategy_ranking_gate_latest.json"
+      ],
+      "detail": {
+        "stock_agent_status": "PASS",
+        "command_count": 15,
+        "failed_command_count": 0,
+        "ranking_gate_approved_count": 0,
+        "user_facing_suggestion_allowed": false,
+        "rankable_strategy_count": 0
+      },
+      "pending": null
+    },
+    {
+      "requirement": "No real trading, broker API, order placement, trading webhook, or secret exposure is allowed by the checked reports.",
+      "status": "ACHIEVED",
+      "evidence": [
+        "data/reports/dashboard_daily_use_readiness_latest.json",
+        "data/reports/dashboard_daily_use_smoke_latest.json",
+        "data/reports/dashboard_real_click_acceptance_latest.json",
+        "data/reports/a_share_refined_strategy_ranking_gate_latest.json",
+        "data/reports/a_share_current_day_retry_readiness_latest.json"
+      ],
+      "detail": {},
+      "pending": null
+    },
+    {
+      "requirement": "A-share current-day cache retry is only executed after the preflight becomes READY.",
+      "status": "PENDING",
+      "evidence": [
+        "data/reports/a_share_current_day_retry_readiness_latest.json"
+      ],
+      "detail": {
+        "retry_status": "WAITING",
+        "ready_to_run": false,
+        "recommended_command": null
+      },
+      "pending": "Wait until the 15:30 Asia/Shanghai preflight returns READY before running make a-share-current-day-retry."
+    }
+  ],
+  "missing_count": 0,
+  "pending_count": 1,
+  "next_actions": [
+    "Use Dashboard for simulation research only.",
+    "After 15:30 Asia/Shanghai rerun make dashboard-daily-use-check.",
+    "Run make a-share-current-day-retry only if the retry preflight returns READY.",
+    "Do not allow A-share strategy into user-facing suggestions while ranking_gate_approved_count is 0."
+  ],
+  "safety": {
+    "simulation_only": true,
+    "no_broker_api": true,
+    "no_order_placement": true,
+    "no_trading_webhook": true,
+    "no_secret_values_read": true
+  }
+}
