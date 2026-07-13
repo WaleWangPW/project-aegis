@@ -8,6 +8,26 @@
 
 **Accepted engineering baseline:** `P25.6 PASS`
 
+**Latest update — daily-use UI workflow and visible click receipts:**
+Dashboard now treats the app as a workflow instead of a long report. The side
+rail labels are now `今日驾驶舱`, `选股研究`, `策略验证`, `风险处理`, `持仓监控`,
+and `证据回执`, with a fixed three-step reminder: risk first, Top 3 second,
+button feedback third. The Today page now has a `今日操作面板` that routes the
+user to risk/selection, strategy Gate, and evidence receipts; it adapts the
+first CTA to the current risk state. Candidate action buttons now read local
+intent state after render and visibly change to `已记录：...` with
+`aria-pressed=true` after a click. Browser QA at
+`http://127.0.0.1:8080/dashboard/index.html` verified: desktop Today page has
+the new nav labels, workflow rail, daily command panel, no horizontal overflow,
+and console warnings/errors `0`; selection page click on `603893 / 要更多资讯`
+changed the button to `已记录：要更多资讯`, created one local intent, showed a
+selected receipt state, and wrote backend feedback evidence with
+`record_mode=feedback_evidence_only` and all trading side effects false; mobile
+`390x900` verified no horizontal overflow and retained selected button state.
+Verification: `node --check dashboard/v2.js`, `git diff --check` for dashboard
+files, targeted pytest `17 passed`, Playwright desktop/mobile checks, and a
+visual screenshot review.
+
 **Latest update — stock-agent 10:29 managed-expanded evidence refresh:**
 Codex delegated the bounded A-share strategy cycle to OpenClaw `stock-agent`
 with the single approved command

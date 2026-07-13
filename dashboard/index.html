@@ -7,7 +7,7 @@
   <meta name="aegis-dashboard-contract" content="2.0">
   <title>Project Aegis · 每日决策</title>
   <link rel="icon" href="data:,">
-  <link rel="stylesheet" href="v2.css?v=20260713i">
+  <link rel="stylesheet" href="v2.css?v=20260713j">
 </head>
 <body>
   <div class="app-frame">
@@ -20,13 +20,19 @@
         </div>
       </div>
       <nav class="page-nav">
-        <button class="nav-item active" type="button" data-page="today"><span>今日</span><small>结论和下一步</small></button>
-        <button class="nav-item" type="button" data-page="selection"><span>选股</span><small>Top 候选</small></button>
-        <button class="nav-item" type="button" data-page="strategy"><span>策略</span><small>资金和因子</small></button>
-        <button class="nav-item" type="button" data-page="risk"><span>风险</span><small>阻塞和退出</small></button>
-        <button class="nav-item" type="button" data-page="portfolio"><span>持仓</span><small>监控对象</small></button>
-        <button class="nav-item" type="button" data-page="evidence"><span>证据</span><small>回测和系统</small></button>
+        <button class="nav-item active" type="button" data-page="today"><span>今日驾驶舱</span><small>先看结论</small></button>
+        <button class="nav-item" type="button" data-page="selection"><span>选股研究</span><small>Top 3 候选</small></button>
+        <button class="nav-item" type="button" data-page="strategy"><span>策略验证</span><small>资金 / 龙虎榜</small></button>
+        <button class="nav-item" type="button" data-page="risk"><span>风险处理</span><small>阻塞和退出</small></button>
+        <button class="nav-item" type="button" data-page="portfolio"><span>持仓监控</span><small>只记录状态</small></button>
+        <button class="nav-item" type="button" data-page="evidence"><span>证据回执</span><small>点击记录 / hash</small></button>
       </nav>
+      <div class="rail-workflow" aria-label="今日使用顺序">
+        <b>今天只按这 3 步</b>
+        <span>1 看风险</span>
+        <span>2 看 Top 3</span>
+        <span>3 点按钮回传</span>
+      </div>
       <div class="rail-note">
         <b>安全边界</b>
         <span>只做模拟研究；你在外部软件手动决定和下单。</span>
@@ -69,6 +75,6 @@
       </section>
     </main>
   </div>
-  <script src="v2.js?v=20260713i"></script>
+  <script src="v2.js?v=20260713j"></script>
 </body>
 </html>
