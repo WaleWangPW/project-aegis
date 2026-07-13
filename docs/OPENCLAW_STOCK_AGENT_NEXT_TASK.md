@@ -1,6 +1,6 @@
 # Project Aegis OpenClaw Stock-Agent Next Task
 
-Updated At: 2026-07-13T11:25:54+08:00
+Updated At: 2026-07-13T11:45:00+08:00
 
 ## Objective
 
@@ -26,6 +26,7 @@ Latest managed cycle evidence:
 - `strategy_priority_action_count=1`
 - `full_year_coverage_answer=NO`
 - `strategy_experiment_queue_ready_count=6`
+- `full_year_coverage_status=WAITING_CURRENT_TRADING_DAY_DAILY`
 
 Interpretation: Aegis can show strategy research status, but cannot promote any
 A-share strategy into Dashboard recommendation ranking.
@@ -49,9 +50,11 @@ useful work is not to relax the gate, but to improve upstream evidence:
 
 1. Review the six ready experiment-queue items in
    `data/reports/a_share_strategy_experiment_queue_latest.json`.
-2. Refresh or complete the A-share full-year cross-section cache if explicitly
-   authorized for Tushare network usage and local cache writes.
-3. After cache freshness is no longer stale, rerun the approved managed-expanded
+2. Retry the A-share full-year cross-section cache after Tushare publishes the
+   current trading day's daily data. The current blocker is
+   `current_trading_day_daily_not_yet_available` for `20260713`, not a broad
+   missing-history issue.
+3. After cache freshness is no longer waiting/stale, rerun the approved managed-expanded
    cycle and compare whether deep sandbox failures and tuned failures improve.
 
 ## Allowed

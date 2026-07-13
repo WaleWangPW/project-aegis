@@ -8,6 +8,25 @@
 
 **Accepted engineering baseline:** `P25.6 PASS`
 
+**Latest update — full-year coverage now explains waiting-for-today state:**
+The A-share one-year cache completion phase was delegated to OpenClaw
+`stock-agent` with the approved cache command
+`make build-p23-2-historical-market-cache START_DATE=20250713 END_DATE=20260713`.
+The command exited `1` because Tushare returned `0` rows for
+`trade_date=20260713`; it reused `240` existing trade-date files, fetched `1`
+new file, and left the cache current through `20260710` with `689` daily files.
+The manifest is `data/reports/p23_2_historical_market_cache_manifest.json`,
+SHA256 `42476d95edc0cf13566566ecca9a3f269b915442992e2c4a693bfb3ea24eabfc`.
+Coverage reporting now distinguishes this from a broad historical gap:
+`a_share_full_year_coverage_plan_latest.json` has
+`coverage_status=WAITING_CURRENT_TRADING_DAY_DAILY`, `answer_label=NO`, and
+blocker `current_trading_day_daily_not_yet_available`; SHA256
+`f9f618896c39651e73d0b92b2f2fe983f6493f5fde6921f0871a409836e00f54`.
+Dashboard resource version is `20260713m`, and the strategy page now says
+`已覆盖到上一交易日，等待今日日线` with the explanation that 2026-07-13 Tushare
+daily data is not published yet. This remains simulation-only and does not
+loosen the ranking gate.
+
 **Latest update — stock-agent 11:25 managed-expanded rerun verified:**
 Codex delegated the approved A-share strategy cycle to OpenClaw `stock-agent`
 using only `make stock-agent-a-share-strategy-cycle-managed-expanded`, then

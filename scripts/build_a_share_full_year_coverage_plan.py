@@ -37,6 +37,7 @@ class CacheStats:
     daily_file_count: int
     daily_start: str | None
     daily_end: str | None
+    open_dates: tuple[str, ...]
     min_daily_row_count: int | None
     max_daily_row_count: int | None
     avg_daily_row_count: int | None
@@ -111,6 +112,7 @@ def load_cache_stats(cache_dir: Path) -> CacheStats:
         daily_file_count=len(daily_files),
         daily_start=daily_files[0].stem if daily_files else None,
         daily_end=daily_files[-1].stem if daily_files else None,
+        open_dates=tuple(open_dates),
         min_daily_row_count=min(row_counts) if row_counts else None,
         max_daily_row_count=max(row_counts) if row_counts else None,
         avg_daily_row_count=int(statistics.mean(row_counts)) if row_counts else None,
@@ -120,6 +122,12 @@ def load_cache_stats(cache_dir: Path) -> CacheStats:
             "stock_basic_all": sha256(stock_basic),
         },
     )
+
+
+def previous_open_date(open_dates: tuple[str, ...], target: date) -> str | None:
+    target_compact = compact(target)
+    previous = [item for item in open_dates if item < target_compact]
+    return previous[-1] if previous else None
 
 
 def materialization_status(stats: CacheStats, target_start: date, target_end: date) -> tuple[str, list[str]]:
@@ -132,13 +140,20 @@ def materialization_status(stats: CacheStats, target_start: date, target_end: da
         blockers.append("missing_daily_by_trade_date_cache")
     cache_start = parse_compact(stats.daily_start)
     cache_end = parse_compact(stats.daily_end)
+    waiting_for_current_trade_day = False
     if cache_start is None or cache_end is None:
         blockers.append("missing_daily_date_range")
     else:
         if cache_start > target_start:
             blockers.append("daily_cache_starts_after_target_start")
         if cache_end < target_end:
-            blockers.append("daily_cache_ends_before_target_end")
+            target_compact = compact(target_end)
+            previous_open = previous_open_date(stats.open_dates, target_end)
+            if target_compact in stats.open_dates and stats.daily_end == previous_open:
+                waiting_for_current_trade_day = True
+                blockers.append("current_trading_day_daily_not_yet_available")
+            else:
+                blockers.append("daily_cache_ends_before_target_end")
         if cache_end < target_start:
             blockers.append("daily_cache_is_stale_for_current_past_year")
     if stats.stock_basic_row_count < 4000:
@@ -146,6 +161,8 @@ def materialization_status(stats: CacheStats, target_start: date, target_end: da
     if stats.daily_file_count < 200:
         blockers.append("daily_trade_date_count_below_one_year_floor")
     if blockers:
+        if waiting_for_current_trade_day and blockers == ["current_trading_day_daily_not_yet_available"]:
+            return "WAITING_CURRENT_TRADING_DAY_DAILY", blockers
         if stats.daily_file_count >= 200 and stats.stock_basic_row_count >= 4000:
             return "PARTIAL_STALE_FULL_CROSS_SECTION_CACHE", blockers
         return "NOT_MATERIALIZED", blockers
@@ -191,6 +208,8 @@ def build_plan(*, cache_dir: Path, as_of: date, run_id: str, command: str) -> di
             "daily_file_count": stats.daily_file_count,
             "daily_start": stats.daily_start,
             "daily_end": stats.daily_end,
+            "latest_expected_trade_date": compact(as_of) if compact(as_of) in stats.open_dates else None,
+            "previous_open_date_before_as_of": previous_open_date(stats.open_dates, as_of),
             "min_daily_row_count": stats.min_daily_row_count,
             "max_daily_row_count": stats.max_daily_row_count,
             "avg_daily_row_count": stats.avg_daily_row_count,
@@ -260,6 +279,8 @@ def markdown(report: dict[str, Any]) -> str:
         "## Blockers",
         "",
     ]
+    if report["coverage_status"] == "WAITING_CURRENT_TRADING_DAY_DAILY":
+        lines.append("- Note: cache is current through the previous open date; today's daily cross-section is not available yet.")
     lines.extend(f"- `{item}`" for item in report["blockers"]) if report["blockers"] else lines.append("- None")
     lines.extend(
         [
