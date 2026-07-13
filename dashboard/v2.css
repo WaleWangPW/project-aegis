@@ -1939,6 +1939,32 @@ details > summary::-webkit-details-marker { display: none; }
   font-size: 18px;
 }
 
+.mode-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin-top: 10px;
+}
+
+.mode-actions button {
+  justify-content: center;
+  min-height: 34px;
+  padding: 0 12px;
+  border-radius: 999px;
+  color: #fbfffc;
+  background: linear-gradient(135deg, #143f36, #1f8068);
+  font-size: 11px;
+  font-weight: 950;
+  box-shadow: 0 10px 24px rgba(27,111,91,.16);
+}
+
+.mode-actions button + button {
+  color: #14513f;
+  background: rgba(255,255,252,.82);
+  outline: 1px solid rgba(27,111,91,.16);
+  box-shadow: none;
+}
+
 .morning-readiness {
   padding: 7px;
   border-radius: 31px;
