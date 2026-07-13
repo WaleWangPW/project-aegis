@@ -8,6 +8,29 @@
 
 **Accepted engineering baseline:** `P25.6 PASS`
 
+**Latest update — Dashboard local interaction receipts:** Dashboard now has a
+first usable interaction receipt loop. Candidate card buttons
+`加入模拟研究 / 要更多资讯 / 暂不关注` write browser-local intent records to
+`localStorage` under `aegis_intent_{symbol}` and `aegis_intent_log`. The `今日`
+page shows a compact operation record in the next-action column, and the
+`证据` page now starts with an `操作回执` section showing local pending records,
+the latest backend Feishu/stock-assistant callback, a copyable return-summary
+button, and the simulation-only boundary. This is **local pending evidence**,
+not formal backend ingestion; authoritative backend evidence remains
+`data/reports/aegis_stock_feedback_latest.json`. Browser QA at
+`http://localhost:8080/dashboard/index.html` clicked the first candidate
+`603893` / `加入模拟研究` and verified: `aegis_intent_log` length `1`,
+selection page displays the local record, evidence page displays `本机待确认`
+and `复制回传摘要`, no desktop or 390px mobile horizontal overflow, and no
+console errors/warnings. Checks: `node --check dashboard/v2.js` PASS,
+`git diff --check` PASS, and targeted pytest PASS with `15 passed`.
+
+**Current interaction next step:** wire the local Dashboard intent payload into
+the Feishu stock-assistant callback path so a Dashboard click can become a real
+backend evidence record. Until then, do not claim localStorage records are
+backend-ingested, and do not create PaperTrade, modify holdings, call broker
+APIs, place orders, or use trading webhooks.
+
 **Latest update — post-partial-cache A-share managed-expanded rerun:** User
 selected option A after the bounded Tushare cache extension reached `468/469`
 target-window trading days and preserved `20260508` as an explicit missing
