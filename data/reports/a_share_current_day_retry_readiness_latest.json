@@ -1,0 +1,28 @@
+{
+  "type": "a_share_current_day_retry_readiness",
+  "status": "WAITING",
+  "generated_at": "2026-07-13T13:23:28+08:00",
+  "coverage_status": "WAITING_CURRENT_TRADING_DAY_DAILY",
+  "answer_label": "NO",
+  "retry_not_before_local_time": "15:30 Asia/Shanghai",
+  "ready_to_run": false,
+  "recommended_command": null,
+  "command_chain": [
+    "make a-share-current-day-retry",
+    "make build-p23-2-historical-market-cache START_DATE=20250713 END_DATE=20260713",
+    "make build-a-share-full-year-coverage-plan",
+    "make stock-agent-a-share-strategy-cycle-managed-expanded"
+  ],
+  "blockers": [],
+  "source_report": "data/reports/a_share_full_year_coverage_plan_latest.json",
+  "source_generated_at": "2026-07-13T12:19:06+08:00",
+  "safety": {
+    "network_used": false,
+    "secret_values_read": false,
+    "simulation_only": true,
+    "no_broker_api": true,
+    "no_order_placement": true,
+    "no_trading_webhook": true,
+    "executes_retry": false
+  }
+}

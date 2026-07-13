@@ -8,6 +8,27 @@
 
 **Accepted engineering baseline:** `P25.6 PASS`
 
+**Latest update — A-share current-day retry readiness preflight:**
+The 15:30 A-share current-day retry is now guarded by a read-only preflight:
+`make build-a-share-current-day-retry-readiness`. It reads only
+`a_share_full_year_coverage_plan_latest.json`, does not call Tushare, does not
+read secret values, and does not execute the retry chain. Latest report:
+`data/reports/a_share_current_day_retry_readiness_latest.json`, generated
+`2026-07-13T13:23:28+08:00`, SHA256
+`0d8c3a87d63bf8f13fdfd43af7ee29d5b535f4c91ca9454be5dcf7000f933ed3`,
+`status=WAITING`, `ready_to_run=false`, `recommended_command=null`. Safety
+fields are explicit: `network_used=false`, `secret_values_read=false`,
+`simulation_only=true`, `no_broker_api=true`, `no_order_placement=true`,
+`no_trading_webhook=true`, and `executes_retry=false`. Dashboard now reads this
+report directly: the Today page shows `重试预检 / 未到窗口`, and Evidence includes
+`A股当日补数预检`. Verification: Python compile PASS, readiness pytest
+`4 passed`, `make build-a-share-current-day-retry-readiness` exit `0`,
+`node --check dashboard/v2.js` PASS, and Playwright confirmed Today/Evidence
+rendering with no horizontal overflow. Next action after `15:30 Asia/Shanghai`:
+rerun the preflight, execute `make a-share-current-day-retry` only if it is
+`READY`, then verify exit codes, hashes, coverage, stock-agent cycle, ranking
+gate, and safety fields.
+
 **Latest update — full-year coverage now explains waiting-for-today state:**
 The A-share one-year cache completion phase was delegated to OpenClaw
 `stock-agent` with the approved cache command
