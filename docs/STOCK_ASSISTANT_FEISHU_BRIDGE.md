@@ -41,6 +41,16 @@ The bridge has two directions:
     `data/records/aegis_stock_feedback_events.jsonl`.
   - Writes latest status to `data/reports/aegis_stock_feedback_latest.json`.
 
+- `scripts/ingest_dashboard_local_intents.py`
+  - Accepts Dashboard-exported `aegis_dashboard_local_intents` JSON.
+  - Reuses the same feedback handler.
+  - Marks source as `dashboard_local_intent_export`.
+
+- `scripts/run_aegis_dashboard_intent_bridge_server.py`
+  - Serves the Dashboard on localhost.
+  - Adds `POST /api/dashboard-intents` for browser button clicks.
+  - Keeps the same simulation-only/no-broker/no-order safety boundary.
+
 ## Button Actions
 
 All button values include:
@@ -73,6 +83,25 @@ python3 /path/to/project-aegis/repo/scripts/handle_aegis_stock_card_action.py '<
 ```
 
 The handler returns a compact status line and writes the durable evidence.
+
+## Dashboard Local Bridge
+
+For daily local use, prefer:
+
+```bash
+make serve-dashboard-intent-bridge
+```
+
+Then open:
+
+```text
+http://localhost:8080/dashboard/index.html
+```
+
+When the local bridge is running, Dashboard candidate buttons automatically post
+to `/api/dashboard-intents` and write backend feedback evidence. If the bridge
+is not running, the page falls back to browser-local receipts and the
+`复制后台JSON` button.
 
 ## Safety
 

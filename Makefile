@@ -84,6 +84,9 @@ p22-5-filemode:
 serve-dashboard:
 	.venv/bin/python -m http.server 8080
 
+serve-dashboard-intent-bridge:
+	.venv/bin/python scripts/run_aegis_dashboard_intent_bridge_server.py --port 8080
+
 daily-real-scene-pilot:
 	.venv/bin/python scripts/run_aegis_daily_real_scene_pilot.py
 

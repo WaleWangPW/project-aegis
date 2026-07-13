@@ -56,9 +56,42 @@ Stock assistant buttons record feedback evidence only:
 
 ## How To Use The Result
 
-1. Open `http://localhost:8080/dashboard/index.html`.
+1. Start the local Dashboard intent bridge:
+
+```bash
+make serve-dashboard-intent-bridge
+```
+
+2. Open `http://localhost:8080/dashboard/index.html`.
+3. Read `今日结论` and `风险阻塞` first.
+4. Review only the Top 3 candidates.
+5. Use your external stock app to verify price, announcement, news, and personal risk.
+6. Click the Dashboard or stock-assistant feedback buttons.
+7. Let Aegis collect review evidence before trusting the strategy.
+
+If the bridge is not running, Dashboard buttons still keep browser-local
+receipts and can export `复制后台JSON`, but they will not automatically write
+backend evidence.
+
+## Dashboard Button Feedback
+
+`make serve-dashboard-intent-bridge` keeps the normal Dashboard URL while adding
+a local-only endpoint:
+
+```text
+POST /api/dashboard-intents
+```
+
+The endpoint accepts Dashboard research intents and writes feedback evidence via
+`scripts/ingest_dashboard_local_intents.py`. It does not create PaperTrade
+records, does not mutate holdings, does not call broker APIs, does not place
+orders, and does not call trading webhooks.
+
+Daily reading order:
+
+1. Open Dashboard.
 2. Read `今日结论` and `风险阻塞` first.
 3. Review only the Top 3 candidates.
 4. Use your external stock app to verify price, announcement, news, and personal risk.
-5. Click the stock-assistant feedback buttons or manually record feedback.
+5. Click `加入模拟研究`, `要更多资讯`, or `暂不关注`.
 6. Let Aegis collect review evidence before trusting the strategy.

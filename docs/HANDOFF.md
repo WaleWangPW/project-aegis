@@ -8,6 +8,31 @@
 
 **Accepted engineering baseline:** `P25.6 PASS`
 
+**Latest update — Dashboard click now auto-ingests through a local bridge:**
+The Dashboard no longer requires manual copy/paste for local feedback when run
+with `make serve-dashboard-intent-bridge`. New server
+`scripts/run_aegis_dashboard_intent_bridge_server.py` serves the normal URL
+`http://localhost:8080/dashboard/index.html` and adds
+`POST /api/dashboard-intents`. `dashboard/v2.js` now attempts to POST every
+candidate button click to that endpoint; on success the card shows `后台已记录`
+and the evidence page shows `本地桥已写入`. If the bridge is not running, the
+page degrades to browser-local receipts and `复制后台JSON`. End-to-end browser QA
+clicked `603893 / aegis_more_news`; `/api/dashboard-intents` returned `200`,
+`localStorage.aegis_intent_submit_603893.status=RECORDED`, and
+`data/reports/aegis_stock_feedback_latest.json` now records
+`source=dashboard_local_intent_export`, `symbol=603893`,
+`action=aegis_more_news`, with all effects false
+(`recommendation_mutated=false`, `paper_trade_created=false`,
+`holding_mutated=false`, `broker_called=false`, `order_placed=false`,
+`trading_webhook_called=false`). Verification:
+`node --check dashboard/v2.js`, Python compile, `git diff --check`, targeted
+pytest `13 passed`, and Playwright desktop/mobile no overflow/no console
+issues.
+
+**Current usage:** use `make serve-dashboard-intent-bridge` instead of the plain
+static server for real daily Dashboard use. Plain `make serve-dashboard` remains
+a read-only/static fallback but will not auto-ingest button feedback.
+
 **Latest update — Dashboard intent export can now be ingested as backend
 evidence:** Dashboard local clicks are no longer trapped in browser-only state.
 `dashboard/v2.js` now exports a machine-readable
