@@ -191,6 +191,26 @@ function coverageHint(report) {
   if (isWaitingCurrentDayDaily(report)) return `缓存已到前一交易日，${report.current_day_retry?.retry_not_before_local_time || '收盘后'} 后重试`;
   return report.coverage_status || '等待报告';
 }
+function parseIsoDate(value) {
+  if (!value) return null;
+  const normalized = String(value).replace(/(\.\d{3})\d+/, '$1');
+  const date = new Date(normalized);
+  return Number.isNaN(date.getTime()) ? null : date;
+}
+function localDayKey(date) {
+  return date ? new Intl.DateTimeFormat('en-CA', {timeZone:'Asia/Shanghai'}).format(date) : null;
+}
+function candidateFreshness(report) {
+  const generated = parseIsoDate(report?.generated_at);
+  if (!generated) return {label:'未知', detail:'候选更新时间缺失'};
+  const nowKey = localDayKey(new Date());
+  const generatedKey = localDayKey(generated);
+  const ageMs = Date.now() - generated.getTime();
+  const hours = Math.max(0, Math.round(ageMs / 36e5));
+  if (generatedKey === nowKey) return {label:'今日刷新', detail:`${generatedKey} · 约 ${hours} 小时前`};
+  if (hours <= 36) return {label:'昨日缓存', detail:`${generatedKey} · 可研究，需核对实时行情`};
+  return {label:'需刷新', detail:`${generatedKey} · 已超过 36 小时`};
+}
 function retryWindowStatus(report) {
   if (!isWaitingCurrentDayDaily(report)) return {label:'无需重试', detail:'等待覆盖报告状态变化'};
   const raw = report?.current_day_retry?.retry_not_before_local_time || '';
@@ -214,6 +234,7 @@ function morningReadinessPanel(decision, stockSelection, fullYearCoverage, stock
   const newsCount = Number(stockSelection?.summary?.news_enriched_count || 0);
   const commandCount = stockAgentCycle?.summary?.command_count ?? 'N/A';
   const failedCount = stockAgentCycle?.summary?.failed_command_count ?? 'N/A';
+  const freshness = candidateFreshness(stockSelection);
   const retryStatus = retryWindowStatus(fullYearCoverage);
   const status = decision.risk_count > 0 ? '先处理风险' : researchCount > 0 ? '可以开始研究' : '等待数据';
   const statusTone = decision.risk_count > 0 ? 'risk' : researchCount > 0 ? 'good' : 'warn';
@@ -225,6 +246,7 @@ function morningReadinessPanel(decision, stockSelection, fullYearCoverage, stock
     </div>
     <div class="morning-grid">
       <article><span>Top 候选</span><b>${esc(researchCount)}</b><small>已补资讯 ${esc(newsCount)}</small></article>
+      <article class="${freshness.label==='需刷新'?'hold':'ok'}"><span>候选数据</span><b>${esc(freshness.label)}</b><small>${esc(freshness.detail)}</small></article>
       <article class="${coverageOk ? 'ok' : 'hold'}"><span>全A股一年</span><b>${esc(coverageHeadline(fullYearCoverage))}</b><small>${esc(coverageHint(fullYearCoverage))}</small></article>
       <article class="${rankingApproved > 0 ? 'ok' : 'hold'}"><span>策略放行</span><b>${esc(rankingApproved)}</b><small>ranking gate</small></article>
       <article><span>stock-agent</span><b>${esc(commandCount)}</b><small>失败 ${esc(failedCount)}</small></article>
