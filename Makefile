@@ -157,9 +157,16 @@ build-a-share-full-year-coverage-plan:
 
 START_DATE ?= 20240801
 END_DATE ?= 20260710
+A_SHARE_RETRY_START_DATE ?= 20250713
+A_SHARE_RETRY_END_DATE ?= 20260713
 
 build-p23-2-historical-market-cache:
 	.venv/bin/python scripts/build_p23_2_historical_market_cache.py --start-date $(START_DATE) --end-date $(END_DATE)
+
+a-share-current-day-retry:
+	$(MAKE) build-p23-2-historical-market-cache START_DATE=$(A_SHARE_RETRY_START_DATE) END_DATE=$(A_SHARE_RETRY_END_DATE)
+	$(MAKE) build-a-share-full-year-coverage-plan
+	$(MAKE) stock-agent-a-share-strategy-cycle-managed-expanded
 
 build-a-share-strategy-experiment-queue:
 	.venv/bin/python scripts/build_a_share_strategy_experiment_queue.py

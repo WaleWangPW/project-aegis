@@ -246,7 +246,7 @@ function operationalModePanel(daily, dashboardIntent, fullYearCoverage, rankingG
   const hasBridgeEvidence = dashboardIntent?.status === 'RECORDED';
   const coverageWaiting = isWaitingCurrentDayDaily(fullYearCoverage);
   const retryCommand = fullYearCoverage?.current_day_retry?.command || 'make build-p23-2-historical-market-cache START_DATE=20250713 END_DATE=20260713';
-  const retryCopy = `${retryCommand}\nmake build-a-share-full-year-coverage-plan\nmake stock-agent-a-share-strategy-cycle-managed-expanded`;
+  const retryCopy = `make a-share-current-day-retry\n\n# Equivalent explicit steps:\n${retryCommand}\nmake build-a-share-full-year-coverage-plan\nmake stock-agent-a-share-strategy-cycle-managed-expanded`;
   const gateApproved = Number(rankingGate?.summary?.ranking_gate_approved_count || 0);
   const mode = dailyFailed ? '可试用，但需看证据' : '可试用';
   const modeText = dailyFailed
