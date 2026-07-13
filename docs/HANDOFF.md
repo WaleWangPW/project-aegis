@@ -8,6 +8,21 @@
 
 **Accepted engineering baseline:** `P25.6 PASS`
 
+**Latest update — mobile nav compressed and strategy gate explainer added:**
+Dashboard mobile navigation is now a compact horizontal pill rail instead of a
+large 3x2 card block. Mobile QA at `390x844` verified viewport width `390`,
+scroll width `390`, side rail width `376`, nav height `45`, rail height `137`,
+no horizontal overflow, and no console warnings/errors. The strategy page now
+starts with a `Gate 摘要` panel that says `今天没有任何 A 股策略可推荐` and
+explains the actual current reason: upstream refined sandbox has `0` pass
+candidates, so ranking gate has no object to review. It also shows OpenClaw's
+next work: risk-veto-before-retest, sample expansion, and retesting main-force /
+dragon-tiger / chip-concentration combinations. Desktop strategy QA verified
+`#strategy`, the Gate panel, no framework overlay, no console warnings/errors,
+and no horizontal overflow. Hash routing now listens to `hashchange`, so direct
+`#today/#selection/#strategy` navigation updates the active page. Verification:
+`node --check dashboard/v2.js`, targeted pytest `17 passed`, `git diff --check`.
+
 **Latest update — Dashboard daily-use UI clarity pass:** Dashboard now has a
 persistent `今日指挥条` directly under the status bar. It shows the first action
 (`先处理风险` or `看 Top 候选`), strategy gate count, latest feedback, full-year
