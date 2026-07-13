@@ -191,6 +191,18 @@ function coverageHint(report) {
   if (isWaitingCurrentDayDaily(report)) return `缓存已到前一交易日，${report.current_day_retry?.retry_not_before_local_time || '收盘后'} 后重试`;
   return report.coverage_status || '等待报告';
 }
+function retryWindowStatus(report) {
+  if (!isWaitingCurrentDayDaily(report)) return {label:'无需重试', detail:'等待覆盖报告状态变化'};
+  const raw = report?.current_day_retry?.retry_not_before_local_time || '';
+  const match = raw.match(/(\d{1,2}):(\d{2})/);
+  if (!match) return {label:'等收盘后', detail:raw || '收盘后再重试'};
+  const now = new Date();
+  const target = new Date(now);
+  target.setHours(Number(match[1]), Number(match[2]), 0, 0);
+  if (now >= target) return {label:'可以重试', detail:'让 stock-agent 执行今日日线缓存补全'};
+  const mins = Math.max(0, Math.ceil((target - now) / 60000));
+  return {label:'未到窗口', detail:`约 ${mins} 分钟后到 ${raw}`};
+}
 function selectionWayfinder(summary) {
   return `<section class="selection-wayfinder" aria-label="选股页阅读顺序"><div><span>01</span><b>只看 Top 3</b><p>先不展开更多候选，避免被列表淹没。</p></div><div><span>02</span><b>点一个明确按钮</b><p>加入模拟研究、要资讯、暂不关注，都会记录意图。</p></div><div><span>03</span><b>再看策略证据</b><p>扫描 ${esc(summary.total_candidates ?? 'N/A')} 只；可研究 ${esc(summary.research_candidate_count ?? 0)} 只。</p></div><button type="button" data-page-jump="strategy">打开策略页</button></section>`;
 }
@@ -202,6 +214,7 @@ function morningReadinessPanel(decision, stockSelection, fullYearCoverage, stock
   const newsCount = Number(stockSelection?.summary?.news_enriched_count || 0);
   const commandCount = stockAgentCycle?.summary?.command_count ?? 'N/A';
   const failedCount = stockAgentCycle?.summary?.failed_command_count ?? 'N/A';
+  const retryStatus = retryWindowStatus(fullYearCoverage);
   const status = decision.risk_count > 0 ? '先处理风险' : researchCount > 0 ? '可以开始研究' : '等待数据';
   const statusTone = decision.risk_count > 0 ? 'risk' : researchCount > 0 ? 'good' : 'warn';
   return `<section class="morning-readiness ${statusTone}" aria-label="明早可用状态">
@@ -215,10 +228,11 @@ function morningReadinessPanel(decision, stockSelection, fullYearCoverage, stock
       <article class="${coverageOk ? 'ok' : 'hold'}"><span>全A股一年</span><b>${esc(coverageHeadline(fullYearCoverage))}</b><small>${esc(coverageHint(fullYearCoverage))}</small></article>
       <article class="${rankingApproved > 0 ? 'ok' : 'hold'}"><span>策略放行</span><b>${esc(rankingApproved)}</b><small>ranking gate</small></article>
       <article><span>stock-agent</span><b>${esc(commandCount)}</b><small>失败 ${esc(failedCount)}</small></article>
+      <article class="${retryStatus.label==='可以重试'?'ok':'hold'}"><span>重试窗口</span><b>${esc(retryStatus.label)}</b><small>${esc(retryStatus.detail)}</small></article>
     </div>
     <div class="morning-next">
       <b>${coverageOk ? '下一步：继续验证策略稳定性' : coverageWaiting ? `下一步：${esc(fullYearCoverage?.current_day_retry?.retry_not_before_local_time || '收盘后')} 后重试今日日线` : '醒来后可批准：补当前过去一年全A股缓存'}</b>
-      <span>${coverageOk ? '仍需 ranking gate 放行后才允许影响排序。' : coverageWaiting ? '这不是历史缺口，而是今天日线暂未发布；不会因此放松 Gate。' : '未批准前不会消耗大量 Tushare API，也不会写入大缓存。'}</span>
+      <span>${coverageOk ? '仍需 ranking gate 放行后才允许影响排序。' : coverageWaiting ? `${retryStatus.detail}；这不是历史缺口，不会因此放松 Gate。` : '未批准前不会消耗大量 Tushare API，也不会写入大缓存。'}</span>
     </div>
   </section>`;
 }
