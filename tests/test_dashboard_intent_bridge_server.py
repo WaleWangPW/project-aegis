@@ -48,6 +48,35 @@ def test_process_payload_records_feedback_evidence(monkeypatch, tmp_path):
     assert latest["event"]["source"] == "dashboard_local_intent_export"
 
 
+def test_process_payload_dry_run_does_not_write_feedback_evidence(monkeypatch, tmp_path):
+    _patch_paths(monkeypatch, tmp_path)
+    report = server.process_payload(
+        {
+            "type": "aegis_dashboard_local_intents",
+            "intents": [
+                {
+                    "symbol": "PANW",
+                    "name": "Palo Alto Networks",
+                    "market": "US",
+                    "status": "research_candidate",
+                    "score": "10",
+                    "action": "aegis_more_news",
+                    "time": "2026/7/13 09:30:00",
+                    "source": "dashboard-local",
+                }
+            ],
+        },
+        dry_run=True,
+    )
+
+    assert report["status"] == "DRY_RUN"
+    assert report["event_count"] == 1
+    assert report["latest_symbol"] == "PANW"
+    assert report["safety"]["order_placed"] is False
+    assert not feedback_handler.LATEST.exists()
+    assert not feedback_handler.EVENT_LOG.exists()
+
+
 def test_process_payload_rejects_unknown_action(monkeypatch, tmp_path):
     _patch_paths(monkeypatch, tmp_path)
     try:

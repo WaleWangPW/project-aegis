@@ -23,6 +23,22 @@ Next action after `15:30 Asia/Shanghai`: rerun the one-command check or the
 retry preflight; execute `make a-share-current-day-retry` only if the preflight
 is `READY` and `ready_to_run=true`.
 
+**Latest update — Dashboard intent dry-run smoke added:**
+Added `make smoke-dashboard-intent-bridge-dry-run` and included it in
+`make dashboard-daily-use-check`. The local intent bridge now accepts
+`POST /api/dashboard-intents?dry_run=1`, so daily checks can verify candidate
+button payload handling without overwriting the user's real latest feedback.
+Latest report:
+`data/reports/dashboard_intent_bridge_dry_run_smoke_latest.json`, status
+`PASS`, blockers `[]`, SHA256
+`a3c27402fce32dac4f677396cc95f8e4345df139b5e48fb45551b76c16342413`.
+Checks prove HTTP 200, dry-run status, one event assembled, expected symbol
+and action, no latest-feedback mutation, no event-log mutation, and no trading
+side effects. Verification: Python compile PASS, targeted pytest `15 passed`,
+`make dashboard-daily-use-check` exit `0`, `node --check dashboard/v2.js` PASS,
+and Playwright Evidence page confirmed `Dashboard 按钮 dry-run smoke` with no
+horizontal overflow or console warnings.
+
 **Latest update — Daily-use smoke check added:**
 Added `make smoke-dashboard-daily-use`, a low-cost local dashboard smoke check
 for daily startup. It verifies the dashboard bridge health endpoint, dashboard

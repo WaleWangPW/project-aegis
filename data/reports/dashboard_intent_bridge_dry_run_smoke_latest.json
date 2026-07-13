@@ -1,0 +1,59 @@
+{
+  "type": "dashboard_intent_bridge_dry_run_smoke",
+  "status": "PASS",
+  "generated_at": "2026-07-13T13:59:58+08:00",
+  "base_url": "http://127.0.0.1:8080",
+  "status_code": 200,
+  "error": null,
+  "checks": {
+    "http_200": true,
+    "dry_run_status": true,
+    "event_count_one": true,
+    "latest_symbol_matches": true,
+    "latest_action_matches": true,
+    "no_feedback_latest_mutation": true,
+    "no_event_log_mutation": true,
+    "no_trading_side_effects": true
+  },
+  "blockers": [],
+  "response_summary": {
+    "status": "DRY_RUN",
+    "intent_count": 1,
+    "event_count": 1,
+    "latest_symbol": "VRTX",
+    "latest_action": "aegis_more_news",
+    "latest_feedback_type": "user_requests_more_news"
+  },
+  "mutation_guard": {
+    "latest_feedback_before": {
+      "exists": true,
+      "size": 1313,
+      "mtime_ns": 1783918912192949533
+    },
+    "latest_feedback_after": {
+      "exists": true,
+      "size": 1313,
+      "mtime_ns": 1783918912192949533
+    },
+    "event_log_before": {
+      "exists": true,
+      "size": 6826,
+      "mtime_ns": 1783918912192468127
+    },
+    "event_log_after": {
+      "exists": true,
+      "size": 6826,
+      "mtime_ns": 1783918912192468127
+    }
+  },
+  "safety": {
+    "simulation_only": true,
+    "dry_run": true,
+    "market_data_fetch": false,
+    "secret_values_read": false,
+    "feedback_evidence_mutated": false,
+    "no_broker_api": true,
+    "no_order_placement": true,
+    "no_trading_webhook": true
+  }
+}

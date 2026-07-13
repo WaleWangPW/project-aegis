@@ -164,9 +164,13 @@ build-dashboard-daily-use-readiness:
 smoke-dashboard-daily-use:
 	.venv/bin/python scripts/smoke_dashboard_daily_use.py
 
+smoke-dashboard-intent-bridge-dry-run:
+	.venv/bin/python scripts/smoke_dashboard_intent_bridge_dry_run.py
+
 dashboard-daily-use-check:
 	$(MAKE) dashboard-status
 	$(MAKE) build-a-share-current-day-retry-readiness
+	$(MAKE) smoke-dashboard-intent-bridge-dry-run
 	$(MAKE) build-dashboard-daily-use-readiness
 	$(MAKE) smoke-dashboard-daily-use
 

@@ -15,6 +15,7 @@ from http import HTTPStatus
 from http.server import SimpleHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
 from typing import Any
+from urllib.parse import parse_qs, urlparse
 
 try:
     from scripts import ingest_dashboard_local_intents as ingest_bridge
@@ -76,16 +77,18 @@ class AegisDashboardHandler(SimpleHTTPRequestHandler):
         super().do_GET()
 
     def do_POST(self) -> None:  # noqa: N802 - stdlib API
-        if self.path != "/api/dashboard-intents":
+        parsed = urlparse(self.path)
+        if parsed.path != "/api/dashboard-intents":
             self._write_json(HTTPStatus.NOT_FOUND, {"status": "ERROR", "error": "unknown endpoint"})
             return
+        dry_run = parse_qs(parsed.query).get("dry_run", ["0"])[0] in {"1", "true", "yes"}
         length = int(self.headers.get("Content-Length") or "0")
         if length <= 0 or length > MAX_BODY_BYTES:
             self._write_json(HTTPStatus.REQUEST_ENTITY_TOO_LARGE, {"status": "ERROR", "error": "invalid body size"})
             return
         try:
             payload = json.loads(self.rfile.read(length).decode("utf-8"))
-            report = process_payload(payload)
+            report = process_payload(payload, dry_run=dry_run)
         except Exception as exc:
             self._write_json(HTTPStatus.BAD_REQUEST, {"status": "ERROR", "error": str(exc)})
             return
