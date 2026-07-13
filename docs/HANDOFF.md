@@ -8,6 +8,21 @@
 
 **Accepted engineering baseline:** `P25.6 PASS`
 
+**Latest update — selection page secondary research views:**
+The selection page no longer leaves the user with long stacked secondary
+content after the Top 3 cards. The old `details`-based `更多候选 / 高风险观察 /
+暂不碰 / 策略与证据` section has been converted into a second-level tabbed
+research area. Only one pane is visible at a time: `更多候选`, `高风险观察`,
+`暂不碰`, `策略证据`, plus `数据问题` when source failures exist. The default pane
+is `更多候选`; switching to risk/blocked/evidence does not reload the page and
+does not affect candidate feedback buttons. Browser QA at
+`http://127.0.0.1:8080/dashboard/index.html#selection` verified asset version
+`20260713k`, subnav visible, default active pane `more`, exactly one visible
+pane, tab switching to `risk`, `blocked`, and `evidence`, no horizontal
+overflow on desktop or `390x900` mobile, and console warnings/errors `0`.
+Verification: `node --check dashboard/v2.js`, targeted pytest `17 passed`, and
+`git diff --check` for dashboard files.
+
 **Latest update — daily-use UI workflow and visible click receipts:**
 Dashboard now treats the app as a workflow instead of a long report. The side
 rail labels are now `今日驾驶舱`, `选股研究`, `策略验证`, `风险处理`, `持仓监控`,
